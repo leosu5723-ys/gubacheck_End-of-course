@@ -1,0 +1,25 @@
+{
+  "base_model": "hfl/chinese-roberta-wwm-ext",
+  "n_train": 2700,
+  "n_val": 300,
+  "lr": 2e-05,
+  "batch": 32,
+  "epochs": [
+    {
+      "epoch": 1,
+      "val_macro_f1_vs_llm_labels": 0.7356,
+      "seconds": 37.7
+    },
+    {
+      "epoch": 2,
+      "val_macro_f1_vs_llm_labels": 0.7552,
+      "seconds": 34.1
+    },
+    {
+      "epoch": 3,
+      "val_macro_f1_vs_llm_labels": 0.7646,
+      "seconds": 34.1
+    }
+  ],
+  "best_val": 0.7646
+}
