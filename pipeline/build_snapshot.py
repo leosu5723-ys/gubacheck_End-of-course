@@ -13,9 +13,9 @@ Spike rule (thresholds from RULES.md, fixed before results were seen):
              (sentiment from the trained model; uncertain and neutral
              posts are not counted)
 
-List pages also carry posts from other bars and site-promoted articles.
-Dropped: bar_code naming another stock, and promoted posts (no bar_code,
-post_type 20).
+A stock's list also carries reposts from other bars and Eastmoney
+articles; only posts whose true bar_code is this stock are kept (bar
+codes restored by pipeline/import_guba.py).
 
 Sample posts attached to a spike: the 10 most-read posts of that day.
 =========================================================================
@@ -58,11 +58,8 @@ def main(date_from, date_to):
     posts = []
     for code in watch:
         for p in _jsonl("guba_%s.jsonl" % code):
-            bar = p.get("bar_code")
-            if bar not in (None, "", code):
-                continue                      # another stock's bar
-            if not bar and p.get("post_type") == 20:
-                continue                      # site-promoted article, not this stock's forum
+            if p.get("bar_code") != code:
+                continue                      # repost from another bar or a site article
 
             if date_from <= p["time"][:10] <= date_to:
                 posts.append(p)
