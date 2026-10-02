@@ -50,9 +50,12 @@ def _append(name, rows, key):
 
 def cninfo(code, date_from, date_to):
     import akshare as ak
-    df = ak.stock_zh_a_disclosure_report_cninfo(
+    df = _retry(lambda: ak.stock_zh_a_disclosure_report_cninfo(
         symbol=code, market="沪深京",
-        start_date=date_from.replace("-", ""), end_date=date_to.replace("-", ""))
+        start_date=date_from.replace("-", ""), end_date=date_to.replace("-", "")))
+    if df is None:
+        print("cninfo: FAILED for %s" % code)
+        return
     rows = []
     for _, r in df.iterrows():
         m = re.search(r"announcementId=(\d+)", str(r["公告链接"]))
@@ -62,18 +65,49 @@ def cninfo(code, date_from, date_to):
     _append("cninfo.jsonl", rows, "ann_id")
 
 
+def _retry(fn, tries=4):
+    """Free endpoints drop connections now and then; back off and retry."""
+    import time
+    for i in range(tries):
+        try:
+            return fn()
+        except Exception as e:
+            print("  retry %d/%d after: %s" % (i + 1, tries, str(e)[:120]))
+            time.sleep(5 * (i + 1))
+    return None
+
+
 def prices(code, date_from, date_to):
+    """Daily bars. Eastmoney first; Sina as fallback when Eastmoney refuses."""
     import akshare as ak
-    df = ak.stock_zh_a_hist(symbol=code, period="daily", adjust="",
-                            start_date=date_from.replace("-", ""), end_date=date_to.replace("-", ""))
-    rows, prev = [], None
-    for _, r in df.iterrows():
-        close = float(r["收盘"])
-        rows.append({"key": "%s_%s" % (code, r["日期"]), "stock": code, "date": str(r["日期"])[:10],
-                     "open": float(r["开盘"]), "close": close, "high": float(r["最高"]),
-                     "low": float(r["最低"]), "pct_chg": float(r["涨跌幅"]),
-                     "prev_close": prev if prev is not None else round(close / (1 + float(r["涨跌幅"]) / 100), 2)})
-        prev = close
+    a, b = date_from.replace("-", ""), date_to.replace("-", "")
+    rows = []
+    df = _retry(lambda: ak.stock_zh_a_hist(symbol=code, period="daily", adjust="", start_date=a, end_date=b), tries=1)
+    if df is not None and len(df):
+        prev = None
+        for _, r in df.iterrows():
+            close = float(r["收盘"])
+            rows.append({"key": "%s_%s" % (code, r["日期"]), "stock": code, "date": str(r["日期"])[:10],
+                         "open": float(r["开盘"]), "close": close, "high": float(r["最高"]),
+                         "low": float(r["最低"]), "pct_chg": float(r["涨跌幅"]),
+                         "prev_close": prev if prev is not None
+                         else round(close / (1 + float(r["涨跌幅"]) / 100), 2)})
+            prev = close
+    else:
+        prefix = "sh" if code.startswith("6") else "bj" if code.startswith(("8", "4", "92")) else "sz"
+        df = _retry(lambda: ak.stock_zh_a_daily(symbol=prefix + code, start_date=a, end_date=b, adjust=""))
+        if df is None:
+            print("prices: FAILED for %s" % code)
+            return
+        prev = None
+        for _, r in df.iterrows():
+            close, day = float(r["close"]), str(r["date"])[:10]
+            if prev is not None:      # first bar has no previous close in the window: skip it
+                rows.append({"key": "%s_%s" % (code, day), "stock": code, "date": day,
+                             "open": float(r["open"]), "close": close, "high": float(r["high"]),
+                             "low": float(r["low"]), "pct_chg": round(100 * (close / prev - 1), 2),
+                             "prev_close": prev})
+            prev = close
     _append("prices.jsonl", rows, "key")
 
 
