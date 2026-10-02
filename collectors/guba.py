@@ -3,6 +3,7 @@ GubaCheck - EASTMONEY GUBA (stock forum) COLLECTOR
 =========================================================================
     python3 -m collectors.guba range 600519 2026-09-20 2026-09-30   every post in a window
     python3 -m collectors.guba days                                 posts on candidate spike days
+    python3 -m collectors.guba backfill 2025-10-01                  continuous history, stocks in turn
 
 Pages through https://guba.eastmoney.com/list,<code>,f_<n>.html, which
 lists a stock's posts newest-first by publish time (80 per page). Each
@@ -35,7 +36,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "data", "raw")
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
       "(KHTML, like Gecko) Version/17.0 Safari/605.1.15")
-DELAY_S = 3.0
+DELAY_S = 5.0
 MAX_PAGES_PER_DAY = 4
 
 
@@ -149,10 +150,81 @@ def collect_days(code, days):
     return w.kept
 
 
+def _page_for_day(code, day, probes):
+    """First page whose median publish day is <= `day` (cached binary search)."""
+    def day_at(page):
+        if page not in probes:
+            probes[page] = _median_day(fetch_page(code, page)) or "0000-00-00"
+        return probes[page]
+    known_newer = [p for p, d in probes.items() if d > day]
+    lo = max(known_newer) if known_newer else 1
+    hi = lo
+    while day_at(hi) > day:
+        lo, hi = hi, hi * 2
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if day_at(mid) > day:
+            lo = mid + 1
+        else:
+            hi = mid
+    return lo
+
+
+def backfill(codes, date_from, pages_per_turn=50):
+    """Continuous history, newest to oldest, stocks in turn.
+
+    Each turn reads `pages_per_turn` pages of one stock, then moves to the
+    next, so every stock gains coverage even if collection is stopped.
+    Resumes from the day recorded in coverage.json (one binary search).
+    Writes data/raw/coverage.json: per stock, the continuous window held.
+    """
+    # Resume point comes from coverage.json only: posts on disk also include
+    # scattered candidate days, which say nothing about continuous coverage.
+    cov_path = os.path.join(RAW, "coverage.json")
+    cov = json.load(open(cov_path, encoding="utf-8")) if os.path.exists(cov_path) else {}
+    state = {}
+    for code in codes:
+        prev = cov.get(code, {})
+        state[code] = {"w": _Writer(code), "probes": {}, "page": None,
+                       "done": bool(prev.get("done")), "oldest": prev.get("continuous_from")}
+    while not all(st["done"] for st in state.values()):
+        for code, st in state.items():
+            if st["done"]:
+                continue
+            if st["page"] is None:
+                st["page"] = max(1, _page_for_day(code, st["oldest"], st["probes"]) - 1) \
+                    if st["oldest"] else 1
+            for _ in range(pages_per_turn):
+                posts = fetch_page(code, st["page"])
+                if not posts:
+                    st["done"] = True
+                    break
+                st["w"].add(posts, lambda d: d >= date_from)
+                md = _median_day(posts)
+                st["oldest"] = min(st["oldest"] or md, md)
+                st["page"] += 1
+                if md < date_from:
+                    st["done"] = True
+                    break
+            _write_coverage(state)
+            print("  %s reached %s (page %d, kept %d)" % (code, st["oldest"], st["page"], st["w"].kept))
+    print("BACKFILL DONE")
+
+
+def _write_coverage(state):
+    cov = {c: {"continuous_from": st["oldest"], "next_page": st["page"], "done": st["done"]}
+           for c, st in state.items()}
+    with open(os.path.join(RAW, "coverage.json"), "w", encoding="utf-8") as fh:
+        json.dump(cov, fh, indent=1)
+
+
 if __name__ == "__main__":
     try:
         if len(sys.argv) == 5 and sys.argv[1] == "range":
             collect(sys.argv[2], sys.argv[3], sys.argv[4])
+        elif len(sys.argv) == 3 and sys.argv[1] == "backfill":
+            with open(os.path.join(ROOT, "data", "watchlist.json"), encoding="utf-8") as fh:
+                backfill([w["code"] for w in json.load(fh)], sys.argv[2])
         elif len(sys.argv) == 2 and sys.argv[1] == "days":
             with open(os.path.join(ROOT, "data", "candidate_days.json"), encoding="utf-8") as fh:
                 todo = json.load(fh)
