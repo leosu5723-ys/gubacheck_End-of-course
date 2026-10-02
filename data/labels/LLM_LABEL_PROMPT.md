@@ -1,16 +1,16 @@
 # Prompt used for LLM labelling
 
-The same prompt, unchanged, for all six training parts (`llm_part1..6.csv`) and for `llm_check_300.csv`. Paste the prompt, then the CSV rows.
+The prompt below was used, unchanged, for all six training parts (`llm_part1..6.csv`). The LLM-vs-human check labels came from an earlier GPT-6 run (see the table).
 
 Record here when done:
 
 | Field | Value |
 |---|---|
-| Model (name and version) | |
-| Interface (chat app / API) | |
-| Date | |
-| Parts labelled in one conversation or separately | |
-| Rows the model refused or skipped | |
+| Model (name and version) | GPT-6 |
+| Interface (chat app / API) | Codex |
+| Date | 2026-10-03 |
+| Parts labelled in one conversation or separately | Training parts 1–6 in one Codex run (files written 01:52). Check labels for the 99 hand-labelled posts are taken from GPT-6's earlier labelling of the whole 300-post sheet (01:17), made before any hand label existed; that run followed the label rules, the exact prompt text was not recorded. |
+| Rows the model refused or skipped | 0 |
 
 ---
 

@@ -93,6 +93,31 @@
         }
       },
       "usd_per_1000_posts": 0.0
+    },
+    "llm_labeller_direct": {
+      "macro_f1": 0.7893,
+      "ci95": [
+        0.6932,
+        0.8776
+      ],
+      "accuracy": 0.8261,
+      "confusion_gold_by_pred": {
+        "bull": {
+          "bull": 28,
+          "bear": 2,
+          "neutral": 1
+        },
+        "bear": {
+          "bull": 2,
+          "bear": 38,
+          "neutral": 7
+        },
+        "neutral": {
+          "bull": 2,
+          "bear": 2,
+          "neutral": 10
+        }
+      }
     }
   },
   "abstention_tfidf": {
