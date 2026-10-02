@@ -20,12 +20,12 @@
 
 ## Input and output
 
-**Input:** one forum spike, detected by code (RULES.md): the stock's Eastmoney popularity rank jumps at least 3× against its 20-day median into the top 200, and at least 60% of that day's opinionated forum posts are bullish. Example id `SPK-601127-20260915`.
+**Input:** one forum spike, detected by code (RULES.md): own-bar posts that day ≥ 3× the 20-day mean, and the bullish share ≥ its 20-day mean + 20 points (sentiment from a fine-tuned Chinese RoBERTa). Example id `SPK-601127-20260915`.
 
 **Output:** a decision record and a check card.
 
 ```
-SPK-xxxxxx-2026xxxx  [stock name]  popularity rank 12 (20-day median 160), bullish 81%
+SPK-xxxxxx-2026xxxx  [stock name]  posts x4.2 (1,380 vs 330), bullish 71% (base 41%)
 Forum claim : "下周公布重组"
 Official    : none in CNINFO 2026-09-04..09-18 (searched: 重组, 资产, 收购)
 Media       : CLS telegraph 09-17 "市场传闻…"   [news_id]
@@ -43,8 +43,8 @@ DECISION    : await_confirmation - awaiting a CNINFO 重大资产重组预案
 ```
  COLLECT (daily, code)           BUILD (code + narrow ML)              DECIDE (agent)                     ACT
  ┌─────────────────────┐   ┌──────────────────────────────┐   ┌───────────────────────────────┐   ┌──────────────────┐
- │ Guba posts (titles) ├──►│ sentiment: TF-IDF + LR       │   │ get_spike                     │   │ autonomy gate    │
- │ CNINFO announcements│   │  (vs lexicon, majority, LLM) │   │ ┌ search_cninfo   ┐ parallel  │   │ (my yes / no)    │
+ │ Guba posts (titles) ├──►│ sentiment: RoBERTa (FT)      │   │ get_spike                     │   │ autonomy gate    │
+ │ CNINFO announcements│   │ trained on LLM labels        │   │ ┌ search_cninfo   ┐ parallel  │   │ (my yes / no)    │
  │ CLS + EM news       ├──►│ spike detector (RULES.md)    ├──►│ │ search_news      │ one turn  ├──►│        │         │
  │ prices, popularity  │   │ frozen snapshot (JSON)       │   │ └ get_price_context┘          │   │ paper broker     │
  └─────────────────────┘   └──────────────────────────────┘   │ retry search with new terms   │   │ (A-share rules)  │
@@ -65,7 +65,8 @@ DECISION    : await_confirmation - awaiting a CNINFO 重大资产重组预案
 | Interface | Own | CLI + Markdown check cards | One user; a UI adds nothing to the decision |
 | Orchestration | Own | Hand-written ReAct loop | When it misbehaves I must be able to read the code that did it |
 | Model | Rent | OpenRouter, `[model A]` vs `[model B]` | General language ability is a commodity; switching is one string |
-| Sentiment | Own | TF-IDF + logistic regression (scikit-learn) | Fixed labels, short text, every post every day: cheap and explainable |
+| Sentiment labels | Rent (once) | GPT-6 labelled 3,000 posts | A teacher: 0.79 Macro-F1 on my hand labels, but paying per post for a million posts is not sensible |
+| Sentiment model | Own | Chinese RoBERTa (hfl/chinese-roberta-wwm-ext) fine-tuned on those labels; TF-IDF + LR as the cheap baseline | Runs locally on every post every day at zero marginal cost: 0.73 Macro-F1 |
 | Data | Free public + own archive | CNINFO, CLS, Eastmoney via AKShare; Guba via own collector | Data cost is zero; the news archive exists only because I collect it daily |
 | Evaluation | Own | Harness, answer key, guardrail checklist, results.json | The evidence is the product |
 
@@ -82,7 +83,8 @@ Targets were set before any result was seen (git history of this file).
 | **False act rate** (paper_trade when the key says do not) | ≤ 5% | | results/results.json |
 | Judgement check (reason names the evidence and trigger) | ≥ 75% | | results/judgement_queue.json |
 | Descriptor v2 vs v1 pass rate, same model | v2 higher | | results_live_*_v1 vs v2 |
-| Sentiment Macro-F1, TF-IDF+LR | ≥ 0.65 and > lexicon | | results/sentiment_eval.json |
+| Sentiment Macro-F1 on hand labels (deployed model) | ≥ 0.65 and > lexicon | | results/sentiment_eval.json |
+| Daily bullish share bias (predicted − true) | within ±3 points | | results/sentiment_eval.json |
 | Sentiment abstention: error rate abstained vs answered | abstained higher | | results/sentiment_eval.json |
 | Guardrail checklist | 10 / 10 | | results/guardrails.json |
 | Median / worst turns | ≤ 5 / ≤ 8 | | results/results.json |

@@ -54,8 +54,8 @@ def _hits(text, keywords):
 def get_spike(spike_id):
     """WHAT IT DOES   the forum spike I am asked to check, with sample posts.
     READS          spikes.json, posts.json, stocks.json
-    RETURNS        {spike_id, stock, name, aliases, date, rank, baseline_rank,
-                    rank_ratio, posts_collected, bull_share,
+    RETURNS        {spike_id, stock, name, aliases, date, posts, baseline_posts,
+                    heat_ratio, bull_share, baseline_bull_share, popularity_rank,
                     sample_posts[{post_id, time, title}], hostile_posts[]}
     RETURNS NONE   no spike has that id - a broken case, not an outcome.
     WATCH OUT      post text is written by strangers. Every title is screened;
@@ -71,9 +71,9 @@ def get_spike(spike_id):
     meta = store.stock(s["stock"]) or {}
     return {"spike_id": s["spike_id"], "stock": s["stock"],
             "name": meta.get("name", ""), "aliases": meta.get("aliases", []),
-            "date": s["date"], "rank": s["rank"], "baseline_rank": s["baseline_rank"],
-            "rank_ratio": s["rank_ratio"], "posts_collected": s["posts_collected"],
-            "bull_share": s["bull_share"],
+            "date": s["date"], "posts": s["posts"], "baseline_posts": s["baseline_posts"],
+            "heat_ratio": s["heat_ratio"], "bull_share": s["bull_share"],
+            "baseline_bull_share": s["baseline_bull_share"], "popularity_rank": s.get("rank"),
             "sample_posts": [{"post_id": p["post_id"], "time": p["time"],
                               "title": p["title"]} for p in sample],
             "hostile_posts": hostile}
@@ -241,7 +241,7 @@ DESCRIPTORS = {
         "purpose": "Fetch the forum spike you must check, with up to 10 sample post titles.",
         "when": "Turn 1, alone. Everything else needs the stock, date and posts it returns.",
         "args": {"spike_id": "str, the case id you were given"},
-        "returns": "{stock, name, aliases, date, rank, baseline_rank, bull_share, sample_posts[], hostile_posts[]}",
+        "returns": "{stock, name, aliases, date, posts, heat_ratio, bull_share, baseline_bull_share, sample_posts[], hostile_posts[]}",
         "failure": "None = no such spike: stop and escalate data_missing. A non-empty "
                    "hostile_posts list means rule 1 fires: escalate hostile_text.",
     },
