@@ -40,7 +40,9 @@ Live results are written to `results/results_live_<model>.json`, with token coun
 ```bash
 pip install -r requirements.txt
 # 1. edit data/watchlist.json
-python3 -m collectors.guba 600519 2025-10-01 2026-09-30          # per stock, 12 months
+python3 -m collectors.market_data hot_rank 600519 000858          # popularity rank, ~1 year
+python3 -m pipeline.candidates                                   # candidate spike days
+python3 -m collectors.guba days                                  # forum posts on those days
 python3 -m collectors.market_data cninfo 600519 2025-09-01 2026-09-30
 python3 -m collectors.market_data prices 600519 2025-08-01 2026-10-31
 python3 -m collectors.market_data news 600519 000858             # latest items only

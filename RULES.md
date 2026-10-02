@@ -4,15 +4,19 @@ Fixed before any agent result was graded. Every threshold is mirrored in `core/c
 
 ## 1. What counts as a spike (code)
 
-A stock-day is a spike when all three hold:
+Two stages. Stage 1 uses Eastmoney's daily popularity rank (one year per stock, one request); stage 2 uses the forum posts collected for that day.
 
-| Condition | Threshold |
-|---|---|
-| Posts that day vs mean of the previous 20 days | ≥ 3.0× |
-| Bullish share vs its 20-day mean | ≥ +20 percentage points |
-| Posts that day | ≥ 30 |
+| Stage | Condition | Threshold |
+|---|---|---|
+| 1 | Rank that day | ≤ 200 |
+| 1 | Median rank of the previous 20 days ÷ rank that day | ≥ 3.0 |
+| 1 | First day of an episode | no jump in the previous 5 trading days |
+| 2 | Posts collected that day | ≥ 30 |
+| 2 | Bullish share = bullish / (bullish + bearish), from the sentiment model | ≥ 60% |
 
-Bullish share = bullish / (bullish + bearish) posts, from the sentiment model; uncertain and neutral posts are excluded. At least 10 prior days are required.
+Uncertain and neutral posts are excluded from the share. Candidates failing stage 2 are kept in `data/snapshot/rejected_candidates.json`.
+
+*Change log:* the first version counted posts per day (≥ 3× the 20-day mean). Counting requires every post of the year, which the forum's access check does not allow; the popularity rank replaced it on 2026-10-02, before any spike was labelled or any agent run graded.
 
 ## 2. How a spike is decided (agent)
 

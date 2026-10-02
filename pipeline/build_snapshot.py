@@ -7,11 +7,11 @@ Turns data/raw/*.jsonl into data/snapshot/*.json (the only files the
 agent's tools read), and writes the work queue spikes.json.
 
 Spike rule (thresholds from RULES.md, fixed before results were seen):
-    posts_today      >= SPIKE_HEAT_RATIO x mean(posts, previous 20 days)
-    bull_share_today >= mean(bull_share, previous 20 days) + SPIKE_BULL_SHIFT
-    posts_today      >= SPIKE_MIN_POSTS
-bull_share = bullish posts / (bullish + bearish posts), using the trained
-sentiment model; "uncertain" and neutral posts are not counted.
+    stage 1  attention jump on the popularity rank (pipeline/candidates.py)
+    stage 2  that day's collected posts: at least SPIKE_MIN_POSTS, and
+             bullish / (bullish + bearish) >= SPIKE_BULL_SHARE_MIN
+             (sentiment from the trained model; uncertain and neutral
+             posts are not counted)
 
 List pages also carry posts from other bars and site-promoted articles.
 Dropped: bar_code naming another stock, and promoted posts (no bar_code,
@@ -31,7 +31,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from core import config  # noqa: E402
-from pipeline import sentiment  # noqa: E402
+from pipeline import candidates, sentiment  # noqa: E402
 
 RAW = os.path.join(ROOT, "data", "raw")
 SNAP = os.path.join(ROOT, "data", "snapshot")
@@ -76,32 +76,29 @@ def main(date_from, date_to):
     for p in posts:
         by_day[(p["stock"], p["time"][:10])].append(p)
 
-    spikes, used_posts = [], set()
-    for code in watch:
-        days = sorted(d for (c, d) in by_day if c == code)
-        hist = []
-        for d in days:
-            ps = by_day[(code, d)]
+    spikes, used_posts, rejected = [], set(), []
+    for code, jumps in candidates.attention_jumps().items():
+        if code not in watch:
+            continue
+        for j in jumps:
+            if not (date_from <= j["date"] <= date_to):
+                continue
+            ps = by_day.get((code, j["date"]), [])
             bull = sum(p["sentiment"] == "bull" for p in ps)
             bear = sum(p["sentiment"] == "bear" for p in ps)
-            share = bull / (bull + bear) if bull + bear else 0.5
-            base = hist[-config.SPIKE_BASELINE_DAYS:]
-            if len(base) >= 10:
-                base_n = statistics.mean(h[0] for h in base)
-                base_share = statistics.mean(h[1] for h in base)
-                if (len(ps) >= config.SPIKE_MIN_POSTS
-                        and len(ps) >= config.SPIKE_HEAT_RATIO * base_n
-                        and share >= base_share + config.SPIKE_BULL_SHIFT):
-                    sample = sorted(ps, key=lambda p: -p.get("reads", 0))[:10]
-                    used_posts.update(p["post_id"] for p in sample)
-                    spikes.append({"spike_id": "SPK-%s-%s" % (code, d.replace("-", "")),
-                                   "stock": code, "date": d, "posts_today": len(ps),
-                                   "baseline_posts": round(base_n, 1),
-                                   "heat_ratio": round(len(ps) / base_n, 2) if base_n else None,
-                                   "bull_share": round(share, 3),
-                                   "baseline_bull_share": round(base_share, 3),
-                                   "sample_post_ids": [p["post_id"] for p in sample]})
-            hist.append((len(ps), share))
+            share = bull / (bull + bear) if bull + bear else 0.0
+            if len(ps) < config.SPIKE_MIN_POSTS or share < config.SPIKE_BULL_SHARE_MIN:
+                rejected.append({"stock": code, "date": j["date"], "posts": len(ps),
+                                 "bull_share": round(share, 3)})
+                continue
+            sample = sorted(ps, key=lambda p: -p.get("reads", 0))[:10]
+            used_posts.update(p["post_id"] for p in sample)
+            spikes.append({"spike_id": "SPK-%s-%s" % (code, j["date"].replace("-", "")),
+                           "stock": code, "date": j["date"],
+                           "rank": j["rank"], "baseline_rank": j["baseline_rank"],
+                           "rank_ratio": j["rank_ratio"], "posts_collected": len(ps),
+                           "bull_share": round(share, 3),
+                           "sample_post_ids": [p["post_id"] for p in sample]})
 
     _dump("spikes.json", spikes)
     _dump("posts.json", [{"post_id": p["post_id"], "stock": p["stock"], "time": p["time"],
@@ -118,18 +115,8 @@ def main(date_from, date_to):
     _dump("stocks.json", {c: {"name": w["name"], "aliases": w.get("aliases", []),
                               "is_st": w.get("is_st", False)} for c, w in watch.items()})
 
-    daily = defaultdict(int)
-    for (c, d), ps in by_day.items():
-        daily[c] += len(ps)
-    print("posts in window: %d | spikes detected: %d" % (len(posts), len(spikes)))
+    _dump("rejected_candidates.json", rejected)
+    print("posts in window: %d | candidates: %d | spikes kept: %d | rejected: %d"
+          % (len(posts), len(spikes) + len(rejected), len(spikes), len(rejected)))
     for c in watch:
-        n_days = len([1 for (cc, _) in by_day if cc == c])
-        print("  %s %-6s posts/day %.0f  spikes %d" % (c, watch[c]["name"], daily[c] / max(n_days, 1),
-                                                       sum(s["stock"] == c for s in spikes)))
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print(__doc__)
-        sys.exit(1)
-    main(sys.argv[1], sys.argv[2])
+        print("  %s %-6s spikes %d" % (c, watch[c]["name"], sum(s["stock"] == c for s in spikes)))
