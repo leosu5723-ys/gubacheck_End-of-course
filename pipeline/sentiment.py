@@ -1,7 +1,8 @@
 """
 GubaCheck - FORUM POST SENTIMENT (bullish / bearish / neutral)
 =========================================================================
-    python3 -m pipeline.sentiment sample 300     write data/labels/to_label.csv
+    python3 -m pipeline.sentiment sample 300     write data/labels/to_label.csv (human test set)
+    python3 -m pipeline.sentiment sample_llm 3000  write llm_part*.csv (LLM-labelled training set)
     python3 -m pipeline.sentiment eval           compare classifiers on the labels
     python3 -m pipeline.sentiment eval --llm     ... plus an LLM few-shot (costs money)
     python3 -m pipeline.sentiment train          fit the chosen model on all labels
@@ -11,8 +12,11 @@ is a short title, and it runs over every post every day. That is the job
 narrow ML is cheap and good at; the LLM few-shot is the rented
 comparison, and the cost per 1,000 posts of each is reported.
 
-Compared, on the same held-out split (the LATEST 30% of labelled posts by
-time, so the test set is never older than the training set):
+Design: the 300 human-labelled posts are the TEST set and are never
+trained on. Training data is 3,000 other posts labelled by an LLM with
+the prompt in data/labels/LLM_LABEL_PROMPT.md (an LLM used as a labeller,
+measured: the same LLM also labels the 300 test titles blind, and its
+agreement with the human labels is reported). Compared on the human set:
     majority     always the most common class        - the floor
     lexicon      bull/bear keyword counts           - the non-AI baseline
     tfidf_lr     character 1-3 grams + logistic regression
@@ -51,8 +55,8 @@ def lexicon(title):
 
 
 def load_labels():
-    with open(LABELS, encoding="utf-8-sig") as fh:
-        rows = [r for r in csv.DictReader(fh) if r.get("label") in CLASSES]
+    """Human labels (the gold test set), oldest first."""
+    rows = [r for r in _read_labelled(LABELS) if r["label"] in CLASSES]
     rows.sort(key=lambda r: r["time"])
     return rows
 
@@ -107,21 +111,45 @@ def macro_f1(gold, pred):
     return round(f1_score(gold, pred, labels=CLASSES, average="macro", zero_division=0), 4)
 
 
+def _read_labelled(path):
+    with open(path, encoding="utf-8-sig") as fh:
+        rows = [r for r in csv.DictReader(fh)]
+    for r in rows:
+        r["label"] = (r.get("label") or "").strip().lower()
+    return rows
+
+
+def load_llm_train():
+    """LLM-labelled training rows from data/labels/llm_done/llm_part*.csv."""
+    import glob
+    rows = []
+    for f in sorted(glob.glob(os.path.join(ROOT, "data", "labels", "llm_done", "llm_part*.csv"))):
+        rows += [r for r in _read_labelled(f) if r["label"] in CLASSES]
+    return rows
+
+
 def cmd_eval(use_llm=False):
-    rows = load_labels()
-    train, test = split(rows)
+    """Train on LLM labels, test on ALL human labels (none used for training).
+    Falls back to a time split of the human labels if no LLM labels exist."""
+    human = load_labels()
+    train = load_llm_train()
+    design = "train: LLM-labelled posts; test: all human-labelled posts"
+    test = human
+    if not train:
+        train, test = split(human)
+        design = "train/test: time split of human labels (no LLM labels found)"
     gold = [r["label"] for r in test]
     titles = [r["title"] for r in test]
     majority = max(CLASSES, key=lambda c: sum(r["label"] == c for r in train))
-    report = {"n_train": len(train), "n_test": len(test),
-              "test_period": [test[0]["time"][:10], test[-1]["time"][:10]] if test else None,
+    report = {"design": design, "n_train": len(train), "n_test": len(test),
+              "class_counts_train": {c: sum(r["label"] == c for r in train) for c in CLASSES},
               "class_counts_test": {c: gold.count(c) for c in CLASSES}, "methods": {}}
     report["methods"]["majority"] = {"macro_f1": macro_f1(gold, [majority] * len(gold))}
     report["methods"]["lexicon"] = {"macro_f1": macro_f1(gold, [lexicon(t) for t in titles])}
 
     model = fit_tfidf(train)
     raw = list(model.predict(titles))
-    report["methods"]["tfidf_lr"] = {"macro_f1": macro_f1(gold, raw)}
+    report["methods"]["tfidf_lr"] = {"macro_f1": macro_f1(gold, raw), "usd_per_1000_posts": 0.0}
     pa = predict(model, titles)
     answered = [(g, p) for g, (p, _) in zip(gold, pa) if p != "uncertain"]
     abstained = [(g, r) for g, (p, _), r in zip(gold, pa, raw) if p == "uncertain"]
@@ -132,16 +160,27 @@ def cmd_eval(use_llm=False):
         "error_rate_abstained_if_forced": round(sum(g != r for g, r in abstained) / len(abstained), 4) if abstained else None,
         "macro_f1_answered_only": macro_f1([g for g, _ in answered], [p for _, p in answered]) if answered else None,
     }
+
+    # The external LLM that produced the training labels, judged on the human set.
+    check = os.path.join(ROOT, "data", "labels", "llm_done", "llm_check_300.csv")
+    if os.path.exists(check):
+        llm = {r["post_id"]: r["label"] for r in _read_labelled(check)}
+        pairs = [(r["label"], llm.get(r["post_id"], "")) for r in test]
+        got = [p if p in CLASSES else "neutral" for _, p in pairs]
+        report["methods"]["llm_labeller_direct"] = {
+            "macro_f1": macro_f1(gold, got),
+            "missing_or_invalid": sum(1 for _, p in pairs if p not in CLASSES),
+            "confusion_gold_by_llm": {g: {c: sum(1 for x, y in zip(gold, got) if x == g and y == c)
+                                          for c in CLASSES} for g in CLASSES}}
     if use_llm:
         sys.path.insert(0, ROOT)
         from core import config
         labels, tin, tout = llm_fewshot(titles)
         cost = tin / 1e6 * config.PRICE_IN + tout / 1e6 * config.PRICE_OUT
-        report["methods"]["llm_fewshot"] = {
+        report["methods"]["llm_fewshot_openrouter"] = {
             "macro_f1": macro_f1(gold, labels), "model": config.MODEL,
             "tokens_in": tin, "tokens_out": tout,
             "usd_per_1000_posts": round(1000 * cost / len(titles), 4)}
-    report["methods"]["tfidf_lr"]["usd_per_1000_posts"] = 0.0
     os.makedirs(os.path.join(ROOT, "results"), exist_ok=True)
     with open(os.path.join(ROOT, "results", "sentiment_eval.json"), "w", encoding="utf-8") as fh:
         json.dump(report, fh, ensure_ascii=False, indent=2)
@@ -149,7 +188,8 @@ def cmd_eval(use_llm=False):
 
 
 def cmd_train():
-    model = fit_tfidf(load_labels())
+    """Final model: LLM-labelled training rows if present, else human labels."""
+    model = fit_tfidf(load_llm_train() or load_labels())
     os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
     with open(MODEL_PATH, "wb") as fh:
         pickle.dump(model, fh)
@@ -185,10 +225,65 @@ def cmd_sample(n):
     print("wrote %d rows to %s - label them per LABEL_RULES.md, save as labelled.csv" % (len(pick), out))
 
 
+def cmd_sample_llm(n, part_size=500):
+    """Training sheet for LLM labelling: n own-bar posts, equal per stock,
+    spread over months, EXCLUDING every post in the human test sheet.
+    Also writes llm_check_300.csv: the human-test titles, shuffled and
+    without labels, so the same LLM's accuracy can be measured."""
+    import collections
+    labels_dir = os.path.join(ROOT, "data", "labels")
+    with open(os.path.join(labels_dir, "to_label.csv"), encoding="utf-8-sig") as fh:
+        test_rows = list(csv.DictReader(fh))
+    exclude = {r["post_id"] for r in test_rows}
+    with open(os.path.join(ROOT, "data", "watchlist.json"), encoding="utf-8") as fh:
+        codes = [w["code"] for w in json.load(fh)]
+    rng = random.Random(62010)
+    pick = []
+    for code in codes:
+        by_month = collections.defaultdict(list)
+        with open(os.path.join(ROOT, "data", "raw", "guba_%s.jsonl" % code), encoding="utf-8") as fh:
+            for line in fh:
+                p = json.loads(line)
+                if p.get("bar_code") == code and p["title"].strip() and str(p["post_id"]) not in exclude:
+                    by_month[p["time"][:7]].append(p)
+        months = sorted(by_month)
+        quota = n // len(codes)
+        # spread the quota over months; a short month (e.g. the 2 days of
+        # 2026-10) gives what it has and the rest is redistributed
+        taken = {m: 0 for m in months}
+        while sum(taken.values()) < quota:
+            progress = False
+            for m in months:
+                if sum(taken.values()) < quota and taken[m] < len(by_month[m]):
+                    taken[m] += 1
+                    progress = True
+            if not progress:
+                break
+        for m in months:
+            pick += rng.sample(by_month[m], taken[m])
+    rng.shuffle(pick)
+    for k in range(0, len(pick), part_size):
+        path = os.path.join(labels_dir, "llm_part%d.csv" % (k // part_size + 1))
+        with open(path, "w", encoding="utf-8-sig", newline="") as fh:
+            w = csv.writer(fh)
+            w.writerow(["post_id", "title", "label"])
+            for p in pick[k:k + part_size]:
+                w.writerow([p["post_id"], p["title"], ""])
+    check = [(r["post_id"], r["title"]) for r in test_rows]
+    rng.shuffle(check)
+    with open(os.path.join(labels_dir, "llm_check_300.csv"), "w", encoding="utf-8-sig", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["post_id", "title", "label"])
+        w.writerows([pid, t, ""] for pid, t in check)
+    print("wrote %d rows in %d parts + llm_check_300.csv" % (len(pick), (len(pick) + part_size - 1) // part_size))
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "sample":
         cmd_sample(int(sys.argv[2]) if len(sys.argv) > 2 else 300)
+    elif cmd == "sample_llm":
+        cmd_sample_llm(int(sys.argv[2]) if len(sys.argv) > 2 else 3000)
     elif cmd == "eval":
         cmd_eval("--llm" in sys.argv)
     elif cmd == "train":
