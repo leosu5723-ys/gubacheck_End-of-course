@@ -30,7 +30,8 @@ The repository runs end to end from `data/snapshot/` without the raw files.
 
 1. A 300-post sheet was drawn (10 stocks × 12 months). The first `labelled.csv` committed for it (commit e05de8c, described there as human labels) **was produced by an LLM, not by hand**. A blind LLM check later agreed with it on 300 of 300 posts, which exposed the problem. That file and the baseline computed from it were withdrawn.
 2. I then labelled **99 posts by hand** (the first 99 of the sheet by date, 2025-10-03 to 2026-01-11). Seven I could not decide and marked `unsure`; they are excluded from scoring and reported separately. The other 201 posts of the sheet are unlabelled.
-3. Many titles cannot be labelled from the text alone: "300见，别怪我说话难听" is bullish or bearish depending on whether the price that day was below or above 300. Labels were assigned without looking up the price, so they carry this ambiguity.
+3. The LLM-vs-human check uses GPT-6's labels from step 1 for the 99 hand-labelled posts. Those labels predate the hand labels, so the model never saw them. (A later "blind check" file was contaminated: the labelling tool could read the hand-label file in the same folder. It is not used.)
+4. Many titles cannot be labelled from the text alone: "300见，别怪我说话难听" is bullish or bearish depending on whether the price that day was below or above 300. Labels were assigned without looking up the price, so they carry this ambiguity.
 
 ## Known limitations
 
