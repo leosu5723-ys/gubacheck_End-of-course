@@ -51,7 +51,7 @@ def lexicon(title):
 
 
 def load_labels():
-    with open(LABELS, encoding="utf-8") as fh:
+    with open(LABELS, encoding="utf-8-sig") as fh:
         rows = [r for r in csv.DictReader(fh) if r.get("label") in CLASSES]
     rows.sort(key=lambda r: r["time"])
     return rows
@@ -157,26 +157,27 @@ def cmd_train():
 
 
 def cmd_sample(n):
-    """Stratified sample of posts across stocks and days, for hand labelling."""
-    posts = []
+    """Hand-labelling sample: equal numbers per stock, spread evenly over the
+    months of the year, own-bar posts only, fixed seed (6201)."""
+    import collections
     raw = os.path.join(ROOT, "data", "raw")
-    for f in sorted(os.listdir(raw)):
-        if f.startswith("guba_") and f.endswith(".jsonl"):
-            with open(os.path.join(raw, f), encoding="utf-8") as fh:
-                posts += [json.loads(line) for line in fh]
-    random.seed(6201)
-    random.shuffle(posts)
-    by_stock = {}
-    for p in posts:
-        by_stock.setdefault(p["stock"], []).append(p)
-    pick, i = [], 0
-    while len(pick) < n and any(by_stock.values()):
-        for code in list(by_stock):
-            if by_stock[code] and len(pick) < n:
-                pick.append(by_stock[code].pop())
-        i += 1
+    with open(os.path.join(ROOT, "data", "watchlist.json"), encoding="utf-8") as fh:
+        codes = [w["code"] for w in json.load(fh)]
+    rng = random.Random(6201)
+    per_stock = n // len(codes)
+    pick = []
+    for code in codes:
+        by_month = collections.defaultdict(list)
+        with open(os.path.join(raw, "guba_%s.jsonl" % code), encoding="utf-8") as fh:
+            for line in fh:
+                p = json.loads(line)
+                if p.get("bar_code") == code and p["title"].strip():
+                    by_month[p["time"][:7]].append(p)
+        months = sorted(by_month)
+        for i in range(per_stock):
+            pick.append(rng.choice(by_month[months[i % len(months)]]))
     out = os.path.join(ROOT, "data", "labels", "to_label.csv")
-    with open(out, "w", encoding="utf-8", newline="") as fh:
+    with open(out, "w", encoding="utf-8-sig", newline="") as fh:   # BOM so Excel shows Chinese
         w = csv.writer(fh)
         w.writerow(["post_id", "stock", "time", "title", "label", "note"])
         for p in sorted(pick, key=lambda p: p["time"]):
