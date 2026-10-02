@@ -1,19 +1,32 @@
 # Label Rules for Forum Post Titles
 
-Written before any model was trained. One label per title: `bull`, `bear` or `neutral`. Label the **author's stance on this stock's price**, not the news.
+Written before any model was trained. **Every title gets exactly one of three labels: `bull`, `bear` or `neutral`.** Label the author's stance on this stock's price over the next few days, not whether the news is good or bad.
+
+## The three labels
+
+| Label | Use when the author… | Examples |
+|---|---|---|
+| `bull` | expects the price to rise, or says to buy / hold | 明天涨停，满仓干 · 启动吧，大船宝宝 · 利空出尽，该抄底了 |
+| `bear` | expects the price to fall, or says to sell / avoid | 快跑，要暴雷 · 又诱多了一批 · 利好兑现就是出货 |
+| `neutral` | asks a question, states a fact, posts an ad, is off-topic, or you cannot tell in 10 seconds | 今天成交量多少 · 分红什么时候到账 |
+
+## Tricky cases (still one of the three labels)
 
 | Situation | Label | Example |
 |---|---|---|
-| Expects the price to rise, says to buy or hold | bull | 明天涨停，满仓干 / 主升浪来了 |
-| Expects the price to fall, says to sell or avoid | bear | 快跑，要暴雷 / 割肉走人 |
-| Question, fact, data, off-topic, no stance | neutral | 今天成交量多少 / 分红什么时候到账 |
-| **Sarcasm**: literal words opposite to stance | the **real** stance | "真是好股票，又套我三年" → bear |
-| Good news, author bearish ("利好出尽") | bear | 利好兑现就是出货 |
-| Bad news, author bullish ("利空出尽") | bull | 利空出尽，该抄底了 |
-| Mixed: short-term down, long-term up | the stance about the **next few days** | 短期还要跌，长期看好 → bear |
-| Pure advertising / spam / addressed to bots | neutral (note `spam`) | |
-| Cannot decide after 10 seconds | neutral (note `unsure`) | |
+| Sarcasm: words say one thing, stance is the opposite | the real stance | 真是好股票，又套我三年 → `bear` |
+| Good news, but the author is negative | `bear` | 利好兑现就是出货 |
+| Bad news, but the author is positive | `bull` | 利空出尽，该抄底了 |
+| Short-term down, long-term up | stance for the next few days → usually `bear` | 短期还要跌，长期看好 |
+| Spam, ads, posts addressed to bots | `neutral` | |
+| Unsure after 10 seconds | `neutral` | |
 
-Slang: 吃肉 / 上车 / 起飞 / 格局 = bull; 埋了 / 站岗 / 韭菜 / 核按钮 = bear.
+Slang: 吃肉 / 上车 / 起飞 / 格局 / 启动 = `bull`; 埋了 / 站岗 / 韭菜 / 核按钮 / 诱多 = `bear`.
 
-Process: label the whole file in one sitting, without looking at any model output. A second person labels a random 50 titles independently; agreement (Cohen's kappa) is reported in EVALS.md.
+## The `note` column (optional)
+
+Leave it empty, or write `unsure` / `spam` if you want to mark a hard case. It is never used as a label; it only lets the report look at hard cases separately.
+
+## Process
+
+Label the whole file in one sitting, without looking at any model output. Save as `data/labels/labelled.csv` (CSV UTF-8).
