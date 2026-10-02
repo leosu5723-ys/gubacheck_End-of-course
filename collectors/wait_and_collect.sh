@@ -1,13 +1,16 @@
 #!/bin/sh
-# Waits for the forum's identity check to clear, then collects candidate-day
-# posts. If the check reappears the collector stops (exit 2); this script
-# waits 15 minutes and resumes. Already-collected days are skipped.
+# Collects forum posts within the site's limits: candidate spike days first,
+# then continuous history for all stocks in turn. Whenever the site serves
+# its identity check the collector stops (exit 2); this script waits 15
+# minutes and resumes from where it stopped. It never bypasses the check.
 cd "$(dirname "$0")/.." || exit 1
-for attempt in $(seq 1 24); do
-  .venv/bin/python -u -m collectors.guba days
-  code=$?
-  [ $code -eq 0 ] && echo "COLLECTION COMPLETE" && exit 0
-  echo "attempt $attempt stopped (exit $code) at $(date '+%H:%M'); waiting 15 min"
+stage=days
+for attempt in $(seq 1 200); do
+  if [ "$stage" = days ]; then
+    .venv/bin/python -u -m collectors.guba days && stage=backfill && continue
+  else
+    .venv/bin/python -u -m collectors.guba backfill 2025-10-01 && echo "COLLECTION COMPLETE" && exit 0
+  fi
+  echo "attempt $attempt ($stage) stopped at $(date '+%m-%d %H:%M'); waiting 15 min"
   sleep 900
 done
-echo "GAVE UP after 24 attempts"; exit 1
