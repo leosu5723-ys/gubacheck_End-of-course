@@ -49,8 +49,8 @@ def build():
     spikes = []
     for pid, d in ((1, "2026-08-20"), (2, "2026-08-25"), (3, "2026-08-27"), (4, "2026-09-01")):
         spikes.append({"spike_id": "SPK-%s-%s" % (CODE, d.replace("-", "")), "stock": CODE, "date": d,
-                       "rank": 20, "baseline_rank": 150.0, "rank_ratio": 7.5,
-                       "posts_collected": 120, "bull_share": 0.8, "sample_post_ids": [pid]})
+                       "posts": 120, "baseline_posts": 30.0, "heat_ratio": 4.0,
+                       "bull_share": 0.8, "baseline_bull_share": 0.5, "rank": 20, "sample_post_ids": [pid]})
     cninfo = [
         {"ann_id": "F1", "stock": CODE, "name": "示例股份", "date": "2026-08-19",
          "title": "示例股份关于以集中竞价交易方式回购公司股份方案的公告", "url": ""},

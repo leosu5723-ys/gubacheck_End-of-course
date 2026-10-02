@@ -46,15 +46,17 @@ AUTONOMY = "confirm"          # "suggest" | "confirm" | "act"
 # -------------------------------------------------------------------------
 # DECISION RULES (mirrors RULES.md - edit RULES.md first)
 # -------------------------------------------------------------------------
-# Spike detection (two stages)
-#  1. attention jump, from Eastmoney's daily popularity rank
-SPIKE_MAX_RANK = 200          # rank that day must be in the top 200
-SPIKE_RANK_RATIO = 3.0        # median rank of the previous 20 days / rank today
-SPIKE_BASELINE_DAYS = 20
-EPISODE_GAP_DAYS = 5          # jumps within 5 trading days = one episode
-#  2. bullish forum posts on that day
-SPIKE_MIN_POSTS = 30          # need at least 30 posts collected that day
-SPIKE_BULL_SHARE_MIN = 0.60   # bullish / (bullish + bearish) >= 60%
+# Spike detection (forum activity, the full-year post data)
+SPIKE_HEAT_RATIO = 3.0        # posts today >= 3x the mean of the previous 20 days
+SPIKE_BULL_SHIFT = 0.20       # bullish share >= its 20-day mean + 20 points
+SPIKE_MIN_POSTS = 30          # ignore thin days
+SPIKE_BASELINE_DAYS = 20      # trailing window (calendar days with posts)
+SPIKE_MIN_HISTORY = 10        # need at least 10 prior days for a baseline
+EPISODE_GAP_DAYS = 5          # spikes within 5 days of a previous spike = same episode
+
+# Cross-check only: Eastmoney popularity-rank jumps (pipeline/candidates.py)
+SPIKE_MAX_RANK = 200
+SPIKE_RANK_RATIO = 3.0
 
 # Evidence search
 SEARCH_WINDOW_MAX_DAYS = 30   # a tool refuses wider windows (stale evidence)

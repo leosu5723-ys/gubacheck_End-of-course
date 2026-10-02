@@ -4,19 +4,21 @@ Fixed before any agent result was graded. Every threshold is mirrored in `core/c
 
 ## 1. What counts as a spike (code)
 
-Two stages. Stage 1 uses Eastmoney's daily popularity rank (one year per stock, one request); stage 2 uses the forum posts collected for that day.
+A stock-day is a spike when all hold:
 
-| Stage | Condition | Threshold |
-|---|---|---|
-| 1 | Rank that day | ≤ 200 |
-| 1 | Median rank of the previous 20 days ÷ rank that day | ≥ 3.0 |
-| 1 | First day of an episode | no jump in the previous 5 trading days |
-| 2 | Posts collected that day | ≥ 30 |
-| 2 | Bullish share = bullish / (bullish + bearish), from the sentiment model | ≥ 60% |
+| Condition | Threshold |
+|---|---|
+| Own-bar posts that day vs mean of the previous 20 days | ≥ 3.0× |
+| Bullish share vs its 20-day mean | ≥ +20 percentage points |
+| Posts that day | ≥ 30 |
+| Prior days available for the baseline | ≥ 10 |
+| First day of an episode | no spike in the previous 5 days |
 
-Uncertain and neutral posts are excluded from the share. Candidates failing stage 2 are kept in `data/snapshot/rejected_candidates.json`.
+Bullish share = bullish / (bullish + bearish) posts, labelled by the sentiment model (fine-tuned RoBERTa; TF-IDF fallback).
 
-*Change log:* the first version counted posts per day (≥ 3× the 20-day mean). Counting requires every post of the year, which the forum's access check does not allow; the popularity rank replaced it on 2026-10-02, before any spike was labelled or any agent run graded.
+Cross-check (not part of the rule): Eastmoney's daily popularity rank. A rank jump is rank ≤ 200 and ≥ 3× better than its 20-day median. `results/spike_validation.json` reports the correlation between daily post counts and popularity, and how many forum spikes fall within 2 days of a rank jump.
+
+*Change log.* 2026-10-02: the forum blocked page-by-page collection, so spikes were temporarily defined from the popularity rank plus posts collected on candidate days. 2026-10-03: the full-year forum dataset became available and the rule returned to the original post-count definition above. Both changes were made before any spike was labelled or any agent run graded.
 
 ## 2. How a spike is decided (agent)
 
