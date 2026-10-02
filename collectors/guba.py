@@ -79,10 +79,13 @@ class _Writer:
     def __init__(self, code):
         os.makedirs(RAW, exist_ok=True)
         self.path = os.path.join(RAW, "guba_%s.jsonl" % code)
-        self.seen = set()
+        self.seen, self.per_day = set(), {}
         if os.path.exists(self.path):
             with open(self.path, encoding="utf-8") as fh:
-                self.seen = {json.loads(line)["post_id"] for line in fh}
+                for line in fh:
+                    r = json.loads(line)
+                    self.seen.add(r["post_id"])
+                    self.per_day[r["time"][:10]] = self.per_day.get(r["time"][:10], 0) + 1
         self.fh = open(self.path, "a", encoding="utf-8")
         self.code, self.kept = code, 0
 
@@ -121,6 +124,8 @@ def collect_days(code, days):
         return probes[page]
 
     for day in sorted(days, reverse=True):
+        if w.per_day.get(day, 0) >= 30:          # collected in an earlier run
+            continue
         # newest-first: find the first page whose median day is <= `day`
         known_newer = [p for p, d in probes.items() if d > day]
         lo = max(known_newer) if known_newer else 1
