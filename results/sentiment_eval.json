@@ -118,6 +118,33 @@
           "neutral": 10
         }
       }
+    },
+    "bert_finetuned": {
+      "macro_f1": 0.7312,
+      "ci95": [
+        0.6216,
+        0.8231
+      ],
+      "accuracy": 0.7717,
+      "confusion_gold_by_pred": {
+        "bull": {
+          "bull": 24,
+          "bear": 4,
+          "neutral": 3
+        },
+        "bear": {
+          "bull": 4,
+          "bear": 38,
+          "neutral": 5
+        },
+        "neutral": {
+          "bull": 2,
+          "bear": 3,
+          "neutral": 9
+        }
+      },
+      "usd_per_1000_posts": 0.0,
+      "base_model": "hfl/chinese-roberta-wwm-ext"
     }
   },
   "abstention_tfidf": {
@@ -134,5 +161,15 @@
     "空间上3800点和时间上本月底哪个先到哪个就是底": "uncertain",
     "宁落，高升": "uncertain",
     "上午抛了立讯": "uncertain"
+  },
+  "abstention_bert": {
+    "threshold": 0.5,
+    "abstain_rate": 0.0326,
+    "error_rate_answered": 0.236
+  },
+  "aggregate_bullish_share": {
+    "true": 0.3974,
+    "bert_finetuned": 0.4,
+    "tfidf_lr": 0.3947
   }
 }
