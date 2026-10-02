@@ -5,3 +5,4 @@ data/raw/
 tests/fixture/
 .env
 .venv/
+data/labels/labelled_excel_export.csv
