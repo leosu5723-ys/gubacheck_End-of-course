@@ -128,59 +128,79 @@ def load_llm_train():
     return rows
 
 
+def bootstrap_ci(gold, pred, n=2000, seed=6201):
+    """95% interval of Macro-F1 over resampled test sets. With ~100 test
+    posts a single number hides a wide range; this shows it."""
+    rng = random.Random(seed)
+    idx = range(len(gold))
+    vals = []
+    for _ in range(n):
+        s = [rng.choice(idx) for _ in idx]
+        vals.append(macro_f1([gold[i] for i in s], [pred[i] for i in s]))
+    vals.sort()
+    return [vals[int(0.025 * n)], vals[int(0.975 * n)]]
+
+
 def cmd_eval(use_llm=False):
-    """Train on LLM labels, test on ALL human labels (none used for training).
-    Falls back to a time split of the human labels if no LLM labels exist."""
-    human = load_labels()
+    """Train on LLM labels, test on the hand-labelled posts (never trained on).
+    Posts I marked "unsure" are excluded from scoring and counted."""
+    all_human = [r for r in _read_labelled(LABELS) if r["label"] in CLASSES + ["unsure"]]
+    unsure = [r for r in all_human if r["label"] == "unsure"]
+    test = [r for r in all_human if r["label"] in CLASSES]
     train = load_llm_train()
-    design = "train: LLM-labelled posts; test: all human-labelled posts"
-    test = human
+    design = "train: LLM-labelled posts; test: hand-labelled posts (unsure excluded)"
     if not train:
-        train, test = split(human)
-        design = "train/test: time split of human labels (no LLM labels found)"
+        train, test = split(sorted(test, key=lambda r: r["time"]))
+        design = "train/test: time split of hand labels (no LLM labels found)"
     gold = [r["label"] for r in test]
     titles = [r["title"] for r in test]
     majority = max(CLASSES, key=lambda c: sum(r["label"] == c for r in train))
-    report = {"design": design, "n_train": len(train), "n_test": len(test),
-              "class_counts_train": {c: sum(r["label"] == c for r in train) for c in CLASSES},
-              "class_counts_test": {c: gold.count(c) for c in CLASSES}, "methods": {}}
-    report["methods"]["majority"] = {"macro_f1": macro_f1(gold, [majority] * len(gold))}
-    report["methods"]["lexicon"] = {"macro_f1": macro_f1(gold, [lexicon(t) for t in titles])}
-
+    preds = {"majority": [majority] * len(gold),
+             "lexicon": [lexicon(t) for t in titles]}
     model = fit_tfidf(train)
-    raw = list(model.predict(titles))
-    report["methods"]["tfidf_lr"] = {"macro_f1": macro_f1(gold, raw), "usd_per_1000_posts": 0.0}
-    pa = predict(model, titles)
-    answered = [(g, p) for g, (p, _) in zip(gold, pa) if p != "uncertain"]
-    abstained = [(g, r) for g, (p, _), r in zip(gold, pa, raw) if p == "uncertain"]
-    report["abstention"] = {
-        "threshold": ABSTAIN_BELOW,
-        "abstain_rate": round(len(abstained) / len(gold), 4) if gold else None,
-        "error_rate_answered": round(sum(g != p for g, p in answered) / len(answered), 4) if answered else None,
-        "error_rate_abstained_if_forced": round(sum(g != r for g, r in abstained) / len(abstained), 4) if abstained else None,
-        "macro_f1_answered_only": macro_f1([g for g, _ in answered], [p for _, p in answered]) if answered else None,
-    }
+    preds["tfidf_lr"] = list(model.predict(titles))
 
-    # The external LLM that produced the training labels, judged on the human set.
-    check = os.path.join(ROOT, "data", "labels", "llm_done", "llm_check_300.csv")
-    if os.path.exists(check):
-        llm = {r["post_id"]: r["label"] for r in _read_labelled(check)}
-        pairs = [(r["label"], llm.get(r["post_id"], "")) for r in test]
-        got = [p if p in CLASSES else "neutral" for _, p in pairs]
-        report["methods"]["llm_labeller_direct"] = {
-            "macro_f1": macro_f1(gold, got),
-            "missing_or_invalid": sum(1 for _, p in pairs if p not in CLASSES),
-            "confusion_gold_by_llm": {g: {c: sum(1 for x, y in zip(gold, got) if x == g and y == c)
-                                          for c in CLASSES} for g in CLASSES}}
+    check = sorted(__import__("glob").glob(os.path.join(ROOT, "data", "labels", "llm_done", "llm_check_99*.csv")))
+    if check:
+        llm = {r["post_id"]: r["label"] for r in _read_labelled(check[0])}
+        preds["llm_labeller_direct"] = [llm.get(r["post_id"]) if llm.get(r["post_id"]) in CLASSES
+                                        else "neutral" for r in test]
+    extra = {}
     if use_llm:
         sys.path.insert(0, ROOT)
         from core import config
         labels, tin, tout = llm_fewshot(titles)
+        preds["llm_fewshot_openrouter"] = labels
         cost = tin / 1e6 * config.PRICE_IN + tout / 1e6 * config.PRICE_OUT
-        report["methods"]["llm_fewshot_openrouter"] = {
-            "macro_f1": macro_f1(gold, labels), "model": config.MODEL,
-            "tokens_in": tin, "tokens_out": tout,
-            "usd_per_1000_posts": round(1000 * cost / len(titles), 4)}
+        extra["llm_fewshot_openrouter"] = {"model": config.MODEL, "tokens_in": tin, "tokens_out": tout,
+                                           "usd_per_1000_posts": round(1000 * cost / len(titles), 4)}
+    extra.setdefault("tfidf_lr", {})["usd_per_1000_posts"] = 0.0
+
+    report = {"design": design, "n_train": len(train), "n_test": len(test),
+              "n_unsure_excluded": len(unsure),
+              "test_period": [min(r["time"] for r in test)[:10], max(r["time"] for r in test)[:10]],
+              "class_counts_train": {c: sum(r["label"] == c for r in train) for c in CLASSES},
+              "class_counts_test": {c: gold.count(c) for c in CLASSES}, "methods": {}}
+    for name, pred in preds.items():
+        report["methods"][name] = dict({"macro_f1": macro_f1(gold, pred),
+                                        "ci95": bootstrap_ci(gold, pred),
+                                        "accuracy": round(sum(g == q for g, q in zip(gold, pred)) / len(gold), 4),
+                                        "confusion_gold_by_pred": {g: {c: sum(1 for x, y in zip(gold, pred) if x == g and y == c)
+                                                                       for c in CLASSES} for g in CLASSES}},
+                                       **extra.get(name, {}))
+    pa = predict(model, titles)
+    raw = preds["tfidf_lr"]
+    answered = [(g, p) for g, (p, _) in zip(gold, pa) if p != "uncertain"]
+    abstained = [(g, r) for g, (p, _), r in zip(gold, pa, raw) if p == "uncertain"]
+    report["abstention_tfidf"] = {
+        "threshold": ABSTAIN_BELOW,
+        "abstain_rate": round(len(abstained) / len(gold), 4) if gold else None,
+        "error_rate_answered": round(sum(g != p for g, p in answered) / len(answered), 4) if answered else None,
+        "error_rate_abstained_if_forced": round(sum(g != r for g, r in abstained) / len(abstained), 4) if abstained else None,
+    }
+    if unsure:
+        report["unsure_posts_model_says"] = {r["title"][:40]: q for r, (q, _) in
+                                             zip(unsure, predict(model, [u["title"] for u in unsure]))}
     os.makedirs(os.path.join(ROOT, "results"), exist_ok=True)
     with open(os.path.join(ROOT, "results", "sentiment_eval.json"), "w", encoding="utf-8") as fh:
         json.dump(report, fh, ensure_ascii=False, indent=2)
