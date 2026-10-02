@@ -20,12 +20,12 @@
 
 ## Input and output
 
-**Input:** one forum spike, detected by code (RULES.md): posts today ≥ 3× the 20-day mean, bullish share up ≥ 20 points, at least 30 posts. Example id `SPK-600519-20260918`.
+**Input:** one forum spike, detected by code (RULES.md): the stock's Eastmoney popularity rank jumps at least 3× against its 20-day median into the top 200, and at least 60% of that day's opinionated forum posts are bullish. Example id `SPK-601127-20260915`.
 
 **Output:** a decision record and a check card.
 
 ```
-SPK-xxxxxx-2026xxxx  [stock name]  posts x4.2, bullish 81% (base 52%)
+SPK-xxxxxx-2026xxxx  [stock name]  popularity rank 12 (20-day median 160), bullish 81%
 Forum claim : "下周公布重组"
 Official    : none in CNINFO 2026-09-04..09-18 (searched: 重组, 资产, 收购)
 Media       : CLS telegraph 09-17 "市场传闻…"   [news_id]
@@ -46,7 +46,7 @@ DECISION    : await_confirmation - awaiting a CNINFO 重大资产重组预案
  │ Guba posts (titles) ├──►│ sentiment: TF-IDF + LR       │   │ get_spike                     │   │ autonomy gate    │
  │ CNINFO announcements│   │  (vs lexicon, majority, LLM) │   │ ┌ search_cninfo   ┐ parallel  │   │ (my yes / no)    │
  │ CLS + EM news       ├──►│ spike detector (RULES.md)    ├──►│ │ search_news      │ one turn  ├──►│        │         │
- │ daily prices        │   │ frozen snapshot (JSON)       │   │ └ get_price_context┘          │   │ paper broker     │
+ │ prices, popularity  │   │ frozen snapshot (JSON)       │   │ └ get_price_context┘          │   │ paper broker     │
  └─────────────────────┘   └──────────────────────────────┘   │ retry search with new terms   │   │ (A-share rules)  │
      AKShare + own scraper      no model in the hot path      │ check_event_type (title rule) │   │ ledger.csv       │
                                                               │ rented LLM via OpenRouter:    │   └──────────────────┘
@@ -93,4 +93,4 @@ Targets were set before any result was seen (git history of this file).
 - **Intended use:** my own research and paper trading. **Not for:** real automated trading, advice to others, publishing rumour lists that name people.
 - **Silent failure:** an announcement about a different matter accepted as evidence. Detection: the check card always shows the evidence title; the judgement check reads every reason.
 - **Mitigations that are code, not disclaimers:** the autonomy gate, evidence-required orders, the 30-day search window, the hostile-text screen, step and budget caps, sentiment abstention.
-- **Frameworks:** OWASP Top 10 for LLM Applications (LLM01 prompt injection via forum text, LLM06 unbounded consumption, LLM08 system-prompt exposure); Singapore IMDA Model AI Governance Framework (human-in-the-loop at the action); PDPA (no user names or ids are stored); platform access limits respected (1 request / 1.5 s).
+- **Frameworks:** OWASP Top 10 for LLM Applications (LLM01 prompt injection via forum text, LLM06 unbounded consumption, LLM08 system-prompt exposure); Singapore IMDA Model AI Governance Framework (human-in-the-loop at the action); PDPA (no user names or ids are stored); platform access limits respected (sequential requests, 3 s apart; stop on the site's identity check).

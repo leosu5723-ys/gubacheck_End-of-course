@@ -4,13 +4,15 @@ GubaCheck - ANNOUNCEMENTS, NEWS AND PRICES (via AKShare, free)
     python3 -m collectors.market_data cninfo 600519 2026-06-01 2026-09-30
     python3 -m collectors.market_data prices 600519 2026-05-01 2026-10-30
     python3 -m collectors.market_data news   600519 000858 ...   (snapshot now)
+    python3 -m collectors.market_data hot_rank 600519 000858 ...
 
 Sources, all public and free, all through AKShare:
     cninfo   stock_zh_a_disclosure_report_cninfo   official disclosures
                                                    (CNINFO is the statutory
                                                    disclosure site of both
                                                    exchanges); full history
-    prices   stock_zh_a_hist (unadjusted)          daily bars
+    prices   stock_zh_a_hist (unadjusted)          daily bars (Sina fallback)
+    hot_rank stock_hot_rank_detail_em              daily popularity rank, ~1 year
     news     stock_info_global_cls                 CLS telegraph, latest ~20
              stock_info_global_em                  Eastmoney flash, latest ~200
              stock_news_em(code)                   per-stock news, latest ~10
@@ -111,6 +113,21 @@ def prices(code, date_from, date_to):
     _append("prices.jsonl", rows, "key")
 
 
+def hot_rank(code):
+    """Eastmoney popularity rank, one row per day, about one year of history.
+    Rank 1 = the most-watched stock on Eastmoney that day. One request per
+    stock replaces paging through a year of forum posts to count them."""
+    import akshare as ak
+    prefix = "SH" if code.startswith("6") else "BJ" if code.startswith(("8", "4", "92")) else "SZ"
+    df = _retry(lambda: ak.stock_hot_rank_detail_em(symbol=prefix + code))
+    if df is None:
+        print("hot_rank: FAILED for %s" % code)
+        return
+    rows = [{"key": "%s_%s" % (code, r["时间"]), "stock": code, "date": str(r["时间"])[:10],
+             "rank": int(r["排名"])} for _, r in df.iterrows() if str(r["排名"]) != "nan"]
+    _append("hot_rank.jsonl", rows, "key")
+
+
 def news(codes):
     import akshare as ak
     rows = []
@@ -144,6 +161,9 @@ if __name__ == "__main__":
         cninfo(*sys.argv[2:5])
     elif cmd == "prices":
         prices(*sys.argv[2:5])
+    elif cmd == "hot_rank":
+        for c in sys.argv[2:]:
+            hot_rank(c)
     elif cmd == "news":
         news(sys.argv[2:])
     else:
