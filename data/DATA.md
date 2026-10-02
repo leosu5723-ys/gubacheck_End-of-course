@@ -20,10 +20,17 @@ All sources are public and free. Collection code is in `collectors/`; the snapsh
 |---|---|---|
 | `data/raw/*.jsonl` | No (size, platform terms) | Everything collected, incl. the imported forum posts |
 | `data/snapshot/*.json` | Yes | Frozen subset the tools read: spikes, the sample posts of each spike, announcements, news, prices, stock names |
-| `data/labels/labelled.csv` | Yes | Hand-labelled post titles (bull / bear / neutral) |
+| `data/labels/labelled.csv` | Yes | 99 hand-labelled post titles (bull / bear / neutral / unsure) — the test set |
+| `data/labels/llm_part*.csv` + `llm_done/` | Yes | 3,000 other posts labelled by an LLM — the training set (prompt and model in LLM_LABEL_PROMPT.md) |
 | `data/labels/LABEL_RULES.md` | Yes | The rule sheet the labels follow |
 
 The repository runs end to end from `data/snapshot/` without the raw files.
+
+## Labels: what happened
+
+1. A 300-post sheet was drawn (10 stocks × 12 months). The first `labelled.csv` committed for it (commit e05de8c, described there as human labels) **was produced by an LLM, not by hand**. A blind LLM check later agreed with it on 300 of 300 posts, which exposed the problem. That file and the baseline computed from it were withdrawn.
+2. I then labelled **99 posts by hand** (the first 99 of the sheet by date, 2025-10-03 to 2026-01-11). Seven I could not decide and marked `unsure`; they are excluded from scoring and reported separately. The other 201 posts of the sheet are unlabelled.
+3. Many titles cannot be labelled from the text alone: "300见，别怪我说话难听" is bullish or bearish depending on whether the price that day was below or above 300. Labels were assigned without looking up the price, so they carry this ambiguity.
 
 ## Known limitations
 
@@ -31,6 +38,7 @@ The repository runs end to end from `data/snapshot/` without the raw files.
 - **News feeds keep no history.** Media coverage can only be evaluated for dates after daily collection started ([date]). Cases before that date can never reach `await_confirmation` through media, which the answer key reflects.
 - **Forum list pages include a few pinned and hot posts from other bars.** Posts whose bar_code names a different stock are dropped.
 - **Titles only.** Post bodies are not collected; sentiment is judged from titles.
+- **Test labels cover 2025-10 to 2026-01 only,** while training labels and spikes span the whole year.
 
 ## Forum access and how the full-year data was obtained
 
