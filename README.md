@@ -40,16 +40,16 @@ Live results are written to `results/results_live_<model>.json`, with token coun
 ```bash
 pip install -r requirements.txt
 # 1. edit data/watchlist.json
-python3 -m collectors.guba 600519 2026-06-01 2026-09-30          # per stock
-python3 -m collectors.market_data cninfo 600519 2026-05-01 2026-09-30
-python3 -m collectors.market_data prices 600519 2026-05-01 2026-10-31
+python3 -m collectors.guba 600519 2025-10-01 2026-09-30          # per stock, 12 months
+python3 -m collectors.market_data cninfo 600519 2025-09-01 2026-09-30
+python3 -m collectors.market_data prices 600519 2025-08-01 2026-10-31
 python3 -m collectors.market_data news 600519 000858             # latest items only
 # 2. label posts, train the sentiment model
 python3 -m pipeline.sentiment sample 300      # -> data/labels/to_label.csv
 python3 -m pipeline.sentiment eval            # after labelling -> results/sentiment_eval.json
 python3 -m pipeline.sentiment train           # -> results/sentiment_model.pkl
 # 3. freeze the snapshot and detect spikes
-python3 -m pipeline.build_snapshot 2026-06-01 2026-09-30
+python3 -m pipeline.build_snapshot 2025-10-01 2026-09-30
 ```
 
 Daily collection (the news feeds keep no history, so this is what builds the news archive): `python3 -m collectors.daily`, scheduled after the close.

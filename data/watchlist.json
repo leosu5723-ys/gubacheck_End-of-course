@@ -1,4 +1,12 @@
 [
-  {"code": "600519", "name": "贵州茅台", "aliases": ["茅台"]},
-  {"code": "000858", "name": "五粮液", "aliases": ["五粮"]}
+  {"code": "688256", "name": "寒武纪", "aliases": ["寒武纪-U", "寒王"], "is_st": false},
+  {"code": "601138", "name": "工业富联", "aliases": ["富联", "富士康"], "is_st": false},
+  {"code": "300308", "name": "中际旭创", "aliases": ["旭创", "易中天"], "is_st": false},
+  {"code": "300502", "name": "新易盛", "aliases": ["易盛", "易中天"], "is_st": false},
+  {"code": "300476", "name": "胜宏科技", "aliases": ["胜宏"], "is_st": false},
+  {"code": "601127", "name": "赛力斯", "aliases": ["问界", "小康股份"], "is_st": false},
+  {"code": "600418", "name": "江淮汽车", "aliases": ["江淮", "尊界"], "is_st": false},
+  {"code": "601238", "name": "广汽集团", "aliases": ["广汽", "埃安"], "is_st": false},
+  {"code": "002074", "name": "国轩高科", "aliases": ["国轩"], "is_st": false},
+  {"code": "600150", "name": "中国船舶", "aliases": ["中船", "船舶"], "is_st": false}
 ]
