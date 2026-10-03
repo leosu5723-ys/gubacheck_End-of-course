@@ -1,0 +1,4763 @@
+[
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20251022",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2025-10-22",
+   "posts": 457,
+   "baseline_posts": 210.4,
+   "heat_ratio": 2.17,
+   "bull_share": 0.534,
+   "baseline_bull_share": 0.392,
+   "popularity_rank": 34,
+   "sample_posts": [
+    {
+     "post_id": 1614050676,
+     "time": "2025-10-22 17:56:50",
+     "title": "小作文突袭 股价一度涨超7% 寒武纪回应"
+    },
+    {
+     "post_id": 1614003736,
+     "time": "2025-10-22 15:12:40",
+     "title": "寒武纪午后突发！广东传出重磅利好！"
+    },
+    {
+     "post_id": 1614024342,
+     "time": "2025-10-22 16:12:30",
+     "title": "小作文突袭 寒武纪直线拉升！A股收跌 深地经济概念股持续活跃"
+    },
+    {
+     "post_id": 1613577409,
+     "time": "2025-10-22 01:31:00",
+     "title": "A股三季报密集交卷 超七成已披露公司报喜"
+    },
+    {
+     "post_id": 1614050826,
+     "time": "2025-10-22 17:57:30",
+     "title": "小作文突袭，股价一度涨超7%，寒武纪回应：以公告为准"
+    },
+    {
+     "post_id": 1614017493,
+     "time": "2025-10-22 15:48:49",
+     "title": "寒武纪市值重回6000亿，房地产多股涨停，高盛点赞中国股市"
+    },
+    {
+     "post_id": 1613627419,
+     "time": "2025-10-22 09:27:41",
+     "title": "融资客大幅净买入的科创板股（附股）"
+    },
+    {
+     "post_id": 1613889096,
+     "time": "2025-10-22 13:27:10",
+     "title": "科创50指数午后转涨 寒武纪涨近5%领涨成分股"
+    },
+    {
+     "post_id": 1613598337,
+     "time": "2025-10-22 08:16:09",
+     "title": "超七成预喜！A股三季报密集交卷"
+    },
+    {
+     "post_id": 1613882120,
+     "time": "2025-10-22 13:20:50",
+     "title": "寒武纪成交额达100亿元"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224721910",
+    "title": "中信证券股份有限公司关于中科寒武纪科技股份有限公司2025年度向特定对象发行A股股票之上市保荐书",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1224721910&orgId=nssc1000595&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721909",
+    "title": "2025年度向特定对象发行A股股票上市公告书",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1224721909&orgId=nssc1000595&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721908",
+    "title": "2025年度向特定对象发行股票发行结果暨股本变动公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1224721908&orgId=nssc1000595&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224719401",
+    "title": "2025年第三季度报告",
+    "date": "2025-10-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1224719401&orgId=nssc1000595&announcementTime=2025-10-18",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-10-22",
+   "spike_day_pct": 4.42,
+   "pre5_return_pct": 15.1,
+   "next_day": "2025-10-23",
+   "next_open": 1409.0,
+   "limit_up_price": 1715.4,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20260108",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2026-01-08",
+   "posts": 203,
+   "baseline_posts": 96.2,
+   "heat_ratio": 2.11,
+   "bull_share": 0.565,
+   "baseline_bull_share": 0.375,
+   "popularity_rank": 246,
+   "sample_posts": [
+    {
+     "post_id": 1650206129,
+     "time": "2026-01-08 16:52:30",
+     "title": "科创板平均股价46.40元 12股股价超300元"
+    },
+    {
+     "post_id": 1649919633,
+     "time": "2026-01-08 11:20:02",
+     "title": "完全符合预期｜AI芯片股走强，海光信息涨超10%，沐曦股份涨超5%，寒武纪涨超4%｜罕见共振"
+    },
+    {
+     "post_id": 1650229310,
+     "time": "2026-01-08 18:20:10",
+     "title": "活跃个股：寒武纪成交216亿元 爱朋医疗换手率54%"
+    },
+    {
+     "post_id": 1650138635,
+     "time": "2026-01-08 14:48:34",
+     "title": "到底是情有独钟还是心有不甘？每次被折磨的受不了，设个卖单，卖完，然后看了它跌不下"
+    },
+    {
+     "post_id": 1650232788,
+     "time": "2026-01-08 18:34:50",
+     "title": "寒武纪涨超3%再次超越茅台成为A股“股王”"
+    },
+    {
+     "post_id": 1649864502,
+     "time": "2026-01-08 10:48:51",
+     "title": "国产GPU芯片成功了，利润也打下来，估值怎么支撑"
+    },
+    {
+     "post_id": 1650185678,
+     "time": "2026-01-08 15:52:49",
+     "title": "寒武纪涨超3%至1444元，再次超越茅台成为“股王”"
+    },
+    {
+     "post_id": 1650042965,
+     "time": "2026-01-08 13:46:19",
+     "title": "寒武纪注册资本增至4.22亿元"
+    },
+    {
+     "post_id": 1649939685,
+     "time": "2026-01-08 11:36:52",
+     "title": "GPU赛道将开启新一轮主升浪"
+    },
+    {
+     "post_id": 1650228302,
+     "time": "2026-01-08 18:16:02",
+     "title": "$寒武纪-U(SH688256)$"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [],
+  "news": [],
+  "price": {
+   "spike_day": "2026-01-08",
+   "spike_day_pct": 3.52,
+   "pre5_return_pct": 1.99,
+   "next_day": "2026-01-09",
+   "next_open": 1419.99,
+   "limit_up_price": 1732.8,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20260226",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2026-02-26",
+   "posts": 260,
+   "baseline_posts": 87,
+   "heat_ratio": 2.99,
+   "bull_share": 0.49,
+   "baseline_bull_share": 0.368,
+   "popularity_rank": 71,
+   "sample_posts": [
+    {
+     "post_id": 1671820507,
+     "time": "2026-02-26 16:52:01",
+     "title": "暴涨30%！刚刚直线拉升！芯片突传利好！"
+    },
+    {
+     "post_id": 1671833543,
+     "time": "2026-02-26 17:38:53",
+     "title": "寒武纪每年就8亿研发费用，难道大厂花不起吗，还需要用你的芯片？大厂每年几十亿买芯"
+    },
+    {
+     "post_id": 1671670982,
+     "time": "2026-02-26 13:34:09",
+     "title": "寒武纪午后涨逾7%"
+    },
+    {
+     "post_id": 1671824221,
+     "time": "2026-02-26 17:03:00",
+     "title": "电子行业资金流入榜：寒武纪-U、沪电股份等净流入资金居前"
+    },
+    {
+     "post_id": 1671824337,
+     "time": "2026-02-26 17:03:19",
+     "title": "科创板高价股排行榜"
+    },
+    {
+     "post_id": 1671829300,
+     "time": "2026-02-26 17:21:09",
+     "title": "2月26日主力资金流向日报"
+    },
+    {
+     "post_id": 1671832028,
+     "time": "2026-02-26 17:32:29",
+     "title": "大涨近10%！寒武纪，午后突然拉升！"
+    },
+    {
+     "post_id": 1671821051,
+     "time": "2026-02-26 16:54:00",
+     "title": "千亿级龙头股大涨！A股前三"
+    },
+    {
+     "post_id": 1671826710,
+     "time": "2026-02-26 17:10:30",
+     "title": "2月26日科创板主力资金净流入18.60亿元"
+    },
+    {
+     "post_id": 1671694849,
+     "time": "2026-02-26 13:52:27",
+     "title": "寒武纪大涨近10%"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [],
+  "news": [],
+  "price": {
+   "spike_day": "2026-02-26",
+   "spike_day_pct": 7.96,
+   "pre5_return_pct": 8.33,
+   "next_day": "2026-02-27",
+   "next_open": 1145.02,
+   "limit_up_price": 1402.56,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20260407",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2026-04-07",
+   "posts": 313,
+   "baseline_posts": 110.8,
+   "heat_ratio": 2.82,
+   "bull_share": 0.524,
+   "baseline_bull_share": 0.32,
+   "popularity_rank": 109,
+   "sample_posts": [
+    {
+     "post_id": 1689851401,
+     "time": "2026-04-07 11:03:40",
+     "title": "算力芯片概念盘中持续反弹 寒武纪涨超10%"
+    },
+    {
+     "post_id": 1690085662,
+     "time": "2026-04-07 17:50:30",
+     "title": "主力动向：4月7日特大单净流入25.70亿元"
+    },
+    {
+     "post_id": 1689901603,
+     "time": "2026-04-07 12:18:40",
+     "title": "从技术跟跑到生态较量——透过上市公司年报看半导体产业韧性与活力"
+    },
+    {
+     "post_id": 1689862000,
+     "time": "2026-04-07 11:12:40",
+     "title": "算力芯片概念持续走强 寒武纪涨超11%"
+    },
+    {
+     "post_id": 1689860825,
+     "time": "2026-04-07 11:11:40",
+     "title": "算力芯片概念持续反弹 寒武纪涨超10%"
+    },
+    {
+     "post_id": 1690088836,
+     "time": "2026-04-07 18:06:20",
+     "title": "活跃个股：寒武纪成交155亿元 C盛龙换手率43%"
+    },
+    {
+     "post_id": 1690084575,
+     "time": "2026-04-07 17:45:51",
+     "title": "10只科创板个股主力资金净流入超亿元"
+    },
+    {
+     "post_id": 1689914994,
+     "time": "2026-04-07 13:01:50",
+     "title": "大爆发！688256，飙涨"
+    },
+    {
+     "post_id": 1689915958,
+     "time": "2026-04-07 13:03:09",
+     "title": "化工大涨，算力爆发！寒武纪，成交额超120亿元"
+    },
+    {
+     "post_id": 1690070308,
+     "time": "2026-04-07 16:44:50",
+     "title": "30.54亿元主力资金今日抢筹电子板块"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225076893",
+    "title": "中信证券股份有限公司关于中科寒武纪科技股份有限公司2025年度持续督导跟踪报告",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225076893&orgId=nssc1000595&announcementTime=2026-04-03",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225076886",
+    "title": "北京市中伦律师事务所关于中科寒武纪科技股份有限公司2025年年度股东会的法律意见书",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225076886&orgId=nssc1000595&announcementTime=2026-04-03",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225076874",
+    "title": "2025年年度股东会决议公告",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225076874&orgId=nssc1000595&announcementTime=2026-04-03",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225076866",
+    "title": "中信证券股份有限公司关于中科寒武纪科技股份有限公司2025年度持续督导工作现场检查报告",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225076866&orgId=nssc1000595&announcementTime=2026-04-03",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225030713",
+    "title": "2025年年度股东会会议资料",
+    "date": "2026-03-26",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225030713&orgId=nssc1000595&announcementTime=2026-03-26",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-07",
+   "spike_day_pct": 9.1,
+   "pre5_return_pct": 10.85,
+   "next_day": "2026-04-08",
+   "next_open": 1159.1,
+   "limit_up_price": 1342.8,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20260415",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2026-04-15",
+   "posts": 196,
+   "baseline_posts": 89.5,
+   "heat_ratio": 2.19,
+   "bull_share": 0.553,
+   "baseline_bull_share": 0.409,
+   "popularity_rank": 179,
+   "sample_posts": [
+    {
+     "post_id": 1693705112,
+     "time": "2026-04-15 12:11:50",
+     "title": "国产AI芯片份额已超4成！杠杆资金买入这些票(附股)"
+    },
+    {
+     "post_id": 1693711874,
+     "time": "2026-04-15 12:39:00",
+     "title": "国产GPU三大龙头，联手大涨！"
+    },
+    {
+     "post_id": 1693860368,
+     "time": "2026-04-15 14:45:00",
+     "title": "股市面面观丨清明假期归来杠杆资金积极入场 A股融资余额现六连涨"
+    },
+    {
+     "post_id": 1693920294,
+     "time": "2026-04-15 16:27:23",
+     "title": "轻仓可过万重山"
+    },
+    {
+     "post_id": 1693962892,
+     "time": "2026-04-15 19:15:16",
+     "title": "复盘"
+    },
+    {
+     "post_id": 1693951625,
+     "time": "2026-04-15 18:27:01",
+     "title": "我的命啊几十个没有了"
+    },
+    {
+     "post_id": 1693673920,
+     "time": "2026-04-15 11:18:39",
+     "title": "寒武纪成交额达100亿元，现涨6.28%"
+    },
+    {
+     "post_id": 1693607545,
+     "time": "2026-04-15 10:36:50",
+     "title": "还是寒武纪稳健"
+    },
+    {
+     "post_id": 1693642692,
+     "time": "2026-04-15 10:57:38",
+     "title": "AI芯片股集体走强，寒武纪大涨站上1300元"
+    },
+    {
+     "post_id": 1693383467,
+     "time": "2026-04-15 01:36:01",
+     "title": "我以为热身赛就有那个直通车呢，去年直接跳了，国赛追涨跟玩一样"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225101816",
+    "title": "关于召开2025年度业绩说明会的公告",
+    "date": "2026-04-15",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225101816&orgId=nssc1000595&announcementTime=2026-04-15",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225085814",
+    "title": "关于向特定对象发行股票限售股上市流通公告",
+    "date": "2026-04-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225085814&orgId=nssc1000595&announcementTime=2026-04-09",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225085813",
+    "title": "中信证券股份有限公司关于中科寒武纪科技股份有限公司2025年度向特定对象发行A股股票限售股上市流通的核查意见",
+    "date": "2026-04-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225085813&orgId=nssc1000595&announcementTime=2026-04-09",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225076893",
+    "title": "中信证券股份有限公司关于中科寒武纪科技股份有限公司2025年度持续督导跟踪报告",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225076893&orgId=nssc1000595&announcementTime=2026-04-03",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225076886",
+    "title": "北京市中伦律师事务所关于中科寒武纪科技股份有限公司2025年年度股东会的法律意见书",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225076886&orgId=nssc1000595&announcementTime=2026-04-03",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-15",
+   "spike_day_pct": 2.58,
+   "pre5_return_pct": 9.45,
+   "next_day": "2026-04-16",
+   "next_open": 1280.0,
+   "limit_up_price": 1528.8,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20260618",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2026-06-18",
+   "posts": 1292,
+   "baseline_posts": 173.2,
+   "heat_ratio": 7.46,
+   "bull_share": 0.476,
+   "baseline_bull_share": 0.368,
+   "popularity_rank": 7,
+   "sample_posts": [
+    {
+     "post_id": 1728836151,
+     "time": "2026-06-18 11:46:20",
+     "title": "寒武纪、中际旭创、新易盛、光迅科技、联讯仪器、东山精密、源杰科技齐创历史新高"
+    },
+    {
+     "post_id": 1729106382,
+     "time": "2026-06-18 15:16:40",
+     "title": "寒武纪再创新高 否认向互联网厂商大量供货"
+    },
+    {
+     "post_id": 1728477091,
+     "time": "2026-06-18 09:14:10",
+     "title": "字节跳动、智谱接连传来大消息！国产算力景气度有望持续上行(附股)"
+    },
+    {
+     "post_id": 1729143411,
+     "time": "2026-06-18 16:40:11",
+     "title": "消费电子=基本面最硬的AI硬件？"
+    },
+    {
+     "post_id": 1728860034,
+     "time": "2026-06-18 12:46:22",
+     "title": "午后大盘风云走向｜科技权重势如虹，节后归来谱新章"
+    },
+    {
+     "post_id": 1729056804,
+     "time": "2026-06-18 14:42:30",
+     "title": "寒武纪成交额达300亿元"
+    },
+    {
+     "post_id": 1728689485,
+     "time": "2026-06-18 10:28:50",
+     "title": "寒武纪涨超10%再创历史新高"
+    },
+    {
+     "post_id": 1729212309,
+     "time": "2026-06-18 21:31:42",
+     "title": "算力芯片，深度关联的10家公司2026年6月18日"
+    },
+    {
+     "post_id": 1728860670,
+     "time": "2026-06-18 12:48:10",
+     "title": "万亿市值仅差一步！芯片概念大爆发，“寒王”股价再创新高"
+    },
+    {
+     "post_id": 1729135371,
+     "time": "2026-06-18 16:15:30",
+     "title": "寒武纪688256我去年底1100多上车，今年拉到1400多出了大半，剩下的等新"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225365351",
+    "title": "关于注销部分募集资金理财产品专用结算账户的公告",
+    "date": "2026-06-12",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=688256&announcementId=1225365351&orgId=nssc1000595&announcementTime=2026-06-12",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-06-18",
+   "spike_day_pct": 14.2,
+   "pre5_return_pct": 23.61,
+   "next_day": "2026-06-22",
+   "next_open": 1480.0,
+   "limit_up_price": 1808.95,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-688256-20260915",
+   "stock": "688256",
+   "name": "寒武纪",
+   "aliases": [
+    "寒武纪-U",
+    "寒王"
+   ],
+   "date": "2026-09-15",
+   "posts": 199,
+   "baseline_posts": 97.8,
+   "heat_ratio": 2.03,
+   "bull_share": 0.415,
+   "baseline_bull_share": 0.306,
+   "popularity_rank": 143,
+   "sample_posts": [
+    {
+     "post_id": 1773193303,
+     "time": "2026-09-15 11:05:19",
+     "title": "这走势看得很清楚，1040以下根本没人愿意抛，下方支撑铁得很，现在第一压力位就在"
+    },
+    {
+     "post_id": 1773443281,
+     "time": "2026-09-15 17:03:51",
+     "title": "23.44亿元资金今日流入电子股"
+    },
+    {
+     "post_id": 1773437324,
+     "time": "2026-09-15 16:38:20",
+     "title": "46.53亿主力资金净流入，先进封装概念涨0.81%"
+    },
+    {
+     "post_id": 1773422889,
+     "time": "2026-09-15 15:45:10",
+     "title": "多只A股AI芯片公司股价走高"
+    },
+    {
+     "post_id": 1772985483,
+     "time": "2026-09-15 09:09:13",
+     "title": "科创板股融资融券余额每日变动（9月14日）"
+    },
+    {
+     "post_id": 1773441540,
+     "time": "2026-09-15 16:56:02",
+     "title": "16只科创板个股主力资金净流入超亿元"
+    },
+    {
+     "post_id": 1772973158,
+     "time": "2026-09-15 08:20:25",
+     "title": "盘前复盘｜中际旭创、寒武纪，盘面关键观察点"
+    },
+    {
+     "post_id": 1773219321,
+     "time": "2026-09-15 11:25:27",
+     "title": "三大利好：1、美国ai巨头集体发声说AI对人类造成威胁，说明当前AI这条路走对了"
+    },
+    {
+     "post_id": 1773285055,
+     "time": "2026-09-15 13:25:41",
+     "title": "你们散户资金拿着自己的血汗钱跟着公募基金量化交易拿着别人的血汗钱去追上涨了600"
+    },
+    {
+     "post_id": 1773514299,
+     "time": "2026-09-15 23:35:09",
+     "title": "三星电子和SK海力士评估中微公司设备这件事，放在半导体设备行业里确实是个值得注意"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [],
+  "news": [],
+  "price": {
+   "spike_day": "2026-09-15",
+   "spike_day_pct": 3.44,
+   "pre5_return_pct": 1.59,
+   "next_day": "2026-09-16",
+   "next_open": 1088.0,
+   "limit_up_price": 1290.95,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": true
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20251021",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2025-10-21",
+   "posts": 752,
+   "baseline_posts": 242.8,
+   "heat_ratio": 3.1,
+   "bull_share": 0.579,
+   "baseline_bull_share": 0.464,
+   "popularity_rank": 4,
+   "sample_posts": [
+    {
+     "post_id": 1613481887,
+     "time": "2025-10-21 17:02:00",
+     "title": "尾盘猛拉！工业富联领衔大涨 这一赛道大爆发！"
+    },
+    {
+     "post_id": 1613469698,
+     "time": "2025-10-21 16:19:08",
+     "title": "工业富联长阳，大盘周二中长阳，周三市场行情分析！"
+    },
+    {
+     "post_id": 1613454814,
+     "time": "2025-10-21 15:33:30",
+     "title": "主力复盘：22.23亿爆拉工业富联 6.19亿流出中信证券"
+    },
+    {
+     "post_id": 1613391809,
+     "time": "2025-10-21 14:23:38",
+     "title": "以前以为是富士康的分支，结果人家是全球AI服务器的大玩家，英伟达的高端服务器很多"
+    },
+    {
+     "post_id": 1613017086,
+     "time": "2025-10-21 06:27:50",
+     "title": "三季报加速披露 科技类公司业绩持续向好"
+    },
+    {
+     "post_id": 1613020756,
+     "time": "2025-10-21 07:27:59",
+     "title": "万亿巨头，拟分红超65亿元"
+    },
+    {
+     "post_id": 1613328168,
+     "time": "2025-10-21 13:30:50",
+     "title": "液冷概念股午后持续走强 工业富联冲击涨停"
+    },
+    {
+     "post_id": 1613203807,
+     "time": "2025-10-21 10:47:10",
+     "title": "每10股派现3.3元 工业富联半年度拟分红超65亿元"
+    },
+    {
+     "post_id": 1613523101,
+     "time": "2025-10-21 20:01:40",
+     "title": "嗨疯了！万亿巨头差点涨停"
+    },
+    {
+     "post_id": 1613499266,
+     "time": "2025-10-21 18:16:50",
+     "title": "【数据看盘】机构、一线游资活跃度连续两日下降 IC期指空头大幅加仓"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224721005",
+    "title": "富士康工业互联网股份有限公司第三届董事会第二十七次会议决议公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721005&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721004",
+    "title": "富士康工业互联网股份有限公司监事会关于利润分配的核查意见",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721004&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721003",
+    "title": "富士康工业互联网股份有限公司关于公司2025年半年度利润分配方案的公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721003&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721002",
+    "title": "富士康工业互联网股份有限公司第三届监事会第二十二次会议决议公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721002&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224706158",
+    "title": "富士康工业互联网股份有限公司关于2019年股票期权与限制性股票激励计划2025年第三季度自主行权结果暨股份变动的公告",
+    "date": "2025-10-11",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224706158&orgId=9900036731&announcementTime=2025-10-11",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-10-21",
+   "spike_day_pct": 9.57,
+   "pre5_return_pct": 13.86,
+   "next_day": "2025-10-22",
+   "next_open": 66.99,
+   "limit_up_price": 74.8,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20251027",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2025-10-27",
+   "posts": 694,
+   "baseline_posts": 316.1,
+   "heat_ratio": 2.2,
+   "bull_share": 0.602,
+   "baseline_bull_share": 0.454,
+   "popularity_rank": 2,
+   "sample_posts": [
+    {
+     "post_id": 1615940613,
+     "time": "2025-10-27 15:33:52",
+     "title": "主力复盘：17.68亿爆拉工业富联 15.45亿流出中信证券"
+    },
+    {
+     "post_id": 1615936359,
+     "time": "2025-10-27 15:24:45",
+     "title": "有些行情就是这样的，如果从日线来看，今天才右侧确认上涨，但是从60分钟来看，最低"
+    },
+    {
+     "post_id": 1615995989,
+     "time": "2025-10-27 18:21:40",
+     "title": "两市主力资金净流出1.36亿元，沪深300成份股资金净流入"
+    },
+    {
+     "post_id": 1616030157,
+     "time": "2025-10-27 20:17:50",
+     "title": "北向资金最新动向（附十大成交股）"
+    },
+    {
+     "post_id": 1615987174,
+     "time": "2025-10-27 17:52:49",
+     "title": "工业富联将开启新一轮主升浪"
+    },
+    {
+     "post_id": 1615944807,
+     "time": "2025-10-27 15:44:01",
+     "title": "最新三季报！楚江新材、永鼎股份、东方精工，核聚变谁是龙头？"
+    },
+    {
+     "post_id": 1615963964,
+     "time": "2025-10-27 16:41:01",
+     "title": "共封装光学(CPO)概念上涨2.65% 27股主力资金净流入超亿元"
+    },
+    {
+     "post_id": 1615986270,
+     "time": "2025-10-27 17:49:29",
+     "title": "主力动向：10月27日特大单净流入72.63亿元"
+    },
+    {
+     "post_id": 1615975174,
+     "time": "2025-10-27 17:14:51",
+     "title": "电子行业10月27日资金流向日报"
+    },
+    {
+     "post_id": 1615610944,
+     "time": "2025-10-27 10:11:25",
+     "title": "今天10月27日上午刚干完活：在箱顶70.55元减仓；在65.3元和64.95元"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224721005",
+    "title": "富士康工业互联网股份有限公司第三届董事会第二十七次会议决议公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721005&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721004",
+    "title": "富士康工业互联网股份有限公司监事会关于利润分配的核查意见",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721004&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721003",
+    "title": "富士康工业互联网股份有限公司关于公司2025年半年度利润分配方案的公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721003&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224721002",
+    "title": "富士康工业互联网股份有限公司第三届监事会第二十二次会议决议公告",
+    "date": "2025-10-21",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1224721002&orgId=9900036731&announcementTime=2025-10-21",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-10-27",
+   "spike_day_pct": 8.19,
+   "pre5_return_pct": 17.24,
+   "next_day": "2025-10-28",
+   "next_open": 71.18,
+   "limit_up_price": 80.04,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20260414",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2026-04-14",
+   "posts": 587,
+   "baseline_posts": 270.7,
+   "heat_ratio": 2.17,
+   "bull_share": 0.566,
+   "baseline_bull_share": 0.411,
+   "popularity_rank": 6,
+   "sample_posts": [
+    {
+     "post_id": 1693270729,
+     "time": "2026-04-14 16:45:21",
+     "title": "4.14工业富联、融捷股份、亨通光电、欧科亿、华工科技日记"
+    },
+    {
+     "post_id": 1693246432,
+     "time": "2026-04-14 15:32:30",
+     "title": "主力复盘：21.22亿抢筹工业富联 26.01亿流出华工科技"
+    },
+    {
+     "post_id": 1693245845,
+     "time": "2026-04-14 15:31:11",
+     "title": "资金风向标 | 工业富联获资金净流入21.22亿元"
+    },
+    {
+     "post_id": 1693062232,
+     "time": "2026-04-14 12:53:54",
+     "title": "老K持仓午盘复盘·4月14日"
+    },
+    {
+     "post_id": 1693005371,
+     "time": "2026-04-14 11:09:09",
+     "title": "主力资金监控：工业富联净买入超18亿"
+    },
+    {
+     "post_id": 1693270983,
+     "time": "2026-04-14 16:46:28",
+     "title": "4.14晚评：工业富联（算力CPO）"
+    },
+    {
+     "post_id": 1693373658,
+     "time": "2026-04-14 23:38:39",
+     "title": "【14日资金路线图】两市主力资金净流出超30亿元 电子等行业实现净流入"
+    },
+    {
+     "post_id": 1693273863,
+     "time": "2026-04-14 16:57:10",
+     "title": "电子行业4月14日资金流向日报"
+    },
+    {
+     "post_id": 1692738670,
+     "time": "2026-04-14 00:33:30",
+     "title": "工信部：深化人工智能赋能质量提升"
+    },
+    {
+     "post_id": 1693186953,
+     "time": "2026-04-14 14:32:06",
+     "title": "昨天搞的盈峰环境太给力了，不知道会不会卖飞了"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225083956",
+    "title": "富士康工业互联网股份有限公司关于召开2025年年度业绩说明会的公告",
+    "date": "2026-04-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225083956&orgId=9900036731&announcementTime=2026-04-09",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225057717",
+    "title": "富士康工业互联网股份有限公司关于股份回购实施结果暨股份变动的公告",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225057717&orgId=9900036731&announcementTime=2026-03-31",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-14",
+   "spike_day_pct": 5.78,
+   "pre5_return_pct": 12.06,
+   "next_day": "2026-04-15",
+   "next_open": 59.36,
+   "limit_up_price": 64.81,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20260422",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2026-04-22",
+   "posts": 1275,
+   "baseline_posts": 294.8,
+   "heat_ratio": 4.33,
+   "bull_share": 0.586,
+   "baseline_bull_share": 0.48,
+   "popularity_rank": 3,
+   "sample_posts": [
+    {
+     "post_id": 1697540163,
+     "time": "2026-04-22 16:58:21",
+     "title": "谁是中国“光之城”？一图速览光通信概念股城市分布"
+    },
+    {
+     "post_id": 1697522030,
+     "time": "2026-04-22 16:10:30",
+     "title": "高盛“力挺” 万亿市值巨头盘中涨停"
+    },
+    {
+     "post_id": 1697536993,
+     "time": "2026-04-22 16:49:38",
+     "title": "4.22工业富联、亨通光电、佰维存储、融捷股份、欧科亿笔记"
+    },
+    {
+     "post_id": 1697534211,
+     "time": "2026-04-22 16:41:59",
+     "title": "尾盘猛拉！工业富联触及涨停！9股获巨资抢筹"
+    },
+    {
+     "post_id": 1697502785,
+     "time": "2026-04-22 15:30:41",
+     "title": "主力复盘：34.25亿抢筹工业富联 11.23亿流出紫金矿业"
+    },
+    {
+     "post_id": 1697598932,
+     "time": "2026-04-22 19:44:49",
+     "title": "工业富联：为什么大涨而不封板？"
+    },
+    {
+     "post_id": 1697666376,
+     "time": "2026-04-22 23:09:19",
+     "title": "70股特大单净流入超2亿元"
+    },
+    {
+     "post_id": 1697427799,
+     "time": "2026-04-22 14:28:15",
+     "title": "英伟达链：第一梯队：新易盛，中际旭创，胜宏科技，工业富联。第二梯队：太辰光，华工"
+    },
+    {
+     "post_id": 1697129152,
+     "time": "2026-04-22 10:15:44",
+     "title": "旧话闲扯一番，小富婆，目前是在上升趋势之中，期间磕磕绊绊，很正常。。她的体量决定"
+    },
+    {
+     "post_id": 1697472027,
+     "time": "2026-04-22 14:55:11",
+     "title": "工业富联一度涨停，大盘再创近期新高"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225083956",
+    "title": "富士康工业互联网股份有限公司关于召开2025年年度业绩说明会的公告",
+    "date": "2026-04-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225083956&orgId=9900036731&announcementTime=2026-04-09",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-22",
+   "spike_day_pct": 8.92,
+   "pre5_return_pct": 15.69,
+   "next_day": "2026-04-23",
+   "next_open": 66.98,
+   "limit_up_price": 73.58,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20260513",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2026-05-13",
+   "posts": 1829,
+   "baseline_posts": 620.5,
+   "heat_ratio": 2.95,
+   "bull_share": 0.651,
+   "baseline_bull_share": 0.408,
+   "popularity_rank": 1,
+   "sample_posts": [
+    {
+     "post_id": 1707030713,
+     "time": "2026-05-13 12:47:50",
+     "title": "突然爆发！1.3万亿巨头 突传重大利好！"
+    },
+    {
+     "post_id": 1707350792,
+     "time": "2026-05-13 18:16:39",
+     "title": "工业富联封板，周三市场收中阳，周四市场行情分析！"
+    },
+    {
+     "post_id": 1707085397,
+     "time": "2026-05-13 13:24:33",
+     "title": "猛的，也是成功涨停，只要收盘前不炸，今天就圆满了，关注我，吃更多涨停板，祝点赞关"
+    },
+    {
+     "post_id": 1707175663,
+     "time": "2026-05-13 14:13:19",
+     "title": "CPO交换机一机难求，算力硬件股大涨，万亿巨头工业富联涨停"
+    },
+    {
+     "post_id": 1707307667,
+     "time": "2026-05-13 16:13:20",
+     "title": "一则利好 万亿巨头工业富联涨停！创业板指站上4000点"
+    },
+    {
+     "post_id": 1707287461,
+     "time": "2026-05-13 15:30:29",
+     "title": "主力复盘：65.91亿流入工业富联 13.43亿流出光迅科技"
+    },
+    {
+     "post_id": 1707146703,
+     "time": "2026-05-13 13:57:19",
+     "title": "万亿巨头，涨停！"
+    },
+    {
+     "post_id": 1707385907,
+     "time": "2026-05-13 20:19:12",
+     "title": "在工业富联涨停前下车"
+    },
+    {
+     "post_id": 1707289475,
+     "time": "2026-05-13 15:33:30",
+     "title": "资金风向标 | 工业富联获资金净流入65.91亿元"
+    },
+    {
+     "post_id": 1707329660,
+     "time": "2026-05-13 17:12:09",
+     "title": "CPO交换机一机难求！算力租赁板块大爆发，工业富联涨停"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225231683",
+    "title": "富士康工业互联网股份有限公司2025年可持续发展报告",
+    "date": "2026-04-29",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225231683&orgId=9900036731&announcementTime=2026-04-29",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225231656",
+    "title": "富士康工业互联网股份有限公司关于2026年度“提质增效重回报”行动方案的公告",
+    "date": "2026-04-29",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225231656&orgId=9900036731&announcementTime=2026-04-29",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225231610",
+    "title": "富士康工业互联网股份有限公司董事、高级管理人员薪酬管理制度",
+    "date": "2026-04-29",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225231610&orgId=9900036731&announcementTime=2026-04-29",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225231598",
+    "title": "富士康工业互联网股份有限公司2026年第一季度报告",
+    "date": "2026-04-29",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225231598&orgId=9900036731&announcementTime=2026-04-29",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225231546",
+    "title": "富士康工业互联网股份有限公司2025年可持续发展报告摘要",
+    "date": "2026-04-29",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225231546&orgId=9900036731&announcementTime=2026-04-29",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-05-13",
+   "spike_day_pct": 10.0,
+   "pre5_return_pct": 12.3,
+   "next_day": "2026-05-14",
+   "next_open": 74.0,
+   "limit_up_price": 77.92,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20260602",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2026-06-02",
+   "posts": 1337,
+   "baseline_posts": 650.5,
+   "heat_ratio": 2.06,
+   "bull_share": 0.574,
+   "baseline_bull_share": 0.45,
+   "popularity_rank": 3,
+   "sample_posts": [
+    {
+     "post_id": 1719109761,
+     "time": "2026-06-02 15:31:50",
+     "title": "主力复盘：34.41亿抢筹工业富联 12.40亿出逃利通电子"
+    },
+    {
+     "post_id": 1719042959,
+     "time": "2026-06-02 14:32:30",
+     "title": "主力资金监控：工业富联净买入超34亿"
+    },
+    {
+     "post_id": 1719139099,
+     "time": "2026-06-02 16:50:50",
+     "title": "2万实盘，第140天"
+    },
+    {
+     "post_id": 1719172355,
+     "time": "2026-06-02 18:48:39",
+     "title": "主力净流入居A股第一！工业富联涨超8%，逼近历史最高股价，股民：当初不该离开你"
+    },
+    {
+     "post_id": 1719119593,
+     "time": "2026-06-02 15:53:10",
+     "title": "6-2尾盘"
+    },
+    {
+     "post_id": 1719106183,
+     "time": "2026-06-02 15:26:30",
+     "title": "盘后，闲扯几句，首先恭喜大家今天在小富婆都吃肉了，我在ETF也喝了5个多点的汤，"
+    },
+    {
+     "post_id": 1719141633,
+     "time": "2026-06-02 16:58:40",
+     "title": "主力资金净流入65.12亿元，通信最受青睐"
+    },
+    {
+     "post_id": 1718934886,
+     "time": "2026-06-02 13:26:10",
+     "title": "工业富联成交额达200亿元"
+    },
+    {
+     "post_id": 1718870354,
+     "time": "2026-06-02 11:54:57",
+     "title": "6-2午盘"
+    },
+    {
+     "post_id": 1718871332,
+     "time": "2026-06-02 11:57:09",
+     "title": "海哥周二午间小甜点(稳中求进)昨天评论区说挂在山顶了甚至还有人在喷…只能说我的个"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225337760",
+    "title": "富士康工业互联网股份有限公司2025年年度股东会会议资料",
+    "date": "2026-05-30",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225337760&orgId=9900036731&announcementTime=2026-05-30",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225315781",
+    "title": "富士康工业互联网股份有限公司关于召开2025年年度股东会的通知",
+    "date": "2026-05-20",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225315781&orgId=9900036731&announcementTime=2026-05-20",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-06-02",
+   "spike_day_pct": 8.49,
+   "pre5_return_pct": 14.33,
+   "next_day": "2026-06-03",
+   "next_open": 79.95,
+   "limit_up_price": 88.01,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20260618",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2026-06-18",
+   "posts": 1687,
+   "baseline_posts": 606.7,
+   "heat_ratio": 2.78,
+   "bull_share": 0.533,
+   "baseline_bull_share": 0.386,
+   "popularity_rank": 1,
+   "sample_posts": [
+    {
+     "post_id": 1729155541,
+     "time": "2026-06-18 17:18:40",
+     "title": "超越茅台！两大AI巨头总市值突破15000亿！挺进A股前十"
+    },
+    {
+     "post_id": 1729037274,
+     "time": "2026-06-18 14:32:10",
+     "title": "午后异动！工业富联直线冲涨停 成交额超260亿元！"
+    },
+    {
+     "post_id": 1729135743,
+     "time": "2026-06-18 16:16:39",
+     "title": "工业富联、京东方、深科技、中船特气、沪电股份日记"
+    },
+    {
+     "post_id": 1729144333,
+     "time": "2026-06-18 16:42:14",
+     "title": "成交放大2176亿，主力却流出451亿：今天到底是谁在买？"
+    },
+    {
+     "post_id": 1729115926,
+     "time": "2026-06-18 15:32:01",
+     "title": "主力复盘：45.68亿抢筹工业富联 33.38亿流出京东方Ａ"
+    },
+    {
+     "post_id": 1729109077,
+     "time": "2026-06-18 15:21:15",
+     "title": "满仓茅台小散的真实感受！"
+    },
+    {
+     "post_id": 1728893066,
+     "time": "2026-06-18 13:13:44",
+     "title": "谢谢主力端午节前给发个红包，可惜的是没买光迅科技，前两天看着光迅要突破，还想等等"
+    },
+    {
+     "post_id": 1729213585,
+     "time": "2026-06-18 21:36:09",
+     "title": "商务部等8部门：加快人工智能新产品新服务新场景示范应用 培育形成消费新增长点新动能"
+    },
+    {
+     "post_id": 1728917925,
+     "time": "2026-06-18 13:27:19",
+     "title": "工业富联触及涨停 现报79.9元/股"
+    },
+    {
+     "post_id": 1729224260,
+     "time": "2026-06-18 22:22:51",
+     "title": "工业富联大宗交易成交11.94万股 成交额782.07万元"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225371013",
+    "title": "富士康工业互联网股份有限公司关于选举职工代表董事的公告",
+    "date": "2026-06-16",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225371013&orgId=9900036731&announcementTime=2026-06-16",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225362389",
+    "title": "富士康工业互联网股份有限公司第三届董事会第三十三次会议决议公告",
+    "date": "2026-06-11",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225362389&orgId=9900036731&announcementTime=2026-06-11",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225362362",
+    "title": "富士康工业互联网股份有限公司关于2022年员工持股计划第三个锁定期届满暨解锁条件成就的公告",
+    "date": "2026-06-11",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225362362&orgId=9900036731&announcementTime=2026-06-11",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225361426",
+    "title": "富士康工业互联网股份有限公司2025年年度股东会决议公告",
+    "date": "2026-06-10",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225361426&orgId=9900036731&announcementTime=2026-06-10",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225361425",
+    "title": "北京市金杜律师事务所关于富士康工业互联网股份有限公司2025年年度股东会之法律意见书",
+    "date": "2026-06-10",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225361425&orgId=9900036731&announcementTime=2026-06-10",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-06-18",
+   "spike_day_pct": 7.49,
+   "pre5_return_pct": 12.31,
+   "next_day": "2026-06-22",
+   "next_open": 78.08,
+   "limit_up_price": 85.89,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601138-20260805",
+   "stock": "601138",
+   "name": "工业富联",
+   "aliases": [
+    "富联",
+    "富士康"
+   ],
+   "date": "2026-08-05",
+   "posts": 1006,
+   "baseline_posts": 377.1,
+   "heat_ratio": 2.67,
+   "bull_share": 0.552,
+   "baseline_bull_share": 0.345,
+   "popularity_rank": 4,
+   "sample_posts": [
+    {
+     "post_id": 1754876163,
+     "time": "2026-08-05 19:46:59",
+     "title": "主力资金 | 尾盘7股获抢筹"
+    },
+    {
+     "post_id": 1754852322,
+     "time": "2026-08-05 17:43:40",
+     "title": "我前些天已经说过了，下半年是很多数据中心大批竣工交付的时期，只能说AI科技行业需"
+    },
+    {
+     "post_id": 1754808566,
+     "time": "2026-08-05 15:31:11",
+     "title": "主力复盘：42.26亿流入工业富联 25.70亿流出长鑫科技"
+    },
+    {
+     "post_id": 1754879466,
+     "time": "2026-08-05 20:04:29",
+     "title": "今日主力净流入前20股：工业富联吸金超43亿元位列榜首"
+    },
+    {
+     "post_id": 1754830810,
+     "time": "2026-08-05 16:39:55",
+     "title": "本神说过好股捂住你们还不懂什么意思吗？2024年入的仕佳光子9元成本，工业富联2"
+    },
+    {
+     "post_id": 1754316958,
+     "time": "2026-08-05 08:50:32",
+     "title": "8.5老袁盘前策略：工业富联、华工科技、长电科技、沪电股份"
+    },
+    {
+     "post_id": 1754658205,
+     "time": "2026-08-05 13:27:30",
+     "title": "算力硬件股涨势扩大 胜宏科技逼近20%涨停"
+    },
+    {
+     "post_id": 1754792526,
+     "time": "2026-08-05 15:03:02",
+     "title": "兄弟姐妹们下班了，感谢兄弟姐妹们信任！目前还没有看到新标，老规矩把赞和关注打满，"
+    },
+    {
+     "post_id": 1754908789,
+     "time": "2026-08-05 22:07:29",
+     "title": "86股特大单净流入超2亿元"
+    },
+    {
+     "post_id": 1754723885,
+     "time": "2026-08-05 14:11:44",
+     "title": "下车了兄弟姐妹们，还是落袋为安吧，跟上都吃到肉了吧？感谢兄弟姐妹们支持，老k到别"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225457504",
+    "title": "富士康工业互联网股份有限公司关于股份回购进展公告",
+    "date": "2026-08-05",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225457504&orgId=9900036731&announcementTime=2026-08-05",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225447828",
+    "title": "富士康工业互联网股份有限公司关于回购股份事项前十名股东和前十名无限售条件股东持股情况的公告",
+    "date": "2026-07-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225447828&orgId=9900036731&announcementTime=2026-07-31",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225442540",
+    "title": "富士康工业互联网股份有限公司关于以集中竞价交易方式回购股份的回购报告书",
+    "date": "2026-07-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225442540&orgId=9900036731&announcementTime=2026-07-28",
+    "event_type": "buyback",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225442521",
+    "title": "富士康工业互联网股份有限公司第四届董事会第二次会议决议公告",
+    "date": "2026-07-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225442521&orgId=9900036731&announcementTime=2026-07-28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225438954",
+    "title": "富士康工业互联网股份有限公司2025年年度权益分派实施公告",
+    "date": "2026-07-24",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601138&announcementId=1225438954&orgId=9900036731&announcementTime=2026-07-24",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-08-05",
+   "spike_day_pct": 9.99,
+   "pre5_return_pct": 14.15,
+   "next_day": "2026-08-06",
+   "next_open": 65.55,
+   "limit_up_price": 72.51,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "paper_trade",
+   "trigger": null,
+   "evidence_id": "1225442540"
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300308-20251021",
+   "stock": "300308",
+   "name": "中际旭创",
+   "aliases": [
+    "旭创",
+    "易中天"
+   ],
+   "date": "2025-10-21",
+   "posts": 515,
+   "baseline_posts": 169.7,
+   "heat_ratio": 3.04,
+   "bull_share": 0.553,
+   "baseline_bull_share": 0.428,
+   "popularity_rank": 31,
+   "sample_posts": [
+    {
+     "post_id": 1613281295,
+     "time": "2025-10-21 12:33:16",
+     "title": "各位中午好早盘高开震荡回落，板块分化明显。受流感季消息影响，抗流概念上午尾盘拉升"
+    },
+    {
+     "post_id": 1613274175,
+     "time": "2025-10-21 12:05:00",
+     "title": "中际旭创：1.6T光模块主要应用于AI数据中心领域"
+    },
+    {
+     "post_id": 1613442064,
+     "time": "2025-10-21 15:06:20",
+     "title": "“易中天”又行了！CPO引领科技杀回市场，牛市下半场是否还由AI驱动？"
+    },
+    {
+     "post_id": 1613046254,
+     "time": "2025-10-21 09:24:19",
+     "title": "杠杆资金大手笔加仓股名单"
+    },
+    {
+     "post_id": 1613011988,
+     "time": "2025-10-21 02:47:46",
+     "title": "知者无畏"
+    },
+    {
+     "post_id": 1613478263,
+     "time": "2025-10-21 16:49:12",
+     "title": "中际旭创300308中际旭创和新易盛又搞事情了。看看大数据ETF（159739）"
+    },
+    {
+     "post_id": 1613011292,
+     "time": "2025-10-21 02:08:39",
+     "title": "A股三大指数齐涨 科技股集中修复"
+    },
+    {
+     "post_id": 1613505031,
+     "time": "2025-10-21 18:43:12",
+     "title": "中际旭创300308中际旭创和新易盛又搞事情了。看看大数据ETF（159739）"
+    },
+    {
+     "post_id": 1613516323,
+     "time": "2025-10-21 19:31:43",
+     "title": "严格来讲，今天算是逼空式反弹，其实也没放出什么量，大票风格很结构。但是易中天如果"
+    },
+    {
+     "post_id": 1613532194,
+     "time": "2025-10-21 20:42:20",
+     "title": "三季报业绩披露在即，花期近日再发研报，重申维持9月目标价，今天资金疯抢光模块，光"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224719142",
+    "title": "关于使用部分自有资金进行现金管理的进展公告",
+    "date": "2025-10-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1224719142&orgId=9900022016&announcementTime=2025-10-18 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-10-21",
+   "spike_day_pct": 9.55,
+   "pre5_return_pct": 27.56,
+   "next_day": "2025-10-22",
+   "next_open": 436.09,
+   "limit_up_price": 529.8,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300308-20260115",
+   "stock": "300308",
+   "name": "中际旭创",
+   "aliases": [
+    "旭创",
+    "易中天"
+   ],
+   "date": "2026-01-15",
+   "posts": 650,
+   "baseline_posts": 272.1,
+   "heat_ratio": 2.39,
+   "bull_share": 0.566,
+   "baseline_bull_share": 0.466,
+   "popularity_rank": 45,
+   "sample_posts": [
+    {
+     "post_id": 1654442763,
+     "time": "2026-01-15 22:44:39",
+     "title": "15只个股大宗交易超5000万元"
+    },
+    {
+     "post_id": 1654224403,
+     "time": "2026-01-15 14:26:50",
+     "title": "CPO板块龙头持续走强 中际旭创涨超6% 新易盛涨超5%"
+    },
+    {
+     "post_id": 1654407441,
+     "time": "2026-01-15 20:55:05",
+     "title": "易点天下今天停牌核查！明天利欧停牌。只能说明，不要去炒垃及亏损股！坚持价值投资理"
+    },
+    {
+     "post_id": 1654287694,
+     "time": "2026-01-15 15:11:44",
+     "title": "商业航天落幕，光模块王者归来：资金从来只选“硬逻辑”"
+    },
+    {
+     "post_id": 1654338554,
+     "time": "2026-01-15 17:04:20",
+     "title": "活跃个股：中际旭创成交279亿元 N至信换手率79%"
+    },
+    {
+     "post_id": 1654300491,
+     "time": "2026-01-15 15:31:30",
+     "title": "今天，半导体、算力板块午后拉升！中际旭创等龙头股走强"
+    },
+    {
+     "post_id": 1654409507,
+     "time": "2026-01-15 21:01:08",
+     "title": "不要把鸡蛋放在一个篮子里"
+    },
+    {
+     "post_id": 1654354789,
+     "time": "2026-01-15 17:54:10",
+     "title": "中际旭创发生6笔大宗交易 合计成交3.85亿元"
+    },
+    {
+     "post_id": 1653718676,
+     "time": "2026-01-15 08:09:27",
+     "title": "中际旭创联手东阳光，强强联手深度布局液冷赛道"
+    },
+    {
+     "post_id": 1653787559,
+     "time": "2026-01-15 09:37:00",
+     "title": "965股获融资买入超亿元，中际旭创获买入42.0亿元居首"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224931151",
+    "title": "第五届董事会第二十七次会议决议公告",
+    "date": "2026-01-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1224931151&orgId=9900022016&announcementTime=2026-01-13 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224931150",
+    "title": "第五届董事会独立董事专门会议第八次会议决议公告",
+    "date": "2026-01-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1224931150&orgId=9900022016&announcementTime=2026-01-13 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224931149",
+    "title": "董事和高级管理人员所持公司股份及其变动管理制度（草案）",
+    "date": "2026-01-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1224931149&orgId=9900022016&announcementTime=2026-01-13 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224931148",
+    "title": "董事会秘书工作制度",
+    "date": "2026-01-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1224931148&orgId=9900022016&announcementTime=2026-01-13 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224931147",
+    "title": "董事会审计委员会议事规则（草案）",
+    "date": "2026-01-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1224931147&orgId=9900022016&announcementTime=2026-01-13 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-01-15",
+   "spike_day_pct": 5.4,
+   "pre5_return_pct": 4.97,
+   "next_day": "2026-01-16",
+   "next_open": 635.97,
+   "limit_up_price": 750.02,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300308-20260408",
+   "stock": "300308",
+   "name": "中际旭创",
+   "aliases": [
+    "旭创",
+    "易中天"
+   ],
+   "date": "2026-04-08",
+   "posts": 573,
+   "baseline_posts": 231.6,
+   "heat_ratio": 2.47,
+   "bull_share": 0.617,
+   "baseline_bull_share": 0.432,
+   "popularity_rank": 18,
+   "sample_posts": [
+    {
+     "post_id": 1690476231,
+     "time": "2026-04-08 12:12:20",
+     "title": "7400亿巨头历史新高！CPO集体走强 16股年报业绩一览"
+    },
+    {
+     "post_id": 1690709425,
+     "time": "2026-04-08 17:55:59",
+     "title": "三英战股王！“易中天”组合股价超越茅台 高价股位次频变动 TMT几乎霸榜前排"
+    },
+    {
+     "post_id": 1690700658,
+     "time": "2026-04-08 17:19:29",
+     "title": "中国AI 50概念涨6.80%，主力资金净流入43股"
+    },
+    {
+     "post_id": 1690700579,
+     "time": "2026-04-08 17:19:11",
+     "title": "通信行业资金流入榜：中际旭创、新易盛等净流入资金居前"
+    },
+    {
+     "post_id": 1690723724,
+     "time": "2026-04-08 19:03:07",
+     "title": "20260408牛途复盘"
+    },
+    {
+     "post_id": 1690759367,
+     "time": "2026-04-08 21:24:10",
+     "title": "CPO概念大涨 中际旭创、新易盛再创历史新高 16股年报业绩亮眼"
+    },
+    {
+     "post_id": 1690432081,
+     "time": "2026-04-08 11:07:09",
+     "title": "主力资金监控：中际旭创净买入超19亿"
+    },
+    {
+     "post_id": 1690367361,
+     "time": "2026-04-08 10:23:39",
+     "title": "7300亿市值巨头，股价新高"
+    },
+    {
+     "post_id": 1690718712,
+     "time": "2026-04-08 18:39:40",
+     "title": "主力资金 | 2股尾盘获主力大幅抢筹"
+    },
+    {
+     "post_id": 1690273151,
+     "time": "2026-04-08 09:42:09",
+     "title": "资金风向标 | 两融余额较上一日增加41.62亿元 通信行业获融资净买入额居首"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225056498",
+    "title": "2025年度报告披露的提示性公告",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056498&orgId=9900022016&announcementTime=2026-03-31 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225056497",
+    "title": "国泰海通证券股份有限公司关于公司2025年度募集资金存放、管理与使用情况的核查意见",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056497&orgId=9900022016&announcementTime=2026-03-31 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225056496",
+    "title": "关于续聘2026年度审计机构的公告",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056496&orgId=9900022016&announcementTime=2026-03-31 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225056495",
+    "title": "2025年度财务决算报告",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056495&orgId=9900022016&announcementTime=2026-03-31 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225056494",
+    "title": "关于提请股东会授权董事会制定2026年中期分红方案的公告",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056494&orgId=9900022016&announcementTime=2026-03-31 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-08",
+   "spike_day_pct": 11.07,
+   "pre5_return_pct": 20.85,
+   "next_day": "2026-04-09",
+   "next_open": 682.0,
+   "limit_up_price": 825.77,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300502-20260130",
+   "stock": "300502",
+   "name": "新易盛",
+   "aliases": [
+    "易盛",
+    "易中天"
+   ],
+   "date": "2026-01-30",
+   "posts": 814,
+   "baseline_posts": 326.1,
+   "heat_ratio": 2.5,
+   "bull_share": 0.506,
+   "baseline_bull_share": 0.382,
+   "popularity_rank": 11,
+   "sample_posts": [
+    {
+     "post_id": 1663077593,
+     "time": "2026-01-30 20:45:00",
+     "title": "新易盛：2025年净利同比预增231.24%-248.86%"
+    },
+    {
+     "post_id": 1663089209,
+     "time": "2026-01-30 21:24:16",
+     "title": "光模块三巨头2025年成绩单悉数出炉，易中天净利同比均大幅增长！"
+    },
+    {
+     "post_id": 1663120936,
+     "time": "2026-01-30 23:27:25",
+     "title": "正确看待年报预增！"
+    },
+    {
+     "post_id": 1663088496,
+     "time": "2026-01-30 21:21:43",
+     "title": "【易王归来】"
+    },
+    {
+     "post_id": 1663116290,
+     "time": "2026-01-30 23:03:50",
+     "title": "“易中天”，公布最新业绩预告！"
+    },
+    {
+     "post_id": 1663077078,
+     "time": "2026-01-30 20:43:17",
+     "title": "新易盛:2025年度业绩预告"
+    },
+    {
+     "post_id": 1663092756,
+     "time": "2026-01-30 21:36:30",
+     "title": "新易盛：2025年归母净利润94亿元-99亿元，同比预增231%-249%"
+    },
+    {
+     "post_id": 1663006660,
+     "time": "2026-01-30 17:07:40",
+     "title": "48股特大单净流入资金超2亿元"
+    },
+    {
+     "post_id": 1663112403,
+     "time": "2026-01-30 22:47:10",
+     "title": "“易中天”，全部预喜"
+    },
+    {
+     "post_id": 1663046659,
+     "time": "2026-01-30 18:59:17",
+     "title": "下周就不要玩了！COP易中天三巨头见好就收！"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224960617",
+    "title": "2025年度业绩预告",
+    "date": "2026-01-30",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1224960617&orgId=9900026455&announcementTime=2026-01-30 20:42:11",
+    "event_type": "earnings_forecast",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-01-30",
+   "spike_day_pct": 6.74,
+   "pre5_return_pct": 9.52,
+   "next_day": "2026-02-02",
+   "next_open": 457.24,
+   "limit_up_price": 503.39,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300502-20260305",
+   "stock": "300502",
+   "name": "新易盛",
+   "aliases": [
+    "易盛",
+    "易中天"
+   ],
+   "date": "2026-03-05",
+   "posts": 572,
+   "baseline_posts": 220.9,
+   "heat_ratio": 2.59,
+   "bull_share": 0.561,
+   "baseline_bull_share": 0.455,
+   "popularity_rank": 67,
+   "sample_posts": [
+    {
+     "post_id": 1674892311,
+     "time": "2026-03-05 10:47:50",
+     "title": "英伟达拟向两光学公司共投40亿美元，CPO概念获主力“加仓”近84亿元丨盘中线索"
+    },
+    {
+     "post_id": 1675175849,
+     "time": "2026-03-05 15:31:50",
+     "title": "主力复盘：25.69亿爆拉新易盛 17.02亿流出紫金矿业"
+    },
+    {
+     "post_id": 1675219082,
+     "time": "2026-03-05 17:59:20",
+     "title": "59股特大单净流入资金超2亿元"
+    },
+    {
+     "post_id": 1674835884,
+     "time": "2026-03-05 10:16:19",
+     "title": "CPO概念持续走强 新易盛涨超10%"
+    },
+    {
+     "post_id": 1674661560,
+     "time": "2026-03-05 01:05:09",
+     "title": "谷歌明确不采用CPO技术，谷歌的OCS本身就很能打，英伟达并不等于光模块，云厂商"
+    },
+    {
+     "post_id": 1675207172,
+     "time": "2026-03-05 17:10:30",
+     "title": "市值单日暴涨320亿元，新易盛反超五粮液，再夺川股“一哥”宝座"
+    },
+    {
+     "post_id": 1675116594,
+     "time": "2026-03-05 14:32:10",
+     "title": "主力资金监控：电子板块净流入超112亿"
+    },
+    {
+     "post_id": 1675244020,
+     "time": "2026-03-05 20:10:22",
+     "title": "只买伟大的公司"
+    },
+    {
+     "post_id": 1675210378,
+     "time": "2026-03-05 17:22:22",
+     "title": "下午开盘就开始逐步一路下移，有长上影线的不短，有收绿的阴线不小，不奇怪，整理期来"
+    },
+    {
+     "post_id": 1675232937,
+     "time": "2026-03-05 19:15:00",
+     "title": "活跃个股：新易盛成交280亿元 N通领换手率67%"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [],
+  "news": [],
+  "price": {
+   "spike_day": "2026-03-05",
+   "spike_day_pct": 8.63,
+   "pre5_return_pct": 3.98,
+   "next_day": "2026-03-06",
+   "next_open": 393.22,
+   "limit_up_price": 481.49,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300502-20260410",
+   "stock": "300502",
+   "name": "新易盛",
+   "aliases": [
+    "易盛",
+    "易中天"
+   ],
+   "date": "2026-04-10",
+   "posts": 482,
+   "baseline_posts": 226.4,
+   "heat_ratio": 2.13,
+   "bull_share": 0.54,
+   "baseline_bull_share": 0.408,
+   "popularity_rank": 17,
+   "sample_posts": [
+    {
+     "post_id": 1691876044,
+     "time": "2026-04-10 15:11:50",
+     "title": "CPO“光”速狂飙 “易中天”近1年平均涨幅超8倍"
+    },
+    {
+     "post_id": 1691916849,
+     "time": "2026-04-10 17:16:49",
+     "title": "时隔近52个月 创业板收盘收复3400点！一图速览十大权重股变迁"
+    },
+    {
+     "post_id": 1691944757,
+     "time": "2026-04-10 19:15:02",
+     "title": "现在我在家里横着走上一波年前高点472没走结果大幅回落，一个春节没过好被老婆指桑"
+    },
+    {
+     "post_id": 1691901264,
+     "time": "2026-04-10 16:16:50",
+     "title": "新易盛市值站上5000亿元！股价超券商目标价，多空激烈博弈→"
+    },
+    {
+     "post_id": 1691687900,
+     "time": "2026-04-10 11:50:29",
+     "title": "涨的越多散户就会更少。没有人敢接盘了。散户又少了。那些说易中天就是什么白酒光伏这"
+    },
+    {
+     "post_id": 1691895805,
+     "time": "2026-04-10 15:56:18",
+     "title": "纯小散一枚，感谢小新一起走过的2000多天，有的时候坚守比努力更重要。T来T去的"
+    },
+    {
+     "post_id": 1691944989,
+     "time": "2026-04-10 19:16:09",
+     "title": "兄弟姐妹们周末愉快，最近很火的测试测过了吗～"
+    },
+    {
+     "post_id": 1691936952,
+     "time": "2026-04-10 18:38:32",
+     "title": "下次490到500我就接回来。短期将到不了470。480极限了。抬高了。压力位置"
+    },
+    {
+     "post_id": 1691877544,
+     "time": "2026-04-10 15:14:53",
+     "title": "机构看好新易盛600块。应该是可以的。500过了。后面就550到600了。新易盛"
+    },
+    {
+     "post_id": 1691396571,
+     "time": "2026-04-10 04:09:18",
+     "title": "亚马逊光模块双龙头供应商，坚定持有，今年市值双双突破过万亿"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225040990",
+    "title": "成都新易盛通信技术股份有限公司章程（2026年3月）",
+    "date": "2026-03-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225040990&orgId=9900026455&announcementTime=2026-03-28 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225040989",
+    "title": "关于调整董事会人数、变更公司注册资本、经营范围暨修改《公司章程》的的公告",
+    "date": "2026-03-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225040989&orgId=9900026455&announcementTime=2026-03-28 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225040988",
+    "title": "关于选举产生第五届董事会职工代表董事的公告",
+    "date": "2026-03-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225040988&orgId=9900026455&announcementTime=2026-03-28 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225040987",
+    "title": "关于预计2026年并确认2025年日常关联交易情况的公告",
+    "date": "2026-03-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225040987&orgId=9900026455&announcementTime=2026-03-28 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225040986",
+    "title": "关于召开2026年第一次临时股东会的通知",
+    "date": "2026-03-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225040986&orgId=9900026455&announcementTime=2026-03-28 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-10",
+   "spike_day_pct": 6.63,
+   "pre5_return_pct": 16.76,
+   "next_day": "2026-04-13",
+   "next_open": 518.0,
+   "limit_up_price": 627.0,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300502-20260416",
+   "stock": "300502",
+   "name": "新易盛",
+   "aliases": [
+    "易盛",
+    "易中天"
+   ],
+   "date": "2026-04-16",
+   "posts": 526,
+   "baseline_posts": 242.2,
+   "heat_ratio": 2.17,
+   "bull_share": 0.54,
+   "baseline_bull_share": 0.415,
+   "popularity_rank": 25,
+   "sample_posts": [
+    {
+     "post_id": 1694673077,
+     "time": "2026-04-16 21:13:22",
+     "title": "新易盛一季度业绩预测"
+    },
+    {
+     "post_id": 1694369818,
+     "time": "2026-04-16 12:43:19",
+     "title": "5000亿龙头 大爆发！"
+    },
+    {
+     "post_id": 1694042559,
+     "time": "2026-04-16 04:22:58",
+     "title": "科学的尽头是玄学（戏说股价）"
+    },
+    {
+     "post_id": 1694537791,
+     "time": "2026-04-16 14:52:15",
+     "title": "新易盛300502上个月我在45块附近低吸了新易盛，这几天冲到52块就分批跑了，"
+    },
+    {
+     "post_id": 1694661677,
+     "time": "2026-04-16 20:34:49",
+     "title": "新易盛一季报增速猜测"
+    },
+    {
+     "post_id": 1694687074,
+     "time": "2026-04-16 22:01:25",
+     "title": "李一恩总结业绩影响"
+    },
+    {
+     "post_id": 1694623072,
+     "time": "2026-04-16 18:14:33",
+     "title": "刚下班回家复盘了一下新易盛。从走势技术来看。明天要涨会摸一下550左右。但如果万"
+    },
+    {
+     "post_id": 1694656261,
+     "time": "2026-04-16 20:17:00",
+     "title": "新易盛：公司与主流供应商保持了长期合作关系"
+    },
+    {
+     "post_id": 1694645467,
+     "time": "2026-04-16 19:39:44",
+     "title": "解读中际旭创26年的一季报，为什么这份公告对“新易盛”至关重要？"
+    },
+    {
+     "post_id": 1694579774,
+     "time": "2026-04-16 15:52:40",
+     "title": "“易中天”引爆创业板，A股又“牛”了？"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225099334",
+    "title": "北京国枫律师事务所关于成都新易盛通信技术股份有限公司2026年第一次临时股东大会的法律意见书",
+    "date": "2026-04-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225099334&orgId=9900026455&announcementTime=2026-04-13 19:32:09",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225099333",
+    "title": "成都新易盛通信技术股份有限公司2026年第一次临时股东会决议公告",
+    "date": "2026-04-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300502&announcementId=1225099333&orgId=9900026455&announcementTime=2026-04-13 19:32:09",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-16",
+   "spike_day_pct": 8.15,
+   "pre5_return_pct": 9.69,
+   "next_day": "2026-04-17",
+   "next_open": 550.0,
+   "limit_up_price": 645.0,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300476-20251209",
+   "stock": "300476",
+   "name": "胜宏科技",
+   "aliases": [
+    "胜宏"
+   ],
+   "date": "2025-12-09",
+   "posts": 495,
+   "baseline_posts": 186.4,
+   "heat_ratio": 2.66,
+   "bull_share": 0.6,
+   "baseline_bull_share": 0.374,
+   "popularity_rank": 18,
+   "sample_posts": [
+    {
+     "post_id": 1636553115,
+     "time": "2025-12-09 19:08:40",
+     "title": "摩尔线程新一代GPU架构将发布，多只概念股年内翻倍"
+    },
+    {
+     "post_id": 1636487964,
+     "time": "2025-12-09 15:32:40",
+     "title": "主力复盘：14.18亿抢筹胜宏科技 14.43亿流出航天发展"
+    },
+    {
+     "post_id": 1636294410,
+     "time": "2025-12-09 12:06:49",
+     "title": "阿弥陀佛，保佑陪主力浪别来胜宏科技"
+    },
+    {
+     "post_id": 1636589592,
+     "time": "2025-12-09 21:46:20",
+     "title": "随便聊聊，冒个泡泡"
+    },
+    {
+     "post_id": 1636543840,
+     "time": "2025-12-09 18:30:29",
+     "title": "主力资金 | 尾盘重点加仓股出炉"
+    },
+    {
+     "post_id": 1636501083,
+     "time": "2025-12-09 16:02:39",
+     "title": "拥有新工胜，账户再新高（12.09新易盛、工业富联、胜宏科技点评）"
+    },
+    {
+     "post_id": 1636530909,
+     "time": "2025-12-09 17:42:10",
+     "title": "共封装光学(CPO)概念涨1.64%，主力资金净流入56股"
+    },
+    {
+     "post_id": 1636111912,
+     "time": "2025-12-09 09:55:19",
+     "title": "资金风向标 | 两融余额重返2.5万亿元 电子行业获融资净买入额居首"
+    },
+    {
+     "post_id": 1636528528,
+     "time": "2025-12-09 17:33:00",
+     "title": "PCB概念涨0.68%，主力资金净流入74股"
+    },
+    {
+     "post_id": 1636530823,
+     "time": "2025-12-09 17:41:51",
+     "title": "主力动向：12月9日特大单净流出270.57亿元"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224855965",
+    "title": "关于签署募集资金四方监管协议的公告",
+    "date": "2025-12-05",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1224855965&orgId=9900024582&announcementTime=2025-12-05 19:44:13",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-12-09",
+   "spike_day_pct": 10.81,
+   "pre5_return_pct": 16.78,
+   "next_day": "2025-12-10",
+   "next_open": 315.0,
+   "limit_up_price": 381.66,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300476-20260225",
+   "stock": "300476",
+   "name": "胜宏科技",
+   "aliases": [
+    "胜宏"
+   ],
+   "date": "2026-02-25",
+   "posts": 341,
+   "baseline_posts": 99.3,
+   "heat_ratio": 3.43,
+   "bull_share": 0.681,
+   "baseline_bull_share": 0.412,
+   "popularity_rank": 35,
+   "sample_posts": [
+    {
+     "post_id": 1671021480,
+     "time": "2026-02-25 11:26:03",
+     "title": "胜宏顶住了60日线抛压，高射炮出现，大家值得期待。"
+    },
+    {
+     "post_id": 1671299107,
+     "time": "2026-02-25 22:38:19",
+     "title": "胜宏科技狂飙2550亿！AI服务器PCB全球第一，单日成交破170亿引爆市场"
+    },
+    {
+     "post_id": 1670802756,
+     "time": "2026-02-25 08:43:00",
+     "title": "胜宏科技递表港交所 摩根大通、中信建投国际、广发证券为保荐人"
+    },
+    {
+     "post_id": 1671285997,
+     "time": "2026-02-25 21:29:49",
+     "title": "2500亿元PCB龙头胜宏科技二次递表港交所：A股股价去年狂飙超5倍，前五大客户撑起营收“半壁江山”"
+    },
+    {
+     "post_id": 1671039822,
+     "time": "2026-02-25 12:04:11",
+     "title": "胜宏科技二次递表港交所 客户集中度飙升 研发投入低于同行"
+    },
+    {
+     "post_id": 1671286268,
+     "time": "2026-02-25 21:31:10",
+     "title": "A股放量冲高！这些板块表现亮眼→"
+    },
+    {
+     "post_id": 1671274040,
+     "time": "2026-02-25 20:27:02",
+     "title": "今天2月25日正月初九，日收益6.9％。$胜宏科技(SZ300476)$ 是我今"
+    },
+    {
+     "post_id": 1671272219,
+     "time": "2026-02-25 20:17:50",
+     "title": "【25日资金路线图】有色金属板块净流入154亿元居首 龙虎榜机构抢筹多股"
+    },
+    {
+     "post_id": 1671270669,
+     "time": "2026-02-25 20:09:22",
+     "title": "此刻，我只直抒情绪，不讲理论，不列数据。不过，胜宏科技今日最瞩目的高光必须先说："
+    },
+    {
+     "post_id": 1671241340,
+     "time": "2026-02-25 17:19:47",
+     "title": "全宇宙最强的兑奖盛宴就在明天清晨！"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224984563",
+    "title": "关于申请发行境外上市外资股（H股）并上市的进展公告",
+    "date": "2026-02-25",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1224984563&orgId=9900024582&announcementTime=2026-02-25 18:48:10",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224983706",
+    "title": "关于变更签字注册会计师及质量控制复核合伙人的公告",
+    "date": "2026-02-24",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1224983706&orgId=9900024582&announcementTime=2026-02-24 21:00:29",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224981971",
+    "title": "关于全资子公司完成工商变更登记并换发营业执照的公告",
+    "date": "2026-02-14",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1224981971&orgId=9900024582&announcementTime=2026-02-14 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224981970",
+    "title": "关于子公司之间提供担保的进展公告",
+    "date": "2026-02-14",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1224981970&orgId=9900024582&announcementTime=2026-02-14 00:00:00",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224981969",
+    "title": "关于全资孙公司收购境外公司股权进展暨收购完成的公告",
+    "date": "2026-02-14",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1224981969&orgId=9900024582&announcementTime=2026-02-14 00:00:00",
+    "event_type": "restructuring",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-02-25",
+   "spike_day_pct": 9.31,
+   "pre5_return_pct": 8.97,
+   "next_day": "2026-02-26",
+   "next_open": 293.0,
+   "limit_up_price": 351.1,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300476-20260417",
+   "stock": "300476",
+   "name": "胜宏科技",
+   "aliases": [
+    "胜宏"
+   ],
+   "date": "2026-04-17",
+   "posts": 504,
+   "baseline_posts": 219,
+   "heat_ratio": 2.3,
+   "bull_share": 0.538,
+   "baseline_bull_share": 0.411,
+   "popularity_rank": 31,
+   "sample_posts": [
+    {
+     "post_id": 1695030535,
+     "time": "2026-04-17 11:32:40",
+     "title": "PCB概念股持续走强，胜宏科技涨超10%"
+    },
+    {
+     "post_id": 1695287282,
+     "time": "2026-04-17 17:38:00",
+     "title": "电子行业资金流入榜：胜宏科技、三安光电等净流入资金居前"
+    },
+    {
+     "post_id": 1695285721,
+     "time": "2026-04-17 17:32:50",
+     "title": "PCB概念上涨2.80%，28股主力资金净流入超亿元"
+    },
+    {
+     "post_id": 1694735056,
+     "time": "2026-04-17 07:42:41",
+     "title": "胜宏科技发售价厘定为每股H股209.88港元"
+    },
+    {
+     "post_id": 1694785181,
+     "time": "2026-04-17 09:31:30",
+     "title": "胜宏科技H股定价209.88港元/股"
+    },
+    {
+     "post_id": 1694751228,
+     "time": "2026-04-17 09:03:21",
+     "title": "胜宏科技：H股发行价厘定为每股209.88港元 4月21日起上市交易"
+    },
+    {
+     "post_id": 1695044803,
+     "time": "2026-04-17 12:03:40",
+     "title": "半日主力资金丨加仓电子板块 抛售医药生物板块"
+    },
+    {
+     "post_id": 1695313048,
+     "time": "2026-04-17 19:19:09",
+     "title": "cpo易中天的业绩和技术含量已经到顶，今后增长乏力。胜宏科技的业绩还没放量，待泰"
+    },
+    {
+     "post_id": 1695369575,
+     "time": "2026-04-17 22:31:42",
+     "title": "胜宏Q1业绩增长有保障"
+    },
+    {
+     "post_id": 1694717580,
+     "time": "2026-04-17 01:57:01",
+     "title": "这么简单的逻辑都想不通吗"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225114862",
+    "title": "关于境外上市外资股（H股）公开发行价格的公告",
+    "date": "2026-04-17",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225114862&orgId=9900024582&announcementTime=2026-04-17 07:55:37",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225097032",
+    "title": "关于刊发H股招股说明书、H股发行价格上限及H股香港公开发售等事宜的公告",
+    "date": "2026-04-13",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225097032&orgId=9900024582&announcementTime=2026-04-13 07:56:53",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225091227",
+    "title": "2025年年度分红派息实施公告",
+    "date": "2026-04-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225091227&orgId=9900024582&announcementTime=2026-04-09 21:14:11",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225079869",
+    "title": "君合律师事务所上海分所关于胜宏科技（惠州）股份有限公司2025年度股东会之法律意见书",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225079869&orgId=9900024582&announcementTime=2026-04-03 19:00:31",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225079868",
+    "title": "2025年度股东会决议公告",
+    "date": "2026-04-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225079868&orgId=9900024582&announcementTime=2026-04-03 19:00:31",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-17",
+   "spike_day_pct": 7.55,
+   "pre5_return_pct": 12.65,
+   "next_day": "2026-04-20",
+   "next_open": 329.0,
+   "limit_up_price": 391.7,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300476-20260522",
+   "stock": "300476",
+   "name": "胜宏科技",
+   "aliases": [
+    "胜宏"
+   ],
+   "date": "2026-05-22",
+   "posts": 535,
+   "baseline_posts": 247.2,
+   "heat_ratio": 2.16,
+   "bull_share": 0.57,
+   "baseline_bull_share": 0.428,
+   "popularity_rank": 11,
+   "sample_posts": [
+    {
+     "post_id": 1712856809,
+     "time": "2026-05-22 11:59:30",
+     "title": "价值量显著飙升！PCB概念密集涨停 多只龙头股年内股价翻倍"
+    },
+    {
+     "post_id": 1713114648,
+     "time": "2026-05-22 15:31:42",
+     "title": "主力复盘：32.50亿爆拉胜宏科技 12.02亿流出贵州茅台"
+    },
+    {
+     "post_id": 1713191505,
+     "time": "2026-05-22 19:51:20",
+     "title": "主力资金丨4股尾盘主力资金净流入均超3亿元"
+    },
+    {
+     "post_id": 1713237758,
+     "time": "2026-05-22 23:29:06",
+     "title": "5.22 各位股友好，收评记录！"
+    },
+    {
+     "post_id": 1712861153,
+     "time": "2026-05-22 12:12:10",
+     "title": "新涨价逻辑出现，3500亿PCB龙头大涨，A股第一名"
+    },
+    {
+     "post_id": 1713128923,
+     "time": "2026-05-22 16:04:21",
+     "title": "胜宏科技300476在胜宏科技这只票上，我前阵子干了点，这两天减了点仓，算是稳稳"
+    },
+    {
+     "post_id": 1713208286,
+     "time": "2026-05-22 21:01:50",
+     "title": "胜宏科技：公司不涉及光刻胶产品业务"
+    },
+    {
+     "post_id": 1712551496,
+     "time": "2026-05-22 09:25:41",
+     "title": "有了英伟达的业绩背书，机构今天开始进场。"
+    },
+    {
+     "post_id": 1713216456,
+     "time": "2026-05-22 21:37:58",
+     "title": "2400亿PCB巨头一字涨停！揭秘“全科状元”鹏鼎控股与“特长生”胜宏科技的巅峰对决"
+    },
+    {
+     "post_id": 1712870050,
+     "time": "2026-05-22 12:40:30",
+     "title": "300476 成交额A股第一"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225314110",
+    "title": "关于稳定价格行动、稳定价格期结束的公告",
+    "date": "2026-05-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225314110&orgId=9900024582&announcementTime=2026-05-18 19:02:10",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-05-22",
+   "spike_day_pct": 13.31,
+   "pre5_return_pct": 10.37,
+   "next_day": "2026-05-25",
+   "next_open": 390.0,
+   "limit_up_price": 450.6,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300476-20260805",
+   "stock": "300476",
+   "name": "胜宏科技",
+   "aliases": [
+    "胜宏"
+   ],
+   "date": "2026-08-05",
+   "posts": 680,
+   "baseline_posts": 283.9,
+   "heat_ratio": 2.39,
+   "bull_share": 0.483,
+   "baseline_bull_share": 0.27,
+   "popularity_rank": 19,
+   "sample_posts": [
+    {
+     "post_id": 1754785558,
+     "time": "2026-08-05 14:56:19",
+     "title": "海外再传利好，算力硬件板块午后狂飙！2300亿龙头股逼近涨停"
+    },
+    {
+     "post_id": 1754754216,
+     "time": "2026-08-05 14:33:18",
+     "title": "每个人只能赚到自己认知范围内的钱，我一早已经说了自己的想法并知行合一在执行，既然"
+    },
+    {
+     "post_id": 1754813233,
+     "time": "2026-08-05 15:43:09",
+     "title": "胜宏科技，接下来谁在炒很关键了"
+    },
+    {
+     "post_id": 1754836231,
+     "time": "2026-08-05 16:56:41",
+     "title": "恒指、恒科飘红，光通信、PCB、芯片股爆发，胜宏科技涨超16%；油气股下跌 | 港股收盘"
+    },
+    {
+     "post_id": 1754726988,
+     "time": "2026-08-05 14:13:57",
+     "title": "胜宏暴涨的原因之前胜宏交付的板子良率低，短路问题严重，怀疑是胜宏的技术有问题，而"
+    },
+    {
+     "post_id": 1754652032,
+     "time": "2026-08-05 13:23:30",
+     "title": "算力硬件股涨势扩大 胜宏科技逼近20cm涨停"
+    },
+    {
+     "post_id": 1754592221,
+     "time": "2026-08-05 11:41:22",
+     "title": "这波反弹看到230到250之间。"
+    },
+    {
+     "post_id": 1754831266,
+     "time": "2026-08-05 16:41:00",
+     "title": "港股收盘 | 三大指数高开高走 算力产业链与黄金股领涨"
+    },
+    {
+     "post_id": 1754705786,
+     "time": "2026-08-05 14:00:20",
+     "title": "原来如此"
+    },
+    {
+     "post_id": 1754881581,
+     "time": "2026-08-05 20:15:08",
+     "title": "$胜宏科技(SZ300476)$"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225459402",
+    "title": "H股公告-证券变动月报表",
+    "date": "2026-08-05",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225459402&orgId=9900024582&announcementTime=2026-08-05 17:58:10",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225445163",
+    "title": "关于对子公司担保解除及子公司之间提供担保的进展公告",
+    "date": "2026-07-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225445163&orgId=9900024582&announcementTime=2026-07-28 18:48:27",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-08-05",
+   "spike_day_pct": 17.12,
+   "pre5_return_pct": 17.23,
+   "next_day": "2026-08-06",
+   "next_open": 228.01,
+   "limit_up_price": 283.62,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-300476-20260921",
+   "stock": "300476",
+   "name": "胜宏科技",
+   "aliases": [
+    "胜宏"
+   ],
+   "date": "2026-09-21",
+   "posts": 500,
+   "baseline_posts": 149.2,
+   "heat_ratio": 3.35,
+   "bull_share": 0.532,
+   "baseline_bull_share": 0.3,
+   "popularity_rank": 27,
+   "sample_posts": [
+    {
+     "post_id": 1775933277,
+     "time": "2026-09-21 22:02:40",
+     "title": "2300亿PCB龙头，资金净流入超18亿元，A股第一"
+    },
+    {
+     "post_id": 1775851573,
+     "time": "2026-09-21 15:31:40",
+     "title": "主力复盘：17.84亿抢筹胜宏科技 13.00亿流出华天科技"
+    },
+    {
+     "post_id": 1775850033,
+     "time": "2026-09-21 15:28:40",
+     "title": "资金风向标 | 胜宏科技获资金净流入17.84亿元"
+    },
+    {
+     "post_id": 1775901877,
+     "time": "2026-09-21 19:11:49",
+     "title": "主力资金 | 尾盘14股获抢筹"
+    },
+    {
+     "post_id": 1775926409,
+     "time": "2026-09-21 21:33:08",
+     "title": "查了一下今天关于胜子的小作文，分享出来，供大家参考。"
+    },
+    {
+     "post_id": 1775828976,
+     "time": "2026-09-21 14:56:19",
+     "title": "胜宏科技获主力资金净流入近13亿元 天孚通信净流出超13亿元"
+    },
+    {
+     "post_id": 1775879628,
+     "time": "2026-09-21 17:18:23",
+     "title": "咋整"
+    },
+    {
+     "post_id": 1775929814,
+     "time": "2026-09-21 21:47:34",
+     "title": "5w实盘的第103天"
+    },
+    {
+     "post_id": 1775936437,
+     "time": "2026-09-21 22:16:57",
+     "title": "$胜宏科技(SZ300476)$"
+    },
+    {
+     "post_id": 1775873344,
+     "time": "2026-09-21 16:50:44",
+     "title": "胜宏科技8"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225573326",
+    "title": "关于2026年A股限制性股票激励计划内幕信息知情人买卖公司股票情况的自查报告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225573326&orgId=9900024582&announcementTime=2026-09-18 20:21:28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225573325",
+    "title": "关于完成工商变更登记并换发营业执照的公告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225573325&orgId=9900024582&announcementTime=2026-09-18 20:21:28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225573324",
+    "title": "君合律师事务所上海分所关于胜宏科技（惠州）股份有限公司2026年第三次临时股东会之法律意见书",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225573324&orgId=9900024582&announcementTime=2026-09-18 20:21:28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225573323",
+    "title": "2026年第三次临时股东会决议公告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225573323&orgId=9900024582&announcementTime=2026-09-18 20:21:28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225561088",
+    "title": "董事会薪酬与考核委员会关于2026年A股限制性股票激励计划首次授予激励对象名单的核查意见及公示情况说明",
+    "date": "2026-09-11",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300476&announcementId=1225561088&orgId=9900024582&announcementTime=2026-09-11 19:12:27",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-09-21",
+   "spike_day_pct": 9.23,
+   "pre5_return_pct": 10.22,
+   "next_day": "2026-09-22",
+   "next_open": 251.0,
+   "limit_up_price": 297.6,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": true
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601127-20260521",
+   "stock": "601127",
+   "name": "赛力斯",
+   "aliases": [
+    "问界",
+    "小康股份"
+   ],
+   "date": "2026-05-21",
+   "posts": 985,
+   "baseline_posts": 383.3,
+   "heat_ratio": 2.57,
+   "bull_share": 0.431,
+   "baseline_bull_share": 0.261,
+   "popularity_rank": 43,
+   "sample_posts": [
+    {
+     "post_id": 1711882049,
+     "time": "2026-05-21 10:46:17",
+     "title": "兄弟们，你们猜我今天怎么操作的，盘前想到涨5个点时候就跑，结果涨4个点时候就忍不"
+    },
+    {
+     "post_id": 1712004192,
+     "time": "2026-05-21 12:38:39",
+     "title": "新能源车，启动！超10亿资金杀入赛力斯"
+    },
+    {
+     "post_id": 1711594224,
+     "time": "2026-05-21 04:56:45",
+     "title": "那天本来是想着要拿长线的，但后来想想这样的跌法不大对劲，赶快冲高跑了，自己算幸运"
+    },
+    {
+     "post_id": 1711762289,
+     "time": "2026-05-21 09:58:40",
+     "title": "汽车板块持续走强 赛力斯涨超7%"
+    },
+    {
+     "post_id": 1711844135,
+     "time": "2026-05-21 10:29:41",
+     "title": "赛力斯盘中涨停"
+    },
+    {
+     "post_id": 1712389599,
+     "time": "2026-05-21 19:04:40",
+     "title": "第八届西洽会发布超5700亿元机会清单 面向全球寻合作"
+    },
+    {
+     "post_id": 1711821012,
+     "time": "2026-05-21 10:20:11",
+     "title": "汽车整车板块震荡反弹 赛力斯触及涨停"
+    },
+    {
+     "post_id": 1712223708,
+     "time": "2026-05-21 14:40:55",
+     "title": "越是困难越要看到希望"
+    },
+    {
+     "post_id": 1712353800,
+     "time": "2026-05-21 17:13:29",
+     "title": "汽车行业5月21日资金流向日报"
+    },
+    {
+     "post_id": 1712407617,
+     "time": "2026-05-21 20:09:31",
+     "title": "赛力斯：公司将聚焦主业发展，不断丰富产品矩阵"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225286120",
+    "title": "H股公告（翌日披露报表）",
+    "date": "2026-05-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601127&announcementId=1225286120&orgId=9900024265&announcementTime=2026-05-09",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-05-21",
+   "spike_day_pct": 6.14,
+   "pre5_return_pct": -1.96,
+   "next_day": "2026-05-22",
+   "next_open": 83.0,
+   "limit_up_price": 91.72,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600418-20251112",
+   "stock": "600418",
+   "name": "江淮汽车",
+   "aliases": [
+    "江淮",
+    "尊界"
+   ],
+   "date": "2025-11-12",
+   "posts": 335,
+   "baseline_posts": 130.7,
+   "heat_ratio": 2.56,
+   "bull_share": 0.469,
+   "baseline_bull_share": 0.357,
+   "popularity_rank": 123,
+   "sample_posts": [
+    {
+     "post_id": 1623541592,
+     "time": "2025-11-12 09:55:00",
+     "title": "涉嫌严重违法，江淮汽车原皮卡公司党委书记赵涛被查"
+    },
+    {
+     "post_id": 1623989050,
+     "time": "2025-11-12 17:59:45",
+     "title": "兄弟们冲啊，重大利好"
+    },
+    {
+     "post_id": 1624029038,
+     "time": "2025-11-12 20:46:43",
+     "title": "即将起飞，最后的上车机会"
+    },
+    {
+     "post_id": 1624020053,
+     "time": "2025-11-12 20:08:20",
+     "title": "天天唱空的，中午忍不住把我拉黑，看到的吱个声，帮我带个话"
+    },
+    {
+     "post_id": 1623931459,
+     "time": "2025-11-12 15:20:42",
+     "title": "分析后续江淮走势"
+    },
+    {
+     "post_id": 1624026996,
+     "time": "2025-11-12 20:38:18",
+     "title": "会不会复刻八月份走势"
+    },
+    {
+     "post_id": 1623548939,
+     "time": "2025-11-12 09:58:09",
+     "title": "江淮跌下来都是机会"
+    },
+    {
+     "post_id": 1623435720,
+     "time": "2025-11-12 08:10:10",
+     "title": "这也有人信？还是一个个都是文盲？今天几号？这个公告下边几号？"
+    },
+    {
+     "post_id": 1623886121,
+     "time": "2025-11-12 14:39:43",
+     "title": "涨跌随意，哈哈哈哈账户红了，有种跌破我成本呀"
+    },
+    {
+     "post_id": 1623854192,
+     "time": "2025-11-12 14:14:02",
+     "title": "让大家见笑了"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224798400",
+    "title": "江淮汽车2025年第一次临时股东会会议资料",
+    "date": "2025-11-12",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224798400&orgId=gssh0600418&announcementTime=2025-11-12",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224792353",
+    "title": "江淮汽车2025年10月产、销快报",
+    "date": "2025-11-08",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224792353&orgId=gssh0600418&announcementTime=2025-11-08",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224784281",
+    "title": "江淮汽车关于选举第九届董事会职工董事的公告",
+    "date": "2025-11-04",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224784281&orgId=gssh0600418&announcementTime=2025-11-04",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224776734",
+    "title": "江淮汽车2025年第三季度报告",
+    "date": "2025-10-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224776734&orgId=gssh0600418&announcementTime=2025-10-31",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224776733",
+    "title": "安徽江淮汽车集团股份有限公司独立董事工作制度",
+    "date": "2025-10-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224776733&orgId=gssh0600418&announcementTime=2025-10-31",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-11-12",
+   "spike_day_pct": 5.63,
+   "pre5_return_pct": 2.22,
+   "next_day": "2025-11-13",
+   "next_open": 48.45,
+   "limit_up_price": 53.64,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600418-20251209",
+   "stock": "600418",
+   "name": "江淮汽车",
+   "aliases": [
+    "江淮",
+    "尊界"
+   ],
+   "date": "2025-12-09",
+   "posts": 174,
+   "baseline_posts": 84.7,
+   "heat_ratio": 2.06,
+   "bull_share": 0.503,
+   "baseline_bull_share": 0.403,
+   "popularity_rank": 319,
+   "sample_posts": [
+    {
+     "post_id": 1636153914,
+     "time": "2025-12-09 10:13:00",
+     "title": "江淮汽车项兴初回怼“资历论”：没百年历史 就不能造豪华车？"
+    },
+    {
+     "post_id": 1636220289,
+     "time": "2025-12-09 10:49:11",
+     "title": "江淮汽车成立动力驱动系统公司"
+    },
+    {
+     "post_id": 1636605311,
+     "time": "2025-12-09 22:55:00",
+     "title": "江淮钇为品牌被渠道整合背后 多经销商称正优惠“清库”"
+    },
+    {
+     "post_id": 1636398303,
+     "time": "2025-12-09 14:08:41",
+     "title": "关键K价格区间震荡，低点低点抬高，这个底部磨了这么久也该突破了"
+    },
+    {
+     "post_id": 1636519451,
+     "time": "2025-12-09 17:01:21",
+     "title": "未来的尊界潜力无限"
+    },
+    {
+     "post_id": 1636526730,
+     "time": "2025-12-09 17:26:07",
+     "title": "江淮是唯一个汽车界，任何阶层都可以买的汽车品牌！绝对1万亿市值"
+    },
+    {
+     "post_id": 1636295040,
+     "time": "2025-12-09 12:09:00",
+     "title": "江淮汽车成立杰华动力驱动系统公司 注册资本2亿元"
+    },
+    {
+     "post_id": 1636346605,
+     "time": "2025-12-09 13:28:48",
+     "title": "难道我是天选之子？"
+    },
+    {
+     "post_id": 1636325432,
+     "time": "2025-12-09 13:12:26",
+     "title": "江淮是鸿蒙五界最有潜力的"
+    },
+    {
+     "post_id": 1636564144,
+     "time": "2025-12-09 19:56:48",
+     "title": "尊界车系初具雏形，未来依托鸿蒙智行销售网络和售后服务，可以开辟一个新赛道"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224857664",
+    "title": "江淮汽车2025年11月产、销快报",
+    "date": "2025-12-09",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224857664&orgId=gssh0600418&announcementTime=2025-12-09",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224851294",
+    "title": "江淮汽车关于召开2025年第三季度业绩说明会的公告",
+    "date": "2025-12-05",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1224851294&orgId=gssh0600418&announcementTime=2025-12-05",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-12-09",
+   "spike_day_pct": 2.89,
+   "pre5_return_pct": 0.71,
+   "next_day": "2025-12-10",
+   "next_open": 49.5,
+   "limit_up_price": 54.85,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600418-20260427",
+   "stock": "600418",
+   "name": "江淮汽车",
+   "aliases": [
+    "江淮",
+    "尊界"
+   ],
+   "date": "2026-04-27",
+   "posts": 277,
+   "baseline_posts": 68.5,
+   "heat_ratio": 4.04,
+   "bull_share": 0.582,
+   "baseline_bull_share": 0.332,
+   "popularity_rank": 33,
+   "sample_posts": [
+    {
+     "post_id": 1699779622,
+     "time": "2026-04-27 12:43:20",
+     "title": "股价触及涨停！江淮、华为合作“再升级” 尊界将推200万元级新品"
+    },
+    {
+     "post_id": 1699451589,
+     "time": "2026-04-27 08:30:09",
+     "title": "华为余承东：尊界将推出200万元级新车 6月底上市"
+    },
+    {
+     "post_id": 1700133142,
+     "time": "2026-04-27 21:31:20",
+     "title": "江淮汽车：2026年1季度公司新能源乘用车实现销售6160辆"
+    },
+    {
+     "post_id": 1699938454,
+     "time": "2026-04-27 14:48:20",
+     "title": "余承东出镜，600418涨停"
+    },
+    {
+     "post_id": 1700036191,
+     "time": "2026-04-27 17:45:59",
+     "title": "余承东：尊界200万元级新车将发布！江淮汽车涨停 市值大增100亿元"
+    },
+    {
+     "post_id": 1700010895,
+     "time": "2026-04-27 16:42:50",
+     "title": "江淮汽车：目前尊界S800面向国内销售"
+    },
+    {
+     "post_id": 1699822875,
+     "time": "2026-04-27 13:25:11",
+     "title": "汽车整车板块震荡走强"
+    },
+    {
+     "post_id": 1699572267,
+     "time": "2026-04-27 09:53:30",
+     "title": "余承东爆料尊界新车：价格200万，6月底发布"
+    },
+    {
+     "post_id": 1699812684,
+     "time": "2026-04-27 13:17:50",
+     "title": "汽车整车板块震荡走强 江淮汽车涨停"
+    },
+    {
+     "post_id": 1700036486,
+     "time": "2026-04-27 17:46:54",
+     "title": "我在深圳看到的尊界已经很漂亮了。不知道更贵的车会有多漂亮。深圳街头的尊界"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225136253",
+    "title": "江淮汽车2025年年度股东会会议资料",
+    "date": "2026-04-22",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1225136253&orgId=gssh0600418&announcementTime=2026-04-22",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-27",
+   "spike_day_pct": 10.0,
+   "pre5_return_pct": 5.11,
+   "next_day": "2026-04-28",
+   "next_open": 49.03,
+   "limit_up_price": 53.83,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600418-20260922",
+   "stock": "600418",
+   "name": "江淮汽车",
+   "aliases": [
+    "江淮",
+    "尊界"
+   ],
+   "date": "2026-09-22",
+   "posts": 547,
+   "baseline_posts": 204.8,
+   "heat_ratio": 2.67,
+   "bull_share": 0.597,
+   "baseline_bull_share": 0.307,
+   "popularity_rank": 8,
+   "sample_posts": [
+    {
+     "post_id": 1776439157,
+     "time": "2026-09-22 15:00:30",
+     "title": "消息称玛莎拉蒂与华为、江淮汽车开展长期产业合作谈判"
+    },
+    {
+     "post_id": 1776474322,
+     "time": "2026-09-22 16:31:10",
+     "title": "“四界”关联方股价全线异动 鸿蒙智行新车发布在即"
+    },
+    {
+     "post_id": 1776503117,
+     "time": "2026-09-22 18:51:09",
+     "title": "与玛莎拉蒂、华为合作传闻再起，江淮汽车午后涨停"
+    },
+    {
+     "post_id": 1776491376,
+     "time": "2026-09-22 17:47:40",
+     "title": "项兴初表态坚定与华为长期深度合作 江淮汽车午后涨停！"
+    },
+    {
+     "post_id": 1776279892,
+     "time": "2026-09-22 12:56:30",
+     "title": "9月21日，知名汽车博主孙少军提到尊界品牌上周交付800台。目前尊界品牌S800"
+    },
+    {
+     "post_id": 1776416723,
+     "time": "2026-09-22 14:43:20",
+     "title": "汽车整车板块活跃 江淮汽车涨停"
+    },
+    {
+     "post_id": 1776551462,
+     "time": "2026-09-22 23:08:17",
+     "title": "问界由赛力斯主导，这是雪上加霜。鸿蒙智行超高端资源，江淮现在独享。"
+    },
+    {
+     "post_id": 1776516574,
+     "time": "2026-09-22 20:15:10",
+     "title": "江淮汽车午后突发涨停 与华为合作模式不变"
+    },
+    {
+     "post_id": 1776391390,
+     "time": "2026-09-22 14:25:00",
+     "title": "汽车整车板块局部异动 江淮汽车涨停"
+    },
+    {
+     "post_id": 1776456572,
+     "time": "2026-09-22 15:30:00",
+     "title": "江淮汽车：持续加快高端产品矩阵布局 覆盖SUV、运动豪华等细分场景"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225555152",
+    "title": "江淮汽车2026年8月产、销快报",
+    "date": "2026-09-10",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600418&announcementId=1225555152&orgId=gssh0600418&announcementTime=2026-09-10",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [
+   {
+    "news_id": "69e5802fd6a26e16",
+    "source": "eastmoney_stock_news",
+    "time": "2026-09-22 16:24:00",
+    "title": "“一卖就起飞”！600418尾盘突然涨停，发生了什么？",
+    "snippet": "今日午后，汽车整车板块走强，江淮汽车尾盘涨停，收盘报21.32元/股，最新市值480.59亿元，涨停板上封单超13万手。北汽蓝谷、宇通客车、比亚迪、长城汽车等跟涨。有股民在股吧表示：“毫无征兆”，“拍断大腿，一卖就起飞”..... 消息面上，市场关注两方面动向。一是赛力斯与华为的合作模式发生变化",
+    "url": "http://finance.eastmoney.com/a/202609223881266658.html"
+   }
+  ],
+  "price": {
+   "spike_day": "2026-09-22",
+   "spike_day_pct": 10.01,
+   "pre5_return_pct": 10.7,
+   "next_day": "2026-09-23",
+   "next_open": 21.97,
+   "limit_up_price": 23.45,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "await_confirmation",
+   "trigger": null,
+   "evidence_id": null
+  },
+  "news_archive_covers_window": true
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601238-20251014",
+   "stock": "601238",
+   "name": "广汽集团",
+   "aliases": [
+    "广汽",
+    "埃安"
+   ],
+   "date": "2025-10-14",
+   "posts": 172,
+   "baseline_posts": 36.9,
+   "heat_ratio": 4.66,
+   "bull_share": 0.395,
+   "baseline_bull_share": 0.284,
+   "popularity_rank": 528,
+   "sample_posts": [
+    {
+     "post_id": 1610492095,
+     "time": "2025-10-14 22:15:09",
+     "title": "广汽回应与京东、宁德时代推新车：让“买车像买手机一样方便”"
+    },
+    {
+     "post_id": 1610434564,
+     "time": "2025-10-14 18:10:59",
+     "title": "广汽 、宁德时代、京东联合推出新车，宁德时代：为换电车型"
+    },
+    {
+     "post_id": 1610498187,
+     "time": "2025-10-14 22:43:48",
+     "title": "解决痛点成就伟业！"
+    },
+    {
+     "post_id": 1610435957,
+     "time": "2025-10-14 18:17:10",
+     "title": "京东回应下场造车：不直接制造，主要提供用户消费洞察及独家销售"
+    },
+    {
+     "post_id": 1610495079,
+     "time": "2025-10-14 22:28:40",
+     "title": "广汽IPD元年：一场从昊铂开始的革命与救赎"
+    },
+    {
+     "post_id": 1610415531,
+     "time": "2025-10-14 16:59:00",
+     "title": "市场监管总局无条件批准三菱自动车工业株式会社收购广汽三菱汽车销售有限公司股权案"
+    },
+    {
+     "post_id": 1610489923,
+     "time": "2025-10-14 22:06:09",
+     "title": "看这人气榜明天收盘低于5个点就是浪费资源，我特意去京东汽车看了下，确实不错，首先"
+    },
+    {
+     "post_id": 1610437547,
+     "time": "2025-10-14 18:24:07",
+     "title": "广汽、京东、宁德时代联合推出新车。广汽营销正在发生可喜的变化"
+    },
+    {
+     "post_id": 1610091192,
+     "time": "2025-10-14 10:40:10",
+     "title": "塑料瓶变书包，广汽丰田儿童安全公益再创新"
+    },
+    {
+     "post_id": 1610457581,
+     "time": "2025-10-14 19:53:09",
+     "title": "$广汽集团(SH601238)$"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224705102",
+    "title": "广汽集团2025年9月产销快报",
+    "date": "2025-10-11",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224705102&orgId=9900006006&announcementTime=2025-10-11",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224696317",
+    "title": "广汽集团信息披露管理制度（2025年9月修订）",
+    "date": "2025-10-01",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224696317&orgId=9900006006&announcementTime=2025-10-01",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224696316",
+    "title": "广汽集团公司债券及银行间非金融企业债务融资工具募集资金管理制度（2025年9月制定）",
+    "date": "2025-10-01",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224696316&orgId=9900006006&announcementTime=2025-10-01",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224696315",
+    "title": "广汽集团第七届董事会第11次会议决议公告",
+    "date": "2025-10-01",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224696315&orgId=9900006006&announcementTime=2025-10-01",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224696294",
+    "title": "H股公告-广汽集团2025年9月证券变动月报表",
+    "date": "2025-10-01",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224696294&orgId=9900006006&announcementTime=2025-10-01",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-10-14",
+   "spike_day_pct": 0.0,
+   "pre5_return_pct": -0.79,
+   "next_day": "2025-10-15",
+   "next_open": 7.81,
+   "limit_up_price": 8.28,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601238-20251124",
+   "stock": "601238",
+   "name": "广汽集团",
+   "aliases": [
+    "广汽",
+    "埃安"
+   ],
+   "date": "2025-11-24",
+   "posts": 616,
+   "baseline_posts": 138.7,
+   "heat_ratio": 4.44,
+   "bull_share": 0.542,
+   "baseline_bull_share": 0.377,
+   "popularity_rank": 11,
+   "sample_posts": [
+    {
+     "post_id": 1629333945,
+     "time": "2025-11-24 12:25:50",
+     "title": "广汽全固态电池中试产线建成投产 多股业绩有望持续高增长"
+    },
+    {
+     "post_id": 1629514238,
+     "time": "2025-11-24 15:30:10",
+     "title": "L3商业化落地倒计时！主机厂角逐上车“第一枪” 相关政策、标准将成关键"
+    },
+    {
+     "post_id": 1629575395,
+     "time": "2025-11-24 18:45:50",
+     "title": "【焦点复盘】市场现久违普涨反弹，商业航天概念大放异彩，千问APP引爆阿里概念"
+    },
+    {
+     "post_id": 1629049161,
+     "time": "2025-11-24 00:37:40",
+     "title": "广汽集团全固态电池中试产线正式建成投产"
+    },
+    {
+     "post_id": 1629268235,
+     "time": "2025-11-24 10:59:36",
+     "title": "宁可今天的涨停板是昙花一现。也不倒在黎明前！毕竟我被套三年多了。毕竟此时还亏损3"
+    },
+    {
+     "post_id": 1629050606,
+     "time": "2025-11-24 01:15:50",
+     "title": "今年前10月广东规模以上工业增加值同比增长3.5%；十五运会期间广州地铁累计运客1.34亿人次丨大湾区财经早参"
+    },
+    {
+     "post_id": 1629108533,
+     "time": "2025-11-24 09:34:31",
+     "title": "固态电池概念活跃 广汽集团一字涨停"
+    },
+    {
+     "post_id": 1629353952,
+     "time": "2025-11-24 13:07:23",
+     "title": "广汽全固态电池的硫化物电解质相关体系中有添加碘化锂，且碘化锂是其解决硫化物全固态"
+    },
+    {
+     "post_id": 1629340030,
+     "time": "2025-11-24 12:48:50",
+     "title": "广汽全固态电池中试产线投产 电池能量密度突破400Wh/kg"
+    },
+    {
+     "post_id": 1629183600,
+     "time": "2025-11-24 10:06:00",
+     "title": "广汽集团涨停 全固态电池中试产线已建成投产"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1224808467",
+    "title": "广汽集团第七届董事会第13次会议决议公告",
+    "date": "2025-11-17",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224808467&orgId=9900006006&announcementTime=2025-11-17",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224806151",
+    "title": "广汽集团关于中期票据获注册的公告",
+    "date": "2025-11-15",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224806151&orgId=9900006006&announcementTime=2025-11-15",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1224796976",
+    "title": "H股公告-关于向广汽本田增资",
+    "date": "2025-11-11",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1224796976&orgId=9900006006&announcementTime=2025-11-11",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2025-11-24",
+   "spike_day_pct": 10.0,
+   "pre5_return_pct": 6.23,
+   "next_day": "2025-11-25",
+   "next_open": 9.0,
+   "limit_up_price": 9.2,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-601238-20260820",
+   "stock": "601238",
+   "name": "广汽集团",
+   "aliases": [
+    "广汽",
+    "埃安"
+   ],
+   "date": "2026-08-20",
+   "posts": 178,
+   "baseline_posts": 45,
+   "heat_ratio": 3.96,
+   "bull_share": 0.486,
+   "baseline_bull_share": 0.269,
+   "popularity_rank": 215,
+   "sample_posts": [
+    {
+     "post_id": 1761992025,
+     "time": "2026-08-20 14:06:30",
+     "title": "广汽集团旗下自主品牌埃安Ray7亮相"
+    },
+    {
+     "post_id": 1762177919,
+     "time": "2026-08-20 21:30:07",
+     "title": "广汽要番身，除非三年内把丰田，本田的合资厂全关了。自己就搞埃安，华镜，传祺。现在"
+    },
+    {
+     "post_id": 1761865697,
+     "time": "2026-08-20 11:26:50",
+     "title": "广汽埃安与华为深化智能电动技术合作"
+    },
+    {
+     "post_id": 1762184134,
+     "time": "2026-08-20 21:52:35",
+     "title": "有谁还记得广汽的连续集合竞价涨停试盘"
+    },
+    {
+     "post_id": 1762082676,
+     "time": "2026-08-20 15:30:07",
+     "title": "有本事明天继续"
+    },
+    {
+     "post_id": 1762050087,
+     "time": "2026-08-20 14:50:24",
+     "title": "卄他大爷的，我胡汉三又回来了，搞广汽就是苦命的胡汉三。。。"
+    },
+    {
+     "post_id": 1762177002,
+     "time": "2026-08-20 21:25:57",
+     "title": "中国汽车行业由于内卷严重，未来必定面临彻底洗牌，大规模的并购重组就在眼前，牛股甚"
+    },
+    {
+     "post_id": 1762159569,
+     "time": "2026-08-20 20:08:40",
+     "title": "一汽广汽合并大家猜猜能有几个板，这几天洗盘肯定猛烈，别被洗出去了，上次固态我就被"
+    },
+    {
+     "post_id": 1762087598,
+     "time": "2026-08-20 15:40:00",
+     "title": "今天涨的好像有什么说头么？"
+    },
+    {
+     "post_id": 1762079084,
+     "time": "2026-08-20 15:23:42",
+     "title": "无限子弹"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225477283",
+    "title": "H股公告-广汽集团董事会会议日期公告",
+    "date": "2026-08-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601238&announcementId=1225477283&orgId=9900006006&announcementTime=2026-08-18",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-08-20",
+   "spike_day_pct": 7.98,
+   "pre5_return_pct": 5.05,
+   "next_day": "2026-08-21",
+   "next_open": 5.31,
+   "limit_up_price": 5.95,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": true
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-002074-20260410",
+   "stock": "002074",
+   "name": "国轩高科",
+   "aliases": [
+    "国轩"
+   ],
+   "date": "2026-04-10",
+   "posts": 359,
+   "baseline_posts": 91.8,
+   "heat_ratio": 3.91,
+   "bull_share": 0.554,
+   "baseline_bull_share": 0.343,
+   "popularity_rank": 7,
+   "sample_posts": [
+    {
+     "post_id": 1691662717,
+     "time": "2026-04-10 11:18:09",
+     "title": "满屏涨停！锂电池产业链大爆发，国轩高科等十余股强势封板"
+    },
+    {
+     "post_id": 1691943375,
+     "time": "2026-04-10 19:09:00",
+     "title": "国轩高科(002074)龙虎榜数据(04-10)"
+    },
+    {
+     "post_id": 1691902169,
+     "time": "2026-04-10 16:20:30",
+     "title": "多个利好 创业板指刷新阶段新高！锂电池产业链集体走强"
+    },
+    {
+     "post_id": 1691918512,
+     "time": "2026-04-10 17:22:09",
+     "title": "国轩高科4月10日龙虎榜数据"
+    },
+    {
+     "post_id": 1691497790,
+     "time": "2026-04-10 09:47:01",
+     "title": "电池概念盘初走强，国轩高科涨停"
+    },
+    {
+     "post_id": 1691915586,
+     "time": "2026-04-10 17:12:30",
+     "title": "两轮车概念涨2.33%，主力资金净流入这些股"
+    },
+    {
+     "post_id": 1691901885,
+     "time": "2026-04-10 16:19:14",
+     "title": "下周一潜力金股精选"
+    },
+    {
+     "post_id": 1691891655,
+     "time": "2026-04-10 15:43:39",
+     "title": "创业板指大涨3.78%创阶段新高，超3900股上涨，新易盛市值破5000亿元！锂电池产业链爆发，贵金属板块下挫 | A股收盘"
+    },
+    {
+     "post_id": 1691503755,
+     "time": "2026-04-10 09:49:21",
+     "title": "锂矿概念走强 国轩高科涨停"
+    },
+    {
+     "post_id": 1691888188,
+     "time": "2026-04-10 15:36:00",
+     "title": "今日涨跌停股分析：77只涨停股、12只跌停股，电池概念活跃，国轩高科、雄韬股份等涨停"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225053452",
+    "title": "关于完成工商变更登记并换发营业执照的公告",
+    "date": "2026-03-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225053452&orgId=9900001001&announcementTime=2026-03-31",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-10",
+   "spike_day_pct": 10.01,
+   "pre5_return_pct": 11.52,
+   "next_day": "2026-04-13",
+   "next_open": 38.8,
+   "limit_up_price": 42.69,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-002074-20260922",
+   "stock": "002074",
+   "name": "国轩高科",
+   "aliases": [
+    "国轩"
+   ],
+   "date": "2026-09-22",
+   "posts": 163,
+   "baseline_posts": 58.9,
+   "heat_ratio": 2.77,
+   "bull_share": 0.466,
+   "baseline_bull_share": 0.314,
+   "popularity_rank": 167,
+   "sample_posts": [
+    {
+     "post_id": 1776117320,
+     "time": "2026-09-22 10:08:57",
+     "title": "今天这跟K线，不需要多么大，即便是回落补了缺口，只要站稳60线，且明天依旧站稳，"
+    },
+    {
+     "post_id": 1776026632,
+     "time": "2026-09-22 09:34:19",
+     "title": "大家自己看吧"
+    },
+    {
+     "post_id": 1776166781,
+     "time": "2026-09-22 10:35:35",
+     "title": "挂在山顶好久好久..."
+    },
+    {
+     "post_id": 1776508469,
+     "time": "2026-09-22 19:24:09",
+     "title": "星晨电池透露的信息令人鼓舞走势还需观察何时结束盘底"
+    },
+    {
+     "post_id": 1776244632,
+     "time": "2026-09-22 11:27:29",
+     "title": "国轩高科发布三大创新成果为制造业绿色智能化转型提供全场景方案星晨低空飞行高功率电"
+    },
+    {
+     "post_id": 1776363709,
+     "time": "2026-09-22 14:01:49",
+     "title": "27904400手，祝你们卖飞"
+    },
+    {
+     "post_id": 1776141054,
+     "time": "2026-09-22 10:21:12",
+     "title": "干！！！"
+    },
+    {
+     "post_id": 1775992250,
+     "time": "2026-09-22 09:11:55",
+     "title": "国轩高科发布低空飞行星晨电池能量密度达330Wh/kg9月21日，国轩高科在20"
+    },
+    {
+     "post_id": 1775958448,
+     "time": "2026-09-22 02:35:26",
+     "title": "丨国轩高科｜本次参展释放的5个技术信号1.押注固态电池作为下一代主线金石全固态（"
+    },
+    {
+     "post_id": 1776062996,
+     "time": "2026-09-22 09:45:55",
+     "title": "4个点补仓的，冲动了"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225574556",
+    "title": "关于2026年度第一期绿色超短期融资券兑付完成的公告",
+    "date": "2026-09-22",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225574556&orgId=9900001001&announcementTime=2026-09-22",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225570080",
+    "title": "关于公司对外担保进展的公告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225570080&orgId=9900001001&announcementTime=2026-09-18",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225570079",
+    "title": "关于召开2026年第二次临时股东会的提示性公告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225570079&orgId=9900001001&announcementTime=2026-09-18",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-09-22",
+   "spike_day_pct": 3.97,
+   "pre5_return_pct": 9.13,
+   "next_day": "2026-09-23",
+   "next_open": 27.62,
+   "limit_up_price": 30.5,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": true
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-002074-20260928",
+   "stock": "002074",
+   "name": "国轩高科",
+   "aliases": [
+    "国轩"
+   ],
+   "date": "2026-09-28",
+   "posts": 151,
+   "baseline_posts": 59,
+   "heat_ratio": 2.56,
+   "bull_share": 0.51,
+   "baseline_bull_share": 0.364,
+   "popularity_rank": 137,
+   "sample_posts": [
+    {
+     "post_id": 1778423634,
+     "time": "2026-09-28 23:19:49",
+     "title": "固态电池迎利好！七部门联合印发新型电池产业发展“十五五”规划"
+    },
+    {
+     "post_id": 1778390827,
+     "time": "2026-09-28 20:17:50",
+     "title": "国轩高科：大众中国拟协议转让5.30%公司股份"
+    },
+    {
+     "post_id": 1778377358,
+     "time": "2026-09-28 18:58:01",
+     "title": "32.22亿欧元！国轩高科、大众汽车合作大动作来了"
+    },
+    {
+     "post_id": 1778336552,
+     "time": "2026-09-28 15:53:50",
+     "title": "国轩高科：子公司签署10.94亿欧元工程承包合同"
+    },
+    {
+     "post_id": 1778414307,
+     "time": "2026-09-28 22:19:19",
+     "title": "国轩高科海外“落子” 深度绑定大众汽车集团"
+    },
+    {
+     "post_id": 1778363302,
+     "time": "2026-09-28 17:43:30",
+     "title": "冲吧！"
+    },
+    {
+     "post_id": 1778392523,
+     "time": "2026-09-28 20:26:50",
+     "title": "国轩高科：合肥市建设投资有限公司持股比例拟升至5.30%"
+    },
+    {
+     "post_id": 1778340587,
+     "time": "2026-09-28 16:07:30",
+     "title": "国轩高科：拟与大众汽车集团共建三家海外合资公司，投资建设锂电池和正极材料生产基地"
+    },
+    {
+     "post_id": 1778338187,
+     "time": "2026-09-28 15:58:40",
+     "title": "国轩高科：拟与大众汽车集团共同投资约32.22亿欧元建设三家合资公司 投建年产10万吨磷酸铁锂正极材料项目等"
+    },
+    {
+     "post_id": 1778360420,
+     "time": "2026-09-28 17:29:19",
+     "title": "国轩高科：全资子公司拟签署10.94亿欧元锂电池项目工程承包合同"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225582745",
+    "title": "上海市通力律师事务所关于公司2026年第二次临时股东会的法律意见书",
+    "date": "2026-09-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225582745&orgId=9900001001&announcementTime=2026-09-28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225582744",
+    "title": "2026年第二次临时股东会会议决议公告",
+    "date": "2026-09-28",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225582744&orgId=9900001001&announcementTime=2026-09-28",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225574556",
+    "title": "关于2026年度第一期绿色超短期融资券兑付完成的公告",
+    "date": "2026-09-22",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225574556&orgId=9900001001&announcementTime=2026-09-22",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225570080",
+    "title": "关于公司对外担保进展的公告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225570080&orgId=9900001001&announcementTime=2026-09-18",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225570079",
+    "title": "关于召开2026年第二次临时股东会的提示性公告",
+    "date": "2026-09-18",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002074&announcementId=1225570079&orgId=9900001001&announcementTime=2026-09-18",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [
+   {
+    "news_id": "7db48b2a43239926",
+    "source": "eastmoney_stock_news",
+    "time": "2026-09-28 20:09:20",
+    "title": "国轩高科：大众中国拟协议转让5.30%公司股份",
+    "snippet": "国轩高科002074.SZ)公告称，公司持股5%以上股东大众汽车(中国)投资有限公司与合肥市建设投资有限公司签署股份转让协议，拟以24.09元/股转让96,180,444股(占公司总股本5.30%)，转让总价款23.17亿元。",
+    "url": "http://finance.eastmoney.com/a/202609283885370590.html"
+   },
+   {
+    "news_id": "34efb68ff5877fa6",
+    "source": "eastmoney_stock_news",
+    "time": "2026-09-28 17:31:44",
+    "title": "002074，拟携大众汽车共出资32亿欧元出海建厂，“西班牙+斯洛伐克+摩洛哥”建锂电基地",
+    "snippet": "9月28日盘后，国轩高科（SZ002074，股价26.07元，市值473.10亿元）连发两则公告，一是拟与大众汽车集团旗下PowerCo方共同投资约32.22亿欧元，在西班牙、斯洛伐克、摩洛哥组建三家合资公司，投建锂电池和正极材料生产基地；二是其全资子公司拟与PowerCo Spain",
+    "url": "http://finance.eastmoney.com/a/202609283885272911.html"
+   },
+   {
+    "news_id": "78899a84d4280892",
+    "source": "eastmoney_stock_news",
+    "time": "2026-09-28 17:22:00",
+    "title": "002074，加码合作大众集团，斥资122亿元海外扩产",
+    "snippet": "9月28日晚间，国轩高科002074发布公告称，公司及公司全资下属企业Gotion High-Tech (HK) Limited、Gotion GmbH、Gotion Power Africa S.A.S.",
+    "url": "http://finance.eastmoney.com/a/202609283885272315.html"
+   },
+   {
+    "news_id": "ca6a70ec5d01c5c9",
+    "source": "eastmoney_stock_news",
+    "time": "2026-09-28 15:53:51",
+    "title": "国轩高科：子公司拟签署10.94亿欧元工程承包合同",
+    "snippet": "9月28日，国轩高科002074.SZ)公告称，公司全资子公司GotionSpain拟与大众汽车集团旗下PowerCoSpain签署“年产29.1GWh锂电池项目”的《一期干燥房总承包合同》和《二期工程总承包合同》，合同总金额10.94亿欧元。",
+    "url": "http://finance.eastmoney.com/a/202609283885205835.html"
+   },
+   {
+    "news_id": "d68e8c467b7895c5",
+    "source": "eastmoney_stock_news",
+    "time": "2026-09-28 15:51:44",
+    "title": "国轩高科：子公司签署10.94亿欧元工程承包合同",
+    "snippet": "国轩高科002074.SZ)公告称，公司全资子公司GotionSpain拟与大众汽车集团旗下PowerCoSpain签署“年产29.1GWh锂电池项目”的《一期干燥房总承包合同》和《二期工程总承包合同》，合同总金额10.94亿欧元。本次交易构成关联交易，尚需提交股东会审议。",
+    "url": "http://finance.eastmoney.com/a/202609283885196328.html"
+   }
+  ],
+  "price": {
+   "spike_day": "2026-09-28",
+   "spike_day_pct": -2.58,
+   "pre5_return_pct": -0.27,
+   "next_day": "2026-09-29",
+   "next_open": 27.5,
+   "limit_up_price": 28.68,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "await_confirmation",
+   "trigger": null,
+   "evidence_id": null
+  },
+  "news_archive_covers_window": true
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600150-20251014",
+   "stock": "600150",
+   "name": "中国船舶",
+   "aliases": [
+    "中船",
+    "船舶"
+   ],
+   "date": "2025-10-14",
+   "posts": 269,
+   "baseline_posts": 101.7,
+   "heat_ratio": 2.64,
+   "bull_share": 0.538,
+   "baseline_bull_share": 0.329,
+   "popularity_rank": 134,
+   "sample_posts": [
+    {
+     "post_id": 1610198610,
+     "time": "2025-10-14 12:44:55",
+     "title": "韩华海洋株式会社是一家主要从事船舶制造及海洋相关业务的公司，其产品涵盖多种类型的"
+    },
+    {
+     "post_id": 1609897093,
+     "time": "2025-10-14 07:11:49",
+     "title": "【读财报】9月上市公司定增动态：实际募资总额1447亿元，中国船舶、芯联集成募资额居前"
+    },
+    {
+     "post_id": 1609896291,
+     "time": "2025-10-14 07:02:15",
+     "title": "中国船舶：或有大的利好"
+    },
+    {
+     "post_id": 1610416522,
+     "time": "2025-10-14 17:02:14",
+     "title": "为了补仓半导体，今天卖了船舶和防务，唉，莫名其妙手贱查了下业绩预告，哭死在wc"
+    },
+    {
+     "post_id": 1609896138,
+     "time": "2025-10-14 06:59:45",
+     "title": "对美船舶收取船舶特别港务费实施办法及受益股梳理"
+    },
+    {
+     "post_id": 1609883833,
+     "time": "2025-10-14 00:35:08",
+     "title": "这个规定终于解答了我的疑惑了，哈哈哈，明天买不到了"
+    },
+    {
+     "post_id": 1610475091,
+     "time": "2025-10-14 21:08:22",
+     "title": "目前，全球仅有中国和美国拥有造“超级母舰”的能力，但是，在造船业领域，中国以显著"
+    },
+    {
+     "post_id": 1610357438,
+     "time": "2025-10-14 14:54:03",
+     "title": "美制裁难撼造船霸权！中国三招锁死全球订单，龙头股手握千亿订单吃到2029年"
+    },
+    {
+     "post_id": 1610490929,
+     "time": "2025-10-14 22:10:02",
+     "title": "这家船厂拟获2艘大型渡轮订单船海装备网20:41船海装备网消息，据外媒报道，新西"
+    },
+    {
+     "post_id": 1610450591,
+     "time": "2025-10-14 19:22:24",
+     "title": "三季度的业绩应该很不错，就看能否超预期了。很期待合并重工后的第一次指标披露。"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [],
+  "news": [],
+  "price": {
+   "spike_day": "2025-10-14",
+   "spike_day_pct": 1.73,
+   "pre5_return_pct": 2.08,
+   "next_day": "2025-10-15",
+   "next_open": 35.29,
+   "limit_up_price": 38.82,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "no_evidence",
+   "evidence_id": null
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600150-20260423",
+   "stock": "600150",
+   "name": "中国船舶",
+   "aliases": [
+    "中船",
+    "船舶"
+   ],
+   "date": "2026-04-23",
+   "posts": 392,
+   "baseline_posts": 140.9,
+   "heat_ratio": 2.78,
+   "bull_share": 0.538,
+   "baseline_bull_share": 0.363,
+   "popularity_rank": 71,
+   "sample_posts": [
+    {
+     "post_id": 1698275252,
+     "time": "2026-04-23 15:32:09",
+     "title": "主力复盘：12.68亿爆拉中国船舶 32.09亿出逃天孚通信"
+    },
+    {
+     "post_id": 1698402373,
+     "time": "2026-04-23 21:10:59",
+     "title": "成本决定涨多高?"
+    },
+    {
+     "post_id": 1698284915,
+     "time": "2026-04-23 15:51:57",
+     "title": "20260423牛途复盘"
+    },
+    {
+     "post_id": 1698276853,
+     "time": "2026-04-23 15:34:00",
+     "title": "资金风向标 | 中国船舶获资金净流入12.68亿元"
+    },
+    {
+     "post_id": 1698213477,
+     "time": "2026-04-23 14:33:00",
+     "title": "主力资金监控：电子板块净流出超227亿"
+    },
+    {
+     "post_id": 1698306356,
+     "time": "2026-04-23 16:51:30",
+     "title": "中船系概念涨1.95%，主力资金净流入这些股"
+    },
+    {
+     "post_id": 1698429628,
+     "time": "2026-04-23 22:29:31",
+     "title": "中国船舶大宗交易成交11.00万股 成交额424.60万元"
+    },
+    {
+     "post_id": 1698422167,
+     "time": "2026-04-23 22:06:10",
+     "title": "中国船舶子公司签订约90亿元重大造船合同"
+    },
+    {
+     "post_id": 1698308057,
+     "time": "2026-04-23 16:55:34",
+     "title": "这两个月玩的就是刺激"
+    },
+    {
+     "post_id": 1697736018,
+     "time": "2026-04-23 09:20:42",
+     "title": "逢低关注，"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225150259",
+    "title": "中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告",
+    "date": "2026-04-23",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225150259&orgId=gssh0600150&announcementTime=2026-04-23",
+    "event_type": "major_contract",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225101724",
+    "title": "中国船舶工业股份有限公司关于为控股子公司提供担保的进展公告",
+    "date": "2026-04-15",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225101724&orgId=gssh0600150&announcementTime=2026-04-15",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [],
+  "price": {
+   "spike_day": "2026-04-23",
+   "spike_day_pct": 5.81,
+   "pre5_return_pct": 17.97,
+   "next_day": "2026-04-24",
+   "next_open": 38.6,
+   "limit_up_price": 42.46,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "flag_do_not_chase",
+   "trigger": "priced_in",
+   "evidence_id": "1225150259"
+  },
+  "news_archive_covers_window": false
+ },
+ {
+  "spike": {
+   "spike_id": "SPK-600150-20260904",
+   "stock": "600150",
+   "name": "中国船舶",
+   "aliases": [
+    "中船",
+    "船舶"
+   ],
+   "date": "2026-09-04",
+   "posts": 860,
+   "baseline_posts": 167.1,
+   "heat_ratio": 5.15,
+   "bull_share": 0.529,
+   "baseline_bull_share": 0.327,
+   "popularity_rank": 9,
+   "sample_posts": [
+    {
+     "post_id": 1768590909,
+     "time": "2026-09-04 00:46:49",
+     "title": "多家A股造船企业密集披露大额订单"
+    },
+    {
+     "post_id": 1769125362,
+     "time": "2026-09-04 15:31:10",
+     "title": "主力复盘：20.38亿抢筹中国船舶 19.15亿流出兆易创新"
+    },
+    {
+     "post_id": 1769142199,
+     "time": "2026-09-04 16:21:10",
+     "title": "资金风向标 | 中国船舶获资金净流入超20亿元"
+    },
+    {
+     "post_id": 1769050074,
+     "time": "2026-09-04 14:30:20",
+     "title": "主力资金监控：电子板块净卖出近149亿"
+    },
+    {
+     "post_id": 1769006853,
+     "time": "2026-09-04 14:03:00",
+     "title": "船舶制造板块持续走强 中国船舶触及涨停"
+    },
+    {
+     "post_id": 1769015250,
+     "time": "2026-09-04 14:08:41",
+     "title": "中船系概念持续走强，中国船舶触及涨停"
+    },
+    {
+     "post_id": 1769037128,
+     "time": "2026-09-04 14:22:19",
+     "title": "中国船舶（600150）今天这板，封得心里踏实（不踏实的才来怼哈）"
+    },
+    {
+     "post_id": 1769159328,
+     "time": "2026-09-04 17:32:20",
+     "title": "主力动向：9月4日32股特大单净流入超2亿元"
+    },
+    {
+     "post_id": 1769220847,
+     "time": "2026-09-04 22:37:47",
+     "title": "今天大船最大的看点是放出历史巨量，看点并不在涨停板上，也没涨停。再说现在涨停多了"
+    },
+    {
+     "post_id": 1769184226,
+     "time": "2026-09-04 19:59:28",
+     "title": "中国船舶涨逾9%后，还能看的是四年订单而不是情绪"
+    }
+   ],
+   "hostile_posts": []
+  },
+  "announcements": [
+   {
+    "ann_id": "1225544786",
+    "title": "中国船舶工业股份有限公司关于控股子公司涉及仲裁结果的公告",
+    "date": "2026-09-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225544786&orgId=gssh0600150&announcementTime=2026-09-03",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225544785",
+    "title": "中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告",
+    "date": "2026-09-03",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225544785&orgId=gssh0600150&announcementTime=2026-09-03",
+    "event_type": "major_contract",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225535190",
+    "title": "中国船舶工业股份有限公司关于中船财务有限责任公司2026年上半年风险持续评估报告",
+    "date": "2026-08-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225535190&orgId=gssh0600150&announcementTime=2026-08-31",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225535030",
+    "title": "中国船舶工业股份有限公司信息披露事务管理制度",
+    "date": "2026-08-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225535030&orgId=gssh0600150&announcementTime=2026-08-31",
+    "event_type": "other",
+    "is_clarification": false
+   },
+   {
+    "ann_id": "1225534994",
+    "title": "中国船舶工业股份有限公司2026年半年度报告",
+    "date": "2026-08-31",
+    "url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225534994&orgId=gssh0600150&announcementTime=2026-08-31",
+    "event_type": "other",
+    "is_clarification": false
+   }
+  ],
+  "news": [
+   {
+    "news_id": "85d9899912018041",
+    "source": "eastmoney_stock_news",
+    "time": "2026-08-31 08:42:53",
+    "title": "中国船舶600150.SH)：2026年中报净利润为99.54亿元、同比较去年同期上涨163.51%",
+    "snippet": "2026年8月31日，中国船舶600150.SH)发布2026年中报。 公司营业总收入为915.30亿元，在已披露的同业公司中排名第1，较去年同报告期营业总收入增加188.90亿元，实现4年连续上涨，同比较去年同期上涨26.01%。",
+    "url": "http://finance.eastmoney.com/a/202608313859592070.html"
+   }
+  ],
+  "price": {
+   "spike_day": "2026-09-04",
+   "spike_day_pct": 9.18,
+   "pre5_return_pct": 7.73,
+   "next_day": "2026-09-07",
+   "next_open": 37.74,
+   "limit_up_price": 41.22,
+   "opens_limit_up": false,
+   "suspended": false
+  },
+  "mechanical_draft": {
+   "decision": "paper_trade",
+   "trigger": null,
+   "evidence_id": "1225544785"
+  },
+  "news_archive_covers_window": true
+ }
+]

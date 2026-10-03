@@ -1,0 +1,680 @@
+[
+ {
+  "case_id": "SPK-688256-20251022",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "rumour_media_denial",
+  "negative": true,
+  "rationale_zh": "小作文（广东利好）；公司在媒体上回应'以公告为准'；巨潮只有定增上市和三季报，与传闻无关；新闻存档未覆盖",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-688256-20260108",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "AI芯片板块上涨、'股王'话题；14天内无公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-688256-20260226",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "'芯片突传利好'板块消息；无公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-688256-20260407",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "unrelated_announcements",
+  "negative": true,
+  "rationale_zh": "算力板块反弹；公告均为股东会/督导报告，与上涨无关",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-688256-20260415",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "unrelated_announcements",
+  "negative": true,
+  "rationale_zh": "板块+融资资金；公告是限售股解禁等，不支持看多",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-688256-20260618",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "rumour_media_denial",
+  "negative": true,
+  "rationale_zh": "创新高；帖子提到公司'否认向互联网厂商大量供货'（仅媒体）；巨潮无相关公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-688256-20260915",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "资金流向类帖子；无公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20251021",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "type_not_allowed",
+  "evidence_id": "1224721003",
+  "awaiting": null,
+  "family": "official_not_allowed",
+  "negative": true,
+  "rationale_zh": "帖子提到'拟分红超65亿'，巨潮有利润分配方案公告支持，但分红不在允许类型内",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1224721003",
+   "gives the single trigger type_not_allowed"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20251027",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "资金爆拉、主升浪；无具体说法；窗口内分红公告与帖子无关",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20260414",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "资金抢筹；公告为业绩说明会、回购实施结果（已结束），帖子未提",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20260422",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "broker_note",
+  "negative": true,
+  "rationale_zh": "'高盛力挺'券商观点；无公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20260513",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "'突传重大利好''CPO交换机一机难求'行业消息；公告为一季报等，与说法无关",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20260602",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "资金净流入；公告为股东会资料",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20260618",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "市值超越茅台话题；公告为董事选举等",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601138-20260805",
+  "expected_decision": "paper_trade",
+  "trigger": null,
+  "evidence_id": "1225442540",
+  "awaiting": null,
+  "family": "official_supported",
+  "negative": false,
+  "rationale_zh": "【需你判断】窗口内有回购报告书(07-28)和回购进展(08-05)，属允许类型；但帖子主要讲AI/资金，没直接提回购。若认可回购是官方利好依据→执行；否则→no_evidence",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1225442540"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300308-20251021",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "'易中天'板块修复；公告为现金管理；5日已涨27.6%",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300308-20260115",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "CPO板块走强；公告为公司治理制度",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300308-20260408",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "type_not_allowed",
+  "evidence_id": "1225056498",
+  "awaiting": null,
+  "family": "official_not_allowed",
+  "negative": true,
+  "rationale_zh": "帖子提到'年报业绩亮眼'；年报属官方披露，但年报不在允许类型内",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1225056498",
+   "gives the single trigger type_not_allowed"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300502-20260130",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "type_not_allowed",
+  "evidence_id": "1224960617",
+  "awaiting": null,
+  "family": "official_ambiguous_type",
+  "negative": true,
+  "rationale_zh": "官方'2025年度业绩预告'（预增231%-249%）；但标题看不出方向，按规则'ambiguous'不允许——这是规则的已知缺陷，报告可讨论",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1224960617",
+   "gives the single trigger type_not_allowed"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300502-20260305",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "英伟达投资两家光学公司（行业新闻）；无公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300502-20260410",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "市值站上5000亿；公告为章程修订等",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300502-20260416",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "speculation",
+  "negative": true,
+  "rationale_zh": "散户猜测一季报增速；无官方业绩公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300476-20251209",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "GPU概念、资金抢筹；公告为募集资金监管协议",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300476-20260225",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "type_not_allowed",
+  "evidence_id": "1224984563",
+  "awaiting": null,
+  "family": "official_not_allowed",
+  "negative": true,
+  "rationale_zh": "'二次递表港交所'有官方H股进展公告支持，但H股发行不在允许类型内",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1224984563",
+   "gives the single trigger type_not_allowed"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300476-20260417",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "type_not_allowed",
+  "evidence_id": "1225114862",
+  "awaiting": null,
+  "family": "official_not_allowed",
+  "negative": true,
+  "rationale_zh": "H股定价209.88港元有官方公告，但不在允许类型内",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1225114862",
+   "gives the single trigger type_not_allowed"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300476-20260522",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "rumour_media_denial",
+  "negative": true,
+  "rationale_zh": "PCB涨价逻辑；帖子提到公司'不涉及光刻胶'（媒体）；无相关公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300476-20260805",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "'海外再传利好'算力板块；公告为H股月报表、担保",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-300476-20260921",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "rumour",
+  "negative": true,
+  "rationale_zh": "帖子明说'查了今天关于胜子的小作文'；公告为股东会、股权激励自查，与传闻无关",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601127-20260521",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "汽车板块反弹；公告仅H股翌日披露",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600418-20251112",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "vague_hype",
+  "negative": true,
+  "rationale_zh": "'重大利好''最后上车机会'无具体内容；同期还有原皮卡公司书记被查的负面新闻；公告为股东会资料等",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600418-20251209",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "media_only_no_archive",
+  "negative": true,
+  "rationale_zh": "媒体报道成立动力驱动系统公司；巨潮无对应公告；新闻存档不覆盖该日",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600418-20260427",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "media_only_no_archive",
+  "negative": true,
+  "rationale_zh": "余承东称尊界将推200万元级新车（媒体）；巨潮无合作公告；新闻存档不覆盖",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600418-20260922",
+  "expected_decision": "await_confirmation",
+  "trigger": null,
+  "evidence_id": null,
+  "awaiting": "与玛莎拉蒂/华为合作的正式协议公告（巨潮）",
+  "family": "media_only",
+  "negative": true,
+  "rationale_zh": "'玛莎拉蒂与华为、江淮合作谈判'传闻；东财个股新闻有报道；巨潮无公告→等待确认",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "names the announcement awaited"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601238-20251014",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "media_only_no_archive",
+  "negative": true,
+  "rationale_zh": "与京东、宁德时代联合推新车（媒体）；巨潮仅产销快报等",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601238-20251124",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "media_only_no_archive",
+  "negative": true,
+  "rationale_zh": "全固态电池中试线投产（媒体）；巨潮无对应公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-601238-20260820",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "media_only",
+  "negative": true,
+  "rationale_zh": "埃安与华为深化合作；新闻存档已覆盖但未检索到；巨潮无公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-002074-20260410",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "sector_move",
+  "negative": true,
+  "rationale_zh": "锂电产业链集体涨停；公告为工商变更",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-002074-20260922",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "vague_hype",
+  "negative": true,
+  "rationale_zh": "无具体说法；公告为融资券兑付、担保",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-002074-20260928",
+  "expected_decision": "await_confirmation",
+  "trigger": null,
+  "evidence_id": null,
+  "awaiting": "大众股份转让/海外合资/10.94亿欧元合同的正式公告（巨潮）",
+  "family": "media_only",
+  "negative": true,
+  "rationale_zh": "东财新闻多条：大众拟转让5.30%股份、32亿欧元合资、10.94亿欧元合同；但快照中巨潮当日只有股东会公告→等待确认",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "names the announcement awaited"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600150-20251014",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "no_evidence",
+  "evidence_id": null,
+  "awaiting": null,
+  "family": "rumour",
+  "negative": true,
+  "rationale_zh": "'或有大的利好'；14天内无任何公告",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "gives the single trigger no_evidence"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600150-20260423",
+  "expected_decision": "flag_do_not_chase",
+  "trigger": "priced_in",
+  "evidence_id": "1225150259",
+  "awaiting": null,
+  "family": "official_priced_in",
+  "negative": true,
+  "rationale_zh": "当天有官方'签订重大合同'公告（允许类型），但事件前5日已涨17.97%>15%→已提前定价",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1225150259",
+   "gives the single trigger priced_in"
+  ],
+  "status": "DRAFT - confirm or correct"
+ },
+ {
+  "case_id": "SPK-600150-20260904",
+  "expected_decision": "paper_trade",
+  "trigger": null,
+  "evidence_id": "1225544785",
+  "awaiting": null,
+  "family": "official_supported",
+  "negative": false,
+  "rationale_zh": "'造船企业密集披露大额订单'；巨潮09-03'签订重大合同'公告支持；次日未涨停开盘，5日涨幅7.7%→执行（需你确认）",
+  "must_record": [
+   "names what the posts claim",
+   "says what was searched in CNINFO and news",
+   "cites announcement 1225544785"
+  ],
+  "status": "DRAFT - confirm or correct"
+ }
+]
