@@ -1,1 +1,12 @@
-Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 22522.91it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 10955.45it/s]
+688256 already labelled, skipped
+601138 already labelled, skipped
+300308 {'posts': 212868, 'seconds': 500.5, 'posts_per_second': 425.3}
+300502 {'posts': 137175, 'seconds': 336.1, 'posts_per_second': 408.1}
+300476 {'posts': 95644, 'seconds': 237.4, 'posts_per_second': 402.8}
+601127 {'posts': 137081, 'seconds': 349.7, 'posts_per_second': 392.0}
+600418 {'posts': 53992, 'seconds': 123.0, 'posts_per_second': 439.0}
+601238 {'posts': 36530, 'seconds': 92.1, 'posts_per_second': 396.5}
+002074 {'posts': 38295, 'seconds': 89.8, 'posts_per_second': 426.5}
+600150 {'posts': 73644, 'seconds': 175.5, 'posts_per_second': 419.7}
+PREDICT DONE

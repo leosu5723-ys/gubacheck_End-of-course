@@ -1,0 +1,69 @@
+{
+ "sentiment_source": "bert_finetuned",
+ "window": [
+  "2025-10-03",
+  "2026-09-30"
+ ],
+ "stocks": {
+  "688256": {
+   "spearman_posts_vs_popularity": 0.589,
+   "forum_spikes": 7,
+   "rank_jump_episodes": 9,
+   "forum_spikes_within_2d_of_rank_jump": 2
+  },
+  "601138": {
+   "spearman_posts_vs_popularity": 0.382,
+   "forum_spikes": 8,
+   "rank_jump_episodes": 14,
+   "forum_spikes_within_2d_of_rank_jump": 4
+  },
+  "300308": {
+   "spearman_posts_vs_popularity": 0.51,
+   "forum_spikes": 3,
+   "rank_jump_episodes": 15,
+   "forum_spikes_within_2d_of_rank_jump": 1
+  },
+  "300502": {
+   "spearman_posts_vs_popularity": 0.456,
+   "forum_spikes": 4,
+   "rank_jump_episodes": 12,
+   "forum_spikes_within_2d_of_rank_jump": 2
+  },
+  "300476": {
+   "spearman_posts_vs_popularity": 0.326,
+   "forum_spikes": 6,
+   "rank_jump_episodes": 12,
+   "forum_spikes_within_2d_of_rank_jump": 6
+  },
+  "601127": {
+   "spearman_posts_vs_popularity": 0.299,
+   "forum_spikes": 1,
+   "rank_jump_episodes": 10,
+   "forum_spikes_within_2d_of_rank_jump": 1
+  },
+  "600418": {
+   "spearman_posts_vs_popularity": 0.384,
+   "forum_spikes": 4,
+   "rank_jump_episodes": 8,
+   "forum_spikes_within_2d_of_rank_jump": 3
+  },
+  "601238": {
+   "spearman_posts_vs_popularity": 0.244,
+   "forum_spikes": 3,
+   "rank_jump_episodes": 3,
+   "forum_spikes_within_2d_of_rank_jump": 1
+  },
+  "002074": {
+   "spearman_posts_vs_popularity": 0.17,
+   "forum_spikes": 3,
+   "rank_jump_episodes": 8,
+   "forum_spikes_within_2d_of_rank_jump": 3
+  },
+  "600150": {
+   "spearman_posts_vs_popularity": -0.04,
+   "forum_spikes": 3,
+   "rank_jump_episodes": 7,
+   "forum_spikes_within_2d_of_rank_jump": 0
+  }
+ }
+}
