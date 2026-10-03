@@ -43,6 +43,40 @@
       },
       "batch1_false_bullish": "0 of 38",
       "batch2_false_bullish": "2 of 14"
+    },
+    "llm_text": {
+      "batch2_n": 30,
+      "batch2_macro_f1": 0.9109,
+      "batch2_ci95": [
+        0.7794,
+        1.0
+      ],
+      "batch2_accuracy": 0.9,
+      "batch2_confusion_gold_by_pred": {
+        "bullish": {
+          "bullish": 15,
+          "bearish": 0,
+          "neutral": 1
+        },
+        "bearish": {
+          "bullish": 0,
+          "bearish": 5,
+          "neutral": 0
+        },
+        "neutral": {
+          "bullish": 2,
+          "bearish": 0,
+          "neutral": 7
+        }
+      },
+      "batch1_false_bullish": "2 of 38",
+      "batch2_false_bullish": "2 of 14",
+      "calls": 476,
+      "tokens_in": 584760,
+      "tokens_out": 445603,
+      "model": "deepseek/deepseek-v4.1-flash",
+      "usd_total": 0.3077,
+      "overrides": 1
     }
   }
 }

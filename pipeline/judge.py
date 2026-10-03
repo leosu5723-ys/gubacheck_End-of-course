@@ -161,7 +161,7 @@ def labelled_ids():
     return ids
 
 
-def cmd_run(mode, limit=None, only_labelled=False):
+def cmd_run(mode, limit=None, only_labelled=False, workers=4):
     rows = load_announcements()
     path = os.path.join(RAW, "judgements_%s.jsonl" % mode)
     done = {}
@@ -173,21 +173,34 @@ def cmd_run(mode, limit=None, only_labelled=False):
         todo = [r for r in todo if r["ann_id"] in keep]
     if limit:
         todo = todo[:limit]
-    print("%s: %d to judge (%d cached)" % (mode, len(todo), len(done)), flush=True)
-    tin = tout = 0
-    with open(path, "a", encoding="utf-8") as fh:
-        for i, ann in enumerate(todo, 1):
-            try:
-                rec = judge_one(ann, rows, mode)
-            except Exception as e:
-                print("  failed", ann["ann_id"], str(e)[:100], flush=True)
-                continue
+    print("%s: %d to judge (%d cached), %d parallel requests" % (mode, len(todo), len(done), workers), flush=True)
+    import threading
+    from concurrent.futures import ThreadPoolExecutor
+    lock, tot = threading.Lock(), {"in": 0, "out": 0, "n": 0}
+
+    def work(ann):
+        try:
+            rec = judge_one(ann, rows, mode)
+        except Exception as e:
+            print("  failed", ann["ann_id"], str(e)[:100], flush=True)
+            return
+        with lock:
             fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
             fh.flush()
-            tin, tout = tin + rec["tokens_in"], tout + rec["tokens_out"]
-            if i % 25 == 0:
-                print("  %d/%d  tokens in %d out %d  ~US$%.4f" % (i, len(todo), tin, tout,
-                      tin / 1e6 * config.PRICE_IN + tout / 1e6 * config.PRICE_OUT), flush=True)
+            tot["in"] += rec["tokens_in"]
+            tot["out"] += rec["tokens_out"]
+            tot["n"] += 1
+            if tot["n"] % 25 == 0:
+                print("  %d/%d  tokens in %d out %d  ~US$%.4f" % (tot["n"], len(todo), tot["in"], tot["out"],
+                      tot["in"] / 1e6 * config.PRICE_IN + tot["out"] / 1e6 * config.PRICE_OUT), flush=True)
+
+    if mode != "text":
+        from pipeline import rag
+        rag._index()
+        rag._model()          # load once before threads start
+    with open(path, "a", encoding="utf-8") as fh, ThreadPoolExecutor(max_workers=workers) as pool:
+        list(pool.map(work, todo))
+    tin, tout = tot["in"], tot["out"]
     print("JUDGE DONE", mode, "tokens", tin, tout)
 
 
@@ -335,7 +348,8 @@ if __name__ == "__main__":
         cmd_sample(int(sys.argv[2]) if len(sys.argv) > 2 else 40)
     elif cmd == "run":
         lim = [int(a.split("=")[1]) for a in sys.argv if a.startswith("--limit=")]
-        cmd_run(sys.argv[2], lim[0] if lim else None, "--only=labelled" in sys.argv)
+        wk = [int(a.split("=")[1]) for a in sys.argv if a.startswith("--workers=")]
+        cmd_run(sys.argv[2], lim[0] if lim else None, "--only=labelled" in sys.argv, wk[0] if wk else 4)
     elif cmd == "eval":
         cmd_eval()
     else:
