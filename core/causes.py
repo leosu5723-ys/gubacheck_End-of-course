@@ -8,8 +8,8 @@ model never decides whether a test passed. All abnormality tests use
 z-scores against the series' own previous 120 trading days.
 
   A company official   filings (and board-secretary replies) in [D-3, onset)
-  B media / rumour     company-specific articles in [onset-72h, onset): count z >= 2
-                       against the stock's own rolling 3-day counts
+  B media / rumour     company-specific articles on D-1..D: count z >= 2 against the
+                       stock's own two-day counts (concurrent, see check_B)
   C sector             peer returns on D: share of peers with |z| >= 2, same sign
   D overseas           US peers on the last US session before D's open, AND the
                        stock's own opening gap z on D (timing: US first)
@@ -126,38 +126,42 @@ def check_A(spike_id):
 
 # ---------------------------------------------------------------------- B
 def check_B(spike_id):
-    """PASS when company-specific articles in the 72 h before onset are abnormal
-    (z >= 2) against the same stock's rolling 3-day article counts over the
-    previous 120 days; PARTIAL when articles exist but are not abnormal, or only
-    appear after onset; FAIL when there are none."""
+    """PASS when company-specific articles on the spike day and the day before
+    are abnormal (z >= 2) against the stock's own two-day counts over the
+    previous 120 days; PARTIAL when such articles exist but are not abnormal;
+    FAIL when there are none.
+
+    TIMING: media and forum surges are concurrent, so B uses the spike day
+    itself (D-1 .. D), not strictly-before-onset evidence. B therefore says
+    "coverage and discussion surged together", not "coverage caused the
+    discussion" (RULES.md 0.2, change 3).
+    """
     s = _spike(spike_id)
-    start = (datetime.fromisoformat(s["onset"]) - timedelta(hours=72)).isoformat(sep=" ")
     names = _name_terms(s["stock"])
+    d = date.fromisoformat(s["date"])
+    lo = (d - timedelta(days=1)).isoformat()
     rel = [a for a in store.load("articles") if a["stock"] == s["stock"] and any(n and n in a["title"] for n in names)
-           and not MARKET_WRAP.search(a["title"]) and not POLICY.search(a["title"])]
-    before = [a for a in rel if start <= a["time"] < s["onset"]]
-    after = [a for a in rel if s["onset"] <= a["time"] <= s["date"] + " 23:59:59"]
+           and not MARKET_WRAP.search(a["title"]) and not POLICY.search(a["title"])
+           and lo <= a["time"][:10] <= s["date"]]
     daily = store.load("article_daily_counts").get(s["stock"], {})
-    d0 = date.fromisoformat(s["onset"][:10])
-    hist = []
-    for k in range(4, 4 + config.Z_WINDOW):         # rolling 3-day sums ending before the window
-        end = d0 - timedelta(days=k)
-        hist.append(sum(daily.get((end - timedelta(days=j)).isoformat(), 0) for j in range(3)))
-    z = _z(hist, len(before))
-    if before and z is not None and z >= config.Z_ABNORMAL:
+    count = sum(daily.get((d - timedelta(days=k)).isoformat(), 0) for k in (0, 1))
+    hist = [sum(daily.get((d - timedelta(days=k + j)).isoformat(), 0) for j in (0, 1))
+            for k in range(3, 3 + config.Z_WINDOW)]
+    z = _z(hist, count)
+    if z is not None and z >= config.Z_ABNORMAL and rel:
         verdict = "PASS"
-    elif before or after:
+    elif rel:
         verdict = "PARTIAL"
     else:
         verdict = "FAIL"
-    ev = [{"id": a["post_id"], "time": a["time"], "title": a["title"], "reads": a["reads"]}
-          for a in sorted(before, key=lambda a: -a["reads"]) + after]
-    return _out("B", verdict, {"articles_before_onset": len(before), "articles_after_onset": len(after),
-                               "article_count_z": z}, ev,
-                {"onset": s["onset"], "window_start": start, "rule": "article time < onset"},
-                "an abnormal burst of company-specific coverage preceded the surge" if verdict == "PASS" else
-                "coverage exists but is ordinary, or came after the surge began" if verdict == "PARTIAL"
-                else "no company-specific media article")
+    before = [a for a in rel if a["time"] < s["onset"]]
+    ev = [{"id": a["post_id"], "time": a["time"], "title": a["title"], "reads": a["reads"],
+           "before_onset": a["time"] < s["onset"]} for a in sorted(rel, key=lambda a: -a["reads"])]
+    return _out("B", verdict, {"company_articles_D-1..D": count, "article_count_z": z,
+                               "articles_before_onset": len(before)}, ev,
+                {"onset": s["onset"], "window": [lo, s["date"]], "rule": "concurrent: spike day and the day before"},
+                "an abnormal burst of company-specific coverage around the spike" if verdict == "PASS" else
+                "company coverage exists but is ordinary" if verdict == "PARTIAL" else "no company-specific article")
 
 
 # ---------------------------------------------------------------------- C

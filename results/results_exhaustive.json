@@ -3,64 +3,111 @@
   "prompt_version": "v2",
   "summary": {
     "arm": "exhaustive",
+    "macro_f1": 0.2232,
+    "majority_class": "B",
+    "majority_baseline_accuracy": 0.6912,
+    "majority_baseline_macro_f1": 0.1168,
+    "recall_by_cause": {
+      "A": "0/2",
+      "B": "26/47",
+      "C": "3/7",
+      "D": "0/3",
+      "E": "1/2",
+      "F": "0/2",
+      "H": "2/5"
+    },
     "runs": 68,
-    "graded": 0,
-    "accuracy": null,
+    "graded": 68,
+    "accuracy": 0.4706,
     "accuracy_by_period": {
       "observe": {
-        "n": 0,
-        "accuracy": null
+        "n": 25,
+        "accuracy": 0.52
       },
       "check": {
-        "n": 0,
-        "accuracy": null
+        "n": 43,
+        "accuracy": 0.4419
       }
     },
-    "always_H_baseline": null,
+    "always_H_baseline": 0.0735,
     "mean_cause_checks": 7,
     "median_turns": 9.0,
     "worst_turns": 9,
-    "mean_tokens": 36301,
-    "total_cost_usd": 0.416169,
+    "mean_tokens": 36347,
+    "total_cost_usd": 0.416636,
     "over_investigation_runs": 0,
     "premature_stops": 0,
     "model_vs_code_primary_disagree": 0,
     "predicted": {
-      "H": 50,
-      "F": 4,
+      "B": 31,
+      "F": 2,
+      "H": 22,
       "E": 5,
       "C": 6,
-      "B": 1,
       "A": 1,
       "G": 1
     },
-    "confusion_gold_by_pred": {}
+    "confusion_gold_by_pred": {
+      "B": {
+        "B": 26,
+        "H": 14,
+        "E": 2,
+        "F": 1,
+        "C": 2,
+        "A": 1,
+        "G": 1
+      },
+      "H": {
+        "B": 2,
+        "H": 2,
+        "E": 1
+      },
+      "C": {
+        "F": 1,
+        "B": 2,
+        "C": 3,
+        "H": 1
+      },
+      "D": {
+        "H": 2,
+        "E": 1
+      },
+      "E": {
+        "E": 1,
+        "C": 1
+      },
+      "F": {
+        "B": 1,
+        "H": 1
+      },
+      "A": {
+        "H": 2
+      }
+    }
   },
   "results": [
     {
       "case_id": "SPK-688256-20260203",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -68,7 +115,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -163,28 +210,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -258,10 +305,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34981,
+        "tokens_in": 35057,
         "tokens_out": 1500,
-        "cost_usd": 0.006147,
-        "seconds": 0.143,
+        "cost_usd": 0.006159,
+        "seconds": 0.151,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -270,27 +317,25 @@
     {
       "case_id": "SPK-688256-20260430",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.26}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.17}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.0526,
-            "E": 0.0526,
-            "F": 0.0526,
-            "G": 0.2632
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.0345,
+            "E": 0.0345,
+            "F": 0.0345,
+            "G": 0.1724
           },
           "tested": {
             "C": "FAIL",
@@ -298,7 +343,7 @@
             "E": "FAIL",
             "G": "PARTIAL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -393,28 +438,28 @@
               "untested_mass": 0.4348
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2174,
-                "B": 0.2174,
-                "C": 0.0435,
-                "D": 0.0435,
-                "E": 0.0435,
-                "F": 0.2174,
-                "G": 0.2174
+                "A": 0.1515,
+                "B": 0.4545,
+                "C": 0.0303,
+                "D": 0.0303,
+                "E": 0.0303,
+                "F": 0.1515,
+                "G": 0.1515
               },
-              "untested_mass": 0.2174
+              "untested_mass": 0.1515
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.0526,
-                "G": 0.2632
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.0345,
+                "G": 0.1724
               },
               "untested_mass": 0
             }
@@ -488,10 +533,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35434,
+        "tokens_in": 35563,
         "tokens_out": 1500,
-        "cost_usd": 0.006215,
-        "seconds": 0.075,
+        "cost_usd": 0.006234,
+        "seconds": 0.057,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -500,27 +545,27 @@
     {
       "case_id": "SPK-688256-20260506",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'B', expected 'H'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "H",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.26, 'F': 0.05, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.52, 'C': 0.17, 'D': 0.03, 'E': 0.17, 'F': 0.03, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0526,
-            "B": 0.2632,
-            "C": 0.2632,
-            "D": 0.0526,
-            "E": 0.2632,
-            "F": 0.0526,
-            "G": 0.0526
+            "A": 0.0345,
+            "B": 0.5172,
+            "C": 0.1724,
+            "D": 0.0345,
+            "E": 0.1724,
+            "F": 0.0345,
+            "G": 0.0345
           },
           "tested": {
             "C": "PARTIAL",
@@ -528,7 +573,7 @@
             "E": "PARTIAL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -623,28 +668,28 @@
               "untested_mass": 0.4348
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0435,
-                "B": 0.2174,
-                "C": 0.2174,
-                "D": 0.0435,
-                "E": 0.2174,
-                "F": 0.2174,
-                "G": 0.0435
+                "A": 0.0303,
+                "B": 0.4545,
+                "C": 0.1515,
+                "D": 0.0303,
+                "E": 0.1515,
+                "F": 0.1515,
+                "G": 0.0303
               },
-              "untested_mass": 0.2174
+              "untested_mass": 0.1515
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.2632,
-                "D": 0.0526,
-                "E": 0.2632,
-                "F": 0.0526,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.1724,
+                "D": 0.0345,
+                "E": 0.1724,
+                "F": 0.0345,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -718,10 +763,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34994,
+        "tokens_in": 35104,
         "tokens_out": 1500,
-        "cost_usd": 0.006149,
-        "seconds": 0.062,
+        "cost_usd": 0.006166,
+        "seconds": 0.075,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -730,13 +775,13 @@
     {
       "case_id": "SPK-688256-20260618",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'F', expected 'C'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "C",
       "record": {
         "primary": "F",
         "secondary": [],
@@ -948,10 +993,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35080,
+        "tokens_in": 35154,
         "tokens_out": 1500,
-        "cost_usd": 0.006162,
-        "seconds": 0.05,
+        "cost_usd": 0.006173,
+        "seconds": 0.044,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -960,27 +1005,25 @@
     {
       "case_id": "SPK-688256-20260701",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -988,7 +1031,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -1083,28 +1126,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -1178,10 +1221,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35141,
+        "tokens_in": 35218,
         "tokens_out": 1500,
-        "cost_usd": 0.006171,
-        "seconds": 0.004,
+        "cost_usd": 0.006183,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -1190,27 +1233,25 @@
     {
       "case_id": "SPK-688256-20260810",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.03, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.2632,
-            "E": 0.0526,
-            "F": 0.0526,
-            "G": 0.0526
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.1724,
+            "E": 0.0345,
+            "F": 0.0345,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -1218,7 +1259,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -1313,28 +1354,28 @@
               "untested_mass": 0.4348
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2174,
-                "B": 0.2174,
-                "C": 0.0435,
-                "D": 0.2174,
-                "E": 0.0435,
-                "F": 0.2174,
-                "G": 0.0435
+                "A": 0.1515,
+                "B": 0.4545,
+                "C": 0.0303,
+                "D": 0.1515,
+                "E": 0.0303,
+                "F": 0.1515,
+                "G": 0.0303
               },
-              "untested_mass": 0.2174
+              "untested_mass": 0.1515
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.2632,
-                "E": 0.0526,
-                "F": 0.0526,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.1724,
+                "E": 0.0345,
+                "F": 0.0345,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -1408,10 +1449,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35702,
+        "tokens_in": 35778,
         "tokens_out": 1500,
-        "cost_usd": 0.006255,
-        "seconds": 0.004,
+        "cost_usd": 0.006267,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -1420,27 +1461,25 @@
     {
       "case_id": "SPK-601138-20251124",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.17, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0526,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.2632,
-            "E": 0.0526,
-            "F": 0.2632,
-            "G": 0.0526
+            "A": 0.0345,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.1724,
+            "E": 0.0345,
+            "F": 0.1724,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -1448,7 +1487,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PARTIAL"
           },
           "order": [
@@ -1543,28 +1582,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.2632,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.1724,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F PARTIAL",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.2632,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.1724,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -1638,9 +1677,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35230,
+        "tokens_in": 35319,
         "tokens_out": 1500,
-        "cost_usd": 0.006184,
+        "cost_usd": 0.006198,
         "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -1650,27 +1689,25 @@
     {
       "case_id": "SPK-601138-20260129",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -1678,7 +1715,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -1773,28 +1810,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -1868,9 +1905,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35001,
+        "tokens_in": 35072,
         "tokens_out": 1500,
-        "cost_usd": 0.00615,
+        "cost_usd": 0.006161,
         "seconds": 0.01,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -1880,13 +1917,13 @@
     {
       "case_id": "SPK-601138-20260204",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -2098,9 +2135,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35082,
+        "tokens_in": 34984,
         "tokens_out": 1500,
-        "cost_usd": 0.006162,
+        "cost_usd": 0.006148,
         "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -2110,27 +2147,25 @@
     {
       "case_id": "SPK-601138-20260429",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.0526,
-            "E": 0.0526,
-            "F": 0.2632,
-            "G": 0.0526
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.0345,
+            "E": 0.0345,
+            "F": 0.1724,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -2138,7 +2173,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PARTIAL"
           },
           "order": [
@@ -2233,28 +2268,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F PARTIAL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -2328,9 +2363,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35628,
+        "tokens_in": 35711,
         "tokens_out": 1500,
-        "cost_usd": 0.006244,
+        "cost_usd": 0.006257,
         "seconds": 0.022,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -2340,27 +2375,27 @@
     {
       "case_id": "SPK-300308-20251126",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'B', expected 'C'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "C",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.0526,
-            "E": 0.0526,
-            "F": 0.2632,
-            "G": 0.0526
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.0345,
+            "E": 0.0345,
+            "F": 0.1724,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -2368,7 +2403,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PARTIAL"
           },
           "order": [
@@ -2463,28 +2498,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F PARTIAL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -2558,10 +2593,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34901,
+        "tokens_in": 34968,
         "tokens_out": 1500,
-        "cost_usd": 0.006135,
-        "seconds": 0.009,
+        "cost_usd": 0.006145,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -2570,13 +2605,13 @@
     {
       "case_id": "SPK-300308-20260202",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'E', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "E",
         "secondary": [],
@@ -2788,9 +2823,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35177,
+        "tokens_in": 35240,
         "tokens_out": 1500,
-        "cost_usd": 0.006177,
+        "cost_usd": 0.006186,
         "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -2800,27 +2835,27 @@
     {
       "case_id": "SPK-300308-20260417",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "F",
-        "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.14, 'B': 0.14, 'C': 0.14, 'D': 0.14, 'E': 0.03, 'F': 0.41, 'G': 0.03}",
-        "code_primary": "F",
+        "primary": "B",
+        "secondary": [
+          "F"
+        ],
+        "reason": "tested CDEGABF; posterior {'A': 0.11, 'B': 0.32, 'C': 0.11, 'D': 0.11, 'E': 0.02, 'F': 0.32, 'G': 0.02}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.1351,
-            "B": 0.1351,
-            "C": 0.1351,
-            "D": 0.1351,
-            "E": 0.027,
-            "F": 0.4054,
-            "G": 0.027
+            "A": 0.1064,
+            "B": 0.3191,
+            "C": 0.1064,
+            "D": 0.1064,
+            "E": 0.0213,
+            "F": 0.3191,
+            "G": 0.0213
           },
           "tested": {
             "C": "PARTIAL",
@@ -2828,7 +2863,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PASS"
           },
           "order": [
@@ -2923,28 +2958,28 @@
               "untested_mass": 0.3704
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.1852,
-                "B": 0.1852,
-                "C": 0.1852,
-                "D": 0.1852,
-                "E": 0.037,
-                "F": 0.1852,
-                "G": 0.037
+                "A": 0.1351,
+                "B": 0.4054,
+                "C": 0.1351,
+                "D": 0.1351,
+                "E": 0.027,
+                "F": 0.1351,
+                "G": 0.027
               },
-              "untested_mass": 0.1852
+              "untested_mass": 0.1351
             },
             {
               "event": "test F PASS",
               "posterior": {
-                "A": 0.1351,
-                "B": 0.1351,
-                "C": 0.1351,
-                "D": 0.1351,
-                "E": 0.027,
-                "F": 0.4054,
-                "G": 0.027
+                "A": 0.1064,
+                "B": 0.3191,
+                "C": 0.1064,
+                "D": 0.1064,
+                "E": 0.0213,
+                "F": 0.3191,
+                "G": 0.0213
               },
               "untested_mass": 0
             }
@@ -3018,9 +3053,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35574,
+        "tokens_in": 35660,
         "tokens_out": 1500,
-        "cost_usd": 0.006236,
+        "cost_usd": 0.006249,
         "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -3030,13 +3065,13 @@
     {
       "case_id": "SPK-300308-20260512",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'D'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "D",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -3248,9 +3283,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34936,
+        "tokens_in": 35019,
         "tokens_out": 1500,
-        "cost_usd": 0.00614,
+        "cost_usd": 0.006153,
         "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -3260,13 +3295,13 @@
     {
       "case_id": "SPK-300308-20260601",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'F', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "F",
         "secondary": [],
@@ -3478,10 +3513,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35434,
+        "tokens_in": 35494,
         "tokens_out": 1500,
-        "cost_usd": 0.006215,
-        "seconds": 0.017,
+        "cost_usd": 0.006224,
+        "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -3490,13 +3525,11 @@
     {
       "case_id": "SPK-300308-20260622",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "E",
       "record": {
         "primary": "E",
         "secondary": [],
@@ -3708,9 +3741,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34875,
+        "tokens_in": 34935,
         "tokens_out": 1500,
-        "cost_usd": 0.006131,
+        "cost_usd": 0.00614,
         "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -3720,27 +3753,25 @@
     {
       "case_id": "SPK-300308-20260713",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.2, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0667,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.3333,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.04,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.2,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -3748,7 +3779,7 @@
             "E": "PARTIAL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -3843,28 +3874,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.2632,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.1724,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.3333,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.2,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -3938,10 +3969,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34715,
+        "tokens_in": 34821,
         "tokens_out": 1500,
-        "cost_usd": 0.006107,
-        "seconds": 0.023,
+        "cost_usd": 0.006123,
+        "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -3950,31 +3981,30 @@
     {
       "case_id": "SPK-300308-20260728",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "C",
       "record": {
         "primary": "C",
         "secondary": [
           "D",
           "E",
+          "B",
           "F"
         ],
-        "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.07, 'C': 0.2, 'D': 0.2, 'E': 0.2, 'F': 0.2, 'G': 0.07}",
+        "reason": "tested CDEGABF; posterior {'A': 0.06, 'B': 0.18, 'C': 0.18, 'D': 0.18, 'E': 0.18, 'F': 0.18, 'G': 0.06}",
         "code_primary": "C",
         "investigation": {
           "posterior": {
-            "A": 0.0667,
-            "B": 0.0667,
-            "C": 0.2,
-            "D": 0.2,
-            "E": 0.2,
-            "F": 0.2,
-            "G": 0.0667
+            "A": 0.0588,
+            "B": 0.1765,
+            "C": 0.1765,
+            "D": 0.1765,
+            "E": 0.1765,
+            "F": 0.1765,
+            "G": 0.0588
           },
           "tested": {
             "C": "PASS",
@@ -3982,7 +4012,7 @@
             "E": "PASS",
             "G": "PARTIAL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PASS"
           },
           "order": [
@@ -4077,28 +4107,28 @@
               "untested_mass": 0.1538
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0769,
-                "B": 0.0769,
-                "C": 0.2308,
-                "D": 0.2308,
-                "E": 0.2308,
-                "F": 0.0769,
-                "G": 0.0769
+                "A": 0.0667,
+                "B": 0.2,
+                "C": 0.2,
+                "D": 0.2,
+                "E": 0.2,
+                "F": 0.0667,
+                "G": 0.0667
               },
-              "untested_mass": 0.0769
+              "untested_mass": 0.0667
             },
             {
               "event": "test F PASS",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.0667,
-                "C": 0.2,
-                "D": 0.2,
-                "E": 0.2,
-                "F": 0.2,
-                "G": 0.0667
+                "A": 0.0588,
+                "B": 0.1765,
+                "C": 0.1765,
+                "D": 0.1765,
+                "E": 0.1765,
+                "F": 0.1765,
+                "G": 0.0588
               },
               "untested_mass": 0
             }
@@ -4172,10 +4202,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35479,
+        "tokens_in": 35558,
         "tokens_out": 1500,
-        "cost_usd": 0.006222,
-        "seconds": 0.01,
+        "cost_usd": 0.006234,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4184,27 +4214,27 @@
     {
       "case_id": "SPK-300308-20260805",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'B', expected 'F'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "F",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.17, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0526,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.2632,
-            "E": 0.0526,
-            "F": 0.2632,
-            "G": 0.0526
+            "A": 0.0345,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.1724,
+            "E": 0.0345,
+            "F": 0.1724,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -4212,7 +4242,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PARTIAL"
           },
           "order": [
@@ -4307,28 +4337,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.2632,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.1724,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F PARTIAL",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.2632,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.1724,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -4402,10 +4432,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35371,
+        "tokens_in": 35496,
         "tokens_out": 1500,
-        "cost_usd": 0.006206,
-        "seconds": 0.004,
+        "cost_usd": 0.006224,
+        "seconds": 0.029,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4414,13 +4444,13 @@
     {
       "case_id": "SPK-300502-20260202",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'E', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "E",
         "secondary": [],
@@ -4632,10 +4662,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34956,
+        "tokens_in": 35027,
         "tokens_out": 1500,
-        "cost_usd": 0.006143,
-        "seconds": 0.016,
+        "cost_usd": 0.006154,
+        "seconds": 0.01,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4644,13 +4674,13 @@
     {
       "case_id": "SPK-300502-20260227",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'D'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "D",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -4862,10 +4892,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34602,
+        "tokens_in": 34667,
         "tokens_out": 1500,
-        "cost_usd": 0.00609,
-        "seconds": 0.004,
+        "cost_usd": 0.0061,
+        "seconds": 0.01,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4874,27 +4904,25 @@
     {
       "case_id": "SPK-300502-20260424",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -4902,7 +4930,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -4997,28 +5025,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -5092,10 +5120,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35904,
+        "tokens_in": 35986,
         "tokens_out": 1500,
-        "cost_usd": 0.006286,
-        "seconds": 0.016,
+        "cost_usd": 0.006298,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5104,13 +5132,13 @@
     {
       "case_id": "SPK-300502-20260611",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -5322,9 +5350,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35112,
+        "tokens_in": 35229,
         "tokens_out": 1500,
-        "cost_usd": 0.006167,
+        "cost_usd": 0.006184,
         "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -5334,27 +5362,25 @@
     {
       "case_id": "SPK-300502-20260720",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.0526,
-            "E": 0.0526,
-            "F": 0.2632,
-            "G": 0.0526
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.0345,
+            "E": 0.0345,
+            "F": 0.1724,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -5362,7 +5388,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PARTIAL"
           },
           "order": [
@@ -5457,28 +5483,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F PARTIAL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -5552,10 +5578,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35142,
+        "tokens_in": 35196,
         "tokens_out": 1500,
-        "cost_usd": 0.006171,
-        "seconds": 0.016,
+        "cost_usd": 0.006179,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5564,13 +5590,11 @@
     {
       "case_id": "SPK-300502-20260728",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "C",
       "record": {
         "primary": "C",
         "secondary": [
@@ -5784,10 +5808,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35438,
+        "tokens_in": 35559,
         "tokens_out": 1500,
-        "cost_usd": 0.006216,
-        "seconds": 0.029,
+        "cost_usd": 0.006234,
+        "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5796,13 +5820,13 @@
     {
       "case_id": "SPK-300502-20260805",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'F'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "F",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -6014,9 +6038,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35056,
+        "tokens_in": 35108,
         "tokens_out": 1500,
-        "cost_usd": 0.006158,
+        "cost_usd": 0.006166,
         "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -6026,13 +6050,13 @@
     {
       "case_id": "SPK-300476-20260119",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'A'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "A",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -6244,10 +6268,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35331,
+        "tokens_in": 35392,
         "tokens_out": 1500,
-        "cost_usd": 0.0062,
-        "seconds": 0.035,
+        "cost_usd": 0.006209,
+        "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -6256,27 +6280,25 @@
     {
       "case_id": "SPK-300476-20260313",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -6284,7 +6306,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -6379,28 +6401,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -6474,9 +6496,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 36088,
+        "tokens_in": 36136,
         "tokens_out": 1500,
-        "cost_usd": 0.006313,
+        "cost_usd": 0.00632,
         "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -6486,27 +6508,25 @@
     {
       "case_id": "SPK-300476-20260429",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -6514,7 +6534,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -6609,28 +6629,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -6704,10 +6724,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35299,
+        "tokens_in": 35387,
         "tokens_out": 1500,
-        "cost_usd": 0.006195,
-        "seconds": 0.01,
+        "cost_usd": 0.006208,
+        "seconds": 0.016,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -6716,27 +6736,27 @@
     {
       "case_id": "SPK-300476-20260525",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'B', expected 'C'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "C",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.2, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0667,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.3333,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.04,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.2,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -6744,7 +6764,7 @@
             "E": "PARTIAL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -6839,28 +6859,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.2632,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.1724,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.3333,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.2,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -6934,9 +6954,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34666,
+        "tokens_in": 34718,
         "tokens_out": 1500,
-        "cost_usd": 0.0061,
+        "cost_usd": 0.006108,
         "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -6946,13 +6966,13 @@
     {
       "case_id": "SPK-300476-20260605",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'E', expected 'D'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "D",
       "record": {
         "primary": "E",
         "secondary": [],
@@ -7164,10 +7184,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34634,
+        "tokens_in": 34710,
         "tokens_out": 1500,
-        "cost_usd": 0.006095,
-        "seconds": 0.016,
+        "cost_usd": 0.006106,
+        "seconds": 0.041,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -7176,27 +7196,25 @@
     {
       "case_id": "SPK-300476-20260828",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.03, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.0526,
-            "D": 0.2632,
-            "E": 0.0526,
-            "F": 0.0526,
-            "G": 0.0526
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.0345,
+            "D": 0.1724,
+            "E": 0.0345,
+            "F": 0.0345,
+            "G": 0.0345
           },
           "tested": {
             "C": "FAIL",
@@ -7204,7 +7222,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -7299,28 +7317,28 @@
               "untested_mass": 0.4348
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2174,
-                "B": 0.2174,
-                "C": 0.0435,
-                "D": 0.2174,
-                "E": 0.0435,
-                "F": 0.2174,
-                "G": 0.0435
+                "A": 0.1515,
+                "B": 0.4545,
+                "C": 0.0303,
+                "D": 0.1515,
+                "E": 0.0303,
+                "F": 0.1515,
+                "G": 0.0303
               },
-              "untested_mass": 0.2174
+              "untested_mass": 0.1515
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.2632,
-                "E": 0.0526,
-                "F": 0.0526,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.1724,
+                "E": 0.0345,
+                "F": 0.0345,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -7394,10 +7412,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35318,
+        "tokens_in": 35383,
         "tokens_out": 1500,
-        "cost_usd": 0.006198,
-        "seconds": 0.003,
+        "cost_usd": 0.006207,
+        "seconds": 0.028,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -7406,27 +7424,25 @@
     {
       "case_id": "SPK-601127-20251106",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -7434,7 +7450,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -7529,28 +7545,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -7624,10 +7640,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35050,
+        "tokens_in": 35119,
         "tokens_out": 1500,
-        "cost_usd": 0.006157,
-        "seconds": 0.04,
+        "cost_usd": 0.006168,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -7636,13 +7652,13 @@
     {
       "case_id": "SPK-601127-20260122",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -7854,9 +7870,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34011,
+        "tokens_in": 34085,
         "tokens_out": 1500,
-        "cost_usd": 0.006002,
+        "cost_usd": 0.006013,
         "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -7866,13 +7882,11 @@
     {
       "case_id": "SPK-601127-20260128",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "H",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -8084,10 +8098,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34477,
+        "tokens_in": 34576,
         "tokens_out": 1500,
-        "cost_usd": 0.006072,
-        "seconds": 0.003,
+        "cost_usd": 0.006086,
+        "seconds": 0.009,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8096,27 +8110,27 @@
     {
       "case_id": "SPK-601127-20260331",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "F",
-        "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.03, 'D': 0.03, 'E': 0.15, 'F': 0.45, 'G': 0.03}",
-        "code_primary": "F",
+        "primary": "B",
+        "secondary": [
+          "F"
+        ],
+        "reason": "tested CDEGABF; posterior {'A': 0.12, 'B': 0.35, 'C': 0.02, 'D': 0.02, 'E': 0.12, 'F': 0.35, 'G': 0.02}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.1515,
-            "B": 0.1515,
-            "C": 0.0303,
-            "D": 0.0303,
-            "E": 0.1515,
-            "F": 0.4545,
-            "G": 0.0303
+            "A": 0.1163,
+            "B": 0.3488,
+            "C": 0.0233,
+            "D": 0.0233,
+            "E": 0.1163,
+            "F": 0.3488,
+            "G": 0.0233
           },
           "tested": {
             "C": "FAIL",
@@ -8124,7 +8138,7 @@
             "E": "PARTIAL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PASS"
           },
           "order": [
@@ -8219,28 +8233,28 @@
               "untested_mass": 0.4348
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2174,
-                "B": 0.2174,
-                "C": 0.0435,
-                "D": 0.0435,
-                "E": 0.2174,
-                "F": 0.2174,
-                "G": 0.0435
+                "A": 0.1515,
+                "B": 0.4545,
+                "C": 0.0303,
+                "D": 0.0303,
+                "E": 0.1515,
+                "F": 0.1515,
+                "G": 0.0303
               },
-              "untested_mass": 0.2174
+              "untested_mass": 0.1515
             },
             {
               "event": "test F PASS",
               "posterior": {
-                "A": 0.1515,
-                "B": 0.1515,
-                "C": 0.0303,
-                "D": 0.0303,
-                "E": 0.1515,
-                "F": 0.4545,
-                "G": 0.0303
+                "A": 0.1163,
+                "B": 0.3488,
+                "C": 0.0233,
+                "D": 0.0233,
+                "E": 0.1163,
+                "F": 0.3488,
+                "G": 0.0233
               },
               "untested_mass": 0
             }
@@ -8314,10 +8328,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35393,
+        "tokens_in": 35439,
         "tokens_out": 1500,
-        "cost_usd": 0.006209,
-        "seconds": 0.015,
+        "cost_usd": 0.006216,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8326,13 +8340,13 @@
     {
       "case_id": "SPK-601127-20260610",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -8544,10 +8558,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34580,
+        "tokens_in": 34652,
         "tokens_out": 1500,
-        "cost_usd": 0.006087,
-        "seconds": 0.003,
+        "cost_usd": 0.006098,
+        "seconds": 0.04,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8556,27 +8570,29 @@
     {
       "case_id": "SPK-601127-20260713",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'C', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "C",
-        "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.45, 'D': 0.03, 'E': 0.15, 'F': 0.03, 'G': 0.03}",
+        "secondary": [
+          "B"
+        ],
+        "reason": "tested CDEGABF; posterior {'A': 0.12, 'B': 0.35, 'C': 0.35, 'D': 0.02, 'E': 0.12, 'F': 0.02, 'G': 0.02}",
         "code_primary": "C",
         "investigation": {
           "posterior": {
-            "A": 0.1515,
-            "B": 0.1515,
-            "C": 0.4545,
-            "D": 0.0303,
-            "E": 0.1515,
-            "F": 0.0303,
-            "G": 0.0303
+            "A": 0.1163,
+            "B": 0.3488,
+            "C": 0.3488,
+            "D": 0.0233,
+            "E": 0.1163,
+            "F": 0.0233,
+            "G": 0.0233
           },
           "tested": {
             "C": "PASS",
@@ -8584,7 +8600,7 @@
             "E": "PARTIAL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -8679,28 +8695,28 @@
               "untested_mass": 0.2702
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.1351,
-                "B": 0.1351,
-                "C": 0.4054,
-                "D": 0.027,
-                "E": 0.1351,
-                "F": 0.1351,
-                "G": 0.027
+                "A": 0.1064,
+                "B": 0.3191,
+                "C": 0.3191,
+                "D": 0.0213,
+                "E": 0.1064,
+                "F": 0.1064,
+                "G": 0.0213
               },
-              "untested_mass": 0.1351
+              "untested_mass": 0.1064
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.1515,
-                "B": 0.1515,
-                "C": 0.4545,
-                "D": 0.0303,
-                "E": 0.1515,
-                "F": 0.0303,
-                "G": 0.0303
+                "A": 0.1163,
+                "B": 0.3488,
+                "C": 0.3488,
+                "D": 0.0233,
+                "E": 0.1163,
+                "F": 0.0233,
+                "G": 0.0233
               },
               "untested_mass": 0
             }
@@ -8774,10 +8790,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34497,
+        "tokens_in": 34558,
         "tokens_out": 1500,
-        "cost_usd": 0.006075,
-        "seconds": 0.04,
+        "cost_usd": 0.006084,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8786,27 +8802,25 @@
     {
       "case_id": "SPK-601127-20260915",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0909,
-            "B": 0.4545,
-            "C": 0.0909,
-            "D": 0.0909,
-            "E": 0.0909,
-            "F": 0.0909,
-            "G": 0.0909
+            "A": 0.0476,
+            "B": 0.7143,
+            "C": 0.0476,
+            "D": 0.0476,
+            "E": 0.0476,
+            "F": 0.0476,
+            "G": 0.0476
           },
           "tested": {
             "C": "FAIL",
@@ -8814,7 +8828,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -8909,28 +8923,28 @@
               "untested_mass": 0.6666
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.3333,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.2,
+                "G": 0.04
               },
-              "untested_mass": 0.3333
+              "untested_mass": 0.2
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0909,
-                "B": 0.4545,
-                "C": 0.0909,
-                "D": 0.0909,
-                "E": 0.0909,
-                "F": 0.0909,
-                "G": 0.0909
+                "A": 0.0476,
+                "B": 0.7143,
+                "C": 0.0476,
+                "D": 0.0476,
+                "E": 0.0476,
+                "F": 0.0476,
+                "G": 0.0476
               },
               "untested_mass": 0
             }
@@ -9004,10 +9018,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34440,
+        "tokens_in": 34456,
         "tokens_out": 1500,
-        "cost_usd": 0.006066,
-        "seconds": 0.003,
+        "cost_usd": 0.006068,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -9016,13 +9030,13 @@
     {
       "case_id": "SPK-601127-20260928",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -9234,10 +9248,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34517,
+        "tokens_in": 34585,
         "tokens_out": 1500,
-        "cost_usd": 0.006078,
-        "seconds": 0.009,
+        "cost_usd": 0.006088,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -9246,13 +9260,11 @@
     {
       "case_id": "SPK-600418-20251106",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "H",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -9464,9 +9476,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33900,
+        "tokens_in": 33916,
         "tokens_out": 1500,
-        "cost_usd": 0.005985,
+        "cost_usd": 0.005987,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -9476,13 +9488,11 @@
     {
       "case_id": "SPK-600418-20251112",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "B",
         "secondary": [],
@@ -9694,10 +9704,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33799,
+        "tokens_in": 33788,
         "tokens_out": 1500,
-        "cost_usd": 0.00597,
-        "seconds": 0.021,
+        "cost_usd": 0.005968,
+        "seconds": 0.015,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -9706,13 +9716,13 @@
     {
       "case_id": "SPK-600418-20251211",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'A', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "A",
         "secondary": [],
@@ -9924,9 +9934,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34760,
+        "tokens_in": 34730,
         "tokens_out": 1500,
-        "cost_usd": 0.006114,
+        "cost_usd": 0.006109,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -9936,13 +9946,13 @@
     {
       "case_id": "SPK-600418-20260119",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -10154,9 +10164,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34343,
+        "tokens_in": 34239,
         "tokens_out": 1500,
-        "cost_usd": 0.006051,
+        "cost_usd": 0.006036,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -10166,27 +10176,25 @@
     {
       "case_id": "SPK-600418-20260211",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -10194,7 +10202,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -10289,28 +10297,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -10384,10 +10392,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35100,
+        "tokens_in": 35168,
         "tokens_out": 1500,
-        "cost_usd": 0.006165,
-        "seconds": 0.002,
+        "cost_usd": 0.006175,
+        "seconds": 0.027,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10396,13 +10404,13 @@
     {
       "case_id": "SPK-600418-20260427",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -10614,10 +10622,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34062,
+        "tokens_in": 34108,
         "tokens_out": 1500,
-        "cost_usd": 0.006009,
-        "seconds": 0.003,
+        "cost_usd": 0.006016,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10626,13 +10634,13 @@
     {
       "case_id": "SPK-600418-20260525",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -10844,10 +10852,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33859,
+        "tokens_in": 33875,
         "tokens_out": 1500,
-        "cost_usd": 0.005979,
-        "seconds": 0.021,
+        "cost_usd": 0.005981,
+        "seconds": 0.028,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10856,13 +10864,13 @@
     {
       "case_id": "SPK-600418-20260622",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'E', expected 'H'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "H",
       "record": {
         "primary": "E",
         "secondary": [],
@@ -11074,9 +11082,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33909,
+        "tokens_in": 33921,
         "tokens_out": 1500,
-        "cost_usd": 0.005986,
+        "cost_usd": 0.005988,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -11086,13 +11094,13 @@
     {
       "case_id": "SPK-600418-20260707",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -11304,9 +11312,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34584,
+        "tokens_in": 34581,
         "tokens_out": 1500,
-        "cost_usd": 0.006088,
+        "cost_usd": 0.006087,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -11316,27 +11324,25 @@
     {
       "case_id": "SPK-600418-20260923",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.33}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.2}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0667,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.3333
+            "A": 0.04,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.2
           },
           "tested": {
             "C": "FAIL",
@@ -11344,7 +11350,7 @@
             "E": "FAIL",
             "G": "PARTIAL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -11439,28 +11445,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0526,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.2632
+                "A": 0.0345,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.1724
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.3333
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.2
               },
               "untested_mass": 0
             }
@@ -11534,10 +11540,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34411,
+        "tokens_in": 34497,
         "tokens_out": 1500,
-        "cost_usd": 0.006062,
-        "seconds": 0.021,
+        "cost_usd": 0.006075,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -11546,27 +11552,25 @@
     {
       "case_id": "SPK-601238-20251110",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -11574,7 +11578,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -11669,28 +11673,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -11764,9 +11768,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34379,
+        "tokens_in": 34457,
         "tokens_out": 1500,
-        "cost_usd": 0.006057,
+        "cost_usd": 0.006069,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -11776,27 +11780,25 @@
     {
       "case_id": "SPK-601238-20251124",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0909,
-            "B": 0.4545,
-            "C": 0.0909,
-            "D": 0.0909,
-            "E": 0.0909,
-            "F": 0.0909,
-            "G": 0.0909
+            "A": 0.0476,
+            "B": 0.7143,
+            "C": 0.0476,
+            "D": 0.0476,
+            "E": 0.0476,
+            "F": 0.0476,
+            "G": 0.0476
           },
           "tested": {
             "C": "FAIL",
@@ -11804,7 +11806,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -11899,28 +11901,28 @@
               "untested_mass": 0.6666
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.3333,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.2,
+                "G": 0.04
               },
-              "untested_mass": 0.3333
+              "untested_mass": 0.2
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0909,
-                "B": 0.4545,
-                "C": 0.0909,
-                "D": 0.0909,
-                "E": 0.0909,
-                "F": 0.0909,
-                "G": 0.0909
+                "A": 0.0476,
+                "B": 0.7143,
+                "C": 0.0476,
+                "D": 0.0476,
+                "E": 0.0476,
+                "F": 0.0476,
+                "G": 0.0476
               },
               "untested_mass": 0
             }
@@ -11994,10 +11996,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34395,
+        "tokens_in": 34467,
         "tokens_out": 1500,
-        "cost_usd": 0.006059,
-        "seconds": 0.002,
+        "cost_usd": 0.00607,
+        "seconds": 0.027,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -12006,27 +12008,27 @@
     {
       "case_id": "SPK-601238-20260618",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'B', expected 'H'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "H",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.33, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.2, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0667,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.3333,
-            "G": 0.0667
+            "A": 0.04,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.2,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -12034,7 +12036,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "PARTIAL"
           },
           "order": [
@@ -12129,28 +12131,28 @@
               "untested_mass": 0.6666
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.3333,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.2,
+                "G": 0.04
               },
-              "untested_mass": 0.3333
+              "untested_mass": 0.2
             },
             {
               "event": "test F PARTIAL",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.3333,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.2,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -12224,10 +12226,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34031,
+        "tokens_in": 34069,
         "tokens_out": 1500,
-        "cost_usd": 0.006005,
-        "seconds": 0.028,
+        "cost_usd": 0.00601,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -12236,13 +12238,13 @@
     {
       "case_id": "SPK-601238-20260629",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -12454,9 +12456,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34280,
+        "tokens_in": 34248,
         "tokens_out": 1500,
-        "cost_usd": 0.006042,
+        "cost_usd": 0.006037,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -12466,27 +12468,29 @@
     {
       "case_id": "SPK-601238-20260713",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'C', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "C",
-        "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.45, 'D': 0.03, 'E': 0.15, 'F': 0.03, 'G': 0.03}",
+        "secondary": [
+          "B"
+        ],
+        "reason": "tested CDEGABF; posterior {'A': 0.12, 'B': 0.35, 'C': 0.35, 'D': 0.02, 'E': 0.12, 'F': 0.02, 'G': 0.02}",
         "code_primary": "C",
         "investigation": {
           "posterior": {
-            "A": 0.1515,
-            "B": 0.1515,
-            "C": 0.4545,
-            "D": 0.0303,
-            "E": 0.1515,
-            "F": 0.0303,
-            "G": 0.0303
+            "A": 0.1163,
+            "B": 0.3488,
+            "C": 0.3488,
+            "D": 0.0233,
+            "E": 0.1163,
+            "F": 0.0233,
+            "G": 0.0233
           },
           "tested": {
             "C": "PASS",
@@ -12494,7 +12498,7 @@
             "E": "PARTIAL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -12589,28 +12593,28 @@
               "untested_mass": 0.2702
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.1351,
-                "B": 0.1351,
-                "C": 0.4054,
-                "D": 0.027,
-                "E": 0.1351,
-                "F": 0.1351,
-                "G": 0.027
+                "A": 0.1064,
+                "B": 0.3191,
+                "C": 0.3191,
+                "D": 0.0213,
+                "E": 0.1064,
+                "F": 0.1064,
+                "G": 0.0213
               },
-              "untested_mass": 0.1351
+              "untested_mass": 0.1064
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.1515,
-                "B": 0.1515,
-                "C": 0.4545,
-                "D": 0.0303,
-                "E": 0.1515,
-                "F": 0.0303,
-                "G": 0.0303
+                "A": 0.1163,
+                "B": 0.3488,
+                "C": 0.3488,
+                "D": 0.0233,
+                "E": 0.1163,
+                "F": 0.0233,
+                "G": 0.0233
               },
               "untested_mass": 0
             }
@@ -12684,10 +12688,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34691,
+        "tokens_in": 34687,
         "tokens_out": 1500,
-        "cost_usd": 0.006104,
-        "seconds": 0.002,
+        "cost_usd": 0.006103,
+        "seconds": 0.015,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -12696,13 +12700,13 @@
     {
       "case_id": "SPK-601238-20260914",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -12914,10 +12918,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34216,
+        "tokens_in": 34262,
         "tokens_out": 1500,
-        "cost_usd": 0.006032,
-        "seconds": 0.015,
+        "cost_usd": 0.006039,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -12926,13 +12930,13 @@
     {
       "case_id": "SPK-601238-20260929",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -13144,9 +13148,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35503,
+        "tokens_in": 35565,
         "tokens_out": 1500,
-        "cost_usd": 0.006225,
+        "cost_usd": 0.006235,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -13156,13 +13160,13 @@
     {
       "case_id": "SPK-002074-20260206",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -13374,10 +13378,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35199,
+        "tokens_in": 34991,
         "tokens_out": 1500,
-        "cost_usd": 0.00618,
-        "seconds": 0.002,
+        "cost_usd": 0.006149,
+        "seconds": 0.022,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -13386,27 +13390,25 @@
     {
       "case_id": "SPK-002074-20260429",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -13414,7 +13416,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -13509,28 +13511,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -13604,10 +13606,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35184,
+        "tokens_in": 35280,
         "tokens_out": 1500,
-        "cost_usd": 0.006178,
-        "seconds": 0.023,
+        "cost_usd": 0.006192,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -13616,27 +13618,25 @@
     {
       "case_id": "SPK-002074-20260518",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.0909,
-            "B": 0.4545,
-            "C": 0.0909,
-            "D": 0.0909,
-            "E": 0.0909,
-            "F": 0.0909,
-            "G": 0.0909
+            "A": 0.0476,
+            "B": 0.7143,
+            "C": 0.0476,
+            "D": 0.0476,
+            "E": 0.0476,
+            "F": 0.0476,
+            "G": 0.0476
           },
           "tested": {
             "C": "FAIL",
@@ -13644,7 +13644,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "FAIL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -13739,28 +13739,28 @@
               "untested_mass": 0.6666
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.0667,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.3333,
-                "G": 0.0667
+                "A": 0.04,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.2,
+                "G": 0.04
               },
-              "untested_mass": 0.3333
+              "untested_mass": 0.2
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.0909,
-                "B": 0.4545,
-                "C": 0.0909,
-                "D": 0.0909,
-                "E": 0.0909,
-                "F": 0.0909,
-                "G": 0.0909
+                "A": 0.0476,
+                "B": 0.7143,
+                "C": 0.0476,
+                "D": 0.0476,
+                "E": 0.0476,
+                "F": 0.0476,
+                "G": 0.0476
               },
               "untested_mass": 0
             }
@@ -13834,9 +13834,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34320,
+        "tokens_in": 34404,
         "tokens_out": 1500,
-        "cost_usd": 0.006048,
+        "cost_usd": 0.006061,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -13846,13 +13846,13 @@
     {
       "case_id": "SPK-002074-20260604",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'C'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "C",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -14064,10 +14064,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34232,
+        "tokens_in": 34226,
         "tokens_out": 1500,
-        "cost_usd": 0.006035,
-        "seconds": 0.002,
+        "cost_usd": 0.006034,
+        "seconds": 0.014,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14076,27 +14076,29 @@
     {
       "case_id": "SPK-002074-20260929",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'G', expected 'B'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "G",
-        "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.17, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.52}",
+        "secondary": [
+          "B"
+        ],
+        "reason": "tested CDEGABF; posterior {'A': 0.13, 'B': 0.38, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.38}",
         "code_primary": "G",
         "investigation": {
           "posterior": {
-            "A": 0.1724,
-            "B": 0.1724,
-            "C": 0.0345,
-            "D": 0.0345,
-            "E": 0.0345,
-            "F": 0.0345,
-            "G": 0.5172
+            "A": 0.1282,
+            "B": 0.3846,
+            "C": 0.0256,
+            "D": 0.0256,
+            "E": 0.0256,
+            "F": 0.0256,
+            "G": 0.3846
           },
           "tested": {
             "C": "FAIL",
@@ -14104,7 +14106,7 @@
             "E": "FAIL",
             "G": "PASS",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -14199,28 +14201,28 @@
               "untested_mass": 0.303
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.1515,
-                "B": 0.1515,
-                "C": 0.0303,
-                "D": 0.0303,
-                "E": 0.0303,
-                "F": 0.1515,
-                "G": 0.4545
+                "A": 0.1163,
+                "B": 0.3488,
+                "C": 0.0233,
+                "D": 0.0233,
+                "E": 0.0233,
+                "F": 0.1163,
+                "G": 0.3488
               },
-              "untested_mass": 0.1515
+              "untested_mass": 0.1163
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.1724,
-                "B": 0.1724,
-                "C": 0.0345,
-                "D": 0.0345,
-                "E": 0.0345,
-                "F": 0.0345,
-                "G": 0.5172
+                "A": 0.1282,
+                "B": 0.3846,
+                "C": 0.0256,
+                "D": 0.0256,
+                "E": 0.0256,
+                "F": 0.0256,
+                "G": 0.3846
               },
               "untested_mass": 0
             }
@@ -14294,10 +14296,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 34673,
+        "tokens_in": 34757,
         "tokens_out": 1500,
-        "cost_usd": 0.006101,
-        "seconds": 0.015,
+        "cost_usd": 0.006114,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14306,13 +14308,13 @@
     {
       "case_id": "SPK-600150-20251107",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'B'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -14524,9 +14526,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33720,
+        "tokens_in": 33534,
         "tokens_out": 1500,
-        "cost_usd": 0.005958,
+        "cost_usd": 0.00593,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -14536,27 +14538,25 @@
     {
       "case_id": "SPK-600150-20260130",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.3333,
-            "B": 0.3333,
-            "C": 0.0667,
-            "D": 0.0667,
-            "E": 0.0667,
-            "F": 0.0667,
-            "G": 0.0667
+            "A": 0.2,
+            "B": 0.6,
+            "C": 0.04,
+            "D": 0.04,
+            "E": 0.04,
+            "F": 0.04,
+            "G": 0.04
           },
           "tested": {
             "C": "FAIL",
@@ -14564,7 +14564,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -14659,28 +14659,28 @@
               "untested_mass": 0.5264
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.0526,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.2632,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.0345,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
               },
-              "untested_mass": 0.2632
+              "untested_mass": 0.1724
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.3333,
-                "B": 0.3333,
-                "C": 0.0667,
-                "D": 0.0667,
-                "E": 0.0667,
-                "F": 0.0667,
-                "G": 0.0667
+                "A": 0.2,
+                "B": 0.6,
+                "C": 0.04,
+                "D": 0.04,
+                "E": 0.04,
+                "F": 0.04,
+                "G": 0.04
               },
               "untested_mass": 0
             }
@@ -14754,10 +14754,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33911,
+        "tokens_in": 33971,
         "tokens_out": 1500,
-        "cost_usd": 0.005987,
-        "seconds": 0.002,
+        "cost_usd": 0.005996,
+        "seconds": 0.008,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14766,13 +14766,13 @@
     {
       "case_id": "SPK-600150-20260323",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'C', expected 'E'"
       ],
       "family": null,
       "period": "observe",
-      "expected": null,
+      "expected": "E",
       "record": {
         "primary": "C",
         "secondary": [
@@ -14986,10 +14986,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33837,
+        "tokens_in": 33651,
         "tokens_out": 1500,
-        "cost_usd": 0.005976,
-        "seconds": 0.011,
+        "cost_usd": 0.005948,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14998,27 +14998,25 @@
     {
       "case_id": "SPK-600150-20260430",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "B",
       "record": {
-        "primary": "H",
+        "primary": "B",
         "secondary": [],
-        "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}",
-        "code_primary": "H",
+        "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.17, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.03}",
+        "code_primary": "B",
         "investigation": {
           "posterior": {
-            "A": 0.2632,
-            "B": 0.2632,
-            "C": 0.2632,
-            "D": 0.0526,
-            "E": 0.0526,
-            "F": 0.0526,
-            "G": 0.0526
+            "A": 0.1724,
+            "B": 0.5172,
+            "C": 0.1724,
+            "D": 0.0345,
+            "E": 0.0345,
+            "F": 0.0345,
+            "G": 0.0345
           },
           "tested": {
             "C": "PARTIAL",
@@ -15026,7 +15024,7 @@
             "E": "FAIL",
             "G": "FAIL",
             "A": "PARTIAL",
-            "B": "PARTIAL",
+            "B": "PASS",
             "F": "FAIL"
           },
           "order": [
@@ -15121,28 +15119,28 @@
               "untested_mass": 0.4348
             },
             {
-              "event": "test B PARTIAL",
+              "event": "test B PASS",
               "posterior": {
-                "A": 0.2174,
-                "B": 0.2174,
-                "C": 0.2174,
-                "D": 0.0435,
-                "E": 0.0435,
-                "F": 0.2174,
-                "G": 0.0435
+                "A": 0.1515,
+                "B": 0.4545,
+                "C": 0.1515,
+                "D": 0.0303,
+                "E": 0.0303,
+                "F": 0.1515,
+                "G": 0.0303
               },
-              "untested_mass": 0.2174
+              "untested_mass": 0.1515
             },
             {
               "event": "test F FAIL",
               "posterior": {
-                "A": 0.2632,
-                "B": 0.2632,
-                "C": 0.2632,
-                "D": 0.0526,
-                "E": 0.0526,
-                "F": 0.0526,
-                "G": 0.0526
+                "A": 0.1724,
+                "B": 0.5172,
+                "C": 0.1724,
+                "D": 0.0345,
+                "E": 0.0345,
+                "F": 0.0345,
+                "G": 0.0345
               },
               "untested_mass": 0
             }
@@ -15216,9 +15214,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35111,
+        "tokens_in": 35202,
         "tokens_out": 1500,
-        "cost_usd": 0.006167,
+        "cost_usd": 0.00618,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -15228,13 +15226,11 @@
     {
       "case_id": "SPK-600150-20260713",
       "trial": 1,
-      "passed": null,
-      "fails": [
-        "not labelled"
-      ],
+      "passed": true,
+      "fails": [],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "C",
       "record": {
         "primary": "C",
         "secondary": [],
@@ -15446,9 +15442,9 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 33642,
+        "tokens_in": 33626,
         "tokens_out": 1500,
-        "cost_usd": 0.005946,
+        "cost_usd": 0.005944,
         "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -15458,13 +15454,13 @@
     {
       "case_id": "SPK-600150-20260831",
       "trial": 1,
-      "passed": null,
+      "passed": false,
       "fails": [
-        "not labelled"
+        "primary 'H', expected 'A'"
       ],
       "family": null,
       "period": "check",
-      "expected": null,
+      "expected": "A",
       "record": {
         "primary": "H",
         "secondary": [],
@@ -15676,10 +15672,10 @@
         ],
         "observations": [],
         "turns": 9,
-        "tokens_in": 35160,
+        "tokens_in": 35234,
         "tokens_out": 1500,
-        "cost_usd": 0.006174,
-        "seconds": 0.006,
+        "cost_usd": 0.006185,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"

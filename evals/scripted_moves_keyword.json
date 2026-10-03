@@ -64,33 +64,11 @@
    ]
   },
   {
-   "thought": "Test A (highest untested posterior).",
-   "calls": [
-    [
-     "check_A",
-     {
-      "spike_id": "SPK-688256-20260203"
-     }
-    ]
-   ]
-  },
-  {
-   "thought": "Test D (highest untested posterior).",
-   "calls": [
-    [
-     "check_D",
-     {
-      "spike_id": "SPK-688256-20260203"
-     }
-    ]
-   ]
-  },
-  {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CBGAD; posterior {'A': 0.3, 'B': 0.5, 'C': 0.12, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.08}"
+    "reason": "tested CBG; posterior {'A': 0.15, 'B': 0.75, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.04}"
    }
   }
  ],
@@ -468,9 +446,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CEGAB; posterior {'A': 0.31, 'B': 0.16, 'C': 0.28, 'D': 0.0, 'E': 0.19, 'F': 0.0, 'G': 0.06}"
+    "reason": "tested CEGAB; posterior {'A': 0.24, 'B': 0.36, 'C': 0.21, 'D': 0.0, 'E': 0.14, 'F': 0.0, 'G': 0.05}"
    }
   }
  ],
@@ -645,22 +623,11 @@
    ]
   },
   {
-   "thought": "Test D (highest untested posterior).",
-   "calls": [
-    [
-     "check_D",
-     {
-      "spike_id": "SPK-601138-20251124"
-     }
-    ]
-   ]
-  },
-  {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CEABD; posterior {'A': 0.1, 'B': 0.48, 'C': 0.1, 'D': 0.24, 'E': 0.1, 'F': 0.0, 'G': 0.0}"
+    "reason": "tested CEAB; posterior {'A': 0.05, 'B': 0.73, 'C': 0.05, 'D': 0.12, 'E': 0.05, 'F': 0.0, 'G': 0.0}"
    }
   }
  ],
@@ -943,9 +910,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CEAGB; posterior {'A': 0.4, 'B': 0.2, 'C': 0.08, 'D': 0.0, 'E': 0.08, 'F': 0.2, 'G': 0.04}"
+    "reason": "tested CEAGB; posterior {'A': 0.29, 'B': 0.43, 'C': 0.06, 'D': 0.0, 'E': 0.06, 'F': 0.14, 'G': 0.03}"
    }
   }
  ],
@@ -2901,22 +2868,11 @@
    ]
   },
   {
-   "thought": "Test A (highest untested posterior).",
-   "calls": [
-    [
-     "check_A",
-     {
-      "spike_id": "SPK-300476-20260828"
-     }
-    ]
-   ]
-  },
-  {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CGBDA; posterior {'A': 0.18, 'B': 0.36, 'C': 0.18, 'D': 0.18, 'E': 0.0, 'F': 0.0, 'G': 0.11}"
+    "reason": "tested CGBD; posterior {'A': 0.1, 'B': 0.62, 'C': 0.1, 'D': 0.1, 'E': 0.0, 'F': 0.0, 'G': 0.06}"
    }
   }
  ],
@@ -3511,44 +3467,11 @@
    ]
   },
   {
-   "thought": "Test D (highest untested posterior).",
-   "calls": [
-    [
-     "check_D",
-     {
-      "spike_id": "SPK-601127-20260915"
-     }
-    ]
-   ]
-  },
-  {
-   "thought": "Test E (highest untested posterior).",
-   "calls": [
-    [
-     "check_E",
-     {
-      "spike_id": "SPK-601127-20260915"
-     }
-    ]
-   ]
-  },
-  {
-   "thought": "Test G (highest untested posterior).",
-   "calls": [
-    [
-     "check_G",
-     {
-      "spike_id": "SPK-601127-20260915"
-     }
-    ]
-   ]
-  },
-  {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CBDEG; posterior {'A': 0.0, 'B': 0.83, 'C': 0.17, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}"
+    "reason": "tested CB; posterior {'A': 0.0, 'B': 0.94, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}"
    }
   }
  ],
@@ -4534,33 +4457,11 @@
    ]
   },
   {
-   "thought": "Test D (highest untested posterior).",
-   "calls": [
-    [
-     "check_D",
-     {
-      "spike_id": "SPK-600418-20260923"
-     }
-    ]
-   ]
-  },
-  {
-   "thought": "Test E (highest untested posterior).",
-   "calls": [
-    [
-     "check_E",
-     {
-      "spike_id": "SPK-600418-20260923"
-     }
-    ]
-   ]
-  },
-  {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CGBDE; posterior {'A': 0.0, 'B': 0.41, 'C': 0.19, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.41}"
+    "reason": "tested CGB; posterior {'A': 0.0, 'B': 0.67, 'C': 0.1, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.22}"
    }
   }
  ],

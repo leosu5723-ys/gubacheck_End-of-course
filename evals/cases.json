@@ -3,7 +3,7 @@
   "case_id": "SPK-688256-20260203",
   "stock": "688256",
   "date": "2026-02-03",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -11,7 +11,7 @@
   "case_id": "SPK-688256-20260430",
   "stock": "688256",
   "date": "2026-04-30",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -19,7 +19,7 @@
   "case_id": "SPK-688256-20260506",
   "stock": "688256",
   "date": "2026-05-06",
-  "expected_primary": null,
+  "expected_primary": "H",
   "expected_secondary": "",
   "period": "check"
  },
@@ -27,7 +27,7 @@
   "case_id": "SPK-688256-20260618",
   "stock": "688256",
   "date": "2026-06-18",
-  "expected_primary": null,
+  "expected_primary": "C",
   "expected_secondary": "",
   "period": "check"
  },
@@ -35,7 +35,7 @@
   "case_id": "SPK-688256-20260701",
   "stock": "688256",
   "date": "2026-07-01",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -43,7 +43,7 @@
   "case_id": "SPK-688256-20260810",
   "stock": "688256",
   "date": "2026-08-10",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -51,7 +51,7 @@
   "case_id": "SPK-601138-20251124",
   "stock": "601138",
   "date": "2025-11-24",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -59,7 +59,7 @@
   "case_id": "SPK-601138-20260129",
   "stock": "601138",
   "date": "2026-01-29",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -67,7 +67,7 @@
   "case_id": "SPK-601138-20260204",
   "stock": "601138",
   "date": "2026-02-04",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -75,7 +75,7 @@
   "case_id": "SPK-601138-20260429",
   "stock": "601138",
   "date": "2026-04-29",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -83,7 +83,7 @@
   "case_id": "SPK-300308-20251126",
   "stock": "300308",
   "date": "2025-11-26",
-  "expected_primary": null,
+  "expected_primary": "C",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -91,23 +91,23 @@
   "case_id": "SPK-300308-20260202",
   "stock": "300308",
   "date": "2026-02-02",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "E",
   "period": "observe"
  },
  {
   "case_id": "SPK-300308-20260417",
   "stock": "300308",
   "date": "2026-04-17",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "C",
   "period": "check"
  },
  {
   "case_id": "SPK-300308-20260512",
   "stock": "300308",
   "date": "2026-05-12",
-  "expected_primary": null,
+  "expected_primary": "D",
   "expected_secondary": "",
   "period": "check"
  },
@@ -115,7 +115,7 @@
   "case_id": "SPK-300308-20260601",
   "stock": "300308",
   "date": "2026-06-01",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -123,7 +123,7 @@
   "case_id": "SPK-300308-20260622",
   "stock": "300308",
   "date": "2026-06-22",
-  "expected_primary": null,
+  "expected_primary": "E",
   "expected_secondary": "",
   "period": "check"
  },
@@ -131,7 +131,7 @@
   "case_id": "SPK-300308-20260713",
   "stock": "300308",
   "date": "2026-07-13",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -139,15 +139,15 @@
   "case_id": "SPK-300308-20260728",
   "stock": "300308",
   "date": "2026-07-28",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "C",
+  "expected_secondary": "E",
   "period": "check"
  },
  {
   "case_id": "SPK-300308-20260805",
   "stock": "300308",
   "date": "2026-08-05",
-  "expected_primary": null,
+  "expected_primary": "F",
   "expected_secondary": "",
   "period": "check"
  },
@@ -155,15 +155,15 @@
   "case_id": "SPK-300502-20260202",
   "stock": "300502",
   "date": "2026-02-02",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "E",
   "period": "observe"
  },
  {
   "case_id": "SPK-300502-20260227",
   "stock": "300502",
   "date": "2026-02-27",
-  "expected_primary": null,
+  "expected_primary": "D",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -171,7 +171,7 @@
   "case_id": "SPK-300502-20260424",
   "stock": "300502",
   "date": "2026-04-24",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -179,7 +179,7 @@
   "case_id": "SPK-300502-20260611",
   "stock": "300502",
   "date": "2026-06-11",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -187,7 +187,7 @@
   "case_id": "SPK-300502-20260720",
   "stock": "300502",
   "date": "2026-07-20",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -195,15 +195,15 @@
   "case_id": "SPK-300502-20260728",
   "stock": "300502",
   "date": "2026-07-28",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "C",
+  "expected_secondary": "E",
   "period": "check"
  },
  {
   "case_id": "SPK-300502-20260805",
   "stock": "300502",
   "date": "2026-08-05",
-  "expected_primary": null,
+  "expected_primary": "F",
   "expected_secondary": "",
   "period": "check"
  },
@@ -211,7 +211,7 @@
   "case_id": "SPK-300476-20260119",
   "stock": "300476",
   "date": "2026-01-19",
-  "expected_primary": null,
+  "expected_primary": "A",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -219,7 +219,7 @@
   "case_id": "SPK-300476-20260313",
   "stock": "300476",
   "date": "2026-03-13",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -227,7 +227,7 @@
   "case_id": "SPK-300476-20260429",
   "stock": "300476",
   "date": "2026-04-29",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -235,7 +235,7 @@
   "case_id": "SPK-300476-20260525",
   "stock": "300476",
   "date": "2026-05-25",
-  "expected_primary": null,
+  "expected_primary": "C",
   "expected_secondary": "",
   "period": "check"
  },
@@ -243,15 +243,15 @@
   "case_id": "SPK-300476-20260605",
   "stock": "300476",
   "date": "2026-06-05",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "D",
+  "expected_secondary": "E",
   "period": "check"
  },
  {
   "case_id": "SPK-300476-20260828",
   "stock": "300476",
   "date": "2026-08-28",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -259,15 +259,15 @@
   "case_id": "SPK-601127-20251106",
   "stock": "601127",
   "date": "2025-11-06",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "A",
   "period": "observe"
  },
  {
   "case_id": "SPK-601127-20260122",
   "stock": "601127",
   "date": "2026-01-22",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -275,7 +275,7 @@
   "case_id": "SPK-601127-20260128",
   "stock": "601127",
   "date": "2026-01-28",
-  "expected_primary": null,
+  "expected_primary": "H",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -283,7 +283,7 @@
   "case_id": "SPK-601127-20260331",
   "stock": "601127",
   "date": "2026-03-31",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -291,7 +291,7 @@
   "case_id": "SPK-601127-20260610",
   "stock": "601127",
   "date": "2026-06-10",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -299,15 +299,15 @@
   "case_id": "SPK-601127-20260713",
   "stock": "601127",
   "date": "2026-07-13",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "C",
   "period": "check"
  },
  {
   "case_id": "SPK-601127-20260915",
   "stock": "601127",
   "date": "2026-09-15",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -315,7 +315,7 @@
   "case_id": "SPK-601127-20260928",
   "stock": "601127",
   "date": "2026-09-28",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -323,7 +323,7 @@
   "case_id": "SPK-600418-20251106",
   "stock": "600418",
   "date": "2025-11-06",
-  "expected_primary": null,
+  "expected_primary": "H",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -331,7 +331,7 @@
   "case_id": "SPK-600418-20251112",
   "stock": "600418",
   "date": "2025-11-12",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -339,7 +339,7 @@
   "case_id": "SPK-600418-20251211",
   "stock": "600418",
   "date": "2025-12-11",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -347,7 +347,7 @@
   "case_id": "SPK-600418-20260119",
   "stock": "600418",
   "date": "2026-01-19",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -355,7 +355,7 @@
   "case_id": "SPK-600418-20260211",
   "stock": "600418",
   "date": "2026-02-11",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -363,7 +363,7 @@
   "case_id": "SPK-600418-20260427",
   "stock": "600418",
   "date": "2026-04-27",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -371,7 +371,7 @@
   "case_id": "SPK-600418-20260525",
   "stock": "600418",
   "date": "2026-05-25",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -379,7 +379,7 @@
   "case_id": "SPK-600418-20260622",
   "stock": "600418",
   "date": "2026-06-22",
-  "expected_primary": null,
+  "expected_primary": "H",
   "expected_secondary": "",
   "period": "check"
  },
@@ -387,7 +387,7 @@
   "case_id": "SPK-600418-20260707",
   "stock": "600418",
   "date": "2026-07-07",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -395,7 +395,7 @@
   "case_id": "SPK-600418-20260923",
   "stock": "600418",
   "date": "2026-09-23",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -403,7 +403,7 @@
   "case_id": "SPK-601238-20251110",
   "stock": "601238",
   "date": "2025-11-10",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -411,7 +411,7 @@
   "case_id": "SPK-601238-20251124",
   "stock": "601238",
   "date": "2025-11-24",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -419,7 +419,7 @@
   "case_id": "SPK-601238-20260618",
   "stock": "601238",
   "date": "2026-06-18",
-  "expected_primary": null,
+  "expected_primary": "H",
   "expected_secondary": "",
   "period": "check"
  },
@@ -427,7 +427,7 @@
   "case_id": "SPK-601238-20260629",
   "stock": "601238",
   "date": "2026-06-29",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -435,23 +435,23 @@
   "case_id": "SPK-601238-20260713",
   "stock": "601238",
   "date": "2026-07-13",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "C",
   "period": "check"
  },
  {
   "case_id": "SPK-601238-20260914",
   "stock": "601238",
   "date": "2026-09-14",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "A",
   "period": "check"
  },
  {
   "case_id": "SPK-601238-20260929",
   "stock": "601238",
   "date": "2026-09-29",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -459,7 +459,7 @@
   "case_id": "SPK-002074-20260206",
   "stock": "002074",
   "date": "2026-02-06",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -467,7 +467,7 @@
   "case_id": "SPK-002074-20260429",
   "stock": "002074",
   "date": "2026-04-29",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -475,7 +475,7 @@
   "case_id": "SPK-002074-20260518",
   "stock": "002074",
   "date": "2026-05-18",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -483,7 +483,7 @@
   "case_id": "SPK-002074-20260604",
   "stock": "002074",
   "date": "2026-06-04",
-  "expected_primary": null,
+  "expected_primary": "C",
   "expected_secondary": "",
   "period": "check"
  },
@@ -491,15 +491,15 @@
   "case_id": "SPK-002074-20260929",
   "stock": "002074",
   "date": "2026-09-29",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "B",
+  "expected_secondary": "F",
   "period": "check"
  },
  {
   "case_id": "SPK-600150-20251107",
   "stock": "600150",
   "date": "2025-11-07",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -507,7 +507,7 @@
   "case_id": "SPK-600150-20260130",
   "stock": "600150",
   "date": "2026-01-30",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "observe"
  },
@@ -515,15 +515,15 @@
   "case_id": "SPK-600150-20260323",
   "stock": "600150",
   "date": "2026-03-23",
-  "expected_primary": null,
-  "expected_secondary": "",
+  "expected_primary": "E",
+  "expected_secondary": "C",
   "period": "observe"
  },
  {
   "case_id": "SPK-600150-20260430",
   "stock": "600150",
   "date": "2026-04-30",
-  "expected_primary": null,
+  "expected_primary": "B",
   "expected_secondary": "",
   "period": "check"
  },
@@ -531,7 +531,7 @@
   "case_id": "SPK-600150-20260713",
   "stock": "600150",
   "date": "2026-07-13",
-  "expected_primary": null,
+  "expected_primary": "C",
   "expected_secondary": "",
   "period": "check"
  },
@@ -539,7 +539,7 @@
   "case_id": "SPK-600150-20260831",
   "stock": "600150",
   "date": "2026-08-31",
-  "expected_primary": null,
+  "expected_primary": "A",
   "expected_secondary": "",
   "period": "check"
  }

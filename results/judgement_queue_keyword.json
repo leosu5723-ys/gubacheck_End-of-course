@@ -2,7 +2,7 @@
   {
     "case_id": "SPK-688256-20260203",
     "decision": null,
-    "reason": "tested CBGAD; posterior {'A': 0.3, 'B': 0.5, 'C': 0.12, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.08}",
+    "reason": "tested CBG; posterior {'A': 0.15, 'B': 0.75, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -34,7 +34,7 @@
   {
     "case_id": "SPK-688256-20260701",
     "decision": null,
-    "reason": "tested CEGAB; posterior {'A': 0.31, 'B': 0.16, 'C': 0.28, 'D': 0.0, 'E': 0.19, 'F': 0.0, 'G': 0.06}",
+    "reason": "tested CEGAB; posterior {'A': 0.24, 'B': 0.36, 'C': 0.21, 'D': 0.0, 'E': 0.14, 'F': 0.0, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -50,7 +50,7 @@
   {
     "case_id": "SPK-601138-20251124",
     "decision": null,
-    "reason": "tested CEABD; posterior {'A': 0.1, 'B': 0.48, 'C': 0.1, 'D': 0.24, 'E': 0.1, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEAB; posterior {'A': 0.05, 'B': 0.73, 'C': 0.05, 'D': 0.12, 'E': 0.05, 'F': 0.0, 'G': 0.0}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -74,7 +74,7 @@
   {
     "case_id": "SPK-601138-20260429",
     "decision": null,
-    "reason": "tested CEAGB; posterior {'A': 0.4, 'B': 0.2, 'C': 0.08, 'D': 0.0, 'E': 0.08, 'F': 0.2, 'G': 0.04}",
+    "reason": "tested CEAGB; posterior {'A': 0.29, 'B': 0.43, 'C': 0.06, 'D': 0.0, 'E': 0.06, 'F': 0.14, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -250,7 +250,7 @@
   {
     "case_id": "SPK-300476-20260828",
     "decision": null,
-    "reason": "tested CGBDA; posterior {'A': 0.18, 'B': 0.36, 'C': 0.18, 'D': 0.18, 'E': 0.0, 'F': 0.0, 'G': 0.11}",
+    "reason": "tested CGBD; posterior {'A': 0.1, 'B': 0.62, 'C': 0.1, 'D': 0.1, 'E': 0.0, 'F': 0.0, 'G': 0.06}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -306,7 +306,7 @@
   {
     "case_id": "SPK-601127-20260915",
     "decision": null,
-    "reason": "tested CBDEG; posterior {'A': 0.0, 'B': 0.83, 'C': 0.17, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CB; posterior {'A': 0.0, 'B': 0.94, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -394,7 +394,7 @@
   {
     "case_id": "SPK-600418-20260923",
     "decision": null,
-    "reason": "tested CGBDE; posterior {'A': 0.0, 'B': 0.41, 'C': 0.19, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.41}",
+    "reason": "tested CGB; posterior {'A': 0.0, 'B': 0.67, 'C': 0.1, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.22}",
     "must_record": [],
     "verdict": null,
     "graded_by": null

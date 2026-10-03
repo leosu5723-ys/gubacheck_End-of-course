@@ -108,8 +108,26 @@ def summarise_v4(results):
     conf = collections.defaultdict(collections.Counter)
     for r in graded:
         conf[r["expected"]][r["record"].get("primary")] += 1
+    labels = sorted({r["expected"] for r in graded} | {r["record"].get("primary") for r in graded} - {None})
+
+    def macro_f1(pairs):
+        f1s = []
+        for c in sorted({g for g, _ in pairs}):
+            tp = sum(1 for g, p in pairs if g == c and p == c)
+            fp = sum(1 for g, p in pairs if g != c and p == c)
+            fn = sum(1 for g, p in pairs if g == c and p != c)
+            f1s.append(2 * tp / (2 * tp + fp + fn) if tp else 0.0)
+        return round(sum(f1s) / len(f1s), 4) if f1s else None
+    pairs = [(r["expected"], r["record"].get("primary")) for r in graded]
+    majority = collections.Counter(g for g, _ in pairs).most_common(1)[0] if pairs else (None, 0)
     return {
         "arm": results[0]["record"].get("arm") if results else None,
+        "macro_f1": macro_f1(pairs),
+        "majority_class": majority[0],
+        "majority_baseline_accuracy": round(majority[1] / len(pairs), 4) if pairs else None,
+        "majority_baseline_macro_f1": macro_f1([(g, majority[0]) for g, _ in pairs]),
+        "recall_by_cause": {c: "%d/%d" % (sum(1 for g, p in pairs if g == c and p == c), sum(1 for g, _ in pairs if g == c))
+                            for c in sorted({g for g, _ in pairs})},
         "runs": len(results), "graded": len(graded),
         "accuracy": round(sum(r["passed"] for r in graded) / len(graded), 4) if graded else None,
         "accuracy_by_period": by_period,
@@ -131,7 +149,10 @@ def print_report(s, results):
     print("\n" + "=" * 70)
     print("  ARM %s   runs %d   graded %d" % (s["arm"], s["runs"], s["graded"]))
     if s["accuracy"] is not None:
-        print("  primary-cause accuracy  %.0f%%   (always-H baseline %.0f%%)" % (100 * s["accuracy"], 100 * s["always_H_baseline"]))
+        print("  primary-cause accuracy  %.0f%%  macro-F1 %.2f  | always-%s baseline: accuracy %.0f%%, macro-F1 %.2f | always-H %.0f%%"
+              % (100 * s["accuracy"], s["macro_f1"], s["majority_class"], 100 * s["majority_baseline_accuracy"],
+                 s["majority_baseline_macro_f1"], 100 * s["always_H_baseline"]))
+        print("  recall by cause         %s" % s["recall_by_cause"])
         print("  by period               %s" % s["accuracy_by_period"])
     print("  mean cause checks %.2f | median turns %s, worst %s | mean tokens %s | cost US$%.4f"
           % (s["mean_cause_checks"], s["median_turns"], s["worst_turns"], s["mean_tokens"], s["total_cost_usd"]))
