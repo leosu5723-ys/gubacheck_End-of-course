@@ -31,7 +31,7 @@ pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 ```
 
-No key is needed: saved live investigations are replayed. In the app: ⚙️ API takes your own OpenRouter key (kept in the browser session only) and a model from OpenRouter's catalogue with its live price; 🔔 lists the spikes of the last 30 days (new ones pop up as a toast, the ticker cycles through them; click one to open its investigation); the data bar shows Beijing time and how fresh each loaded source is; 🔄 Update data refreshes every source incrementally (`python3 -m pipeline.refresh`; needs the raw data in `data/raw/`, which is not in the repository).
+No key is needed: saved live investigations are replayed. In the app: ⚙️ API takes your own OpenRouter key (kept in the browser session only) and a model from OpenRouter's catalogue with its live price; 🔔 lists the spikes of the last 30 days (the ticker next to it cycles through them; click one to open its investigation); the data bar shows Beijing time and how fresh each loaded source is; 🔄 Update data refreshes every source incrementally (`python3 -m pipeline.refresh`; needs the raw data in `data/raw/`, which is not in the repository).
 
 ## Live runs (OpenRouter, costs cents)
 

@@ -51,7 +51,7 @@ st.markdown("""
 <style>
 :root { --up:#e5484d; --down:#30a46c; --ink:#11181c; --muted:#687076; --card:#ffffff; --line:#e6e8eb; --brand:#3e63dd; }
 header[data-testid="stHeader"] { display:none; }
-.gc-name { font-size:1.05rem; font-weight:700; margin-bottom:2px; }
+.gc-name { font-size:1.05rem; font-weight:700; margin-bottom:2px; white-space:nowrap; }
 .gc-tip { position:relative; cursor:help; border-bottom:1px dotted #9ba1a6; }
 .gc-tipbox { visibility:hidden; opacity:0; position:absolute; z-index:9999; left:0; top:130%; width:340px;
   background:#11181c; color:#f1f3f5; padding:10px 12px; border-radius:10px; font-size:12px; line-height:1.55;
@@ -365,7 +365,7 @@ def name_tip(code, right=False):
     if not pr:
         return sname(code)
     return ('<span class="gc-tip">%s<span class="gc-tipbox%s"><b>%s · %s</b> <span class="gc-tipg">%s / %s</span>'
-            '<br>%s<hr>%s</span></span>' % (sname(code), " gc-tipr" if right else "", stocks[code]["name"], pr["en"],
+            '<br>%s<hr>%s</span></span>' % (sname(code), " gc-tipr" if right else "", stocks[code]["name"], pr.get("full_en", pr["en"]),
                                             pr["group_zh"], pr["group_en"], pr["zh"], pr["en_text"]))
 spikes = sorted((s for s in store.load("spikes") if not s.get("synthetic")),
                 key=lambda s: (s["date"], s["spike_id"]))      # by date: spikes[-1] is the latest
@@ -385,14 +385,6 @@ def alerts():
     zh = ss.lang == "zh"
     last_day = max(x["date"] for x in spikes)
     recent = [x for x in spikes if x["date"] >= (pd.Timestamp(last_day) - pd.Timedelta(days=30)).strftime("%Y-%m-%d")][::-1]
-    # toast: spikes this session has not seen yet (first visit: the latest day's spikes)
-    if "seen_spikes" not in ss:
-        ss.seen_spikes = {x["spike_id"] for x in spikes if x["date"] != last_day}
-    for x in [x for x in spikes if x["spike_id"] not in ss.seen_spikes][-5:]:
-        st.toast("%s %s%s" % ("新异动" if zh else "New spike", spike_label(x),
-                               "（点右上角提醒查看）" if zh else " (open it from the alert, top right)"),
-                 icon="🚨", duration="long")
-    ss.seen_spikes |= {x["spike_id"] for x in spikes}
     c1, c2 = st.columns([1.25, 3], vertical_alignment="center")
     with c1.popover("🔔 %d" % len(recent), width="stretch"):
         st.caption("近 30 天异动（最新在上）" if zh else "Spikes, last 30 days (newest first)")
