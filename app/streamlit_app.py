@@ -78,7 +78,7 @@ st.markdown("""
 # ---------------------------------------------------------------- text
 TXT = {
     "zh": {"tagline": "股吧突然炸了？让 AI 查清原因，并告诉你历史上这类情况之后怎么走",
-           "nav": ["🛰️ 今日雷达", "📈 个股", "🔍 AI 调查", "💼 模拟交易", "📊 系统表现"],
+           "nav": ["🛰️ 今日雷达", "📈 个股", "🔍 AI 调查", "🧪 回测实验室", "💼 模拟交易", "📊 系统表现"],
            "watched": "关注股票", "spikes_m": "近 30 天异动", "last": "最近一次异动", "open": "查看",
            "heat": "股吧热度", "bulls": "看多", "bears": "看空", "spike": "🔥 异动", "calm": "平静",
            "pick_spike": "选择一次异动", "investigate": "🔍 让 AI 调查这次异动", "mode": "调查模式",
@@ -98,7 +98,7 @@ TXT = {
            "positions": "模拟持仓", "empty": "还没有模拟持仓。在调查结论页可以模拟买入。",
            "perf_note": "以下指标都来自 results/ 中的实测文件。", "back": "← 返回"},
     "en": {"tagline": "Forum exploding? Let the AI find out why — and see what happened after similar spikes",
-           "nav": ["🛰️ Radar", "📈 Stock", "🔍 AI investigation", "💼 Paper trading", "📊 Performance"],
+           "nav": ["🛰️ Radar", "📈 Stock", "🔍 AI investigation", "🧪 Backtest lab", "💼 Paper trading", "📊 Performance"],
            "watched": "Watched stocks", "spikes_m": "Spikes, last 30 days", "last": "Latest spike", "open": "Open",
            "heat": "Forum heat", "bulls": "Bullish", "bears": "Bearish", "spike": "🔥 Spike", "calm": "Calm",
            "pick_spike": "Pick a spike", "investigate": "🔍 Let the AI investigate", "mode": "Mode",
@@ -141,7 +141,7 @@ with top[0]:
 
 if "_goto" in ss:                       # navigation requested by a button on the previous run
     ss["nav"] = ss.pop("_goto")
-page = st.radio(" ", range(5), horizontal=True, format_func=lambda i: L["nav"][i],
+page = st.radio(" ", range(6), horizontal=True, format_func=lambda i: L["nav"][i],
                 label_visibility="collapsed", key="nav")
 
 stocks = store.load("stocks")
@@ -609,4 +609,104 @@ def page_perf():
                      hide_index=True, use_container_width=True)
 
 
-[page_radar, page_stock, page_investigate, page_paper, page_perf][page]()
+# ================================================================ BACKTEST LAB
+def page_backtest():
+    zh = ss.lang == "zh"
+    p = os.path.join(ROOT, "results", "cause_backtest_rows_gold.json")
+    if not os.path.exists(p):
+        st.info("—")
+        return
+    rows = json.load(open(p))
+    st.markdown("#### " + ("如果每次股吧异动后买入，会怎样？" if zh else "What if I bought after every forum spike?"))
+    st.caption("在异动日的下一个交易日开盘买入，持有 N 个交易日后收盘卖出；已扣除佣金、过户费和印花税；超额收益 = 个股 − 沪深300。"
+               "异动原因用的是人工标注。" if zh else
+               "Buy at the next open after the spike day, sell at the close N trading days later; net of fees; "
+               "excess = stock − CSI 300. Causes are my hand labels.")
+    c1, c2, c3, c4 = st.columns([3, 2, 2, 2])
+    present = sorted({r["cause"] for r in rows})
+    pick = c1.multiselect("异动原因" if zh else "Cause", present, default=present, format_func=cname)
+    direction = c2.selectbox("讨论方向" if zh else "Direction", ["all", "bullish", "bearish"],
+                             format_func=lambda x: {"all": "全部" if zh else "all", "bullish": "偏多" if zh else "bullish",
+                                                    "bearish": "偏空" if zh else "bearish"}[x])
+    period = c3.selectbox("时期" if zh else "Period", ["all", "observe", "check"],
+                          format_func=lambda x: {"all": "全部" if zh else "all", "observe": "观察期（4 月前）" if zh else "observe (< Apr)",
+                                                 "check": "检验期（4 月起）" if zh else "check (≥ Apr)"}[x])
+    hold = c4.select_slider("持有天数" if zh else "Hold (days)", options=[1, 2, 3, 5, 10, 15, 20], value=5)
+    sel = [r for r in rows if r["cause"] in pick and (direction == "all" or r["direction"] == direction)
+           and (period == "all" or r["period"] == period) and str(hold) in r["excess"]]
+    if not sel:
+        st.warning("没有符合条件的异动" if zh else "No spike matches")
+        return
+    ex = [r["excess"][str(hold)] for r in sel]
+    net = [r["returns"][str(hold)] for r in sel]
+    k = st.columns(4)
+    for col, (v, lab) in zip(k, (("%d" % len(sel), "交易次数" if zh else "trades"),
+                                 ("%+.2f%%" % (sum(net) / len(net)), "平均收益（扣费）" if zh else "mean net return"),
+                                 ("%+.2f%%" % (sum(ex) / len(ex)), "平均超额收益" if zh else "mean excess"),
+                                 ("%.0f%%" % (100 * sum(x > 0 for x in ex) / len(ex)), "跑赢大盘的比例" if zh else "beat the index"))):
+        col.markdown('<div class="gc-card"><div class="gc-kpi">%s</div><div class="gc-kpil">%s</div></div>' % (v, lab),
+                     unsafe_allow_html=True)
+    if len(sel) < 5:
+        st.warning("⚠️ " + L["n_small"])
+    left, right = st.columns([3, 2])
+    with left:
+        st.markdown("**%s**" % ("各持有期的平均超额收益" if zh else "Mean excess return by holding period"))
+        hs = ["1", "2", "3", "5", "10", "15", "20"]
+        fig = go.Figure()
+        for c in pick:
+            sub = [r for r in sel if r["cause"] == c]
+            if sub:
+                ys = [sum(r["excess"].get(h, 0) for r in sub) / len(sub) for h in hs]
+                fig.add_trace(go.Scatter(x=["D+" + h for h in hs], y=ys, mode="lines+markers",
+                                         name="%s (n=%d)" % (cname(c), len(sub)), line=dict(color=COLORS.get(c, "#888"), width=3)))
+        ys = [sum(r["excess"].get(h, 0) for r in sel) / len(sel) for h in hs]
+        fig.add_trace(go.Scatter(x=["D+" + h for h in hs], y=ys, mode="lines", name=("全部所选" if zh else "all selected"),
+                                 line=dict(color="#11181c", width=4, dash="dash")))
+        fig.add_hline(y=0, line_color="#c1c8cd")
+        fig.update_layout(height=360, plot_bgcolor="white", yaxis_title="%", margin=dict(l=10, r=10, t=10, b=10),
+                          legend=dict(orientation="h", y=-0.2))
+        st.plotly_chart(fig, use_container_width=True)
+    with right:
+        st.markdown("**%s**" % ("逐笔超额收益（持有 %d 天，按时间）" % hold if zh else "Excess return per trade (hold %d d, by date)" % hold))
+        sel_sorted = sorted(sel, key=lambda r: (r["spike_id"][-8:], r["spike_id"]))
+        xs = list(range(1, len(sel_sorted) + 1))
+        ys = [r["excess"][str(hold)] for r in sel_sorted]
+        cum, acc = [], 0.0
+        for y in ys:
+            acc += y
+            cum.append(acc / (len(cum) + 1))
+        hover = ["%s %s<br>%s" % (stocks[r["spike_id"][4:10]]["name"], r["spike_id"][-8:], cname(r["cause"])) for r in sel_sorted]
+        fig = go.Figure([go.Bar(x=xs, y=ys, marker_color=["#e5484d" if y >= 0 else "#30a46c" for y in ys],
+                                hovertext=hover, name="每笔" if zh else "per trade"),
+                         go.Scatter(x=xs, y=cum, mode="lines", line=dict(color="#11181c", width=3),
+                                    name="累计平均" if zh else "running mean")])
+        fig.add_hline(y=0, line_color="#c1c8cd")
+        fig.update_layout(height=360, plot_bgcolor="white", yaxis_title="%", margin=dict(l=10, r=10, t=10, b=10),
+                          legend=dict(orientation="h", y=-0.2), xaxis_title=("第几笔" if zh else "trade #"))
+        st.plotly_chart(fig, use_container_width=True)
+    with st.expander("逐笔明细" if zh else "Trade list"):
+        st.dataframe(pd.DataFrame([{"spike": r["spike_id"], "cause": cname(r["cause"]), "direction": r["direction"],
+                                    "net %": r["returns"][str(hold)], "excess %": r["excess"][str(hold)]} for r in sel_sorted]),
+                     hide_index=True, use_container_width=True)
+    st.markdown("---")
+    st.markdown("#### " + ("早期方案：出现官方利好公告就买入" if zh else "Earlier design: buy on the first bullish filing"))
+    b = os.path.join(ROOT, "results", "backtest_rag.json")
+    if os.path.exists(b):
+        d = json.load(open(b))["strategies"]
+        names = {"S0_naive_chase": "S0 异动后直接追" if zh else "S0 chase every spike",
+                 "S1_gubacheck": "S1 异动后等官方利好再买" if zh else "S1 spike, then first bullish filing",
+                 "S2_announcements_only": "S2 所有利好公告都买" if zh else "S2 every bullish filing"}
+        fig = go.Figure()
+        for k_, v in d.items():
+            hz = v["horizons"]
+            fig.add_trace(go.Bar(x=["D" + h for h in hz], y=[x["mean_excess_pct"] for x in hz.values()],
+                                 name="%s (n=%d)" % (names.get(k_, k_), v["filled"])))
+        fig.update_layout(barmode="group", height=320, plot_bgcolor="white", yaxis_title="%", xaxis_type="category",
+                          margin=dict(l=10, r=10, t=10, b=10), legend=dict(orientation="h", y=-0.25))
+        st.plotly_chart(fig, use_container_width=True)
+        st.caption("结论：在股吧狂热之后，等到官方利好再买入，平均反而跑输大盘（利好兑现）。这是产品从“买入信号”转向“异动归因”的原因。"
+                   if zh else "Finding: buying official good news after a forum frenzy underperformed on average — why the product "
+                   "moved from buy signals to attribution.")
+
+
+[page_radar, page_stock, page_investigate, page_backtest, page_paper, page_perf][page]()
