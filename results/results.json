@@ -85,10 +85,323 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 32610,
         "tokens_out": 1050,
         "cost_usd": 0.005522,
+        "seconds": 0.012,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20251022",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224781732": "neutral",
+          "1224781729": "neutral",
+          "1224781727": "neutral",
+          "1224781725": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
+        "case_id": "SPK-688256-20251022",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20251022"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2025-10-22",
+              "date_to": "2025-11-05"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781732"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781729"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781727"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781725"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 6,
+        "tokens_in": 32610,
+        "tokens_out": 1050,
+        "cost_usd": 0.005522,
+        "seconds": 0.013,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20251022",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224781732": "neutral",
+          "1224781729": "neutral",
+          "1224781727": "neutral",
+          "1224781725": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
+        "case_id": "SPK-688256-20251022",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20251022"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2025-10-22",
+              "date_to": "2025-11-05"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781732"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781729"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781727"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781725"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 6,
+        "tokens_in": 32610,
+        "tokens_out": 1050,
+        "cost_usd": 0.005522,
+        "seconds": 0.01,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260108",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+        "case_id": "SPK-688256-20260108",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260108"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-01-08",
+              "date_to": "2026-01-22"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6968,
+        "tokens_out": 450,
+        "cost_usd": 0.001315,
+        "seconds": 0.008,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260108",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+        "case_id": "SPK-688256-20260108",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260108"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-01-08",
+              "date_to": "2026-01-22"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6968,
+        "tokens_out": 450,
+        "cost_usd": 0.001315,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260108",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+        "case_id": "SPK-688256-20260108",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260108"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-01-08",
+              "date_to": "2026-01-22"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6968,
+        "tokens_out": 450,
+        "cost_usd": 0.001315,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260226",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224988268": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12",
+        "case_id": "SPK-688256-20260226",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260226"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-02-26",
+              "date_to": "2026-03-12"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224988268"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 10998,
+        "tokens_out": 600,
+        "cost_usd": 0.00201,
         "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
@@ -96,312 +409,6 @@
       }
     },
     {
-      "case_id": "SPK-688256-20251022",
-      "trial": 2,
-      "passed": true,
-      "fails": [],
-      "family": "no_bullish_filing",
-      "expected": "no_trade",
-      "record": {
-        "decision": "no_trade",
-        "trigger": "no_bullish_filing",
-        "evidence_id": null,
-        "judgements": {
-          "1224781732": "neutral",
-          "1224781729": "neutral",
-          "1224781727": "neutral",
-          "1224781725": "neutral"
-        },
-        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
-        "case_id": "SPK-688256-20251022",
-        "tool_calls": [
-          {
-            "tool": "get_spike",
-            "args": {
-              "spike_id": "SPK-688256-20251022"
-            }
-          },
-          {
-            "tool": "list_announcements",
-            "args": {
-              "stock": "688256",
-              "date_from": "2025-10-22",
-              "date_to": "2025-11-05"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781732"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781729"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781727"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781725"
-            }
-          }
-        ],
-        "turns": 6,
-        "tokens_in": 32610,
-        "tokens_out": 1050,
-        "cost_usd": 0.005522,
-        "seconds": 0.0,
-        "guardrails_fired": [],
-        "stopped_by": null,
-        "backend": "scripted"
-      }
-    },
-    {
-      "case_id": "SPK-688256-20251022",
-      "trial": 3,
-      "passed": true,
-      "fails": [],
-      "family": "no_bullish_filing",
-      "expected": "no_trade",
-      "record": {
-        "decision": "no_trade",
-        "trigger": "no_bullish_filing",
-        "evidence_id": null,
-        "judgements": {
-          "1224781732": "neutral",
-          "1224781729": "neutral",
-          "1224781727": "neutral",
-          "1224781725": "neutral"
-        },
-        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
-        "case_id": "SPK-688256-20251022",
-        "tool_calls": [
-          {
-            "tool": "get_spike",
-            "args": {
-              "spike_id": "SPK-688256-20251022"
-            }
-          },
-          {
-            "tool": "list_announcements",
-            "args": {
-              "stock": "688256",
-              "date_from": "2025-10-22",
-              "date_to": "2025-11-05"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781732"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781729"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781727"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224781725"
-            }
-          }
-        ],
-        "turns": 6,
-        "tokens_in": 32610,
-        "tokens_out": 1050,
-        "cost_usd": 0.005522,
-        "seconds": 0.0,
-        "guardrails_fired": [],
-        "stopped_by": null,
-        "backend": "scripted"
-      }
-    },
-    {
-      "case_id": "SPK-688256-20260108",
-      "trial": 1,
-      "passed": true,
-      "fails": [],
-      "family": "no_bullish_filing",
-      "expected": "no_trade",
-      "record": {
-        "decision": "no_trade",
-        "trigger": "no_bullish_filing",
-        "evidence_id": null,
-        "judgements": {},
-        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
-        "case_id": "SPK-688256-20260108",
-        "tool_calls": [
-          {
-            "tool": "get_spike",
-            "args": {
-              "spike_id": "SPK-688256-20260108"
-            }
-          },
-          {
-            "tool": "list_announcements",
-            "args": {
-              "stock": "688256",
-              "date_from": "2026-01-08",
-              "date_to": "2026-01-22"
-            }
-          }
-        ],
-        "turns": 2,
-        "tokens_in": 6968,
-        "tokens_out": 450,
-        "cost_usd": 0.001315,
-        "seconds": 0.0,
-        "guardrails_fired": [],
-        "stopped_by": null,
-        "backend": "scripted"
-      }
-    },
-    {
-      "case_id": "SPK-688256-20260108",
-      "trial": 2,
-      "passed": true,
-      "fails": [],
-      "family": "no_bullish_filing",
-      "expected": "no_trade",
-      "record": {
-        "decision": "no_trade",
-        "trigger": "no_bullish_filing",
-        "evidence_id": null,
-        "judgements": {},
-        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
-        "case_id": "SPK-688256-20260108",
-        "tool_calls": [
-          {
-            "tool": "get_spike",
-            "args": {
-              "spike_id": "SPK-688256-20260108"
-            }
-          },
-          {
-            "tool": "list_announcements",
-            "args": {
-              "stock": "688256",
-              "date_from": "2026-01-08",
-              "date_to": "2026-01-22"
-            }
-          }
-        ],
-        "turns": 2,
-        "tokens_in": 6968,
-        "tokens_out": 450,
-        "cost_usd": 0.001315,
-        "seconds": 0.0,
-        "guardrails_fired": [],
-        "stopped_by": null,
-        "backend": "scripted"
-      }
-    },
-    {
-      "case_id": "SPK-688256-20260108",
-      "trial": 3,
-      "passed": true,
-      "fails": [],
-      "family": "no_bullish_filing",
-      "expected": "no_trade",
-      "record": {
-        "decision": "no_trade",
-        "trigger": "no_bullish_filing",
-        "evidence_id": null,
-        "judgements": {},
-        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
-        "case_id": "SPK-688256-20260108",
-        "tool_calls": [
-          {
-            "tool": "get_spike",
-            "args": {
-              "spike_id": "SPK-688256-20260108"
-            }
-          },
-          {
-            "tool": "list_announcements",
-            "args": {
-              "stock": "688256",
-              "date_from": "2026-01-08",
-              "date_to": "2026-01-22"
-            }
-          }
-        ],
-        "turns": 2,
-        "tokens_in": 6968,
-        "tokens_out": 450,
-        "cost_usd": 0.001315,
-        "seconds": 0.0,
-        "guardrails_fired": [],
-        "stopped_by": null,
-        "backend": "scripted"
-      }
-    },
-    {
-      "case_id": "SPK-688256-20260226",
-      "trial": 1,
-      "passed": true,
-      "fails": [],
-      "family": "no_bullish_filing",
-      "expected": "no_trade",
-      "record": {
-        "decision": "no_trade",
-        "trigger": "no_bullish_filing",
-        "evidence_id": null,
-        "judgements": {
-          "1224988268": "neutral"
-        },
-        "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12",
-        "case_id": "SPK-688256-20260226",
-        "tool_calls": [
-          {
-            "tool": "get_spike",
-            "args": {
-              "spike_id": "SPK-688256-20260226"
-            }
-          },
-          {
-            "tool": "list_announcements",
-            "args": {
-              "stock": "688256",
-              "date_from": "2026-02-26",
-              "date_to": "2026-03-12"
-            }
-          },
-          {
-            "tool": "read_announcement",
-            "args": {
-              "ann_id": "1224988268"
-            }
-          }
-        ],
-        "turns": 3,
-        "tokens_in": 10998,
-        "tokens_out": 600,
-        "cost_usd": 0.00201,
-        "seconds": 0.0,
-        "guardrails_fired": [],
-        "stopped_by": null,
-        "backend": "scripted"
-      }
-    },
-    {
       "case_id": "SPK-688256-20260226",
       "trial": 2,
       "passed": true,
@@ -439,6 +446,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10998,
         "tokens_out": 600,
@@ -487,6 +495,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10998,
         "tokens_out": 600,
@@ -535,6 +544,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12151,
         "tokens_out": 600,
@@ -583,6 +593,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12151,
         "tokens_out": 600,
@@ -631,6 +642,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12151,
         "tokens_out": 600,
@@ -671,6 +683,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7051,
         "tokens_out": 450,
@@ -711,6 +724,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7051,
         "tokens_out": 450,
@@ -751,6 +765,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7051,
         "tokens_out": 450,
@@ -799,6 +814,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11981,
         "tokens_out": 600,
@@ -847,6 +863,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11981,
         "tokens_out": 600,
@@ -895,6 +912,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11981,
         "tokens_out": 600,
@@ -935,6 +953,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6983,
         "tokens_out": 450,
@@ -975,6 +994,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6983,
         "tokens_out": 450,
@@ -1015,6 +1035,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6983,
         "tokens_out": 450,
@@ -1078,11 +1099,30 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "601138",
+              "entry_date": "2025-10-31",
+              "entry_price": 77.95,
+              "shares": 100,
+              "buy_fees": 5.08,
+              "exit_date": "2025-11-28",
+              "exit_price": 60.72,
+              "sell_fees": 8.1,
+              "pnl_cny": -1736.18,
+              "return_pct": -22.273,
+              "evidence_id": "1224761584"
+            }
+          }
+        ],
         "turns": 5,
         "tokens_in": 22459,
         "tokens_out": 900,
         "cost_usd": 0.003909,
-        "seconds": 0.003,
+        "seconds": 0.005,
         "guardrails_fired": [
           {
             "guardrail": "gate_passed",
@@ -1139,11 +1179,30 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "601138",
+              "entry_date": "2025-10-31",
+              "entry_price": 77.95,
+              "shares": 100,
+              "buy_fees": 5.08,
+              "exit_date": "2025-11-28",
+              "exit_price": 60.72,
+              "sell_fees": 8.1,
+              "pnl_cny": -1736.18,
+              "return_pct": -22.273,
+              "evidence_id": "1224761584"
+            }
+          }
+        ],
         "turns": 4,
         "tokens_in": 17151,
         "tokens_out": 750,
         "cost_usd": 0.003023,
-        "seconds": 0.0,
+        "seconds": 0.011,
         "guardrails_fired": [
           {
             "guardrail": "gate_passed",
@@ -1184,6 +1243,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6946,
         "tokens_out": 450,
@@ -1224,6 +1284,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6946,
         "tokens_out": 450,
@@ -1264,6 +1325,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6946,
         "tokens_out": 450,
@@ -1327,11 +1389,30 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "601138",
+              "entry_date": "2026-04-30",
+              "entry_price": 65.9,
+              "shares": 100,
+              "buy_fees": 5.07,
+              "exit_date": "2026-06-02",
+              "exit_price": 80.01,
+              "sell_fees": 9.08,
+              "pnl_cny": 1396.85,
+              "return_pct": 21.197,
+              "evidence_id": "1225231598"
+            }
+          }
+        ],
         "turns": 5,
         "tokens_in": 23378,
         "tokens_out": 900,
         "cost_usd": 0.004047,
-        "seconds": 0.0,
+        "seconds": 0.016,
         "guardrails_fired": [
           {
             "guardrail": "gate_passed",
@@ -1372,6 +1453,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7055,
         "tokens_out": 450,
@@ -1412,6 +1494,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7055,
         "tokens_out": 450,
@@ -1452,6 +1535,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7055,
         "tokens_out": 450,
@@ -1492,6 +1576,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7190,
         "tokens_out": 450,
@@ -1532,6 +1617,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7190,
         "tokens_out": 450,
@@ -1572,6 +1658,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7190,
         "tokens_out": 450,
@@ -1612,6 +1699,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7345,
         "tokens_out": 450,
@@ -1652,6 +1740,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7345,
         "tokens_out": 450,
@@ -1692,6 +1781,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7345,
         "tokens_out": 450,
@@ -1754,6 +1844,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 5,
         "tokens_in": 30020,
         "tokens_out": 900,
@@ -1816,6 +1907,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 5,
         "tokens_in": 30020,
         "tokens_out": 900,
@@ -1878,6 +1970,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 5,
         "tokens_in": 30020,
         "tokens_out": 900,
@@ -1934,11 +2027,23 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "rejected",
+              "reason": "one_lot_exceeds_position_limit",
+              "date": "2025-11-03",
+              "open": 470.67,
+              "evidence_id": "1224773075"
+            }
+          }
+        ],
         "turns": 4,
         "tokens_in": 13743,
         "tokens_out": 750,
         "cost_usd": 0.002511,
-        "seconds": 0.0,
+        "seconds": 0.019,
         "guardrails_fired": [
           {
             "guardrail": "gate_passed",
@@ -1987,6 +2092,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12290,
         "tokens_out": 600,
@@ -2035,6 +2141,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12290,
         "tokens_out": 600,
@@ -2083,6 +2190,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12290,
         "tokens_out": 600,
@@ -2142,6 +2250,18 @@
             "args": {
               "stock": "300308",
               "trigger_time": "2026-04-17 23:59:59",
+              "evidence_id": "1225111941"
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "rejected",
+              "reason": "one_lot_exceeds_position_limit",
+              "date": "2026-04-20",
+              "open": 849.0,
               "evidence_id": "1225111941"
             }
           }
@@ -2207,6 +2327,18 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "rejected",
+              "reason": "one_lot_exceeds_position_limit",
+              "date": "2026-02-02",
+              "open": 457.24,
+              "evidence_id": "1224960617"
+            }
+          }
+        ],
         "turns": 4,
         "tokens_in": 13918,
         "tokens_out": 750,
@@ -2252,6 +2384,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6974,
         "tokens_out": 450,
@@ -2292,6 +2425,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6974,
         "tokens_out": 450,
@@ -2332,6 +2466,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6974,
         "tokens_out": 450,
@@ -2372,6 +2507,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 8521,
         "tokens_out": 450,
@@ -2412,6 +2548,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 8521,
         "tokens_out": 450,
@@ -2452,6 +2589,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 8521,
         "tokens_out": 450,
@@ -2536,6 +2674,18 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "rejected",
+              "reason": "one_lot_exceeds_position_limit",
+              "date": "2026-04-27",
+              "open": 549.4,
+              "evidence_id": "1225172615"
+            }
+          }
+        ],
         "turns": 8,
         "tokens_in": 53833,
         "tokens_out": 1350,
@@ -2581,6 +2731,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6952,
         "tokens_out": 450,
@@ -2621,6 +2772,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6952,
         "tokens_out": 450,
@@ -2661,6 +2813,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 6952,
         "tokens_out": 450,
@@ -2709,6 +2862,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11991,
         "tokens_out": 600,
@@ -2757,6 +2911,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11991,
         "tokens_out": 600,
@@ -2805,6 +2960,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11991,
         "tokens_out": 600,
@@ -2874,6 +3030,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 39369,
         "tokens_out": 1050,
@@ -2943,6 +3100,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 39369,
         "tokens_out": 1050,
@@ -3012,6 +3170,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 39369,
         "tokens_out": 1050,
@@ -3052,6 +3211,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7004,
         "tokens_out": 450,
@@ -3092,6 +3252,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7004,
         "tokens_out": 450,
@@ -3132,6 +3293,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7004,
         "tokens_out": 450,
@@ -3180,6 +3342,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11803,
         "tokens_out": 600,
@@ -3228,6 +3391,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11803,
         "tokens_out": 600,
@@ -3276,6 +3440,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11803,
         "tokens_out": 600,
@@ -3316,6 +3481,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7049,
         "tokens_out": 450,
@@ -3356,6 +3522,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7049,
         "tokens_out": 450,
@@ -3396,6 +3563,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7049,
         "tokens_out": 450,
@@ -3452,11 +3620,30 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "601127",
+              "entry_date": "2026-05-27",
+              "entry_price": 85.99,
+              "shares": 100,
+              "buy_fees": 5.09,
+              "exit_date": "2026-06-25",
+              "exit_price": 62.7,
+              "sell_fees": 8.2,
+              "pnl_cny": -2342.29,
+              "return_pct": -27.239,
+              "evidence_id": "1225329485"
+            }
+          }
+        ],
         "turns": 4,
         "tokens_in": 18581,
         "tokens_out": 750,
         "cost_usd": 0.003237,
-        "seconds": 0.0,
+        "seconds": 0.01,
         "guardrails_fired": [
           {
             "guardrail": "gate_passed",
@@ -3505,6 +3692,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10971,
         "tokens_out": 600,
@@ -3553,6 +3741,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10971,
         "tokens_out": 600,
@@ -3601,6 +3790,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10971,
         "tokens_out": 600,
@@ -3653,6 +3843,25 @@
             "args": {
               "stock": "600418",
               "trigger_time": "2025-12-09 23:59:59",
+              "evidence_id": "1224857664"
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "600418",
+              "entry_date": "2025-12-10",
+              "entry_price": 49.5,
+              "shares": 200,
+              "buy_fees": 5.1,
+              "exit_date": "2026-01-09",
+              "exit_price": 50.53,
+              "sell_fees": 10.15,
+              "pnl_cny": 190.75,
+              "return_pct": 1.927,
               "evidence_id": "1224857664"
             }
           }
@@ -3731,6 +3940,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 39797,
         "tokens_out": 1050,
@@ -3800,6 +4010,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 39797,
         "tokens_out": 1050,
@@ -3869,6 +4080,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 6,
         "tokens_in": 39797,
         "tokens_out": 1050,
@@ -3917,6 +4129,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11998,
         "tokens_out": 600,
@@ -3965,6 +4178,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11998,
         "tokens_out": 600,
@@ -4013,6 +4227,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 11998,
         "tokens_out": 600,
@@ -4061,6 +4276,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10439,
         "tokens_out": 600,
@@ -4109,6 +4325,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10439,
         "tokens_out": 600,
@@ -4157,6 +4374,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10439,
         "tokens_out": 600,
@@ -4205,6 +4423,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12296,
         "tokens_out": 600,
@@ -4253,6 +4472,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12296,
         "tokens_out": 600,
@@ -4301,6 +4521,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 12296,
         "tokens_out": 600,
@@ -4356,6 +4577,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 20395,
         "tokens_out": 750,
@@ -4411,6 +4633,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 20395,
         "tokens_out": 750,
@@ -4466,11 +4689,12 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 20395,
         "tokens_out": 750,
         "cost_usd": 0.003509,
-        "seconds": 0.0,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4506,6 +4730,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7096,
         "tokens_out": 450,
@@ -4546,6 +4771,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7096,
         "tokens_out": 450,
@@ -4586,6 +4812,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 2,
         "tokens_in": 7096,
         "tokens_out": 450,
@@ -4641,6 +4868,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 16581,
         "tokens_out": 750,
@@ -4696,6 +4924,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 16581,
         "tokens_out": 750,
@@ -4751,6 +4980,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 16581,
         "tokens_out": 750,
@@ -4806,6 +5036,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 16503,
         "tokens_out": 750,
@@ -4861,6 +5092,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 16503,
         "tokens_out": 750,
@@ -4916,6 +5148,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 4,
         "tokens_in": 16503,
         "tokens_out": 750,
@@ -4968,6 +5201,25 @@
             "args": {
               "stock": "600150",
               "trigger_time": "2025-10-21 23:59:59",
+              "evidence_id": "1224721680"
+            }
+          }
+        ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "600150",
+              "entry_date": "2025-10-22",
+              "entry_price": 36.0,
+              "shares": 200,
+              "buy_fees": 5.07,
+              "exit_date": "2025-11-19",
+              "exit_price": 34.98,
+              "sell_fees": 8.57,
+              "pnl_cny": -217.64,
+              "return_pct": -3.023,
               "evidence_id": "1224721680"
             }
           }
@@ -5033,6 +5285,25 @@
             }
           }
         ],
+        "observations": [
+          {
+            "tool": "place_paper_order",
+            "result": {
+              "status": "filled",
+              "code": "600150",
+              "entry_date": "2026-04-24",
+              "entry_price": 38.6,
+              "shares": 200,
+              "buy_fees": 5.08,
+              "exit_date": "2026-05-27",
+              "exit_price": 38.02,
+              "sell_fees": 8.88,
+              "pnl_cny": -129.96,
+              "return_pct": -1.683,
+              "evidence_id": "1225150259"
+            }
+          }
+        ],
         "turns": 4,
         "tokens_in": 21992,
         "tokens_out": 750,
@@ -5086,6 +5357,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10105,
         "tokens_out": 600,
@@ -5134,6 +5406,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10105,
         "tokens_out": 600,
@@ -5182,6 +5455,7 @@
             }
           }
         ],
+        "observations": [],
         "turns": 3,
         "tokens_in": 10105,
         "tokens_out": 600,

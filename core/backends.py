@@ -33,10 +33,11 @@ def scripts():
     global _SCRIPTS
     if _SCRIPTS is None:
         path = os.path.join(config.EVALS_DIR, "scripted_moves.json")
-        _SCRIPTS = {}
+        loaded = {}
         if os.path.exists(path):
             with open(path, encoding="utf-8") as fh:
-                _SCRIPTS = json.load(fh)
+                loaded = json.load(fh)
+        _SCRIPTS = loaded            # assign only once fully loaded (threads may race here)
     return _SCRIPTS
 
 
