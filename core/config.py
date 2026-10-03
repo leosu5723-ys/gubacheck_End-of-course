@@ -57,7 +57,8 @@ EPISODE_GAP_DAYS = 5          # spikes within 5 days of a previous spike = same 
 # v4 anomaly tests (RULES.md section 0)
 Z_WINDOW = 120                # trading days of history for every z-score
 Z_POSTS = 2.0                 # log posts z for a spike
-Z_BULL = 1.5                  # bullish-share z for a spike
+Z_BULL = None                 # no direction condition (RULES.md 0.1 change log); bull-share z is reported
+Z_MIN_OBS = 20                # minimum history (trading days) before a z-score is used
 Z_ABNORMAL = 2.0              # price, gap, index, US peer
 Z_PARTIAL = 1.5               # index PARTIAL band
 PCTL_MONEY = 95               # top-list / turnover percentile
