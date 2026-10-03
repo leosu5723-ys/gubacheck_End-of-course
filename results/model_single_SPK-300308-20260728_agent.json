@@ -1,0 +1,109 @@
+{
+ "spike_id": "SPK-300308-20260728",
+ "arm": "agent",
+ "gold": "C",
+ "rows": [
+  {
+   "model": "deepseek/deepseek-v4.1-flash",
+   "arm": "agent",
+   "primary": "D",
+   "secondary": [
+    "C"
+   ],
+   "gold": "C",
+   "correct": false,
+   "tests": [
+    "A",
+    "D",
+    "C"
+   ],
+   "verdicts": {
+    "A": "PARTIAL",
+    "D": "PASS",
+    "C": "PASS"
+   },
+   "revisions": 0,
+   "turns": 5,
+   "tokens_in": 28216,
+   "tokens_out": 1937,
+   "usd": 0.001374,
+   "cost_basis": "billed",
+   "seconds": 21.6,
+   "price_per_1m": [
+    0.3,
+    1.2
+   ],
+   "reason": "D (overseas read-through) PASSED with the highest posterior (0.3621): US chip/optical peers moved abnormally on the previous US session (NVDA -4.99%, z=-2.05; AMD -5.17%; LITE -6.69%; COHR -3.92%) and 300308 gapped down the same way at the open (gap z=-3.31, -7.05%), matching the bearish posts (id 1",
+   "error": null
+  },
+  {
+   "model": "anthropic/claude-haiku-4.5",
+   "arm": "agent",
+   "primary": "C",
+   "secondary": [
+    "D",
+    "B"
+   ],
+   "gold": "C",
+   "correct": true,
+   "tests": [
+    "A",
+    "C",
+    "D",
+    "B"
+   ],
+   "verdicts": {
+    "A": "PARTIAL",
+    "C": "PASS",
+    "D": "PASS",
+    "B": "PASS"
+   },
+   "revisions": 0,
+   "turns": 6,
+   "tokens_in": 41840,
+   "tokens_out": 1745,
+   "usd": 0.050565,
+   "cost_basis": "billed",
+   "seconds": 27.3,
+   "price_per_1m": [
+    1.0,
+    5.0
+   ],
+   "reason": "The spike was driven by sector co-movement (C, PASS): 57% of semiconductor peers fell abnormally on 2026-07-28, with the stock declining -15.69% (z=-3.83). This was amplified by overseas read-through (D, PASS): US chip stocks crashed on 2026-07-27 (NVDA -4.99%, AMD -5.17%, Lite -6.69%), causing a -7",
+   "error": null
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash",
+   "arm": "agent",
+   "primary": "D",
+   "secondary": [
+    "C"
+   ],
+   "gold": "C",
+   "correct": false,
+   "tests": [
+    "A",
+    "D",
+    "C"
+   ],
+   "verdicts": {
+    "A": "PARTIAL",
+    "D": "PASS",
+    "C": "PASS"
+   },
+   "revisions": 0,
+   "turns": 5,
+   "tokens_in": 29105,
+   "tokens_out": 2334,
+   "usd": 0.003794,
+   "cost_basis": "billed",
+   "seconds": 14.6,
+   "price_per_1m": [
+    0.028,
+    0.056
+   ],
+   "reason": "The spike in 中际旭创 (300308) on 2026-07-28 (z_posts=2.27, onset 09:00) was primarily caused by overseas read-through (D). The previous US session saw abnormal declines in US peers: NVDA -4.99% (z=-2.05), AMD -5.17% (z=-1.23), LITE -6.69% (z=-1.20), and the stock gapped -7.05% at the open (z=-3.31). Se",
+   "error": null
+  }
+ ]
+}
