@@ -66,13 +66,41 @@ def run_set(cases, trials_for=None, verbose=False, prompt_version="v2", workers=
     trials_for = trials_for or (lambda c: 1 if "expected_primary" in c else (3 if c.get("negative") else 1))
     jobs = [(c, t) for c in cases for t in range(1, trials_for(c) + 1)]
 
+    import threading
+    lock = threading.Lock()
+    ckpt = checkpoint_path(arm, prompt_version)
+    done = {}
+    if ckpt and os.path.exists(ckpt):
+        for line in open(ckpt, encoding="utf-8"):
+            r = json.loads(line)
+            done[(r["case_id"], r["trial"])] = r
+
     def one(job):
         c, trial = job
-        rec = run_case(c["case_id"], verbose=verbose, prompt_version=prompt_version, arm=arm)
+        if (c["case_id"], trial) in done:                 # finished in an earlier, interrupted run
+            r = done[(c["case_id"], trial)]
+            r["passed"], r["fails"] = code_check(r["record"], c)
+            return r
+        try:
+            rec = run_case(c["case_id"], verbose=verbose, prompt_version=prompt_version, arm=arm)
+        except Exception as e:                            # one bad case must not sink the batch
+            rec = {"case_id": c["case_id"], "arm": arm, "primary": None, "error": str(e)[:300],
+                   "turns": 0, "tokens_in": 0, "tokens_out": 0, "cost_usd": 0.0, "stopped_by": "error",
+                   "investigation": {"calls": 0}}
+            print("  ERROR %s: %s" % (c["case_id"], str(e)[:120]), flush=True)
         ok, fails = code_check(rec, c)
-        return {"case_id": c["case_id"], "trial": trial, "passed": ok, "fails": fails,
-                "family": c.get("family"), "period": c.get("period"),
-                "expected": c.get("expected_primary", c.get("expected_decision")), "record": rec}
+        r = {"case_id": c["case_id"], "trial": trial, "passed": ok, "fails": fails,
+             "family": c.get("family"), "period": c.get("period"),
+             "expected": c.get("expected_primary", c.get("expected_decision")), "record": rec}
+        if ckpt and "error" not in rec:
+            with lock, open(ckpt, "a", encoding="utf-8") as fh:
+                fh.write(json.dumps(r, ensure_ascii=False, default=str) + "\n")
+        with lock:
+            n_done[0] += 1
+            if n_done[0] % 5 == 0:
+                print("  %d/%d done" % (n_done[0], len(jobs)), flush=True)
+        return r
+    n_done = [0]
 
     if workers > 1:
         from concurrent.futures import ThreadPoolExecutor
@@ -87,12 +115,23 @@ def run_set(cases, trials_for=None, verbose=False, prompt_version="v2", workers=
     return results, queue
 
 
+def checkpoint_path(arm, prompt_version):
+    """Live runs only: one line per finished case, so an interrupted run resumes."""
+    if config.BACKEND != "live":
+        return None
+    os.makedirs(config.RESULTS_DIR, exist_ok=True)
+    return os.path.join(config.RESULTS_DIR, "checkpoint_%s_%s_%s.jsonl"
+                        % (arm, prompt_version, config.MODEL.replace("/", "_")))
+
+
 def summarise(results):
     return summarise_v4(results)
 
 
 def summarise_v4(results):
     import collections
+    errors = [r for r in results if r["record"].get("error")]
+    results = [r for r in results if not r["record"].get("error")]
     graded = [r for r in results if r["passed"] is not None]
     calls = [r["record"].get("investigation", {}).get("calls", 0) for r in results]
     toks = [r["record"]["tokens_in"] + r["record"]["tokens_out"] for r in results]
@@ -122,6 +161,7 @@ def summarise_v4(results):
     majority = collections.Counter(g for g, _ in pairs).most_common(1)[0] if pairs else (None, 0)
     return {
         "arm": results[0]["record"].get("arm") if results else None,
+        "errors": len(errors),
         "macro_f1": macro_f1(pairs),
         "majority_class": majority[0],
         "majority_baseline_accuracy": round(majority[1] / len(pairs), 4) if pairs else None,
@@ -156,6 +196,8 @@ def print_report(s, results):
         print("  by period               %s" % s["accuracy_by_period"])
     print("  mean cause checks %.2f | median turns %s, worst %s | mean tokens %s | cost US$%.4f"
           % (s["mean_cause_checks"], s["median_turns"], s["worst_turns"], s["mean_tokens"], s["total_cost_usd"]))
+    if s.get("errors"):
+        print("  !! %d runs failed (network / provider) - re-run the same command to retry only those" % s["errors"])
     print("  over-investigation runs %d | premature stops %d | model/code primary disagree %d"
           % (s["over_investigation_runs"], s["premature_stops"], s["model_vs_code_primary_disagree"]))
     print("  predicted %s" % s["predicted"])
