@@ -65,7 +65,20 @@ def build():
         {"news_id": "N0", "source": "cls_telegraph", "time": "2024-01-06 09:00:00",
          "title": "示例股份重组旧闻", "content": "很久以前的重组新闻。" * 200, "stocks": [], "url": ""},
     ]
+    for sp in spikes:
+        sp["watch_until"] = "2026-09-20"
+    anns = [{"ann_id": a["ann_id"], "stock": CODE, "name": a["name"], "title": a["title"],
+             "time": a["date"] + " 19:00:00", "procedural": False,
+             "type": {"F1": "buyback", "F2": "major_contract", "F0": "restructuring"}[a["ann_id"]]}
+            for a in cninfo]
+    anns.append({"ann_id": "F3", "stock": CODE, "name": "示例股份", "title": "示例股份向特定对象发行A股股票上市公告书",
+                 "time": "2026-08-26 19:00:00", "procedural": False, "type": "share_issuance"})
+    anns.append({"ann_id": "F4", "stock": CODE, "name": "示例股份", "title": "关于召开股东会的通知",
+                 "time": "2026-08-21 19:00:00", "procedural": True, "type": "other"})
+    texts = {"F1": "公司拟以集中竞价方式回购股份，金额1-2亿元。", "F2": "子公司中标10亿元项目。",
+             "F0": "旧的重组公告。", "F3": "发行股票上市。"}
     files = {"spikes": spikes, "posts": posts, "cninfo": cninfo, "news": news,
+             "announcements": anns, "ann_texts": texts, "rag_context": {"F2": ["F1", "F0"], "F1": ["F2"]},
              "prices": {CODE: bars},
              "stocks": {CODE: {"name": "示例股份", "aliases": ["示例"], "is_st": False}}}
     for name, obj in files.items():
