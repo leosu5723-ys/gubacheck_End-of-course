@@ -65,6 +65,7 @@ PCTL_MONEY = 95               # top-list / turnover percentile
 CAUSES = ["A", "B", "C", "D", "E", "F", "G"]
 WEIGHT = {"PASS": 3.0, "PARTIAL": 1.0, "FAIL": 0.2}
 STOP_UNTESTED_MASS = 0.20
+SCORE_FLOOR = 0.5             # raw scores below this count as 0.5: no cause starts at exactly 0 (RULES.md 0.3 change)
 MAX_CAUSE_CALLS = 5
 CHEAP_CAUSES = ["C", "D", "E", "G"]   # tie-break: numbers before reading
 

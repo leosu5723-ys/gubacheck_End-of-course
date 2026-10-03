@@ -2,7 +2,7 @@
   {
     "case_id": "SPK-688256-20260203",
     "decision": null,
-    "reason": "tested CBG; posterior {'A': 0.15, 'B': 0.75, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.04}",
+    "reason": "tested CBGA; posterior {'A': 0.14, 'B': 0.7, 'C': 0.06, 'D': 0.02, 'E': 0.02, 'F': 0.02, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -10,7 +10,7 @@
   {
     "case_id": "SPK-688256-20260430",
     "decision": null,
-    "reason": "tested CEADG; posterior {'A': 0.5, 'B': 0.0, 'C': 0.4, 'D': 0.0, 'E': 0.1, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEADG; posterior {'A': 0.28, 'B': 0.14, 'C': 0.22, 'D': 0.03, 'E': 0.06, 'F': 0.14, 'G': 0.14}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -18,7 +18,7 @@
   {
     "case_id": "SPK-688256-20260506",
     "decision": null,
-    "reason": "tested CGADE; posterior {'A': 0.06, 'B': 0.0, 'C': 0.85, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.09}",
+    "reason": "tested CGADE; posterior {'A': 0.05, 'B': 0.05, 'C': 0.73, 'D': 0.01, 'E': 0.05, 'F': 0.05, 'G': 0.07}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -26,7 +26,7 @@
   {
     "case_id": "SPK-688256-20260618",
     "decision": null,
-    "reason": "tested CEABD; posterior {'A': 0.02, 'B': 0.1, 'C': 0.82, 'D': 0.0, 'E': 0.06, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEABD; posterior {'A': 0.02, 'B': 0.09, 'C': 0.73, 'D': 0.01, 'E': 0.06, 'F': 0.05, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -34,7 +34,7 @@
   {
     "case_id": "SPK-688256-20260701",
     "decision": null,
-    "reason": "tested CEGAB; posterior {'A': 0.24, 'B': 0.36, 'C': 0.21, 'D': 0.0, 'E': 0.14, 'F': 0.0, 'G': 0.05}",
+    "reason": "tested CEGAB; posterior {'A': 0.21, 'B': 0.32, 'C': 0.19, 'D': 0.05, 'E': 0.13, 'F': 0.05, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -42,7 +42,7 @@
   {
     "case_id": "SPK-688256-20260810",
     "decision": null,
-    "reason": "tested CAGED; posterior {'A': 0.68, 'B': 0.0, 'C': 0.23, 'D': 0.0, 'E': 0.02, 'F': 0.0, 'G': 0.07}",
+    "reason": "tested CAGED; posterior {'A': 0.58, 'B': 0.05, 'C': 0.19, 'D': 0.05, 'E': 0.02, 'F': 0.05, 'G': 0.06}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -50,7 +50,7 @@
   {
     "case_id": "SPK-601138-20251124",
     "decision": null,
-    "reason": "tested CEAB; posterior {'A': 0.05, 'B': 0.73, 'C': 0.05, 'D': 0.12, 'E': 0.05, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEAB; posterior {'A': 0.05, 'B': 0.69, 'C': 0.05, 'D': 0.11, 'E': 0.05, 'F': 0.03, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -58,7 +58,7 @@
   {
     "case_id": "SPK-601138-20260129",
     "decision": null,
-    "reason": "tested AECDG; posterior {'A': 0.86, 'B': 0.0, 'C': 0.06, 'D': 0.0, 'E': 0.09, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested AECDG; posterior {'A': 0.73, 'B': 0.06, 'C': 0.05, 'D': 0.01, 'E': 0.07, 'F': 0.06, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -66,7 +66,7 @@
   {
     "case_id": "SPK-601138-20260204",
     "decision": null,
-    "reason": "tested AGDCE; posterior {'A': 0.86, 'B': 0.0, 'C': 0.0, 'D': 0.02, 'E': 0.0, 'F': 0.0, 'G': 0.12}",
+    "reason": "tested AGDCE; posterior {'A': 0.78, 'B': 0.04, 'C': 0.01, 'D': 0.02, 'E': 0.01, 'F': 0.04, 'G': 0.11}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -74,7 +74,7 @@
   {
     "case_id": "SPK-601138-20260429",
     "decision": null,
-    "reason": "tested CEAGB; posterior {'A': 0.29, 'B': 0.43, 'C': 0.06, 'D': 0.0, 'E': 0.06, 'F': 0.14, 'G': 0.03}",
+    "reason": "tested CEAGB; posterior {'A': 0.27, 'B': 0.4, 'C': 0.05, 'D': 0.07, 'E': 0.05, 'F': 0.13, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -82,7 +82,7 @@
   {
     "case_id": "SPK-300308-20251126",
     "decision": null,
-    "reason": "tested CDEGA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.64, 'D': 0.14, 'E': 0.14, 'F': 0.0, 'G': 0.07}",
+    "reason": "tested CDEGA; posterior {'A': 0.12, 'B': 0.12, 'C': 0.42, 'D': 0.09, 'E': 0.09, 'F': 0.12, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -90,7 +90,7 @@
   {
     "case_id": "SPK-300308-20260202",
     "decision": null,
-    "reason": "tested CAGDE; posterior {'A': 0.71, 'B': 0.0, 'C': 0.16, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.12}",
+    "reason": "tested CAGDE; posterior {'A': 0.58, 'B': 0.04, 'C': 0.13, 'D': 0.01, 'E': 0.11, 'F': 0.04, 'G': 0.1}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -98,7 +98,7 @@
   {
     "case_id": "SPK-300308-20260417",
     "decision": null,
-    "reason": "tested CAEGD; posterior {'A': 0.32, 'B': 0.0, 'C': 0.64, 'D': 0.0, 'E': 0.03, 'F': 0.0, 'G': 0.01}",
+    "reason": "tested CAEGD; posterior {'A': 0.29, 'B': 0.03, 'C': 0.58, 'D': 0.03, 'E': 0.02, 'F': 0.03, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -106,7 +106,7 @@
   {
     "case_id": "SPK-300308-20260512",
     "decision": null,
-    "reason": "tested CGEDA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.38, 'D': 0.0, 'E': 0.23, 'F': 0.0, 'G': 0.38}",
+    "reason": "tested CGEDA; posterior {'A': 0.01, 'B': 0.07, 'C': 0.29, 'D': 0.07, 'E': 0.18, 'F': 0.07, 'G': 0.29}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -114,7 +114,7 @@
   {
     "case_id": "SPK-300308-20260601",
     "decision": null,
-    "reason": "tested EACBG; posterior {'A': 0.41, 'B': 0.2, 'C': 0.27, 'D': 0.0, 'E': 0.09, 'F': 0.0, 'G': 0.03}",
+    "reason": "tested EACBG; posterior {'A': 0.38, 'B': 0.19, 'C': 0.25, 'D': 0.03, 'E': 0.09, 'F': 0.03, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -122,7 +122,7 @@
   {
     "case_id": "SPK-300308-20260622",
     "decision": null,
-    "reason": "tested CE; posterior {'A': 0.0, 'B': 0.0, 'C': 0.08, 'D': 0.0, 'E': 0.73, 'F': 0.0, 'G': 0.19}",
+    "reason": "tested CEG; posterior {'A': 0.03, 'B': 0.03, 'C': 0.08, 'D': 0.03, 'E': 0.77, 'F': 0.03, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -130,7 +130,7 @@
   {
     "case_id": "SPK-300308-20260713",
     "decision": null,
-    "reason": "tested CAEGD; posterior {'A': 0.23, 'B': 0.0, 'C': 0.31, 'D': 0.0, 'E': 0.38, 'F': 0.0, 'G': 0.08}",
+    "reason": "tested CAEGD; posterior {'A': 0.16, 'B': 0.14, 'C': 0.22, 'D': 0.03, 'E': 0.27, 'F': 0.14, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -138,7 +138,7 @@
   {
     "case_id": "SPK-300308-20260728",
     "decision": null,
-    "reason": "tested CE; posterior {'A': 0.0, 'B': 0.0, 'C': 0.47, 'D': 0.05, 'E': 0.47, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CE; posterior {'A': 0.02, 'B': 0.02, 'C': 0.43, 'D': 0.05, 'E': 0.43, 'F': 0.02, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -146,7 +146,7 @@
   {
     "case_id": "SPK-300308-20260805",
     "decision": null,
-    "reason": "tested CDGAE; posterior {'A': 0.05, 'B': 0.08, 'C': 0.16, 'D': 0.62, 'E': 0.03, 'F': 0.0, 'G': 0.06}",
+    "reason": "tested CDGAE; posterior {'A': 0.05, 'B': 0.08, 'C': 0.15, 'D': 0.6, 'E': 0.03, 'F': 0.04, 'G': 0.06}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -154,7 +154,7 @@
   {
     "case_id": "SPK-300502-20260202",
     "decision": null,
-    "reason": "tested ACGE; posterior {'A': 0.66, 'B': 0.0, 'C': 0.07, 'D': 0.0, 'E': 0.22, 'F': 0.0, 'G': 0.04}",
+    "reason": "tested ACGE; posterior {'A': 0.6, 'B': 0.03, 'C': 0.07, 'D': 0.03, 'E': 0.2, 'F': 0.03, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -162,7 +162,7 @@
   {
     "case_id": "SPK-300502-20260227",
     "decision": null,
-    "reason": "tested DACEG; posterior {'A': 0.09, 'B': 0.0, 'C': 0.0, 'D': 0.91, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested DACEG; posterior {'A': 0.06, 'B': 0.14, 'C': 0.03, 'D': 0.57, 'E': 0.03, 'F': 0.14, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -170,7 +170,7 @@
   {
     "case_id": "SPK-300502-20260424",
     "decision": null,
-    "reason": "tested CEADG; posterior {'A': 0.62, 'B': 0.0, 'C': 0.25, 'D': 0.0, 'E': 0.12, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEADG; posterior {'A': 0.36, 'B': 0.18, 'C': 0.14, 'D': 0.04, 'E': 0.07, 'F': 0.18, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -178,7 +178,7 @@
   {
     "case_id": "SPK-300502-20260611",
     "decision": null,
-    "reason": "tested GCEDA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.29, 'D': 0.0, 'E': 0.18, 'F': 0.0, 'G': 0.53}",
+    "reason": "tested GCEDA; posterior {'A': 0.1, 'B': 0.1, 'C': 0.2, 'D': 0.02, 'E': 0.12, 'F': 0.1, 'G': 0.36}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -186,7 +186,7 @@
   {
     "case_id": "SPK-300502-20260720",
     "decision": null,
-    "reason": "tested AECDG; posterior {'A': 0.94, 'B': 0.0, 'C': 0.02, 'D': 0.0, 'E': 0.04, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested AECDG; posterior {'A': 0.85, 'B': 0.04, 'C': 0.02, 'D': 0.01, 'E': 0.03, 'F': 0.04, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -194,7 +194,7 @@
   {
     "case_id": "SPK-300502-20260728",
     "decision": null,
-    "reason": "tested CG; posterior {'A': 0.05, 'B': 0.0, 'C': 0.69, 'D': 0.0, 'E': 0.05, 'F': 0.0, 'G': 0.21}",
+    "reason": "tested CG; posterior {'A': 0.05, 'B': 0.01, 'C': 0.67, 'D': 0.01, 'E': 0.05, 'F': 0.01, 'G': 0.2}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -202,7 +202,7 @@
   {
     "case_id": "SPK-300502-20260805",
     "decision": null,
-    "reason": "tested CDBGE; posterior {'A': 0.0, 'B': 0.24, 'C': 0.14, 'D': 0.6, 'E': 0.0, 'F': 0.0, 'G': 0.02}",
+    "reason": "tested CDBGE; posterior {'A': 0.05, 'B': 0.21, 'C': 0.13, 'D': 0.53, 'E': 0.01, 'F': 0.05, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -210,7 +210,7 @@
   {
     "case_id": "SPK-300476-20260119",
     "decision": null,
-    "reason": "tested ACGFD; posterior {'A': 0.88, 'B': 0.0, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.03, 'G': 0.03}",
+    "reason": "tested ACGFD; posterior {'A': 0.76, 'B': 0.06, 'C': 0.05, 'D': 0.01, 'E': 0.06, 'F': 0.03, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -218,7 +218,7 @@
   {
     "case_id": "SPK-300476-20260313",
     "decision": null,
-    "reason": "tested CADEG; posterior {'A': 0.79, 'B': 0.0, 'C': 0.21, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CADEG; posterior {'A': 0.59, 'B': 0.1, 'C': 0.16, 'D': 0.02, 'E': 0.02, 'F': 0.1, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -226,7 +226,7 @@
   {
     "case_id": "SPK-300476-20260429",
     "decision": null,
-    "reason": "tested CAEGD; posterior {'A': 0.74, 'B': 0.0, 'C': 0.19, 'D': 0.0, 'E': 0.04, 'F': 0.0, 'G': 0.04}",
+    "reason": "tested CAEGD; posterior {'A': 0.62, 'B': 0.08, 'C': 0.15, 'D': 0.02, 'E': 0.03, 'F': 0.08, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -234,7 +234,7 @@
   {
     "case_id": "SPK-300476-20260525",
     "decision": null,
-    "reason": "tested GCDEA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.31, 'D': 0.06, 'E': 0.0, 'F': 0.0, 'G': 0.62}",
+    "reason": "tested GCDEA; posterior {'A': 0.02, 'B': 0.1, 'C': 0.21, 'D': 0.04, 'E': 0.1, 'F': 0.1, 'G': 0.42}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -242,7 +242,7 @@
   {
     "case_id": "SPK-300476-20260605",
     "decision": null,
-    "reason": "tested CGDE; posterior {'A': 0.0, 'B': 0.0, 'C': 0.83, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.17}",
+    "reason": "tested CGDEA; posterior {'A': 0.02, 'B': 0.12, 'C': 0.23, 'D': 0.12, 'E': 0.35, 'F': 0.12, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -250,7 +250,7 @@
   {
     "case_id": "SPK-300476-20260828",
     "decision": null,
-    "reason": "tested CGBD; posterior {'A': 0.1, 'B': 0.62, 'C': 0.1, 'D': 0.1, 'E': 0.0, 'F': 0.0, 'G': 0.06}",
+    "reason": "tested CGBD; posterior {'A': 0.09, 'B': 0.57, 'C': 0.09, 'D': 0.09, 'E': 0.05, 'F': 0.05, 'G': 0.06}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -258,7 +258,7 @@
   {
     "case_id": "SPK-601127-20251106",
     "decision": null,
-    "reason": "tested CEDGA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.4, 'D': 0.2, 'E': 0.4, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEDGA; posterior {'A': 0.19, 'B': 0.19, 'C': 0.15, 'D': 0.08, 'E': 0.15, 'F': 0.19, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -266,7 +266,7 @@
   {
     "case_id": "SPK-601127-20260122",
     "decision": null,
-    "reason": "tested GACDE; posterior {'A': 0.33, 'B': 0.0, 'C': 0.0, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.67}",
+    "reason": "tested GACDE; posterior {'A': 0.11, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.21}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -274,7 +274,7 @@
   {
     "case_id": "SPK-601127-20260128",
     "decision": null,
-    "reason": "tested ACEFD; posterior {'A': 0.4, 'B': 0.0, 'C': 0.2, 'D': 0.0, 'E': 0.2, 'F': 0.2, 'G': 0.0}",
+    "reason": "tested ACEFD; posterior {'A': 0.19, 'B': 0.24, 'C': 0.1, 'D': 0.05, 'E': 0.1, 'F': 0.1, 'G': 0.24}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -282,7 +282,7 @@
   {
     "case_id": "SPK-601127-20260331",
     "decision": null,
-    "reason": "tested ACDEG; posterior {'A': 0.91, 'B': 0.0, 'C': 0.09, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested ACDEG; posterior {'A': 0.66, 'B': 0.08, 'C': 0.07, 'D': 0.02, 'E': 0.08, 'F': 0.08, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -290,7 +290,7 @@
   {
     "case_id": "SPK-601127-20260610",
     "decision": null,
-    "reason": "tested CGADE; posterior {'A': 0.09, 'B': 0.0, 'C': 0.73, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.18}",
+    "reason": "tested CGADE; posterior {'A': 0.05, 'B': 0.13, 'C': 0.42, 'D': 0.03, 'E': 0.13, 'F': 0.13, 'G': 0.11}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -298,7 +298,7 @@
   {
     "case_id": "SPK-601127-20260713",
     "decision": null,
-    "reason": "tested CA; posterior {'A': 0.25, 'B': 0.0, 'C': 0.75, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CA; posterior {'A': 0.22, 'B': 0.03, 'C': 0.65, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -306,7 +306,7 @@
   {
     "case_id": "SPK-601127-20260915",
     "decision": null,
-    "reason": "tested CB; posterior {'A': 0.0, 'B': 0.94, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CBDEG; posterior {'A': 0.11, 'B': 0.67, 'C': 0.04, 'D': 0.02, 'E': 0.02, 'F': 0.11, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -314,7 +314,7 @@
   {
     "case_id": "SPK-601127-20260928",
     "decision": null,
-    "reason": "tested ACDEG; posterior {'A': 0.67, 'B': 0.0, 'C': 0.33, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested ACDEG; posterior {'A': 0.17, 'B': 0.22, 'C': 0.09, 'D': 0.04, 'E': 0.22, 'F': 0.22, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -322,7 +322,7 @@
   {
     "case_id": "SPK-600418-20251106",
     "decision": null,
-    "reason": "tested CGDEA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.83, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.17}",
+    "reason": "tested CGDEA; posterior {'A': 0.04, 'B': 0.2, 'C': 0.4, 'D': 0.04, 'E': 0.04, 'F': 0.2, 'G': 0.08}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -330,7 +330,7 @@
   {
     "case_id": "SPK-600418-20251112",
     "decision": null,
-    "reason": "tested ACGDE; posterior {'A': 0.6, 'B': 0.0, 'C': 0.2, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.2}",
+    "reason": "tested ACGDE; posterior {'A': 0.27, 'B': 0.23, 'C': 0.09, 'D': 0.05, 'E': 0.05, 'F': 0.23, 'G': 0.09}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -338,7 +338,7 @@
   {
     "case_id": "SPK-600418-20251211",
     "decision": null,
-    "reason": "tested CA; posterior {'A': 0.94, 'B': 0.0, 'C': 0.06, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CA; posterior {'A': 0.85, 'B': 0.02, 'C': 0.06, 'D': 0.02, 'E': 0.02, 'F': 0.02, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -346,7 +346,7 @@
   {
     "case_id": "SPK-600418-20260119",
     "decision": null,
-    "reason": "tested CADEG; posterior {'A': 0.79, 'B': 0.0, 'C': 0.21, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CADEG; posterior {'A': 0.67, 'B': 0.06, 'C': 0.18, 'D': 0.01, 'E': 0.01, 'F': 0.06, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -354,7 +354,7 @@
   {
     "case_id": "SPK-600418-20260211",
     "decision": null,
-    "reason": "tested CAEGD; posterior {'A': 0.76, 'B': 0.0, 'C': 0.17, 'D': 0.0, 'E': 0.05, 'F': 0.0, 'G': 0.02}",
+    "reason": "tested CAEGD; posterior {'A': 0.7, 'B': 0.04, 'C': 0.15, 'D': 0.01, 'E': 0.05, 'F': 0.04, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -362,7 +362,7 @@
   {
     "case_id": "SPK-600418-20260427",
     "decision": null,
-    "reason": "tested CBDEG; posterior {'A': 0.0, 'B': 0.56, 'C': 0.44, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CBDEG; posterior {'A': 0.1, 'B': 0.41, 'C': 0.33, 'D': 0.02, 'E': 0.02, 'F': 0.1, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -370,7 +370,7 @@
   {
     "case_id": "SPK-600418-20260525",
     "decision": null,
-    "reason": "tested CGDEA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.57, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.43}",
+    "reason": "tested CGDEA; posterior {'A': 0.03, 'B': 0.16, 'C': 0.26, 'D': 0.03, 'E': 0.16, 'F': 0.16, 'G': 0.19}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -378,7 +378,7 @@
   {
     "case_id": "SPK-600418-20260622",
     "decision": null,
-    "reason": "tested CGADE; posterior {'A': 0.04, 'B': 0.0, 'C': 0.9, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.06}",
+    "reason": "tested CGADE; posterior {'A': 0.03, 'B': 0.04, 'C': 0.71, 'D': 0.01, 'E': 0.12, 'F': 0.04, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -386,7 +386,7 @@
   {
     "case_id": "SPK-600418-20260707",
     "decision": null,
-    "reason": "tested CABDE; posterior {'A': 0.06, 'B': 0.16, 'C': 0.78, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CABDE; posterior {'A': 0.05, 'B': 0.12, 'C': 0.62, 'D': 0.06, 'E': 0.01, 'F': 0.06, 'G': 0.06}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -394,7 +394,7 @@
   {
     "case_id": "SPK-600418-20260923",
     "decision": null,
-    "reason": "tested CGB; posterior {'A': 0.0, 'B': 0.67, 'C': 0.1, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.22}",
+    "reason": "tested CGB; posterior {'A': 0.03, 'B': 0.58, 'C': 0.09, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.19}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -402,7 +402,7 @@
   {
     "case_id": "SPK-601238-20251110",
     "decision": null,
-    "reason": "tested CDEGA; posterior {'A': 0.0, 'B': 0.0, 'C': 1.0, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CDEGA; posterior {'A': 0.19, 'B': 0.19, 'C': 0.31, 'D': 0.04, 'E': 0.04, 'F': 0.19, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -410,7 +410,7 @@
   {
     "case_id": "SPK-601238-20251124",
     "decision": null,
-    "reason": "tested CADEG; posterior {'A': 0.09, 'B': 0.0, 'C': 0.91, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CADEG; posterior {'A': 0.06, 'B': 0.14, 'C': 0.57, 'D': 0.03, 'E': 0.03, 'F': 0.14, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -418,7 +418,7 @@
   {
     "case_id": "SPK-601238-20260618",
     "decision": null,
-    "reason": "tested CGDEA; posterior {'A': 0.0, 'B': 0.0, 'C': 0.57, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.43}",
+    "reason": "tested CGDEA; posterior {'A': 0.04, 'B': 0.19, 'C': 0.3, 'D': 0.04, 'E': 0.04, 'F': 0.19, 'G': 0.22}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -426,7 +426,7 @@
   {
     "case_id": "SPK-601238-20260629",
     "decision": null,
-    "reason": "tested CGBDE; posterior {'A': 0.0, 'B': 0.14, 'C': 0.83, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.03}",
+    "reason": "tested CGBDE; posterior {'A': 0.06, 'B': 0.12, 'C': 0.71, 'D': 0.01, 'E': 0.01, 'F': 0.06, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -434,7 +434,7 @@
   {
     "case_id": "SPK-601238-20260713",
     "decision": null,
-    "reason": "tested AC; posterior {'A': 0.43, 'B': 0.0, 'C': 0.43, 'D': 0.0, 'E': 0.0, 'F': 0.07, 'G': 0.07}",
+    "reason": "tested ACG; posterior {'A': 0.41, 'B': 0.03, 'C': 0.41, 'D': 0.03, 'E': 0.03, 'F': 0.07, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -442,7 +442,7 @@
   {
     "case_id": "SPK-601238-20260914",
     "decision": null,
-    "reason": "tested ABECD; posterior {'A': 0.7, 'B': 0.28, 'C': 0.0, 'D': 0.0, 'E': 0.01, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested ABECD; posterior {'A': 0.65, 'B': 0.26, 'C': 0.01, 'D': 0.01, 'E': 0.01, 'F': 0.03, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -450,7 +450,7 @@
   {
     "case_id": "SPK-601238-20260929",
     "decision": null,
-    "reason": "tested ACBDE; posterior {'A': 0.79, 'B': 0.13, 'C': 0.08, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested ACBDE; posterior {'A': 0.68, 'B': 0.11, 'C': 0.07, 'D': 0.01, 'E': 0.01, 'F': 0.06, 'G': 0.06}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -458,7 +458,7 @@
   {
     "case_id": "SPK-002074-20260206",
     "decision": null,
-    "reason": "tested CAEDG; posterior {'A': 0.81, 'B': 0.0, 'C': 0.16, 'D': 0.0, 'E': 0.03, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CAEDG; posterior {'A': 0.74, 'B': 0.04, 'C': 0.15, 'D': 0.01, 'E': 0.03, 'F': 0.04, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -466,7 +466,7 @@
   {
     "case_id": "SPK-002074-20260429",
     "decision": null,
-    "reason": "tested CDEGA; posterior {'A': 0.0, 'B': 0.0, 'C': 1.0, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CDEGA; posterior {'A': 0.23, 'B': 0.23, 'C': 0.18, 'D': 0.05, 'E': 0.05, 'F': 0.23, 'G': 0.05}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -474,7 +474,7 @@
   {
     "case_id": "SPK-002074-20260518",
     "decision": null,
-    "reason": "tested CDEGA; posterior {'A': 0.0, 'B': 0.0, 'C': 1.0, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CDEGA; posterior {'A': 0.03, 'B': 0.15, 'C': 0.59, 'D': 0.03, 'E': 0.03, 'F': 0.15, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -482,7 +482,7 @@
   {
     "case_id": "SPK-002074-20260604",
     "decision": null,
-    "reason": "tested CEADG; posterior {'A': 0.31, 'B': 0.0, 'C': 0.62, 'D': 0.0, 'E': 0.06, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CEADG; posterior {'A': 0.23, 'B': 0.11, 'C': 0.45, 'D': 0.02, 'E': 0.05, 'F': 0.11, 'G': 0.02}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -490,7 +490,7 @@
   {
     "case_id": "SPK-002074-20260929",
     "decision": null,
-    "reason": "tested CAFDE; posterior {'A': 0.54, 'B': 0.0, 'C': 0.32, 'D': 0.04, 'E': 0.04, 'F': 0.07, 'G': 0.0}",
+    "reason": "tested CAFDE; posterior {'A': 0.45, 'B': 0.08, 'C': 0.27, 'D': 0.03, 'E': 0.03, 'F': 0.06, 'G': 0.08}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -498,7 +498,7 @@
   {
     "case_id": "SPK-600150-20251107",
     "decision": null,
-    "reason": "tested CDEGA; posterior {'A': 0.0, 'B': 0.0, 'C': 1.0, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CDEGA; posterior {'A': 0.04, 'B': 0.21, 'C': 0.42, 'D': 0.04, 'E': 0.04, 'F': 0.21, 'G': 0.04}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -506,7 +506,7 @@
   {
     "case_id": "SPK-600150-20260130",
     "decision": null,
-    "reason": "tested CAGED; posterior {'A': 0.79, 'B': 0.0, 'C': 0.16, 'D': 0.0, 'E': 0.02, 'F': 0.0, 'G': 0.03}",
+    "reason": "tested CAGED; posterior {'A': 0.73, 'B': 0.04, 'C': 0.15, 'D': 0.01, 'E': 0.01, 'F': 0.04, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -514,7 +514,7 @@
   {
     "case_id": "SPK-600150-20260323",
     "decision": null,
-    "reason": "tested CE; posterior {'A': 0.03, 'B': 0.0, 'C': 0.47, 'D': 0.0, 'E': 0.47, 'F': 0.0, 'G': 0.03}",
+    "reason": "tested CE; posterior {'A': 0.03, 'B': 0.01, 'C': 0.45, 'D': 0.01, 'E': 0.45, 'F': 0.01, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -522,7 +522,7 @@
   {
     "case_id": "SPK-600150-20260430",
     "decision": null,
-    "reason": "tested CAEGD; posterior {'A': 0.22, 'B': 0.0, 'C': 0.74, 'D': 0.0, 'E': 0.03, 'F': 0.0, 'G': 0.01}",
+    "reason": "tested CAEGD; posterior {'A': 0.2, 'B': 0.03, 'C': 0.68, 'D': 0.01, 'E': 0.03, 'F': 0.03, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -530,7 +530,7 @@
   {
     "case_id": "SPK-600150-20260713",
     "decision": null,
-    "reason": "tested AC; posterior {'A': 0.07, 'B': 0.0, 'C': 0.82, 'D': 0.05, 'E': 0.05, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested AC; posterior {'A': 0.06, 'B': 0.03, 'C': 0.76, 'D': 0.05, 'E': 0.05, 'F': 0.03, 'G': 0.03}",
     "must_record": [],
     "verdict": null,
     "graded_by": null
@@ -538,7 +538,7 @@
   {
     "case_id": "SPK-600150-20260831",
     "decision": null,
-    "reason": "tested CADEG; posterior {'A': 0.75, 'B': 0.0, 'C': 0.25, 'D': 0.0, 'E': 0.0, 'F': 0.0, 'G': 0.0}",
+    "reason": "tested CADEG; posterior {'A': 0.65, 'B': 0.05, 'C': 0.22, 'D': 0.01, 'E': 0.01, 'F': 0.05, 'G': 0.01}",
     "must_record": [],
     "verdict": null,
     "graded_by": null

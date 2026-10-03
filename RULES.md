@@ -41,7 +41,8 @@ Seven causes, one tool each, identical input (`spike_id`) and output (`verdict` 
 | G money / trading structure | on the top list (龙虎榜) with net buy percentile ≥ 95 | turnover percentile ≥ 95, not on the list | exempt: the list is published after the close |
 
 ### 0.3 Scoring, posterior and stopping
-1. The model reads the day's most-read posts and gives each of A–G a raw score 0–10 citing post ids. Code normalises: prior_i = score_i / Σ score (all zero → uniform 1/7).
+1. The model reads the day's most-read posts and gives each of A–G a raw score 0–10 citing post ids. Code normalises: prior_i = max(score_i, 0.5) / Σ (all zero → uniform 1/7).
+   *Change 0.3 (2026-10-04, before any successful live run):* the floor of 0.5 was added because a cause scored 0 had a prior of exactly 0 and stayed at 0 even after its test PASSED (0 × 3 = 0), which the investigate-it-yourself screen made obvious. All arms were re-run under the new rule.
 2. Each test multiplies the cause's weight: **PASS × 3, PARTIAL × 1, FAIL × 0.2**; code renormalises to the posterior.
 3. After a test the model may revise raw scores of **untested** causes, with a reason (this is what makes the loop an agent; a run that never revises is the "routing" arm).
 4. **STOP** when (① at least one cause PASSED **and** ② the summed posterior of untested causes < 20 %) **or** ③ 5 cause-tool calls were made.

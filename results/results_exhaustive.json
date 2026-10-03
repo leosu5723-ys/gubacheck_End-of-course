@@ -3,6 +3,7 @@
   "prompt_version": "v2",
   "summary": {
     "arm": "exhaustive",
+    "errors": 0,
     "macro_f1": 0.2232,
     "majority_class": "B",
     "majority_baseline_accuracy": 0.6912,
@@ -308,7 +309,7 @@
         "tokens_in": 35057,
         "tokens_out": 1500,
         "cost_usd": 0.006159,
-        "seconds": 0.151,
+        "seconds": 0.092,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -536,7 +537,7 @@
         "tokens_in": 35563,
         "tokens_out": 1500,
         "cost_usd": 0.006234,
-        "seconds": 0.057,
+        "seconds": 0.049,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -766,7 +767,7 @@
         "tokens_in": 35104,
         "tokens_out": 1500,
         "cost_usd": 0.006166,
-        "seconds": 0.075,
+        "seconds": 0.055,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -996,7 +997,7 @@
         "tokens_in": 35154,
         "tokens_out": 1500,
         "cost_usd": 0.006173,
-        "seconds": 0.044,
+        "seconds": 0.085,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -1224,7 +1225,7 @@
         "tokens_in": 35218,
         "tokens_out": 1500,
         "cost_usd": 0.006183,
-        "seconds": 0.003,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -1452,7 +1453,7 @@
         "tokens_in": 35778,
         "tokens_out": 1500,
         "cost_usd": 0.006267,
-        "seconds": 0.003,
+        "seconds": 0.076,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -1908,7 +1909,7 @@
         "tokens_in": 35072,
         "tokens_out": 1500,
         "cost_usd": 0.006161,
-        "seconds": 0.01,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -2366,7 +2367,7 @@
         "tokens_in": 35711,
         "tokens_out": 1500,
         "cost_usd": 0.006257,
-        "seconds": 0.022,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -3056,7 +3057,7 @@
         "tokens_in": 35660,
         "tokens_out": 1500,
         "cost_usd": 0.006249,
-        "seconds": 0.016,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -3972,7 +3973,7 @@
         "tokens_in": 34821,
         "tokens_out": 1500,
         "cost_usd": 0.006123,
-        "seconds": 0.016,
+        "seconds": 0.022,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4435,7 +4436,7 @@
         "tokens_in": 35496,
         "tokens_out": 1500,
         "cost_usd": 0.006224,
-        "seconds": 0.029,
+        "seconds": 0.022,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4665,7 +4666,7 @@
         "tokens_in": 35027,
         "tokens_out": 1500,
         "cost_usd": 0.006154,
-        "seconds": 0.01,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -4895,7 +4896,7 @@
         "tokens_in": 34667,
         "tokens_out": 1500,
         "cost_usd": 0.0061,
-        "seconds": 0.01,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5123,7 +5124,7 @@
         "tokens_in": 35986,
         "tokens_out": 1500,
         "cost_usd": 0.006298,
-        "seconds": 0.004,
+        "seconds": 0.026,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5353,7 +5354,7 @@
         "tokens_in": 35229,
         "tokens_out": 1500,
         "cost_usd": 0.006184,
-        "seconds": 0.016,
+        "seconds": 0.009,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5581,7 +5582,7 @@
         "tokens_in": 35196,
         "tokens_out": 1500,
         "cost_usd": 0.006179,
-        "seconds": 0.003,
+        "seconds": 0.032,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -5811,7 +5812,7 @@
         "tokens_in": 35559,
         "tokens_out": 1500,
         "cost_usd": 0.006234,
-        "seconds": 0.016,
+        "seconds": 0.004,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -6041,7 +6042,7 @@
         "tokens_in": 35108,
         "tokens_out": 1500,
         "cost_usd": 0.006166,
-        "seconds": 0.004,
+        "seconds": 0.021,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -6271,7 +6272,7 @@
         "tokens_in": 35392,
         "tokens_out": 1500,
         "cost_usd": 0.006209,
-        "seconds": 0.016,
+        "seconds": 0.034,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -6727,7 +6728,7 @@
         "tokens_in": 35387,
         "tokens_out": 1500,
         "cost_usd": 0.006208,
-        "seconds": 0.016,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -6957,7 +6958,7 @@
         "tokens_in": 34718,
         "tokens_out": 1500,
         "cost_usd": 0.006108,
-        "seconds": 0.003,
+        "seconds": 0.04,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -7187,7 +7188,7 @@
         "tokens_in": 34710,
         "tokens_out": 1500,
         "cost_usd": 0.006106,
-        "seconds": 0.041,
+        "seconds": 0.01,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -7415,7 +7416,7 @@
         "tokens_in": 35383,
         "tokens_out": 1500,
         "cost_usd": 0.006207,
-        "seconds": 0.028,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -7643,7 +7644,7 @@
         "tokens_in": 35119,
         "tokens_out": 1500,
         "cost_usd": 0.006168,
-        "seconds": 0.002,
+        "seconds": 0.015,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8101,7 +8102,7 @@
         "tokens_in": 34576,
         "tokens_out": 1500,
         "cost_usd": 0.006086,
-        "seconds": 0.009,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8331,7 +8332,7 @@
         "tokens_in": 35439,
         "tokens_out": 1500,
         "cost_usd": 0.006216,
-        "seconds": 0.003,
+        "seconds": 0.051,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -8561,7 +8562,7 @@
         "tokens_in": 34652,
         "tokens_out": 1500,
         "cost_usd": 0.006098,
-        "seconds": 0.04,
+        "seconds": 0.003,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -9021,7 +9022,7 @@
         "tokens_in": 34456,
         "tokens_out": 1500,
         "cost_usd": 0.006068,
-        "seconds": 0.002,
+        "seconds": 0.021,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -9707,7 +9708,7 @@
         "tokens_in": 33788,
         "tokens_out": 1500,
         "cost_usd": 0.005968,
-        "seconds": 0.015,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10167,7 +10168,7 @@
         "tokens_in": 34239,
         "tokens_out": 1500,
         "cost_usd": 0.006036,
-        "seconds": 0.002,
+        "seconds": 0.021,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10395,7 +10396,7 @@
         "tokens_in": 35168,
         "tokens_out": 1500,
         "cost_usd": 0.006175,
-        "seconds": 0.027,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10625,7 +10626,7 @@
         "tokens_in": 34108,
         "tokens_out": 1500,
         "cost_usd": 0.006016,
-        "seconds": 0.002,
+        "seconds": 0.033,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -10855,7 +10856,7 @@
         "tokens_in": 33875,
         "tokens_out": 1500,
         "cost_usd": 0.005981,
-        "seconds": 0.028,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -11771,7 +11772,7 @@
         "tokens_in": 34457,
         "tokens_out": 1500,
         "cost_usd": 0.006069,
-        "seconds": 0.002,
+        "seconds": 0.007,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -11999,7 +12000,7 @@
         "tokens_in": 34467,
         "tokens_out": 1500,
         "cost_usd": 0.00607,
-        "seconds": 0.027,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -12459,7 +12460,7 @@
         "tokens_in": 34248,
         "tokens_out": 1500,
         "cost_usd": 0.006037,
-        "seconds": 0.002,
+        "seconds": 0.027,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -12691,7 +12692,7 @@
         "tokens_in": 34687,
         "tokens_out": 1500,
         "cost_usd": 0.006103,
-        "seconds": 0.015,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -13151,7 +13152,7 @@
         "tokens_in": 35565,
         "tokens_out": 1500,
         "cost_usd": 0.006235,
-        "seconds": 0.002,
+        "seconds": 0.029,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -13381,7 +13382,7 @@
         "tokens_in": 34991,
         "tokens_out": 1500,
         "cost_usd": 0.006149,
-        "seconds": 0.022,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -13609,7 +13610,7 @@
         "tokens_in": 35280,
         "tokens_out": 1500,
         "cost_usd": 0.006192,
-        "seconds": 0.002,
+        "seconds": 0.008,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14067,7 +14068,7 @@
         "tokens_in": 34226,
         "tokens_out": 1500,
         "cost_usd": 0.006034,
-        "seconds": 0.014,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14299,7 +14300,7 @@
         "tokens_in": 34757,
         "tokens_out": 1500,
         "cost_usd": 0.006114,
-        "seconds": 0.002,
+        "seconds": 0.014,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -14757,7 +14758,7 @@
         "tokens_in": 33971,
         "tokens_out": 1500,
         "cost_usd": 0.005996,
-        "seconds": 0.008,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -15217,7 +15218,7 @@
         "tokens_in": 35202,
         "tokens_out": 1500,
         "cost_usd": 0.00618,
-        "seconds": 0.002,
+        "seconds": 0.008,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"
@@ -15675,7 +15676,7 @@
         "tokens_in": 35234,
         "tokens_out": 1500,
         "cost_usd": 0.006185,
-        "seconds": 0.004,
+        "seconds": 0.002,
         "guardrails_fired": [],
         "stopped_by": null,
         "backend": "scripted"

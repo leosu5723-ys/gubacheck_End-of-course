@@ -4,7 +4,7 @@ GubaCheck - THE INVESTIGATION STATE (priors, posterior, stopping rule)
 One Investigation per run. It holds the arithmetic the model must never do
 itself (RULES.md section 0.3):
 
-  scores -> priors     prior_i = score_i / sum(scores)   (all zero -> uniform)
+  scores -> priors     prior_i = max(score_i, 0.5) / sum   (all zero -> uniform)
   test result          weight_i *= {PASS: 3, PARTIAL: 1, FAIL: 0.2}; renormalise
   revision             the model may re-score UNTESTED causes; tested ones keep
                        their evidence-based weight
@@ -41,6 +41,7 @@ class Investigation:
         raw = {c: max(0.0, min(10.0, float(scores.get(c, 0) or 0))) for c in config.CAUSES}
         if self.arm == "exhaustive" or sum(raw.values()) == 0:
             raw = {c: 1.0 for c in config.CAUSES}
+        raw = {c: max(config.SCORE_FLOOR, v) for c, v in raw.items()}   # a zero prior could never recover
         total = sum(raw.values())
         self.weights = {c: raw[c] / total for c in config.CAUSES}
         self._snap("scores")
@@ -50,7 +51,7 @@ class Investigation:
             return {"error": "revision is not allowed in the %s arm" % self.arm}
         untested = [c for c in config.CAUSES if c not in self.tested]
         mass = sum(self.weights[c] for c in untested)
-        raw = {c: max(0.0, min(10.0, float(scores.get(c, 0) or 0))) for c in untested}
+        raw = {c: max(config.SCORE_FLOOR, min(10.0, float(scores.get(c, 0) or 0))) for c in untested}
         if sum(raw.values()) > 0 and mass > 0:
             # redistribute the untested mass according to the new scores
             for c in untested:
