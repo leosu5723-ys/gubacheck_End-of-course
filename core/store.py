@@ -13,7 +13,9 @@ Files (all JSON, written by collectors/ and pipeline/, described in
 data/DATA.md):
     spikes.json        detected forum spikes - the agent's work queue
     posts.json         forum post titles, no user names
-    cninfo.json        official announcements (CNINFO)
+    announcements.json official filings (CNINFO): exact time, type, procedural flag
+    ann_texts.json     text excerpts of filings in watch windows and their RAG context
+    rag_context.json   per filing, the earlier same-company filings retrieved for it
     news.json          flash news and stock news (CLS telegraph, Eastmoney)
     prices.json        daily bars per stock
     stocks.json        name, board, ST flag and aliases per stock
@@ -26,8 +28,8 @@ from core import config
 
 _CACHE = {}
 
-_EMPTY = {"spikes": [], "posts": [], "cninfo": [], "news": [],
-          "prices": {}, "stocks": {}}
+_EMPTY = {"spikes": [], "posts": [], "cninfo": [], "news": [], "prices": {}, "stocks": {},
+          "announcements": [], "ann_texts": {}, "rag_context": {}, "judgements": {}}
 
 
 def load(table):
@@ -67,4 +69,5 @@ def bars(code):
 
 
 def announcement(ann_id):
-    return next((a for a in load("cninfo") if a["ann_id"] == ann_id), None)
+    """One filing with exact time, type and procedural flag."""
+    return next((a for a in load("announcements") if a["ann_id"] == ann_id), None)

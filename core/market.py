@@ -45,6 +45,8 @@ def limit_up_price(prev_close, board, is_st=False):
 # Ordered: the first matching rule wins. Each rule is (type, include, exclude).
 _RULES = [
     ("clarification",        r"澄清|异常波动|风险提示",                 None),
+    ("lockup_expiry",        r"限售股.{0,6}上市流通|解除限售|解禁",       None),
+    ("share_issuance",       r"向特定对象发行|非公开发行|定向增发|配售|发行境外上市外资股|H股.{0,8}(发行|上市|定价)|公开发行价格", None),
     ("buyback",              r"回购.*(方案|预案|计划|报告书)|以集中竞价.*回购", r"注销限制性|回购注销"),
     ("shareholder_decrease", r"减持",                                    None),
     ("shareholder_increase", r"增持",                                    None),

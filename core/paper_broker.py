@@ -80,3 +80,16 @@ def simulate(code, decision_date):
         fill.update(pnl_cny=round(pnl, 2),
                     return_pct=round(100 * pnl / buy_notional, 3))
     return fill
+
+
+def simulate_at(code, trigger_time):
+    """Buy at the first open strictly after trigger_time ("YYYY-MM-DD HH:MM:SS").
+    A filing before 09:30 on a trading day enters that day's open; anything
+    later enters the next trading day's open."""
+    day, hhmm = trigger_time[:10], trigger_time[11:16]
+    bars = store.bars(code)
+    nxt = next((b for b in bars if b["date"] > day or (b["date"] == day and hhmm < "09:30")), None)
+    if nxt is None:
+        return {"status": "rejected", "reason": "no_bar_after_trigger"}
+    prev = [b for b in bars if b["date"] < nxt["date"]]
+    return simulate(code, prev[-1]["date"] if prev else day)

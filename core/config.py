@@ -28,9 +28,9 @@ API_KEY = os.environ.get("OPENROUTER_API_KEY", "")           # never hard-code a
 
 # Prices in US dollars per MILLION tokens for MODEL. Re-check on the vendor
 # page before quoting them; record the date you checked.
-PRICE_IN = 0.15
-PRICE_OUT = 0.60
-PRICES_CHECKED = "YYYY-MM-DD"
+PRICE_IN = float(os.environ.get("GUBACHECK_PRICE_IN", "0.15"))
+PRICE_OUT = float(os.environ.get("GUBACHECK_PRICE_OUT", "0.60"))
+PRICES_CHECKED = os.environ.get("GUBACHECK_PRICES_CHECKED", "YYYY-MM-DD")
 
 # -------------------------------------------------------------------------
 # GUARDRAIL LIMITS. Set from evidence (see EVALS.md: turn distribution),

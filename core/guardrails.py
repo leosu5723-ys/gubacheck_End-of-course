@@ -9,7 +9,8 @@ Code that a model cannot talk its way past. Six checks:
     4. AUTONOMY GATE         hold the paper order for a human yes
     5. HOSTILE-TEXT SCREEN   flag forum/news text that addresses the system
     6. EVIDENCE REQUIRED     no order without an official announcement id
-                             that belongs to the same stock
+                             that belongs to the same stock and is not a
+                             never-bullish type (issuance, reduction, lock-up)
 
 Every stop raises GuardrailStop with a reason, and the decision record
 says which guard fired. A guard that silently returns an empty answer
@@ -99,6 +100,11 @@ class Guardrails:
             self._fire("evidence_required", str(args.get("evidence_id")))
             raise GuardrailStop("evidence_required",
                                 "order needs an official announcement id for the same stock")
+        from core import config
+        if ann.get("type") in config.NEVER_BULLISH_TYPES:
+            self._fire("never_bullish_type", ann.get("type"))
+            raise GuardrailStop("never_bullish_type",
+                                "%s filings can never justify a buy" % ann.get("type"))
 
     def gate(self, action, payload, approve):
         """Autonomy gate, in front of the order and nothing else."""
