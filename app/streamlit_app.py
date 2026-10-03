@@ -78,7 +78,7 @@ st.markdown("""
 # ---------------------------------------------------------------- text
 TXT = {
     "zh": {"tagline": "股吧突然炸了？让 AI 查清原因，并告诉你历史上这类情况之后怎么走",
-           "nav": ["🛰️ 今日雷达", "📈 个股", "🔍 AI 调查", "🧪 回测实验室", "💼 模拟交易", "📊 系统表现"],
+           "nav": ["🛰️ 今日雷达", "📈 个股", "🔍 AI 调查", "💼 模拟交易", "📊 系统表现"],
            "watched": "关注股票", "spikes_m": "近 30 天异动", "last": "最近一次异动", "open": "查看",
            "heat": "股吧热度", "bulls": "看多", "bears": "看空", "spike": "🔥 异动", "calm": "平静",
            "pick_spike": "选择一次异动", "investigate": "🔍 让 AI 调查这次异动", "mode": "调查模式",
@@ -98,7 +98,7 @@ TXT = {
            "positions": "模拟持仓", "empty": "还没有模拟持仓。在调查结论页可以模拟买入。",
            "perf_note": "以下指标都来自 results/ 中的实测文件。", "back": "← 返回"},
     "en": {"tagline": "Forum exploding? Let the AI find out why — and see what happened after similar spikes",
-           "nav": ["🛰️ Radar", "📈 Stock", "🔍 AI investigation", "🧪 Backtest lab", "💼 Paper trading", "📊 Performance"],
+           "nav": ["🛰️ Radar", "📈 Stock", "🔍 AI investigation", "💼 Paper trading", "📊 Performance"],
            "watched": "Watched stocks", "spikes_m": "Spikes, last 30 days", "last": "Latest spike", "open": "Open",
            "heat": "Forum heat", "bulls": "Bullish", "bears": "Bearish", "spike": "🔥 Spike", "calm": "Calm",
            "pick_spike": "Pick a spike", "investigate": "🔍 Let the AI investigate", "mode": "Mode",
@@ -168,7 +168,7 @@ with top[0]:
 
 if "_goto" in ss:                       # navigation requested by a button on the previous run
     ss["nav"] = ss.pop("_goto")
-page = st.radio(" ", range(6), horizontal=True, format_func=lambda i: L["nav"][i],
+page = st.radio(" ", range(5), horizontal=True, format_func=lambda i: L["nav"][i],
                 label_visibility="collapsed", key="nav")
 
 stocks = store.load("stocks")
@@ -367,6 +367,113 @@ def step_card(c, out):
             st.dataframe(pd.DataFrame(out["evidence"]).head(6), hide_index=True, width="stretch")
 
 
+HZ = ["1", "2", "3", "5", "10", "20"]
+
+
+def past_rows(s, cause):
+    """Earlier spikes (strictly before this one) with the same cause: same stock, and all stocks."""
+    p = os.path.join(ROOT, "results", "cause_backtest_rows_gold.json")
+    rows = json.load(open(p)) if os.path.exists(p) else []
+    earlier = [r for r in rows if r["spike_id"][-8:] < s["date"].replace("-", "") and r["cause"] == cause]
+    return [r for r in earlier if r["spike_id"][4:10] == s["stock"]], earlier
+
+
+def suggestion(same, allc):
+    """Rule-based stance from history: needs >= 3 cases; uses D+5 excess."""
+    zh = ss.lang == "zh"
+    base, scope = (same, "本股" if zh else "this stock") if len(same) >= 3 else (allc, "全部股票" if zh else "all stocks")
+    if len(base) < 3:
+        return "⚪", ("观望：同类历史异动不足 3 次，无法给出有依据的建议" if zh else "Wait: fewer than 3 similar past spikes"), base, scope
+    x = [r["excess"]["5"] for r in base if "5" in r["excess"]]
+    m, w = sum(x) / len(x), sum(v > 0 for v in x) / len(x)
+    if m > 1 and w >= 0.6:
+        return "🔴", ("偏多关注：%s同类异动后 5 日平均超额 %+.1f%%，胜率 %.0f%%（n=%d）" if zh else
+                     "Lean positive: %s similar spikes, D+5 mean excess %+.1f%%, win %.0f%% (n=%d)") % (scope, m, 100 * w, len(x)), base, scope
+    if m < -1 and w <= 0.4:
+        return "🟢", ("回避 / 减仓：%s同类异动后 5 日平均超额 %+.1f%%，胜率 %.0f%%（n=%d）" if zh else
+                     "Avoid / reduce: %s similar spikes, D+5 mean excess %+.1f%%, win %.0f%% (n=%d)") % (scope, m, 100 * w, len(x)), base, scope
+    return "⚪", ("观望：%s同类异动后 5 日平均超额 %+.1f%%，胜率 %.0f%%（n=%d），方向不明确" if zh else
+                 "Wait: %s similar spikes, D+5 mean excess %+.1f%%, win %.0f%% (n=%d), no clear edge") % (scope, m, 100 * w, len(x)), base, scope
+
+
+def history_table(s, cause):
+    zh = ss.lang == "zh"
+    same, allc = past_rows(s, cause)
+    st.markdown("**%s**" % ("📜 %s 过去的同类异动（原因：%s）——如果当时次日开盘买入" % (stocks[s["stock"]]["name"], cname(cause)) if zh
+                            else "📜 Earlier spikes of %s with the same cause (%s) — bought at the next open" % (stocks[s["stock"]]["name"], cname(cause))))
+    def table(rows, with_stock):
+        out = []
+        for r in rows:
+            d = {"异动日期" if zh else "spike": r["spike_id"][-8:-4] + "-" + r["spike_id"][-4:-2] + "-" + r["spike_id"][-2:]}
+            if with_stock:
+                d["股票" if zh else "stock"] = stocks[r["spike_id"][4:10]]["name"]
+            for h in HZ:
+                d["D+" + h] = r["returns"].get(h)
+            out.append(d)
+        df = pd.DataFrame(out)
+        if not df.empty:
+            df = df.sort_values(df.columns[0], ignore_index=True)
+            ex = pd.DataFrame([{"D+" + h: r["excess"].get(h) for h in HZ} for r in rows])
+            avg = {c: round(df[c].mean(), 2) for c in df.columns if c.startswith("D+")}
+            exm = {c: round(ex[c].mean(), 2) for c in ex.columns}
+            win = {c: "%.0f%%" % (100 * (df[c] > 0).mean()) for c in df.columns if c.startswith("D+")}
+            first = df.columns[0]
+            df = pd.concat([df, pd.DataFrame([dict({first: "平均收益 %" if zh else "mean %"}, **avg),
+                                              dict({first: "平均超额 %（vs 沪深300）" if zh else "mean excess % (vs CSI 300)"}, **exm),
+                                              dict({first: "胜率" if zh else "win rate"}, **win)])], ignore_index=True)
+            df = df.map(lambda v: "" if v is None or v != v else ("%+.2f" % v if isinstance(v, float) else str(v)))
+        return df
+    if same:
+        st.dataframe(table(same, False), hide_index=True, width="stretch")
+    else:
+        st.caption("本股在此之前没有同类异动" if zh else "No earlier spike of this stock with this cause")
+    with st.expander(("所有股票的同类异动（n=%d）" if zh else "Same cause, all stocks (n=%d)") % len(allc), expanded=not same):
+        if allc:
+            st.dataframe(table(allc, True), hide_index=True, width="stretch")
+    st.caption("收益已扣除佣金、过户费和印花税；只使用本次异动之前的数据；历史异动的原因来自人工标注。" if zh else
+               "Net of fees; only spikes before this one; causes of earlier spikes are my hand labels.")
+    icon, text, base, scope = suggestion(same, allc)
+    st.markdown('<div class="gc-card"><div class="gc-kpil">%s</div><div class="gc-verdict" style="font-size:1.1rem">%s %s</div>'
+                '<div class="gc-gauge">%s</div></div>' % ("规则建议" if zh else "Rule-based suggestion", icon, text,
+                                                          "基于历史统计的研究参考，不构成投资建议" if zh else "Research reference from history, not investment advice"),
+                unsafe_allow_html=True)
+    return same, allc
+
+
+def llm_advice(s, primary, outs, same, allc):
+    """API + RAG: the model writes a suggestion from the cause, evidence, history table and retrieved filings."""
+    from core import backends
+    from pipeline import judge, rag
+    zh = ss.lang == "zh"
+    anns = [a for a in judge.load_announcements() if a["stock"] == s["stock"] and a["time"] < s["onset"] and not a["procedural"]]
+    rag_txt = ""
+    if anns:
+        latest = max(anns, key=lambda a: a["time"])
+        forced, top = rag.retrieve(dict(latest, time=s["onset"]), judge.text_of(latest["ann_id"]))
+        rag_txt = "\n".join(["[%s] %s：%s" % (d["time"][:10], d["title"], rag.clean(judge.text_of(d["ann_id"], 600))[:400]) for _, d in forced]
+                            + ["[%s] %s：%s" % (c["time"][:10], c["title"], c["text"][:300]) for c in top[:3]])
+    ev = "\n".join("%s %s：%s" % (c, o["verdict"], o["note"]) for c, o in outs)
+    hist = lambda rows: "; ".join("%s D+5 %s%%" % (r["spike_id"][-8:], r["returns"].get("5")) for r in rows[-8:]) or "none"
+    prompt = ("你是A股研究助手。根据下面的信息，为个人投资者写一段简短的研究参考（不超过200字）："
+              "1) 这次股吧异动的主要原因；2) 历史上同类异动之后的走势说明了什么（注意样本量）；"
+              "3) 偏多关注 / 观望 / 回避 三选一，并说明理由；4) 主要风险。只依据给出的信息，不要编造。最后注明“不构成投资建议”。\n\n"
+              "股票：%s %s，异动日 %s，帖子 %d（z=%.1f），看多比例 %.0f%%\n主要原因：%s\n检验结果：\n%s\n"
+              "本股同类历史异动：%s\n全部股票同类历史异动：%s\n公司历史资料（RAG，均早于本次异动）：\n%s"
+              % (stocks[s["stock"]]["name"], s["stock"], s["date"], s["posts"], s["z_posts"], 100 * s["bull_share"],
+                 cname(primary), ev, hist(same), hist(allc), rag_txt or "无"))
+    if not zh:
+        prompt += "\n\nAnswer in English."
+    api = ss.api
+    saved = (config.API_KEY, config.MODEL)
+    config.API_KEY, config.MODEL = api["key"], api["model"]
+    try:
+        text, use = backends._live_call([{"role": "user", "content": prompt}], retries=3)
+    finally:
+        config.API_KEY, config.MODEL = saved
+    cost = use.get("prompt_tokens", 0) / 1e6 * api["pin"] + use.get("completion_tokens", 0) / 1e6 * api["pout"]
+    return text, cost
+
+
 def history_chart(cause):
     p = os.path.join(ROOT, "results", "cause_backtest_gold.json")
     if not os.path.exists(p):
@@ -455,8 +562,23 @@ def conclusion_block(s, primary, posterior, outs):
         else:
             st.caption(L["no_filing"])
     with c2:
-        st.markdown("**%s**" % L["history"])
-        history_chart(primary)
+        same, allc = history_table(s, primary)
+        if ss.api.get("key"):
+            if st.button("🧠 " + ("让 AI 结合历史和公司公告（RAG）写建议" if ss.lang == "zh" else "Ask the AI for a suggestion (history + RAG)"),
+                         width="stretch", key="advice_" + s["spike_id"]):
+                with st.spinner("🧠 …"):
+                    try:
+                        text, cost = llm_advice(s, primary, outs, same, allc)
+                        ss["advtxt_" + s["spike_id"]] = (text, cost)
+                    except Exception as e:
+                        st.error(str(e)[:200])
+            if ss.get("advtxt_" + s["spike_id"]):
+                text, cost = ss["advtxt_" + s["spike_id"]]
+                st.info(text)
+                st.caption("US$%.5f" % cost)
+        else:
+            st.caption("在右上角 ⚙️ API 设置 key 后，可让 AI 结合公司公告（RAG）写建议" if ss.lang == "zh"
+                       else "Set a key in ⚙️ API (top right) to get an AI-written suggestion with RAG")
     st.markdown("**%s**" % L["timeline"])
     timeline(s, outs)
 
@@ -712,6 +834,7 @@ def page_perf():
                                text=["%.2f" % v["batch2_macro_f1"] for v in d.values()], textposition="outside"))
         fig.update_layout(title="Filing judge macro-F1 (RAG ablation)", height=320, plot_bgcolor="white", margin=dict(t=40))
         c2.plotly_chart(fig, width="stretch")
+    early_design_chart()
     g = os.path.join(ROOT, "results", "guardrails.json")
     if os.path.exists(g):
         d = json.load(open(g))
@@ -720,86 +843,8 @@ def page_perf():
                      hide_index=True, width="stretch")
 
 
-# ================================================================ BACKTEST LAB
-def page_backtest():
+def early_design_chart():
     zh = ss.lang == "zh"
-    p = os.path.join(ROOT, "results", "cause_backtest_rows_gold.json")
-    if not os.path.exists(p):
-        st.info("—")
-        return
-    rows = json.load(open(p))
-    st.markdown("#### " + ("如果每次股吧异动后买入，会怎样？" if zh else "What if I bought after every forum spike?"))
-    st.caption("在异动日的下一个交易日开盘买入，持有 N 个交易日后收盘卖出；已扣除佣金、过户费和印花税；超额收益 = 个股 − 沪深300。"
-               "异动原因用的是人工标注。" if zh else
-               "Buy at the next open after the spike day, sell at the close N trading days later; net of fees; "
-               "excess = stock − CSI 300. Causes are my hand labels.")
-    c1, c2, c3, c4 = st.columns([3, 2, 2, 2])
-    present = sorted({r["cause"] for r in rows})
-    pick = c1.multiselect("异动原因" if zh else "Cause", present, default=present, format_func=cname)
-    direction = c2.selectbox("讨论方向" if zh else "Direction", ["all", "bullish", "bearish"],
-                             format_func=lambda x: {"all": "全部" if zh else "all", "bullish": "偏多" if zh else "bullish",
-                                                    "bearish": "偏空" if zh else "bearish"}[x])
-    period = c3.selectbox("时期" if zh else "Period", ["all", "observe", "check"],
-                          format_func=lambda x: {"all": "全部" if zh else "all", "observe": "观察期（4 月前）" if zh else "observe (< Apr)",
-                                                 "check": "检验期（4 月起）" if zh else "check (≥ Apr)"}[x])
-    hold = c4.select_slider("持有天数" if zh else "Hold (days)", options=[1, 2, 3, 5, 10, 15, 20], value=5)
-    sel = [r for r in rows if r["cause"] in pick and (direction == "all" or r["direction"] == direction)
-           and (period == "all" or r["period"] == period) and str(hold) in r["excess"]]
-    if not sel:
-        st.warning("没有符合条件的异动" if zh else "No spike matches")
-        return
-    ex = [r["excess"][str(hold)] for r in sel]
-    net = [r["returns"][str(hold)] for r in sel]
-    k = st.columns(4)
-    for col, (v, lab) in zip(k, (("%d" % len(sel), "交易次数" if zh else "trades"),
-                                 ("%+.2f%%" % (sum(net) / len(net)), "平均收益（扣费）" if zh else "mean net return"),
-                                 ("%+.2f%%" % (sum(ex) / len(ex)), "平均超额收益" if zh else "mean excess"),
-                                 ("%.0f%%" % (100 * sum(x > 0 for x in ex) / len(ex)), "跑赢大盘的比例" if zh else "beat the index"))):
-        col.markdown('<div class="gc-card"><div class="gc-kpi">%s</div><div class="gc-kpil">%s</div></div>' % (v, lab),
-                     unsafe_allow_html=True)
-    if len(sel) < 5:
-        st.warning("⚠️ " + L["n_small"])
-    left, right = st.columns([3, 2])
-    with left:
-        st.markdown("**%s**" % ("各持有期的平均超额收益" if zh else "Mean excess return by holding period"))
-        hs = ["1", "2", "3", "5", "10", "15", "20"]
-        fig = go.Figure()
-        for c in pick:
-            sub = [r for r in sel if r["cause"] == c]
-            if sub:
-                ys = [sum(r["excess"].get(h, 0) for r in sub) / len(sub) for h in hs]
-                fig.add_trace(go.Scatter(x=["D+" + h for h in hs], y=ys, mode="lines+markers",
-                                         name="%s (n=%d)" % (cname(c), len(sub)), line=dict(color=COLORS.get(c, "#888"), width=3)))
-        ys = [sum(r["excess"].get(h, 0) for r in sel) / len(sel) for h in hs]
-        fig.add_trace(go.Scatter(x=["D+" + h for h in hs], y=ys, mode="lines", name=("全部所选" if zh else "all selected"),
-                                 line=dict(color="#11181c", width=4, dash="dash")))
-        fig.add_hline(y=0, line_color="#c1c8cd")
-        fig.update_layout(height=360, plot_bgcolor="white", yaxis_title="%", margin=dict(l=10, r=10, t=10, b=10),
-                          legend=dict(orientation="h", y=-0.2))
-        st.plotly_chart(fig, width="stretch")
-    with right:
-        st.markdown("**%s**" % ("逐笔超额收益（持有 %d 天，按时间）" % hold if zh else "Excess return per trade (hold %d d, by date)" % hold))
-        sel_sorted = sorted(sel, key=lambda r: (r["spike_id"][-8:], r["spike_id"]))
-        xs = list(range(1, len(sel_sorted) + 1))
-        ys = [r["excess"][str(hold)] for r in sel_sorted]
-        cum, acc = [], 0.0
-        for y in ys:
-            acc += y
-            cum.append(acc / (len(cum) + 1))
-        hover = ["%s %s<br>%s" % (stocks[r["spike_id"][4:10]]["name"], r["spike_id"][-8:], cname(r["cause"])) for r in sel_sorted]
-        fig = go.Figure([go.Bar(x=xs, y=ys, marker_color=["#e5484d" if y >= 0 else "#30a46c" for y in ys],
-                                hovertext=hover, name="每笔" if zh else "per trade"),
-                         go.Scatter(x=xs, y=cum, mode="lines", line=dict(color="#11181c", width=3),
-                                    name="累计平均" if zh else "running mean")])
-        fig.add_hline(y=0, line_color="#c1c8cd")
-        fig.update_layout(height=360, plot_bgcolor="white", yaxis_title="%", margin=dict(l=10, r=10, t=10, b=10),
-                          legend=dict(orientation="h", y=-0.2), xaxis_title=("第几笔" if zh else "trade #"))
-        st.plotly_chart(fig, width="stretch")
-    with st.expander("逐笔明细" if zh else "Trade list"):
-        st.dataframe(pd.DataFrame([{"spike": r["spike_id"], "cause": cname(r["cause"]), "direction": r["direction"],
-                                    "net %": r["returns"][str(hold)], "excess %": r["excess"][str(hold)]} for r in sel_sorted]),
-                     hide_index=True, width="stretch")
-    st.markdown("---")
     st.markdown("#### " + ("早期方案：出现官方利好公告就买入" if zh else "Earlier design: buy on the first bullish filing"))
     b = os.path.join(ROOT, "results", "backtest_rag.json")
     if os.path.exists(b):
@@ -820,4 +865,6 @@ def page_backtest():
                    "moved from buy signals to attribution.")
 
 
-[page_radar, page_stock, page_investigate, page_backtest, page_paper, page_perf][page]()
+
+
+[page_radar, page_stock, page_investigate, page_paper, page_perf][page]()

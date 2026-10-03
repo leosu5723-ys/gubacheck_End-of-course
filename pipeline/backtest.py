@@ -83,7 +83,11 @@ def trade(code, trigger_time, bars, idx, calendar, meta):
         if xb is None:                      # suspended on the exit day: use the last close before it
             prior = [bars[code][c] for c in calendar[i:i + h + 1] if c in bars.get(code, {})]
             xb = prior[-1]
-        proceeds = shares * xb["close"]
+        held = shares
+        for ex, f in config.SHARE_FACTORS.get(code, {}).items():
+            if d < ex <= xd:                # held through a share conversion: more shares, lower price
+                held *= f
+        proceeds = held * xb["close"]
         net = (proceeds - paper_broker._fees(proceeds, "sell") - cost - buy_fee) / cost
         bench = idx[xd]["close"] / idx[d]["open"] - 1
         out["returns"][h] = round(100 * net, 3)
