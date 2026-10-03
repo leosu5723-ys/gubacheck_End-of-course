@@ -50,12 +50,16 @@ st.set_page_config(page_title="GubaCheck", page_icon="🔎", layout="wide", init
 st.markdown("""
 <style>
 :root { --up:#e5484d; --down:#30a46c; --ink:#11181c; --muted:#687076; --card:#ffffff; --line:#e6e8eb; --brand:#3e63dd; }
-header[data-testid="stHeader"] { display:none; }   /* Streamlit's toolbar covered the logo */
+header[data-testid="stHeader"] { display:none; }
+.st-key-gc-tick button { animation: gcIn .45s cubic-bezier(.2,.8,.2,1), gcOut .45s ease-in 3.5s forwards;
+  border-color:#f3c0c2; background:#fff5f5; color:#c62a2f; font-weight:600; }
+@keyframes gcIn { from { opacity:0; transform:translateY(-14px) scale(.96); } to { opacity:1; transform:none; } }
+@keyframes gcOut { to { opacity:0; transform:translateY(10px); } }   /* Streamlit's toolbar covered the logo */
 .block-container { padding-top: 1.2rem; max-width: 1280px; }
 .gc-hero { display:flex; justify-content:space-between; align-items:center; margin-bottom:.6rem; }
 .gc-logo { font-size:1.6rem; font-weight:800; letter-spacing:-.02em; }
 .gc-logo span { color: var(--brand); }
-.gc-sub { color: var(--muted); font-size:.92rem; }
+.gc-sub { color: var(--muted); font-size:.85rem; white-space:nowrap; }
 .gc-card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:10px;
            box-shadow: 0 1px 2px rgba(0,0,0,.04); }
 .gc-card h4 { margin:0; font-size:1.02rem; }
@@ -133,11 +137,12 @@ def model_catalogue():
     return pricing.models()
 
 
-top = st.columns([5, 1.3, 1])
-with top[2]:
+top = st.columns([3.2, 3.2, 1.1, 0.9], vertical_alignment="center")
+alert_slot = top[1].container()
+with top[3]:
     ss.lang = st.selectbox(" ", ["zh", "en"], index=["zh", "en"].index(ss.lang),
                            format_func=lambda x: "中文" if x == "zh" else "English", label_visibility="collapsed")
-with top[1]:
+with top[2]:
     api = ss.api
     badge = "🟢" if api["key"] and api["ok"] else ("🟡" if api["key"] else "⚪")
     with st.popover("%s ⚙️ API" % badge, width="stretch"):
@@ -200,11 +205,14 @@ def data_sources():
     anns = store.load("announcements")
     tl = store.load("toplist")
     tl = tl.get("rows", []) if isinstance(tl, dict) else tl
-    irm = store.load("irm")
     jud = store.load("judgements")
+    meta_p = os.path.join(config.DATA_DIR, "meta.json")
+    meta = json.load(open(meta_p, encoding="utf-8")) if os.path.exists(meta_p) else {}
+    newest_post = (meta.get("guba_latest_post") or "")[:16]
     return [
         ("💬", "股吧帖子（东方财富）", "Forum posts (Eastmoney Guba)",
-         "%s · %.1f 万帖" % (max(posts_days), n_posts / 1e4), "%s (%.2fM posts, 10 stocks)" % (max(posts_days), n_posts / 1e6)),
+         "最新帖 %s · 统计至 %s · %.1f 万帖" % (newest_post or "—", max(posts_days), n_posts / 1e4),
+         "newest %s · stats to %s · %.2fM posts" % (newest_post or "—", max(posts_days), n_posts / 1e6)),
         ("📰", "股吧资讯文章", "Forum news articles", "%s · %d 篇" % (newest(arts, "time")[:16], len(arts)),
          "%s (%d)" % (newest(arts, "time")[:16], len(arts))),
         ("📈", "A 股日线（AKShare）", "A-share daily bars (AKShare)",
@@ -218,9 +226,6 @@ def data_sources():
          "%s (%d)" % (newest(anns, "time")[:16], len(anns))),
         ("🧾", "公告判断（LLM + RAG）", "Filing judgements (LLM + RAG)", "%d 条" % len(jud), "%d" % len(jud)),
         ("💰", "龙虎榜", "Exchange top list", "%s · %d 条" % (newest(tl, "date"), len(tl)), "%s (%d)" % (newest(tl, "date"), len(tl))),
-        ("🎙️", "董秘问答", "Board-secretary Q&A",
-         ("%s · %d 条" % (newest(irm, "a_time")[:16], len(irm))) if irm else "⚠️ 未加载（0 条）",
-         ("%s (%d)" % (newest(irm, "a_time")[:16], len(irm))) if irm else "⚠️ not loaded (0)"),
     ]
 
 
@@ -245,7 +250,62 @@ def source_bar():
             unsafe_allow_javascript=True)
 
 
-source_bar()
+
+@st.cache_resource
+def refresh_state():
+    """One refresh at a time for the whole server; the worker thread writes here, the page reads."""
+    return {"running": False, "steps": {}, "log": [], "done_at": None, "result": None}
+
+
+def start_refresh():
+    import threading
+    from pipeline import refresh
+    R = refresh_state()
+    R.update(running=True, steps={k: (lab, "pending", "") for k, lab, _ in refresh.STEPS}, log=[], result=None)
+    key, model = ss.api.get("key"), ss.api.get("model")
+
+    def work():
+        saved = (config.API_KEY, config.MODEL)
+        if key:                                  # the judge step uses the user's key, never a stored one
+            config.API_KEY, config.MODEL = key, model
+        try:
+            R["result"] = refresh.run(log=lambda m: R["log"].append(m),
+                                      on_step=lambda k, lab, st_, msg: R["steps"].__setitem__(k, (lab, st_, msg)))
+        finally:
+            config.API_KEY, config.MODEL = saved
+            store.reset()
+            R.update(running=False, done_at=datetime.now().strftime("%H:%M:%S"))
+    threading.Thread(target=work, daemon=True).start()
+
+
+@st.fragment(run_every=2)
+def refresh_panel():
+    from pipeline import refresh
+    R = refresh_state()
+    zh = ss.lang == "zh"
+    ok, why = refresh.ready()
+    if st.button("🔄 " + ("更新数据" if zh else "Update data"), width="stretch", disabled=R["running"] or not ok,
+                 help=(why if not ok else ("增量抓取各数据源并重算异动（约 10–30 分钟，后台运行）" if zh
+                                         else "Incremental fetch of every source, then rebuild (10-30 min, in the background)"))):
+        start_refresh()
+        st.rerun(scope="fragment")
+    if R["steps"] and (R["running"] or R["done_at"]):
+        icon = {"pending": "⏳", "running": "🔄", "ok": "✅", "skipped": "⏭️", "failed": "❌"}
+        with st.popover(("🔄 更新中…" if zh else "🔄 Updating…") if R["running"] else
+                        ("✅ 已更新 %s" % R["done_at"] if zh else "✅ Updated %s" % R["done_at"]), width="stretch"):
+            for lab, st_, msg in R["steps"].values():
+                st.markdown("%s **%s** %s" % (icon.get(st_, "•"), lab, msg))
+    if not R["running"] and R["done_at"] and ss.get("_refresh_seen") != R["done_at"]:
+        ss["_refresh_seen"] = R["done_at"]
+        st.cache_data.clear()
+        st.rerun(scope="app")                   # reload every page with the new snapshot
+
+
+bar_l, bar_r = st.columns([9, 1.4], vertical_alignment="center")
+with bar_l:
+    source_bar()
+with bar_r:
+    refresh_panel()
 if "_goto" in ss:                       # navigation requested by a button on the previous run
     ss["nav"] = ss.pop("_goto")
 ss.setdefault("hist", [])               # where the user has been: (page, stock, spike)
@@ -281,6 +341,52 @@ stocks = store.load("stocks")
 spikes = sorted((s for s in store.load("spikes") if not s.get("synthetic")),
                 key=lambda s: (s["date"], s["spike_id"]))      # by date: spikes[-1] is the latest
 daily = store.load("daily_stats")
+
+
+def spike_label(x):
+    return "🔥 %s %s · z %.1f" % (stocks[x["stock"]]["name"], x["date"][5:], x["z_posts"])
+
+
+def open_spike(sid):
+    ss["_goto"], ss["spike"], ss["stock"], ss["run"] = 2, sid, sid[4:10], None
+    st.rerun(scope="app")
+
+
+def alerts():
+    zh = ss.lang == "zh"
+    last_day = max(x["date"] for x in spikes)
+    recent = [x for x in spikes if x["date"] >= (pd.Timestamp(last_day) - pd.Timedelta(days=30)).strftime("%Y-%m-%d")][::-1]
+    # toast: spikes this session has not seen yet (first visit: the latest day's spikes)
+    if "seen_spikes" not in ss:
+        ss.seen_spikes = {x["spike_id"] for x in spikes if x["date"] != last_day}
+    for x in [x for x in spikes if x["spike_id"] not in ss.seen_spikes][-5:]:
+        st.toast("%s %s%s" % ("新异动" if zh else "New spike", spike_label(x),
+                               "（点右上角提醒查看）" if zh else " (open it from the alert, top right)"),
+                 icon="🚨", duration="long")
+    ss.seen_spikes |= {x["spike_id"] for x in spikes}
+    c1, c2 = st.columns([1.25, 3], vertical_alignment="center")
+    with c1.popover("🔔 %d" % len(recent), width="stretch"):
+        st.caption("近 30 天异动（最新在上）" if zh else "Spikes, last 30 days (newest first)")
+        for x in recent:
+            if st.button(spike_label(x), key="bell_" + x["spike_id"], width="stretch"):
+                open_spike(x["spike_id"])
+    with c2:
+        ticker(recent)
+
+
+@st.fragment(run_every=4)
+def ticker(recent):
+    if not recent:
+        return
+    x = recent[int(time.time() // 4) % len(recent)]
+    with st.container(key="gc-tick"):
+        if st.button(spike_label(x), key="tick_" + x["spike_id"], width="stretch",
+                     help="点击进入 AI 调查" if ss.lang == "zh" else "Open the AI investigation"):
+            open_spike(x["spike_id"])
+
+
+with alert_slot:
+    alerts()
 
 
 def cname(c):

@@ -31,10 +31,12 @@ pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 ```
 
+No key is needed: saved live investigations are replayed. In the app: ⚙️ API takes your own OpenRouter key (kept in the browser session only) and a model from OpenRouter's catalogue with its live price; 🔔 lists the spikes of the last 30 days (new ones pop up as a toast, the ticker cycles through them; click one to open its investigation); the data bar shows Beijing time and how fresh each loaded source is; 🔄 Update data refreshes every source incrementally (`python3 -m pipeline.refresh`; needs the raw data in `data/raw/`, which is not in the repository).
+
 ## Live runs (OpenRouter, costs cents)
 
 ```bash
-export OPENROUTER_API_KEY=...  GUBACHECK_MODEL=deepseek/deepseek-v4.1-flash  GUBACHECK_PRICE_IN=0.13  GUBACHECK_PRICE_OUT=0.52
+export OPENROUTER_API_KEY=...  GUBACHECK_MODEL=deepseek/deepseek-v4.1-flash   # prices are read from OpenRouter; billed cost is recorded per call
 GUBACHECK_BACKEND=live python3 run_eval.py --arm=agent   --workers=4
 GUBACHECK_BACKEND=live python3 run_eval.py --arm=routing --workers=4
 python3 -m pipeline.judge run rag           # filing judge with chunked RAG
@@ -65,7 +67,7 @@ python3 -m pipeline.cost_model
 | `core/agent.py`, `core/backends.py` | The loop (instrumented) and the scripted / live backends |
 | `core/guardrails.py` | Step cap, budget, de-duplication, stop-rule refusal, hostile text, order guards, gate |
 | `core/harness.py`, `run_eval.py` | Arms, grading against hand labels, reports |
-| `pipeline/` | Sentiment (TF-IDF, RoBERTa), filing judge + RAG, anomaly engine, backtests, cost model |
+| `pipeline/` | Sentiment (TF-IDF, RoBERTa), filing judge + RAG, anomaly engine, backtests, cost model, incremental refresh |
 | `collectors/` | Forum, CNINFO, prices, news, context data |
 | `app/streamlit_app.py` | Front end |
 | `data/snapshot/` | Frozen inputs every tool reads; `data/labels/` hand and LLM labels |

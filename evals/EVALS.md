@@ -37,7 +37,7 @@ GUBACHECK_BACKEND=live python3 run_eval.py --arm=routing --workers=4
 | routing (live) | **60.3%** | 0.36 | 64% / 58% | 4.29 | US$0.80 | 0 |
 | agent (live) | 55.9% | **0.37** | 52% / 58% | 4.38 | US$0.88 | 3 |
 
-Costs are tokens × the OpenRouter list price ($0.30 / $1.20 per 1M); the run itself was priced with a stale default by mistake (RULES.md change log). From now on each live call records the billed cost returned by OpenRouter.
+Costs are tokens × the OpenRouter list price ($0.30 / $1.20 per 1M); the run itself was priced with a hand-typed stale $0.13 / $0.52 by mistake (RULES.md change log). From now on each live call records the billed cost returned by OpenRouter.
 
 Paired (same spike, exact McNemar): routing vs exhaustive 11 vs 2 cases right only in one arm (p = 0.02); agent vs exhaustive 8 vs 2 (p = 0.11); **agent vs routing 3 vs 6 (p = 0.51)**.
 

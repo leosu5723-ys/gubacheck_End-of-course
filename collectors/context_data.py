@@ -7,10 +7,6 @@ GubaCheck - CONTEXT DATA FOR THE CAUSE TOOLS (C, D, E, G, A)
   us         daily bars of the US peers (Sina)                                -> us_prices.jsonl
   chinext    ChiNext index daily                                              -> chinext.json
   toplist    the exchange top list (龙虎榜) for the whole window, month by month -> toplist.jsonl
-  irm        board-secretary Q&A: CNINFO 互动易 (Shenzhen listings) and SSE e互动
-             (Shanghai listings) -> irm.jsonl. These feeds only return recent
-             questions (about three months), so cause A uses filings for the
-             earlier part of the year.
 =========================================================================
 """
 import json
@@ -85,29 +81,7 @@ def toplist():
             time.sleep(1)
 
 
-def irm():
-    import akshare as ak
-    watch = [w["code"] for w in json.load(open(os.path.join(ROOT, "data", "watchlist.json")))]
-    with open(os.path.join(RAW, "irm.jsonl"), "w", encoding="utf-8") as fh:
-        for code in watch:
-            try:
-                if code.startswith(("0", "3")):
-                    df = ak.stock_irm_cninfo(symbol=code)
-                    for _, r in df.iterrows():
-                        fh.write(json.dumps({"stock": code, "q_time": str(r["提问时间"]), "a_time": str(r["更新时间"]),
-                                             "question": str(r["问题"]), "answer": str(r["回答内容"])}, ensure_ascii=False) + "\n")
-                else:
-                    df = ak.stock_sns_sseinfo(symbol=code)
-                    cols = list(df.columns)
-                    for _, r in df.iterrows():
-                        fh.write(json.dumps({"stock": code, "raw": {c: str(r[c]) for c in cols}}, ensure_ascii=False) + "\n")
-                print("irm", code, len(df), flush=True)
-            except Exception as e:
-                print("irm", code, "failed", str(e)[:100], flush=True)
-            time.sleep(1)
-
-
 if __name__ == "__main__":
-    for step in (sys.argv[1:] or ["chinext", "us", "peers", "toplist", "irm"]):
+    for step in (sys.argv[1:] or ["chinext", "us", "peers", "toplist"]):
         globals()[step]()
     print("CONTEXT DONE")
