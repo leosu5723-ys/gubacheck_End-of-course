@@ -27,11 +27,15 @@
 **Output:** an attribution report (the AI investigation page of the app), followed by this stock's earlier spikes with the same cause (D+1 … D+20 returns table) and a suggestion (rule-based, or written by the model with RAG over the company's filings)
 
 ```
-SPK-688256-20260203  寒武纪  posts 2,249 (z 5.0), bullish 21% (z −1.8), onset 2026-02-03 09:00
-clues → priors      C 33% · B 28% · G 22% · A 17%   (from the most-read posts)
-tested              C FAIL (peers flat) → B PARTIAL (articles, but after onset) → G FAIL → A PARTIAL → D FAIL
-stopped             5 tests (cap)           primary  H (unexplained)
-history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300 (n = 54)
+SPK-300308-20260728  中际旭创 (Innolight)  posts 3,136 (z 2.3), bullish 25% (z −1.8), onset 2026-07-28 09:00
+clues → priors      A 24% · D 21% · C 15% · G 15% · B 12% · E 9% · F 6%      (LLM scores of the most-read posts)
+tested              A PARTIAL → D PASS (US peers −5…−7% overnight, gap z −3.3) → C PASS (4 of 7 peers) → G PARTIAL
+stopped             a cause passed and untested causes total 16% (< 20%), 4 tests
+conclusion          primary D overseas read-through (36%), secondary C sector          my label: C (a miss, see EVALS)
+same cause, this stock    2026-05-12: D+1 … D+20 net returns, one row per earlier spike
+same cause, all stocks    n = 3, D+5 mean excess +8.3%, 3 of 3 positive
+suggestion          rule: "lean positive" (all-stock history, n = 3 — small); optional LLM + RAG note
+cost                live routing run, DeepSeek V4.1 Flash, about US$0.002 billed
 ```
 
 ## Architecture
@@ -79,7 +83,7 @@ history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300
 | Guardrail checklist | 10 / 10 | **10 / 10** | results/guardrails.json |
 | Cost per spike (live, deepseek-v4.1-flash, **billed**) | < US$0.01 | **reached: ≤ US$0.009** (all US$1.23 billed on the key ÷ 136 full-arm runs — an upper bound); single runs billed US$0.0014–0.0019. Tokens × list price would say US$0.0129 — prompt caching makes that wrong | results/billing.json |
 | Model comparison, one spike (SPK-300308-20260728) | behaviour and cost per run | DeepSeek V4.1 Flash D ✗ (US$0.0014–0.0019), Claude Haiku 4.5 C ✓ (US$0.048–0.051, ~30× dearer), DeepSeek V4 Flash C ✓ / D ✗ (US$0.004); no model revised | results/model_single_*.json |
-| Unit tests | all pass | **12 / 12** | tests/ |
+| Unit tests | all pass | **13 / 13** | tests/ |
 
 ## Cost to serve (results/cost_model.json)
 

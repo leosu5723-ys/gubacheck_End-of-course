@@ -35,6 +35,7 @@
 ## 5. Evaluation and its limits (~250 words) — critique
 
 - Attribution accuracy vs my labels: agent 55.9%, routing 60.3% (observe 64% / check 58%); always-H 7.4%; **always-B 69.1% beats every arm** — accuracy is the wrong headline on a 47/68-B label set; macro-F1 0.37 vs 0.12 is the honest one. D 0/3 and F 0/2 never recovered.
+- **The "media" evidence is not media** (the most important limitation): free news feeds keep no history, so cause B uses the forum's long posts — mostly users' own essays, not press coverage. My labels were made from the same bundle, so the 47/68 B labels and the 69% always-B baseline may partly be produced by the proxy itself; the tool and the gold share one weak source and accuracy cannot show it. Professional archives that reach back a year are paid.
 - **The cause tested first wins**: when several causes PASS, each is ×3, so the order of the opening scores decides the primary — in the model comparison every run concluded whichever of C / D it tested first. The posterior separates passed from failed causes, not strong from weak evidence. Next: rank passed causes by evidence strength (z-size, timing).
 - Main error B → H: the B tool gave PARTIAL and the PASS-only rule cannot promote it; when model and code disagreed, the model was right 7/12 (routing), code 1/12. The rule I wrote to keep the model honest is now the bottleneck.
 - 45 of 136 first live cases crashed on one extra argument (`spike_id` to `score_causes`) — an interface-robustness failure, fixed in the tool layer, re-run from checkpoints.
@@ -46,7 +47,7 @@
 ## 6. Responsible use and what next (~150 words)
 
 - Intended use / non-use; OWASP LLM01/06/08; IMDA human at the action; PDPA.
-- Next: price-driven category (23 of 68 spikes had |return z| ≥ 2 that no cause covers), intraday onset vs evidence, more labellers, live adding of stocks, news archive.
+- Next: a paid news archive to replace the forum proxy for B, then relabel; price-driven category (23 of 68 spikes had |return z| ≥ 2 that no cause covers), intraday onset vs evidence, more labellers, live adding of stocks, news archive.
 
 ---
 
