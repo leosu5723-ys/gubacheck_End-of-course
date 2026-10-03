@@ -17,9 +17,11 @@ RAG: the knowledge base is the same company's earlier filings
 (data/raw/ann_text/ + titles in data/raw/announcements.jsonl). For an
 announcement published at time T, only documents published BEFORE T are
 eligible - retrieval never sees the future. Context = the most recent
-periodic report's key-figures section + the 3 most similar earlier
-filings (character-bigram TF-IDF cosine; terminology repeats within one
-company's filings, so lexical retrieval is enough and costs nothing).
+periodic report's key-figures section + the latest earlier earnings
+forecast/express (a final report is only news relative to what was
+pre-announced) + the most similar earlier filings (character-bigram
+overlap; terminology repeats within one company's filings, so lexical
+retrieval is enough and costs nothing). 3 retrieved filings in total.
 
 Model calls go through core/backends._live_call (OpenRouter); token usage
 returned by the API is recorded, so costs are measured. Results are
@@ -81,6 +83,10 @@ def retrieve(ann, rows, k=3):
                and r["ann_id"] != ann["ann_id"]]
     periodic = [r for r in earlier if r.get("periodic") and r.get("has_text")]
     latest = max(periodic, key=lambda r: r["time"]) if periodic else None
+    # The most recent earnings forecast / express is always included: a final
+    # report is only news relative to what was already pre-announced.
+    fc = [r for r in earlier if r.get("has_text") and re.search(r"业绩预告|业绩快报|业绩预增", r["title"])]
+    forecast = max(fc, key=lambda r: r["time"]) if fc else None
     q = _bigrams(ann["title"] + text_of(ann["ann_id"], 600))
     scored = []
     for r in earlier:
@@ -89,7 +95,9 @@ def retrieve(ann, rows, k=3):
         d = _bigrams(r["title"] + text_of(r["ann_id"], 400))
         if q and d:
             scored.append((len(q & d) / (len(q) * len(d)) ** 0.5, r))
-    top = [r for _, r in sorted(scored, key=lambda x: -x[0])[:k]]
+    top = [r for _, r in sorted(scored, key=lambda x: -x[0]) if r is not forecast][:k]
+    if forecast:
+        top = [forecast] + top[:k - 1]
     return latest, top
 
 
@@ -195,6 +203,35 @@ def cmd_sample(n):
     print("wrote %d rows (%d from watch windows) to data/labels/ann_to_label.csv" % (len(pick), min(n // 2, len(a))))
 
 
+QUOTA_BATCH2 = {"earnings_forecast": 11, "earnings_preincrease": 4, "periodic": 5, "buyback": 3,
+                "shareholder_increase": 2, "major_contract": 2, "restructuring": 1,
+                "shareholder_decrease": 1, "clarification": 1}
+
+
+def cmd_sample2():
+    """Batch 2, the held-out test set: substantive filings only, weighted to
+    earnings pre-announcements. Batch 1 (40 random filings, 37 neutral)
+    shaped the procedural filter, so it is not used as the main test."""
+    import csv as _csv
+    rows = load_announcements()
+    b1 = {r["ann_id"] for r in _csv.DictReader(open(os.path.join(LABELS, "ann_labelled.csv"), encoding="utf-8-sig"))}
+    pool = [r for r in rows if not r["procedural"] and r.get("has_text") and r["ann_id"] not in b1]
+    rng = random.Random(62012)
+    pick = []
+    for kind, n in QUOTA_BATCH2.items():
+        cand = [r for r in pool if (r["periodic"] if kind == "periodic" else (r["type"] == kind and not r["periodic"]))]
+        pick += rng.sample(cand, min(n, len(cand)))
+    rng.shuffle(pick)
+    with open(os.path.join(LABELS, "ann_to_label_batch2.csv"), "w", encoding="utf-8-sig", newline="") as fh:
+        w = _csv.writer(fh)
+        w.writerow(["ann_id", "stock", "name", "time", "title", "text_excerpt", "company_context", "label", "note"])
+        for r in pick:
+            ctx, _ = context_block(r, rows)
+            w.writerow([r["ann_id"], r["stock"], r["name"], r["time"], r["title"],
+                        text_of(r["ann_id"], 1200), ctx[:2000], "", ""])
+    print("wrote %d rows to data/labels/ann_to_label_batch2.csv" % len(pick))
+
+
 def cmd_eval():
     sys.path.insert(0, ROOT)
     from pipeline.sentiment import bootstrap_ci
@@ -228,7 +265,9 @@ def _mf1(g, p):
 
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    if cmd == "sample":
+    if cmd == "sample2":
+        cmd_sample2()
+    elif cmd == "sample":
         cmd_sample(int(sys.argv[2]) if len(sys.argv) > 2 else 40)
     elif cmd == "run":
         lim = [int(a.split("=")[1]) for a in sys.argv if a.startswith("--limit=")]
