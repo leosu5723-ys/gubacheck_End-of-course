@@ -110,9 +110,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -227,9 +227,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.26}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.17}"
    }
   }
  ],
@@ -344,9 +344,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.26, 'F': 0.05, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.52, 'C': 0.17, 'D': 0.03, 'E': 0.17, 'F': 0.03, 'G': 0.03}"
    }
   }
  ],
@@ -578,9 +578,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -695,9 +695,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.03, 'G': 0.03}"
    }
   }
  ],
@@ -812,9 +812,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.17, 'G': 0.03}"
    }
   }
  ],
@@ -929,9 +929,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -1163,9 +1163,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}"
    }
   }
  ],
@@ -1280,9 +1280,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}"
    }
   }
  ],
@@ -1514,9 +1514,11 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "F",
-    "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.14, 'B': 0.14, 'C': 0.14, 'D': 0.14, 'E': 0.03, 'F': 0.41, 'G': 0.03}"
+    "primary": "B",
+    "secondary": [
+     "F"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.11, 'B': 0.32, 'C': 0.11, 'D': 0.11, 'E': 0.02, 'F': 0.32, 'G': 0.02}"
    }
   }
  ],
@@ -1982,9 +1984,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.2, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -2103,9 +2105,10 @@
     "secondary": [
      "D",
      "E",
+     "B",
      "F"
     ],
-    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.07, 'C': 0.2, 'D': 0.2, 'E': 0.2, 'F': 0.2, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.06, 'B': 0.18, 'C': 0.18, 'D': 0.18, 'E': 0.18, 'F': 0.18, 'G': 0.06}"
    }
   }
  ],
@@ -2220,9 +2223,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.17, 'G': 0.03}"
    }
   }
  ],
@@ -2571,9 +2574,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -2805,9 +2808,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}"
    }
   }
  ],
@@ -3275,9 +3278,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -3392,9 +3395,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -3509,9 +3512,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.2, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -3743,9 +3746,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.03, 'D': 0.17, 'E': 0.03, 'F': 0.03, 'G': 0.03}"
    }
   }
  ],
@@ -3860,9 +3863,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -4211,9 +4214,11 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "F",
-    "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.03, 'D': 0.03, 'E': 0.15, 'F': 0.45, 'G': 0.03}"
+    "primary": "B",
+    "secondary": [
+     "F"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.12, 'B': 0.35, 'C': 0.02, 'D': 0.02, 'E': 0.12, 'F': 0.35, 'G': 0.02}"
    }
   }
  ],
@@ -4446,8 +4451,10 @@
    "thought": "Stop condition held.",
    "final": {
     "primary": "C",
-    "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.45, 'D': 0.03, 'E': 0.15, 'F': 0.03, 'G': 0.03}"
+    "secondary": [
+     "B"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.12, 'B': 0.35, 'C': 0.35, 'D': 0.02, 'E': 0.12, 'F': 0.02, 'G': 0.02}"
    }
   }
  ],
@@ -4562,9 +4569,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
    }
   }
  ],
@@ -5264,9 +5271,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -5849,9 +5856,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.33}"
+    "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.2}"
    }
   }
  ],
@@ -5966,9 +5973,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -6083,9 +6090,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
    }
   }
  ],
@@ -6200,9 +6207,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.33, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.2, 'G': 0.04}"
    }
   }
  ],
@@ -6435,8 +6442,10 @@
    "thought": "Stop condition held.",
    "final": {
     "primary": "C",
-    "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.45, 'D': 0.03, 'E': 0.15, 'F': 0.03, 'G': 0.03}"
+    "secondary": [
+     "B"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.12, 'B': 0.35, 'C': 0.35, 'D': 0.02, 'E': 0.12, 'F': 0.02, 'G': 0.02}"
    }
   }
  ],
@@ -6902,9 +6911,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -7019,9 +7028,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
    }
   }
  ],
@@ -7254,8 +7263,10 @@
    "thought": "Stop condition held.",
    "final": {
     "primary": "G",
-    "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.17, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.52}"
+    "secondary": [
+     "B"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.13, 'B': 0.38, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.38}"
    }
   }
  ],
@@ -7487,9 +7498,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+    "reason": "tested CDEGABF; posterior {'A': 0.2, 'B': 0.6, 'C': 0.04, 'D': 0.04, 'E': 0.04, 'F': 0.04, 'G': 0.04}"
    }
   }
  ],
@@ -7723,9 +7734,9 @@
   {
    "thought": "Stop condition held.",
    "final": {
-    "primary": "H",
+    "primary": "B",
     "secondary": [],
-    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.52, 'C': 0.17, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.03}"
    }
   }
  ],

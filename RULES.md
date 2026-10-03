@@ -26,12 +26,14 @@ A spike is the first day of an episode: no spike in the previous 5 calendar days
 ### 0.2 Causes and their fixed interfaces
 *Change 0.2 (2026-10-03, before any label or agent run): B was first "any matching article before onset"; on the 68 spikes it passed 55 times because heavily traded stocks have articles every day, so B now uses an article-count z-score like every other test. G uses |net buy| / turnover against the market-wide 95th percentile because daily turnover for a turnover percentile is not in the free price feed.*
 
+*Change 0.2-3 (2026-10-04, after hand labels, using the OBSERVE period only):* with B as above (72 h before onset), even the exhaustive arm reached 13 % accuracy, because I labelled 47 of 68 spikes B while the tool passed B once: media coverage and the forum surge happen **together**, not one before the other. On the 25 OBSERVE spikes only, the two-day count z (D−1 … D) separated my B labels from the rest (median 2.65 vs 0.79); thresholds 1.5 and 2.0 performed identically there, so the global z ≥ 2 was kept. On the 43 held-out CHECK spikes: recall 0.64, precision 0.78. Consequence: B now means "coverage and discussion surged together", not "coverage caused the discussion".
+
 Seven causes, one tool each, identical input (`spike_id`) and output (`verdict` PASS / PARTIAL / FAIL computed by code, metrics, evidence, timing, cost). **H (unexplained) is never scored or tested; it is the outcome when nothing passes.**
 
 | Cause | PASS | PARTIAL | Timing rule |
 |---|---|---|---|
 | A company official (CNINFO filing, board-secretary reply) | a filing or reply in [D−3, onset] judged in the spike's direction | exists but after onset, or neutral | evidence time < onset |
-| B company rumour / media | company-specific articles in the 72 h before onset, count z ≥ 2 against the stock's own rolling 3-day counts | articles exist but not abnormal, or only after onset | evidence time < onset |
+| B company rumour / media | company-specific articles on D−1 … D, count z ≥ 2 against the stock's own two-day counts | articles exist but not abnormal | **concurrent** (spike day and the day before) — see change 3 |
 | C sector co-movement | more than half of the stock's peer group have \|z\| ≥ 2 return that day | at least one peer \|z\| ≥ 2 | same day |
 | D overseas read-through | a US peer \|z\| ≥ 2 on the last US session before D's open **and** the stock's opening gap z ≥ 2 | US peer abnormal, no opening gap | US close < A-share open |
 | E market | CSI 300 or ChiNext \|z\| ≥ 2 | 1.5 ≤ \|z\| < 2 | same day |
