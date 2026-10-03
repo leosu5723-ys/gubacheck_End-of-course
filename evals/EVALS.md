@@ -6,7 +6,7 @@ Every number in PRODUCT.md comes from a file in `results/`. Each evaluation belo
 
 **Tests:** for each of the 68 spikes, does the run conclude the same primary cause (A–H) as my hand label?
 
-**Gold:** I labelled every spike from `evals/cause_review.md`, an evidence bundle per spike (most-read posts, onset hour, price and gap z-scores, peers, US peers, indices, top list, filings, articles). The bundle shows raw evidence only; the tools' PASS/FAIL verdicts are deliberately hidden so the label is my judgement, not a copy of the tools. [Labelling date, number labelled, and how: fill in.]
+**Gold:** I labelled every spike from `evals/cause_review.md`, an evidence bundle per spike (most-read posts, onset hour, price and gap z-scores, peers, US peers, indices, top list, filings, articles). The bundle shows raw evidence only; the tools' PASS/FAIL verdicts are deliberately hidden so the label is my judgement, not a copy of the tools. All 68 spikes were labelled by hand on 2026-10-03/04, before any live run was graded; gold was not changed after seeing model output.
 
 **Arms** (RULES.md 0.4), same spikes, same tools, same stop rule:
 
@@ -25,6 +25,25 @@ python3 run_eval.py --arm=exhaustive
 GUBACHECK_BACKEND=live python3 run_eval.py --arm=agent   --workers=4
 GUBACHECK_BACKEND=live python3 run_eval.py --arm=routing --workers=4
 ```
+
+**Results** (68 spikes, one live trial each, model deepseek/deepseek-v4.1-flash, 2026-10-04):
+
+| Arm | Accuracy | Macro-F1 | Observe / check | Tests per spike | Cost (68 spikes) | Premature stops |
+|---|---|---|---|---|---|---|
+| always-B (majority) | 69.1% | 0.12 | — | — | — | — |
+| always-H | 7.4% | — | — | — | — | — |
+| keyword | 22.1% | 0.17 | 16% / 26% | 4.59 | no LLM | 36 |
+| exhaustive | 47.1% | 0.22 | 52% / 44% | 7.00 | no LLM | 0 |
+| routing (live) | **60.3%** | 0.36 | 64% / 58% | 4.29 | US$0.35 | 0 |
+| agent (live) | 55.9% | **0.37** | 52% / 58% | 4.38 | US$0.38 | 3 |
+
+Paired (same spike, exact McNemar): routing vs exhaustive 11 vs 2 cases right only in one arm (p = 0.02); agent vs exhaustive 8 vs 2 (p = 0.11); **agent vs routing 3 vs 6 (p = 0.51)**.
+
+What the numbers say:
+- **Accuracy alone is misleading.** 47 of 68 labels are B, so "always B" scores 69%, above every arm. Macro-F1 shows the arms do separate causes (0.37 vs 0.12), but D (0/3) and F (0/2) are never recovered by any arm.
+- **The agent did not behave as an agent.** It used `revise_scores` in 1 of 68 runs, so in practice it was routing, and it scored slightly worse (not significant). On this data, routing is the right rung.
+- **The main error is B → H.** The B tool returned PARTIAL on 13 of the agent's 14 gold-B spikes concluded H; under the PASS-only rule a PARTIAL cannot become primary. When the model's stated primary differed from the code's posterior primary, the model was right 4 / 7 (agent) and 7 / 12 (routing) times, and the code 0 and 1 times — the model reads PARTIAL evidence better than the strict rule.
+- A failed first run (45 of 136 cases crashed because the model passed an unexpected `spike_id` to `score_causes`) was fixed in the tool layer and only the failed cases were re-run from the checkpoints.
 
 **What this cannot tell:** whether my label is right — it is one person's judgement from public evidence; live runs are one trial per spike; 68 spikes over eight causes leave some causes with a handful of cases.
 

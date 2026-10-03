@@ -21,18 +21,20 @@
 
 - Workflow test: the sequence of tests is chosen from clues in the posts; the number of tests varies (stop rule). Ground truth at every step: code-graded z-scores and timestamps.
 - What stays code: anomaly detection, all verdicts, priors/posterior, stop rule, returns, costs. Model: clue scoring, next test, revision, conclusion, filing judgement.
-- Fixed interfaces risk turning it into routing (rung 3); what keeps it an agent is revision after evidence — **measured**: agent vs routing vs keyword vs exhaustive: accuracy [ ], tests per spike [ ] vs 7.00, cost [ ].
-- Honest outcome either way: if routing matches the agent, routing is the right rung.
+- Fixed interfaces risk turning it into routing (rung 3); what keeps it an agent is revision after evidence — **measured**: accuracy agent 55.9% / routing 60.3% / exhaustive 47.1% / keyword 22.1%; tests per spike 4.38 / 4.29 / 7.00 / 4.59; cost US$0.0056 / 0.0051 per spike. **The agent revised in 1 of 68 runs**, and agent vs routing is 3 vs 6 paired wins (p = 0.51). Routing beats exhaustive with fewer tests (11 vs 2, p = 0.02).
+- Honest outcome: routing matched the agent, so routing is the right rung for this task; the revise tool was available but almost never used. The LLM's value is in the ranking (fewer tests, better than exhaustive) and in reading PARTIAL evidence, not in revision.
 
 ## 4. Build vs buy and cost (~200 words) — Rubric 2, Class 5
 
 - Sentiment: rented teacher once (GPT-6, 3,000 labels; 0.79 Macro-F1 on my labels), owned student (RoBERTa 0.73; TF-IDF 0.60; lexicon 0.32) — 1M posts at zero marginal cost, daily bullish-share bias +0.3 pts.
 - Filing judge: title rule 0.51 → LLM 0.91 → LLM + RAG 0.82 with **0 false-bullish** (text mode: 4/52). RAG's forced same-period forecast fixed the "already pre-announced" errors (e.g. a 2025 express within its January forecast range); removing it drops Macro-F1 to 0.73. Trade-off: RAG became conservative on two large ship contracts.
-- Cost to serve: US$0.00088 per filing, ~US$0.004 per spike [live: ]; at 10/100/1,000 stocks the model bill is US$0.06/0.61/6.1 a month, but manual re-checks of wrong attributions make it ~US$10/104/1,036 → the lever is accuracy, not a cheaper model.
+- Cost to serve: US$0.00088 per filing, US$0.0056 per spike measured live (deepseek-v4.1-flash, US$0.38 for 68 spikes); at 10/100/1,000 stocks the model bill is US$0.07/0.69/6.9 a month, but manual re-checks of wrong attributions make it ~US$9/92/916 → the lever is accuracy, not a cheaper model.
 
 ## 5. Evaluation and its limits (~250 words) — critique
 
-- Attribution accuracy vs my labels [ ], always-H baseline [ ], by period observe/check [ ].
+- Attribution accuracy vs my labels: agent 55.9%, routing 60.3% (observe 64% / check 58%); always-H 7.4%; **always-B 69.1% beats every arm** — accuracy is the wrong headline on a 47/68-B label set; macro-F1 0.37 vs 0.12 is the honest one. D 0/3 and F 0/2 never recovered.
+- Main error B → H: the B tool gave PARTIAL and the PASS-only rule cannot promote it; when model and code disagreed, the model was right 7/12 (routing), code 1/12. The rule I wrote to keep the model honest is now the bottleneck.
+- 45 of 136 first live cases crashed on one extra argument (`spike_id` to `score_causes`) — an interface-robustness failure, fixed in the tool layer, re-run from checkpoints.
 - What the numbers cannot say: one labeller; 68 spikes over 8 causes; one live trial per spike; labels written from the same evidence the tools see.
 - Rough edges found: B passed 55/68 in its first form (heavy stocks always have articles) → rewritten as a z-score; intraday rumour spikes fail the timing rule because the onset is detected before the rumour spreads; board-secretary Q&A only for recent months; first sentiment test labels were LLM-made and withdrawn; forum access check and a silent-failure collector.
 - Two reproduced failures: de-duplication removed → evidence counted five times, no error; US-before-open rule removed → 15/68 D verdicts change, one FAIL becomes PASS.

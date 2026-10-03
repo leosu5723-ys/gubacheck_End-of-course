@@ -72,10 +72,12 @@ history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300
 | Daily bullish-share bias | within ±3 pts | **+0.3 pts** (40.0% vs 39.7%) | results/sentiment_eval.json |
 | Filing judge Macro-F1 (30 hand-labelled filings) | > title rule | text **0.91**, RAG **0.82**; title rule 0.51 | results/judge_eval.json |
 | Filing judge false-bullish (non-bullish filing called bullish) | lowest | RAG **0 / 52**; text 4 / 52 | results/judge_eval.json |
-| Primary-cause accuracy, agent arm | > always-H baseline and > keyword arm | *pending hand labels and live run* | results/results_agent_live_*.json |
-| Cause tests per spike, agent vs exhaustive | fewer at equal accuracy | *pending* vs 7.00 | results/results_*.json |
+| Primary-cause accuracy, agent arm (68 hand labels) | > always-H baseline and > keyword arm | **55.9%** (always-H 7.4%, keyword 22.1%); but **below always-B 69.1%** | results/results_agent_live_*.json |
+| Primary-cause macro-F1, agent arm | > always-B (0.12) | **0.37** (routing 0.36, exhaustive 0.22, keyword 0.17) | results/results_*.json |
+| Cause tests per spike, agent vs exhaustive | fewer at equal accuracy | **4.38** vs 7.00, accuracy 55.9% vs 47.1% | results/results_*.json |
+| Agent better than routing (revision adds value) | agent > routing | **not reached**: 55.9% vs 60.3%, paired 3 vs 6 cases (p = 0.51); the agent revised in 1 of 68 runs | results/results_*_live_*.json |
 | Guardrail checklist | 10 / 10 | **10 / 10** | results/guardrails.json |
-| Cost per spike (live) | < US$0.01 | *pending live*; scripted estimate US$0.004 | results/cost_model.json |
+| Cost per spike (live, deepseek-v4.1-flash) | < US$0.01 | **US$0.0056** agent, US$0.0051 routing | results/cost_model.json |
 | Unit tests | all pass | **12 / 12** | tests/ |
 
 ## Cost to serve (results/cost_model.json)
@@ -84,9 +86,9 @@ history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300
 |---|---|
 | Sentiment | US$0 per 1,000 posts (local, ~414 posts/s) |
 | Filing judgement | US$0.00088 per filing (measured, 468 calls) |
-| Attribution | US$0.004 per spike (scripted estimate until the live run) |
+| Attribution | US$0.0056 per spike (live agent arm, 68 spikes, US$0.38 in total) |
 | Volume | 0.62 spikes and 3.9 substantive filings per stock-month |
-| 10 / 100 / 1,000 stocks | model US$0.06 / 0.61 / 6.1 a month; **with manual re-checks of wrong attributions ~US$10 / 104 / 1,036** |
+| 10 / 100 / 1,000 stocks | model US$0.07 / 0.69 / 6.9 a month; **with manual re-checks of wrong attributions ~US$9 / 92 / 916** |
 
 The model bill is negligible; the cost that scales is a person re-checking wrong attributions. The lever is accuracy, not a cheaper model.
 
