@@ -7,7 +7,7 @@ The verdict is computed HERE, by code, from z-scores and timestamps; the
 model never decides whether a test passed. All abnormality tests use
 z-scores against the series' own previous 120 trading days.
 
-  A company official   filings (and board-secretary replies) in [D-3, onset)
+  A company official   CNINFO filings in [D-3, onset)
   B media / rumour     company-specific articles on D-1..D: count z >= 2 against the
                        stock's own two-day counts (concurrent, see check_B)
   C sector             peer returns on D: share of peers with |z| >= 2, same sign
@@ -99,14 +99,6 @@ def check_A(spike_id):
         item = {"id": a["ann_id"], "time": a["time"], "title": a["title"], "label": j["label"],
                 "reason": j.get("reason", "")[:120]}
         (before if a["time"] < s["onset"] else after).append(item)
-    for q in store.load("irm"):
-        if q.get("stock") != s["stock"]:
-            continue
-        t = q.get("a_time") or ""
-        if lo <= t[:10] <= s["date"]:
-            item = {"id": "irm", "time": t, "title": "董秘回复: " + q.get("question", "")[:40],
-                    "label": "reply", "reason": q.get("answer", "")[:120]}
-            (before if t < s["onset"] else after).append(item)
     want = {1: "bullish", -1: "bearish"}.get(sign)
     directional = [e for e in before if e["label"] in ("bullish", "bearish")]
     if any(e["label"] == want for e in directional):

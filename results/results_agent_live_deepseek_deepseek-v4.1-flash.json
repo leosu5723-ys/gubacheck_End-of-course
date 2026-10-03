@@ -315,7 +315,7 @@
     ],
     "stopped_by": "stop_rule",
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -543,7 +543,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -837,7 +837,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -1123,7 +1123,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -1386,7 +1386,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -1648,7 +1648,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -1881,7 +1881,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -2146,7 +2146,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -2431,7 +2431,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -2719,7 +2719,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -2990,7 +2990,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -3273,7 +3273,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -3531,7 +3531,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -3820,7 +3820,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -4115,7 +4115,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -4348,7 +4348,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -4635,7 +4635,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -4871,7 +4871,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -5132,7 +5132,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -5414,7 +5414,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -5695,7 +5695,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -5921,7 +5921,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -6209,7 +6209,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -6496,7 +6496,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -6723,7 +6723,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -6989,7 +6989,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -7276,7 +7276,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -7318,7 +7318,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -7607,7 +7607,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -7870,7 +7870,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -8149,7 +8149,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -8413,7 +8413,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -8677,7 +8677,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -8965,7 +8965,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -9248,7 +9248,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -9508,7 +9508,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -9786,7 +9786,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -10012,7 +10012,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -10233,7 +10233,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -10520,7 +10520,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -10794,7 +10794,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -11075,7 +11075,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -11305,7 +11305,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -11597,7 +11597,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -11827,7 +11827,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -12113,7 +12113,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -12403,7 +12403,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -12689,7 +12689,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -12969,7 +12969,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -13222,7 +13222,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -13511,7 +13511,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -13742,7 +13742,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -13975,7 +13975,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -14262,7 +14262,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -14483,7 +14483,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -14764,7 +14764,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -15044,7 +15044,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -15323,7 +15323,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -15519,7 +15519,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -15774,7 +15774,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -16065,7 +16065,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -16293,7 +16293,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -16577,7 +16577,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -16800,7 +16800,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -17091,7 +17091,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -17354,7 +17354,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -17652,7 +17652,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   },
   {
@@ -17936,7 +17936,7 @@
     "guardrails_fired": [],
     "stopped_by": null,
     "backend": "live",
-    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used 0.15/0.60 by mistake)"
+    "cost_source": "tokens x OpenRouter list price 0.30/1.20 (repriced 2026-10-04; run used a hand-typed 0.13/0.52 by mistake)"
    }
   }
  ]

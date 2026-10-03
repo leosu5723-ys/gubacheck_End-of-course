@@ -11,7 +11,6 @@ run offline and identically for a marker:
   indices.json       CSI 300 and ChiNext daily closes
   toplist.json       exchange top-list (龙虎榜) rows for the watched stocks, plus
                      the market-wide distribution of |net buy| / turnover
-  irm.json           board-secretary Q&A (recent months only; see DATA.md)
   announcements.json filings with exact time, type, procedural flag
   judgements.json    the RAG judge's label and reason per filing
   articles.json      article-type forum posts (post_type 20) of each watched
@@ -61,7 +60,6 @@ def main():
     tl = _jsonl("toplist.jsonl")
     ratios = sorted(abs(r["net_buy"]) / r["turnover"] for r in tl if r["turnover"])
     dump("toplist", {"rows": [r for r in tl if r["stock"] in watch], "market_abs_netbuy_ratio_sorted": ratios[::max(1, len(ratios) // 2000)]})
-    dump("irm", _jsonl("irm.jsonl"))
     rows = judge.load_announcements()
     dump("announcements", [{"ann_id": r["ann_id"], "stock": r["stock"], "name": r["name"], "title": r["title"],
                             "time": r["time"], "type": r["type"], "procedural": r["procedural"]} for r in rows])
@@ -102,7 +100,7 @@ def main():
     dump("article_daily_counts", counts)
     dump("peers", peers["groups"])
     print("prices", len(prices), "us", len(us), "toplist rows", sum(r["stock"] in watch for r in tl),
-          "irm", len(_jsonl("irm.jsonl")), "articles", len(arts), "judgements", len(jud))
+          "articles", len(arts), "judgements", len(jud))
 
 
 if __name__ == "__main__":

@@ -91,7 +91,8 @@ def records():
     return out
 
 
-def main():
+def main(only=None):
+    """`only`: a set of ann_ids whose text may be downloaded now (incremental refresh)."""
     os.makedirs(TEXT_DIR, exist_ok=True)
     anns = [json.loads(line) for line in open(os.path.join(RAW, "cninfo.jsonl"), encoding="utf-8")]
     # filings inside spike watch windows first: they are what labelling and the backtest need
@@ -112,7 +113,7 @@ def main():
                    periodic=bool(PERIODIC.search(title)) and "摘要" not in title)
         path = os.path.join(TEXT_DIR, "%s.txt" % a["ann_id"])
         rec["has_text"] = os.path.exists(path)
-        if not rec["procedural"] and not rec["has_text"]:
+        if not rec["procedural"] and not rec["has_text"] and (only is None or a["ann_id"] in only):
             try:
                 body = None
                 for ext in ("PDF", "pdf"):          # both spellings exist on the server

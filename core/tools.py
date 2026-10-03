@@ -63,7 +63,7 @@ def _check(cause, spike_id):
 
 
 def check_A(spike_id):
-    """Company official: filings / board-secretary replies in [D-3, onset)."""
+    """Company official: CNINFO filings in [D-3, onset)."""
     return _check("A", spike_id)
 
 
@@ -134,7 +134,7 @@ def call(name, args):
 
 
 _CAUSE_DESC = {
-    "A": "Company official news: CNINFO filings and board-secretary replies from D-3 to the onset.",
+    "A": "Company official news: CNINFO filings from D-3 to the onset.",
     "B": "Media / rumour: an abnormal burst of company-specific articles in the 72 h before onset.",
     "C": "Sector co-movement: did most peers move abnormally the same way that day?",
     "D": "Overseas read-through: US peers abnormal on the previous US session AND the stock gapped at the open.",

@@ -29,7 +29,7 @@
 - Sentiment: rented teacher once (GPT-6, 3,000 labels; 0.79 Macro-F1 on my labels), owned student (RoBERTa 0.73; TF-IDF 0.60; lexicon 0.32) — 1M posts at zero marginal cost, daily bullish-share bias +0.3 pts.
 - Filing judge: title rule 0.51 → LLM 0.91 → LLM + RAG 0.82 with **0 false-bullish** (text mode: 4/52). RAG's forced same-period forecast fixed the "already pre-announced" errors (e.g. a 2025 express within its January forecast range); removing it drops Macro-F1 to 0.73. Trade-off: RAG became conservative on two large ship contracts.
 - Cost to serve: US$0.0020 per filing, US$0.0129 per spike live (deepseek-v4.1-flash, US$0.88 for 68 spikes) — **misses my < US$0.01 target**; ~38k tokens per spike, 96% input (the tool results are re-sent every turn). At 10/100/1,000 stocks the model bill is US$0.16/1.59/15.9 a month, but manual re-checks of wrong attributions make it ~US$9/93/925 → the lever is accuracy, not a cheaper model.
-- Rough edge in my own cost accounting: prices were typed by hand and the first live run was costed at a stale default (half the real price). Fixed by reading list prices from OpenRouter and recording the billed cost per call.
+- Rough edge in my own cost accounting: prices were typed by hand and the first live run was costed at a stale hand-typed $0.13 / $0.52 (well under half the real price). Fixed by reading list prices from OpenRouter and recording the billed cost per call.
 
 ## 5. Evaluation and its limits (~250 words) — critique
 
