@@ -120,11 +120,18 @@ elif page == L["pages"][1]:
     if rec is None:
         from core.agent import run_case
         rec = run_case(sid, arm="keyword")
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3 = st.columns(3)
     c1.metric(L["posts_z"], s["z_posts"], "%d posts" % s["posts"])
     c2.metric(L["bull"], "%.0f%%" % (100 * s["bull_share"]), "z %s" % s["z_bull"])
     c3.metric(L["onset"], s["onset"][5:16])
-    c4.metric(L["conclusion"], cause_label(rec.get("primary", "H")))
+    gold = {}
+    gp = os.path.join(ROOT, "evals", "cause_labels.csv")
+    if os.path.exists(gp):
+        import csv
+        gold = {r["spike_id"]: r["primary"] for r in csv.DictReader(open(gp, encoding="utf-8-sig"))}
+    st.success("%s: **%s**%s" % (L["conclusion"], cause_label(rec.get("primary", "H")),
+                                ("　·　%s %s" % ("人工标注" if lang == "zh" else "my label", cause_label(gold[sid])))
+                                if gold.get(sid) else ""))
     posts = {p["post_id"]: p for p in store.load("posts")}
     with st.expander(L["top_posts"], expanded=False):
         for pid in s["sample_post_ids"][:12]:
@@ -186,10 +193,25 @@ elif page == L["pages"][2]:
     if res:
         st.subheader("Attribution arms (hand-labelled spikes)")
         st.dataframe(pd.DataFrame([dict(arm=a, **{k: v for k, v in r["summary"].items()
-                                                  if k in ("accuracy", "always_H_baseline", "mean_cause_checks",
+                                                  if k in ("accuracy", "macro_f1", "always_H_baseline", "mean_cause_checks",
                                                            "mean_tokens", "total_cost_usd", "premature_stops",
                                                            "over_investigation_runs")})
                                    for a, r in res.items()]), hide_index=True, use_container_width=True)
+        st.caption("always-%s baseline: accuracy %.0f%%, macro-F1 %.2f" % (
+            next(iter(res.values()))["summary"].get("majority_class"),
+            100 * (next(iter(res.values()))["summary"].get("majority_baseline_accuracy") or 0),
+            next(iter(res.values()))["summary"].get("majority_baseline_macro_f1") or 0))
+    p = os.path.join(ROOT, "results", "cause_backtest_gold.json")
+    if os.path.exists(p):
+        st.subheader("After the spike, by cause (my labels) — excess vs CSI 300, %")
+        bt = json.load(open(p))["by_cause"]
+        rows = []
+        for c, g in bt.items():
+            for part in ("all", "observe", "check", "bullish", "bearish"):
+                if part in g and g[part]["horizons"]:
+                    rows.append(dict(cause=c, group=part, n=g[part]["n"],
+                                     **{k: v["mean_excess_pct"] for k, v in g[part]["horizons"].items()}))
+        st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
     d = show("guardrails.json", "Guardrail checklist")
     if d:
         st.dataframe(pd.DataFrame([{"id": r["id"], "catches": r["catches"], "passed": r["passed"]} for r in d]),
