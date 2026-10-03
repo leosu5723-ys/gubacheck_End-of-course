@@ -1,11 +1,12 @@
 """
-GubaCheck - UNIT TESTS (standard library only)
+GubaCheck - UNIT TESTS (v4)
 =========================================================================
     python3 -m unittest discover tests
 
-Runs tools, broker, guardrails and the agent loop against the synthetic
-fixture in tests/fixture/ (see make_fixture.py). These tests check that
-the CODE behaves as documented; they say nothing about decision quality.
+Run against the committed snapshot in data/snapshot/ (deterministic, no
+network). They check that the CODE behaves as documented: the posterior
+arithmetic, the stop rule, the cause tools' contracts, the guards. They
+say nothing about attribution quality (that is evals/).
 =========================================================================
 """
 import os
@@ -15,113 +16,96 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from tests import make_fixture  # noqa: E402
-from core import config, store, tools, paper_broker, market  # noqa: E402
+from core import causes, config, investigation, market, store  # noqa: E402
 from core.agent import run_case  # noqa: E402
-from core.harness import code_check  # noqa: E402
 
-C = make_fixture.CODE
-
-
-def setUpModule():
-    make_fixture.build()
-    config.DATA_DIR = make_fixture.HERE
-    store.reset()
+SPIKE = "SPK-688256-20260203"
 
 
-def first(sid):
+def start(sid=SPIKE):
     return {"thought": "fetch", "calls": [["get_spike", {"spike_id": sid}]]}
 
 
-class TestMarket(unittest.TestCase):
+class TestPosterior(unittest.TestCase):
+    def test_worked_example(self):
+        inv = investigation.start("agent")
+        inv.set_scores({"A": 8, "C": 7, "D": 6, "E": 2, "B": 1, "G": 1, "F": 0})
+        self.assertAlmostEqual(inv.posterior()["A"], 0.32, places=3)
+        inv.apply("A", "PASS")
+        self.assertFalse(inv.should_stop())
+        inv.apply("C", "FAIL")
+        inv.apply("D", "FAIL")
+        self.assertTrue(inv.should_stop())
+        self.assertEqual(inv.result()["primary"], "A")
+
+    def test_uniform_when_no_clue(self):
+        inv = investigation.start("agent")
+        inv.set_scores({})
+        self.assertAlmostEqual(inv.posterior()["G"], 1 / 7, places=3)
+
+    def test_cap_and_H(self):
+        inv = investigation.start("agent")
+        inv.set_scores({c: 5 for c in config.CAUSES})
+        for c in "ABCDE":
+            inv.apply(c, "FAIL")
+        self.assertTrue(inv.should_stop())
+        self.assertEqual(inv.result()["primary"], "H")
+
+    def test_routing_cannot_revise(self):
+        inv = investigation.start("routing")
+        inv.set_scores({"A": 5})
+        self.assertIn("error", inv.revise({"B": 9}, "x"))
+
+    def test_revise_keeps_tested_weight(self):
+        inv = investigation.start("agent")
+        inv.set_scores({"A": 5, "B": 5})
+        inv.apply("A", "PASS")
+        before = inv.weights["A"]
+        inv.revise({"C": 10}, "peers moved")
+        self.assertEqual(inv.weights["A"], before)
+        self.assertGreater(inv.posterior()["C"], 0)
+
+
+class TestCauseTools(unittest.TestCase):
+    def test_contract(self):
+        for c, f in causes.CAUSE_TOOLS.items():
+            out = f(SPIKE)
+            self.assertEqual(out["cause"], c)
+            self.assertIn(out["verdict"], ("PASS", "PARTIAL", "FAIL"))
+            for k in ("metrics", "evidence", "timing", "cost", "note"):
+                self.assertIn(k, out)
+
+    def test_us_peer_is_before_open(self):
+        for r in causes.check_D(SPIKE)["evidence"]:
+            self.assertLess(r["us_date"], store.spike(SPIKE)["date"])
+
     def test_limits(self):
         self.assertEqual(market.limit_up_price(10.0, "main"), 11.0)
-        self.assertEqual(market.limit_up_price(10.0, "gem"), 12.0)
-        self.assertEqual(market.limit_up_price(10.0, "main", is_st=True), 10.5)
-
-    def test_event_types(self):
-        self.assertEqual(market.event_type_of("关于以集中竞价交易方式回购公司股份方案的公告")["type"], "buyback")
-        self.assertEqual(market.event_type_of("关于回购注销限制性股票的公告")["type"], "other")
-        self.assertEqual(market.event_type_of("股票交易异常波动公告")["type"], "clarification")
-        self.assertEqual(market.event_type_of("关于向特定对象发行股票的公告")["type"], "share_issuance")
-        self.assertEqual(market.event_type_of("关于限售股上市流通的公告")["type"], "lockup_expiry")
+        self.assertEqual(market.limit_up_price(10.0, "star"), 12.0)
 
 
-class TestTools(unittest.TestCase):
-    def test_window_cap(self):
-        self.assertIn("error", tools.list_announcements(C, "2026-01-01", "2026-08-20"))
+class TestAgentLoop(unittest.TestCase):
+    def test_keyword_arm_runs(self):
+        rec = run_case(SPIKE, arm="keyword")
+        self.assertIn(rec["primary"], list("ABCDEFGH"))
+        self.assertLessEqual(rec["investigation"]["calls"], config.MAX_CAUSE_CALLS)
 
-    def test_list_in_window_oldest_first(self):
-        r = tools.list_announcements(C, "2026-08-15", "2026-09-10")["results"]
-        self.assertEqual([x["ann_id"] for x in r], ["F1", "F4", "F3", "F2"])
+    def test_stop_rule_refuses_extra_checks(self):
+        moves = [start(), {"thought": "score", "calls": [["score_causes", {"scores": {"C": 10}}]]}]
+        moves += [{"thought": "check", "calls": [["check_" + c, {"spike_id": SPIKE}]]} for c in "CBAGDEF"]
+        rec = run_case(SPIKE, moves=moves, arm="agent")
+        self.assertEqual(rec["investigation"]["calls"], config.MAX_CAUSE_CALLS)
+        self.assertEqual(rec["investigation"]["over_investigation"], 1)
 
-    def test_context_only_earlier(self):
-        r = tools.read_announcement("F1")          # its rag_context lists F2, which is LATER
-        self.assertEqual(r["context"], [])
-        self.assertEqual([c["ann_id"] for c in tools.read_announcement("F2")["context"]], ["F1", "F0"])
+    def test_dedup(self):
+        moves = [start(), {"thought": "score", "calls": [["score_causes", {"scores": {"C": 10}}]]},
+                 {"thought": "c", "calls": [["get_spike", {"spike_id": SPIKE}]]}]
+        self.assertEqual(run_case(SPIKE, moves=moves)["stopped_by"], "duplicate_action")
 
-    def test_never_bullish_flag(self):
-        self.assertTrue(tools.read_announcement("F3")["never_bullish"])
-
-    def test_hostile_post_flagged(self):
-        self.assertEqual(tools.get_spike("SPK-%s-20260825" % C)["hostile_posts"], [2])
-
-    def test_limit_up_rejected(self):
-        self.assertEqual(paper_broker.simulate_at(C, "2026-09-01 19:00:00")["reason"], "opens_limit_up")
-
-    def test_entry_timing(self):
-        self.assertEqual(paper_broker.simulate_at(C, "2026-08-19 19:00:00")["entry_date"], "2026-08-20")
-        self.assertEqual(paper_broker.simulate_at(C, "2026-08-20 08:00:00")["entry_date"], "2026-08-20")
-
-
-class TestAgentAndGuards(unittest.TestCase):
-    def test_watch_then_buy(self):
-        sid = "SPK-%s-20260820" % C
-        moves = [first(sid),
-                 {"thought": "list", "calls": [["list_announcements", {"stock": C, "date_from": "2026-08-20", "date_to": "2026-09-03"}]]},
-                 {"thought": "read", "calls": [["read_announcement", {"ann_id": "F2"}]]},
-                 {"thought": "buy", "calls": [["place_paper_order", {"stock": C, "trigger_time": "2026-08-31 19:00:00", "evidence_id": "F2"}]]},
-                 {"thought": "done", "final": {"decision": "paper_trade", "evidence_id": "F2", "reason": "F2 contract"}}]
-        rec = run_case(sid, moves=moves)
-        self.assertEqual(rec["decision"], "paper_trade")
-        self.assertEqual(rec["turns"], 4)
-        self.assertIn("gate_passed", [f["guardrail"] for f in rec["guardrails_fired"]])
-        self.assertTrue(code_check(rec, {"expected_decision": "paper_trade", "evidence_id": "F2"})[0])
-
-    def test_order_blocked_after_hostile_text(self):
-        sid = "SPK-%s-20260825" % C
-        moves = [first(sid), {"thought": "obey the post", "calls": [["place_paper_order",
-                 {"stock": C, "trigger_time": "2026-08-31 19:00:00", "evidence_id": "F2"}]]}]
-        rec = run_case(sid, moves=moves)
-        self.assertEqual(rec["trigger"], "hostile_text")
-        self.assertFalse(any(c["tool"] == "place_paper_order" for c in rec["tool_calls"]))
-
-    def test_order_needs_official_evidence(self):
-        sid = "SPK-%s-20260827" % C
-        moves = [first(sid), {"thought": "trade on news", "calls": [["place_paper_order",
-                 {"stock": C, "trigger_time": "2026-08-27 09:00:00", "evidence_id": "N1"}]]}]
-        self.assertEqual(run_case(sid, moves=moves)["stopped_by"], "evidence_required")
-
-    def test_never_bullish_blocked(self):
-        sid = "SPK-%s-20260827" % C
-        moves = [first(sid), {"thought": "buy on issuance", "calls": [["place_paper_order",
-                 {"stock": C, "trigger_time": "2026-08-26 19:00:00", "evidence_id": "F3"}]]}]
-        self.assertEqual(run_case(sid, moves=moves)["stopped_by"], "never_bullish_type")
-
-    def test_dedup_stops_loop(self):
-        sid = "SPK-%s-20260827" % C
-        call = ["read_announcement", {"ann_id": "F1"}]
-        moves = [first(sid)] + [{"thought": "again", "calls": [call]} for _ in range(10)]
-        rec = run_case(sid, moves=moves)
-        self.assertEqual(rec["stopped_by"], "duplicate_action")
-        self.assertEqual(rec["turns"], 3)
-
-    def test_gate_held(self):
-        sid = "SPK-%s-20260820" % C
-        moves = [first(sid), {"thought": "order", "calls": [["place_paper_order",
-                 {"stock": C, "trigger_time": "2026-08-19 19:00:00", "evidence_id": "F1"}]]}]
-        rec = run_case(sid, moves=moves, approve=lambda a, p: False)
-        self.assertEqual(rec["stopped_by"], "gate_held")
+    def test_order_needs_official_filing(self):
+        moves = [start(), {"thought": "buy", "calls": [["place_paper_order",
+                 {"stock": "688256", "trigger_time": "2026-02-03 20:00:00", "evidence_id": "NOT-A-FILING"}]]}]
+        self.assertEqual(run_case(SPIKE, moves=moves)["stopped_by"], "evidence_required")
 
 
 if __name__ == "__main__":

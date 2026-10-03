@@ -30,6 +30,7 @@ POLICY = re.compile(r"政策|国务院|证监会|发改委|工信部|央行|人�
 MARKET_WRAP = re.compile(r"资金流向|主力|龙虎榜|融资|复盘|收评|午评|早盘|盘前|涨停|跌停|净流入|净流出|大宗交易|"
                          r"成交额|成交量|排行|日报|榜单|异动|个股")
 _CACHE = {}
+US_BEFORE_OPEN = True   # timing rule for D; demo_failures.py sets it False to show the failure
 
 
 def _z(hist, value):
@@ -194,7 +195,7 @@ def check_D(spike_id):
     rows = []
     for t in tickers:
         series = us.get(t, [])
-        prev = [r for r in series if r["date"] < s["date"]]          # last US session that closed before D's open
+        prev = [r for r in series if (r["date"] < s["date"] if US_BEFORE_OPEN else r["date"] <= s["date"])]
         if len(prev) < config.Z_MIN_OBS + 1:
             continue
         last = prev[-1]
