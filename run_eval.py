@@ -41,6 +41,11 @@ def main(argv):
         print("\nNo cases in evals/cases.json yet. See evals/EVALS.md for how to write them.")
         return 1
     version = "v1" if "--v1" in flags else "v2"
+    if config.BACKEND == "live" and "GUBACHECK_PRICE_IN" not in os.environ:
+        from core import pricing
+        p = pricing.price_of(config.MODEL)       # fallback only: the billed cost is used when returned
+        if p:
+            config.PRICE_IN, config.PRICE_OUT = p
 
     if args:
         case = next((c for c in key if c["case_id"] == args[0]), None)

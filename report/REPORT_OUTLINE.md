@@ -21,14 +21,15 @@
 
 - Workflow test: the sequence of tests is chosen from clues in the posts; the number of tests varies (stop rule). Ground truth at every step: code-graded z-scores and timestamps.
 - What stays code: anomaly detection, all verdicts, priors/posterior, stop rule, returns, costs. Model: clue scoring, next test, revision, conclusion, filing judgement.
-- Fixed interfaces risk turning it into routing (rung 3); what keeps it an agent is revision after evidence — **measured**: accuracy agent 55.9% / routing 60.3% / exhaustive 47.1% / keyword 22.1%; tests per spike 4.38 / 4.29 / 7.00 / 4.59; cost US$0.0056 / 0.0051 per spike. **The agent revised in 1 of 68 runs**, and agent vs routing is 3 vs 6 paired wins (p = 0.51). Routing beats exhaustive with fewer tests (11 vs 2, p = 0.02).
+- Fixed interfaces risk turning it into routing (rung 3); what keeps it an agent is revision after evidence — **measured**: accuracy agent 55.9% / routing 60.3% / exhaustive 47.1% / keyword 22.1%; tests per spike 4.38 / 4.29 / 7.00 / 4.59; cost US$0.0129 / 0.0118 per spike. **The agent revised in 1 of 68 runs**, and agent vs routing is 3 vs 6 paired wins (p = 0.51). Routing beats exhaustive with fewer tests (11 vs 2, p = 0.02).
 - Honest outcome: routing matched the agent, so routing is the right rung for this task; the revise tool was available but almost never used. The LLM's value is in the ranking (fewer tests, better than exhaustive) and in reading PARTIAL evidence, not in revision.
 
 ## 4. Build vs buy and cost (~200 words) — Rubric 2, Class 5
 
 - Sentiment: rented teacher once (GPT-6, 3,000 labels; 0.79 Macro-F1 on my labels), owned student (RoBERTa 0.73; TF-IDF 0.60; lexicon 0.32) — 1M posts at zero marginal cost, daily bullish-share bias +0.3 pts.
 - Filing judge: title rule 0.51 → LLM 0.91 → LLM + RAG 0.82 with **0 false-bullish** (text mode: 4/52). RAG's forced same-period forecast fixed the "already pre-announced" errors (e.g. a 2025 express within its January forecast range); removing it drops Macro-F1 to 0.73. Trade-off: RAG became conservative on two large ship contracts.
-- Cost to serve: US$0.00088 per filing, US$0.0056 per spike measured live (deepseek-v4.1-flash, US$0.38 for 68 spikes); at 10/100/1,000 stocks the model bill is US$0.07/0.69/6.9 a month, but manual re-checks of wrong attributions make it ~US$9/92/916 → the lever is accuracy, not a cheaper model.
+- Cost to serve: US$0.0020 per filing, US$0.0129 per spike live (deepseek-v4.1-flash, US$0.88 for 68 spikes) — **misses my < US$0.01 target**; ~38k tokens per spike, 96% input (the tool results are re-sent every turn). At 10/100/1,000 stocks the model bill is US$0.16/1.59/15.9 a month, but manual re-checks of wrong attributions make it ~US$9/93/925 → the lever is accuracy, not a cheaper model.
+- Rough edge in my own cost accounting: prices were typed by hand and the first live run was costed at a stale default (half the real price). Fixed by reading list prices from OpenRouter and recording the billed cost per call.
 
 ## 5. Evaluation and its limits (~250 words) — critique
 

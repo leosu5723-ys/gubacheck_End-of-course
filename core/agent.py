@@ -48,6 +48,7 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
 
     transcript, calls_made, observed = [], [], []
     turns = tokens_in = tokens_out = 0
+    billed = None                                      # US$ reported by the provider, when it does
     stopped_by = None
 
     try:
@@ -57,6 +58,8 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
                 on_event("move", move)
             ti, to = backend.last_usage
             tokens_in, tokens_out = tokens_in + ti, tokens_out + to
+            if getattr(backend, "last_cost", None) is not None:
+                billed = (billed or 0.0) + backend.last_cost
             guards.check_budget(tokens_in + tokens_out)
 
             if verbose:
@@ -138,7 +141,9 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
         "turns": turns,
         "tokens_in": tokens_in,
         "tokens_out": tokens_out,
-        "cost_usd": round(tokens_in / 1e6 * config.PRICE_IN + tokens_out / 1e6 * config.PRICE_OUT, 6),
+        "cost_usd": round(billed if billed is not None else
+                          tokens_in / 1e6 * config.PRICE_IN + tokens_out / 1e6 * config.PRICE_OUT, 6),
+        "cost_source": "billed" if billed is not None else "tokens x price",
         "seconds": round(time.time() - started, 3),
         "guardrails_fired": guards.fired,
         "stopped_by": stopped_by,

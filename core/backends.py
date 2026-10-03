@@ -94,10 +94,12 @@ class LiveBackend:
         self.nudges = 0
         self.trace = []
         self.last_usage = (0, 0)
+        self.last_cost = None
 
     def next_move(self, transcript):
         msg, usage = _live_chat(self.messages, self.schemas)
         self.last_usage = (usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0))
+        self.last_cost = usage.get("cost")
         self.trace.append({"content": (msg.get("content") or "")[:500],
                            "tool_calls": [(c["function"]["name"], c["function"].get("arguments", "")[:300])
                                           for c in msg.get("tool_calls") or []]})
@@ -146,7 +148,8 @@ def _live_chat(messages, schemas, retries=4):
     if not config.API_KEY:
         raise SystemExit("Live backend needs OPENROUTER_API_KEY in the environment.")
     body = json.dumps({"model": config.MODEL, "messages": messages, "tools": schemas, "tool_choice": "auto",
-                       "temperature": 0, "max_tokens": 3000}).encode()
+                       "temperature": 0, "max_tokens": 3000,
+                       "usage": {"include": True}}).encode()     # OpenRouter returns the billed cost
     used = {"prompt_tokens": 0, "completion_tokens": 0}
     last_err = None
     for attempt in range(retries):
@@ -159,6 +162,8 @@ def _live_chat(messages, schemas, retries=4):
             u = payload.get("usage") or {}
             used["prompt_tokens"] += u.get("prompt_tokens", 0)
             used["completion_tokens"] += u.get("completion_tokens", 0)
+            if u.get("cost") is not None:                 # billed US$, retries included
+                used["cost"] = used.get("cost", 0.0) + float(u["cost"])
             if payload.get("error"):
                 raise RuntimeError(str(payload["error"])[:200])
             msg = (payload.get("choices") or [{}])[0].get("message") or {}
@@ -207,7 +212,7 @@ def _live_call(messages, retries=4):
     if not config.API_KEY:
         raise SystemExit("Live backend needs OPENROUTER_API_KEY in the environment.")
     body = json.dumps({"model": config.MODEL, "messages": messages, "temperature": 0,
-                       "max_tokens": 2000}).encode()
+                       "max_tokens": 2000, "usage": {"include": True}}).encode()
     used = {"prompt_tokens": 0, "completion_tokens": 0}
     last_err = None
     for attempt in range(retries):
@@ -220,6 +225,8 @@ def _live_call(messages, retries=4):
             u = payload.get("usage") or {}
             used["prompt_tokens"] += u.get("prompt_tokens", 0)
             used["completion_tokens"] += u.get("completion_tokens", 0)
+            if u.get("cost") is not None:                 # billed US$, retries included
+                used["cost"] = used.get("cost", 0.0) + float(u["cost"])
             if payload.get("error"):
                 raise RuntimeError(str(payload["error"])[:200])
             msg = (payload.get("choices") or [{}])[0].get("message") or {}
