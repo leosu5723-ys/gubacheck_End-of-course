@@ -1,98 +1,98 @@
 # GubaCheck — Product Documentation
 
+**When a stock's forum suddenly explodes, GubaCheck finds out why — and shows how spikes with that cause behaved afterwards.**
+
 ## Persona
 
-**Me: a retail investor with a full-time job**, holding or watching about 10 A-share stocks, who looks at the market for ten minutes after the close and ten minutes before the open, on a phone. I know the Guba forum sometimes carries news early, and I know it is full of pump posts and rumours; I cannot tell which is which in ten minutes. My most expensive habit is buying into a "restructuring is coming" thread without checking.
+**Me: a retail investor with a full-time job** who follows ten A-share stocks (AI hardware, EVs, batteries, shipbuilding) on a phone, ten minutes after the close. When the Eastmoney forum (Guba) of one of my stocks suddenly fills with posts, I cannot tell in ten minutes whether it is company news, a rumour, the whole sector, last night's Nasdaq, the market, a policy headline or hot money. Chasing the crowd without knowing which is my most expensive habit.
 
-**What changes once GubaCheck works:** I stop scrolling the forum. Each evening I read a few check cards. Each card gives one decision and the evidence behind it, and nothing is traded unless I say yes.
+**What changes once GubaCheck works:** I open one page per spike. It tells me the most likely cause, the evidence and its timing, and what happened, on average, after earlier spikes with the same cause. Buying is not the product; a gated paper-order entry is kept for later.
 
-**The pain, in numbers** *(fill from data/snapshot)*: watchlist of [N] stocks, about [X] posts per day in total, [Y] spikes per month; checking one spike by hand (forum, CNINFO, news) takes me about [Z] minutes.
+**The pain in numbers:** ten stocks, ~1.02 million own-bar posts in a year (≈ 2,800 a day); 68 spikes in eleven months (≈ 6 a month); checking one by hand across filings, peers, US prices, indices and news took me [Z] minutes.
 
 **Closest existing tools and the gap**
 
 | Tool | What it does | What it does not do |
 |---|---|---|
-| TradingAgents / TradingAgents-CN, daily_stock_analysis | LLM agents debate and output BUY/SELL | Do not read the forum; conclusions cite no checkable evidence; no published evaluation of their own accuracy |
-| Forum sentiment-index projects | Scrape Guba, output a sentiment score | A number, not a reason; never check whether a claim is true |
-| Eastmoney / THS announcement pages | List announcements | Do not connect "what the forum says" to "what the company disclosed" |
+| Eastmoney popularity rank / Guba heat | shows that a stock is hot | does not say **why** |
+| Forum-sentiment projects on GitHub | a daily sentiment score | a number, no cause, no evidence |
+| TradingAgents(-CN), daily_stock_analysis | multi-agent BUY/SELL calls | no checkable attribution, no measured accuracy |
 
-**Out of scope:** real orders, advice to others, price prediction, whole-market scanning, a graphical interface.
+**Out of scope:** real orders, advice to others, price prediction, whole-market scanning, adding new stocks live (cut for time; the offline pipeline supports it).
 
 ## Input and output
 
-**Input:** one forum spike, detected by code (RULES.md): own-bar posts that day ≥ 3× the 20-day mean, and the bullish share ≥ its 20-day mean + 20 points (sentiment from a fine-tuned Chinese RoBERTa). Example id `SPK-601127-20260915`.
+**Input:** a spike = a trading day whose own-bar post count is abnormal for that stock (log-posts z ≥ 2 against its previous 120 trading days, first day of an episode). Example `SPK-688256-20260203`.
 
-**Output:** a decision record and a check card.
+**Output:** an attribution report (page 2 of the app)
 
 ```
-SPK-xxxxxx-2026xxxx  [stock name]  posts x4.2 (1,380 vs 330), bullish 71% (base 41%)
-Forum claim : "下周公布重组"
-Official    : none in CNINFO 2026-09-04..09-18 (searched: 重组, 资产, 收购)
-Media       : CLS telegraph 09-17 "市场传闻…"   [news_id]
-DECISION    : await_confirmation - awaiting a CNINFO 重大资产重组预案
+SPK-688256-20260203  寒武纪  posts 2,249 (z 5.0), bullish 21% (z −1.8), onset 2026-02-03 09:00
+clues → priors      C 33% · B 28% · G 22% · A 17%   (from the most-read posts)
+tested              C FAIL (peers flat) → B PARTIAL (articles, but after onset) → G FAIL → A PARTIAL → D FAIL
+stopped             5 tests (cap)           primary  H (unexplained)
+history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300 (n = 54)
 ```
-
-| Decision | When | Must record |
-|---|---|---|
-| `paper_trade` | official evidence, allowed event type, tradeable; after my approval | evidence_id, event type, fill or rejection |
-| `await_confirmation` | media coverage but no official announcement | the claim, the media item, the kind of announcement awaited |
-| `flag_do_not_chase` | anything else, with exactly one trigger | the trigger and what was searched |
 
 ## Architecture
 
 ```
- COLLECT (daily, code)           BUILD (code + narrow ML)              DECIDE (agent)                     ACT
- ┌─────────────────────┐   ┌──────────────────────────────┐   ┌───────────────────────────────┐   ┌──────────────────┐
- │ Guba posts (titles) ├──►│ sentiment: RoBERTa (FT)      │   │ get_spike                     │   │ autonomy gate    │
- │ CNINFO announcements│   │ trained on LLM labels        │   │ ┌ search_cninfo   ┐ parallel  │   │ (my yes / no)    │
- │ CLS + EM news       ├──►│ spike detector (RULES.md)    ├──►│ │ search_news      │ one turn  ├──►│        │         │
- │ prices, popularity  │   │ frozen snapshot (JSON)       │   │ └ get_price_context┘          │   │ paper broker     │
- └─────────────────────┘   └──────────────────────────────┘   │ retry search with new terms   │   │ (A-share rules)  │
-     AKShare + own scraper      no model in the hot path      │ check_event_type (title rule) │   │ ledger.csv       │
-                                                              │ rented LLM via OpenRouter:    │   └──────────────────┘
-                                                              │ reads posts, picks search     │
-                                                              │ terms, applies RULES.md       │   results.json
-                                                              │ GUARDS: step cap, budget,     │   check cards
-                                                              │ de-dup, hostile-text screen,  │
-                                                              │ evidence-required order       │
-                                                              └───────────────────────────────┘
+ DATA (frozen snapshot)            MODELS (local + rented)              ATTRIBUTION AGENT                      OUTPUT
+ ┌──────────────────────┐   ┌──────────────────────────────┐   ┌────────────────────────────────────┐   ┌───────────────────┐
+ │ 1.02M forum titles   ├──►│ RoBERTa (fine-tuned, local)  │   │ get_spike                          │   │ Streamlit UI      │
+ │ CNINFO filings (text)├──►│  bull/bear/neutral per post  ├──►│ score_causes  (LLM raw 0-10, A-G)  │   │  watchlist        │
+ │ prices: 10 + 12 peers│   │ z-score engine (code)        │   │   → code: priors                   ├──►│  attribution      │
+ │ US peers, indices    │   │  spikes, onset hour          │   │ loop: check_A … check_G            │   │  evaluation       │
+ │ top list (龙虎榜)     │   │ filing judge: LLM + chunked  │   │   → code: verdict, posterior, STOP │   │  paper (reserved) │
+ │ article posts        │   │  RAG over own filings        │   │ revise_scores (LLM, agent arm only)│   │ cause backtest    │
+ └──────────────────────┘   └──────────────────────────────┘   │ GUARDS: step cap, budget, de-dup,  │   │  D+1 … D+20       │
+   AKShare + forum API         bge-small-zh embeddings          │ stop rule, hostile text, gate      │   └───────────────────┘
+                               DeepSeek V4.1 Flash (OpenRouter) └────────────────────────────────────┘
 ```
 
-**Own vs rent, layer by layer**
+**Where the model is and is not used.** The LLM reads post titles and turns clues into raw scores, chooses which cause to test next, may re-score untested causes after a surprise, writes the conclusion, and judges filings. **Code** computes every z-score, every PASS / PARTIAL / FAIL, every probability, the stop rule, every return and every cost.
+
+**Own vs rent**
 
 | Layer | Own / rent | What | Why |
 |---|---|---|---|
-| Interface | Own | CLI + Markdown check cards | One user; a UI adds nothing to the decision |
-| Orchestration | Own | Hand-written ReAct loop | When it misbehaves I must be able to read the code that did it |
-| Model | Rent | OpenRouter, `[model A]` vs `[model B]` | General language ability is a commodity; switching is one string |
-| Sentiment labels | Rent (once) | GPT-6 labelled 3,000 posts | A teacher: 0.79 Macro-F1 on my hand labels, but paying per post for a million posts is not sensible |
-| Sentiment model | Own | Chinese RoBERTa (hfl/chinese-roberta-wwm-ext) fine-tuned on those labels; TF-IDF + LR as the cheap baseline | Runs locally on every post every day at zero marginal cost: 0.73 Macro-F1 |
-| Data | Free public + own archive | CNINFO, CLS, Eastmoney via AKShare; Guba via own collector | Data cost is zero; the news archive exists only because I collect it daily |
-| Evaluation | Own | Harness, answer key, guardrail checklist, results.json | The evidence is the product |
-
-**Where the model is and is not used.** The model reads posts, decides what to search for and whether to search again, and applies the written rules. It never counts posts, computes a return, checks a price limit or sizes an order; those are code.
+| Interface | Own | Streamlit, Chinese / English | One user; reads the frozen snapshot, no key needed |
+| Orchestration | Own | Hand-written loop + investigation state | The stop rule and posterior must be checkable code |
+| Reasoning model | Rent | DeepSeek V4.1 Flash via OpenRouter | Commodity; one string to swap |
+| Post sentiment | Own (teacher rented once) | RoBERTa fine-tuned on 3,000 GPT-6 labels | 1M posts at zero marginal cost: 0.73 vs 0.79 Macro-F1 for the teacher |
+| Retrieval | Own | bge-small-zh, metadata filter, top-5 ≥ 0.80, forced same-period forecast | Local; the forced document removed every false-bullish call |
+| Data | Free public | CNINFO, prices, US prices, indices, top list via AKShare; forum via its public list API | Data cost 0 |
+| Evaluation | Own | Hand labels, harness, four arms, guardrail checklist | The evidence is the product |
 
 ## Metrics: targeted vs reached
 
-Targets were set before any result was seen (git history of this file).
-
 | Metric | Target | Reached | Source |
 |---|---|---|---|
-| End-to-end decision pass rate, code check (scripted) | ≥ 80% | | results/results.json |
-| End-to-end pass rate, live model A / model B | ≥ 70% | | results/results_live_*.json |
-| **False act rate** (paper_trade when the key says do not) | ≤ 5% | | results/results.json |
-| Judgement check (reason names the evidence and trigger) | ≥ 75% | | results/judgement_queue.json |
-| Descriptor v2 vs v1 pass rate, same model | v2 higher | | results_live_*_v1 vs v2 |
-| Sentiment Macro-F1 on hand labels (deployed model) | ≥ 0.65 and > lexicon | | results/sentiment_eval.json |
-| Daily bullish share bias (predicted − true) | within ±3 points | | results/sentiment_eval.json |
-| Sentiment abstention: error rate abstained vs answered | abstained higher | | results/sentiment_eval.json |
-| Guardrail checklist | 10 / 10 | | results/guardrails.json |
-| Median / worst turns | ≤ 5 / ≤ 8 | | results/results.json |
-| Cost per case, live | < US$0.01 | | results/results_live_*.json |
+| Post sentiment Macro-F1 (hand labels, deployed model) | ≥ 0.65 and > lexicon | **0.73** (CI 0.62–0.82); lexicon 0.32 | results/sentiment_eval.json |
+| Daily bullish-share bias | within ±3 pts | **+0.3 pts** (40.0% vs 39.7%) | results/sentiment_eval.json |
+| Filing judge Macro-F1 (30 hand-labelled filings) | > title rule | text **0.91**, RAG **0.82**; title rule 0.51 | results/judge_eval.json |
+| Filing judge false-bullish (non-bullish filing called bullish) | lowest | RAG **0 / 52**; text 4 / 52 | results/judge_eval.json |
+| Primary-cause accuracy, agent arm | > always-H baseline and > keyword arm | *pending hand labels and live run* | results/results_agent_live_*.json |
+| Cause tests per spike, agent vs exhaustive | fewer at equal accuracy | *pending* vs 7.00 | results/results_*.json |
+| Guardrail checklist | 10 / 10 | **10 / 10** | results/guardrails.json |
+| Cost per spike (live) | < US$0.01 | *pending live*; scripted estimate US$0.004 | results/cost_model.json |
+| Unit tests | all pass | **12 / 12** | tests/ |
+
+## Cost to serve (results/cost_model.json)
+
+| Layer | Value |
+|---|---|
+| Sentiment | US$0 per 1,000 posts (local, ~414 posts/s) |
+| Filing judgement | US$0.00088 per filing (measured, 468 calls) |
+| Attribution | US$0.004 per spike (scripted estimate until the live run) |
+| Volume | 0.62 spikes and 3.9 substantive filings per stock-month |
+| 10 / 100 / 1,000 stocks | model US$0.06 / 0.61 / 6.1 a month; **with manual re-checks of wrong attributions ~US$10 / 104 / 1,036** |
+
+The model bill is negligible; the cost that scales is a person re-checking wrong attributions. The lever is accuracy, not a cheaper model.
 
 ## Responsible use
 
-- **Intended use:** my own research and paper trading. **Not for:** real automated trading, advice to others, publishing rumour lists that name people.
-- **Silent failure:** an announcement about a different matter accepted as evidence. Detection: the check card always shows the evidence title; the judgement check reads every reason.
-- **Mitigations that are code, not disclaimers:** the autonomy gate, evidence-required orders, the 30-day search window, the hostile-text screen, step and budget caps, sentiment abstention.
-- **Frameworks:** OWASP Top 10 for LLM Applications (LLM01 prompt injection via forum text, LLM06 unbounded consumption, LLM08 system-prompt exposure); Singapore IMDA Model AI Governance Framework (human-in-the-loop at the action); PDPA (no user names or ids are stored); platform access limits respected (sequential requests, 3 s apart; stop on the site's identity check).
+- **Intended use:** my own research — attribution and historical context. **Not for:** automated trading, advice to others, naming people behind rumours.
+- **Silent failures, and how they are caught:** a cause explained by evidence that came *after* the move (every tool checks timing; failure 2 in `demo_failures.py` shows 15 of 68 verdicts change without it); evidence counted twice (de-duplication; failure 1); an over-confident cause with little support (verdicts are code, posteriors are shown, "H" is an allowed answer).
+- **Code, not disclaimers:** stop rule and 5-test cap, budget ceiling, de-duplication, hostile-text screen on forum titles, evidence-required and never-bullish guards on the reserved order, human gate.
+- **Frameworks:** OWASP Top 10 for LLM Applications (LLM01 injection via forum text — red-team cases G1–G3; LLM06 unbounded consumption — G5, G7; LLM08 prompt exposure — G3); Singapore IMDA Model AI Governance Framework (a human at the action); PDPA (no user ids stored).
