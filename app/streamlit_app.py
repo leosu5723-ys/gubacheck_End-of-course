@@ -82,7 +82,7 @@ TXT = {
            "watched": "关注股票", "spikes_m": "近 30 天异动", "last": "最近一次异动", "open": "查看",
            "heat": "股吧热度", "bulls": "看多", "bears": "看空", "spike": "🔥 异动", "calm": "平静",
            "pick_spike": "选择一次异动", "investigate": "🔍 让 AI 调查这次异动", "mode": "调查模式",
-           "modes": {"agent": "🧠 智能（AI 读帖子定方向，查到即停）", "keyword": "⚡ 快速（关键词规则）",
+           "modes": {"agent": "🧠 智能（AI 读帖子定方向，查到即停）", "routing": "🧭 路由（AI 只排一次序）", "keyword": "⚡ 快速（关键词规则）",
                      "exhaustive": "🔬 全面（7 项全部检验）", "manual": "🧪 我自己来查"},
            "start": "开始调查", "reading": "正在阅读 {n} 条帖子…", "clues": "AI 从帖子里找到的线索",
            "priors": "各原因的初始可能性", "testing": "正在检验：", "posterior": "可能性变化",
@@ -102,7 +102,7 @@ TXT = {
            "watched": "Watched stocks", "spikes_m": "Spikes, last 30 days", "last": "Latest spike", "open": "Open",
            "heat": "Forum heat", "bulls": "Bullish", "bears": "Bearish", "spike": "🔥 Spike", "calm": "Calm",
            "pick_spike": "Pick a spike", "investigate": "🔍 Let the AI investigate", "mode": "Mode",
-           "modes": {"agent": "🧠 Smart (AI reads the posts, stops when sure)", "keyword": "⚡ Fast (keyword rules)",
+           "modes": {"agent": "🧠 Smart (AI reads the posts, stops when sure)", "routing": "🧭 Routing (AI ranks once)", "keyword": "⚡ Fast (keyword rules)",
                      "exhaustive": "🔬 Thorough (all 7 tests)", "manual": "🧪 Investigate it myself"},
            "start": "Start", "reading": "Reading {n} posts…", "clues": "Clues the AI found in the posts",
            "priors": "Starting likelihood of each cause", "testing": "Testing: ", "posterior": "Likelihood over the investigation",
@@ -130,10 +130,37 @@ ss.setdefault("nav", 0)
 ss.setdefault("stock", "688256")
 ss.setdefault("spike", None)
 
-top = st.columns([6, 1])
-with top[1]:
+ss.setdefault("api", {"key": os.environ.get("OPENROUTER_API_KEY", ""), "model": config.MODEL if config.MODEL != "openai/gpt-4o-mini"
+                       else "deepseek/deepseek-v4.1-flash", "pin": config.PRICE_IN, "pout": config.PRICE_OUT, "ok": None})
+top = st.columns([5, 1.3, 1])
+with top[2]:
     ss.lang = st.selectbox(" ", ["zh", "en"], index=["zh", "en"].index(ss.lang),
                            format_func=lambda x: "中文" if x == "zh" else "English", label_visibility="collapsed")
+with top[1]:
+    api = ss.api
+    badge = "🟢" if api["key"] and api["ok"] else ("🟡" if api["key"] else "⚪")
+    with st.popover("%s ⚙️ API" % badge, width="stretch"):
+        st.markdown("**OpenRouter**")
+        api["key"] = st.text_input("API key", value=api["key"], type="password",
+                                   help="只保存在本次浏览器会话中，不写入任何文件 / kept in this session only, never written to disk")
+        api["model"] = st.text_input("Model", value=api["model"])
+        c1, c2 = st.columns(2)
+        api["pin"] = c1.number_input("US$ / 1M input", value=float(api["pin"]), min_value=0.0, step=0.01, format="%.3f")
+        api["pout"] = c2.number_input("US$ / 1M output", value=float(api["pout"]), min_value=0.0, step=0.01, format="%.3f")
+        if st.button("测试连接 / Test", width="stretch", disabled=not api["key"]):
+            from core import backends
+            saved = (config.API_KEY, config.MODEL)
+            config.API_KEY, config.MODEL = api["key"], api["model"]
+            try:
+                txt, use = backends._live_call([{"role": "user", "content": "Reply with the single word OK."}], retries=2)
+                api["ok"] = True
+                st.success("✅ %s · %s tokens" % (txt.strip()[:20], use.get("prompt_tokens", 0) + use.get("completion_tokens", 0)))
+            except Exception as e:
+                api["ok"] = False
+                st.error("❌ %s" % str(e)[:160])
+            finally:
+                config.API_KEY, config.MODEL = saved
+        st.caption("设置后，“智能 / 路由”模式会实时调用模型；未设置时回放已保存的调查。")
 L, CN = TXT[ss.lang], CAUSE[ss.lang]
 with top[0]:
     st.markdown('<div class="gc-hero"><div><div class="gc-logo">Guba<span>Check</span></div>'
@@ -217,7 +244,7 @@ def page_radar():
                        "+" if chg >= 0 else "", chg, L["heat"], heat, "gc-hot" if hot else "gc-calm",
                        L["spike"] if hot else L["calm"], int(100 * bull), 100 - int(100 * bull),
                        L["bulls"], int(100 * bull), L["bears"], 100 - int(100 * bull)), unsafe_allow_html=True)
-                if st.button(L["open"], key="open_" + code, use_container_width=True):
+                if st.button(L["open"], key="open_" + code, width="stretch"):
                     go_to(1, stock=code, spike=None)
 
 
@@ -241,7 +268,7 @@ def page_stock():
                                  name=L["spike"], hovertext=["%s posts z=%.1f" % (s["posts"], s["z_posts"]) for s in sp]), 1, 1)
     fig.update_layout(height=520, margin=dict(l=10, r=10, t=10, b=10), xaxis_rangeslider_visible=False,
                       showlegend=False, plot_bgcolor="white")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     st.markdown("#### " + L["pick_spike"])
     gold = gold_labels()
     cols = st.columns(4)
@@ -249,7 +276,7 @@ def page_stock():
         with cols[i % 4]:
             st.markdown('<div class="gc-card"><b>🔥 %s</b><div class="gc-gauge">%d posts · z %.1f · %s %d%%</div></div>'
                         % (s["date"], s["posts"], s["z_posts"], L["bulls"], 100 * s["bull_share"]), unsafe_allow_html=True)
-            if st.button(L["investigate"], key="inv_" + s["spike_id"], use_container_width=True):
+            if st.button(L["investigate"], key="inv_" + s["spike_id"], width="stretch"):
                 go_to(2, spike=s["spike_id"], run=None)
 
 
@@ -282,7 +309,7 @@ def posterior_chart(history, key):
                                  line=dict(color=COLORS[c], width=3)))
     fig.update_layout(height=280, margin=dict(l=10, r=10, t=10, b=10), yaxis=dict(range=[0, 1], tickformat=".0%"),
                       xaxis=dict(dtick=1, title=None), legend=dict(orientation="h", y=-0.25), plot_bgcolor="white")
-    st.plotly_chart(fig, use_container_width=True, key=key)
+    st.plotly_chart(fig, width="stretch", key=key)
 
 
 NOTE_ZH = {
@@ -334,7 +361,7 @@ def step_card(c, out):
                    NOTE_ZH.get(out["note"], out["note"]) if ss.lang == "zh" else out["note"], m), unsafe_allow_html=True)
     if out["evidence"]:
         with st.expander("📎 " + ("证据" if ss.lang == "zh" else "evidence"), expanded=False):
-            st.dataframe(pd.DataFrame(out["evidence"]).head(6), hide_index=True, use_container_width=True)
+            st.dataframe(pd.DataFrame(out["evidence"]).head(6), hide_index=True, width="stretch")
 
 
 def history_chart(cause):
@@ -350,7 +377,7 @@ def history_chart(cause):
     fig = go.Figure(go.Bar(x=xs, y=ys, marker_color=["#e5484d" if y >= 0 else "#30a46c" for y in ys],
                            text=["%+.1f%%" % y for y in ys], textposition="outside"))
     fig.update_layout(height=260, margin=dict(l=10, r=10, t=10, b=10), plot_bgcolor="white", yaxis_title="%")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     st.caption("n = %d%s" % (g["n"], "　⚠️ " + L["n_small"] if g["n"] < 5 else ""))
 
 
@@ -370,7 +397,7 @@ def timeline(s, outs):
     fig = go.Figure(go.Scatter(x=df["t"], y=[0] * len(df), mode="markers+text", text=df["label"],
                                textposition="top center", marker=dict(size=14, color=df["c"])))
     fig.update_layout(height=200, margin=dict(l=10, r=10, t=30, b=10), yaxis=dict(visible=False), plot_bgcolor="white")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
 
 def save_feedback(sid, agree, cause, concluded):
@@ -385,14 +412,14 @@ def order_dialog(s, filing):
     st.write("%s：%s（%s）" % (L["evidence"], filing["title"], filing["time"][:16]))
     st.caption("人工确认 gate：只有你点确认才会下单。/ Human gate: nothing happens until you confirm.")
     c1, c2 = st.columns(2)
-    if c1.button(L["confirm"], type="primary", use_container_width=True):
+    if c1.button(L["confirm"], type="primary", width="stretch"):
         fill = paper_broker.simulate_at(s["stock"], filing["time"])
         fill.update(spike_id=s["spike_id"], evidence_id=filing["ann_id"], name=stocks[s["stock"]]["name"])
         with open(os.path.join(ROOT, "results", "paper_ledger.jsonl"), "a", encoding="utf-8") as fh:
             fh.write(json.dumps(fill, ensure_ascii=False) + "\n")
         st.success("已提交 / submitted: %s" % fill.get("status"))
         st.json(fill)
-    if c2.button(L["cancel"], use_container_width=True):
+    if c2.button(L["cancel"], width="stretch"):
         st.rerun()
 
 
@@ -408,10 +435,10 @@ def conclusion_block(s, primary, posterior, outs):
                     unsafe_allow_html=True)
         st.markdown("**%s**" % L["agree"])
         a, b = st.columns(2)
-        if a.button(L["yes"], key="fb_y", use_container_width=True):
+        if a.button(L["yes"], key="fb_y", width="stretch"):
             save_feedback(s["spike_id"], True, primary, primary)
             st.toast(L["thanks"])
-        with b.popover(L["no"], use_container_width=True):
+        with b.popover(L["no"], width="stretch"):
             pick = st.radio(L["your_cause"], list(CN), format_func=cname, key="fb_pick")
             if st.button("OK", key="fb_ok"):
                 save_feedback(s["spike_id"], False, pick, primary)
@@ -420,7 +447,7 @@ def conclusion_block(s, primary, posterior, outs):
                    and a["time"][:10] <= s["date"] and a["time"][:10] >= (pd.Timestamp(s["date"]) - pd.Timedelta(days=3)).strftime("%Y-%m-%d")
                    and a["type"] not in config.NEVER_BULLISH_TYPES]
         if filings:
-            if st.button(L["buy"], use_container_width=True):
+            if st.button(L["buy"], width="stretch"):
                 order_dialog(s, filings[-1])
         else:
             st.caption(L["no_filing"])
@@ -431,7 +458,70 @@ def conclusion_block(s, primary, posterior, outs):
     timeline(s, outs)
 
 
+def recommended(runs, gold):
+    """Spikes a saved run explains and that match my label (for quick demos)."""
+    for arm in ("agent", "routing", "keyword", "exhaustive"):
+        if arm in runs:
+            good = [sid for sid, r in runs[arm].items() if r.get("primary") not in (None, "H") and r.get("primary") == gold.get(sid)]
+            if good:
+                return arm, sorted(good, key=lambda i: runs[arm][i]["investigation"].get("calls", 9))[:8]
+    return None, []
+
+
+def live_investigation(sid, arm, area):
+    """Run the real agent now, drawing each step as it happens."""
+    from core.agent import run_case
+    api = ss.api
+    saved = (config.BACKEND, config.API_KEY, config.MODEL, config.PRICE_IN, config.PRICE_OUT)
+    config.BACKEND, config.API_KEY, config.MODEL, config.PRICE_IN, config.PRICE_OUT = \
+        "live", api["key"], api["model"], api["pin"], api["pout"]
+    n = {"step": 0}
+
+    def on_event(kind, data):
+        with area:
+            if kind == "move":
+                n["step"] += 1
+                if data.get("thought"):
+                    st.markdown('<div class="gc-post">💭 <b>%s %d</b>　%s</div>' % ("第" if ss.lang == "zh" else "Step", n["step"],
+                                                                                 str(data["thought"])[:300]), unsafe_allow_html=True)
+            elif kind == "result":
+                t, r = data["tool"], data["result"]
+                if t == "get_spike":
+                    st.caption("📥 " + L["reading"].format(n=r.get("posts", "?")))
+                elif t == "score_causes":
+                    pri = r.get("posterior", {})
+                    st.markdown("**%s**" % L["priors"])
+                    fig = go.Figure(go.Bar(y=[cname(c) for c in pri], x=list(pri.values()), orientation="h",
+                                           marker_color=[COLORS[c] for c in pri],
+                                           text=["%.0f%%" % (100 * v) for v in pri.values()], textposition="outside"))
+                    fig.update_layout(height=240, margin=dict(l=10, r=40, t=10, b=10), plot_bgcolor="white",
+                                      xaxis=dict(tickformat=".0%", range=[0, 1]))
+                    st.plotly_chart(fig, width="stretch", key="live_pri_%d" % n["step"])
+                elif t.startswith("check_"):
+                    step_card(t[-1], r)
+                elif t == "revise_scores":
+                    st.info("🔄 %s：%s" % ("AI 根据新证据调整了判断" if ss.lang == "zh" else "The AI revised its view",
+                                          data["args"].get("reason", "")))
+    try:
+        with st.spinner("🧠 " + (L["live"] + " · " + api["model"])):
+            rec = run_case(sid, arm=arm, on_event=on_event)
+    finally:
+        config.BACKEND, config.API_KEY, config.MODEL, config.PRICE_IN, config.PRICE_OUT = saved
+    return rec
+
+
 def page_investigate():
+    runs = saved_runs()
+    gold = gold_labels()
+    rec_arm, rec_ids = recommended(runs, gold)
+    if rec_ids:
+        st.markdown("**⭐ %s**" % ("推荐案例（系统能解释、且与人工标注一致）" if ss.lang == "zh" else "Suggested cases (explained, matching my label)"))
+        cols = st.columns(4)
+        for i, rid in enumerate(rec_ids):
+            if cols[i % 4].button("%s %s · %s" % (stocks[rid[4:10]]["name"], rid[-4:], CN[gold[rid]][1] + CN[gold[rid]][0]),
+                                  key="rec_" + rid, width="stretch"):
+                ss.spike, ss.run = rid, None
+                st.rerun()
     sid = ss.spike or spikes[-1]["spike_id"]
     opts = [x["spike_id"] for x in spikes]
     sid = st.selectbox(" ", opts, index=opts.index(sid), label_visibility="collapsed",
@@ -449,38 +539,54 @@ def page_investigate():
     mode = st.radio(L["mode"], list(L["modes"]), format_func=lambda m: L["modes"][m], horizontal=True, key="mode")
     if mode == "manual":
         return manual_mode(s, top)
-    runs = saved_runs()
-    live_ok = bool(os.environ.get("OPENROUTER_API_KEY"))
-    if mode == "agent" and not live_ok:
-        st.caption("🛈 " + L["no_key"])
+    live_ok = bool(ss.api["key"]) and mode in ("agent", "routing")
+    if mode in ("agent", "routing"):
+        if live_ok:
+            st.caption("🟢 %s：%s" % ("将实时调用" if ss.lang == "zh" else "Live call to", ss.api["model"]))
+        else:
+            st.caption("⚪ %s" % ("未设置 API key（右上角 ⚙️ API）：回放已保存的调查过程" if ss.lang == "zh"
+                                  else "No API key (⚙️ API, top right): replaying a saved investigation"))
     if st.button("▶ " + L["start"], type="primary"):
-        ss.run = {"mode": mode, "sid": sid}
+        ss.run = {"mode": mode, "sid": sid, "live": live_ok}
     if not ss.get("run") or ss.run.get("sid") != sid or ss.run.get("mode") != mode:
         return
-    # ---- obtain the record (live, saved, or scripted)
-    rec = None
-    if mode == "agent" and live_ok and os.environ.get("GUBACHECK_BACKEND") == "live":
-        from core.agent import run_case
-        with st.spinner(L["live"] + "…"):
-            rec = run_case(sid, arm="agent")
-    elif mode in runs and sid in runs[mode]:
-        rec = runs[mode][sid]
+    st.markdown("**%s**" % L["clues"])
+    for p in top[:6]:
+        words = [w for w, _ in clue_words(p["title"])]
+        st.markdown('<div class="gc-post">%s %s</div>' % ("📰" if p.get("post_type") == 20 else "💬",
+                                                          highlight(p["title"], words)), unsafe_allow_html=True)
+    # ---- live run (once per click), saved replay, or scripted
+    if ss.run.get("live") and not ss.run.get("rec"):
+        area = st.container()
+        try:
+            ss.run["rec"] = live_investigation(sid, mode, area)
+            ss.run["shown"] = True
+        except Exception as e:
+            st.error("❌ %s" % str(e)[:300])
+            return
+        rec = ss.run["rec"]
+        outs = [(c, causes.CAUSE_TOOLS[c](sid)) for c in rec.get("investigation", {}).get("order", [])]
+        inv = rec.get("investigation", {})
+        if inv.get("history"):
+            st.markdown("**%s**" % L["posterior"])
+            posterior_chart(inv["history"], key="pc_live")
+        st.success("💰 %s %d tokens · US$%.5f · %d %s" % ("本次调用" if ss.lang == "zh" else "This run", rec["tokens_in"] + rec["tokens_out"],
+                                                       rec["cost_usd"], inv.get("calls", 0), "项检验" if ss.lang == "zh" else "tests"))
+        st.info("⏹️ " + stop_text(inv, rec.get("primary") or "H"))
+        conclusion_block(s, rec.get("primary") or "H", inv.get("posterior", {}), outs)
+        return
+    rec = ss.run.get("rec")
     if rec is None:
-        from core.agent import run_case
-        rec = run_case(sid, arm="keyword" if mode == "agent" else mode)
+        if mode in runs and sid in runs[mode]:
+            rec = runs[mode][sid]
+        else:
+            from core.agent import run_case
+            rec = run_case(sid, arm="keyword" if mode in ("agent", "routing") else mode)
+            if mode in ("agent", "routing"):
+                st.caption("🛈 %s" % ("没有已保存的 AI 调查，显示关键词规则的结果" if ss.lang == "zh" else "No saved AI run: showing the keyword arm"))
     inv = rec.get("investigation", {})
     animate = not ss.run.get("shown")
     pause = (lambda t: time.sleep(t)) if animate else (lambda t: None)
-    # ---- step 1: read posts, clues
-    with st.status(L["reading"].format(n=s["posts"]), expanded=True) as status:
-        pause(0.8)
-        st.markdown("**%s**" % L["clues"])
-        for p in top[:6]:
-            words = [w for w, _ in clue_words(p["title"])]
-            st.markdown('<div class="gc-post">%s %s</div>' % ("📰" if p.get("post_type") == 20 else "💬",
-                                                              highlight(p["title"], words)), unsafe_allow_html=True)
-            pause(0.15)
-        status.update(state="complete")
     hist = inv.get("history", [])
     if hist:
         pri = hist[0]["posterior"]
@@ -490,13 +596,12 @@ def page_investigate():
                                textposition="outside"))
         fig.update_layout(height=260, margin=dict(l=10, r=40, t=10, b=10), xaxis=dict(tickformat=".0%", range=[0, 1]),
                           plot_bgcolor="white")
-        st.plotly_chart(fig, use_container_width=True)
-    # ---- step 2: tests, one by one
+        st.plotly_chart(fig, width="stretch")
     outs = []
     chart = st.empty()
     for n, c in enumerate(inv.get("order", []), 1):
         with st.spinner(L["testing"] + cname(c)):
-            pause(0.7)
+            pause(0.6)
             out = causes.CAUSE_TOOLS[c](sid)
         outs.append((c, out))
         step_card(c, out)
@@ -531,7 +636,7 @@ def manual_mode(s, top):
                          unsafe_allow_html=True)
             if col.button(("✓ " if done else "🔍 ") + ("已检验" if done and ss.lang == "zh" else "done" if done else
                                                      "检验" if ss.lang == "zh" else "test"),
-                          key="m_" + c, disabled=done or inv.should_stop(), use_container_width=True):
+                          key="m_" + c, disabled=done or inv.should_stop(), width="stretch"):
                 out = causes.CAUSE_TOOLS[c](s["spike_id"])
                 inv.apply(c, out["verdict"])
                 state["outs"].append((c, out))
@@ -580,12 +685,12 @@ def page_perf():
             fig.add_hline(y=runs[0]["majority_baseline_macro_f1"], line_dash="dash",
                           annotation_text="always-%s" % runs[0]["majority_class"])
             fig.update_layout(title="Attribution macro-F1", height=320, plot_bgcolor="white", margin=dict(t=40))
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         with c2:
             fig = go.Figure(go.Bar(x=df["arm"], y=df["mean_cause_checks"], marker_color="#8e4ec6",
                                    text=["%.1f" % v for v in df["mean_cause_checks"]], textposition="outside"))
             fig.update_layout(title="Cause tests per spike", height=320, plot_bgcolor="white", margin=dict(t=40))
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
     j = os.path.join(ROOT, "results", "judge_eval.json")
     s_ = os.path.join(ROOT, "results", "sentiment_eval.json")
     c1, c2 = st.columns(2)
@@ -594,19 +699,19 @@ def page_perf():
         fig = go.Figure(go.Bar(x=list(d), y=[v["macro_f1"] for v in d.values()], marker_color="#12a594",
                                text=["%.2f" % v["macro_f1"] for v in d.values()], textposition="outside"))
         fig.update_layout(title="Forum sentiment macro-F1", height=320, plot_bgcolor="white", margin=dict(t=40))
-        c1.plotly_chart(fig, use_container_width=True)
+        c1.plotly_chart(fig, width="stretch")
     if os.path.exists(j):
         d = json.load(open(j))["methods"]
         fig = go.Figure(go.Bar(x=list(d), y=[v["batch2_macro_f1"] for v in d.values()], marker_color="#f76b15",
                                text=["%.2f" % v["batch2_macro_f1"] for v in d.values()], textposition="outside"))
         fig.update_layout(title="Filing judge macro-F1 (RAG ablation)", height=320, plot_bgcolor="white", margin=dict(t=40))
-        c2.plotly_chart(fig, use_container_width=True)
+        c2.plotly_chart(fig, width="stretch")
     g = os.path.join(ROOT, "results", "guardrails.json")
     if os.path.exists(g):
         d = json.load(open(g))
         st.markdown("**Guardrails %d / %d**" % (sum(r["passed"] for r in d), len(d)))
         st.dataframe(pd.DataFrame([{"id": r["id"], "catches": r["catches"], "passed": "✅" if r["passed"] else "❌"} for r in d]),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width="stretch")
 
 
 # ================================================================ BACKTEST LAB
@@ -665,7 +770,7 @@ def page_backtest():
         fig.add_hline(y=0, line_color="#c1c8cd")
         fig.update_layout(height=360, plot_bgcolor="white", yaxis_title="%", margin=dict(l=10, r=10, t=10, b=10),
                           legend=dict(orientation="h", y=-0.2))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
     with right:
         st.markdown("**%s**" % ("逐笔超额收益（持有 %d 天，按时间）" % hold if zh else "Excess return per trade (hold %d d, by date)" % hold))
         sel_sorted = sorted(sel, key=lambda r: (r["spike_id"][-8:], r["spike_id"]))
@@ -683,11 +788,11 @@ def page_backtest():
         fig.add_hline(y=0, line_color="#c1c8cd")
         fig.update_layout(height=360, plot_bgcolor="white", yaxis_title="%", margin=dict(l=10, r=10, t=10, b=10),
                           legend=dict(orientation="h", y=-0.2), xaxis_title=("第几笔" if zh else "trade #"))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
     with st.expander("逐笔明细" if zh else "Trade list"):
         st.dataframe(pd.DataFrame([{"spike": r["spike_id"], "cause": cname(r["cause"]), "direction": r["direction"],
                                     "net %": r["returns"][str(hold)], "excess %": r["excess"][str(hold)]} for r in sel_sorted]),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width="stretch")
     st.markdown("---")
     st.markdown("#### " + ("早期方案：出现官方利好公告就买入" if zh else "Earlier design: buy on the first bullish filing"))
     b = os.path.join(ROOT, "results", "backtest_rag.json")
@@ -703,7 +808,7 @@ def page_backtest():
                                  name="%s (n=%d)" % (names.get(k_, k_), v["filled"])))
         fig.update_layout(barmode="group", height=320, plot_bgcolor="white", yaxis_title="%", xaxis_type="category",
                           margin=dict(l=10, r=10, t=10, b=10), legend=dict(orientation="h", y=-0.25))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         st.caption("结论：在股吧狂热之后，等到官方利好再买入，平均反而跑输大盘（利好兑现）。这是产品从“买入信号”转向“异动归因”的原因。"
                    if zh else "Finding: buying official good news after a forum frenzy underperformed on average — why the product "
                    "moved from buy signals to attribution.")

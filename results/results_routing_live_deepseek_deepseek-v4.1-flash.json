@@ -1,0 +1,4741 @@
+{
+  "config": "backend=LIVE (costs money) | model=deepseek/deepseek-v4.1-flash | max_turns=10 | autonomy=confirm | data=/Users/yangsu/Desktop/6201 End-of-course/gubacheck/data/snapshot",
+  "prompt_version": "v2",
+  "summary": {
+    "arm": "routing",
+    "errors": 9,
+    "macro_f1": 0.0223,
+    "majority_class": "B",
+    "majority_baseline_accuracy": 0.678,
+    "majority_baseline_macro_f1": 0.1154,
+    "recall_by_cause": {
+      "A": "0/2",
+      "B": "0/40",
+      "C": "0/6",
+      "D": "0/2",
+      "E": "0/2",
+      "F": "0/2",
+      "H": "5/5"
+    },
+    "runs": 59,
+    "graded": 59,
+    "accuracy": 0.0847,
+    "accuracy_by_period": {
+      "observe": {
+        "n": 19,
+        "accuracy": 0.1053
+      },
+      "check": {
+        "n": 40,
+        "accuracy": 0.075
+      }
+    },
+    "always_H_baseline": 0.0847,
+    "mean_cause_checks": 0.068,
+    "median_turns": 2,
+    "worst_turns": 6,
+    "mean_tokens": 8491,
+    "total_cost_usd": 0.094258,
+    "over_investigation_runs": 0,
+    "premature_stops": 53,
+    "model_vs_code_primary_disagree": 28,
+    "predicted": {
+      "H": 59
+    },
+    "confusion_gold_by_pred": {
+      "B": {
+        "H": 40
+      },
+      "H": {
+        "H": 5
+      },
+      "C": {
+        "H": 6
+      },
+      "D": {
+        "H": 2
+      },
+      "E": {
+        "H": 2
+      },
+      "F": {
+        "H": 2
+      },
+      "A": {
+        "H": 2
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "SPK-688256-20260203",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-688256-20260203",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260430",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.4,
+            "B": 0.2,
+            "C": 0.16,
+            "D": 0.02,
+            "E": 0.04,
+            "F": 0.02,
+            "G": 0.16
+          },
+          "tested": {
+            "A": "PARTIAL"
+          },
+          "order": [
+            "A"
+          ],
+          "calls": 1,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.4,
+                "B": 0.2,
+                "C": 0.16,
+                "D": 0.02,
+                "E": 0.04,
+                "F": 0.02,
+                "G": 0.16
+              },
+              "untested_mass": 1.0
+            },
+            {
+              "event": "test A PARTIAL",
+              "posterior": {
+                "A": 0.4,
+                "B": 0.2,
+                "C": 0.16,
+                "D": 0.02,
+                "E": 0.04,
+                "F": 0.02,
+                "G": 0.16
+              },
+              "untested_mass": 0.6
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-688256-20260430",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260430"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 10,
+                "B": 5,
+                "C": 4,
+                "D": 0,
+                "E": 1,
+                "F": 0,
+                "G": 4
+              },
+              "clues": {
+                "A": [
+                  1701708839,
+                  1701716661,
+                  1701710703,
+                  1701714570
+                ],
+                "B": [
+                  1701778068,
+                  1701755991,
+                  1702122703,
+                  1702171667
+                ],
+                "C": [
+                  1702242756,
+                  1702159921
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1702266867,
+                  1702271328,
+                  1701713903
+                ]
+              }
+            }
+          },
+          {
+            "tool": "check_A",
+            "args": {
+              "spike_id": "SPK-688256-20260430"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 12545,
+        "tokens_out": 1139,
+        "cost_usd": 0.002223,
+        "seconds": 20.209,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260506",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": null,
+      "period": "check",
+      "expected": "H",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.1176,
+            "B": 0.1765,
+            "C": 0.2059,
+            "D": 0.1471,
+            "E": 0.0882,
+            "F": 0.0882,
+            "G": 0.1765
+          },
+          "tested": {
+            "C": "PARTIAL"
+          },
+          "order": [
+            "C"
+          ],
+          "calls": 1,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.1176,
+                "B": 0.1765,
+                "C": 0.2059,
+                "D": 0.1471,
+                "E": 0.0882,
+                "F": 0.0882,
+                "G": 0.1765
+              },
+              "untested_mass": 1.0
+            },
+            {
+              "event": "test C PARTIAL",
+              "posterior": {
+                "A": 0.1176,
+                "B": 0.1765,
+                "C": 0.2059,
+                "D": 0.1471,
+                "E": 0.0882,
+                "F": 0.0882,
+                "G": 0.1765
+              },
+              "untested_mass": 0.7941
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-688256-20260506",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260506"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 4,
+                "B": 6,
+                "C": 7,
+                "D": 5,
+                "E": 3,
+                "F": 3,
+                "G": 6
+              },
+              "clues": {
+                "A": [
+                  1702456369,
+                  1702625030
+                ],
+                "B": [
+                  1702713038,
+                  1702829288,
+                  1703217629
+                ],
+                "C": [
+                  1702518488,
+                  1702625030,
+                  1702613123,
+                  1702456369,
+                  1703149754
+                ],
+                "D": [
+                  1703149754
+                ],
+                "E": [
+                  1702889939
+                ],
+                "F": [
+                  1703214770
+                ],
+                "G": [
+                  1702426534,
+                  1702497905,
+                  1703217629,
+                  1703214770
+                ]
+              }
+            }
+          },
+          {
+            "tool": "check_C",
+            "args": {
+              "spike_id": "SPK-688256-20260506"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 9742,
+        "tokens_out": 1330,
+        "cost_usd": 0.001958,
+        "seconds": 9.944,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260618",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'C'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "C",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-688256-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260618"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 6077,
+        "tokens_out": 1325,
+        "cost_usd": 0.001479,
+        "seconds": 14.743,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260701",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-688256-20260701",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260701"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6208,
+        "tokens_out": 1834,
+        "cost_usd": 0.001761,
+        "seconds": 12.62,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260810",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.3333,
+            "B": 0.1852,
+            "C": 0.1111,
+            "D": 0.037,
+            "E": 0.0741,
+            "F": 0.037,
+            "G": 0.2222
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.3333,
+                "B": 0.1852,
+                "C": 0.1111,
+                "D": 0.037,
+                "E": 0.0741,
+                "F": 0.037,
+                "G": 0.2222
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-688256-20260810",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260810"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 5,
+                "C": 3,
+                "D": 1,
+                "E": 2,
+                "F": 1,
+                "G": 6
+              },
+              "clues": {
+                "A": [
+                  1756152646,
+                  1756171911,
+                  1756153266,
+                  1756167128,
+                  1756197357,
+                  1756182973,
+                  1756351299
+                ],
+                "B": [
+                  1756239683,
+                  1756211439,
+                  1756180563,
+                  1756354358
+                ],
+                "C": [
+                  1756751353
+                ],
+                "D": [],
+                "E": [
+                  1756751353
+                ],
+                "F": [],
+                "G": [
+                  1756315733,
+                  1756611051,
+                  1756315470,
+                  1756239683
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6657,
+        "tokens_out": 1004,
+        "cost_usd": 0.001387,
+        "seconds": 9.368,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20251124",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601138-20251124",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20251124"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3854,
+        "tokens_out": 905,
+        "cost_usd": 0.000972,
+        "seconds": 4.589,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260129",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601138-20260129",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260129"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 10650,
+        "tokens_out": 1962,
+        "cost_usd": 0.002405,
+        "seconds": 18.921,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260204",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601138-20260204",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260204"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3777,
+        "tokens_out": 867,
+        "cost_usd": 0.000942,
+        "seconds": 7.127,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260429",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.3913,
+            "B": 0.2609,
+            "C": 0.087,
+            "D": 0.0435,
+            "E": 0.0435,
+            "F": 0.0435,
+            "G": 0.1304
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.3913,
+                "B": 0.2609,
+                "C": 0.087,
+                "D": 0.0435,
+                "E": 0.0435,
+                "F": 0.0435,
+                "G": 0.1304
+              },
+              "untested_mass": 1.0001
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601138-20260429",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260429"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 6,
+                "C": 2,
+                "D": 1,
+                "E": 1,
+                "F": 1,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1700846910,
+                  1700848714,
+                  1700845920,
+                  1701007665,
+                  1701061860,
+                  1701050483
+                ],
+                "B": [
+                  1700900321,
+                  1701015894,
+                  1700905728,
+                  1701048958,
+                  1700959885
+                ],
+                "C": [],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1701160709,
+                  1701368692
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 9076,
+        "tokens_out": 1215,
+        "cost_usd": 0.001812,
+        "seconds": 12.124,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20251126",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'C'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "C",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300308-20251126",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20251126"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6110,
+        "tokens_out": 970,
+        "cost_usd": 0.001299,
+        "seconds": 6.97,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260202",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-300308-20260202",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260417",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.3214,
+            "B": 0.2143,
+            "C": 0.1786,
+            "D": 0.0714,
+            "E": 0.0357,
+            "F": 0.0357,
+            "G": 0.1429
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.3214,
+                "B": 0.2143,
+                "C": 0.1786,
+                "D": 0.0714,
+                "E": 0.0357,
+                "F": 0.0357,
+                "G": 0.1429
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300308-20260417",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260417"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 6,
+                "C": 5,
+                "D": 2,
+                "E": 1,
+                "F": 1,
+                "G": 4
+              },
+              "clues": {
+                "A": [
+                  1694631943,
+                  1694631495,
+                  1694632821,
+                  1694669494,
+                  1694713440,
+                  1694655519
+                ],
+                "B": [
+                  1694762930,
+                  1695015693,
+                  1694635143,
+                  1694742740,
+                  1694702327
+                ],
+                "C": [
+                  1695015693,
+                  1695049514,
+                  1694777319
+                ],
+                "D": [
+                  1694650326
+                ],
+                "E": [],
+                "F": [],
+                "G": [
+                  1695049514
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6698,
+        "tokens_out": 1005,
+        "cost_usd": 0.001393,
+        "seconds": 7.79,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260512",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'D'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "D",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.0667,
+            "B": 0.2333,
+            "C": 0.2,
+            "D": 0.1,
+            "E": 0.1,
+            "F": 0.0667,
+            "G": 0.2333
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.0667,
+                "B": 0.2333,
+                "C": 0.2,
+                "D": 0.1,
+                "E": 0.1,
+                "F": 0.0667,
+                "G": 0.2333
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300308-20260512",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260512"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 2,
+                "B": 7,
+                "C": 6,
+                "D": 3,
+                "E": 3,
+                "F": 2,
+                "G": 7
+              },
+              "clues": {
+                "A": [
+                  1706277851
+                ],
+                "B": [
+                  1706057870,
+                  1706154846,
+                  1706220299,
+                  1706322394,
+                  1706126249
+                ],
+                "C": [
+                  1705841512,
+                  1705788641,
+                  1706433835
+                ],
+                "D": [
+                  1706126249,
+                  1705844568
+                ],
+                "E": [
+                  1705832045
+                ],
+                "F": [
+                  1705844568
+                ],
+                "G": [
+                  1705752774,
+                  1705813199,
+                  1705832045,
+                  1706433835,
+                  1705788641
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6663,
+        "tokens_out": 1098,
+        "cost_usd": 0.001437,
+        "seconds": 6.159,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260601",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.2667,
+            "B": 0.2333,
+            "C": 0.1333,
+            "D": 0.0333,
+            "E": 0.1,
+            "F": 0.1,
+            "G": 0.1333
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.2667,
+                "B": 0.2333,
+                "C": 0.1333,
+                "D": 0.0333,
+                "E": 0.1,
+                "F": 0.1,
+                "G": 0.1333
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300308-20260601",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260601"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 8,
+                "B": 7,
+                "C": 4,
+                "D": 1,
+                "E": 3,
+                "F": 3,
+                "G": 4
+              },
+              "clues": {
+                "A": [
+                  1717663284,
+                  1717664482,
+                  1717695747,
+                  1717750320,
+                  1717740922,
+                  1717973911
+                ],
+                "B": [
+                  1717760653,
+                  1717638785,
+                  1717663284,
+                  1717664482
+                ],
+                "C": [
+                  1717638785,
+                  1717754846
+                ],
+                "D": [],
+                "E": [
+                  1717754846,
+                  1717740922
+                ],
+                "F": [
+                  1717760653,
+                  1717740922
+                ],
+                "G": [
+                  1717488807,
+                  1717947112
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6654,
+        "tokens_out": 1169,
+        "cost_usd": 0.001473,
+        "seconds": 5.474,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260622",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'E'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "E",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300308-20260622",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260622"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3590,
+        "tokens_out": 641,
+        "cost_usd": 0.0008,
+        "seconds": 13.194,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260713",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300308-20260713",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260713"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 5905,
+        "tokens_out": 1367,
+        "cost_usd": 0.001478,
+        "seconds": 18.954,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260728",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'C'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "C",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.25,
+            "B": 0.1389,
+            "C": 0.1389,
+            "D": 0.1944,
+            "E": 0.0556,
+            "F": 0.0556,
+            "G": 0.1667
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.25,
+                "B": 0.1389,
+                "C": 0.1389,
+                "D": 0.1944,
+                "E": 0.0556,
+                "F": 0.0556,
+                "G": 0.1667
+              },
+              "untested_mass": 1.0001
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300308-20260728",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260728"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 5,
+                "C": 5,
+                "D": 7,
+                "E": 2,
+                "F": 2,
+                "G": 6
+              },
+              "clues": {
+                "A": [
+                  1750247656,
+                  1750241413,
+                  1750536872,
+                  1750706044,
+                  1750400210,
+                  1750241997
+                ],
+                "B": [
+                  1750540209,
+                  1750546256
+                ],
+                "C": [
+                  1750542237
+                ],
+                "D": [
+                  1750208476,
+                  1750542237
+                ],
+                "E": [],
+                "F": [
+                  1750546256
+                ],
+                "G": [
+                  1750541257,
+                  1750188852,
+                  1750148898,
+                  1750706044
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 11297,
+        "tokens_out": 2559,
+        "cost_usd": 0.002799,
+        "seconds": 38.687,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260805",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'F'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "F",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.0714,
+            "B": 0.3214,
+            "C": 0.1786,
+            "D": 0.1071,
+            "E": 0.0357,
+            "F": 0.1786,
+            "G": 0.1071
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.0714,
+                "B": 0.3214,
+                "C": 0.1786,
+                "D": 0.1071,
+                "E": 0.0357,
+                "F": 0.1786,
+                "G": 0.1071
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300308-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260805"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 2,
+                "B": 9,
+                "C": 5,
+                "D": 3,
+                "E": 1,
+                "F": 5,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1754413365,
+                  1754448965
+                ],
+                "B": [
+                  1754247096,
+                  1754219493,
+                  1754238838,
+                  1754223326,
+                  1754277997,
+                  1754300910,
+                  1754194373
+                ],
+                "C": [
+                  1754333215
+                ],
+                "D": [
+                  1754296664
+                ],
+                "E": [],
+                "F": [
+                  1754219493,
+                  1754300910,
+                  1754281851
+                ],
+                "G": [
+                  1754194354,
+                  1754194899
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 9206,
+        "tokens_out": 1918,
+        "cost_usd": 0.002194,
+        "seconds": 20.822,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260202",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.3673,
+            "B": 0.2041,
+            "C": 0.2041,
+            "D": 0.0408,
+            "E": 0.0408,
+            "F": 0.0204,
+            "G": 0.1224
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.3673,
+                "B": 0.2041,
+                "C": 0.2041,
+                "D": 0.0408,
+                "E": 0.0408,
+                "F": 0.0204,
+                "G": 0.1224
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300502-20260202",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260202"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 5,
+                "C": 5,
+                "D": 1,
+                "E": 1,
+                "F": 0,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1663077593,
+                  1663077078,
+                  1663092756,
+                  1663126213,
+                  1663116290
+                ],
+                "B": [
+                  1663089209,
+                  1663163776,
+                  1663120936,
+                  1663405866
+                ],
+                "C": [
+                  1663204091,
+                  1663297738,
+                  1663112403
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1663006660
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 13925,
+        "tokens_out": 2124,
+        "cost_usd": 0.002915,
+        "seconds": 36.758,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260227",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'D'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "D",
+      "record": {
+        "case_id": "SPK-300502-20260227",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260424",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300502-20260424",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260424"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6170,
+        "tokens_out": 1175,
+        "cost_usd": 0.001413,
+        "seconds": 8.827,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260611",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.2162,
+            "B": 0.1892,
+            "C": 0.1351,
+            "D": 0.0541,
+            "E": 0.0811,
+            "F": 0.1081,
+            "G": 0.2162
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.2162,
+                "B": 0.1892,
+                "C": 0.1351,
+                "D": 0.0541,
+                "E": 0.0811,
+                "F": 0.1081,
+                "G": 0.2162
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300502-20260611",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260611"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 8,
+                "B": 7,
+                "C": 5,
+                "D": 2,
+                "E": 3,
+                "F": 4,
+                "G": 8
+              },
+              "clues": {
+                "A": [
+                  1724290855,
+                  1724302004
+                ],
+                "B": [
+                  1724317677,
+                  1724318133,
+                  1724833159
+                ],
+                "C": [
+                  1724906728
+                ],
+                "D": [],
+                "E": [
+                  1724347481
+                ],
+                "F": [
+                  1724367582,
+                  1724369250
+                ],
+                "G": [
+                  1724420522,
+                  1724441510,
+                  1724749275,
+                  1724924276
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6577,
+        "tokens_out": 1074,
+        "cost_usd": 0.001413,
+        "seconds": 10.239,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260720",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300502-20260720",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260720"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 5940,
+        "tokens_out": 1035,
+        "cost_usd": 0.00131,
+        "seconds": 13.926,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260728",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'C'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "C",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300502-20260728",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260728"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3854,
+        "tokens_out": 939,
+        "cost_usd": 0.000989,
+        "seconds": 10.449,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260805",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'F'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "F",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.069,
+            "B": 0.2759,
+            "C": 0.2069,
+            "D": 0.2069,
+            "E": 0.0345,
+            "F": 0.1724,
+            "G": 0.0345
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.069,
+                "B": 0.2759,
+                "C": 0.2069,
+                "D": 0.2069,
+                "E": 0.0345,
+                "F": 0.1724,
+                "G": 0.0345
+              },
+              "untested_mass": 1.0001
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300502-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260805"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 2,
+                "B": 8,
+                "C": 6,
+                "D": 6,
+                "E": 1,
+                "F": 5,
+                "G": 1
+              },
+              "clues": {
+                "A": [
+                  1754517259
+                ],
+                "B": [
+                  1754228454,
+                  1754275129,
+                  1754613595,
+                  1754263604
+                ],
+                "C": [
+                  1754228454,
+                  1754517259,
+                  1754266747
+                ],
+                "D": [
+                  1754191970,
+                  1754275129
+                ],
+                "F": [
+                  1754275129,
+                  1754230745
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 13791,
+        "tokens_out": 3178,
+        "cost_usd": 0.003445,
+        "seconds": 55.193,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260119",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'A'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "A",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.3333,
+            "B": 0.2222,
+            "C": 0.1111,
+            "D": 0.1481,
+            "E": 0.037,
+            "F": 0.037,
+            "G": 0.1111
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.3333,
+                "B": 0.2222,
+                "C": 0.1111,
+                "D": 0.1481,
+                "E": 0.037,
+                "F": 0.037,
+                "G": 0.1111
+              },
+              "untested_mass": 0.9998
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300476-20260119",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260119"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 6,
+                "C": 3,
+                "D": 4,
+                "E": 1,
+                "F": 1,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1655152934,
+                  1655154473,
+                  1655152028,
+                  1655154471
+                ],
+                "B": [
+                  1655242567,
+                  1655458423,
+                  1655210438,
+                  1655311627
+                ],
+                "C": [
+                  1655458423
+                ],
+                "D": [
+                  1655321042,
+                  1655282049
+                ],
+                "E": [],
+                "F": [],
+                "G": [
+                  1655330692,
+                  1655866198
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6683,
+        "tokens_out": 968,
+        "cost_usd": 0.001372,
+        "seconds": 13.045,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260313",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-300476-20260313",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260429",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300476-20260429",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260429"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3818,
+        "tokens_out": 613,
+        "cost_usd": 0.000815,
+        "seconds": 4.133,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260525",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'C'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "C",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.1111,
+            "B": 0.0741,
+            "C": 0.2593,
+            "D": 0.1852,
+            "E": 0.037,
+            "F": 0.037,
+            "G": 0.2963
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.1111,
+                "B": 0.0741,
+                "C": 0.2593,
+                "D": 0.1852,
+                "E": 0.037,
+                "F": 0.037,
+                "G": 0.2963
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300476-20260525",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260525"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 3,
+                "B": 2,
+                "C": 7,
+                "D": 5,
+                "E": 1,
+                "F": 1,
+                "G": 8
+              },
+              "clues": {
+                "A": [
+                  1713208286
+                ],
+                "B": [
+                  1713343770
+                ],
+                "C": [
+                  1713243143,
+                  1713334166,
+                  1713216456
+                ],
+                "D": [
+                  1713343770
+                ],
+                "E": [],
+                "F": [],
+                "G": [
+                  1713114648,
+                  1713191505,
+                  1713243144,
+                  1713465451,
+                  1713749278
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6489,
+        "tokens_out": 936,
+        "cost_usd": 0.00133,
+        "seconds": 4.792,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260605",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'D'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "D",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.0488,
+            "B": 0.2927,
+            "C": 0.1951,
+            "D": 0.2439,
+            "E": 0.0488,
+            "F": 0.0244,
+            "G": 0.1463
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.0488,
+                "B": 0.2927,
+                "C": 0.1951,
+                "D": 0.2439,
+                "E": 0.0488,
+                "F": 0.0244,
+                "G": 0.1463
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-300476-20260605",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260605"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 1,
+                "B": 6,
+                "C": 4,
+                "D": 5,
+                "E": 1,
+                "F": 0,
+                "G": 3
+              },
+              "clues": {
+                "A": [],
+                "B": [
+                  1720917846,
+                  1721642637,
+                  1720895527,
+                  1720993706,
+                  1720898931
+                ],
+                "C": [
+                  1720993706,
+                  1721385020,
+                  1720895527
+                ],
+                "D": [
+                  1720917846,
+                  1720993706
+                ],
+                "E": [],
+                "F": [],
+                "G": [
+                  1721571237,
+                  1721501394,
+                  1721475175,
+                  1721642637,
+                  1721412807
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 13180,
+        "tokens_out": 2338,
+        "cost_usd": 0.002929,
+        "seconds": 99.792,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260828",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-300476-20260828",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260828"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3793,
+        "tokens_out": 1066,
+        "cost_usd": 0.001047,
+        "seconds": 8.857,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20251106",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.16,
+            "B": 0.32,
+            "C": 0.08,
+            "D": 0.08,
+            "E": 0.08,
+            "F": 0.08,
+            "G": 0.2
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.16,
+                "B": 0.32,
+                "C": 0.08,
+                "D": 0.08,
+                "E": 0.08,
+                "F": 0.08,
+                "G": 0.2
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601127-20251106",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20251106"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 4,
+                "B": 8,
+                "C": 2,
+                "D": 2,
+                "E": 2,
+                "F": 2,
+                "G": 5
+              },
+              "clues": {
+                "A": [
+                  1620705229,
+                  1620985249,
+                  1620726999
+                ],
+                "B": [
+                  1620743213,
+                  1620743737,
+                  1620867653,
+                  1620719077,
+                  1620647530
+                ],
+                "C": [],
+                "D": [
+                  1620726999
+                ],
+                "E": [],
+                "F": [],
+                "G": [
+                  1621189611,
+                  1620618897,
+                  1620948096
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 11572,
+        "tokens_out": 2142,
+        "cost_usd": 0.002618,
+        "seconds": 14.679,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260122",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601127-20260122",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260122"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 8398,
+        "tokens_out": 3362,
+        "cost_usd": 0.00284,
+        "seconds": 26.759,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260128",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": null,
+      "period": "observe",
+      "expected": "H",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601127-20260128",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260128"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 6277,
+        "tokens_out": 1425,
+        "cost_usd": 0.001557,
+        "seconds": 19.248,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260331",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.5625,
+            "B": 0.125,
+            "C": 0.0625,
+            "D": 0.0312,
+            "E": 0.0312,
+            "F": 0.0625,
+            "G": 0.125
+          },
+          "tested": {
+            "A": "PARTIAL"
+          },
+          "order": [
+            "A"
+          ],
+          "calls": 1,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.5625,
+                "B": 0.125,
+                "C": 0.0625,
+                "D": 0.0312,
+                "E": 0.0312,
+                "F": 0.0625,
+                "G": 0.125
+              },
+              "untested_mass": 0.9999
+            },
+            {
+              "event": "test A PARTIAL",
+              "posterior": {
+                "A": 0.5625,
+                "B": 0.125,
+                "C": 0.0625,
+                "D": 0.0312,
+                "E": 0.0312,
+                "F": 0.0625,
+                "G": 0.125
+              },
+              "untested_mass": 0.4374
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601127-20260331",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260331"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 2,
+                "C": 1,
+                "D": 0,
+                "E": 0,
+                "F": 1,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1686729360,
+                  1686849691,
+                  1686742660,
+                  1686742943,
+                  1687095158,
+                  1686808699,
+                  1686747194,
+                  1686842014,
+                  1687280607,
+                  1686818690
+                ],
+                "B": [
+                  1686780183,
+                  1686945580,
+                  1686857751
+                ],
+                "C": [],
+                "D": [],
+                "E": [],
+                "F": [
+                  1686857751
+                ],
+                "G": [
+                  1686878706
+                ]
+              }
+            }
+          },
+          {
+            "tool": "check_A",
+            "args": {
+              "spike_id": "SPK-601127-20260331"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 10071,
+        "tokens_out": 908,
+        "cost_usd": 0.001781,
+        "seconds": 15.833,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260610",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601127-20260610",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260610"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3665,
+        "tokens_out": 557,
+        "cost_usd": 0.000766,
+        "seconds": 9.638,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260713",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601127-20260713",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260713"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3771,
+        "tokens_out": 472,
+        "cost_usd": 0.000736,
+        "seconds": 2.639,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260915",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.2222,
+            "B": 0.4444,
+            "C": 0.0556,
+            "D": 0.0556,
+            "E": 0.0556,
+            "F": 0.0556,
+            "G": 0.1111
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.2222,
+                "B": 0.4444,
+                "C": 0.0556,
+                "D": 0.0556,
+                "E": 0.0556,
+                "F": 0.0556,
+                "G": 0.1111
+              },
+              "untested_mass": 1.0001
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601127-20260915",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260915"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 4,
+                "B": 8,
+                "C": 1,
+                "D": 1,
+                "E": 1,
+                "F": 1,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1773242786,
+                  1773213179,
+                  1773246858
+                ],
+                "B": [
+                  1773263923,
+                  1773165575,
+                  1773325155,
+                  1773388190,
+                  1773326917
+                ],
+                "C": [],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1773366668
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6604,
+        "tokens_out": 871,
+        "cost_usd": 0.001311,
+        "seconds": 9.772,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260928",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601127-20260928",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260928"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3855,
+        "tokens_out": 896,
+        "cost_usd": 0.000967,
+        "seconds": 7.681,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251106",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": null,
+      "period": "observe",
+      "expected": "H",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.0476,
+            "B": 0.0952,
+            "C": 0.381,
+            "D": 0.0476,
+            "E": 0.0952,
+            "F": 0.0476,
+            "G": 0.2857
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.0476,
+                "B": 0.0952,
+                "C": 0.381,
+                "D": 0.0476,
+                "E": 0.0952,
+                "F": 0.0476,
+                "G": 0.2857
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600418-20251106",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251106"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 0,
+                "B": 1,
+                "C": 4,
+                "D": 0,
+                "E": 1,
+                "F": 0,
+                "G": 3
+              },
+              "clues": {
+                "A": [],
+                "B": [
+                  1621029510
+                ],
+                "C": [
+                  1620833373
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1621081929,
+                  1621160619
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6422,
+        "tokens_out": 782,
+        "cost_usd": 0.001241,
+        "seconds": 11.483,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251112",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.4571,
+            "B": 0.1143,
+            "C": 0.1714,
+            "D": 0.0286,
+            "E": 0.0571,
+            "F": 0.0571,
+            "G": 0.1143
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.4571,
+                "B": 0.1143,
+                "C": 0.1714,
+                "D": 0.0286,
+                "E": 0.0571,
+                "F": 0.0571,
+                "G": 0.1143
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600418-20251112",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251112"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 8,
+                "B": 2,
+                "C": 3,
+                "D": 0,
+                "E": 1,
+                "F": 1,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1623541592,
+                  1623370571,
+                  1623359057,
+                  1623435720
+                ],
+                "B": [
+                  1623548939
+                ],
+                "C": [
+                  1623370964
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1623396068
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6258,
+        "tokens_out": 722,
+        "cost_usd": 0.001189,
+        "seconds": 11.262,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251211",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.5,
+            "B": 0.1667,
+            "C": 0.0556,
+            "D": 0.0278,
+            "E": 0.0278,
+            "F": 0.0556,
+            "G": 0.1667
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.5,
+                "B": 0.1667,
+                "C": 0.0556,
+                "D": 0.0278,
+                "E": 0.0278,
+                "F": 0.0556,
+                "G": 0.1667
+              },
+              "untested_mass": 1.0002
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600418-20251211",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251211"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 3,
+                "C": 1,
+                "D": 0,
+                "E": 0,
+                "F": 1,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1637206739,
+                  1637223395,
+                  1637288029,
+                  1637508188,
+                  1637528740,
+                  1637183252,
+                  1637145439
+                ],
+                "B": [
+                  1637268601,
+                  1637295265
+                ],
+                "C": [
+                  1637295265
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1637543421,
+                  1637250188,
+                  1637584574,
+                  1637215901
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6686,
+        "tokens_out": 999,
+        "cost_usd": 0.001389,
+        "seconds": 13.936,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260119",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-600418-20260119",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260119"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 6,
+        "tokens_in": 15610,
+        "tokens_out": 2634,
+        "cost_usd": 0.003399,
+        "seconds": 12.959,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260211",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-600418-20260211",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260427",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.3111,
+            "B": 0.3111,
+            "C": 0.2222,
+            "D": 0.0222,
+            "E": 0.0222,
+            "F": 0.0222,
+            "G": 0.0889
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.3111,
+                "B": 0.3111,
+                "C": 0.2222,
+                "D": 0.0222,
+                "E": 0.0222,
+                "F": 0.0222,
+                "G": 0.0889
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600418-20260427",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260427"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 7,
+                "B": 7,
+                "C": 5,
+                "D": 0,
+                "E": 0,
+                "F": 0,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1699407740,
+                  1699420070,
+                  1699320987
+                ],
+                "B": [
+                  1699356235,
+                  1699412372,
+                  1699451589,
+                  1699572267,
+                  1699779622
+                ],
+                "C": [
+                  1699822875,
+                  1699812684
+                ],
+                "G": [
+                  1699938454
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 4,
+        "tokens_in": 11298,
+        "tokens_out": 1520,
+        "cost_usd": 0.002259,
+        "seconds": 7.596,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260525",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.2927,
+            "B": 0.2439,
+            "C": 0.0976,
+            "D": 0.0244,
+            "E": 0.0488,
+            "F": 0.0488,
+            "G": 0.2439
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.2927,
+                "B": 0.2439,
+                "C": 0.0976,
+                "D": 0.0244,
+                "E": 0.0488,
+                "F": 0.0488,
+                "G": 0.2439
+              },
+              "untested_mass": 1.0001
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600418-20260525",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260525"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 6,
+                "B": 5,
+                "C": 2,
+                "D": 0,
+                "E": 1,
+                "F": 1,
+                "G": 5
+              },
+              "clues": {
+                "A": [
+                  1713360591,
+                  1713155043,
+                  1713805636
+                ],
+                "B": [
+                  1713656097,
+                  1713628073,
+                  1714013683
+                ],
+                "C": [
+                  1713283482
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1713544349,
+                  1713661439,
+                  1713503789
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6635,
+        "tokens_out": 1331,
+        "cost_usd": 0.001555,
+        "seconds": 12.294,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260622",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": null,
+      "period": "check",
+      "expected": "H",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-600418-20260622",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260622"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3785,
+        "tokens_out": 911,
+        "cost_usd": 0.000966,
+        "seconds": 5.581,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260707",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-600418-20260707",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260707"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3640,
+        "tokens_out": 833,
+        "cost_usd": 0.000906,
+        "seconds": 15.839,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260923",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.2308,
+            "B": 0.3077,
+            "C": 0.1923,
+            "D": 0.0192,
+            "E": 0.0385,
+            "F": 0.0192,
+            "G": 0.1923
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.2308,
+                "B": 0.3077,
+                "C": 0.1923,
+                "D": 0.0192,
+                "E": 0.0385,
+                "F": 0.0192,
+                "G": 0.1923
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600418-20260923",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260923"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 6,
+                "B": 8,
+                "C": 5,
+                "D": 0,
+                "E": 1,
+                "F": 0,
+                "G": 5
+              },
+              "clues": {
+                "A": [
+                  1776491376,
+                  1776456572
+                ],
+                "B": [
+                  1776439157,
+                  1776503117,
+                  1776516574,
+                  1776549297
+                ],
+                "C": [
+                  1776474322
+                ],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [
+                  1776456251
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6416,
+        "tokens_out": 903,
+        "cost_usd": 0.001304,
+        "seconds": 7.419,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251110",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601238-20251110",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251110"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3743,
+        "tokens_out": 540,
+        "cost_usd": 0.000767,
+        "seconds": 4.296,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251124",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601238-20251124",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251124"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3807,
+        "tokens_out": 965,
+        "cost_usd": 0.000997,
+        "seconds": 12.381,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260618",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": null,
+      "period": "check",
+      "expected": "H",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.1304,
+            "B": 0.1739,
+            "C": 0.2174,
+            "D": 0.0435,
+            "E": 0.087,
+            "F": 0.0435,
+            "G": 0.3043
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.1304,
+                "B": 0.1739,
+                "C": 0.2174,
+                "D": 0.0435,
+                "E": 0.087,
+                "F": 0.0435,
+                "G": 0.3043
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601238-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260618"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 3,
+                "B": 4,
+                "C": 5,
+                "D": 1,
+                "E": 2,
+                "F": 1,
+                "G": 7
+              },
+              "clues": {
+                "A": [
+                  1728848930,
+                  1728836788
+                ],
+                "B": [
+                  1728312271,
+                  1728269064
+                ],
+                "C": [
+                  1728260843,
+                  1728269064
+                ],
+                "D": [],
+                "E": [
+                  1728423063
+                ],
+                "F": [],
+                "G": [
+                  1728879475,
+                  1728294603,
+                  1728843643,
+                  1728848930
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6549,
+        "tokens_out": 1287,
+        "cost_usd": 0.001521,
+        "seconds": 11.722,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260629",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.25,
+            "B": 0.2917,
+            "C": 0.125,
+            "D": 0.0417,
+            "E": 0.0417,
+            "F": 0.125,
+            "G": 0.125
+          },
+          "tested": {
+            "B": "PARTIAL"
+          },
+          "order": [
+            "B"
+          ],
+          "calls": 1,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.25,
+                "B": 0.2917,
+                "C": 0.125,
+                "D": 0.0417,
+                "E": 0.0417,
+                "F": 0.125,
+                "G": 0.125
+              },
+              "untested_mass": 1.0001
+            },
+            {
+              "event": "test B PARTIAL",
+              "posterior": {
+                "A": 0.25,
+                "B": 0.2917,
+                "C": 0.125,
+                "D": 0.0417,
+                "E": 0.0417,
+                "F": 0.125,
+                "G": 0.125
+              },
+              "untested_mass": 0.7084
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601238-20260629",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260629"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 6,
+                "B": 7,
+                "C": 3,
+                "D": 1,
+                "E": 1,
+                "F": 3,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1733733583,
+                  1733806956,
+                  1733728069
+                ],
+                "B": [
+                  1733654160,
+                  1733785591,
+                  1733779337,
+                  1733775693,
+                  1733745047
+                ],
+                "C": [
+                  1734451311,
+                  1734328406
+                ],
+                "D": [],
+                "E": [],
+                "F": [
+                  1733886720
+                ],
+                "G": [
+                  1733695999
+                ]
+              }
+            }
+          },
+          {
+            "tool": "check_B",
+            "args": {
+              "spike_id": "SPK-601238-20260629"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 9746,
+        "tokens_out": 1077,
+        "cost_usd": 0.001827,
+        "seconds": 16.261,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260713",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601238-20260713",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260713"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6186,
+        "tokens_out": 1354,
+        "cost_usd": 0.001508,
+        "seconds": 12.8,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260914",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-601238-20260914",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260914"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 3777,
+        "tokens_out": 920,
+        "cost_usd": 0.000969,
+        "seconds": 12.021,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260929",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.4615,
+            "B": 0.2051,
+            "C": 0.0513,
+            "D": 0.0256,
+            "E": 0.0513,
+            "F": 0.0513,
+            "G": 0.1538
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.4615,
+                "B": 0.2051,
+                "C": 0.0513,
+                "D": 0.0256,
+                "E": 0.0513,
+                "F": 0.0513,
+                "G": 0.1538
+              },
+              "untested_mass": 0.9999
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-601238-20260929",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260929"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 4,
+                "C": 1,
+                "D": 0,
+                "E": 1,
+                "F": 1,
+                "G": 3
+              },
+              "clues": {
+                "A": [
+                  1778397924,
+                  1778448248,
+                  1778417748,
+                  1778401151,
+                  1778429804,
+                  1778402463
+                ],
+                "B": [
+                  1778424274,
+                  1778425034
+                ],
+                "G": [
+                  1778682353,
+                  1778484626,
+                  1778546011
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 3,
+        "tokens_in": 8998,
+        "tokens_out": 895,
+        "cost_usd": 0.001635,
+        "seconds": 4.934,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260206",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.4444,
+            "B": 0.2222,
+            "C": 0.1333,
+            "D": 0.0222,
+            "E": 0.0444,
+            "F": 0.0444,
+            "G": 0.0889
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.4444,
+                "B": 0.2222,
+                "C": 0.1333,
+                "D": 0.0222,
+                "E": 0.0444,
+                "F": 0.0444,
+                "G": 0.0889
+              },
+              "untested_mass": 0.9998
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-002074-20260206",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260206"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 10,
+                "B": 5,
+                "C": 3,
+                "D": 0,
+                "E": 1,
+                "F": 1,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1666059010,
+                  1666060031,
+                  1666105746,
+                  1666080383,
+                  1666130563,
+                  1666109317,
+                  1666095718,
+                  1666211523,
+                  1666441570,
+                  1666287350
+                ],
+                "B": [
+                  1666115334,
+                  1666147759,
+                  1666154533,
+                  1666522988,
+                  1666287350
+                ],
+                "C": [
+                  1666109317
+                ],
+                "G": [
+                  1666060031,
+                  1666522988
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 8551,
+        "tokens_out": 918,
+        "cost_usd": 0.001589,
+        "seconds": 21.602,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260429",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.45,
+            "B": 0.15,
+            "C": 0.1,
+            "D": 0.05,
+            "E": 0.1,
+            "F": 0.05,
+            "G": 0.1
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.45,
+                "B": 0.15,
+                "C": 0.1,
+                "D": 0.05,
+                "E": 0.1,
+                "F": 0.05,
+                "G": 0.1
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-002074-20260429",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260429"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 9,
+                "B": 3,
+                "C": 2,
+                "D": 1,
+                "E": 2,
+                "F": 1,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1700959220,
+                  1700959886,
+                  1700959824,
+                  1700971143,
+                  1700957343,
+                  1700970306,
+                  1700969354,
+                  1700970298,
+                  1701214597
+                ],
+                "B": [
+                  1701088940,
+                  1700977975,
+                  1701000985
+                ],
+                "C": [],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": []
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 8965,
+        "tokens_out": 1013,
+        "cost_usd": 0.001692,
+        "seconds": 15.87,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260518",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-002074-20260518",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260518"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 1,
+        "tokens_in": 5935,
+        "tokens_out": 784,
+        "cost_usd": 0.001179,
+        "seconds": 19.823,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260604",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'C'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "C",
+      "record": {
+        "case_id": "SPK-002074-20260604",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260929",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-002074-20260929",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-600150-20251107",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-600150-20251107",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260130",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'B'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "B",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.4878,
+            "B": 0.1951,
+            "C": 0.0976,
+            "D": 0.0244,
+            "E": 0.0488,
+            "F": 0.0488,
+            "G": 0.0976
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.4878,
+                "B": 0.1951,
+                "C": 0.0976,
+                "D": 0.0244,
+                "E": 0.0488,
+                "F": 0.0488,
+                "G": 0.0976
+              },
+              "untested_mass": 1.0001
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600150-20260130",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260130"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 10,
+                "B": 4,
+                "C": 2,
+                "D": 0,
+                "E": 1,
+                "F": 1,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1662216465,
+                  1662218691,
+                  1662220525,
+                  1662222258,
+                  1662235825,
+                  1662266324,
+                  1662267175,
+                  1662269322,
+                  1662300269
+                ],
+                "B": [
+                  1662250407,
+                  1662296385,
+                  1662836360,
+                  1662756085
+                ],
+                "C": [
+                  1662296385
+                ],
+                "E": [
+                  1662324494
+                ],
+                "F": [],
+                "D": [],
+                "G": [
+                  1662836360
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 4,
+        "tokens_in": 11287,
+        "tokens_out": 1574,
+        "cost_usd": 0.002286,
+        "seconds": 18.883,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260323",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'E'"
+      ],
+      "family": null,
+      "period": "observe",
+      "expected": "E",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-600150-20260323",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260323"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6214,
+        "tokens_out": 2246,
+        "cost_usd": 0.001976,
+        "seconds": 17.197,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260430",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary None, expected 'B'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "B",
+      "record": {
+        "case_id": "SPK-600150-20260430",
+        "arm": "routing",
+        "primary": null,
+        "error": "live call failed after 4 attempts: empty reply",
+        "turns": 0,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "stopped_by": "error",
+        "investigation": {
+          "calls": 0
+        }
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260713",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'C'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "C",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "code_primary": "H",
+        "investigation": {
+          "posterior": {
+            "A": 0.28,
+            "B": 0.24,
+            "C": 0.16,
+            "D": 0.04,
+            "E": 0.08,
+            "F": 0.12,
+            "G": 0.08
+          },
+          "tested": {},
+          "order": [],
+          "calls": 0,
+          "revisions": 0,
+          "over_investigation": 0,
+          "history": [
+            {
+              "event": "scores",
+              "posterior": {
+                "A": 0.28,
+                "B": 0.24,
+                "C": 0.16,
+                "D": 0.04,
+                "E": 0.08,
+                "F": 0.12,
+                "G": 0.08
+              },
+              "untested_mass": 1.0
+            }
+          ]
+        },
+        "arm": "routing",
+        "case_id": "SPK-600150-20260713",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260713"
+            }
+          },
+          {
+            "tool": "score_causes",
+            "args": {
+              "scores": {
+                "A": 7,
+                "B": 6,
+                "C": 4,
+                "D": 1,
+                "E": 2,
+                "F": 3,
+                "G": 2
+              },
+              "clues": {
+                "A": [
+                  1741798006,
+                  1741793292,
+                  1742519501,
+                  1742001157
+                ],
+                "B": [
+                  1741813654,
+                  1741951054,
+                  1742002242,
+                  1741800614,
+                  1741861299
+                ],
+                "C": [
+                  1742002242
+                ],
+                "D": [],
+                "E": [
+                  1741962689
+                ],
+                "F": [
+                  1741811255
+                ],
+                "G": [
+                  1741795696
+                ]
+              }
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6457,
+        "tokens_out": 943,
+        "cost_usd": 0.00133,
+        "seconds": 9.138,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260831",
+      "trial": 1,
+      "passed": false,
+      "fails": [
+        "primary 'H', expected 'A'"
+      ],
+      "family": null,
+      "period": "check",
+      "expected": "A",
+      "record": {
+        "primary": "H",
+        "decision": "no_trade",
+        "trigger": "data_missing",
+        "reason": "model did not return parseable JSON",
+        "arm": "routing",
+        "case_id": "SPK-600150-20260831",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260831"
+            }
+          }
+        ],
+        "observations": [],
+        "turns": 2,
+        "tokens_in": 6174,
+        "tokens_out": 1164,
+        "cost_usd": 0.001408,
+        "seconds": 10.977,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "live"
+      }
+    }
+  ]
+}

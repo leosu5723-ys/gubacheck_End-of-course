@@ -1,0 +1,546 @@
+[
+  {
+    "case_id": "SPK-688256-20260203",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260430",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260506",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260618",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260701",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260810",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20251124",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260129",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260204",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260429",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20251126",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260202",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260417",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260512",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260601",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260622",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260713",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260728",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260805",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260202",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260227",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260424",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260611",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260720",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260728",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260805",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260119",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260313",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260429",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260525",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260605",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260828",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20251106",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260122",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260128",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260331",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260610",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260713",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260915",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260928",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251106",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251112",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251211",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260119",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260211",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260427",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260525",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260622",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260707",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260923",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20251110",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20251124",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260618",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260629",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260713",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260914",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260929",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260206",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260429",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260518",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260604",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260929",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20251107",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260130",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260323",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260430",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260713",
+    "decision": "no_trade",
+    "reason": "model did not return parseable JSON",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260831",
+    "decision": null,
+    "reason": "",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  }
+]
