@@ -116,3 +116,156 @@ For `use_container_width=True`, use `width='stretch'`. For `use_container_width=
 `use_container_width` will be removed after 2025-12-31.
 
 For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'` or specify an integer width.
+2026-10-03 23:23:46.784 `label` got an empty value. This is discouraged for accessibility reasons and may be disallowed in the future by raising an exception. Please provide a non-empty label and hide it with label_visibility if needed.
+Stack (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1014, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 436, in _run_script_thread
+    self._run_script(request.rerun_data)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 949, in _run_script
+    ) = exec_func_with_error_handling(code_to_exec, ctx)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 136, in exec_func_with_error_handling
+    result = func()
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 924, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/app/streamlit_app.py", line 61, in <module>
+    page = st.sidebar.radio("", L["pages"])
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/metrics_util.py", line 725, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/widgets/radio.py", line 456, in radio
+    return self._radio(
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/widgets/radio.py", line 509, in _radio
+    label = maybe_raise_label_warnings(label, label_visibility)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/lib/policies.py", line 169, in maybe_raise_label_warnings
+    _LOGGER.warning(
+2026-10-03 23:23:46.787 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:23:46.799 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'` or specify an integer width.
+2026-10-03 23:23:46.801 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'` or specify an integer width.
+2026-10-03 23:23:54.419 `label` got an empty value. This is discouraged for accessibility reasons and may be disallowed in the future by raising an exception. Please provide a non-empty label and hide it with label_visibility if needed.
+Stack (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1014, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 436, in _run_script_thread
+    self._run_script(request.rerun_data)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 949, in _run_script
+    ) = exec_func_with_error_handling(code_to_exec, ctx)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 136, in exec_func_with_error_handling
+    result = func()
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 924, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/app/streamlit_app.py", line 61, in <module>
+    page = st.sidebar.radio("", L["pages"])
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/metrics_util.py", line 725, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/widgets/radio.py", line 456, in radio
+    return self._radio(
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/widgets/radio.py", line 509, in _radio
+    label = maybe_raise_label_warnings(label, label_visibility)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/lib/policies.py", line 169, in maybe_raise_label_warnings
+    _LOGGER.warning(
+2026-10-03 23:23:54.430 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'` or specify an integer width.
+2026-10-03 23:23:54.432 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:23:54.434 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:23:54.435 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:23:54.436 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:23:54.438 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:23:54.444 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'` or specify an integer width.
+2026-10-03 23:24:05.205 `label` got an empty value. This is discouraged for accessibility reasons and may be disallowed in the future by raising an exception. Please provide a non-empty label and hide it with label_visibility if needed.
+Stack (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1014, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 436, in _run_script_thread
+    self._run_script(request.rerun_data)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 949, in _run_script
+    ) = exec_func_with_error_handling(code_to_exec, ctx)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py", line 136, in exec_func_with_error_handling
+    result = func()
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 924, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/app/streamlit_app.py", line 61, in <module>
+    page = st.sidebar.radio("", L["pages"])
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/runtime/metrics_util.py", line 725, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/widgets/radio.py", line 456, in radio
+    return self._radio(
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/widgets/radio.py", line 509, in _radio
+    label = maybe_raise_label_warnings(label, label_visibility)
+  File "/Users/yangsu/Desktop/6201 End-of-course/gubacheck/.venv/lib/python3.13/site-packages/streamlit/elements/lib/policies.py", line 169, in maybe_raise_label_warnings
+    _LOGGER.warning(
+2026-10-03 23:24:05.208 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:24:05.209 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:24:05.214 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:24:05.217 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-03 23:24:05.218 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
