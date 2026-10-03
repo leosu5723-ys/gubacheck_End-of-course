@@ -1,9 +1,16 @@
 """
 GubaCheck - MODEL COMPARISON (same spikes, same tools, same prompt)
 =========================================================================
-    python3 -m pipeline.model_compare
+    python3 -m pipeline.model_compare                       full-run table (below)
+    python3 -m pipeline.model_compare SPK-300308-20260728 \
+        --models=deepseek/deepseek-v4.1-flash,anthropic/claude-haiku-4.5 [--arm=routing]
+                                                            SINGLE-RUN mode: one spike, one live
+        run per model -> conclusion, tests in order, tokens, billed US$, seconds.
+        Writes results/model_single_<spike>_<arm>.json. Needs OPENROUTER_API_KEY;
+        costs about a cent per model. One run says how a model behaves and what it
+        costs, not which model is more accurate.
 
-READS     every results/results_<arm>_live_<model>.json written by
+READS (full-run mode)     every results/results_<arm>_live_<model>.json written by
           `GUBACHECK_BACKEND=live GUBACHECK_MODEL=<id> python3 run_eval.py --arm=<arm>`
 WRITES    results/model_compare.json and prints one table:
           model x arm -> accuracy, macro-F1, tests per spike, revisions,
@@ -82,5 +89,51 @@ def main():
     print("\nWrote results/model_compare.json")
 
 
+def single(spike_id, models, arm="routing"):
+    import time
+    from core import config, pricing
+    from core.agent import run_case
+    if not config.API_KEY:
+        raise SystemExit("Single-run mode is live: set OPENROUTER_API_KEY first.")
+    cases = json.load(open(os.path.join(ROOT, "evals", "cases.json"), encoding="utf-8"))
+    gold = next((c.get("expected_primary") for c in cases if c["case_id"] == spike_id), None)
+    config.BACKEND = "live"
+    rows = []
+    for m in models:
+        config.MODEL = m
+        p = pricing.price_of(m)
+        if p:
+            config.PRICE_IN, config.PRICE_OUT = p
+        t0 = time.time()
+        try:
+            rec = run_case(spike_id, arm=arm)
+        except Exception as e:                       # one model failing never stops the others
+            rec = {"error": str(e)[:200], "tokens_in": 0, "tokens_out": 0, "cost_usd": 0}
+        inv = rec.get("investigation") or {}
+        rows.append({"model": m, "arm": arm, "primary": rec.get("primary"), "secondary": rec.get("secondary"),
+                     "gold": gold, "correct": (rec.get("primary") == gold) if gold else None,
+                     "tests": inv.get("order"), "verdicts": inv.get("tested"), "revisions": inv.get("revisions"),
+                     "turns": rec.get("turns"), "tokens_in": rec["tokens_in"], "tokens_out": rec["tokens_out"],
+                     "usd": rec["cost_usd"], "cost_basis": rec.get("cost_source"), "seconds": round(time.time() - t0, 1),
+                     "price_per_1m": p, "reason": (rec.get("reason") or "")[:300], "error": rec.get("error")})
+    out = os.path.join(R, "model_single_%s_%s.json" % (spike_id, arm))
+    json.dump({"spike_id": spike_id, "arm": arm, "gold": gold, "rows": rows}, open(out, "w"), ensure_ascii=False, indent=1)
+    print("%s  arm=%s  my label=%s\n" % (spike_id, arm, gold))
+    print("%-30s %-4s %-3s %-22s %7s %6s %9s %6s" % ("model", "pri", "ok", "tests (order)", "tok in", "out", "US$", "sec"))
+    for r in rows:
+        if r["error"]:
+            print("%-30s ERROR %s" % (r["model"][:30], r["error"]))
+            continue
+        tests = " ".join("%s%s" % (c, (r["verdicts"] or {}).get(c, "?")[:1]) for c in r["tests"] or [])
+        print("%-30s %-4s %-3s %-22s %7d %6d %9.5f %6.1f" % (r["model"][:30], r["primary"], "✓" if r["correct"] else "✗",
+                                                          tests, r["tokens_in"], r["tokens_out"], r["usd"], r["seconds"]))
+    print("\n(tests: cause + P/A/F = PASS / pARTIAL / FAIL)  Wrote %s" % os.path.relpath(out, ROOT))
+
+
 if __name__ == "__main__":
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    opts = dict(a[2:].split("=", 1) for a in sys.argv[1:] if a.startswith("--") and "=" in a)
+    if args:
+        sys.exit(single(args[0], [m for m in opts.get("models", "").split(",") if m] or [REFERENCE],
+                        opts.get("arm", "routing")))
     sys.exit(main())
