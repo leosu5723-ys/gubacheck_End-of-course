@@ -1,83 +1,78 @@
 # GubaCheck
 
-**Verifies A-share stock-forum hype against official disclosures before I act.**
+**When a stock's forum suddenly explodes, GubaCheck finds out why — and shows how spikes with that cause behaved afterwards.**
 
-When discussion of one of my stocks suddenly spikes on the Eastmoney forum (Guba), GubaCheck reads the posts, searches the official disclosure site (CNINFO) and the news feeds for evidence, and reaches one of three decisions: place a paper trade (only after my confirmation), wait for a named official confirmation, or flag the spike as "do not chase". Every decision cites its evidence.
+A local Chinese RoBERTa reads ~1 million Eastmoney forum titles. A z-score engine flags spikes. An attribution agent scores seven candidate causes from the posts' clues (company filing, media rumour, sector, US read-through, market, policy, money flow), tests them in order of probability with fixed, code-graded tools that respect time order, and stops when the remaining causes are unlikely. Each cause's history (D+1 … D+20 returns) is shown alongside.
 
-Product documentation (persona, input/output, architecture, metrics targeted vs reached): **[PRODUCT.md](PRODUCT.md)**. The decision rules: **[RULES.md](RULES.md)**. Data: **[data/DATA.md](data/DATA.md)**. Evaluations: **[evals/EVALS.md](evals/EVALS.md)**.
+| Document | What it covers |
+|---|---|
+| [PRODUCT.md](PRODUCT.md) | Persona, input/output, architecture, own-vs-rent, metrics targeted vs reached, cost, responsible use |
+| [RULES.md](RULES.md) | Every rule and threshold, registered before results, with a change log |
+| [data/DATA.md](data/DATA.md) | Sources, provenance (incl. how the forum data was collected), labels, limitations |
+| [evals/EVALS.md](evals/EVALS.md) | Every evaluation, how to run it, what it can and cannot tell |
 
----
+## Run it (no key, no network)
 
-## Run it (no key, no network, standard library only)
-
-Python 3.9+.
-
-```bash
-python3 run_eval.py                  # full evaluation set, graded -> results/results.json
-python3 run_eval.py SPK-600519-20260918   # one case, every turn shown
-python3 run_guardrails.py            # guardrail checklist -> results/guardrails.json
-python3 demo_failures.py             # the two reproduced failures, before/after
-python3 run_eval.py --prompt         # exactly what the model is told
-python3 -m unittest discover tests   # unit tests on a synthetic fixture
-```
-
-These all use the **scripted** backend: the agent's moves are replayed from `evals/scripted_moves.json` while the tools run for real against the frozen data in `data/snapshot/`. Results are identical on every machine.
-
-## Live runs (costs money)
+Python 3.9+. The evaluation commands use the standard library only.
 
 ```bash
-pip install -r requirements.txt
-export OPENROUTER_API_KEY=sk-or-...
-GUBACHECK_BACKEND=live GUBACHECK_MODEL=openai/gpt-4o-mini python3 run_eval.py
-GUBACHECK_BACKEND=live python3 run_eval.py --v1      # weak tool descriptors, same model
-python3 -m pipeline.sentiment eval --llm             # sentiment: LLM few-shot vs TF-IDF
+python3 run_eval.py --arm=keyword          # attribution, rule-based clue scorer (scripted)
+python3 run_eval.py --arm=exhaustive       # attribution, all seven tests (scripted)
+python3 run_eval.py SPK-688256-20260203    # one spike, every step shown
+python3 run_guardrails.py                  # 10-case guardrail checklist
+python3 demo_failures.py                   # the two reproduced failures
+python3 -m unittest discover tests         # unit tests
 ```
 
-Live results are written to `results/results_live_<model>.json`, with token counts taken from the API's usage field.
-
-## Rebuild the data from scratch
+Front end (Chinese / English):
 
 ```bash
 pip install -r requirements.txt
-# 1. edit data/watchlist.json
-python3 -m collectors.market_data hot_rank 600519 000858          # popularity rank, ~1 year
-python3 -m pipeline.candidates                                   # candidate spike days
-python3 -m collectors.guba days                                  # forum posts on those days
-python3 -m collectors.market_data cninfo 600519 2025-09-01 2026-09-30
-python3 -m collectors.market_data prices 600519 2025-08-01 2026-10-31
-python3 -m collectors.market_data news 600519 000858             # latest items only
-# 2. label posts, train the sentiment model
-python3 -m pipeline.sentiment sample 300      # -> data/labels/to_label.csv
-python3 -m pipeline.sentiment eval            # after labelling -> results/sentiment_eval.json
-python3 -m pipeline.sentiment train           # -> results/sentiment_model.pkl
-# 3. freeze the snapshot and detect spikes
-python3 -m pipeline.build_snapshot 2025-10-01 2026-09-30
+streamlit run app/streamlit_app.py
 ```
 
-Daily collection (the news feeds keep no history, so this is what builds the news archive): `python3 -m collectors.daily`, scheduled after the close.
+## Live runs (OpenRouter, costs cents)
+
+```bash
+export OPENROUTER_API_KEY=...  GUBACHECK_MODEL=deepseek/deepseek-v4.1-flash  GUBACHECK_PRICE_IN=0.13  GUBACHECK_PRICE_OUT=0.52
+GUBACHECK_BACKEND=live python3 run_eval.py --arm=agent   --workers=4
+GUBACHECK_BACKEND=live python3 run_eval.py --arm=routing --workers=4
+python3 -m pipeline.judge run rag           # filing judge with chunked RAG
+```
+
+## Rebuild from raw data
+
+```bash
+python3 -m pipeline.import_guba ../guba            # full-year forum dataset (see DATA.md)
+python3 -m pipeline.bert_sentiment train && python3 -m pipeline.bert_sentiment predict
+python3 -m collectors.market_data cninfo|prices|hot_rank ...
+python3 -m collectors.announcements && python3 -m pipeline.rag build
+python3 -m collectors.context_data                 # peers, US peers, indices, top list
+python3 -m pipeline.anomaly                        # v4 spikes (z-scores)
+python3 -m pipeline.context_snapshot && python3 -m pipeline.redteam
+python3 -m pipeline.v4_scripts                     # scripted arms + evals/cases.json from hand labels
+python3 -m pipeline.cause_backtest gold            # D+N by cause
+python3 -m pipeline.cost_model
+```
 
 ## Repository map
 
 | Path | What it is |
 |---|---|
-| `core/agent.py` | The ReAct loop, instrumented (turns, tokens, cost, tool calls, guard events) |
-| `core/tools.py` | Six tools with documentation blocks and model-facing descriptors |
-| `core/guardrails.py` | Step cap, budget ceiling, de-duplication, autonomy gate, hostile-text screen, evidence-required order |
-| `core/prompt.py` | Decision rules + descriptors -> system prompt (v1 and v2) |
-| `core/backends.py` | Scripted and live backends; the only vendor-specific code |
-| `core/paper_broker.py` | Local order simulation with A-share rules (next-day open, limit-up, lots, fees) |
-| `core/market.py` | Price limits by board, announcement-title event typing |
-| `core/harness.py` | Answer key, code check, judgement queue, summary metrics |
-| `collectors/` | Guba, CNINFO, news and price collectors |
-| `pipeline/` | Sentiment classifier and evaluation; snapshot builder and spike detector |
-| `data/` | Watchlist, labels, frozen snapshot (raw collections are not committed) |
-| `evals/` | Answer key, scripted moves, guardrail cases |
-| `results/` | Every number quoted in PRODUCT.md and the report |
+| `core/investigation.py` | Priors, posterior (PASS ×3 / PARTIAL ×1 / FAIL ×0.2), stop rule, arms |
+| `core/causes.py` | The seven fixed cause tools; verdicts computed from z-scores and timestamps |
+| `core/tools.py`, `core/prompt.py` | What the model can call and what it is told |
+| `core/agent.py`, `core/backends.py` | The loop (instrumented) and the scripted / live backends |
+| `core/guardrails.py` | Step cap, budget, de-duplication, stop-rule refusal, hostile text, order guards, gate |
+| `core/harness.py`, `run_eval.py` | Arms, grading against hand labels, reports |
+| `pipeline/` | Sentiment (TF-IDF, RoBERTa), filing judge + RAG, anomaly engine, backtests, cost model |
+| `collectors/` | Forum, CNINFO, prices, news, context data |
+| `app/streamlit_app.py` | Front end |
+| `data/snapshot/` | Frozen inputs every tool reads; `data/labels/` hand and LLM labels |
+| `evals/`, `results/` | Cases, scripted moves, guardrail cases; every reported number |
 
-## Intended use
-
-Personal research and paper trading only. GubaCheck never places a real order, does not give investment advice to anyone, and does not publish lists of rumours. See PRODUCT.md, "Responsible use".
+**Earlier designs** (buy after an official filing; forward-watch backtest) are kept in `RULES.md` and `results/backtest_*.json`. Their negative result — buying on official good news after a forum frenzy lost money on average — is what led to the attribution design.
 
 ## Acknowledgements
 
-The agent-loop, guardrail and scripted/live backend structure is adapted from the PE6201 course starter code; the problem, tools, data, rules, evaluation set and results are my own. An AI coding assistant was used during development; I can explain every module.
+The agent-loop, guardrail and scripted/live backend structure is adapted from the PE6201 course starter code; the problem, tools, data, rules, evaluation sets and results are my own. An AI coding assistant was used during development; I can explain every module.

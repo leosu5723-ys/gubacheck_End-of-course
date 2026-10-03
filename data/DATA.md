@@ -10,7 +10,13 @@ All sources are public and free. Collection code is in `collectors/`; the snapsh
 | CLS telegraph | AKShare `stock_info_global_cls` | Latest ~20 only | time, title, content | |
 | Eastmoney flash | AKShare `stock_info_global_em` | Latest ~200 only | time, title, summary, url | |
 | Eastmoney stock news | AKShare `stock_news_em` | Latest ~10 per stock | time, title, content, url | |
-| Daily prices | AKShare `stock_zh_a_hist`, unadjusted | Full | open, close, high, low, pct change, previous close | |
+| Daily prices | AKShare `stock_zh_a_hist` (Sina fallback), unadjusted | Full | open, close, high, low, pct change, previous close | 10 watched + 12 peers |
+| Peer groups | `data/peers.json`, chosen by product line | — | A-share peers (cause C), US peers (cause D) | 4 groups |
+| US peers | AKShare `stock_us_daily` (NVDA, AMD, AVGO, LITE, COHR, TSLA) | Full | daily close, return | 6 tickers |
+| Indices | CSI 300, ChiNext (Sina) | Full | daily close | 2 |
+| Exchange top list (龙虎榜) | AKShare `stock_lhb_detail_em`, month by month | Sep 2025–Sep 2026 | stock, date, net buy, turnover, reason | ~16k rows (15 for watched stocks) |
+| Board-secretary Q&A | AKShare `stock_irm_cninfo` (SZ), `stock_sns_sseinfo` (SH) | **recent ~3 months only** | question, answer, times | [n] |
+| Filing text | CNINFO PDFs, `collectors/announcements.py` | Full | text excerpt; exact publication time when the link carries one | 634 texts |
 
 **Watchlist:** `data/watchlist.json` — 10 stocks (AI hardware, EV/auto, battery, shipbuilding); forum window 2025-10-03 to 2026-10-02; announcements and prices from 2025-08/09 to 2026-09-30; news archive from 2026-08-06.
 
@@ -32,6 +38,12 @@ The repository runs end to end from `data/snapshot/` without the raw files.
 2. I then labelled **99 posts by hand** (the first 99 of the sheet by date, 2025-10-03 to 2026-01-11). Seven I could not decide and marked `unsure`; they are excluded from scoring and reported separately. The other 201 posts of the sheet are unlabelled.
 3. The LLM-vs-human check uses GPT-6's labels from step 1 for the 99 hand-labelled posts. Those labels predate the hand labels, so the model never saw them. (A later "blind check" file was contaminated: the labelling tool could read the hand-label file in the same folder. It is not used.)
 4. Many titles cannot be labelled from the text alone: "300见，别怪我说话难听" is bullish or bearish depending on whether the price that day was below or above 300. Labels were assigned without looking up the price, so they carry this ambiguity.
+
+## v4 notes
+
+- **Media proxy for cause B and F.** Free news feeds keep no history, so "media" is the forum's own article-type posts (`post_type` 20: reposted news and long articles) in the stock's bar, excluding market wrap-ups. Company-specific articles are counted per day for the whole year so B can use a z-score.
+- **Spike onset** is the first hour whose post count is abnormal against the same clock hour on previous days; posts after 15:00 belong to the next trading day.
+- **Hand labels of causes** (`evals/cause_labels.csv`): [who, when, how many, from `evals/cause_review.md` without tool verdicts].
 
 ## Known limitations
 

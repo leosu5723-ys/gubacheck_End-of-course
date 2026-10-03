@@ -1,0 +1,82 @@
+{
+ "assumptions": {
+  "minutes_per_manual_check": 10,
+  "hourly_value_usd": 20.0,
+  "attribution_cost_source": "scripted estimate (no live run yet)"
+ },
+ "layer1_variable": {
+  "sentiment_usd_per_1000_posts": 0.0,
+  "sentiment_posts_per_second_local": 413.7,
+  "filing_judgement_usd_per_filing": 0.000879,
+  "attribution_usd_per_spike": 0.004295
+ },
+ "volumes_per_stock_month": {
+  "spikes": 0.618,
+  "non_procedural_filings": 3.9
+ },
+ "scenarios": [
+  {
+   "stocks": 10,
+   "price_multiplier": 0.5,
+   "variable_usd_month": 0.03,
+   "expected_usd_month_incl_manual_rework": 10.33,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 10,
+   "price_multiplier": 1.0,
+   "variable_usd_month": 0.061,
+   "expected_usd_month_incl_manual_rework": 10.36,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 10,
+   "price_multiplier": 2.0,
+   "variable_usd_month": 0.122,
+   "expected_usd_month_incl_manual_rework": 10.42,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 100,
+   "price_multiplier": 0.5,
+   "variable_usd_month": 0.304,
+   "expected_usd_month_incl_manual_rework": 103.33,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 100,
+   "price_multiplier": 1.0,
+   "variable_usd_month": 0.608,
+   "expected_usd_month_incl_manual_rework": 103.64,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 100,
+   "price_multiplier": 2.0,
+   "variable_usd_month": 1.217,
+   "expected_usd_month_incl_manual_rework": 104.25,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 1000,
+   "price_multiplier": 0.5,
+   "variable_usd_month": 3.042,
+   "expected_usd_month_incl_manual_rework": 1033.34,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 1000,
+   "price_multiplier": 1.0,
+   "variable_usd_month": 6.083,
+   "expected_usd_month_incl_manual_rework": 1036.39,
+   "fixed_usd_month": 0.0
+  },
+  {
+   "stocks": 1000,
+   "price_multiplier": 2.0,
+   "variable_usd_month": 12.167,
+   "expected_usd_month_incl_manual_rework": 1042.47,
+   "fixed_usd_month": 0.0
+  }
+ ]
+}
