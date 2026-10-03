@@ -12,22 +12,26 @@ Every "is this abnormal?" test compares a value with the same stock's (or series
 | Test | Series | Abnormal when |
 |---|---|---|
 | Spike (forum) | log(1 + own-bar posts that day) | z ≥ 2.0 |
-| | bullish share that day | z ≥ 1.5 |
+| | bullish share that day | recorded, not required (see change log) |
 | Spike onset time | posts per hour vs the same hour on previous days | first hour with z ≥ 2.0 |
 | Price / volume | daily return, opening gap, turnover | \|z\| ≥ 2.0 |
 | Index | CSI 300, ChiNext daily return | \|z\| ≥ 2.0 (PARTIAL 1.5–2.0) |
 | US peer | return on the last US session before the A-share open | \|z\| ≥ 2.0 |
 | Money flow | top-list (龙虎榜) net buy, turnover | percentile ≥ 95 |
 
-A spike is the first day of an episode: no spike in the previous 5 calendar days.
+A spike is the first day of an episode: no spike in the previous 5 calendar days. A z-score needs at least 20 prior trading days, so spikes start in early November 2025.
+
+*Change log 0.1 (2026-10-03, before any label or agent run):* the registered pair (posts z ≥ 2 **and** bullish share z ≥ 1.5) produced 7 spikes in a year, 6 stocks with none. Counts: posts z ≥ 1.5 & bull z ≥ 0.5 → 30; posts z ≥ 2 & bull z ≥ 0 → 25; **posts z ≥ 2 alone → 68 (25 before 2026-04-01)**. With the product now explaining spikes rather than buying on them, the direction condition was dropped; the bullish-share z is reported with every spike.
 
 ### 0.2 Causes and their fixed interfaces
+*Change 0.2 (2026-10-03, before any label or agent run): B was first "any matching article before onset"; on the 68 spikes it passed 55 times because heavily traded stocks have articles every day, so B now uses an article-count z-score like every other test. G uses |net buy| / turnover against the market-wide 95th percentile because daily turnover for a turnover percentile is not in the free price feed.*
+
 Seven causes, one tool each, identical input (`spike_id`) and output (`verdict` PASS / PARTIAL / FAIL computed by code, metrics, evidence, timing, cost). **H (unexplained) is never scored or tested; it is the outcome when nothing passes.**
 
 | Cause | PASS | PARTIAL | Timing rule |
 |---|---|---|---|
 | A company official (CNINFO filing, board-secretary reply) | a filing or reply in [D−3, onset] judged in the spike's direction | exists but after onset, or neutral | evidence time < onset |
-| B company rumour / media | a media article about the company before onset whose terms match the clues | article exists, weak match | evidence time < onset |
+| B company rumour / media | company-specific articles in the 72 h before onset, count z ≥ 2 against the stock's own rolling 3-day counts | articles exist but not abnormal, or only after onset | evidence time < onset |
 | C sector co-movement | more than half of the stock's peer group have \|z\| ≥ 2 return that day | at least one peer \|z\| ≥ 2 | same day |
 | D overseas read-through | a US peer \|z\| ≥ 2 on the last US session before D's open **and** the stock's opening gap z ≥ 2 | US peer abnormal, no opening gap | US close < A-share open |
 | E market | CSI 300 or ChiNext \|z\| ≥ 2 | 1.5 ≤ \|z\| < 2 | same day |
