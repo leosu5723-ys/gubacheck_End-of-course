@@ -148,6 +148,7 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
         "guardrails_fired": guards.fired,
         "stopped_by": stopped_by,
         "backend": backend.name,
+        "model": config.MODEL if backend.name == "live" else None,
     })
     return record
 

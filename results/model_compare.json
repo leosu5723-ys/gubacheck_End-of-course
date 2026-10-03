@@ -1,0 +1,53 @@
+{
+ "reference": "deepseek/deepseek-v4.1-flash",
+ "rows": [
+  {
+   "model": "deepseek/deepseek-v4.1-flash",
+   "arm": "agent",
+   "spikes": 68,
+   "errors": 0,
+   "accuracy": 0.5588,
+   "macro_f1": 0.3699,
+   "tests_per_spike": 4.382,
+   "runs_with_revision": 1,
+   "tokens_per_spike": 38198,
+   "usd_per_spike": 0.01293,
+   "usd_total": 0.879,
+   "cost_basis": "tokens x price",
+   "premature_stops": 3,
+   "recall_by_cause": {
+    "A": "1/2",
+    "B": "30/47",
+    "C": "2/7",
+    "D": "0/3",
+    "E": "2/2",
+    "F": "0/2",
+    "H": "3/5"
+   }
+  },
+  {
+   "model": "deepseek/deepseek-v4.1-flash",
+   "arm": "routing",
+   "spikes": 68,
+   "errors": 0,
+   "accuracy": 0.6029,
+   "macro_f1": 0.3567,
+   "tests_per_spike": 4.294,
+   "runs_with_revision": 0,
+   "tokens_per_spike": 34921,
+   "usd_per_spike": 0.01181,
+   "usd_total": 0.8031,
+   "cost_basis": "tokens x price",
+   "premature_stops": 0,
+   "recall_by_cause": {
+    "A": "2/2",
+    "B": "33/47",
+    "C": "2/7",
+    "D": "0/3",
+    "E": "2/2",
+    "F": "0/2",
+    "H": "2/5"
+   }
+  }
+ ]
+}
