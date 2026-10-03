@@ -1,0 +1,115 @@
+{
+ "spike_id": "SPK-300308-20260728",
+ "arm": "routing",
+ "gold": "C",
+ "rows": [
+  {
+   "model": "deepseek/deepseek-v4.1-flash",
+   "arm": "routing",
+   "primary": "D",
+   "secondary": [
+    "C",
+    "B"
+   ],
+   "gold": "C",
+   "correct": false,
+   "tests": [
+    "A",
+    "D",
+    "C",
+    "B"
+   ],
+   "verdicts": {
+    "A": "PARTIAL",
+    "D": "PASS",
+    "C": "PASS",
+    "B": "PASS"
+   },
+   "revisions": 0,
+   "turns": 6,
+   "tokens_in": 30882,
+   "tokens_out": 1486,
+   "usd": 0.001895,
+   "cost_basis": "billed",
+   "seconds": 22.6,
+   "price_per_1m": [
+    0.3,
+    1.2
+   ],
+   "reason": "Spike SPK-300308-20260728 (中际旭创, 2026-07-28, 3136 posts, z_posts=2.27, bull_share 0.25 / z_bull -1.77, onset 09:00) is best explained by overseas read-through (D), with sector co-movement (C) and media/rumour coverage (B) as secondary. D PASSED: US peers moved abnormally in the previous US session (",
+   "error": null
+  },
+  {
+   "model": "anthropic/claude-haiku-4.5",
+   "arm": "routing",
+   "primary": "C",
+   "secondary": [
+    "D",
+    "B"
+   ],
+   "gold": "C",
+   "correct": true,
+   "tests": [
+    "A",
+    "C",
+    "D",
+    "B"
+   ],
+   "verdicts": {
+    "A": "PARTIAL",
+    "C": "PASS",
+    "D": "PASS",
+    "B": "PASS"
+   },
+   "revisions": 0,
+   "turns": 6,
+   "tokens_in": 39051,
+   "tokens_out": 1761,
+   "usd": 0.047856,
+   "cost_basis": "billed",
+   "seconds": 25.6,
+   "price_per_1m": [
+    1.0,
+    5.0
+   ],
+   "reason": "Sector co-movement (C) is the primary cause: 4 out of 7 semiconductor peers moved abnormally downward on the same day (z=-3.83, -15.69% return). This was triggered by overseas read-through (D): US chip stocks fell on 2026-07-27 (NVDA -4.99%, AMD -5.17%, LITE -6.69%), causing a -7.05% gap down at ope",
+   "error": null
+  },
+  {
+   "model": "deepseek/deepseek-v4-flash",
+   "arm": "routing",
+   "primary": "C",
+   "secondary": [
+    "D",
+    "B"
+   ],
+   "gold": "C",
+   "correct": true,
+   "tests": [
+    "A",
+    "C",
+    "D",
+    "B"
+   ],
+   "verdicts": {
+    "A": "PARTIAL",
+    "C": "PASS",
+    "D": "PASS",
+    "B": "PASS"
+   },
+   "revisions": 0,
+   "turns": 6,
+   "tokens_in": 32405,
+   "tokens_out": 2155,
+   "usd": 0.003656,
+   "cost_basis": "billed",
+   "seconds": 13.0,
+   "price_per_1m": [
+    0.028,
+    0.056
+   ],
+   "reason": "The spike in 300308 (中际旭创) on 2026-07-28 (z_posts=2.27, -15.7% return) was primarily driven by sector co-movement (Cause C, PASS): 4 of 7 peers in the optical/tech sector moved abnormally the same way (300502 z=-3.04, 300476 z=-2.74, 002463 z=-2.35, 300394 z=-2.08), with a 57% abnormal-same-sign sha",
+   "error": null
+  }
+ ]
+}
