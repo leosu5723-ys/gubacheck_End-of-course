@@ -132,6 +132,12 @@ ss.setdefault("spike", None)
 
 ss.setdefault("api", {"key": os.environ.get("OPENROUTER_API_KEY", ""), "model": config.MODEL if config.MODEL != "openai/gpt-4o-mini"
                        else "deepseek/deepseek-v4.1-flash", "pin": config.PRICE_IN, "pout": config.PRICE_OUT, "ok": None})
+@st.cache_data(ttl=3600, show_spinner=False)
+def model_catalogue():
+    from core import pricing
+    return pricing.models()
+
+
 top = st.columns([5, 1.3, 1])
 with top[2]:
     ss.lang = st.selectbox(" ", ["zh", "en"], index=["zh", "en"].index(ss.lang),
@@ -143,10 +149,27 @@ with top[1]:
         st.markdown("**OpenRouter**")
         api["key"] = st.text_input("API key", value=api["key"], type="password",
                                    help="只保存在本次浏览器会话中，不写入任何文件 / kept in this session only, never written to disk")
-        api["model"] = st.text_input("Model", value=api["model"])
-        c1, c2 = st.columns(2)
-        api["pin"] = c1.number_input("US$ / 1M input", value=float(api["pin"]), min_value=0.0, step=0.01, format="%.3f")
-        api["pout"] = c2.number_input("US$ / 1M output", value=float(api["pout"]), min_value=0.0, step=0.01, format="%.3f")
+        cat = model_catalogue()
+        if cat:
+            ids = [m["id"] for m in cat]
+            if api["model"] not in ids:
+                ids.insert(0, api["model"])
+            fmt = {m["id"]: "%s · $%.2f / $%.2f" % (m["id"], m["pin"], m["pout"]) for m in cat}
+            api["model"] = st.selectbox("Model（可输入搜索 / type to search）", ids, index=ids.index(api["model"]),
+                                        format_func=lambda i: fmt.get(i, i),
+                                        help="只列出支持工具调用的模型 / tool-calling models only")
+            price = next(((m["pin"], m["pout"]) for m in cat if m["id"] == api["model"]), None)
+        else:
+            api["model"] = st.text_input("Model", value=api["model"])
+            price = None
+        if price:
+            api["pin"], api["pout"] = price
+            st.caption("💲 %s：输入 $%.2f / 输出 $%.2f 每百万 tokens（OpenRouter 实时价格）；每次运行显示实际扣费。"
+                       % (api["model"], price[0], price[1]) if ss.lang == "zh" else
+                       "💲 %s: $%.2f in / $%.2f out per 1M tokens (live OpenRouter prices); each run shows the billed cost."
+                       % (api["model"], price[0], price[1]))
+        else:
+            st.caption("⚠️ 无法获取价格（离线？），花费按 token 估算" if ss.lang == "zh" else "⚠️ Prices unavailable (offline?); cost estimated from tokens")
         if st.button("测试连接 / Test", width="stretch", disabled=not api["key"]):
             from core import backends
             saved = (config.API_KEY, config.MODEL)
@@ -470,7 +493,8 @@ def llm_advice(s, primary, outs, same, allc):
         text, use = backends._live_call([{"role": "user", "content": prompt}], retries=3)
     finally:
         config.API_KEY, config.MODEL = saved
-    cost = use.get("prompt_tokens", 0) / 1e6 * api["pin"] + use.get("completion_tokens", 0) / 1e6 * api["pout"]
+    cost = use["cost"] if use.get("cost") is not None else \
+        use.get("prompt_tokens", 0) / 1e6 * api["pin"] + use.get("completion_tokens", 0) / 1e6 * api["pout"]
     return text, cost
 
 
