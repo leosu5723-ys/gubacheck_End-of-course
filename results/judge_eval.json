@@ -77,6 +77,108 @@
       "model": "deepseek/deepseek-v4.1-flash",
       "usd_total": 0.3077,
       "overrides": 1
+    },
+    "llm_rag": {
+      "batch2_n": 30,
+      "batch2_macro_f1": 0.8195,
+      "batch2_ci95": [
+        0.619,
+        0.9535
+      ],
+      "batch2_accuracy": 0.8333,
+      "batch2_confusion_gold_by_pred": {
+        "bullish": {
+          "bullish": 13,
+          "bearish": 0,
+          "neutral": 3
+        },
+        "bearish": {
+          "bullish": 0,
+          "bearish": 4,
+          "neutral": 1
+        },
+        "neutral": {
+          "bullish": 0,
+          "bearish": 1,
+          "neutral": 8
+        }
+      },
+      "batch1_false_bullish": "0 of 38",
+      "batch2_false_bullish": "0 of 14",
+      "calls": 465,
+      "tokens_in": 1110167,
+      "tokens_out": 508017,
+      "model": "deepseek/deepseek-v4.1-flash",
+      "usd_total": 0.4085,
+      "overrides": 1
+    },
+    "llm_rag_noforce": {
+      "batch2_n": 30,
+      "batch2_macro_f1": 0.7333,
+      "batch2_ci95": [
+        0.5143,
+        0.8982
+      ],
+      "batch2_accuracy": 0.7667,
+      "batch2_confusion_gold_by_pred": {
+        "bullish": {
+          "bullish": 13,
+          "bearish": 0,
+          "neutral": 3
+        },
+        "bearish": {
+          "bullish": 0,
+          "bearish": 3,
+          "neutral": 2
+        },
+        "neutral": {
+          "bullish": 1,
+          "bearish": 1,
+          "neutral": 7
+        }
+      },
+      "batch1_false_bullish": "0 of 38",
+      "batch2_false_bullish": "1 of 14",
+      "calls": 38,
+      "tokens_in": 71377,
+      "tokens_out": 48461,
+      "model": "deepseek/deepseek-v4.1-flash",
+      "usd_total": 0.0345,
+      "overrides": 0
+    },
+    "llm_rag_doc": {
+      "batch2_n": 30,
+      "batch2_macro_f1": 0.8122,
+      "batch2_ci95": [
+        0.647,
+        0.9387
+      ],
+      "batch2_accuracy": 0.8,
+      "batch2_confusion_gold_by_pred": {
+        "bullish": {
+          "bullish": 12,
+          "bearish": 0,
+          "neutral": 4
+        },
+        "bearish": {
+          "bullish": 0,
+          "bearish": 5,
+          "neutral": 0
+        },
+        "neutral": {
+          "bullish": 1,
+          "bearish": 1,
+          "neutral": 7
+        }
+      },
+      "batch1_false_bullish": "0 of 38",
+      "batch2_false_bullish": "1 of 14",
+      "calls": 38,
+      "tokens_in": 107129,
+      "tokens_out": 59261,
+      "model": "deepseek/deepseek-v4.1-flash",
+      "usd_total": 0.0447,
+      "overrides": 1
     }
   }
 }
