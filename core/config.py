@@ -67,6 +67,12 @@ NEWS_CONTENT_CHARS = 200      # observation trimming
 ALLOWED_EVENT_TYPES = ["buyback", "shareholder_increase",
                        "earnings_preincrease", "major_contract"]
 
+# Forward watch and backtest (RULES.md section 2)
+WATCH_TRADING_DAYS = 10
+EXIT_HORIZONS = [1, 2, 3, 5, 10, 15, 20]
+NEVER_BULLISH_TYPES = ["share_issuance", "shareholder_decrease", "lockup_expiry"]
+BENCHMARK = "000300"          # CSI 300
+
 # Tradability
 PRICED_IN_PCT = 15.0          # pre-event 5-day gain above this -> priced_in
 
