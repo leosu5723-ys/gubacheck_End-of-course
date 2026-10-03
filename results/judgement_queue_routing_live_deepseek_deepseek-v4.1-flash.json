@@ -1,0 +1,546 @@
+[
+  {
+    "case_id": "SPK-688256-20260203",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260430",
+    "decision": null,
+    "reason": "Spike SPK-688256-20260430 (寒武纪, 2026-04-30): 2105 posts, z_posts=4.37, onset 2026-04-29 20:00:00, i.e. right after the Q1 report appeared. Checks: C FAIL (own return z=6.32, +20.0%, but 0 of 7 peers abnormal same sign — 688041 z=1.95, 601138 z=-1.60) → not sector co-movement; A PARTIAL (filings_before_onset=0, filings only after onset: Q1 report + asset-impairment announcement dated 2026-04-30 23:59:59) → official news is not the driver at onset; G PARTIAL (on the top list, but net_buy 2.04bn vs turnover only 0.191, below market p95=0.502) → ordinary, not extreme, money flow. B PASSED with the highest posterior (0.400 vs A 0.300, G 0.133): an abnormal burst of company-specific coverage, 19 company articles in the D-1..D window, article_count_z=3.92, all clustered after onset (articles_before_onset=0), led by posts 1701716661 (2026-04-29 20:18:31, \"第一季度净利10亿同比增长185%…章建平退出前十大股东\", 10978 reads) and 1702159921 (\"寒武纪、海光信息：谁是真龙\", 7932 reads), matching the top-read spike titles about the 185.04% profit growth and the record-high/limit-up coverage on 04-30. Investigation stopped because the code set status.stop=true after 4 checks (max 5).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260506",
+    "decision": null,
+    "reason": "Spike SPK-688256-20260506 (寒武纪, 2026-05-06, 2207 posts, z_posts=4.11, onset 2026-04-30 15:00) is best explained by media/rumour (B), which PASSED with 29 company-specific articles in the D-1..D window and article_count_z=5.44, e.g. post 1702829288 (2026-05-05 14:21, \"高盛…给寒武纪2406元目标价\", 37461 reads) and 1703217629 (2026-05-06 12:28, \"章盟主…46亿清仓寒武纪\", 28807 reads). Sector co-movement (C) is a secondary PARTIAL: own return +7.36% (z=1.96) with only 1 of 7 peers abnormally same-sign (share 0.14), though 688041 rose 16.26% (z=5.08). All other causes failed: G FAIL (not on the exchange top list), D FAIL (no abnormal US peer move; NVDA z=-0.47, AMD z=0.92 despite a 4.99% opening gap), A FAIL (no CNINFO filing or board-secretary reply in [D-3, D]), and E/F were never supported. Investigation stopped because status.stop=true after 5 checks, with B holding the highest posterior (0.5455).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260618",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260701",
+    "decision": null,
+    "reason": "Spike SPK-688256-20260701 (寒武纪, 2026-07-01, 1011 posts, z_posts=2.264, onset 2026-06-30 16:00) was driven by an abnormal burst of company-specific media/rumour coverage: check_B PASSED with 20 company articles in D-1..D (article_count_z=3.25, 10 before onset), e.g. post 1735282259 (2026-06-30 15:07, \"申请百亿授信扩产…涨超7\"), 1735296960 (15:28, \"大涨近8%，一季度扭亏为盈\"), 1735291880 (15:18, \"科创板首只万亿股，寒武纪凭什么？\") and 1735460578 (2026-07-01 03:37, \"寒王破万亿？这泡泡吹得也太离谱了\") — the \"万亿市值\" narrative plus the company's risk warning (post 1735407971/1735437676) dominated the forum. Other causes failed: A only PARTIAL (no filing before onset; the sole CNINFO item 1225401954 \"股票交易风险提示公告\" came after onset at 2026-07-01 23:59 and was bearish, against the -6.91% move), C FAIL (0/7 peers abnormal same sign; own z=-1.34), G FAIL (not on the exchange top list), E FAIL (CSI300 z=-0.43, ChiNext z=-1.14, market normal). Investigation stopped because status.stop=true after 5 checks (A, C, G, B, E), with B holding the highest posterior (0.4839).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260810",
+    "decision": null,
+    "reason": "Spike SPK-688256-20260810 (寒武纪, 2026-08-10): 1390 posts, z_posts=+2.69, bull_share only 0.275 (z_bull=-1.19), onset 2026-08-07 20:00. check_B PASSED with the top posterior 0.4317: an abnormal burst of company-specific coverage around the spike (19 company articles D-1..D, article_count_z=2.81), including \"寒武纪严重不及预期\" (1756354358, 4616 reads), \"超4000股上涨，寒武纪、中际旭创、新易盛为什么闪崩大跌？\" (1756903584, 5152 reads) and \"科创50今天跌1.6个点…一个人就把\" (1756751353). check_A was only PARTIAL (posterior 0.3597): the H1 filings (1225464969/1225464971/1225464972) landed after the 08-07 20:00 onset (2026-08-08 23:59:59), were neutral/mixed, and revolved around a report whose growth decelerated vs Q1 and whose operating cash flow fell -65.83% — consistent with the bearish, not bullish, post tone. check_G FAILED (not on the exchange top list, abs_netbuy_to_turnover null vs market p95 0.502). Code set status.stop=true after 3 checks (B PASS with top posterior, untested_mass 0.18), so the investigation stopped and no further causes (C/D/E/F) were tested. Primary: B (media/rumour), secondary: the partially-supported A (official news).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20251124",
+    "decision": null,
+    "reason": "Spike SPK-601138-20251124 (工业富联, 2025-11-24, 3181 posts, z_posts=3.43, onset 09:00, bull_share 0.24 / z_bull=-1.79 — a panic, not a bullish spike). check_B PASSED: an abnormal burst of company-specific coverage around the spike (18 company articles D-1..D, article_count_z=2.83), including the \"小作文突袭！万亿巨头，跌停！\" rumour post (1629369863) and the Q4-target-cut rumour thread (1629486185), which the company had to deny (\"公司称未发布'订单或展望下调'相关口径消息\", 1629394940). check_C FAILED (own return -7.8%, z=-1.78, but 0/7 peers abnormal same sign — no sector co-movement), check_G FAILED (not on the exchange top list), and check_D was only PARTIAL (US peers abnormal, e.g. LITE +9.58% z=2.05, but opening gap z=0.33 — no gap at the open). With B the dominant posterior (0.649) and code setting status.stop=true after 4 checks, the investigation stopped; the primary cause is company-specific media/rumour (B), with overseas read-through (D) as a weak secondary.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260129",
+    "decision": null,
+    "reason": "The spike (2420 posts, z_posts=+2.957, onset 2026-01-28 16:00, z_bull=-1.366 — a pessimistic post flood) was driven by media/rumour coverage of the 2025 earnings pre-announcement. check_B PASSED: 25 company-specific articles in D-1..D, article_count_z=+2.65, including the most-read posts 1661312460 (\"预计2025年净利润同比增长51%—54%\", 16:48), 1661452383 (\"净利暴增54%...AI服务器猛涨5.5倍\", 02:35, reads 6111), 1661483611 (\"股价严重透支未来增长，年报靓丽不改下跌趋势\", 08:29, reads 8181) and 1662298696 (\"中金下调目标价18%被误读\"). check_A was only PARTIAL — the CNINFO filing 1224953921 (net profit 351-357亿, +51%-54%) is timestamped 2026-01-29 23:59:59, i.e. after the onset, and the spike day closed -5.09%. The alternatives were ruled out by code: check_C FAILED (own_return_z=-1.33, 0/7 peers abnormal same sign — peers were normal), check_D FAILED (opening_gap_z=0.12, no abnormal US peer move, NVDA z=0.75), leaving C/D/E/F/G mass negligible. Investigation stopped because status.stop=true after 4 checks, with B the highest-posterior passed cause (0.4412) and A the only secondary (PARTIAL).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260204",
+    "decision": null,
+    "reason": "Spike SPK-601138-20260204 (工业富联, 2026-02-04, 2093 posts, z_posts=2.325, bull_share 0.207, z_bull=-1.629) was dominated by the buyback-progress disclosure: top posts 1665148732, 1664688335, 1664757084, 1664690547, 1664684877 all concern the 2.47亿元/931.99万股 repurchase. check_A returned PARTIAL — the CNINFO filing (id 1224964340, 2026-02-04 23:59:59) is procedural/neutral and lands after the 00:00 onset, so official news is the leading but not decisive driver (posterior 0.3378). check_B also PARTIAL: company-specific coverage exists but is ordinary (article_count_z=-0.74; only 1664683711 before onset). D FAIL (no abnormal US peer move, NVDA z=-1.4, opening gap z=-0.77), G FAIL (not on the top list), C FAIL (0/7 peers abnormal same sign; own return -4.2%, z=-1.09). E and F were never tested because code set status.stop=true after 5 checks, with A the highest-posterior passed cause; H is excluded since A and B passed partially.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260429",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20251126",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260202",
+    "decision": null,
+    "reason": "Spike SPK-300308-20260202 (中际旭创, 2026-02-02, 1371 posts, z_posts=2.965, onset 2026-01-30 20:00) was triggered by a market-wide move. The only cause that PASSED is E: on the same trading day CSI300 fell -2.13% (z=-2.41) and ChiNext -2.46% (z=-1.45), an abnormal broad decline that matches the stock's -8.94% drop (own_return_z=-1.99). Company-specific explanations were only PARTIAL: A (official news) — the 2025 业绩预告 (ann_id 1224960577, filed 2026-01-31, 净利98–118亿, +89.5%–128.17%) came after the 01-30 20:00 onset and ran against the down move (spike_day_direction=-1); B (media/rumour) — coverage existed but was ordinary (18 articles, z=1.24, none before onset), mostly post-hoc CPO/光模块 commentary (e.g. 1663965105, 1664043781). Structural alternatives were rejected: G FAIL (not on the exchange top list, abs_netbuy_to_turnover null vs market p95 0.502) and C FAIL (peers normal, 0/7 abnormal same sign, share=0.0; e.g. 688041 -4.59% z=-1.13). Investigation stopped because status.stop=true after check_E, the 5th and final check, with E the passed cause holding the highest posterior (0.1435 vs A 0.4306 being only PARTIAL, i.e. not passed).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260417",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260512",
+    "decision": null,
+    "reason": "Spike SPK-300308-20260512 (中际旭创, 2026-05-12, 1434 posts, z_posts=2.345, onset 09:00) was driven by media/rumour coverage of the stock becoming the A-share market's 10th \"thousand-yuan stock\" (千元股) after a ~970% one-year gain. check_B returned PARTIAL: 22 company-specific articles in the D-1..D window (article_count_z=1.68), led by high-read posts such as id 1706413694 (14:18, 17188 reads), id 1706277851 (12:20, 4762 reads), id 1706535181 (17:08) and id 1706279985 (12:27) — company coverage exists but is ordinary rather than an abnormal burst, and only 3 articles preceded the 09:00 onset. All other causes failed or were weaker: G FAIL (not on the exchange top list, abs_netbuy_to_turnover null vs market p95 0.502), C FAIL (own return z=2.01/+8.28% but 0 of 7 peers abnormal with the same sign, share=0.0), F FAIL (0 policy articles before onset, breadth C/E both FAIL), and D PARTIAL (US peers COHR +13.25% z=2.7 and LITE +16.52% z=2.47 on 2026-05-11, but the stock's opening gap was only z=1.01/+2.22%, i.e. no decisive gap). Investigation stopped because status.stop=true after the 5th check, with B holding the highest posterior (0.3763) among the passed causes, D second (0.1613).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260601",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260622",
+    "decision": null,
+    "reason": "Market-wide move (E) is the only PASSED cause and holds the highest posterior (0.5859). check_E found the whole market abnormally strong on the spike day 2026-06-22: CSI300 +2.39% (z=2.27) and ChiNext +2.52% (z=1.23), matching the forum's market-wide framing posts (e.g. 1729359449 \"A股市值TOP10，有一半是科技股\", 1729148652 \"科创50放量涨近4%\", 1729456250 \"中际旭创市值首超贵州茅台\"). Competing structural explanations failed: G FAIL (not on the exchange top list, abs_netbuy_to_turnover null vs market p95 0.502) despite heavy money-flow chatter (1729355873, 1729455229, 1729298365); C FAIL (0 of 7 peers abnormal same sign, own return z=0.06, peers like 688256 -3.35% and 300394 -3.11% moved the other way), so it was not sector co-movement. B is secondary only as PARTIAL: company-specific coverage existed but was ordinary (18 articles D-1..D, article_count_z=0.81, 0 articles before onset, e.g. 1729415004, 1730021029). Investigation stopped because status.stop=true after 4 checks (limit 5), with E the top posterior among tested causes.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260713",
+    "decision": null,
+    "reason": "Spike SPK-300308-20260713 (中际旭创, 2026-07-13, 2356 posts, z_posts 2.107, onset 2026-07-10 15:00, bull_share 0.285 / z_bull −1.416) was driven by media/rumour. check_B PASSED with an abnormal burst of company-specific articles (33 in D-1..D, article_count_z 2.4), including the most-read thread 1741973714 \"利好来了…下周初科技股报复性上涨\" (5596 reads, 07-12 07:01), the rumour-denial thread 1742056888 \"澄清二季度业绩严重不及预期和故意压制股价传言\", 1742025878 \"公司八点会议小结：关于公司业绩不及预期的传言\", and 1742056250 on the Nvidia roadshow/光模块 conference call — a company-specific news/rumour wave with no filing. check_A FAILED (0 CNINFO filings or board-secretary replies in [D-3, D]), check_C FAILED (own_return_z 0.18; 0/7 peers abnormal same sign — peers like 601138 −4.81% were mild), and check_E was only PARTIAL (CSI300 −1.79%, z −1.55; ChiNext −3.1%, z −1.58), i.e. a broad but not extreme market drag. The investigation stopped because status.stop became true after 4 checks with B the only PASS and highest posterior (0.64).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260728",
+    "decision": null,
+    "reason": "Onset 2026-07-28 09:00 with 3136 posts (z_posts=2.27) and bull_share only 0.252 (z_bull=-1.77), i.e. a bearish spike. check_D PASSED with the strongest posterior (0.3621): US optical/AI peers fell abnormally in the prior US session (NVDA -4.99%, z=-2.05; LITE -6.69%, z=-1.20; AMD -5.17%; COHR -3.92%) and the stock gapped down at the open (opening_gap_pct=-7.05%, gap z=-3.31), matching the forum clue post 1750208476 (\"AI泡沫破裂，英伟达大跌3.25个点…美光科技大跌4.86个点\"). check_C also PASSED (posterior 0.2586): 4 of 7 peers moved abnormally the same way (300502 -17.13%, z=-3.04; 300476 -11.93%; 002463 -10.0%; 300394 -13.21%), so sector co-movement is a secondary contributor. A was only PARTIAL — the sole pre-onset CNINFO filing (1225444095, 08:04, H-share pricing at HK$980) is a procedural H-share listing step, not new A-share fundamentals — and G was PARTIAL (on the 15%-decline top list but ordinary net flow, 0.155 vs market p95 0.502). Investigation stopped because code set status.stop=true after 4 checks (untested mass 0.155), with D the highest-posterior passed cause.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260805",
+    "decision": null,
+    "reason": "Media/rumour (B) is the primary cause: check_B returned PASS with a company-specific article burst around the spike (64 articles in D-1..D, article-count z = +4.78, 5 articles before the 18:00 onset), led by the Reuters-driven \"美国拟禁止进口中国光模块/数据中心设备\" story — top post 1754219493 (2026-08-04 20:43) and 1754238838 (21:51, \"路透原文…是大作文\") — which produced the panic: stock returned -7.27% (own_return_z = -1.69) and opened -13.89% (gap z = -5.62), with the company only saying \"并未出台…暂时不予评述\" (1754448965). B kept the highest posterior throughout (0.5294 after test, 0.5844 at stop). F (policy/macro) is secondary PARTIAL: 4 policy articles before onset but no broad move (C FAIL, E FAIL). D (overseas read-through) is secondary PARTIAL: US peers were abnormal (AVGO +6.6%, z 2.16; COHR +12.4%, z 2.09) but the direction contradicted the A-share drop and the gap test failed. C FAILED (0 of 7 peers abnormal in the same direction, share 0.0), and E was never reached because code set status.stop = true after 4 checks with the leading cause B already PASSED and unambiguous.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260202",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260227",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260424",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260611",
+    "decision": null,
+    "reason": "The investigation stopped because code set status.stop=true after the 5th check (checks used: A, G, C, B, F) and no cause reached a PASS verdict, so per protocol H is the result. Spike facts: 300502 新易盛, 2026-06-11, 1307 posts (z_posts=2.267), bull_share 0.33 (z_bull=-0.832), onset 13:00:00; the stock itself was down -31.91% (own_return_z=-7.46). Evidence by cause: A PARTIAL - the top post 1724290855 \"新易盛：筹划发行H股并在香港联交所上市\" (2026-06-10 20:45:50) and 1724302004 \"实际控制人调整一致行动协议\" preceded onset, but check_A found filings_before_onset=0 and only a neutral post-onset governance file (id 1225363971, 2026-06-11 23:59:59, 《股东通讯政策（草案）》), timing invalid (evidence time < onset violated). G FAIL - not on the exchange top list (on_top_list=false). C FAIL - peers normal: 7 peers tested, 0 moved abnormally the same way (share=0.0, e.g. 300308 z=-0.70, 002463 z=-0.87), so the -31.9% move was idiosyncratic, not sector co-movement. B PARTIAL - 17 company-specific articles D-1..D, 9 before onset, but article_count_z only 1.01 (e.g. 1724296305 \"刚刚公告：筹划发行H股\", 2026-06-10 21:06:24), i.e. ordinary coverage, not an abnormal burst. F PARTIAL - 4 policy articles before onset (e.g. 1724362643, 2026-06-11 06:43:30), but breadth was absent (both C and E FAIL), so no broad move to confirm a macro driver. D and E were never reached as the top posterior because the process stopped at 5 checks. Reported media/money narratives (\"主力资金监控：新易盛净卖出超45亿\" 1724924276, 14:30; \"14股获融资净买入额超2亿元 新易盛居首\" 1724441510) are forum posts only and their structural tests (G) failed. Closest candidate drivers are the H-share listing/dilution plan (A) amplified by media (B) with a policy tailwind (F), but none passed, so the spike remains unexplained (H).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260720",
+    "decision": null,
+    "reason": "The spike (3082 posts, z_posts=3.73, onset 2026-07-19 16:00) was driven by media/rumour coverage of the half-year earnings preview. check_B PASSED with 41 company-specific articles in the D-1..D window (article_count_z=3.43), e.g. post 1745870033 (2026-07-19 17:20, 15298 reads), 1745922641 (2026-07-20 06:23, \"新易盛半年报业绩不及预期\", 5085 reads), 1745872525 and 1746418721 — an abnormal burst of company-specific coverage around the onset. check_A was only PARTIAL: the CNINFO filing 1225431444 (2026年半年度业绩预告, net profit 70-80亿, +77.56%-102.93%) is bullish but timestamped 2026-07-20 23:59:59, i.e. after the 07-19 16:00 onset (filings_before_onset=0). check_C FAILED (own return z=0.93, 0/7 peers abnormal same sign — peers like 002463 at -10.0% moved the other way), so sector co-movement is excluded; check_F was PARTIAL (2 policy articles before onset, e.g. 1745830973, 1745680131, but breadth C/E both FAIL, so no broad move). Investigation stopped because status.stop=true after 4 checks, with B holding the highest posterior (0.4545).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260728",
+    "decision": null,
+    "reason": "CPO/optical-module sector co-movement is the primary cause. Spike SPK-300502-20260728 (新易盛, 2026-07-28, 2187 posts, z_posts=2.797, onset 10:00, strongly bearish z_bull=-1.993) was driven by a sector-wide selloff: check_C PASSED with own return z=-3.04 (-17.13%) and 4 of 7 peers abnormally down the same day — 300308 中际旭创 -15.69% (z=-3.83), 300476 -11.93% (z=-2.74), 002463 -10.0% (z=-2.35), 300394 -13.21% (z=-2.08). Posts confirm this: \"CPO、存储芯片大跌！2700亿市值巨头，跌停\" (id 1750454030), \"CPO概念震荡走弱 新易盛等多股跌近10%\" (id 1750362762), \"A股调整 '易中天'集体下跌\" (id 1750554040). Secondary: E PASSED (ChiNext -7.35%, z=-3.18; CSI 300 -2.83%, z=-2.19) — a market-wide drag amplified the sector move; G was only PARTIAL (on the 15%-decline top list, net_buy 19.28亿 but ratio 0.184 vs p95 0.502, i.e. ordinary, not extreme one-sided flow), so money structure is not the driver. No company-specific filing (A) or abnormal media burst (B) evidence appeared, and the investigation stopped because status.stop=true after 3 checks (C and E passed, G partial; untested mass 0.19).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260805",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260119",
+    "decision": null,
+    "reason": "Stop flag hit after 5 checks. Onset 2026-01-16 19:00, post z-score +2.957 (1180 posts) with negative bull tone (z_bull -0.259); the trigger coincides with the company's own filing: CNINFO ann_id 1224938441 \"2025年度业绩预告\" at 2026-01-16 18:58:12 (bullish: FY25 net profit 41.6–45.6亿元, +260.35%–295.00%), and the most-read Guba posts (1655152028, 1655152934, 1655154473) all repost that same 业绩预告 — hence check_A PARTIAL (highest posterior 0.4891). The spike direction was actually down (own return -2.03%, opening gap -3.97%, z=-1.58) because Q4 results were read as \"不及机构预期\" (post 1655210438, 1655458423), so the news-driven spike is the cause with media commentary the runner-up: check_B PARTIAL (company articles D-1..D = 10, e.g. 1655866198 \"胜宏科技，到底怎么了？\", 1656003714 \"Q4业绩已现致命疲态\"). All broad/external causes were rejected: check_C FAIL (peers normal, same-sign share 0.0, own z only -0.49), check_D FAIL (no abnormal US peers, AVGO +2.5% z=0.8, LITE -5.5% z=-1.27), check_E FAIL (CSI300 z=-0.09, ChiNext z=-0.54).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260313",
+    "decision": null,
+    "reason": "Primary cause B (media/rumour). The spike onset was 2026-03-12 21:00, right after the 2025 annual report dropped (net profit 43.12亿元, +273.52%, 10派20元). check_B PASSED: 13 company-specific articles in the D-1..D window with article_count_z=2.24, including highly-read pieces such as id 1678541971 (2026-03-12 22:40, \"PCB龙头胜宏科技2025年净利43亿元…拟每股分红2元\", 16702 reads) and id 1678556030 (2026-03-13 00:06, 10273 reads), plus pre-onset sceptical coverage id 1678228215 (2026-03-12 11:44, \"明天年报是照妖镜\", 9185 reads). check_A was only PARTIAL — the CNINFO filings (e.g. 1225007484 2026 investment plan ≤200亿元) were all stamped after the onset (filings_before_onset=0) and the stock fell -0.81% on the day, so official company news alone does not explain the burst. Sector co-movement failed (check_C FAIL: peers normal, share=0.0, own_return_z=-0.2), trading-structure failed (check_G FAIL: not on the exchange top list), and overseas/market/policy causes had negligible priors. Investigation stopped because code set status.stop=true after 4 checks, with B holding the highest posterior (0.476) among tested causes.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260429",
+    "decision": null,
+    "reason": "Spike SPK-300476-20260429 (胜宏科技, 2026-04-29, 1301 posts, z_posts=4.16, onset 2026-04-28 15:00) was driven by a media/rumour burst of company-specific coverage around the Q1 report. check_B PASSED: 22 company-specific articles in D-1..D, article_count_z=4.71, e.g. #1701047469 (08:27 \"对于胜宏一季报的正确解读\", 2951 reads), #1700866590 (Goldman 550 target logic, 2343 reads), #1700920855 (1684 reads). check_A was only PARTIAL — the CNINFO Q1 filing #1225238227 is timestamped 2026-04-29 23:59:59, i.e. after the onset, and even then is neutral/against the move (net profit +39.95% but decelerating vs 2025 +273.52%). check_C FAILED (0 of 7 peers abnormal same sign, 0% share; own z=1.84, +6.65% — an idiosyncratic move). check_G FAILED (not on the exchange top list). Despite B's posterior (0.51) the code set status.stop=true after 4 checks with untested_mass=0.137, so the investigation stopped; market-wide (E), overseas (D) and policy (F) were not indicated by any clue.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260525",
+    "decision": null,
+    "reason": "Spike SPK-300476-20260525 (胜宏科技, 2026-05-25): 670 posts, z_posts=2.04, bull share 0.457, onset 2026-05-22 15:00. Cause B (media/rumour) PASSED with the top posterior 0.5825: check_B found an abnormal burst of company-specific coverage around the spike (14 company articles in D-1..D, article_count_z=2.16), e.g. post 1713399197 \"胜宏科技：开启周线级别上涨行情\" (2026-05-24 18:22, 3831 reads), 1713376253 \"胜宏科技：全球AI PCB最靓的仔\", 1713370291 and 1713374110 — all concurrent with the spike day/day before. Cause E (market-wide) was PARTIAL (CSI300 +1.58%, z=1.59; ChiNext +2.1%, z=1.13) and is retained as secondary. Causes G (not on the exchange top list, FAIL), C (peers normal, 0 of 7 abnormal same sign, FAIL) and D (no abnormal US peer move on the prior session, NVDA z=-0.94, FAIL) were rejected. Investigation stopped because status.stop=true after the fifth check (check cap reached), with no untested cause of comparable posterior remaining (untested_mass 0.146, next_suggested null).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260605",
+    "decision": null,
+    "reason": "Market-wide move is the only cause that PASSED. Spike SPK-300476-20260605 (胜宏科技, 2026-06-05, 752 posts, z_posts=2.141, onset 10:00, bearish tilt z_bull=-1.298) was tested in posterior order: B PARTIAL (company coverage exists but ordinary, article_count_z=-0.14), C PARTIAL (own return z=-2.08, -7.59%, but only 1 of 7 peers abnormal same-sign, share 0.14), D PARTIAL (US peers abnormal — AVGO -12.59%, z=-4.63 — but the stock did not gap at the open, opening_gap_z=-1.03), G FAIL (not on the exchange top list), then E PASS: CSI300 -1.79% (z=-1.95) and ChiNext -3.20% (z=-2.08), max_abs_index_z=2.08. With the whole market down abnormally the same day, the forum burst is best explained by a market-wide move rather than company-specific news. Investigation stopped because status.stop became true after 5 checks (E was the fifth), leaving no untested cause with material mass (untested_mass 0.0926).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260828",
+    "decision": null,
+    "reason": "Spike SPK-300476-20260828 (胜宏科技, 2026-08-28, 1185 posts, z_posts=2.353, onset 2026-08-27 20:00) was driven by a burst of company-specific media/rumour coverage. check_B PASSED with 17 company articles in D-1..D (article_count_z=2.21), e.g. post 1765343746 \"踩雷了，胜宏科技2026 Q2不及预期完整总结\" (2026-08-27 20:41, 4464 reads), 1765397672 \"半年报的业绩交流会重点内容\" (01:34), 1765668765 \"股权划转，是安抚原配，还是控制权的防火墙？\" (11:11) — the H1 report (归母净利28.57亿, +33.3%) plus the controller's share transfer to his spouse after the \"电梯门\" affair dominated the forum. check_A was only PARTIAL: the two CNINFO filings (1225522515/1225522514, 2026-08-28 23:59) came after onset and were bearish (扣非+12.5%, ROE 21.48%→11.80%), so official news did not precede the spike. check_C FAILED (own return -8.15%, z=-1.64, 0/7 peers abnormal same sign), check_D PARTIAL (NVDA +8.74%, z=3.58, but opening gap -2.8%, z=-1.13 — no gap-up). Investigation stopped because status.stop=true after 4 checks, with B holding the highest posterior (0.5412).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20251106",
+    "decision": null,
+    "reason": "Spike SPK-601127-20251106 (赛力斯/问界, 2025-11-06, 1246 posts, z_posts=2.23, bull_share=0.252 weak/z_bull=-1.663) with onset 2025-11-05 15:00. The dominant driver is media/rumour coverage of the H-share listing and Citi's downgrade: check_B = PASS with 29 company-specific articles in D-1..D (article z=5.75, 8 before onset), led by post 1620743737 (2025-11-06 08:51 \"赛力斯港股上市首日破发！花旗突然下调A股评级，目标价直砍22%\", 11434 reads) and 1620867653 (10:04 \"花旗狠砍赛力斯评级至卖出…港股上市次日就破发\"), matching the top posts 1620743213 (花旗将赛力斯A股评级从中性下调至卖出) and 1620719077 (\"140亿募资创纪录却跌近3%\") — exactly the negative coverage burst right at/just after onset, consistent with the bearish z_bull. check_A = PARTIAL only: the CNINFO filings (1224782061 H股定价公告 11-03, 1224781913 10月产销快报 11-03, 1224789545 H股上市公告 11-06) are procedural listing steps and a bullish 产销快报 that did not drive the spike (spike_day_direction=-1), so official news is secondary. check_G = FAIL (not on the exchange top list, no extreme one-sided net flow), removing money/trading structure. Testing stopped because status.stop=true after 3 checks (B PASS 0.625 posterior, untested mass 0.1786).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260122",
+    "decision": null,
+    "reason": "Spike SPK-601127-20260122 (赛力斯, 2026-01-22, 1124 posts, z_posts=2.12, onset 02:00, bull_share 0.18 / z_bull=-1.67 — a bearish-toned surge). Only cause B (media/rumour) passed, as PARTIAL: 7 company-specific articles in D-1..D with 5 before onset (e.g. id 1657515461 \"赛力斯为何跌跌不休\" 23:03, id 1657474710 L3/问界 20:27, id 1657515354 \"增长模式不可持续\" 23:03, id 1657335678 14:45), though article_count_z=0.38 means coverage was ordinary rather than an abnormal burst. All other tests failed: G FAIL (not on the exchange top list, abs_netbuy_to_turnover null vs market p95 0.502), A FAIL (0 CNINFO filings/replies in [D-3, D]), F FAIL (0 policy articles before onset, breadth C/E both FAIL), C FAIL (own return -2.66%, z=-1.25, 0 of 5 peers abnormal same-sign — peers normal), and E/D were never reached. Investigation stopped because status.stop=true after 5 checks, with B holding the highest posterior (0.3922).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260128",
+    "decision": null,
+    "reason": "Spike SPK-601127-20260128 (赛力斯, 2026-01-28): 1543 posts, z_posts=+2.695, but bull_share only 0.22 (z_bull=-1.112) — a bearish/panic surge, onset 2026-01-27 15:00. Only cause B (media/rumour) passed, as PARTIAL: 10 company-specific articles in D-1..D (article_count_z=0.88), e.g. id 1661423140 \"【深度分析】赛力斯股价暴跌核心原因终于知道了！含底部预测\" (2026-01-28 22:44, 9634 reads), id 1661017020 (2026-01-28 11:52, 2313 reads), id 1660636681 (2026-01-27 23:40), id 1660514364 (2026-01-27 16:05) — coverage exists but is ordinary, hence PARTIAL not PASS. All other tests failed: A FAIL (0 CNINFO filings/replies in D-3..D), F FAIL (0 policy articles before onset, breadth C/E both FAIL), E FAIL (CSI300 z=0.14, ChiNext z=-0.47, market normal), C FAIL (own return -3.75%, z=-1.74, but 0/5 peers abnormal same sign — 002594 +1.67%, 000625 -1.57%, 601238 -1.48%, 601633 -1.04%, 600418 +0.76%). D and G were never reached. Investigation stopped because status.stop=true after the 5th check (check_C), the code's hard cap of 5 checks, leaving B as the only passed cause with the highest posterior (0.3226).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260331",
+    "decision": null,
+    "reason": "Spike SPK-601127-20260331 (赛力斯, 2026-03-31, 1935 posts, z_posts=3.06, bull_share 0.347 / z_bull 0.61, onset 2026-03-30 17:00) was driven by an abnormal burst of company-specific media/rumour coverage: check_B returned PASS with 22 company articles in D-1..D and article_count_z = 4.67, including 1686780183 \"赛力斯之财报\" (20:11:55, 6572 reads), 1686829118 \"【深度分析】赛力斯2025年年报及相关公告深度分析报告\" (23:02:10), and 1686887909 (09:17:22), all clustering right after the 17:00 onset — i.e. overwhelmingly concurrent commentary/hot takes rather than advance leaks (only 4 articles before onset). check_A (official news) was only PARTIAL: 0 CNINFO filings before onset, 10 after, and the 2026-03-31 filings (annual report 1225053031 with profit +0.18% / 扣非 -7.84%; impairment 1225052910) were bearish, offsetting only by the buyback plan 1225052986 — consistent with the negative spike-day direction (-3.62%) but not the trigger, so A is a secondary/partial contributor. check_C FAILED: peers were normal and none moved with the stock (share = 0.0; 赛力斯 own_return_z = -1.54), ruling out sector co-movement. Investigation stopped because status.stop flagged true after 3 checks (cost cap logic: B PASSED on the highest posterior, 0.4934, with remaining untested mass only 0.197), so no further checks were made.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260610",
+    "decision": null,
+    "reason": "Spike SPK-601127-20260610 (赛力斯, 2026-06-10, 1370 posts, z_posts=2.21, bull_share 0.233, onset 2026-06-09 19:00) was dominated by company-specific media/rumour flow: the most-read posts are all about the new \"赛豆科技/AIVA\" AI-car brand with ByteDance's 火山引擎/豆包 (ids 1723621804, 1723487246, 1723491467, 1723496620, 1723504854) plus the \"牵手字节走出华为体系\" claim (1723534373), and check_B returned PARTIAL with a burst of 13 company articles (article_count_z 1.74) including pre-onset posts on the 30亿 可交债 / 实控人 backdoor-arbitrage allegations (1723414990, 1723429656). Rival causes were eliminated: A FAIL (zero CNINFO filings or board-secretary replies in [D-3, D]; spike-day direction -1), G FAIL (not on the exchange top list), C FAIL (peers normal, peers_abnormal_same_sign 0/5, own_return_z -1.85), while E was only PARTIAL (ChiNext -2.70%, z -1.66) and cannot by itself explain the company-specific post burst. Investigation stopped because status.stop=true after the 5th check (code cap), leaving B the highest-posterior passed cause (posterior 0.609) with E secondary.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260713",
+    "decision": null,
+    "reason": "Spike SPK-601127-20260713 (赛力斯, 2026-07-13): 3534 posts, z_posts=3.784, onset 2026-07-12 17:00, bearish tone (bull_share 0.245, z_bull -0.769). The most-read posts are dominated by the half-year loss forecast (e.g. 1742054482 \"盈转亏：上半年预亏至少15亿元\", 1742009847, 1742010726, 1742032058). check_B PASSED with the highest posterior (0.3913): an abnormal burst of company-specific coverage (17 articles D-1..D, article_count_z=2.52), e.g. 1742056805 (07:55, 11441 reads), 1742675976, 1742050763, 1742174432 — media/rumour amplification of the pre-announcement. check_C also PASSED (posterior 0.2609): sector co-movement, own return -10.0% (z=-4.79) with 3/5 peers abnormally down the same day (601238 z=-4.22, 600418 z=-2.82, 000625 z=-2.0), consistent with the \"汽车整车板块盘中持续走弱 赛力斯触及跌停\" post (1742317143). check_A was PARTIAL: the official 业绩预亏公告 (id 1225420563) is timestamped 2026-07-13 23:59:59, i.e. after the 07-12 17:00 onset, so official news confirms the bearish direction but did not precede the spike. Investigation stopped because status.stop=true after 3 checks (5-check cap not reached), with B the top-posterior passed cause.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260915",
+    "decision": null,
+    "reason": "Spike SPK-601127-20260915 (赛力斯/问界, 2026-09-15, 1726 posts, z_posts=2.335, onset 12:00) was driven by a media/rumour burst about the Huawei–Seres cooperation model change: check_B PASSED with 37 company-specific articles on D-1..D, article_count_z=7.83, including top-read posts 1773263923 (13:07 \"华为、赛力斯合作生变 赛力斯将全面主导问界汽车\"), 1773165575 (10:45 \"合作将调整为轻资产模式\"), 1773326917 (14:03, article=true \"合作模式变天\"), 1773444590 and 1773492861 — all company-specific coverage concurrent with the spike. Competing causes failed: A FAIL (0 CNINFO filings/board replies in D-3..D, evidence empty), C FAIL (0 of 4 peers abnormally same-signed; own return z=-1.94 vs peers -0.82..+0.21, share=0.0), G FAIL (not on the exchange top list, no extreme one-sided net flow). Posteriors after testing put B at 0.79 with untested mass 0.146; code set stop=true after 4 checks, so the investigation concluded with B as primary and no secondary passed causes.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260928",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251106",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251112",
+    "decision": null,
+    "reason": "Spike SPK-600418-20251112 (江淮汽车) had 335 posts, z_posts=2.238, onset 2025-11-11 15:00, with bull_share only 0.397 (z_bull 0.812) — i.e. a high-volume, non-euphoric discussion spike driven by news chatter: top posts discussed \"定增延期一年\" (1623370571, 1623359057), \"涉嫌严重违法，江淮汽车原皮卡公司党委书记赵涛被查\" (1623541592) and \"查了安凯，查江淮\" (1623370964). check_B PASSED: company-specific article burst with article_count_z=6.41 and 4 company articles in D-1..D (e.g. 1623247186 \"江淮这一波下跌是跟着赛力斯走的\" at 2025-11-11 14:41, before onset; 1623548939 \"江淮跌下来都是机会\" at 09:58 on the spike day), leaving posterior 0.754 — by far the highest. The competing causes were all tested and failed: A FAIL (no CNINFO filing or board-secretary reply in [D-3, D], filings_before_onset=0), G FAIL (not on the exchange top list), C FAIL (0 of 5 peers abnormal same sign; own return z=2.03, +5.63% was idiosyncratic, peers e.g. 601633 z=-1.24, 002594 z=-0.03). Investigation stopped because status.stop became true after 4 checks, with B the sole passed cause and dominant posterior (A 0.070, C 0.020, D 0.025, E 0.050, F 0.050, G 0.030).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251211",
+    "decision": null,
+    "reason": "Onset 2025-12-10 17:00 (338 posts, z_posts=2.487) coincided with company official news. check_A returned PASS: CNINFO filing 1224857664 (2025-12-09 23:59) 11月产销快报 showed 11月销量33,540辆 同比+5.94%、新能源乘用车3,299辆 同比+8.66%, cumulative decline narrowing from -9.26% to -7.99% (bullish), and filing 1224865808 (2025-12-11) confirmed the 35亿元定增 (向特定对象发行A股股票) passed 上交所审核 — matching the top-read posts 1637206739/1637223395/1637288029. check_A lifted A's posterior to 0.7013, the highest of all causes. check_B returned only PARTIAL (article_count_z=1.29, 2 company articles D-1..D, 0 before onset), i.e. ordinary media coverage trailing the official disclosure, so B is secondary. Investigation stopped because status.stop=true after 2 checks with A as the dominant passed cause.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260119",
+    "decision": null,
+    "reason": "Spike SPK-600418-20260119 (江淮汽车, 2026-01-19, 348 posts, z_posts=2.55, onset 2026-01-16 15:00) was driven by company official news plus follow-up commentary on it. check_A returned PARTIAL with a company filing dated 2026-01-17 23:59:59 (id 1224938807, \"江淮汽车2025年年度业绩预亏公告\": 预计2025年归母净利润-16.8亿元、扣非-24.7亿元, 大众安徽投资收益-10.8亿) — the spike's most-read posts are all readings of that loss pre-announcement (e.g. 1655306030 \"深度解读…业绩预亏公告\", 1655176596 \"预计2025年净亏损16.8亿元左右\", 1655378995 \"业绩预亏公告（减亏）\", 1655219949 \"归母净利预亏16.8亿…尊界或成救命稻草\"), i.e. filings exist but sit at/after the onset window, giving a PARTIAL verdict that keeps A as the top posterior (0.5422). check_B was also PARTIAL (company articles concentrated around the announcement, count_z=1.28), so media/rumour is a secondary amplifier, not the driver. check_C FAILED (peers normal: 601633 z=0.75, 002594 z=0.16, 601238 z=0.14, 601127 z=0.11, 000625 z=0.06; 0/5 same-sign) so sector co-movement is excluded; check_F FAILED (no policy article before onset; breadth C and E both FAIL); check_G FAILED (not on the exchange top list, abs_netbuy/turnover null vs p95=0.502). D and E remain untested but have low posteriors (0.060 each/earlier) and no support in the posts. Investigation stopped because status.stop=true after the fifth check, with A the highest-posterior passed cause.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260211",
+    "decision": null,
+    "reason": "Spike SPK-600418-20260211 (江淮汽车, 2026-02-11, 597 posts, z_posts=4.22, onset 2026-02-10 19:00) was driven by a media/rumour burst around the 35亿元 private placement subscribed by 葛卫东/章建平 (10亿 each). check_B PASSED: 23 company-specific articles in the D-1..D window, article_count_z=15.42, led by post 1668052429 \"葛卫东10亿豪赌江淮汽车，联手华为引爆370%暴涨神话！\" (34,536 reads, 2026-02-10 23:03) and 1668024908/1668027539. check_A was only PARTIAL: the CNINFO filings (1224975778, 1224975770, 1224975758) all landed after the onset (2026-02-11 23:59) and were neutral (发行价49.88元/股, 募资净额34.80亿元; 1月总销量-2.14% but 新能源+183%). check_C FAILED: peers were normal (0/5 abnormal same-sign; 比亚迪 z=1.13, 长安 -0.21, 赛力斯 0.08) while the stock rose 3.83% (z=1.47), so it was not sector co-movement. Investigation stopped because status.stop=true after 3 checks, with B the highest-posterior passed cause (0.598) and A secondary (0.256).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260427",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260525",
+    "decision": null,
+    "reason": "Highest-posterior non-failed cause after 5 checks: B (media/rumour) at posterior 0.48, PARTIAL. The spike (486 posts, z=3.44, onset 2026-05-25 09:00, bull_share 0.24 / z_bull=-0.92) is a rumour-driven limit-down: the only company-specific article (id 1714096960, 2026-05-25 18:04:58, \"江淮汽车调整点评...来自市场传尊界\") appeared AFTER onset and the article burst was ordinary (company_articles_D-1..D=1, article_count_z=-0.24, articles_before_onset=0), consistent with forum speculation about a failed/repriced 引望 stake (posts 1713628073, 1713656097) rather than confirmed news. All hard causes failed: A FAIL (0 filings/replies in D-3..D), G FAIL (not on the top list, abs_netbuy null vs market p95 0.502), C FAIL (stock -5.22%, z=-2.41, while 0/5 peers moved abnormally the same way, share=0.0). E is only PARTIAL and contradictory: CSI300 +1.58% (z=1.59) and ChiNext +2.1% (z=1.13) moved up while the stock fell, so a market-wide move cannot explain the decline. D and F were never reached; the run stopped at the 5-check limit with stop=true.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260622",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260707",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260923",
+    "decision": null,
+    "reason": "Spike SPK-600418-20260923 (江淮汽车, 2026-09-22/23): 814 posts, z_posts=2.17, bull share 0.596 (z_bull=3.14), onset 2026-09-22 15:00. The most-read posts are dominated by company-specific media/rumour items — \"消息称玛莎拉蒂与华为、江淮汽车开展长期产业合作谈判\" (1776439157), \"与玛莎拉蒂、华为合作传闻再起，江淮汽车午后涨停\" (1776503117) and \"\"一卖就起飞\"！600418尾盘突然涨停，发生了什么？\" (1776475021) — i.e. a rumour-driven, company-specific afternoon limit-up (own_return_pct 9.99, z=3.09). check_B PASSED (company_articles_D-1..D = 8, article_count_z = 2.34) confirming an abnormal burst of company-specific coverage (e.g. 1776551462, 1776560757). Competing explanations were ruled out: check_A FAIL (0 CNINFO filings/replies in D-3..D, so no official company news), check_C FAIL (0 of 4 peers abnormal same sign; BYD -0.84%, Changan -0.84%, Seres -1.21%, Great Wall -0.14%), leaving the move purely idiosyncratic. check_G came back PARTIAL only (on the 2026-09-23 top list but net_buy/turnover 0.173 vs market p95 0.502 — ordinary, not extreme one-sided flow), so trading structure is at best a secondary amplifier, not the trigger. Investigation stopped because status.stop=true after 4 checks (B PASS, A/C FAIL, G PARTIAL) with B holding the top posterior at 0.719.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20251110",
+    "decision": null,
+    "reason": "Spike SPK-601238-20251110 (广汽集团, 2025-11-10, 451 posts, z_posts=2.289, onset 2025-11-08 01:00) was driven by a burst of company-specific media coverage: check_B PASSED with 7 company articles in D-1..D, article_count_z=7.03, e.g. post 1622158764 \"京东联手广汽宁德时代搞大事！4.99万起租电池直接把10万级市场掀翻\" (2025-11-09 21:33, 1417 reads) and 1622156571/1622166476/1622167719/1622157221 on the 京东+广汽+宁德时代 埃安UT super 4.99万/4.54万 launch. check_A was only PARTIAL: the sole filing (1224792528, 2025-11-08 23:59, 10月产销快报) came after onset and was bearish (销量同比-8.10%), so official news cannot explain the spike. check_G FAILED (not on the exchange top list) and check_C FAILED (own return -1.0%, z=-0.79; 0/5 peers abnormal same sign), ruling out money-structure and sector co-movement. Investigation stopped because status.stop=true after 4 checks, with B holding the highest posterior (0.5172).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20251124",
+    "decision": null,
+    "reason": "Spike SPK-601238-20251124 (广汽集团, 2025-11-24): 885 posts, z_posts=3.58, bull_share 0.543 (z_bull=3.19), onset 2025-11-21 16:00. Clues were dominated by media coverage of the solid-state battery pilot line (e.g. ids 1629333945, 1629023168, 1628998588, 1629049161, 1628928183, 1628981665, 1629183600) plus the Huawei 启境 tie-up (1628961842). check_B PASSED: 7 company-specific articles in D-1..D, article_count_z=3.22, with high-read items 1629353952 (13:07, 5052 reads) and 1628981665 (11-23 10:46, 4437 reads) — an abnormal burst of company-specific coverage around the spike. check_A FAILED (0 CNINFO filings/replies in [D-3, D]), check_C FAILED (own return z=7.25 / +10% limit-up while 0 of 5 peers were abnormal same-sign, share=0.0), check_G FAILED (not on the exchange top list). D/E/F were never reached because code set status.stop=true after 4 checks with B holding the highest posterior (0.68). Primary cause: B (media/rumour), no secondary passed causes.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260618",
+    "decision": null,
+    "reason": "Media/rumour (B) is the primary cause: check_B PASSED with an abnormal burst of company-specific articles around the spike — 3 articles in D-1..D, article_count_z = 2.34 — two of them before the 10:00 onset: post 1728293720 (\"广汽集团真是好股！牛市高点下跌81％\", 2026-06-17 16:26:33, 550 reads) and post 1728267874 (2026-06-17 15:27:33), plus post 1728836788 (2026-06-18 11:47:25, 273 reads) on the spike day. The tone matches the bearish spike (388 posts, z_posts 2.703, bull_share 0.139, z_bull −1.595). All other tested causes failed: A (check_A FAIL — 0 filings/replies in [D-3, D]), C (check_C FAIL — own return −3.32%, z −2.51, while 0/5 peers were abnormal same-sign), and G (check_G FAIL — not on the exchange top list; abs_netbuy_to_turnover null vs market p95 0.502). D/E/F were not tested because code set status.stop = true after B PASSED with posterior 0.6294 (next_suggested = null), so the investigation stopped at 4 of the 5 allowed checks.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260629",
+    "decision": null,
+    "reason": "Spike SPK-601238-20260629 (广汽集团/埃安, 321 posts, z_posts=2.02, bull_share=0.24, onset 2026-06-26 15:00) was driven by a burst of company-specific media coverage around the 启境GT7 launch: top posts 1733654160 (06-26 22:03 \"华为乾崑'境'系列首款产品上市…20.99万元起\"), 1733806956 (06-28 \"启境GT7上市：五款车型售20.99万—32.99万元\"), 1733785591, 1733779337, 1733775693 and 1733728069 all cluster within the 72 h window ahead of/at the surge. check_B returned PARTIAL (company_articles_D-1..D=2, article_count_z=1.08, articles_before_onset=0, supporting ids 1733787858, 1734640820) — company coverage is present but ordinary, giving B the top posterior (0.4396). Alternatives were rejected: check_A FAIL (filings_before_onset=0, filings_after_onset=0, no CNINFO filing/reply in [D-3,D]), check_G FAIL (not on the exchange top list), check_F FAIL (policy_articles_before_onset=0). check_C was PARTIAL (own_return_z=1.24, own_return_pct=1.19, only 1 of 5 peers abnormal same sign — 000625 z=4.86, 601633 z=1.88 — share=0.20), so sector co-movement is only a weak secondary. Investigation stopped because status.stop=true after the 5th check (cause_calls=5), with B the highest-posterior PASSED/PARTIAL cause and H never scored.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260713",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260914",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260929",
+    "decision": null,
+    "reason": "Spike SPK-601238-20260929 (广汽集团, 2026-09-29, 738 posts, z_posts=3.10, onset 2026-09-28 20:00) was driven by company official news: the 重大资产重组 plan to buy 50% of 一汽丰田 and resume trading. Top posts are all about this filing (ids 1778397924 \"拟购买一汽丰田50%股权 股票复牌\", 1778425034, 1778448248 \"重大资产重组预案来了\", 1778429804 \"停牌10日抛重组方案\"), and the stock hit 一字涨停 (own_return +10.02%, z=5.54, 封单超100万手, post 1778682353). check_A returned PARTIAL (9 filings, all dated 2026-09-29 23:59:59, i.e. after the 20:00 onset, and procedural/neutral — hence PARTIAL not PASS), and it holds the highest posterior (0.6369). Alternatives were ruled out: check_G FAIL (not on the exchange top list), check_C FAIL (0 of 5 peers abnormal same sign; peers z 1.84/-0.81/-0.39/0.27/1.0), check_E FAIL (CSI300 z=0.09, ChiNext z=0.02 — market normal). check_B was PARTIAL (4 company articles, z=1.97, but all concurrent/after onset, ordinary coverage), so media/rumour is only a secondary echo of the same filing. Investigation stopped because status.stop=true after 5 checks (the cap), with A the only passed cause carrying the highest posterior.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260206",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260429",
+    "decision": null,
+    "reason": "Spike SPK-002074-20260429 (国轩高科, 2026-04-29): 811 posts, z_posts=4.03, bull_share 0.263 (z_bull=-0.911), onset 2026-04-28 17:00. Top posts are dominated by the Q1/annual earnings release (e.g. 1700959220 \"第一季度净利润同比下降79.04%\", 1700959824 \"全年归母净利润23.83亿元，同比增长97.49%\", 1700957343 \"2026年一季度报告\"), which pointed to A. check_A returned PARTIAL: 0 filings before onset, 15 after onset, spike-day direction -1 — the official filings (e.g. 1225254220 2025年年度报告, 1225241970 董事会工作报告) landed after the onset and were bearish/neutral, so official news alone does not explain the burst. check_B then PASSED: 10 company-specific articles in the D-1..D window, article_count_z=3.16, with the most-read items being media/analyst-style pieces (1700977975 \"国轩的'大机会'不在现在的利润，而在大众500亿长单+固态电池领先+储能\", 1506 reads; 1701285351 \"国轩高科还在快速扩张阶段\"; 1700969165 \"2025年报整体为中性偏利好\"), i.e. an abnormal burst of company-specific coverage around the spike. B therefore has the highest posterior among passed causes (0.40, tied with A's 0.40 but A only PARTIAL), so B is primary with A as the partial secondary contributor. Investigation stopped because status.stop=true after 2 checks (untested_mass 0.1998).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260518",
+    "decision": null,
+    "reason": "Spike SPK-002074-20260518 (国轩高科, 2026-05-18, 349 posts, z_posts=2.26, onset 2026-05-17 12:00) was driven by media/rumour coverage of the company's 5.17 global technology conference. check_B PASSED: 13 company-specific articles in D-1..D with article_count_z=4.25, e.g. id 1709316191 (2026-05-18 07:28, \"固态电池成本目标1元/Wh，2026年量产领先宁德时代比亚迪\", 2095 reads), id 1709235651 (2026-05-17 12:38, conference summary, 917 reads), id 1709313972 (2026-05-18 06:56, 400Wh/kg), id 1709262098 (2026-05-17 17:56, 1元/Wh) — an abnormal burst of company-specific coverage around the onset. Competing causes failed: A FAIL (0 CNINFO filings/board-secretary replies in [D-3, D]), C FAIL (peers normal: 300750 z=-0.73, 002812 z=-0.48, 300014 z=-0.3, share of same-sign abnormal peers = 0.0), G FAIL (not on the exchange top list). Posterior for B rose to 0.73 and status.stop=true after 4 checks, so the investigation stopped and B is the primary cause; no other cause passed.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260604",
+    "decision": null,
+    "reason": "No tested cause reached a PASS verdict, so the spike remains unexplained (H). Spike: 002074 国轩高科, 2026-06-04, onset 07:00, 340 posts (z_posts=2.109) with unusually bearish tone (bull_share=0.15, z_bull=-1.787); top posts are about \"持续阴跌逻辑\" (id 1720307117), debt/filing data (1720339389) and retail losses — sentiment-driven, not event-driven. Tests: C PARTIAL (own return -3.68%, z=-1.71; only 1/3 peers abnormal same-sign — 300750 z=-2.12, 300014 z=-1.94, 002812 z=-0.82; share 0.33, so no majority sector move); A PARTIAL (only 1 pre-onset filing, id 1225346143 2026-06-03 23:59:59 \"关于注销部分募集资金专项账户的公告\", explicitly neutral/procedural, against the move); B PARTIAL (4 company articles, article_count_z=0.76, all post-onset/ordinary, e.g. 1720307117 10:06, 1720893263); G FAIL (not on exchange top list); E FAIL (market normal: CSI300 -0.69% z=-0.80, ChiNext -0.83% z=-0.65). D and F were left untested. Investigation stopped because code set status.stop=true after 5 checks with no passed cause, so per protocol the primary cause defaults to H.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260929",
+    "decision": null,
+    "reason": "stop rule held; the model did not call conclude",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20251107",
+    "decision": null,
+    "reason": "Spike SPK-600150-20251107 (中国船舶, 677 posts, z_posts=3.163, onset 2025-11-06 15:00) was investigated in posterior order. A FAILED: no CNINFO filing or board-secretary reply in [D-3, D] (filings_before_onset=0, spike_day_direction=-1), so the group-level posts (1621395216 中船集团战略合作签约, 1621386530 进博会签约6.1亿美元) are not company official news. F FAILED: no policy article before onset and no broad move (C/E both FAIL). C FAILED: own_return_z=-0.23, peers 601890/600685/600072 moved normal/opposite (share=0.0). G FAILED: not on the exchange top list (on_top_list=false). E was never reached. B is the only surviving cause, PARTIAL: company-specific coverage exists but is ordinary — the concurrent sector article 1621548119 (2025-11-07 10:16, \"订单排到2029年…中国船舶利润弹性\", 358 reads, article_count_z=0.3) with articles_before_onset=0. The decisive evidence is the media/rumour coverage around the spike day combined with the failure of every structural, policy, sector, overseas and official-filing channel. Investigation stopped because status.stop=true after 5 checks (the code's hard limit), leaving only B passed.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260130",
+    "decision": null,
+    "reason": "Spike SPK-600150-20260130 (中国船舶, 2026-01-30, 648 posts, z_posts=2.17, onset 2026-01-29 19:00) was driven by an abnormal burst of company-specific media coverage around the earnings pre-announcement: check_B PASSED with 8 company articles in D-1..D, article_count_z=3.38, led by post 1662296385 (船舶ETF被动资金买入天海防务, 8436 reads, 2026-01-29 22:42) and post 1662250407 (业绩预告点评与分析, 3771 reads, 20:35). check_A was only PARTIAL: the official 业绩预增公告 (id 1224956973) was filed after the onset (2026-01-30 23:59) and the stock actually fell -2.98% that day, so official news alone does not explain the spike. check_C FAILED (own_return_z=-1.65, 0/3 peers abnormal same sign, share=0.0), ruling out sector co-movement. Investigation stopped because status.stop=true after 3 checks, with B the only PASSED cause (posterior 0.52) and A the secondary PARTIAL cause (posterior 0.29).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260323",
+    "decision": null,
+    "reason": "Spike SPK-600150-20260323 (中国船舶, 678 posts, z_posts=2.31, bull_share 0.213, onset 2026-03-20 15:00) was driven by a market-wide move: check_E PASSED with CSI300 -3.26% (z=-3.68) and ChiNext -3.49% (z=-2.16) on the same trading day, matching the bearish tone of top posts (e.g. 1683164666 \"对于大势来说已经向下反转了\"). Company-specific causes were ruled out: check_A FAIL (0 CNINFO filings/replies in [D-3,D]), check_G FAIL (not on the exchange top list, no one-sided net flow), check_D FAIL (no US peer defined). check_B was only PARTIAL — company coverage existed but was ordinary (article_count_z=-0.32, 0 articles before onset), so media/rumour is a weak secondary. Investigation stopped because status.stop=true after 5 checks, with E holding the highest posterior (0.489).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260430",
+    "decision": null,
+    "reason": "The spike (728 posts, z_posts=2.464, onset 2026-04-29 18:00) was driven by an abnormal burst of company-specific media coverage around the Q1/annual results: check_B PASSED with 7 company articles in D-1..D (article_count_z=2.35), e.g. post 1701721535 (2026-04-29 20:29, 1416 reads), 1701373538 (2026-04-29 12:24, before onset, 1372 reads), 1701682522 (19:01, 895 reads) and 1701811184 (2026-04-30 03:17, \"远超市场预期\"). check_A was only PARTIAL: the CNINFO filings (e.g. 1225261225 annual report summary, 1225261218, 1225261211) all landed after the onset and were labelled neutral, with 0 filings before onset. check_C was PARTIAL (only 1 of 3 peers abnormal same-sign, own z=0.66), and check_G FAILED (not on the exchange top list, no extreme one-sided net flow). Investigation stopped because status.stop=true after 4 checks, with B holding the highest posterior (0.427).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260713",
+    "decision": null,
+    "reason": "Spike SPK-600150-20260713 (中国船舶, 2026-07-13): 855 posts, z_posts=3.345, bull_share=0.248 (z_bull=-0.792), onset 2026-07-10 17:00 — a negative, sentiment-poor burst. check_A FAILED (no CNINFO filing or board-secretary reply in [D-3, D]; filings_before_onset=0), so the dividend/权益分派 posts (1741798006, 1741793292) and the rumoured order/预增 talk were not official news. check_B was only PARTIAL: company articles existed but ordinary (article_count_z=0.31, articles_before_onset=0) — media/rumour cannot carry the spike. check_C PASSED as the top posterior (0.4651): the stock itself fell own_return_pct=-7.64 with own_return_z=-3.2 while most peers moved abnormally the same way (share=0.67): 600685 z=-3.73/-9.48%, 600072 z=-2.55/-7.30%, 601890 z=-1.94/-5.24%. check_G FAILED (not on the exchange top list, so no extreme one-sided flow). Investigation stopped because status.stop=true after 4 checks. Primary cause C (sector co-movement), with B (media/rumour) as a weak secondary.",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260831",
+    "decision": null,
+    "reason": "Spike SPK-600150-20260831 (中国船舶, 690 posts, z_posts=2.449, bull_share 0.282, onset 2026-08-30 20:00) was driven by company official news. check_A = PARTIAL (highest posterior 0.5814): the most-read threads (id 1766152912 15:37, 1766153700 15:45, 1766151487 15:31, 1766167939 18:21) all discuss the 2026 interim report — 归母净利润99.54亿元, +163.51% yoy, plus 中期分红 10派4.65元 (filing 1225534448, bullish) — and the 26.88亿美元 shipbuilding contract filing (1225526659 / post 1765923462). check_B backed this as PARTIAL (company_articles_z=1.77; pre-onset commentary posts 1766131485, 1766175831, 1766161388), i.e. the news flow was company-specific rather than market-wide. Causes C (peers normal, own z=-0.79), F (0 policy articles before onset, breadth FAIL) and D (no defined US peer) all FAILED, so H is not needed. Stopped per status.stop after 5 checks (D returned FAIL, untested_mass 0.1162).",
+    "must_record": [],
+    "verdict": null,
+    "graded_by": null
+  }
+]
