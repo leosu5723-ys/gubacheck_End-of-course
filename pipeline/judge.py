@@ -5,6 +5,8 @@ GubaCheck - ANNOUNCEMENT JUDGE (LLM reads the filing, with or without RAG)
     python3 -m pipeline.judge run text --limit=5 try 5 calls first
     python3 -m pipeline.judge run text           LLM reads the filing only
     python3 -m pipeline.judge run rag            LLM reads the filing + retrieved company history
+    python3 -m pipeline.judge run rag_noforce --only=labelled   ablation: no forced documents
+    python3 -m pipeline.judge run rag_doc --only=labelled       ablation: whole-document retrieval
     python3 -m pipeline.judge eval               both modes vs my hand labels
 
 Each non-procedural announcement gets {label: bullish|bearish|neutral,
@@ -101,21 +103,35 @@ def retrieve(ann, rows, k=3):
     return latest, top
 
 
-def context_block(ann, rows):
-    latest, top = retrieve(ann, rows)
-    parts = []
-    if latest:
-        parts.append("【最近一期定期报告：%s（%s）主要财务数据】\n%s"
-                     % (latest["title"], latest["time"][:10], text_of(latest["ann_id"], 1500)))
-    for r in top:
-        parts.append("【历史公告 %s：%s】\n%s" % (r["time"][:10], r["title"], text_of(r["ann_id"], 400)))
-    ids = ([latest["ann_id"]] if latest else []) + [r["ann_id"] for r in top]
+def context_block(ann, rows, mode="rag"):
+    """Company history for the prompt. Modes:
+         rag          chunked retrieval (pipeline/rag.py) + forced baseline and
+                      same-period forecast   <- the deployed design
+         rag_noforce  chunked retrieval only (ablation)
+         rag_doc      earlier, simpler whole-document lexical retrieval (ablation)
+    Returns (text, [source ann_ids])."""
+    if mode == "rag_doc":
+        latest, top = retrieve(ann, rows)
+        parts = []
+        if latest:
+            parts.append("【最近一期定期报告：%s（%s）主要财务数据】\n%s"
+                         % (latest["title"], latest["time"][:10], text_of(latest["ann_id"], 1500)))
+        for r in top:
+            parts.append("【历史公告 %s：%s】\n%s" % (r["time"][:10], r["title"], text_of(r["ann_id"], 400)))
+        ids = ([latest["ann_id"]] if latest else []) + [r["ann_id"] for r in top]
+        return ("\n公司历史资料（仅限本公告发布之前）：\n" + "\n\n".join(parts)) if parts else "", ids
+    from pipeline import rag
+    forced_docs, top = rag.retrieve(ann, text_of(ann["ann_id"]), force=(mode == "rag"))
+    parts = ["【%s：%s（%s）】\n%s" % (label, d["title"], d["time"][:10], rag.clean(text_of(d["ann_id"], 2000))[:1200])
+             for label, d in forced_docs]
+    parts += ["【检索片段 相似度%.2f：%s（%s）】\n%s" % (c["score"], c["title"], c["time"][:10], c["text"]) for c in top]
+    ids = [d["ann_id"] for _, d in forced_docs] + [c["ann_id"] for c in top]
     return ("\n公司历史资料（仅限本公告发布之前）：\n" + "\n\n".join(parts)) if parts else "", ids
 
 
 def judge_one(ann, rows, mode):
     from core import backends
-    ctx, ctx_ids = context_block(ann, rows) if mode == "rag" else ("", [])
+    ctx, ctx_ids = context_block(ann, rows, mode) if mode != "text" else ("", [])
     prompt = PROMPT % {"name": ann["name"], "code": ann["stock"], "title": ann["title"],
                        "time": ann["time"], "body": text_of(ann["ann_id"]) or "（无正文）", "context": ctx}
     text, usage = backends._live_call([{"role": "user", "content": prompt}])
@@ -135,13 +151,26 @@ def judge_one(ann, rows, mode):
     return rec
 
 
-def cmd_run(mode, limit=None):
+def labelled_ids():
+    import csv as _csv
+    ids = set()
+    for name in ("ann_labelled.csv", "ann_labelled_batch2.csv"):
+        p = os.path.join(LABELS, name)
+        if os.path.exists(p):
+            ids |= {r["ann_id"] for r in _csv.DictReader(open(p, encoding="utf-8-sig"))}
+    return ids
+
+
+def cmd_run(mode, limit=None, only_labelled=False):
     rows = load_announcements()
     path = os.path.join(RAW, "judgements_%s.jsonl" % mode)
     done = {}
     if os.path.exists(path):
         done = {json.loads(l)["ann_id"]: 1 for l in open(path, encoding="utf-8")}
     todo = [r for r in rows if not r["procedural"] and r.get("has_text") and r["ann_id"] not in done]
+    if only_labelled:
+        keep = labelled_ids()
+        todo = [r for r in todo if r["ann_id"] in keep]
     if limit:
         todo = todo[:limit]
     print("%s: %d to judge (%d cached)" % (mode, len(todo), len(done)), flush=True)
@@ -256,7 +285,7 @@ def cmd_eval():
     rows = {r["ann_id"]: r for r in load_announcements()}
     b2, b1 = _gold("ann_labelled_batch2.csv"), _gold("ann_labelled.csv")
     preds = {"title_rule": {i: title_rule(rows[i]) for i in list(b2) + list(b1)}}
-    for mode in ("text", "rag"):
+    for mode in ("text", "rag", "rag_noforce", "rag_doc"):
         if os.path.exists(os.path.join(RAW, "judgements_%s.jsonl" % mode)):
             preds["llm_" + mode] = all_judgements(mode)
     report = {"batch2_main": {"n": len(b2), "gold_counts": {c: sum(v == c for v in b2.values()) for c in CLASSES}},
@@ -306,7 +335,7 @@ if __name__ == "__main__":
         cmd_sample(int(sys.argv[2]) if len(sys.argv) > 2 else 40)
     elif cmd == "run":
         lim = [int(a.split("=")[1]) for a in sys.argv if a.startswith("--limit=")]
-        cmd_run(sys.argv[2], lim[0] if lim else None)
+        cmd_run(sys.argv[2], lim[0] if lim else None, "--only=labelled" in sys.argv)
     elif cmd == "eval":
         cmd_eval()
     else:
