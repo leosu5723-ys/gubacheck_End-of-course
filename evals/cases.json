@@ -1,632 +1,546 @@
 [
  {
-  "case_id": "SPK-688256-20251022",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 13,
-  "filings_to_read": 4,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-688256-20260203",
+  "stock": "688256",
+  "date": "2026-02-03",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-688256-20260108",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 0,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-688256-20260430",
+  "stock": "688256",
+  "date": "2026-04-30",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-688256-20260226",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 1,
-  "filings_to_read": 1,
-  "labels_from_hand": 1,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
- },
- {
-  "case_id": "SPK-688256-20260407",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 3,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
- },
- {
-  "case_id": "SPK-688256-20260415",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 1,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-688256-20260506",
+  "stock": "688256",
+  "date": "2026-05-06",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
   "case_id": "SPK-688256-20260618",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 1,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "stock": "688256",
+  "date": "2026-06-18",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-688256-20260915",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 0,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-688256-20260701",
+  "stock": "688256",
+  "date": "2026-07-01",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-601138-20251021",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1224761584",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 19,
-  "filings_to_read": 2,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-688256-20260810",
+  "stock": "688256",
+  "date": "2026-08-10",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-601138-20251027",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1224761584",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 18,
-  "filings_to_read": 2,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601138-20251124",
+  "stock": "601138",
+  "date": "2025-11-24",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-601138-20260414",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 0,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601138-20260129",
+  "stock": "601138",
+  "date": "2026-01-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-601138-20260422",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1225231598",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 6,
-  "filings_to_read": 2,
-  "labels_from_hand": 1,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601138-20260204",
+  "stock": "601138",
+  "date": "2026-02-04",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-601138-20260513",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 2,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601138-20260429",
+  "stock": "601138",
+  "date": "2026-04-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-601138-20260602",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 4,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20251126",
+  "stock": "300308",
+  "date": "2025-11-26",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-601138-20260618",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 8,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260202",
+  "stock": "300308",
+  "date": "2026-02-02",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-601138-20260805",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 5,
-  "filings_to_read": 3,
-  "labels_from_hand": 1,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260417",
+  "stock": "300308",
+  "date": "2026-04-17",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300308-20251021",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1224773075",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 3,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260512",
+  "stock": "300308",
+  "date": "2026-05-12",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300308-20260115",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 2,
-  "filings_to_read": 1,
-  "labels_from_hand": 1,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260601",
+  "stock": "300308",
+  "date": "2026-06-01",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300308-20260408",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1225111941",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 8,
-  "filings_to_read": 2,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260622",
+  "stock": "300308",
+  "date": "2026-06-22",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300502-20260130",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1224960617",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 1,
-  "filings_to_read": 1,
-  "labels_from_hand": 1,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260713",
+  "stock": "300308",
+  "date": "2026-07-13",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300502-20260305",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 0,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260728",
+  "stock": "300308",
+  "date": "2026-07-28",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300502-20260410",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 2,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300308-20260805",
+  "stock": "300308",
+  "date": "2026-08-05",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300502-20260416",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1225172615",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 31,
-  "filings_to_read": 10,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260202",
+  "stock": "300502",
+  "date": "2026-02-02",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-300476-20251209",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 0,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260227",
+  "stock": "300502",
+  "date": "2026-02-27",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-300476-20260225",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 2,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260424",
+  "stock": "300502",
+  "date": "2026-04-24",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300476-20260417",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 12,
-  "filings_to_read": 4,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260611",
+  "stock": "300502",
+  "date": "2026-06-11",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300476-20260522",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 1,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260720",
+  "stock": "300502",
+  "date": "2026-07-20",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300476-20260805",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 3,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260728",
+  "stock": "300502",
+  "date": "2026-07-28",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-300476-20260921",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 2,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300502-20260805",
+  "stock": "300502",
+  "date": "2026-08-05",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-601127-20260521",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1225329485",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 13,
-  "filings_to_read": 5,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-300476-20260119",
+  "stock": "300476",
+  "date": "2026-01-19",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-300476-20260313",
+  "stock": "300476",
+  "date": "2026-03-13",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-300476-20260429",
+  "stock": "300476",
+  "date": "2026-04-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-300476-20260525",
+  "stock": "300476",
+  "date": "2026-05-25",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-300476-20260605",
+  "stock": "300476",
+  "date": "2026-06-05",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-300476-20260828",
+  "stock": "300476",
+  "date": "2026-08-28",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-601127-20251106",
+  "stock": "601127",
+  "date": "2025-11-06",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-601127-20260122",
+  "stock": "601127",
+  "date": "2026-01-22",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-601127-20260128",
+  "stock": "601127",
+  "date": "2026-01-28",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-601127-20260331",
+  "stock": "601127",
+  "date": "2026-03-31",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-601127-20260610",
+  "stock": "601127",
+  "date": "2026-06-10",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-601127-20260713",
+  "stock": "601127",
+  "date": "2026-07-13",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-601127-20260915",
+  "stock": "601127",
+  "date": "2026-09-15",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-601127-20260928",
+  "stock": "601127",
+  "date": "2026-09-28",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-600418-20251106",
+  "stock": "600418",
+  "date": "2025-11-06",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
   "case_id": "SPK-600418-20251112",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 8,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "stock": "600418",
+  "date": "2025-11-12",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-600418-20251209",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1224857664",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 9,
-  "filings_to_read": 6,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-600418-20251211",
+  "stock": "600418",
+  "date": "2025-12-11",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-600418-20260119",
+  "stock": "600418",
+  "date": "2026-01-19",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-600418-20260211",
+  "stock": "600418",
+  "date": "2026-02-11",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
   "case_id": "SPK-600418-20260427",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 14,
-  "filings_to_read": 4,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "stock": "600418",
+  "date": "2026-04-27",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-600418-20260922",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 1,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-600418-20260525",
+  "stock": "600418",
+  "date": "2026-05-25",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-601238-20251014",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 4,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-600418-20260622",
+  "stock": "600418",
+  "date": "2026-06-22",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-600418-20260707",
+  "stock": "600418",
+  "date": "2026-07-07",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-600418-20260923",
+  "stock": "600418",
+  "date": "2026-09-23",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-601238-20251110",
+  "stock": "601238",
+  "date": "2025-11-10",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
   "case_id": "SPK-601238-20251124",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 4,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "stock": "601238",
+  "date": "2025-11-24",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-601238-20260820",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 5,
-  "filings_to_read": 2,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601238-20260618",
+  "stock": "601238",
+  "date": "2026-06-18",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-002074-20260410",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 0,
-  "filings_to_read": 0,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601238-20260629",
+  "stock": "601238",
+  "date": "2026-06-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-002074-20260922",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 10,
-  "filings_to_read": 2,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601238-20260713",
+  "stock": "601238",
+  "date": "2026-07-13",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-002074-20260928",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 9,
-  "filings_to_read": 2,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601238-20260914",
+  "stock": "601238",
+  "date": "2026-09-14",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-600150-20251014",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1224721680",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 1,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-601238-20260929",
+  "stock": "601238",
+  "date": "2026-09-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  },
  {
-  "case_id": "SPK-600150-20260423",
-  "expected_decision": "paper_trade",
-  "trigger": null,
-  "evidence_id": "1225150259",
-  "family": "buy",
-  "negative": false,
-  "filings_in_window": 41,
-  "filings_to_read": 10,
-  "labels_from_hand": 1,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-002074-20260206",
+  "stock": "002074",
+  "date": "2026-02-06",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
  },
  {
-  "case_id": "SPK-600150-20260904",
-  "expected_decision": "no_trade",
-  "trigger": "no_bullish_filing",
-  "evidence_id": null,
-  "family": "no_bullish_filing",
-  "negative": true,
-  "filings_in_window": 1,
-  "filings_to_read": 1,
-  "labels_from_hand": 0,
-  "must_record": [
-   "names the filing that decided it, or says none was bullish",
-   "quotes a fact or number from the deciding filing"
-  ]
+  "case_id": "SPK-002074-20260429",
+  "stock": "002074",
+  "date": "2026-04-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-002074-20260518",
+  "stock": "002074",
+  "date": "2026-05-18",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-002074-20260604",
+  "stock": "002074",
+  "date": "2026-06-04",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-002074-20260929",
+  "stock": "002074",
+  "date": "2026-09-29",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-600150-20251107",
+  "stock": "600150",
+  "date": "2025-11-07",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-600150-20260130",
+  "stock": "600150",
+  "date": "2026-01-30",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-600150-20260323",
+  "stock": "600150",
+  "date": "2026-03-23",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "observe"
+ },
+ {
+  "case_id": "SPK-600150-20260430",
+  "stock": "600150",
+  "date": "2026-04-30",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-600150-20260713",
+  "stock": "600150",
+  "date": "2026-07-13",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
+ },
+ {
+  "case_id": "SPK-600150-20260831",
+  "stock": "600150",
+  "date": "2026-08-31",
+  "expected_primary": null,
+  "expected_secondary": "",
+  "period": "check"
  }
 ]

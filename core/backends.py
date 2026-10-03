@@ -28,28 +28,32 @@ from core import config
 _SCRIPTS = None
 
 
-def scripts():
-    """All scripted move lists, keyed by case id (spike or guardrail case)."""
+def scripts(arm="keyword"):
+    """Scripted move lists for one arm, keyed by case id."""
     global _SCRIPTS
     if _SCRIPTS is None:
-        path = os.path.join(config.EVALS_DIR, "scripted_moves.json")
+        _SCRIPTS = {}
+    if arm not in _SCRIPTS:
+        path = os.path.join(config.EVALS_DIR, "scripted_moves_%s.json" % arm)
+        if not os.path.exists(path):
+            path = os.path.join(config.EVALS_DIR, "scripted_moves.json")
         loaded = {}
         if os.path.exists(path):
             with open(path, encoding="utf-8") as fh:
                 loaded = json.load(fh)
-        _SCRIPTS = loaded            # assign only once fully loaded (threads may race here)
-    return _SCRIPTS
+        _SCRIPTS[arm] = loaded       # assign only once fully loaded (threads may race here)
+    return _SCRIPTS[arm]
 
 
 class ScriptedBackend:
     name = "scripted"
 
-    def __init__(self, case_id, moves=None):
+    def __init__(self, case_id, moves=None, arm="keyword"):
         if moves is None:
-            if case_id not in scripts():
+            if case_id not in scripts(arm):
                 raise SystemExit("No scripted moves for %r in evals/scripted_moves.json. "
                                  "Write them, or run with GUBACHECK_BACKEND=live." % case_id)
-            moves = scripts()[case_id]
+            moves = scripts(arm)[case_id]
         self.moves = moves
         self.i = 0
         self.last_usage = (0, 0)
@@ -115,9 +119,9 @@ def _live_call(messages):
     return payload["choices"][0]["message"]["content"], payload.get("usage", {})
 
 
-def make_backend(case_id, system_prompt="", moves=None):
+def make_backend(case_id, system_prompt="", moves=None, arm="agent"):
     if moves is not None or config.BACKEND == "scripted":
-        return ScriptedBackend(case_id, moves)
+        return ScriptedBackend(case_id, moves, arm if arm in ("exhaustive",) else "keyword")
     if config.BACKEND == "live":
         return LiveBackend(case_id, system_prompt)
     raise SystemExit("BACKEND must be 'scripted' or 'live', not %r" % config.BACKEND)

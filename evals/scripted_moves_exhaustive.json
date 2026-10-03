@@ -1,0 +1,7966 @@
+{
+ "SPK-688256-20260203": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-688256-20260203"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-688256-20260430": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-688256-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.26}"
+   }
+  }
+ ],
+ "SPK-688256-20260506": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-688256-20260506"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.26, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-688256-20260618": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "F",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.17, 'C': 0.17, 'D': 0.03, 'E': 0.03, 'F': 0.52, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-688256-20260701": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-688256-20260701"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-688256-20260810": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-688256-20260810"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-601138-20251124": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601138-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-601138-20260129": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601138-20260129"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601138-20260204": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601138-20260204"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601138-20260429": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601138-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-300308-20251126": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20251126"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-300308-20260202": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "E",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.17, 'C': 0.03, 'D': 0.03, 'E': 0.52, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-300308-20260417": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "F",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.14, 'B': 0.14, 'C': 0.14, 'D': 0.14, 'E': 0.03, 'F': 0.41, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-300308-20260512": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260512"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.33, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300308-20260601": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260601"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "F",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.15, 'D': 0.03, 'E': 0.03, 'F': 0.45, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-300308-20260622": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "E",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.2, 'C': 0.04, 'D': 0.04, 'E': 0.6, 'F': 0.04, 'G': 0.04}"
+   }
+  }
+ ],
+ "SPK-300308-20260713": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300308-20260728": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "C",
+    "secondary": [
+     "D",
+     "E",
+     "F"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.07, 'C': 0.2, 'D': 0.2, 'E': 0.2, 'F': 0.2, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300308-20260805": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300308-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-300502-20260202": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260202"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "E",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.17, 'C': 0.03, 'D': 0.03, 'E': 0.52, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-300502-20260227": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.33, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300502-20260424": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260424"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300502-20260611": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260611"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-300502-20260720": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260720"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-300502-20260728": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260728"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "C",
+    "secondary": [
+     "E"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.02, 'B': 0.11, 'C': 0.32, 'D': 0.11, 'E': 0.32, 'F': 0.02, 'G': 0.11}"
+   }
+  }
+ ],
+ "SPK-300502-20260805": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300502-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.26, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-300476-20260119": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300476-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300476-20260313": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300476-20260313"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300476-20260429": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300476-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300476-20260525": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300476-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-300476-20260605": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300476-20260605"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "E",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.15, 'C': 0.15, 'D': 0.15, 'E': 0.45, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-300476-20260828": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-300476-20260828"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.05, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-601127-20251106": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601127-20260122": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260122"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-601127-20260128": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260128"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-601127-20260331": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260331"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "F",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.03, 'D': 0.03, 'E': 0.15, 'F': 0.45, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-601127-20260610": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260610"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601127-20260713": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "C",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.45, 'D': 0.03, 'E': 0.15, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-601127-20260915": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-601127-20260928": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601127-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-600418-20251106": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20251106"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-600418-20251112": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "B",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.71, 'C': 0.05, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-600418-20251211": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20251211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "A",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.52, 'B': 0.17, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.17, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-600418-20260119": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260119"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-600418-20260211": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260211"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-600418-20260427": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-600418-20260525": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260525"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.33, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-600418-20260622": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260622"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "E",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.04, 'B': 0.04, 'C': 0.2, 'D': 0.04, 'E': 0.6, 'F': 0.04, 'G': 0.04}"
+   }
+  }
+ ],
+ "SPK-600418-20260707": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260707"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.05, 'B': 0.26, 'C': 0.26, 'D': 0.26, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-600418-20260923": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600418-20260923"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.33}"
+   }
+  }
+ ],
+ "SPK-601238-20251110": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20251110"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601238-20251124": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-601238-20260618": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.33, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601238-20260629": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20260629"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.07, 'B': 0.33, 'C': 0.33, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601238-20260713": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "C",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.15, 'B': 0.15, 'C': 0.45, 'D': 0.03, 'E': 0.15, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-601238-20260914": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20260914"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-601238-20260929": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-601238-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-002074-20260206": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-002074-20260206"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-002074-20260429": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-002074-20260429"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-002074-20260518": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-002074-20260518"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-002074-20260604": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-002074-20260604"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-002074-20260929": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-002074-20260929"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "G",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.17, 'B': 0.17, 'C': 0.03, 'D': 0.03, 'E': 0.03, 'F': 0.03, 'G': 0.52}"
+   }
+  }
+ ],
+ "SPK-600150-20251107": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600150-20251107"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.09, 'B': 0.45, 'C': 0.09, 'D': 0.09, 'E': 0.09, 'F': 0.09, 'G': 0.09}"
+   }
+  }
+ ],
+ "SPK-600150-20260130": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600150-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ],
+ "SPK-600150-20260323": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600150-20260323"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "C",
+    "secondary": [
+     "E"
+    ],
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.13, 'C': 0.38, 'D': 0.03, 'E': 0.38, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-600150-20260430": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600150-20260430"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.26, 'B': 0.26, 'C': 0.26, 'D': 0.05, 'E': 0.05, 'F': 0.05, 'G': 0.05}"
+   }
+  }
+ ],
+ "SPK-600150-20260713": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600150-20260713"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "C",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.03, 'B': 0.17, 'C': 0.52, 'D': 0.03, 'E': 0.17, 'F': 0.03, 'G': 0.03}"
+   }
+  }
+ ],
+ "SPK-600150-20260831": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Score causes from keyword counts in the most-read posts.",
+   "calls": [
+    [
+     "score_causes",
+     {
+      "scores": {
+       "A": 1,
+       "B": 1,
+       "C": 1,
+       "D": 1,
+       "E": 1,
+       "F": 1,
+       "G": 1
+      }
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test C (highest untested posterior).",
+   "calls": [
+    [
+     "check_C",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test D (highest untested posterior).",
+   "calls": [
+    [
+     "check_D",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test E (highest untested posterior).",
+   "calls": [
+    [
+     "check_E",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test G (highest untested posterior).",
+   "calls": [
+    [
+     "check_G",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test A (highest untested posterior).",
+   "calls": [
+    [
+     "check_A",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test B (highest untested posterior).",
+   "calls": [
+    [
+     "check_B",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Test F (highest untested posterior).",
+   "calls": [
+    [
+     "check_F",
+     {
+      "spike_id": "SPK-600150-20260831"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Stop condition held.",
+   "final": {
+    "primary": "H",
+    "secondary": [],
+    "reason": "tested CDEGABF; posterior {'A': 0.33, 'B': 0.33, 'C': 0.07, 'D': 0.07, 'E': 0.07, 'F': 0.07, 'G': 0.07}"
+   }
+  }
+ ]
+}

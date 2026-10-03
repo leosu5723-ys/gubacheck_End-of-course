@@ -42,10 +42,17 @@ def load_key():
 
 
 def code_check(record, expected):
-    """Returns (passed, [reasons]). Wording, turns and cost are NOT compared."""
+    """v4: the primary cause the run concluded vs my hand label.
+    (Legacy cases with expected_decision are still supported.)"""
+    if "expected_primary" in expected:
+        if not expected["expected_primary"]:
+            return None, ["not labelled"]
+        got = record.get("primary")
+        return got == expected["expected_primary"], ([] if got == expected["expected_primary"] else
+                                                     ["primary %r, expected %r" % (got, expected["expected_primary"])])
     fails = []
-    if record.get("decision") != expected["expected_decision"]:
-        fails.append("decision %r, expected %r" % (record.get("decision"), expected["expected_decision"]))
+    if record.get("decision") != expected.get("expected_decision"):
+        fails.append("decision %r, expected %r" % (record.get("decision"), expected.get("expected_decision")))
     if expected.get("trigger") and record.get("trigger") != expected["trigger"]:
         fails.append("trigger %r, expected %r" % (record.get("trigger"), expected["trigger"]))
     if expected.get("evidence_id") and record.get("evidence_id") != expected["evidence_id"]:
@@ -53,18 +60,19 @@ def code_check(record, expected):
     return (not fails), fails
 
 
-def run_set(cases, trials_for=None, verbose=False, prompt_version="v2", workers=1):
+def run_set(cases, trials_for=None, verbose=False, prompt_version="v2", workers=1, arm="agent"):
     """Run every case (and trial); workers > 1 runs cases in parallel threads
     (useful on the live backend, where each model call takes seconds)."""
-    trials_for = trials_for or (lambda c: 3 if c.get("negative") else 1)
+    trials_for = trials_for or (lambda c: 1 if "expected_primary" in c else (3 if c.get("negative") else 1))
     jobs = [(c, t) for c in cases for t in range(1, trials_for(c) + 1)]
 
     def one(job):
         c, trial = job
-        rec = run_case(c["case_id"], verbose=verbose, prompt_version=prompt_version)
+        rec = run_case(c["case_id"], verbose=verbose, prompt_version=prompt_version, arm=arm)
         ok, fails = code_check(rec, c)
         return {"case_id": c["case_id"], "trial": trial, "passed": ok, "fails": fails,
-                "family": c.get("family"), "expected": c["expected_decision"], "record": rec}
+                "family": c.get("family"), "period": c.get("period"),
+                "expected": c.get("expected_primary", c.get("expected_decision")), "record": rec}
 
     if workers > 1:
         from concurrent.futures import ThreadPoolExecutor
@@ -80,40 +88,54 @@ def run_set(cases, trials_for=None, verbose=False, prompt_version="v2", workers=
 
 
 def summarise(results):
-    n = len(results)
-    passed = sum(r["passed"] for r in results)
-    turns = [r["record"]["turns"] for r in results]
-    # The most expensive mistake: acting on something that should not be acted on.
-    should_not_act = [r for r in results if r["expected"] != "paper_trade"]
-    false_act = sum(1 for r in should_not_act if r["record"].get("decision") == "paper_trade")
-    confusion = {e: {g: 0 for g in DECISIONS + ["other"]} for e in DECISIONS}
-    for r in results:
-        got = r["record"].get("decision")
-        confusion[r["expected"]][got if got in DECISIONS else "other"] += 1
+    return summarise_v4(results)
+
+
+def summarise_v4(results):
+    import collections
+    graded = [r for r in results if r["passed"] is not None]
+    calls = [r["record"].get("investigation", {}).get("calls", 0) for r in results]
+    toks = [r["record"]["tokens_in"] + r["record"]["tokens_out"] for r in results]
+    premature = 0
+    for r in graded:
+        inv = r["record"].get("investigation", {})
+        if not r["passed"] and r["expected"] not in ("H",) and r["expected"] not in inv.get("tested", {}):
+            premature += 1
+    by_period = {}
+    for per in ("observe", "check"):
+        g = [r for r in graded if r.get("period") == per]
+        by_period[per] = {"n": len(g), "accuracy": round(sum(r["passed"] for r in g) / len(g), 4) if g else None}
+    conf = collections.defaultdict(collections.Counter)
+    for r in graded:
+        conf[r["expected"]][r["record"].get("primary")] += 1
     return {
-        "trials": n, "passed": passed,
-        "pass_rate": round(passed / n, 4) if n else None,
-        "false_act_rate": round(false_act / len(should_not_act), 4) if should_not_act else None,
-        "false_act_trials": "%d of %d" % (false_act, len(should_not_act)),
-        "median_turns": statistics.median(turns) if turns else None,
-        "worst_turns": max(turns) if turns else None,
-        "hit_step_cap": sum(1 for r in results if r["record"]["stopped_by"] == "step_cap"),
+        "arm": results[0]["record"].get("arm") if results else None,
+        "runs": len(results), "graded": len(graded),
+        "accuracy": round(sum(r["passed"] for r in graded) / len(graded), 4) if graded else None,
+        "accuracy_by_period": by_period,
+        "always_H_baseline": round(sum(r["expected"] == "H" for r in graded) / len(graded), 4) if graded else None,
+        "mean_cause_checks": round(statistics.mean(calls), 3) if calls else None,
+        "median_turns": statistics.median(r["record"]["turns"] for r in results) if results else None,
+        "worst_turns": max(r["record"]["turns"] for r in results) if results else None,
+        "mean_tokens": round(statistics.mean(toks)) if toks else None,
         "total_cost_usd": round(sum(r["record"]["cost_usd"] for r in results), 6),
-        "mean_cost_usd": round(statistics.mean(r["record"]["cost_usd"] for r in results), 6) if n else None,
-        "confusion_expected_by_got": confusion,
+        "over_investigation_runs": sum(1 for r in results if r["record"].get("investigation", {}).get("over_investigation")),
+        "premature_stops": premature,
+        "model_vs_code_primary_disagree": sum(1 for r in results if r["record"].get("primary") != r["record"].get("code_primary")),
+        "predicted": dict(collections.Counter(r["record"].get("primary") for r in results)),
+        "confusion_gold_by_pred": {k: dict(v) for k, v in conf.items()},
     }
 
 
 def print_report(s, results):
     print("\n" + "=" * 70)
-    print("  PASS RATE   %s of %s trials  (%s)" % (s["passed"], s["trials"],
-          "-" if s["pass_rate"] is None else "%.0f%%" % (100 * s["pass_rate"])))
-    print("  FALSE ACT   %s  (acted when the key says do not)" % s["false_act_trials"])
-    print("  turns       median %s, worst %s, step-cap hits %s"
-          % (s["median_turns"], s["worst_turns"], s["hit_step_cap"]))
-    print("  cost        US$%.4f total, US$%.5f per trial" % (s["total_cost_usd"], s["mean_cost_usd"] or 0))
+    print("  ARM %s   runs %d   graded %d" % (s["arm"], s["runs"], s["graded"]))
+    if s["accuracy"] is not None:
+        print("  primary-cause accuracy  %.0f%%   (always-H baseline %.0f%%)" % (100 * s["accuracy"], 100 * s["always_H_baseline"]))
+        print("  by period               %s" % s["accuracy_by_period"])
+    print("  mean cause checks %.2f | median turns %s, worst %s | mean tokens %s | cost US$%.4f"
+          % (s["mean_cause_checks"], s["median_turns"], s["worst_turns"], s["mean_tokens"], s["total_cost_usd"]))
+    print("  over-investigation runs %d | premature stops %d | model/code primary disagree %d"
+          % (s["over_investigation_runs"], s["premature_stops"], s["model_vs_code_primary_disagree"]))
+    print("  predicted %s" % s["predicted"])
     print("=" * 70)
-    for r in results:
-        if not r["passed"]:
-            print("  FAIL %-28s trial %d [%s]: %s" % (r["case_id"], r["trial"], r["family"], "; ".join(r["fails"])))
-    print("\n  Before fixing the agent, ask whether the LABEL is right.")

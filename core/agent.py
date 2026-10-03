@@ -23,13 +23,13 @@ depends on a previous one.
 """
 import time
 
-from core import config, prompt, store, tools
+from core import config, investigation, prompt, store, tools
 from core.backends import make_backend
 from core.guardrails import GuardrailStop, Guardrails
 
 
 def run_case(case_id, approve=None, moves=None, prompt_version="v2",
-             verbose=False, guards=None):
+             verbose=False, guards=None, arm="agent"):
     """Run one spike case from a clean state; return the decision record.
 
     approve   callable(action, payload) -> bool, the human at the gate.
@@ -40,7 +40,8 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
     """
     started = time.time()
     guards = guards or Guardrails(config.MAX_TURNS, config.MAX_TOKENS_PER_RUN, config.AUTONOMY)
-    backend = make_backend(case_id, prompt.build_system_prompt(prompt_version), moves)
+    inv = investigation.start(arm)
+    backend = make_backend(case_id, prompt.build_system_prompt(prompt_version, arm), moves, arm=arm)
     approve = approve or (lambda action, payload: True)
 
     transcript, calls_made, observed = [], [], []
@@ -61,12 +62,21 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
             if "final" in move:
                 record = dict(move["final"])
                 break
+            if inv.weights is not None and inv.should_stop() and not move.get("calls"):
+                break
 
             turns += 1
             guards.check_turns(turns)
             observations = []
             for name, args in move.get("calls", []):
                 guards.check_duplicate(name, args)
+                if name in tools.CAUSE_TOOL_NAMES:
+                    if inv.weights is None:
+                        inv.set_scores({})            # a check before scoring: uniform priors
+                    if inv.should_stop():
+                        inv.over_investigation += 1
+                        guards._fire("stop_rule", "%s refused: stop condition already held" % name)
+                        raise GuardrailStop("stop_rule", "stop condition held; conclude")
                 if name == tools.GATED_ACTION:
                     guards.check_order(args, store.announcement)
                     if not guards.gate(name, args, approve):
@@ -85,11 +95,26 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
             raise GuardrailStop("step_cap", "loop safety limit")
     except GuardrailStop as stop:
         stopped_by = stop.reason
-        trigger = "hostile_text" if stop.reason == "hostile_text" else "halted_" + stop.reason
-        record = {"decision": "no_trade", "trigger": trigger,
-                  "reason": "halted by the %s guardrail: %s" % (stop.reason, stop.detail)}
+        if stop.reason == "stop_rule":
+            res = inv.result()
+            record = {"primary": res["primary"], "secondary": res["secondary"],
+                      "reason": "concluded by the stop rule after the model tried another check"}
+            stop = None
+        if stop is not None:
+            trigger = "hostile_text" if stop.reason == "hostile_text" else "halted_" + stop.reason
+            res = inv.result() if inv.weights is not None else {"primary": "H", "secondary": []}
+            record = {"decision": "no_trade", "trigger": trigger, "primary": res["primary"],
+                      "secondary": res["secondary"],
+                      "reason": "halted by the %s guardrail: %s" % (stop.reason, stop.detail)}
 
+    if inv.weights is not None:
+        res = inv.result()
+        record["code_primary"] = res["primary"]      # what the evidence supports, whatever the model wrote
+        record["investigation"] = {k: res[k] for k in ("posterior", "tested", "order", "calls",
+                                                       "revisions", "over_investigation")}
+        record["investigation"]["history"] = inv.history
     record.update({
+        "arm": arm,
         "case_id": case_id,
         "tool_calls": calls_made,
         "observations": [o for o in observed if o["result"] is not None],
