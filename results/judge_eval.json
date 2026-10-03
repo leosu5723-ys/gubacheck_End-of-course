@@ -1,0 +1,48 @@
+{
+  "batch2_main": {
+    "n": 30,
+    "gold_counts": {
+      "bullish": 16,
+      "bearish": 5,
+      "neutral": 9
+    }
+  },
+  "batch1_false_bullish": {
+    "n": 40,
+    "gold_counts": {
+      "bullish": 2,
+      "bearish": 1,
+      "neutral": 37
+    }
+  },
+  "methods": {
+    "title_rule": {
+      "batch2_n": 30,
+      "batch2_macro_f1": 0.5062,
+      "batch2_ci95": [
+        0.2933,
+        0.7052
+      ],
+      "batch2_accuracy": 0.5667,
+      "batch2_confusion_gold_by_pred": {
+        "bullish": {
+          "bullish": 9,
+          "bearish": 0,
+          "neutral": 7
+        },
+        "bearish": {
+          "bullish": 0,
+          "bearish": 1,
+          "neutral": 4
+        },
+        "neutral": {
+          "bullish": 2,
+          "bearish": 0,
+          "neutral": 7
+        }
+      },
+      "batch1_false_bullish": "0 of 38",
+      "batch2_false_bullish": "2 of 14"
+    }
+  }
+}
