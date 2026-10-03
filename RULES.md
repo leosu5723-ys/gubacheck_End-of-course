@@ -1,6 +1,55 @@
 # Decision Rules
 
-Fixed before any agent result was graded. Every threshold is mirrored in `core/config.py`; the model receives the same rules through `core/prompt.py`. The commit date of this file is the evidence that the rules came first.
+Fixed before any result was looked at. Every threshold is mirrored in `core/config.py`. The commit history of this file is the evidence of what was decided when.
+
+## 0. Current design (v4, registered 2026-10-03, before any attribution run or label)
+
+GubaCheck explains **why** a stock's forum suddenly turned bullish, and reports how spikes with that kind of cause behaved afterwards. Buying is a reserved feature behind the gate, not the product.
+
+### 0.1 Anomaly = z-score against the stock's own history
+Every "is this abnormal?" test compares a value with the same stock's (or series') previous **120 trading days**, excluding the day itself. No fixed percentage thresholds.
+
+| Test | Series | Abnormal when |
+|---|---|---|
+| Spike (forum) | log(1 + own-bar posts that day) | z ≥ 2.0 |
+| | bullish share that day | z ≥ 1.5 |
+| Spike onset time | posts per hour vs the same hour on previous days | first hour with z ≥ 2.0 |
+| Price / volume | daily return, opening gap, turnover | \|z\| ≥ 2.0 |
+| Index | CSI 300, ChiNext daily return | \|z\| ≥ 2.0 (PARTIAL 1.5–2.0) |
+| US peer | return on the last US session before the A-share open | \|z\| ≥ 2.0 |
+| Money flow | top-list (龙虎榜) net buy, turnover | percentile ≥ 95 |
+
+A spike is the first day of an episode: no spike in the previous 5 calendar days.
+
+### 0.2 Causes and their fixed interfaces
+Seven causes, one tool each, identical input (`spike_id`) and output (`verdict` PASS / PARTIAL / FAIL computed by code, metrics, evidence, timing, cost). **H (unexplained) is never scored or tested; it is the outcome when nothing passes.**
+
+| Cause | PASS | PARTIAL | Timing rule |
+|---|---|---|---|
+| A company official (CNINFO filing, board-secretary reply) | a filing or reply in [D−3, onset] judged in the spike's direction | exists but after onset, or neutral | evidence time < onset |
+| B company rumour / media | a media article about the company before onset whose terms match the clues | article exists, weak match | evidence time < onset |
+| C sector co-movement | more than half of the stock's peer group have \|z\| ≥ 2 return that day | at least one peer \|z\| ≥ 2 | same day |
+| D overseas read-through | a US peer \|z\| ≥ 2 on the last US session before D's open **and** the stock's opening gap z ≥ 2 | US peer abnormal, no opening gap | US close < A-share open |
+| E market | CSI 300 or ChiNext \|z\| ≥ 2 | 1.5 ≤ \|z\| < 2 | same day |
+| F policy / macro | a policy-keyword article before onset **and** C or E at least PARTIAL | policy article only | evidence time < onset |
+| G money / trading structure | on the top list (龙虎榜) with net buy percentile ≥ 95 | turnover percentile ≥ 95, not on the list | exempt: the list is published after the close |
+
+### 0.3 Scoring, posterior and stopping
+1. The model reads the day's most-read posts and gives each of A–G a raw score 0–10 citing post ids. Code normalises: prior_i = score_i / Σ score (all zero → uniform 1/7).
+2. Each test multiplies the cause's weight: **PASS × 3, PARTIAL × 1, FAIL × 0.2**; code renormalises to the posterior.
+3. After a test the model may revise raw scores of **untested** causes, with a reason (this is what makes the loop an agent; a run that never revises is the "routing" arm).
+4. **STOP** when (① at least one cause PASSED **and** ② the summed posterior of untested causes < 20 %) **or** ③ 5 cause-tool calls were made.
+5. Result: primary cause = the PASSED cause with the highest posterior; secondary = other PASSED causes; none passed → **H**.
+6. Ties in the next cause to test are broken by cost: C, D, E, G (numbers only) before A, B, F (reading).
+
+### 0.4 Evaluation
+- Gold: my hand label of the primary cause (A–H) for every spike, written from an evidence bundle before any agent run is graded.
+- Three arms on the same spikes: **exhaustive workflow** (all seven tools, then summarise), **routing** (rank once, never revise), **agent** (revise after each test). Metrics: primary-cause accuracy, tool calls, tokens and cost, over-investigation (calls after the stop condition held), premature stop (stopped while the gold cause was untested).
+- Historical outcome by cause: D+1, 2, 3, 5, 10, 15, 20 net and excess returns (entry next open after the spike day), with sample size; observed on spikes before 2026-04-01, checked on spikes from 2026-04-01.
+
+---
+
+## Earlier designs (kept for the record)
 
 ## 1. What counts as a spike (code)
 

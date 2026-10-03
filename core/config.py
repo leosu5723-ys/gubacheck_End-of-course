@@ -54,6 +54,19 @@ SPIKE_BASELINE_DAYS = 20      # trailing window (calendar days with posts)
 SPIKE_MIN_HISTORY = 10        # need at least 10 prior days for a baseline
 EPISODE_GAP_DAYS = 5          # spikes within 5 days of a previous spike = same episode
 
+# v4 anomaly tests (RULES.md section 0)
+Z_WINDOW = 120                # trading days of history for every z-score
+Z_POSTS = 2.0                 # log posts z for a spike
+Z_BULL = 1.5                  # bullish-share z for a spike
+Z_ABNORMAL = 2.0              # price, gap, index, US peer
+Z_PARTIAL = 1.5               # index PARTIAL band
+PCTL_MONEY = 95               # top-list / turnover percentile
+CAUSES = ["A", "B", "C", "D", "E", "F", "G"]
+WEIGHT = {"PASS": 3.0, "PARTIAL": 1.0, "FAIL": 0.2}
+STOP_UNTESTED_MASS = 0.20
+MAX_CAUSE_CALLS = 5
+CHEAP_CAUSES = ["C", "D", "E", "G"]   # tie-break: numbers before reading
+
 # Cross-check only: Eastmoney popularity-rank jumps (pipeline/candidates.py)
 SPIKE_MAX_RANK = 200
 SPIKE_RANK_RATIO = 3.0
