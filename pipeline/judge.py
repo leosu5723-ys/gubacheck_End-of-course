@@ -232,30 +232,65 @@ def cmd_sample2():
     print("wrote %d rows to data/labels/ann_to_label_batch2.csv" % len(pick))
 
 
-def cmd_eval():
-    sys.path.insert(0, ROOT)
-    from pipeline.sentiment import bootstrap_ci
-    path = os.path.join(LABELS, "ann_labelled.csv")
-    gold = {r["ann_id"]: r["label"].strip().lower() for r in csv.DictReader(open(path, encoding="utf-8-sig"))
+TITLE_RULE = {"buyback": "bullish", "shareholder_increase": "bullish", "earnings_preincrease": "bullish",
+              "major_contract": "bullish", "shareholder_decrease": "bearish", "lockup_expiry": "bearish",
+              "share_issuance": "bearish"}
+
+
+def title_rule(ann):
+    """Non-AI baseline: the announcement's title type alone."""
+    return TITLE_RULE.get(market.event_type_of(ann["title"])["type"], "neutral")
+
+
+def _gold(name):
+    path = os.path.join(LABELS, name)
+    if not os.path.exists(path):
+        return {}
+    return {r["ann_id"]: r["label"].strip().lower() for r in csv.DictReader(open(path, encoding="utf-8-sig"))
             if r["label"].strip().lower() in CLASSES}
-    report = {"n": len(gold), "gold_counts": {c: sum(v == c for v in gold.values()) for c in CLASSES}, "modes": {}}
+
+
+def cmd_eval():
+    """Batch 2 (30 substantive filings) is the main test; batch 1 (40 random
+    filings, 37 neutral) measures false-bullish calls, the error that buys."""
+    rows = {r["ann_id"]: r for r in load_announcements()}
+    b2, b1 = _gold("ann_labelled_batch2.csv"), _gold("ann_labelled.csv")
+    preds = {"title_rule": {i: title_rule(rows[i]) for i in list(b2) + list(b1)}}
     for mode in ("text", "rag"):
-        pred = all_judgements(mode)
-        ids = [i for i in gold if i in pred]
-        if not ids:
-            continue
-        g, p = [gold[i] for i in ids], [pred[i] for i in ids]
-        recs = [json.loads(l) for l in open(os.path.join(RAW, "judgements_%s.jsonl" % mode), encoding="utf-8")]
-        tin, tout = sum(r["tokens_in"] for r in recs), sum(r["tokens_out"] for r in recs)
-        report["modes"][mode] = {
-            "n": len(ids), "macro_f1": _mf1(g, p), "ci95": bootstrap_ci(g, p),
-            "accuracy": round(sum(x == y for x, y in zip(g, p)) / len(ids), 4),
-            "false_bullish": sum(1 for x, y in zip(g, p) if y == "bullish" and x != "bullish"),
-            "calls": len(recs), "tokens_in": tin, "tokens_out": tout,
-            "usd_total": round(tin / 1e6 * config.PRICE_IN + tout / 1e6 * config.PRICE_OUT, 4),
-            "usd_per_call": round((tin / 1e6 * config.PRICE_IN + tout / 1e6 * config.PRICE_OUT) / max(len(recs), 1), 6)}
+        if os.path.exists(os.path.join(RAW, "judgements_%s.jsonl" % mode)):
+            preds["llm_" + mode] = all_judgements(mode)
+    report = {"batch2_main": {"n": len(b2), "gold_counts": {c: sum(v == c for v in b2.values()) for c in CLASSES}},
+              "batch1_false_bullish": {"n": len(b1), "gold_counts": {c: sum(v == c for v in b1.values()) for c in CLASSES}},
+              "methods": {}}
+    for name, pred in preds.items():
+        ids = [i for i in b2 if i in pred]
+        g, p = [b2[i] for i in ids], [pred[i] for i in ids]
+        m = {"batch2_n": len(ids), "batch2_macro_f1": _mf1(g, p) if ids else None,
+             "batch2_ci95": bootstrap_ci(g, p) if ids else None,
+             "batch2_accuracy": round(sum(x == y for x, y in zip(g, p)) / len(ids), 4) if ids else None,
+             "batch2_confusion_gold_by_pred": {x: {y: sum(1 for a, b in zip(g, p) if a == x and b == y)
+                                                   for y in CLASSES} for x in CLASSES}}
+        nb = [i for i in b1 if b1[i] != "bullish" and i in pred]
+        m["batch1_false_bullish"] = "%d of %d" % (sum(pred[i] == "bullish" for i in nb), len(nb))
+        nb2 = [i for i in b2 if b2[i] != "bullish" and i in pred]
+        m["batch2_false_bullish"] = "%d of %d" % (sum(pred[i] == "bullish" for i in nb2), len(nb2))
+        if name.startswith("llm_"):
+            recs = [json.loads(l) for l in open(os.path.join(RAW, "judgements_%s.jsonl" % name[4:]), encoding="utf-8")]
+            tin, tout = sum(r["tokens_in"] for r in recs), sum(r["tokens_out"] for r in recs)
+            m.update(calls=len(recs), tokens_in=tin, tokens_out=tout, model=recs[0]["model"] if recs else None,
+                     usd_total=round(tin / 1e6 * config.PRICE_IN + tout / 1e6 * config.PRICE_OUT, 4),
+                     overrides=sum(1 for r in recs if r.get("override")))
+        report["methods"][name] = m
     json.dump(report, open(os.path.join(ROOT, "results", "judge_eval.json"), "w"), ensure_ascii=False, indent=2)
     print(json.dumps(report, ensure_ascii=False, indent=2))
+
+
+def bootstrap_ci(g, p, n=2000, seed=6201):
+    rng = random.Random(seed)
+    idx = range(len(g))
+    vals = sorted(_mf1([g[i] for i in s], [p[i] for i in s])
+                  for s in ([rng.choice(idx) for _ in idx] for _ in range(n)))
+    return [vals[int(0.025 * n)], vals[int(0.975 * n)]]
 
 
 def _mf1(g, p):
