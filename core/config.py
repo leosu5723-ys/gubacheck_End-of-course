@@ -84,6 +84,11 @@ ALLOWED_EVENT_TYPES = ["buyback", "shareholder_increase",
 
 # Forward watch and backtest (RULES.md section 2)
 WATCH_TRADING_DAYS = 10
+# Share conversions (送转) inside the data window. Prices are UNADJUSTED, so a
+# holding that spans an ex-date must count the extra shares. Ratios from the
+# CNINFO implementation notices (ann 1225239047: 0.49 per share; ann 1225351859
+# / 1225172608: 4 per 10). Cash dividends (<1%) are ignored.
+SHARE_FACTORS = {"688256": {"2026-05-08": 1.49}, "300502": {"2026-06-11": 1.40}}
 EXIT_HORIZONS = [1, 2, 3, 5, 10, 15, 20]
 NEVER_BULLISH_TYPES = ["share_issuance", "shareholder_decrease", "lockup_expiry"]
 BENCHMARK = "000300"          # CSI 300
