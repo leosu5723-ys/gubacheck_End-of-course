@@ -30,13 +30,20 @@ class TestPosterior(unittest.TestCase):
     def test_worked_example(self):
         inv = investigation.start("agent")
         inv.set_scores({"A": 8, "C": 7, "D": 6, "E": 2, "B": 1, "G": 1, "F": 0})
-        self.assertAlmostEqual(inv.posterior()["A"], 0.32, places=3)
+        self.assertAlmostEqual(inv.posterior()["A"], 8 / 25.5, places=3)      # F scored 0 counts as 0.5
         inv.apply("A", "PASS")
         self.assertFalse(inv.should_stop())
         inv.apply("C", "FAIL")
         inv.apply("D", "FAIL")
         self.assertTrue(inv.should_stop())
         self.assertEqual(inv.result()["primary"], "A")
+
+    def test_zero_score_can_recover(self):
+        inv = investigation.start("agent")
+        inv.set_scores({"A": 10})
+        self.assertGreater(inv.posterior()["B"], 0)
+        inv.apply("B", "PASS")
+        self.assertGreater(inv.posterior()["B"], 0.1)
 
     def test_uniform_when_no_clue(self):
         inv = investigation.start("agent")
