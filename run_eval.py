@@ -2,7 +2,8 @@
 """
 GubaCheck - ENTRY POINT
 =========================================================================
-    python3 run_eval.py                 run the whole evaluation set
+    python3 run_eval.py                 run the whole evaluation set (scripted: --arm=keyword|exhaustive)
+    GUBACHECK_BACKEND=live python3 run_eval.py --arm=agent|routing --workers=4
     python3 run_eval.py SPK-...         run one case, every turn shown
     python3 run_eval.py --prompt        print what the model is told
     python3 run_eval.py --prompt-v1     the weak descriptor version
@@ -46,24 +47,28 @@ def main(argv):
         if case is None:
             print("No case %r in evals/cases.json" % args[0])
             return 1
-        results, queue = harness.run_set([case], trials_for=lambda c: 1,
+        arm1 = next((a.split("=")[1] for a in argv if a.startswith("--arm=")),
+                    "keyword" if config.BACKEND == "scripted" else "agent")
+        results, queue = harness.run_set([case], trials_for=lambda c: 1, arm=arm1,
                                          verbose=True, prompt_version=version)
         print(json.dumps(results[0]["record"], ensure_ascii=False, indent=2)[:3000])
-        print("CODE CHECK:", "PASS" if results[0]["passed"] else "FAIL " + "; ".join(results[0]["fails"]))
+        print("CODE CHECK:", {True: "PASS", False: "FAIL " + "; ".join(results[0]["fails"]), None: "not labelled"}[results[0]["passed"]])
         print("JUDGEMENT CHECK (read the reason, tick each):")
         for item in queue[0]["must_record"]:
             print("  [ ]", item)
         return 0
 
     workers = int(next((a.split("=")[1] for a in argv if a.startswith("--workers=")), 1))
+    arm = next((a.split("=")[1] for a in argv if a.startswith("--arm=")),
+               "keyword" if config.BACKEND == "scripted" else "agent")
     trials = next((int(a.split("=")[1]) for a in argv if a.startswith("--trials=")), None)
-    results, queue = harness.run_set(key, prompt_version=version, workers=workers,
+    results, queue = harness.run_set(key, prompt_version=version, workers=workers, arm=arm,
                                      trials_for=(lambda c: trials) if trials else None)
     summary = harness.summarise(results)
     harness.print_report(summary, results)
 
     os.makedirs(config.RESULTS_DIR, exist_ok=True)
-    tag = "" if version == "v2" else "_v1"
+    tag = "_" + arm + ("" if version == "v2" else "_v1")
     tag += "" if config.BACKEND == "scripted" else "_live_" + config.MODEL.replace("/", "_")
     with open(os.path.join(config.RESULTS_DIR, "results%s.json" % tag), "w", encoding="utf-8") as fh:
         json.dump({"config": config.summary(), "prompt_version": version,
