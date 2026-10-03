@@ -54,6 +54,12 @@ def main():
     src = live or scripted
     att = src["summary"] if src else {}
     per_spike = att.get("total_cost_usd", 0) / att["runs"] if att.get("runs") else None
+    bill = load("billing.json") or {}
+    basis = "tokens x list price"
+    model = "deepseek/deepseek-v4.1-flash"
+    if bill.get("full_arm_runs", {}).get(model):    # the provider's bill beats tokens x list price
+        per_spike = bill["by_model_usd"][model] / bill["full_arm_runs"][model]
+        basis = "billed upper bound (results/billing.json)"
     success = att.get("accuracy")
 
     spikes = json.load(open(os.path.join(ROOT, "data", "snapshot", "spikes.json"), encoding="utf-8"))
@@ -66,7 +72,7 @@ def main():
 
     report = {"assumptions": {"minutes_per_manual_check": MINUTES_PER_MANUAL_CHECK,
                               "hourly_value_usd": HOURLY_VALUE_USD,
-                              "attribution_cost_source": "live agent run" if live else "scripted estimate (no live run yet)"},
+                              "attribution_cost_source": ("live runs, " + basis) if live else "scripted estimate (no live run yet)"},
               "layer1_variable": {"sentiment_usd_per_1000_posts": 0.0,
                                   "sentiment_posts_per_second_local": round(sum(pps) / len(pps), 1) if pps else None,
                                   "filing_judgement_usd_per_filing": round(per_filing, 6) if per_filing else None,

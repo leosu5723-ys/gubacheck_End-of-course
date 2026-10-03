@@ -34,10 +34,23 @@ GUBACHECK_BACKEND=live python3 run_eval.py --arm=routing --workers=4
 | always-H | 7.4% | — | — | — | — | — |
 | keyword | 22.1% | 0.17 | 16% / 26% | 4.59 | no LLM | 36 |
 | exhaustive | 47.1% | 0.22 | 52% / 44% | 7.00 | no LLM | 0 |
-| routing (live) | **60.3%** | 0.36 | 64% / 58% | 4.29 | US$0.80 | 0 |
-| agent (live) | 55.9% | **0.37** | 52% / 58% | 4.38 | US$0.88 | 3 |
+| routing (live) | **60.3%** | 0.36 | 64% / 58% | 4.29 | see below | 0 |
+| agent (live) | 55.9% | **0.37** | 52% / 58% | 4.38 | see below | 3 |
 
-Costs are tokens × the OpenRouter list price ($0.30 / $1.20 per 1M); the run itself was priced with a hand-typed stale $0.13 / $0.52 by mistake (RULES.md change log). From now on each live call records the billed cost returned by OpenRouter.
+**Cost.** The OpenRouter bill for DeepSeek V4.1 Flash on this key is US$1.23 in total — the two full arms (136 runs) plus trial runs and tests — so the full arms cost **at most US$0.009 per spike** (`results/billing.json`). The `cost_usd` fields in the results files are tokens × list price ($0.30 / $1.20) and overstate the bill (US$1.68 for the two arms, more than the whole key): every turn re-sends the conversation and the provider bills cached input at a discount. Lesson: price × tokens is not a bill; since 2026-10-04 every live call records the billed cost.
+
+**Single-run model comparison** (`python3 -m pipeline.model_compare SPK-300308-20260728 --models=… [--arm=agent]`, `results/model_single_*.json`). One spike — 中际旭创 2026-07-28, my label C, where C, D and B all PASS — one live run per model and arm, billed:
+
+| Model | Arm | Primary | Tests in order | Tokens in / out | Billed US$ | Seconds |
+|---|---|---|---|---|---|---|
+| DeepSeek V4.1 Flash | routing | D ✗ | A D C B | 30.9k / 1.5k | 0.0019 | 23 |
+| | agent | D ✗ | A D C | 28.2k / 1.9k | 0.0014 | 22 |
+| Claude Haiku 4.5 | routing | C ✓ | A C D B | 39.1k / 1.8k | 0.0479 | 26 |
+| | agent | C ✓ | A C D B | 41.8k / 1.7k | 0.0506 | 27 |
+| DeepSeek V4 Flash | routing | C ✓ | A C D B | 32.4k / 2.2k | 0.0037 | 13 |
+| | agent | D ✗ | A D C | 29.1k / 2.3k | 0.0038 | 15 |
+
+What it shows: (1) **the cause tested first wins** — in all six runs the primary is whichever of C and D was tested first, because every PASS is multiplied by the same 3 and the order of the priors survives; when several causes pass, the conclusion comes from the model's opening clue scores, not from the strength of the evidence. (2) No model revised its scores, Haiku included — "the agent behaves as routing" is not a DeepSeek quirk. (3) Haiku costs ~30× more per run here (no cache discount). (4) One spike says how a model behaves and what it costs, not which is more accurate; V4 Flash gave different answers in its two arms.
 
 Paired (same spike, exact McNemar): routing vs exhaustive 11 vs 2 cases right only in one arm (p = 0.02); agent vs exhaustive 8 vs 2 (p = 0.11); **agent vs routing 3 vs 6 (p = 0.51)**.
 

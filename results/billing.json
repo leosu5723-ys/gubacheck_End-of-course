@@ -1,0 +1,9 @@
+{
+ "_note": "Billed spend read from the OpenRouter dashboard (key created 2026-10-03, read 2026-10-04 ~03:15 SGT). The per-model totals cover EVERY call on that key: the two full live arms (136 runs), the failed text-JSON trial runs, crashed-and-retried cases, app tests and the single-run comparison. They are therefore UPPER BOUNDS for the full arms. Token x list-price estimates in results_*_live_*.json overstate this model's bill because of prompt caching.",
+ "source": "OpenRouter dashboard, API key usage page",
+ "key_total_usd": 1.3411,
+ "by_model_usd": {"deepseek/deepseek-v4.1-flash": 1.23, "anthropic/claude-haiku-4.5": 0.10, "deepseek/deepseek-v4-flash": 0.01},
+ "full_arm_runs": {"deepseek/deepseek-v4.1-flash": 136},
+ "single_run_billed_usd": {"deepseek/deepseek-v4.1-flash": [0.001895, 0.001374], "anthropic/claude-haiku-4.5": [0.047856, 0.050565], "deepseek/deepseek-v4-flash": [0.003656, 0.003794]},
+ "list_price_estimate_full_arms_usd": {"deepseek/deepseek-v4.1-flash": 1.682}
+}

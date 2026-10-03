@@ -77,7 +77,8 @@ history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300
 | Cause tests per spike, agent vs exhaustive | fewer at equal accuracy | **4.38** vs 7.00, accuracy 55.9% vs 47.1% | results/results_*.json |
 | Agent better than routing (revision adds value) | agent > routing | **not reached**: 55.9% vs 60.3%, paired 3 vs 6 cases (p = 0.51); the agent revised in 1 of 68 runs | results/results_*_live_*.json |
 | Guardrail checklist | 10 / 10 | **10 / 10** | results/guardrails.json |
-| Cost per spike (live, deepseek-v4.1-flash at $0.30 / $1.20 per 1M) | < US$0.01 | **not reached: US$0.0129** agent, US$0.0118 routing (~38k tokens per spike, mostly input) | results/cost_model.json |
+| Cost per spike (live, deepseek-v4.1-flash, **billed**) | < US$0.01 | **reached: ≤ US$0.009** (all US$1.23 billed on the key ÷ 136 full-arm runs — an upper bound); single runs billed US$0.0014–0.0019. Tokens × list price would say US$0.0129 — prompt caching makes that wrong | results/billing.json |
+| Model comparison, one spike (SPK-300308-20260728) | behaviour and cost per run | DeepSeek V4.1 Flash D ✗ (US$0.0014–0.0019), Claude Haiku 4.5 C ✓ (US$0.048–0.051, ~30× dearer), DeepSeek V4 Flash C ✓ / D ✗ (US$0.004); no model revised | results/model_single_*.json |
 | Unit tests | all pass | **12 / 12** | tests/ |
 
 ## Cost to serve (results/cost_model.json)
@@ -85,10 +86,10 @@ history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300
 | Layer | Value |
 |---|---|
 | Sentiment | US$0 per 1,000 posts (local, ~414 posts/s) |
-| Filing judgement | US$0.0020 per filing (468 measured calls, priced at $0.30 / $1.20 per 1M) |
-| Attribution | US$0.0129 per spike (live agent arm, 68 spikes, US$0.88 in total) |
+| Filing judgement | US$0.0020 per filing (468 measured calls, tokens × list price $0.30 / $1.20 — not billed, likely an overestimate) |
+| Attribution | ≤ US$0.009 per spike, billed (US$1.23 on the key for 136 full-arm runs plus trials; results/billing.json) |
 | Volume | 0.62 spikes and 3.9 substantive filings per stock-month |
-| 10 / 100 / 1,000 stocks | model US$0.16 / 1.59 / 15.9 a month; **with manual re-checks of wrong attributions ~US$9 / 93 / 925** |
+| 10 / 100 / 1,000 stocks | model US$0.14 / 1.35 / 13.5 a month; **with manual re-checks of wrong attributions ~US$9 / 92 / 923** |
 
 The model bill is negligible; the cost that scales is a person re-checking wrong attributions. The lever is accuracy, not a cheaper model.
 
