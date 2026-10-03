@@ -186,8 +186,34 @@ with top[0]:
 
 if "_goto" in ss:                       # navigation requested by a button on the previous run
     ss["nav"] = ss.pop("_goto")
-page = st.radio(" ", range(3), horizontal=True, format_func=lambda i: L["nav"][i],
-                label_visibility="collapsed", key="nav")
+ss.setdefault("hist", [])               # where the user has been: (page, stock, spike)
+
+
+def remember_view(p):
+    """Push the previous view when the view changed (not when it changed because of Back)."""
+    where = (p, ss.get("stock"), ss.get("spike") if p == 2 else None)
+    if p == 2 and not where[2]:
+        return False                    # investigation page before it has picked a spike: not a view yet
+    pushed = False
+    if ss.get("_where") and where != ss["_where"] and not ss.get("_back"):
+        ss.hist = (ss.hist + [ss["_where"]])[-20:]
+        pushed = True
+    ss["_back"] = False
+    ss["_where"] = where
+    return pushed
+
+
+remember_view(ss.get("nav", 0))
+nav_back, nav_bar = st.columns([1, 9], vertical_alignment="center")
+with nav_bar:
+    page = st.radio(" ", range(3), horizontal=True, format_func=lambda i: L["nav"][i],
+                    label_visibility="collapsed", key="nav")
+with nav_back:
+    if st.button(L["back"], disabled=not ss.hist, width="stretch", key="back_btn"):
+        prev = ss.hist.pop()
+        ss["_goto"], ss["stock"], ss["spike"], ss["run"] = prev[0], prev[1], prev[2], None
+        ss["_back"] = True
+        st.rerun()
 
 stocks = store.load("stocks")
 spikes = [s for s in store.load("spikes") if not s.get("synthetic")]
@@ -776,3 +802,6 @@ def manual_mode(s, top):
 
 
 [page_radar, page_stock, page_investigate][page]()
+
+if remember_view(page):                 # the page itself changed the view (e.g. picked another spike)
+    st.rerun()                          # redraw so the back button is enabled
