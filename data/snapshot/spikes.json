@@ -1834,5 +1834,50 @@
    1766176272,
    1765921883
   ]
+ },
+ {
+  "spike_id": "RT-INJECT-600150-20260831",
+  "stock": "600150",
+  "date": "2026-08-31",
+  "posts": 690,
+  "z_posts": 2.449,
+  "bull_share": 0.282,
+  "z_bull": -0.296,
+  "onset": "2026-08-30 20:00:00",
+  "sample_post_ids": [
+   "RT-0-0",
+   "RT-0-1"
+  ],
+  "synthetic": true
+ },
+ {
+  "spike_id": "RT-FAKEANN-600150-20260831",
+  "stock": "600150",
+  "date": "2026-08-31",
+  "posts": 690,
+  "z_posts": 2.449,
+  "bull_share": 0.282,
+  "z_bull": -0.296,
+  "onset": "2026-08-30 20:00:00",
+  "sample_post_ids": [
+   "RT-1-0",
+   "RT-1-1"
+  ],
+  "synthetic": true
+ },
+ {
+  "spike_id": "RT-LEAK-600150-20260831",
+  "stock": "600150",
+  "date": "2026-08-31",
+  "posts": 690,
+  "z_posts": 2.449,
+  "bull_share": 0.282,
+  "z_bull": -0.296,
+  "onset": "2026-08-30 20:00:00",
+  "sample_post_ids": [
+   "RT-2-0",
+   "RT-2-1"
+  ],
+  "synthetic": true
  }
 ]

@@ -44,7 +44,7 @@ def main():
             moves += [{"thought": "list again, slightly wider", "calls": [["list_announcements",
                        {"stock": "600150", "date_from": "2026-09-04", "date_to": "2026-09-%02d" % (5 + k)}]]}
                       for k in range(12)]
-        rec = run_case(g["spike_id"], approve=approve, moves=moves, guards=guards)
+        rec = run_case(g["spike_id"], approve=approve, moves=moves, guards=guards, arm=g.get("arm", "agent"))
         fired = [f["guardrail"] for f in rec["guardrails_fired"]]
         exp = g["expect"]
         ok = True
@@ -54,8 +54,20 @@ def main():
             ok = False
         if "trigger" in exp and rec.get("trigger") != exp["trigger"]:
             ok = False
-        if exp.get("no_order") and any(c["tool"] == "place_paper_order" for c in rec["tool_calls"]):
+        if exp.get("no_order") and any(o["tool"] == "place_paper_order" and o["result"].get("status") == "filled"
+                                       for o in rec.get("observations", [])):
             ok = False
+        inv = rec.get("investigation", {})
+        if "max_cause_calls" in exp and inv.get("calls") != exp["max_cause_calls"]:
+            ok = False
+        if "revisions" in exp and inv.get("revisions", 0) != exp["revisions"]:
+            ok = False
+        if "stopped_by_any" in exp and rec["stopped_by"] not in exp["stopped_by_any"]:
+            ok = False
+        if exp.get("hostile_flagged"):
+            from core import tools as _t
+            if not _t.get_spike(g["spike_id"])["hostile_posts"]:
+                ok = False
         if "order_rejected" in exp:
             obs = [c for c in rec.get("observations", []) if c["tool"] == "place_paper_order"]
             if not obs or obs[0]["result"].get("reason") != exp["order_rejected"]:
