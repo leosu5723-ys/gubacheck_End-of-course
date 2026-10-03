@@ -29,9 +29,11 @@ from core.guardrails import GuardrailStop, Guardrails
 
 
 def run_case(case_id, approve=None, moves=None, prompt_version="v2",
-             verbose=False, guards=None, arm="agent"):
+             verbose=False, guards=None, arm="agent", on_event=None):
     """Run one spike case from a clean state; return the decision record.
 
+    on_event  optional callback(kind, data) for a live display: ("move", move)
+              before each move, ("result", {tool, args, result}) after each call.
     approve   callable(action, payload) -> bool, the human at the gate.
               Defaults to "yes" so scripted runs are deterministic; the
               record still shows the gate was reached.
@@ -51,6 +53,8 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
     try:
         for _ in range(config.MAX_TURNS + 2):          # loop safety; the cap is in guards
             move = backend.next_move(transcript)
+            if on_event:
+                on_event("move", move)
             ti, to = backend.last_usage
             tokens_in, tokens_out = tokens_in + ti, tokens_out + to
             guards.check_budget(tokens_in + tokens_out)
@@ -82,6 +86,8 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
                     if not guards.gate(name, args, approve):
                         raise GuardrailStop("gate_held", "order awaits my approval")
                 result = tools.call(name, args)
+                if on_event:
+                    on_event("result", {"tool": name, "args": args, "result": result})
                 guards.note_observation(result)
                 calls_made.append({"tool": name, "args": args})
                 observed.append({"tool": name, "result": result if name == tools.GATED_ACTION else None})
