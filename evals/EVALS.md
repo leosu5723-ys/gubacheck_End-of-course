@@ -60,6 +60,8 @@ What the numbers say:
 - **The main error is B → H.** The B tool returned PARTIAL on 13 of the agent's 14 gold-B spikes concluded H; under the PASS-only rule a PARTIAL cannot become primary. When the model's stated primary differed from the code's posterior primary, the model was right 4 / 7 (agent) and 7 / 12 (routing) times, and the code 0 and 1 times — the model reads PARTIAL evidence better than the strict rule.
 - A failed first run (45 of 136 cases crashed because the model passed an unexpected `spike_id` to `score_causes`) was fixed in the tool layer and only the failed cases were re-run from the checkpoints.
 
+**The media proxy (cause B).** B's evidence is the forum's long posts, which turned out to be mostly written by users, not professional media (DATA.md). My labelling bundle showed the same posts under "media", so the 47/68 B labels — and the 69% always-B baseline — may partly be an artefact of this proxy: the tool and the gold share the same weak evidence, which an accuracy number cannot reveal. Fixing it needs a paid news archive and relabelling; left as the first item of future work.
+
 **What this cannot tell:** whether my label is right — it is one person's judgement from public evidence; live runs are one trial per spike; 68 spikes over eight causes leave some causes with a handful of cases.
 
 ## 2. What happened after each cause — `results/cause_backtest_<source>.json`

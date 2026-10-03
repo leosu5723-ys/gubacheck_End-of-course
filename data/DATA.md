@@ -1,23 +1,23 @@
 # Data
 
-All sources are public and free. Collection code is in `collectors/`; the snapshot the agent reads is built by `pipeline/build_snapshot.py`.
+All sources are public and free. Collection code is in `collectors/`; the snapshot the tools read (`data/snapshot/`) is built by `pipeline/anomaly.py` (spikes, sample posts, daily stats), `pipeline/context_snapshot.py` (everything else) and `pipeline/redteam.py` (three synthetic guardrail spikes); `pipeline/refresh.py` runs the whole chain incrementally.
 
-| Source | How | History | Fields kept | Rows *(fill in)* |
+| Source | How | History | Fields kept | Rows |
 |---|---|---|---|---|
-| Eastmoney popularity rank | AKShare `stock_hot_rank_detail_em` | ~1 year, daily | date, rank | |
+| Eastmoney popularity rank | AKShare `stock_hot_rank_detail_em` | ~1 year, daily | date, rank | 3,660 rows; used by the earlier designs only, **not read by any v4 tool** |
 | Eastmoney Guba forum | Separate full-year collection via the forum's public list API, imported by `pipeline/import_guba.py` | 2025-10-03 to 2026-10-02, 365/365 days for every stock | post_id, stock, publish time, title, reads, comments, post_type, bar_code | 1,098,973 posts; 1,023,925 from the stock's own bar |
-| CNINFO announcements | AKShare `stock_zh_a_disclosure_report_cninfo` | Full | ann_id, stock, title, date, url | |
-| CLS telegraph | AKShare `stock_info_global_cls` | Latest ~20 only | time, title, content | |
-| Eastmoney flash | AKShare `stock_info_global_em` | Latest ~200 only | time, title, summary, url | |
-| Eastmoney stock news | AKShare `stock_news_em` | Latest ~10 per stock | time, title, content, url | |
-| Daily prices | AKShare `stock_zh_a_hist` (Sina fallback), unadjusted | Full | open, close, high, low, pct change, previous close | 10 watched + 12 peers |
+| CNINFO announcements | AKShare `stock_zh_a_disclosure_report_cninfo` | Full | ann_id, stock, title, date, url | 1,604 filings (10 stocks); 468 substantive ones judged by the LLM + RAG |
+| CLS telegraph | AKShare `stock_info_global_cls` | Latest ~20 only | time, title, content | 20 |
+| Eastmoney flash | AKShare `stock_info_global_em` | Latest ~200 only | time, title, summary, url | 200 |
+| Eastmoney stock news | AKShare `stock_news_em` | Latest ~10 per stock | time, title, content, url | 100 (the three news feeds: 320 items in `news.json`, kept for the record, **read by no tool** — they have no history) |
+| Daily prices | AKShare `stock_zh_a_hist` (Sina fallback), unadjusted | Full | open, close, high, low, pct change, previous close | 22 stocks, 7,199 daily bars (10 watched + 12 peers) |
 | Peer groups | `data/peers.json`, chosen by product line | — | A-share peers (cause C), US peers (cause D) | 4 groups |
-| US peers | AKShare `stock_us_daily` (NVDA, AMD, AVGO, LITE, COHR, TSLA) | Full | daily close, return | 6 tickers |
-| Indices | CSI 300, ChiNext (Sina) | Full | daily close | 2 |
-| Exchange top list (龙虎榜) | AKShare `stock_lhb_detail_em`, month by month | Sep 2025–Sep 2026 | stock, date, net buy, turnover, reason | ~16k rows (15 for watched stocks) |
+| US peers | AKShare `stock_us_daily` (NVDA, AMD, AVGO, LITE, COHR, TSLA) | Full | daily close, return | 6 tickers × 399 days |
+| Indices | CSI 300, ChiNext (Sina) | Full | daily open, close | CSI 300 284 days, ChiNext 388 days |
+| Exchange top list (龙虎榜) | AKShare `stock_lhb_detail_em`, month by month | Sep 2025–Sep 2026 | stock, date, net buy, turnover, reason | 21,916 market rows (15 for watched stocks; the rest set the "extreme flow" percentile for cause G) |
 | Filing text | CNINFO PDFs, `collectors/announcements.py` | Full | text excerpt; exact publication time when the link carries one | 634 texts |
 
-**Watchlist:** `data/watchlist.json` — 10 stocks (AI hardware, EV/auto, battery, shipbuilding); forum window 2025-10-03 to 2026-10-02; announcements and prices from 2025-08/09 to 2026-09-30; news archive from 2026-08-06.
+**Watchlist:** `data/watchlist.json` — 10 stocks (AI hardware, EV/auto, battery, shipbuilding); forum window 2025-10-03 to 2026-10-02; announcements and prices from 2025-08/09 to 2026-09-30; news feeds snapshot from 2026-10 only (not used).
 
 ## Files
 
@@ -42,7 +42,7 @@ The repository runs end to end from `data/snapshot/` without the raw files.
 
 ## v4 notes
 
-- **Media proxy for cause B and F.** Free news feeds keep no history, so "media" is the forum's own article-type posts (`post_type` 20: reposted news and long articles) in the stock's bar, excluding market wrap-ups. Company-specific articles are counted per day for the whole year so B can use a z-score.
+- **Media proxy for cause B and F — weaker than its name.** Free news feeds keep no history, so "media" is the forum's own `post_type` 20 posts in the stock's bar, excluding market wrap-ups. I first took these for reposted news; checked by hand (2026-10-04), most are **long posts written by ordinary users** (open letters to management, trading diaries), not professional media. So B measures a burst of long forum posts about the company — forum rumour and narrative — not press coverage. Professional sources that do have history are capped: Eastmoney's news search returns at most 1,000 articles per stock (back to 2026-09-07 for 寒武纪, 2026-06-13 for 广汽), Sina's stock-news list about as many. A full-year professional news archive needs a paid feed.
 - **Spike onset** is the first hour whose post count is abnormal against the same clock hour on previous days; posts after 15:00 belong to the next trading day.
 - **Hand labels of causes** (`evals/cause_labels.csv`): all 68 spikes, labelled by me on 2026-10-03/04 from `evals/cause_review.md`, which shows raw evidence without tool verdicts.
 
