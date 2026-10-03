@@ -1,11 +1,13 @@
-akshare>=1.19
-pandas
-scikit-learn
-jieba
-torch
-transformers
-sentence-transformers
-pypdf
-streamlit
-altair
-plotly
+# Front end, models and pipelines: Python 3.11+ (tested on 3.13).
+# The evaluation commands in README "Run it" need none of these (standard library, Python 3.9+).
+streamlit>=1.65          # app (st.html with scripts, width="stretch", fragments)
+plotly>=6.0              # app charts
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5        # TF-IDF baseline
+jieba>=0.42              # Chinese tokenisation for the baseline and clue words
+torch>=2.4               # local RoBERTa sentiment
+transformers>=4.45
+sentence-transformers>=3.0   # bge-small-zh embeddings for RAG
+pypdf>=5.0               # filing text extraction
+akshare>=1.19            # data collection / refresh only (needs Python 3.11+)
