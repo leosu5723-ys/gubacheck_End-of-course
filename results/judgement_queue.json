@@ -1,0 +1,464 @@
+[
+  {
+    "case_id": "SPK-688256-20251022",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260108",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260226",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260407",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-04-07..2026-04-21",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260415",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-04-15..2026-04-29",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260618",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-06-18..2026-07-03",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-688256-20260915",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-09-15..2026-09-30",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20251021",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1224761584: 富士康工业互联网股份有限公司2025年第三季度报告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20251027",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1224761584: 富士康工业互联网股份有限公司2025年第三季度报告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260414",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-04-14..2026-04-28",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260422",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1225231598: 富士康工业互联网股份有限公司2026年第一季度报告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260513",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-05-13..2026-05-27",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260602",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-06-02..2026-06-16",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260618",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-06-18..2026-07-03",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601138-20260805",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 3 read in 2026-08-05..2026-08-19",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20251021",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1224773075: 2025年三季度报告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260115",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-01-15..2026-01-29",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300308-20260408",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1225111941: 2026年一季度报告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260130",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1224960617: 2025年度业绩预告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260305",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-03-05..2026-03-19",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260410",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300502-20260416",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1225172615: 关于“质量回报双提升”行动方案的进展公告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20251209",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2025-12-09..2025-12-23",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260225",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-02-25..2026-03-11",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260417",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 4 read in 2026-04-17..2026-05-06",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260522",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-05-22..2026-06-05",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260805",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-08-05..2026-08-19",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-300476-20260921",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-09-21..2026-09-30",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601127-20260521",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1225329485: 关于子公司增资扩股的进展公告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251112",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2025-11-12..2025-11-26",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20251209",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1224857664: 江淮汽车2025年11月产、销快报",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260427",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 4 read in 2026-04-27..2026-05-14",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600418-20260922",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-09-22..2026-09-30",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20251014",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2025-10-14..2025-10-28",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20251124",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2025-11-24..2025-12-08",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-601238-20260820",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 2 read in 2026-08-20..2026-09-03",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260410",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260922",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 2 read in 2026-09-22..2026-09-30",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-002074-20260928",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 2 read in 2026-09-28..2026-09-30",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20251014",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1224721680: 中国船舶2025年前三季度主要财务数据自愿性披露公告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260423",
+    "decision": "paper_trade",
+    "reason": "First bullish filing 1225150259: 中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  },
+  {
+    "case_id": "SPK-600150-20260904",
+    "decision": "no_trade",
+    "reason": "No bullish filing among 1 read in 2026-09-04..2026-09-18",
+    "must_record": [
+      "names the filing that decided it, or says none was bullish",
+      "quotes a fact or number from the deciding filing"
+    ],
+    "verdict": null,
+    "graded_by": null
+  }
+]

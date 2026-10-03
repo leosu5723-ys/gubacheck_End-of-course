@@ -1,1 +1,2286 @@
-{}
+{
+ "SPK-688256-20251022": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20251022"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2025-10-22",
+      "date_to": "2025-11-05"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224781732 (关于使用自有资金支付募投项目所需资金并以募集资金等额置换的公).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224781732"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224781729 (关于涉及劳动争议诉讼的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224781729"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224781727 (关于增加募集资金投资项目实施主体及实施地点并使用募集资金对全).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224781727"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224781725 (关于使用向特定对象发行A股股票募集资金置换预先投入募投项目及).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224781725"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224781732": "neutral",
+     "1224781729": "neutral",
+     "1224781727": "neutral",
+     "1224781725": "neutral"
+    },
+    "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05"
+   }
+  }
+ ],
+ "SPK-688256-20260108": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260108"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2026-01-08",
+      "date_to": "2026-01-22"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22"
+   }
+  }
+ ],
+ "SPK-688256-20260226": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260226"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2026-02-26",
+      "date_to": "2026-03-12"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224988268 (2025年度业绩快报公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224988268"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224988268": "neutral"
+    },
+    "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12"
+   }
+  }
+ ],
+ "SPK-688256-20260407": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260407"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2026-04-07",
+      "date_to": "2026-04-21"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225085814 (关于向特定对象发行股票限售股上市流通公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225085814"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225085814": "neutral"
+    },
+    "reason": "No bullish filing among 1 read in 2026-04-07..2026-04-21"
+   }
+  }
+ ],
+ "SPK-688256-20260415": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260415"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2026-04-15",
+      "date_to": "2026-04-29"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-04-15..2026-04-29"
+   }
+  }
+ ],
+ "SPK-688256-20260618": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2026-06-18",
+      "date_to": "2026-07-03"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225401954 (股票交易风险提示公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225401954"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225401954": "bearish"
+    },
+    "reason": "No bullish filing among 1 read in 2026-06-18..2026-07-03"
+   }
+  }
+ ],
+ "SPK-688256-20260915": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-688256-20260915"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "688256",
+      "date_from": "2026-09-15",
+      "date_to": "2026-09-30"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-09-15..2026-09-30"
+   }
+  }
+ ],
+ "SPK-601138-20251021": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20251021"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2025-10-21",
+      "date_to": "2025-11-04"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224721003 (富士康工业互联网股份有限公司关于公司2025年半年度利润分配).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224721003"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224761584 (富士康工业互联网股份有限公司2025年第三季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224761584"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "601138",
+      "trigger_time": "2025-10-30 23:59:59",
+      "evidence_id": "1224761584"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1224761584",
+    "judgements": {
+     "1224721003": "neutral",
+     "1224761584": "bullish"
+    },
+    "reason": "First bullish filing 1224761584: 富士康工业互联网股份有限公司2025年第三季度报告"
+   }
+  }
+ ],
+ "SPK-601138-20251027": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20251027"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2025-10-27",
+      "date_to": "2025-11-10"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224761584 (富士康工业互联网股份有限公司2025年第三季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224761584"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "601138",
+      "trigger_time": "2025-10-30 23:59:59",
+      "evidence_id": "1224761584"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1224761584",
+    "judgements": {
+     "1224761584": "bullish"
+    },
+    "reason": "First bullish filing 1224761584: 富士康工业互联网股份有限公司2025年第三季度报告"
+   }
+  }
+ ],
+ "SPK-601138-20260414": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260414"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2026-04-14",
+      "date_to": "2026-04-28"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-04-14..2026-04-28"
+   }
+  }
+ ],
+ "SPK-601138-20260422": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260422"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2026-04-22",
+      "date_to": "2026-05-11"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225231656 (富士康工业互联网股份有限公司关于2026年度“提质增效重回报).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225231656"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225231598 (富士康工业互联网股份有限公司2026年第一季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225231598"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "601138",
+      "trigger_time": "2026-04-29 23:59:59",
+      "evidence_id": "1225231598"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1225231598",
+    "judgements": {
+     "1225231656": "neutral",
+     "1225231598": "bullish"
+    },
+    "reason": "First bullish filing 1225231598: 富士康工业互联网股份有限公司2026年第一季度报告"
+   }
+  }
+ ],
+ "SPK-601138-20260513": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260513"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2026-05-13",
+      "date_to": "2026-05-27"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-05-13..2026-05-27"
+   }
+  }
+ ],
+ "SPK-601138-20260602": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260602"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2026-06-02",
+      "date_to": "2026-06-16"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-06-02..2026-06-16"
+   }
+  }
+ ],
+ "SPK-601138-20260618": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260618"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2026-06-18",
+      "date_to": "2026-07-03"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-06-18..2026-07-03"
+   }
+  }
+ ],
+ "SPK-601138-20260805": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601138-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601138",
+      "date_from": "2026-08-05",
+      "date_to": "2026-08-19"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225457504 (富士康工业互联网股份有限公司关于股份回购进展公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225457504"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225468088 (富士康工业互联网股份有限公司2026年半年度报告摘要).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225468088"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225468066 (富士康工业互联网股份有限公司2026年半年度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225468066"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225457504": "neutral",
+     "1225468088": "neutral",
+     "1225468066": "neutral"
+    },
+    "reason": "No bullish filing among 3 read in 2026-08-05..2026-08-19"
+   }
+  }
+ ],
+ "SPK-300308-20251021": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20251021"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300308",
+      "date_from": "2025-10-21",
+      "date_to": "2025-11-04"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224773075 (2025年三季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224773075"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "300308",
+      "trigger_time": "2025-10-31 23:59:59",
+      "evidence_id": "1224773075"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1224773075",
+    "judgements": {
+     "1224773075": "bullish"
+    },
+    "reason": "First bullish filing 1224773075: 2025年三季度报告"
+   }
+  }
+ ],
+ "SPK-300308-20260115": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260115"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300308",
+      "date_from": "2026-01-15",
+      "date_to": "2026-01-29"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224938645 (关于控股股东减持计划实施完毕的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224938645"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224938645": "neutral"
+    },
+    "reason": "No bullish filing among 1 read in 2026-01-15..2026-01-29"
+   }
+  }
+ ],
+ "SPK-300308-20260408": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300308-20260408"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300308",
+      "date_from": "2026-04-08",
+      "date_to": "2026-04-22"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225100461 (关于变更2026年第一季度报告预约披露时间的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225100461"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225111941 (2026年一季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225111941"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "300308",
+      "trigger_time": "2026-04-17 23:59:59",
+      "evidence_id": "1225111941"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1225111941",
+    "judgements": {
+     "1225100461": "neutral",
+     "1225111941": "bullish"
+    },
+    "reason": "First bullish filing 1225111941: 2026年一季度报告"
+   }
+  }
+ ],
+ "SPK-300502-20260130": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260130"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300502",
+      "date_from": "2026-01-30",
+      "date_to": "2026-02-13"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224960617 (2025年度业绩预告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224960617"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "300502",
+      "trigger_time": "2026-01-30 20:42:11",
+      "evidence_id": "1224960617"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1224960617",
+    "judgements": {
+     "1224960617": "bullish"
+    },
+    "reason": "First bullish filing 1224960617: 2025年度业绩预告"
+   }
+  }
+ ],
+ "SPK-300502-20260305": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260305"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300502",
+      "date_from": "2026-03-05",
+      "date_to": "2026-03-19"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-03-05..2026-03-19"
+   }
+  }
+ ],
+ "SPK-300502-20260410": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260410"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300502",
+      "date_from": "2026-04-10",
+      "date_to": "2026-04-24"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24"
+   }
+  }
+ ],
+ "SPK-300502-20260416": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300502-20260416"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300502",
+      "date_from": "2026-04-16",
+      "date_to": "2026-04-30"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225172625 (关于确认董事、高级管理人员2025年度薪酬及2026年度薪酬).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225172625"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225172624 (2025年度董事会工作报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225172624"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225172620 (关于举办2025年度业绩网上说明会的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225172620"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225172617 (2025年度内部控制自我评价报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225172617"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225172615 (关于“质量回报双提升”行动方案的进展公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225172615"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "300502",
+      "trigger_time": "2026-04-24 23:59:59",
+      "evidence_id": "1225172615"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1225172615",
+    "judgements": {
+     "1225172625": "neutral",
+     "1225172624": "neutral",
+     "1225172620": "neutral",
+     "1225172617": "neutral",
+     "1225172615": "bullish"
+    },
+    "reason": "First bullish filing 1225172615: 关于“质量回报双提升”行动方案的进展公告"
+   }
+  }
+ ],
+ "SPK-300476-20251209": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20251209"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300476",
+      "date_from": "2025-12-09",
+      "date_to": "2025-12-23"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2025-12-09..2025-12-23"
+   }
+  }
+ ],
+ "SPK-300476-20260225": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260225"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300476",
+      "date_from": "2026-02-25",
+      "date_to": "2026-03-11"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224984563 (关于申请发行境外上市外资股（H股）并上市的进展公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224984563"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224984563": "neutral"
+    },
+    "reason": "No bullish filing among 1 read in 2026-02-25..2026-03-11"
+   }
+  }
+ ],
+ "SPK-300476-20260417": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260417"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300476",
+      "date_from": "2026-04-17",
+      "date_to": "2026-05-06"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225114862 (关于境外上市外资股（H股）公开发行价格的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225114862"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225142558 (关于境外上市外资股（H股）挂牌并上市交易的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225142558"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225155524 (关于悉数行使超额配售权的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225155524"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225238227 (2026年一季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225238227"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225114862": "neutral",
+     "1225142558": "neutral",
+     "1225155524": "neutral",
+     "1225238227": "neutral"
+    },
+    "reason": "No bullish filing among 4 read in 2026-04-17..2026-05-06"
+   }
+  }
+ ],
+ "SPK-300476-20260522": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260522"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300476",
+      "date_from": "2026-05-22",
+      "date_to": "2026-06-05"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-05-22..2026-06-05"
+   }
+  }
+ ],
+ "SPK-300476-20260805": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260805"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300476",
+      "date_from": "2026-08-05",
+      "date_to": "2026-08-19"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225464760 (股票交易异常波动公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225464760"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225464760": "neutral"
+    },
+    "reason": "No bullish filing among 1 read in 2026-08-05..2026-08-19"
+   }
+  }
+ ],
+ "SPK-300476-20260921": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-300476-20260921"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "300476",
+      "date_from": "2026-09-21",
+      "date_to": "2026-09-30"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-09-21..2026-09-30"
+   }
+  }
+ ],
+ "SPK-601127-20260521": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601127-20260521"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601127",
+      "date_from": "2026-05-21",
+      "date_to": "2026-06-04"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225329485 (关于子公司增资扩股的进展公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225329485"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "601127",
+      "trigger_time": "2026-05-26 23:59:59",
+      "evidence_id": "1225329485"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1225329485",
+    "judgements": {
+     "1225329485": "bullish"
+    },
+    "reason": "First bullish filing 1225329485: 关于子公司增资扩股的进展公告"
+   }
+  }
+ ],
+ "SPK-600418-20251112": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20251112"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600418",
+      "date_from": "2025-11-12",
+      "date_to": "2025-11-26"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224814154 (江淮汽车募集资金管理办法).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224814154"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224814154": "neutral"
+    },
+    "reason": "No bullish filing among 1 read in 2025-11-12..2025-11-26"
+   }
+  }
+ ],
+ "SPK-600418-20251209": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20251209"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600418",
+      "date_from": "2025-12-09",
+      "date_to": "2025-12-23"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224857664 (江淮汽车2025年11月产、销快报).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224857664"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "600418",
+      "trigger_time": "2025-12-09 23:59:59",
+      "evidence_id": "1224857664"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1224857664",
+    "judgements": {
+     "1224857664": "bullish"
+    },
+    "reason": "First bullish filing 1224857664: 江淮汽车2025年11月产、销快报"
+   }
+  }
+ ],
+ "SPK-600418-20260427": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260427"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600418",
+      "date_from": "2026-04-27",
+      "date_to": "2026-05-14"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225247486 (江淮汽车关于使用募集资金置换预先投入募投项目及已支付发行费用).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225247486"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225247349 (江淮汽车关于使用银行承兑汇票支付募集资金投资项目资金并以募集).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225247349"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225247344 (江淮汽车2026年第一季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225247344"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225286365 (江淮汽车2026年4月产、销快报).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225286365"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225247486": "neutral",
+     "1225247349": "neutral",
+     "1225247344": "bearish",
+     "1225286365": "bearish"
+    },
+    "reason": "No bullish filing among 4 read in 2026-04-27..2026-05-14"
+   }
+  }
+ ],
+ "SPK-600418-20260922": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600418-20260922"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600418",
+      "date_from": "2026-09-22",
+      "date_to": "2026-09-30"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225580522 (江淮汽车股票交易异常波动公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225580522"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225580522": "bearish"
+    },
+    "reason": "No bullish filing among 1 read in 2026-09-22..2026-09-30"
+   }
+  }
+ ],
+ "SPK-601238-20251014": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20251014"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601238",
+      "date_from": "2025-10-14",
+      "date_to": "2025-10-28"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224733017 (广汽集团2025年第三季度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224733017"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224733017": "bearish"
+    },
+    "reason": "No bullish filing among 1 read in 2025-10-14..2025-10-28"
+   }
+  }
+ ],
+ "SPK-601238-20251124": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20251124"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601238",
+      "date_from": "2025-11-24",
+      "date_to": "2025-12-08"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224853795 (广汽集团2025年11月份产销快报).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224853795"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1224853795": "bearish"
+    },
+    "reason": "No bullish filing among 1 read in 2025-11-24..2025-12-08"
+   }
+  }
+ ],
+ "SPK-601238-20260820": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-601238-20260820"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "601238",
+      "date_from": "2026-08-20",
+      "date_to": "2026-09-03"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225531350 (广汽集团2026年半年度报告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225531350"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225531315 (广汽集团2026年半年度报告摘要).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225531315"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225531350": "neutral",
+     "1225531315": "neutral"
+    },
+    "reason": "No bullish filing among 2 read in 2026-08-20..2026-09-03"
+   }
+  }
+ ],
+ "SPK-002074-20260410": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260410"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "002074",
+      "date_from": "2026-04-10",
+      "date_to": "2026-04-24"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {},
+    "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24"
+   }
+  }
+ ],
+ "SPK-002074-20260922": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260922"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "002074",
+      "date_from": "2026-09-22",
+      "date_to": "2026-09-30"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225585862 (简式权益变动报告书（转让方）).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225585862"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225585861 (简式权益变动报告书（受让方）).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225585861"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225585862": "neutral",
+     "1225585861": "neutral"
+    },
+    "reason": "No bullish filing among 2 read in 2026-09-22..2026-09-30"
+   }
+  }
+ ],
+ "SPK-002074-20260928": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-002074-20260928"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "002074",
+      "date_from": "2026-09-28",
+      "date_to": "2026-09-30"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225585862 (简式权益变动报告书（转让方）).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225585862"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225585861 (简式权益变动报告书（受让方）).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225585861"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225585862": "neutral",
+     "1225585861": "neutral"
+    },
+    "reason": "No bullish filing among 2 read in 2026-09-28..2026-09-30"
+   }
+  }
+ ],
+ "SPK-600150-20251014": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20251014"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600150",
+      "date_from": "2025-10-14",
+      "date_to": "2025-10-28"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1224721680 (中国船舶2025年前三季度主要财务数据自愿性披露公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1224721680"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "600150",
+      "trigger_time": "2025-10-21 23:59:59",
+      "evidence_id": "1224721680"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1224721680",
+    "judgements": {
+     "1224721680": "bullish"
+    },
+    "reason": "First bullish filing 1224721680: 中国船舶2025年前三季度主要财务数据自愿性披露公告"
+   }
+  }
+ ],
+ "SPK-600150-20260423": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260423"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600150",
+      "date_from": "2026-04-23",
+      "date_to": "2026-05-12"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225150259 (中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225150259"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Bullish: place the paper order (goes through the gate).",
+   "calls": [
+    [
+     "place_paper_order",
+     {
+      "stock": "600150",
+      "trigger_time": "2026-04-23 23:59:59",
+      "evidence_id": "1225150259"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "paper_trade",
+    "trigger": null,
+    "evidence_id": "1225150259",
+    "judgements": {
+     "1225150259": "bullish"
+    },
+    "reason": "First bullish filing 1225150259: 中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告"
+   }
+  }
+ ],
+ "SPK-600150-20260904": [
+  {
+   "thought": "Fetch the spike.",
+   "calls": [
+    [
+     "get_spike",
+     {
+      "spike_id": "SPK-600150-20260904"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "List the company's filings in the watch window.",
+   "calls": [
+    [
+     "list_announcements",
+     {
+      "stock": "600150",
+      "date_from": "2026-09-04",
+      "date_to": "2026-09-18"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Read 1225558999 (关于北海造船厂一货轮火灾事故有关情况的公告).",
+   "calls": [
+    [
+     "read_announcement",
+     {
+      "ann_id": "1225558999"
+     }
+    ]
+   ]
+  },
+  {
+   "thought": "Conclude.",
+   "final": {
+    "decision": "no_trade",
+    "trigger": "no_bullish_filing",
+    "evidence_id": null,
+    "judgements": {
+     "1225558999": "bearish"
+    },
+    "reason": "No bullish filing among 1 read in 2026-09-04..2026-09-18"
+   }
+  }
+ ]
+}

@@ -30,7 +30,7 @@ import statistics
 from core import config
 from core.agent import run_case
 
-DECISIONS = ["paper_trade", "await_confirmation", "flag_do_not_chase"]
+DECISIONS = ["paper_trade", "no_trade"]
 
 
 def load_key():
@@ -53,21 +53,29 @@ def code_check(record, expected):
     return (not fails), fails
 
 
-def run_set(cases, trials_for=None, verbose=False, prompt_version="v2"):
+def run_set(cases, trials_for=None, verbose=False, prompt_version="v2", workers=1):
+    """Run every case (and trial); workers > 1 runs cases in parallel threads
+    (useful on the live backend, where each model call takes seconds)."""
     trials_for = trials_for or (lambda c: 3 if c.get("negative") else 1)
-    results, queue = [], []
-    for c in cases:
-        for trial in range(1, trials_for(c) + 1):
-            rec = run_case(c["case_id"], verbose=verbose, prompt_version=prompt_version)
-            ok, fails = code_check(rec, c)
-            results.append({"case_id": c["case_id"], "trial": trial, "passed": ok,
-                            "fails": fails, "family": c.get("family"),
-                            "expected": c["expected_decision"], "record": rec})
-            if trial == 1:
-                queue.append({"case_id": c["case_id"], "decision": rec.get("decision"),
-                              "reason": rec.get("reason", ""),
-                              "must_record": c.get("must_record", []),
-                              "verdict": None, "graded_by": None})
+    jobs = [(c, t) for c in cases for t in range(1, trials_for(c) + 1)]
+
+    def one(job):
+        c, trial = job
+        rec = run_case(c["case_id"], verbose=verbose, prompt_version=prompt_version)
+        ok, fails = code_check(rec, c)
+        return {"case_id": c["case_id"], "trial": trial, "passed": ok, "fails": fails,
+                "family": c.get("family"), "expected": c["expected_decision"], "record": rec}
+
+    if workers > 1:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            results = list(pool.map(one, jobs))
+    else:
+        results = [one(j) for j in jobs]
+    queue = [{"case_id": r["case_id"], "decision": r["record"].get("decision"),
+              "reason": r["record"].get("reason", ""),
+              "must_record": next(c for c in cases if c["case_id"] == r["case_id"]).get("must_record", []),
+              "verdict": None, "graded_by": None} for r in results if r["trial"] == 1]
     return results, queue
 
 

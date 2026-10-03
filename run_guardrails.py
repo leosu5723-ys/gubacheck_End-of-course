@@ -38,7 +38,13 @@ def main():
                             g.get("max_tokens", config.MAX_TOKENS_PER_RUN),
                             g.get("autonomy", config.AUTONOMY))
         approve = (lambda a, p: True) if g.get("approve", True) else (lambda a, p: False)
-        rec = run_case(g["spike_id"], approve=approve, moves=g["moves"], guards=guards)
+        moves = g["moves"]
+        if moves == "STEP_CAP_GENERATED":          # 11 distinct list calls, never concluding
+            moves = [{"thought": "fetch", "calls": [["get_spike", {"spike_id": g["spike_id"]}]]}]
+            moves += [{"thought": "list again, slightly wider", "calls": [["list_announcements",
+                       {"stock": "600150", "date_from": "2026-09-04", "date_to": "2026-09-%02d" % (5 + k)}]]}
+                      for k in range(12)]
+        rec = run_case(g["spike_id"], approve=approve, moves=moves, guards=guards)
         fired = [f["guardrail"] for f in rec["guardrails_fired"]]
         exp = g["expect"]
         ok = True
@@ -50,6 +56,10 @@ def main():
             ok = False
         if exp.get("no_order") and any(c["tool"] == "place_paper_order" for c in rec["tool_calls"]):
             ok = False
+        if "order_rejected" in exp:
+            obs = [c for c in rec.get("observations", []) if c["tool"] == "place_paper_order"]
+            if not obs or obs[0]["result"].get("reason") != exp["order_rejected"]:
+                ok = False
         ok_count += ok
         rows.append({"id": g["id"], "catches": g["wrong_behaviour"], "passed": ok,
                      "observed": {"decision": rec.get("decision"), "trigger": rec.get("trigger"),

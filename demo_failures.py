@@ -10,8 +10,8 @@ makes it a diagnosis rather than a story. Both run on the scripted
 backend, cost nothing, and reproduce exactly.
 
 FAILURE 1 - loop control (code layer)
-    X = action de-duplication. After an empty CNINFO search, the agent
-    repeats the identical search. With the guard deleted there is no
+    X = action de-duplication. The agent keeps re-reading the same filing
+    (it has no memory of its own calls). With the guard deleted there is no
     error and no crash: it burns turns and tokens until the step cap.
     The step cap and budget ceiling only bound the damage; only
     de-duplication detects the fault.
@@ -46,8 +46,12 @@ def failure_1(spike_id):
     if s is None:
         print("Spike %s not in the snapshot." % spike_id)
         return
-    search = ["search_cninfo", {"stock": s["stock"], "keywords": ["不存在的关键词"],
-                                "date_from": s["date"], "date_to": s["date"]}]
+    window = tools.list_announcements(s["stock"], s["date"], s["watch_until"])["results"]
+    first = next((a for a in window if not a["procedural"]), None)
+    if first is None:
+        print("No readable filing in this spike's window; pick another spike.")
+        return
+    search = ["read_announcement", {"ann_id": first["ann_id"]}]
     moves = [{"thought": "fetch the spike", "calls": [["get_spike", {"spike_id": spike_id}]]}]
     moves += [{"thought": "search again (the agent has no memory of its last call)",
                "calls": [search]} for _ in range(12)]
@@ -85,8 +89,7 @@ def _shift(day, n):
 
 
 if __name__ == "__main__":
-    sid = sys.argv[1] if len(sys.argv) > 1 else (store.load("spikes")[0]["spike_id"]
-                                                 if store.load("spikes") else None)
+    sid = sys.argv[1] if len(sys.argv) > 1 else "SPK-600150-20260904"
     if not sid:
         print("No spikes in the snapshot yet.")
         sys.exit(1)

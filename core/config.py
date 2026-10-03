@@ -36,8 +36,8 @@ PRICES_CHECKED = os.environ.get("GUBACHECK_PRICES_CHECKED", "YYYY-MM-DD")
 # GUARDRAIL LIMITS. Set from evidence (see EVALS.md: turn distribution),
 # not from a round number.
 # -------------------------------------------------------------------------
-MAX_TURNS = 8
-MAX_TOKENS_PER_RUN = 40000
+MAX_TURNS = 10                # worst legitimate scripted run is 8 tool turns (results/results.json)
+MAX_TOKENS_PER_RUN = 80000       # worst legitimate scripted run ~55k tokens (estimate); cap = that + ~45%
 AUTONOMY = "confirm"          # "suggest" | "confirm" | "act"
 #   suggest - the agent proposes, I place every order myself
 #   confirm - the agent does everything except the order, which waits for my yes
