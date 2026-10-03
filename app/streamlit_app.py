@@ -338,7 +338,10 @@ NOTE_ZH = {
 }
 
 
-def stop_text(inv, primary):
+def stop_text(inv, primary, rec=None):
+    if rec is not None and (rec.get("error") or (not inv.get("order") and not rec.get("tool_calls"))):
+        why = rec.get("error") or rec.get("reason") or ""
+        return ("⚠️ AI 未能完成调查：%s" % why[:200]) if ss.lang == "zh" else ("⚠️ The AI did not complete the investigation: %s" % why[:200])
     tested = "、".join(CN[c][0] for c in inv.get("order", [])) if ss.lang == "zh" else ", ".join(CN[c][0] for c in inv.get("order", []))
     passed = [c for c, v in inv.get("tested", {}).items() if v == "PASS"]
     n = inv.get("calls", len(inv.get("order", [])))
@@ -572,7 +575,10 @@ def page_investigate():
             posterior_chart(inv["history"], key="pc_live")
         st.success("💰 %s %d tokens · US$%.5f · %d %s" % ("本次调用" if ss.lang == "zh" else "This run", rec["tokens_in"] + rec["tokens_out"],
                                                        rec["cost_usd"], inv.get("calls", 0), "项检验" if ss.lang == "zh" else "tests"))
-        st.info("⏹️ " + stop_text(inv, rec.get("primary") or "H"))
+        st.info("⏹️ " + stop_text(inv, rec.get("primary") or "H", rec))
+        if rec.get("raw_trace"):
+            with st.expander("🧾 " + ("模型原始回复（排查用）" if ss.lang == "zh" else "raw model replies (diagnostics)")):
+                st.json(rec["raw_trace"])
         conclusion_block(s, rec.get("primary") or "H", inv.get("posterior", {}), outs)
         return
     rec = ss.run.get("rec")
@@ -609,7 +615,7 @@ def page_investigate():
             st.markdown("**%s**" % L["posterior"])
             posterior_chart(hist[:n + 1], key="pc_%d" % n)
     primary = rec.get("primary") or "H"
-    st.info("⏹️ " + stop_text(inv, primary))
+    st.info("⏹️ " + stop_text(inv, primary, rec))
     ss.run["shown"] = True
     conclusion_block(s, primary, inv.get("posterior", {}), outs)
 
