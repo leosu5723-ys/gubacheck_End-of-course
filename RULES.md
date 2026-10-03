@@ -8,8 +8,8 @@ A stock-day is a spike when all hold:
 
 | Condition | Threshold |
 |---|---|
-| Own-bar posts that day vs mean of the previous 20 days | ≥ 3.0× |
-| Bullish share vs its 20-day mean | ≥ +20 percentage points |
+| Own-bar posts that day vs mean of the previous 20 days | ≥ 2.0× |
+| Bullish share vs its 20-day mean | ≥ +10 percentage points |
 | Posts that day | ≥ 30 |
 | Prior days available for the baseline | ≥ 10 |
 | First day of an episode | no spike in the previous 5 days |
@@ -18,7 +18,19 @@ Bullish share = bullish / (bullish + bearish) posts, labelled by the sentiment m
 
 Cross-check (not part of the rule): Eastmoney's daily popularity rank. A rank jump is rank ≤ 200 and ≥ 3× better than its 20-day median. `results/spike_validation.json` reports the correlation between daily post counts and popularity, and how many forum spikes fall within 2 days of a rank jump.
 
-*Change log.* 2026-10-02: the forum blocked page-by-page collection, so spikes were temporarily defined from the popularity rank plus posts collected on candidate days. 2026-10-03: the full-year forum dataset became available and the rule returned to the original post-count definition above. Both changes were made before any spike was labelled or any agent run graded.
+*Change log.* 2026-10-02: the forum blocked page-by-page collection, so spikes were temporarily defined from the popularity rank plus posts collected on candidate days. 2026-10-03: the full-year forum dataset became available and the rule returned to the original post-count definition above. 2026-10-03 (later): with full-year data the original thresholds (3.0× posts and +20 points) produced only 7 spikes in a year across 10 stocks, too few to evaluate. The reason is itself a finding: on the 152 stock-days with ≥ 3× posts, the bullish share usually *fell* (median −6 points; 90th percentile +12; maximum +27): the forum is busiest in sell-offs, not in euphoria. Episodes per threshold pair:
+
+| Posts | Bullish shift | Episodes | Stocks |
+|---|---|---|---|
+| ≥ 3.0× | +20 pts | 7 | 5 |
+| ≥ 3.0× | +10 pts | 15 | 8 |
+| ≥ 2.5× | +10 pts | 27 | 10 |
+| ≥ 2.0× | +10 pts | 42 | 10 |
+| ≥ 3.0× | +0 pts | 35 | 9 |
+
+The thresholds were changed to 2.0× and +10 points, keeping both conditions of the idea (a surge of discussion *and* a surge of bullishness). The choice used only the number of spikes, before any spike was examined, labelled or given to the agent.
+
+All changes above were made before any spike was labelled or any agent run graded.
 
 ## 2. How a spike is decided (agent)
 

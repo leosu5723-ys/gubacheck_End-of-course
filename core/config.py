@@ -47,8 +47,8 @@ AUTONOMY = "confirm"          # "suggest" | "confirm" | "act"
 # DECISION RULES (mirrors RULES.md - edit RULES.md first)
 # -------------------------------------------------------------------------
 # Spike detection (forum activity, the full-year post data)
-SPIKE_HEAT_RATIO = 3.0        # posts today >= 3x the mean of the previous 20 days
-SPIKE_BULL_SHIFT = 0.20       # bullish share >= its 20-day mean + 20 points
+SPIKE_HEAT_RATIO = 2.0        # posts today >= 2x the mean of the previous 20 days
+SPIKE_BULL_SHIFT = 0.10       # bullish share >= its 20-day mean + 10 points
 SPIKE_MIN_POSTS = 30          # ignore thin days
 SPIKE_BASELINE_DAYS = 20      # trailing window (calendar days with posts)
 SPIKE_MIN_HISTORY = 10        # need at least 10 prior days for a baseline

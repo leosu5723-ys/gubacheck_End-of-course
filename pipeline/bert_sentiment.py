@@ -53,17 +53,21 @@ def _batches(items, size):
 
 
 def _predict(model, tok, titles, batch=256):
+    """[(label, probability)] in input order. Titles are processed sorted by
+    length so each batch pads to a similar length (much faster)."""
     import torch
     dev = next(model.parameters()).device
-    out = []
+    order = sorted(range(len(titles)), key=lambda i: len(titles[i]))
+    out = [None] * len(titles)
     model.eval()
     with torch.no_grad():
-        for chunk in _batches(titles, batch):
-            enc = tok(chunk, truncation=True, max_length=MAX_LEN, padding=True, return_tensors="pt").to(dev)
+        for idx in _batches(order, batch):
+            enc = tok([titles[i] for i in idx], truncation=True, max_length=MAX_LEN,
+                      padding=True, return_tensors="pt").to(dev)
             probs = torch.softmax(model(**enc).logits.float(), dim=-1).cpu()
-            for p in probs:
-                i = int(p.argmax())
-                out.append((S.CLASSES[i], float(p[i])))
+            for i, p in zip(idx, probs):
+                k = int(p.argmax())
+                out[i] = (S.CLASSES[k], float(p[k]))
     return out
 
 
@@ -163,6 +167,10 @@ def cmd_predict():
                 p = json.loads(line)
                 if p.get("bar_code") == code:
                     posts.append(p)
+        target = os.path.join(ROOT, "data", "raw", "sentiment_bert_%s.jsonl" % code)
+        if os.path.exists(target) and sum(1 for _ in open(target)) == len(posts):
+            print(code, "already labelled, skipped", flush=True)
+            continue
         t0 = time.time()
         res = _predict(model, tok, [p["title"] for p in posts])
         secs = time.time() - t0
@@ -171,9 +179,14 @@ def cmd_predict():
                 fh.write(json.dumps({"post_id": p["post_id"], "label": lab, "p": round(prob, 3)}) + "\n")
         stats[code] = {"posts": len(posts), "seconds": round(secs, 1),
                        "posts_per_second": round(len(posts) / secs, 1)}
-        print(code, stats[code])
-    with open(os.path.join(ROOT, "results", "bert_predict_stats.json"), "w", encoding="utf-8") as fh:
-        json.dump({"device": _device(), "stocks": stats}, fh, indent=2)
+        print(code, stats[code], flush=True)
+    path = os.path.join(ROOT, "results", "bert_predict_stats.json")
+    old = json.load(open(path)) if os.path.exists(path) else {"stocks": {}}
+    old["stocks"].update(stats)
+    old["device"] = _device()
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(old, fh, indent=2)
+    print("PREDICT DONE", flush=True)
 
 
 if __name__ == "__main__":
