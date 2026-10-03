@@ -33,8 +33,8 @@ Procedure:
     call revise_scores for the UNTESTED causes with a one-sentence reason.
   5 When status.stop is true, conclude immediately. Code stops you after 5 checks in any case.
 
-Conclude with the primary cause = the PASSED cause with the highest posterior (H if none passed),
-other passed causes as secondary, and a reason that quotes the evidence (ids, times, z-scores)."""
+Conclude (call the conclude tool) with the primary cause = the PASSED cause with the highest posterior
+(H if none passed), other passed causes as secondary, and a reason quoting the evidence (ids, times, z-scores)."""
 
 _FORMAT = """
 HOW TO ANSWER - JSON only, one of two shapes:

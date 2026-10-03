@@ -164,3 +164,29 @@ for c, d in _CAUSE_DESC.items():
                                  "returns": "{verdict PASS|PARTIAL|FAIL, metrics, evidence, timing, status}",
                                  "failure": "The verdict is computed by code; do not override it. "
                                             "status.stop=true means conclude now."}
+
+
+def tool_schemas(arm="agent"):
+    """OpenAI-style function schemas for native tool calling (live backend)."""
+    score_obj = {"type": "object", "properties": {c: {"type": "integer", "minimum": 0, "maximum": 10} for c in config.CAUSES}}
+    out = [
+        {"name": "get_spike", "params": {"spike_id": {"type": "string"}}, "req": ["spike_id"]},
+        {"name": "score_causes", "params": {"scores": score_obj,
+                                            "clues": {"type": "object", "description": "cause -> list of post ids"}},
+         "req": ["scores"]},
+    ]
+    out += [{"name": "check_" + c, "params": {"spike_id": {"type": "string"}}, "req": ["spike_id"]} for c in config.CAUSES]
+    if arm == "agent":
+        out.append({"name": "revise_scores", "params": {"scores": score_obj, "reason": {"type": "string"}},
+                    "req": ["scores", "reason"]})
+    out.append({"name": "conclude", "desc": "Finish: the primary cause (A-H), other passed causes, and the reason with evidence.",
+                "params": {"primary": {"type": "string", "enum": list("ABCDEFGH")},
+                           "secondary": {"type": "array", "items": {"type": "string"}},
+                           "reason": {"type": "string"}}, "req": ["primary", "reason"]})
+    schemas = []
+    for t in out:
+        d = DESCRIPTORS.get(t["name"], {})
+        desc = t.get("desc") or "%s When: %s If empty/none: %s" % (d.get("purpose", ""), d.get("when", ""), d.get("failure", ""))
+        schemas.append({"type": "function", "function": {"name": t["name"], "description": desc[:900],
+                        "parameters": {"type": "object", "properties": t["params"], "required": t["req"]}}})
+    return schemas

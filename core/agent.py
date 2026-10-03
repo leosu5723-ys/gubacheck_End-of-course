@@ -67,7 +67,12 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
                 record = dict(move["final"])
                 break
             if inv.weights is not None and inv.should_stop() and not move.get("calls"):
+                res = inv.result()
+                record = {"primary": res["primary"], "secondary": res["secondary"],
+                          "reason": "stop rule held; the model did not call conclude"}
                 break
+            if not move.get("calls"):
+                continue                                   # the model was reminded to use a tool
 
             turns += 1
             guards.check_turns(turns)
@@ -95,10 +100,14 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
                 if verbose:
                     print("            %-20s -> %s" % (name, _short(result)))
 
+            if hasattr(backend, "observe"):
+                backend.observe(observations)
             transcript.append({"role": "assistant", "content": move.get("thought", "")})
             transcript.append({"role": "user", "content": repr(observations)})
         else:
             raise GuardrailStop("step_cap", "loop safety limit")
+        if inv.weights is not None and record.get("primary") not in list("ABCDEFGH"):
+            record["primary"] = inv.result()["primary"]
     except GuardrailStop as stop:
         stopped_by = stop.reason
         if stop.reason == "stop_rule":
@@ -119,6 +128,8 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
         record["investigation"] = {k: res[k] for k in ("posterior", "tested", "order", "calls",
                                                        "revisions", "over_investigation")}
         record["investigation"]["history"] = inv.history
+    if getattr(backend, "trace", None):
+        record["raw_trace"] = backend.trace[-12:]
     record.update({
         "arm": arm,
         "case_id": case_id,

@@ -74,20 +74,105 @@ class ScriptedBackend:
 
 
 class LiveBackend:
+    """Real model through OpenRouter using NATIVE TOOL CALLING.
+
+    The provider returns structured tool calls (name + JSON arguments), so the
+    loop never depends on the model hand-writing JSON in free text. The
+    conclusion is itself a tool (`conclude`). Every raw reply is kept in
+    self.trace for diagnosis. If the model answers without calling a tool,
+    it is reminded (at most twice) before the run concludes H.
+    """
     name = "live"
 
-    def __init__(self, case_id, system_prompt):
+    def __init__(self, case_id, system_prompt, arm="agent"):
+        from core import tools
         self.case_id = case_id
-        self.system_prompt = system_prompt
+        self.messages = [{"role": "system", "content": system_prompt},
+                         {"role": "user", "content": "Investigate spike %s. Use the tools; finish by calling conclude." % case_id}]
+        self.schemas = tools.tool_schemas(arm)
+        self.pending_ids = []
+        self.nudges = 0
+        self.trace = []
         self.last_usage = (0, 0)
 
     def next_move(self, transcript):
-        messages = [{"role": "system", "content": self.system_prompt},
-                    {"role": "user", "content": "Check spike %s." % self.case_id}]
-        messages += [{"role": t["role"], "content": t["content"]} for t in transcript]
-        text, usage = _live_call(messages)
+        msg, usage = _live_chat(self.messages, self.schemas)
         self.last_usage = (usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0))
-        return _parse(text)
+        self.trace.append({"content": (msg.get("content") or "")[:500],
+                           "tool_calls": [(c["function"]["name"], c["function"].get("arguments", "")[:300])
+                                          for c in msg.get("tool_calls") or []]})
+        calls = msg.get("tool_calls") or []
+        self.messages.append({"role": "assistant", "content": msg.get("content") or "", "tool_calls": calls} if calls
+                             else {"role": "assistant", "content": msg.get("content") or ""})
+        if not calls:
+            if self.nudges < 2:
+                self.nudges += 1
+                self.messages.append({"role": "user", "content": "Call one of the tools now. When the stop flag is true, call conclude."})
+                return {"thought": msg.get("content") or "", "calls": []}
+            return {"thought": msg.get("content") or "", "final": {
+                "primary": "H", "reason": "model stopped calling tools: " + (msg.get("content") or "")[:200]}}
+        parsed, self.pending_ids = [], []
+        for c in calls:
+            try:
+                args = json.loads(c["function"].get("arguments") or "{}")
+            except json.JSONDecodeError:
+                args = {}
+            if c["function"]["name"] == "conclude":
+                self.pending_ids = []
+                return {"thought": msg.get("content") or "", "final": {
+                    "primary": str(args.get("primary", "H")).strip().upper()[:1] or "H",
+                    "secondary": args.get("secondary") or [], "reason": args.get("reason", "")}}
+            parsed.append([c["function"]["name"], args])
+            self.pending_ids.append(c["id"])
+        return {"thought": msg.get("content") or "", "calls": parsed}
+
+    def observe(self, observations):
+        """Return each tool result to the model, matched to its call id."""
+        for cid, o in zip(self.pending_ids, observations):
+            self.messages.append({"role": "tool", "tool_call_id": cid,
+                                  "content": json.dumps(o["observation"] if "observation" in o else o.get("result"),
+                                                        ensure_ascii=False, default=str)[:3500]})
+        self.pending_ids = []
+
+    @staticmethod
+    def token_estimate(transcript):
+        return 0, 0
+
+
+def _live_chat(messages, schemas, retries=4):
+    """Chat completion with tools. Returns (message dict, usage). Same retry policy as _live_call."""
+    import time
+    import urllib.error
+    if not config.API_KEY:
+        raise SystemExit("Live backend needs OPENROUTER_API_KEY in the environment.")
+    body = json.dumps({"model": config.MODEL, "messages": messages, "tools": schemas, "tool_choice": "auto",
+                       "temperature": 0, "max_tokens": 3000}).encode()
+    used = {"prompt_tokens": 0, "completion_tokens": 0}
+    last_err = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(config.BASE_URL.rstrip("/") + "/chat/completions", data=body,
+                                         headers={"Authorization": "Bearer " + config.API_KEY,
+                                                  "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                payload = json.load(r)
+            u = payload.get("usage") or {}
+            used["prompt_tokens"] += u.get("prompt_tokens", 0)
+            used["completion_tokens"] += u.get("completion_tokens", 0)
+            if payload.get("error"):
+                raise RuntimeError(str(payload["error"])[:200])
+            msg = (payload.get("choices") or [{}])[0].get("message") or {}
+            if msg.get("tool_calls") or (msg.get("content") or "").strip():
+                return msg, used
+            last_err = "empty reply"
+        except urllib.error.HTTPError as e:
+            last_err = "HTTP %s %s" % (e.code, e.read()[:200])
+            if e.code not in (408, 429, 500, 502, 503, 504):
+                raise RuntimeError(last_err)
+        except Exception as e:
+            last_err = str(e)[:200]
+        time.sleep(3 * (attempt + 1))
+    raise RuntimeError("live call failed after %d attempts: %s" % (retries, last_err))
 
 
 def _parse(text):
@@ -156,5 +241,5 @@ def make_backend(case_id, system_prompt="", moves=None, arm="agent"):
     if moves is not None or config.BACKEND == "scripted":
         return ScriptedBackend(case_id, moves, arm if arm in ("exhaustive",) else "keyword")
     if config.BACKEND == "live":
-        return LiveBackend(case_id, system_prompt)
+        return LiveBackend(case_id, system_prompt, arm)
     raise SystemExit("BACKEND must be 'scripted' or 'live', not %r" % config.BACKEND)
