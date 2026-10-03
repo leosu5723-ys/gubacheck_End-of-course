@@ -12,7 +12,7 @@ A user-facing product, not a data viewer. The user's path:
   调查 Investigate  the agent works step by step on screen: reads the posts,
                     extracts clues, scores causes, tests them one by one,
                     watches the probabilities move, stops, concludes; then
-                    the timeline, this stock's earlier spikes with the same
+                    this stock's earlier spikes with the same
                     cause (D+N returns table) and a suggestion (rule-based,
                     or written by the model with RAG over the company's
                     filings). The user can (a) choose the mode, (b) run the
@@ -51,6 +51,17 @@ st.markdown("""
 <style>
 :root { --up:#e5484d; --down:#30a46c; --ink:#11181c; --muted:#687076; --card:#ffffff; --line:#e6e8eb; --brand:#3e63dd; }
 header[data-testid="stHeader"] { display:none; }
+.gc-name { font-size:1.05rem; font-weight:700; margin-bottom:2px; }
+.gc-tip { position:relative; cursor:help; border-bottom:1px dotted #9ba1a6; }
+.gc-tipbox { visibility:hidden; opacity:0; position:absolute; z-index:9999; left:0; top:130%; width:340px;
+  background:#11181c; color:#f1f3f5; padding:10px 12px; border-radius:10px; font-size:12px; line-height:1.55;
+  font-weight:400; letter-spacing:0; box-shadow:0 8px 24px rgba(0,0,0,.25); transition:opacity .15s; white-space:normal; }
+.gc-tipbox hr { border:none; border-top:1px solid #3a3f44; margin:6px 0; }
+.gc-tipbox .gc-tipg { color:#9ba1a6; font-weight:400; }
+.gc-tipr { left:auto; right:0; }
+.gc-tip:hover .gc-tipbox { visibility:visible; opacity:1; }
+.gc-en { color:#687076; font-size:.82rem; margin-top:2px; }
+div[data-testid="stColumn"]:hover { z-index:50; }
 .st-key-gc-tick button { animation: gcIn .45s cubic-bezier(.2,.8,.2,1), gcOut .45s ease-in 3.5s forwards;
   border-color:#f3c0c2; background:#fff5f5; color:#c62a2f; font-weight:600; }
 @keyframes gcIn { from { opacity:0; transform:translateY(-14px) scale(.96); } to { opacity:1; transform:none; } }
@@ -91,7 +102,7 @@ TXT = {
                      "exhaustive": "🔬 全面（7 项全部检验）", "manual": "🧪 我自己来查"},
            "start": "开始调查", "reading": "正在阅读 {n} 条帖子…", "clues": "AI 从帖子里找到的线索",
            "priors": "各原因的初始可能性", "testing": "正在检验：", "posterior": "可能性变化",
-           "stop": "停止调查", "concl": "调查结论", "conf": "可信度", "timeline": "时间线",
+           "stop": "停止调查", "concl": "调查结论", "conf": "可信度",
            "history": "历史上同类异动之后（相对沪深300超额收益）", "agree": "你同意这个结论吗？",
            "yes": "👍 同意", "no": "👎 不同意", "your_cause": "你认为的原因", "thanks": "已记录你的反馈，谢谢！",
            "manual_hint": "点下面的按钮亲自检验一个原因。可能性会实时更新；满足停止条件时系统会提示你。",
@@ -108,7 +119,7 @@ TXT = {
                      "exhaustive": "🔬 Thorough (all 7 tests)", "manual": "🧪 Investigate it myself"},
            "start": "Start", "reading": "Reading {n} posts…", "clues": "Clues the AI found in the posts",
            "priors": "Starting likelihood of each cause", "testing": "Testing: ", "posterior": "Likelihood over the investigation",
-           "stop": "Stop", "concl": "Conclusion", "conf": "Confidence", "timeline": "Timeline",
+           "stop": "Stop", "concl": "Conclusion", "conf": "Confidence",
            "history": "After similar spikes (excess return vs CSI 300)", "agree": "Do you agree?",
            "yes": "👍 Agree", "no": "👎 Disagree", "your_cause": "Your cause", "thanks": "Feedback saved — thank you!",
            "manual_hint": "Click a cause to test it yourself. Likelihoods update live; you'll be told when the stop rule holds.",
@@ -338,13 +349,31 @@ with nav_back:
         st.rerun()
 
 stocks = store.load("stocks")
+PROFILES = json.load(open(os.path.join(ROOT, "data", "stock_profiles.json"), encoding="utf-8"))
+TITLES_EN = json.load(open(os.path.join(ROOT, "data", "post_titles_en.json"), encoding="utf-8"))
+
+
+def sname(code, lang=None):
+    """Stock name in the UI language (English names for the English UI)."""
+    lang = lang or ss.lang
+    return PROFILES.get(code, {}).get("en", stocks[code]["name"]) if lang == "en" else stocks[code]["name"]
+
+
+def name_tip(code, right=False):
+    """Stock name with a bilingual hover card: position, market cap, data in this project, peers."""
+    pr = PROFILES.get(code)
+    if not pr:
+        return sname(code)
+    return ('<span class="gc-tip">%s<span class="gc-tipbox%s"><b>%s · %s</b> <span class="gc-tipg">%s / %s</span>'
+            '<br>%s<hr>%s</span></span>' % (sname(code), " gc-tipr" if right else "", stocks[code]["name"], pr["en"],
+                                            pr["group_zh"], pr["group_en"], pr["zh"], pr["en_text"]))
 spikes = sorted((s for s in store.load("spikes") if not s.get("synthetic")),
                 key=lambda s: (s["date"], s["spike_id"]))      # by date: spikes[-1] is the latest
 daily = store.load("daily_stats")
 
 
 def spike_label(x):
-    return "🔥 %s %s · z %.1f" % (stocks[x["stock"]]["name"], x["date"][5:], x["z_posts"])
+    return "🔥 %s %s · z %.1f" % (sname(x["stock"]), x["date"][5:], x["z_posts"])
 
 
 def open_spike(sid):
@@ -432,7 +461,7 @@ def page_radar():
     k = st.columns(3)
     latest = [x for x in spikes if x["date"] == last_day]
     for col, (v, lab) in zip(k, ((len(stocks), L["watched"]), (len(recent), L["spikes_m"]),
-                                 ("%s %s" % ("、".join(stocks[x["stock"]]["name"] for x in latest), last_day[5:]), L["last"]))):
+                                 ("%s %s" % (("、" if ss.lang == "zh" else ", ").join(sname(x["stock"]) for x in latest), last_day[5:]), L["last"]))):
         col.markdown('<div class="gc-card"><div class="gc-kpi">%s</div><div class="gc-kpil">%s</div></div>' % (v, lab),
                      unsafe_allow_html=True)
     codes = list(stocks)
@@ -449,12 +478,12 @@ def page_radar():
             heat = max(0, min(100, int(50 + 15 * z)))
             with col:
                 st.markdown(
-                    '<div class="gc-card"><h4>%s</h4><div class="gc-code">%s</div>'
+                    '<div class="gc-card"><div class="gc-name">%s</div><div class="gc-code">%s</div>'
                     '<div style="margin-top:6px"><span class="%s">%.2f %s%.2f%%</span></div>'
                     '<div class="gc-gauge">%s %d / 100 &nbsp; <span class="gc-badge %s">%s</span></div>'
                     '<div class="gc-bar"><div class="b" style="width:%d%%"></div><div class="s" style="width:%d%%"></div></div>'
                     '<div class="gc-gauge">%s %d%% · %s %d%%</div></div>'
-                    % (stocks[code]["name"], code, "gc-up" if chg >= 0 else "gc-down", last["close"],
+                    % (name_tip(code, right=code in codes[row + 3:row + 5]), code, "gc-up" if chg >= 0 else "gc-down", last["close"],
                        "+" if chg >= 0 else "", chg, L["heat"], heat, "gc-hot" if hot else "gc-calm",
                        L["spike"] if hot else L["calm"], int(100 * bull), 100 - int(100 * bull),
                        L["bulls"], int(100 * bull), L["bears"], 100 - int(100 * bull)), unsafe_allow_html=True)
@@ -465,8 +494,11 @@ def page_radar():
 # ================================================================ STOCK
 def page_stock():
     code = st.selectbox(" ", list(stocks), index=list(stocks).index(ss.stock), label_visibility="collapsed",
-                        format_func=lambda c: "%s  %s" % (stocks[c]["name"], c))
+                        format_func=lambda c, lg=ss.lang: "%s  %s" % (sname(c, lg), c))
     ss.stock = code
+    if code in PROFILES:
+        st.markdown('<div class="gc-gauge">ⓘ %s · %s</div>' % (name_tip(code), PROFILES[code]["group_en" if ss.lang == "en" else "group_zh"]),
+                    unsafe_allow_html=True)
     b = pd.DataFrame(bars(code))
     d = pd.DataFrame(daily.get(code, []))
     sp = [s for s in spikes if s["stock"] == code]
@@ -613,14 +645,14 @@ def suggestion(same, allc):
 def history_table(s, cause):
     zh = ss.lang == "zh"
     same, allc = past_rows(s, cause)
-    st.markdown("**%s**" % ("📜 %s 过去的同类异动（原因：%s）——如果当时次日开盘买入" % (stocks[s["stock"]]["name"], cname(cause)) if zh
-                            else "📜 Earlier spikes of %s with the same cause (%s) — bought at the next open" % (stocks[s["stock"]]["name"], cname(cause))))
+    st.markdown("**%s**" % ("📜 %s 过去的同类异动（原因：%s）——如果当时次日开盘买入" % (sname(s["stock"]), cname(cause)) if zh
+                            else "📜 Earlier spikes of %s with the same cause (%s) — bought at the next open" % (sname(s["stock"]), cname(cause))))
     def table(rows, with_stock):
         out = []
         for r in rows:
             d = {"异动日期" if zh else "spike": r["spike_id"][-8:-4] + "-" + r["spike_id"][-4:-2] + "-" + r["spike_id"][-2:]}
             if with_stock:
-                d["股票" if zh else "stock"] = stocks[r["spike_id"][4:10]]["name"]
+                d["股票" if zh else "stock"] = sname(r["spike_id"][4:10])
             for h in HZ:
                 d["D+" + h] = r["returns"].get(h)
             out.append(d)
@@ -706,25 +738,6 @@ def history_chart(cause):
     st.caption("n = %d%s" % (g["n"], "　⚠️ " + L["n_small"] if g["n"] < 5 else ""))
 
 
-def timeline(s, outs):
-    pts = [("异动开始" if ss.lang == "zh" else "onset", s["onset"], "#e5484d")]
-    for c, o in outs:
-        for e in o["evidence"][:3]:
-            t = e.get("time") or e.get("us_date")
-            if t and re.match(r"\d{4}-\d{2}-\d{2}", str(t)):
-                pts.append(("%s %s" % (CN[c][1], str(e.get("title", e.get("id", "")))[:18]), str(t)[:16], COLORS.get(c, "#888")))
-    df = pd.DataFrame(pts, columns=["label", "t", "c"])
-    df["t"] = pd.to_datetime(df["t"].str.slice(0, 16), errors="coerce", format="mixed")
-    df = df.dropna()
-    if len(df) <= 1:
-        st.caption("—")
-        return
-    fig = go.Figure(go.Scatter(x=df["t"], y=[0] * len(df), mode="markers+text", text=df["label"],
-                               textposition="top center", marker=dict(size=14, color=df["c"])))
-    fig.update_layout(height=200, margin=dict(l=10, r=10, t=30, b=10), yaxis=dict(visible=False), plot_bgcolor="white")
-    st.plotly_chart(fig, width="stretch")
-
-
 def save_feedback(sid, agree, cause, concluded):
     with open(os.path.join(ROOT, "results", "user_feedback.jsonl"), "a", encoding="utf-8") as fh:
         fh.write(json.dumps({"spike_id": sid, "agree": agree, "user_cause": cause, "system_cause": concluded,
@@ -769,8 +782,6 @@ def conclusion_block(s, primary, posterior, outs):
         else:
             st.caption("在右上角 ⚙️ API 设置 key 后，可让 AI 结合公司公告（RAG）写建议" if ss.lang == "zh"
                        else "Set a key in ⚙️ API (top right) to get an AI-written suggestion with RAG")
-    st.markdown("**%s**" % L["timeline"])
-    timeline(s, outs)
 
 
 def recommended(runs, gold):
@@ -833,14 +844,14 @@ def page_investigate():
         st.markdown("**⭐ %s**" % ("推荐案例（系统能解释、且与人工标注一致）" if ss.lang == "zh" else "Suggested cases (explained, matching my label)"))
         cols = st.columns(4)
         for i, rid in enumerate(rec_ids):
-            if cols[i % 4].button("%s %s · %s" % (stocks[rid[4:10]]["name"], rid[-4:], CN[gold[rid]][1] + CN[gold[rid]][0]),
+            if cols[i % 4].button("%s %s · %s" % (sname(rid[4:10]), rid[-4:], CN[gold[rid]][1] + CN[gold[rid]][0]),
                                   key="rec_" + rid, width="stretch"):
                 ss.spike, ss.run = rid, None
                 st.rerun()
     sid = ss.spike or spikes[-1]["spike_id"]
     opts = [x["spike_id"] for x in spikes]
     sid = st.selectbox(" ", opts, index=opts.index(sid), label_visibility="collapsed",
-                       format_func=lambda i: "🔥 %s  %s  %s" % (stocks[i[4:10]]["name"], i[4:10], i[-8:]))
+                       format_func=lambda i, lg=ss.lang: "🔥 %s  %s  %s" % (sname(i[4:10], lg), i[4:10], i[-8:]))
     if sid != ss.spike:
         ss.spike, ss.run = sid, None
     s = store.spike(sid)
@@ -868,8 +879,11 @@ def page_investigate():
     st.markdown("**%s**" % L["clues"])
     for p in top[:6]:
         words = [w for w, _ in clue_words(p["title"])]
-        st.markdown('<div class="gc-post">%s %s</div>' % ("📰" if p.get("post_type") == 20 else "💬",
-                                                          highlight(p["title"], words)), unsafe_allow_html=True)
+        en = TITLES_EN.get(str(p["post_id"])) if ss.lang == "en" else None
+        st.markdown('<div class="gc-post">%s %s%s</div>' % ("📰" if p.get("post_type") == 20 else "💬",
+                                                            highlight(p["title"], words),
+                                                            '<div class="gc-en">%s</div>' % en if en else ""),
+                    unsafe_allow_html=True)
     # ---- live run (once per click), saved replay, or scripted
     if ss.run.get("live") and not ss.run.get("rec"):
         area = st.container()

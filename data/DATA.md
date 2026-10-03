@@ -28,6 +28,8 @@ All sources are public and free. Collection code is in `collectors/`; the snapsh
 | `data/labels/labelled.csv` | Yes | 99 hand-labelled post titles (bull / bear / neutral / unsure) — the test set |
 | `data/labels/llm_part*.csv` + `llm_done/` | Yes | 3,000 other posts labelled by an LLM — the training set (prompt and model in LLM_LABEL_PROMPT.md) |
 | `data/labels/LABEL_RULES.md` | Yes | The rule sheet the labels follow |
+| `data/post_titles_en.json` | Yes | English glosses of the 408 post titles the app shows as clues (six per spike), written with an AI assistant for the English demo only; the tools never read them |
+| `data/stock_profiles.json` | Yes | English name and a short bilingual profile per stock for the app's hover card: position (written by hand), market cap **estimated** from the 30 Sep close × approximate total shares, counts computed from the snapshot, peers from `data/peers.json` |
 
 The repository runs end to end from `data/snapshot/` without the raw files.
 
