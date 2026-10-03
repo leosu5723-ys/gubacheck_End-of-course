@@ -148,14 +148,19 @@ def retrieve(ann, query_text, force=True):
     import numpy as np
     from pipeline import judge
     emb, chunks = _index()
-    rows = judge.load_announcements()
+    if "rows" not in _STATE:
+        _STATE["rows"] = judge.load_announcements()
+    rows = _STATE["rows"]
     forced_docs = forced(ann, rows) if force else []
     skip = {d["ann_id"] for _, d in forced_docs} | {ann["ann_id"]}
     mask = np.array([c["stock"] == ann["stock"] and c["time"] < ann["time"] and c["ann_id"] not in skip
                      for c in chunks])
     if not mask.any():
         return forced_docs, []
-    q = _model().encode([QUERY_PREFIX + ann["title"] + clean(query_text)[:300]], normalize_embeddings=True)[0]
+    import threading
+    lock = _STATE.setdefault("lock", threading.Lock())
+    with lock:                      # one encoder shared by the judge's worker threads
+        q = _model().encode([QUERY_PREFIX + ann["title"] + clean(query_text)[:300]], normalize_embeddings=True)[0]
     scores = emb @ q
     scores[~mask] = -1
     picked, per_src = [], {}
