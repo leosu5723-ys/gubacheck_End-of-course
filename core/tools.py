@@ -126,7 +126,11 @@ GATED_ACTION = "place_paper_order"
 def call(name, args):
     if name not in REGISTRY:
         raise KeyError("No tool named %r. Available: %s" % (name, ", ".join(sorted(REGISTRY))))
-    return REGISTRY[name](**args)
+    # models sometimes add arguments a tool does not take (e.g. spike_id to score_causes):
+    # drop them instead of failing the whole case
+    import inspect
+    known = inspect.signature(REGISTRY[name]).parameters
+    return REGISTRY[name](**{k: v for k, v in (args or {}).items() if k in known})
 
 
 _CAUSE_DESC = {
