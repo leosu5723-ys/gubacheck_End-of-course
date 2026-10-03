@@ -4,69 +4,79 @@
   "group_zh": "AI 硬件",
   "group_en": "AI hardware",
   "zh": "国产 AI 芯片（云端训练/推理芯片）龙头，常被称为“中国英伟达”；科创板市值最高的公司之一。市值约 6,286 亿元（按 9/30 收盘价估算）。本项目数据：股吧 6.8 万帖、公告 149 条、异动 6 次。A 股同行：工业富联、中际旭创、新易盛、胜宏科技、海光信息、天孚通信、沪电股份；美股映射：NVDA、AMD、AVGO、LITE、COHR。",
-  "en_text": "China's leading domestic AI-chip designer (cloud training/inference), often called 'China's Nvidia'. Market cap ≈ CNY 629bn (est. at 30 Sep close). In this project: 68k forum posts, 149 filings, 6 spikes. A-share peers: Foxconn Industrial Internet (FII), Zhongji Innolight, Eoptolink, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR."
+  "en_text": "China's leading domestic AI-chip designer (cloud training/inference), often called 'China's Nvidia'. Market cap ≈ CNY 629bn (est. at 30 Sep close). In this project: 68k forum posts, 149 filings, 6 spikes. A-share peers: Foxconn Industrial Internet (FII), Zhongji Innolight, Eoptolink, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR.",
+  "full_en": "Cambricon"
  },
  "601138": {
-  "en": "Foxconn Industrial Internet (FII)",
+  "en": "FII",
   "group_zh": "AI 硬件",
   "group_en": "AI hardware",
   "zh": "富士康旗下 A 股平台，全球最大的 AI 服务器 / GPU 模组代工商之一，英伟达核心供应商。市值约 1.16 万亿元（按 9/30 收盘价估算）。本项目数据：股吧 17.3 万帖、公告 114 条、异动 4 次。A 股同行：寒武纪、中际旭创、新易盛、胜宏科技、海光信息、天孚通信、沪电股份；美股映射：NVDA、AMD、AVGO、LITE、COHR。",
-  "en_text": "Foxconn's A-share arm; one of the world's largest AI-server / GPU-module makers, a core Nvidia supplier. Market cap ≈ CNY 1,156bn (est. at 30 Sep close). In this project: 173k forum posts, 114 filings, 4 spikes. A-share peers: Cambricon, Zhongji Innolight, Eoptolink, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR."
+  "en_text": "Foxconn's A-share arm; one of the world's largest AI-server / GPU-module makers, a core Nvidia supplier. Market cap ≈ CNY 1,156bn (est. at 30 Sep close). In this project: 173k forum posts, 114 filings, 4 spikes. A-share peers: Cambricon, Zhongji Innolight, Eoptolink, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR.",
+  "full_en": "Foxconn Industrial Internet (FII)"
  },
  "300308": {
-  "en": "Zhongji Innolight",
+  "en": "Innolight",
   "group_zh": "AI 硬件",
   "group_en": "AI hardware",
   "zh": "全球光模块出货第一（800G/1.6T），AI 数据中心光互联龙头，2026 年 7 月港股上市。市值约 8,974 亿元（按 9/30 收盘价估算）。本项目数据：股吧 21.3 万帖、公告 225 条、异动 9 次。A 股同行：寒武纪、工业富联、新易盛、胜宏科技、海光信息、天孚通信、沪电股份；美股映射：NVDA、AMD、AVGO、LITE、COHR。",
-  "en_text": "World No.1 optical-transceiver maker (800G/1.6T) for AI data centres; listed in Hong Kong in July 2026. Market cap ≈ CNY 897bn (est. at 30 Sep close). In this project: 213k forum posts, 225 filings, 9 spikes. A-share peers: Cambricon, Foxconn Industrial Internet (FII), Eoptolink, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR."
+  "en_text": "World No.1 optical-transceiver maker (800G/1.6T) for AI data centres; listed in Hong Kong in July 2026. Market cap ≈ CNY 897bn (est. at 30 Sep close). In this project: 213k forum posts, 225 filings, 9 spikes. A-share peers: Cambricon, Foxconn Industrial Internet (FII), Eoptolink, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR.",
+  "full_en": "Zhongji Innolight"
  },
  "300502": {
   "en": "Eoptolink",
   "group_zh": "AI 硬件",
   "group_en": "AI hardware",
   "zh": "全球前三的高速光模块厂商，与中际旭创、天孚通信并称“易中天”。市值约 3,863 亿元（按 9/30 收盘价估算）。本项目数据：股吧 13.7 万帖、公告 121 条、异动 7 次。A 股同行：寒武纪、工业富联、中际旭创、胜宏科技、海光信息、天孚通信、沪电股份；美股映射：NVDA、AMD、AVGO、LITE、COHR。",
-  "en_text": "A global top-3 high-speed optical-module maker; one of the 'optical trio' with Innolight and TFC. Market cap ≈ CNY 386bn (est. at 30 Sep close). In this project: 137k forum posts, 121 filings, 7 spikes. A-share peers: Cambricon, Foxconn Industrial Internet (FII), Zhongji Innolight, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR."
+  "en_text": "A global top-3 high-speed optical-module maker; one of the 'optical trio' with Innolight and TFC. Market cap ≈ CNY 386bn (est. at 30 Sep close). In this project: 137k forum posts, 121 filings, 7 spikes. A-share peers: Cambricon, Foxconn Industrial Internet (FII), Zhongji Innolight, Victory Giant Technology, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR.",
+  "full_en": "Eoptolink"
  },
  "300476": {
-  "en": "Victory Giant Technology",
+  "en": "Victory Giant",
   "group_zh": "AI 硬件",
   "group_en": "AI hardware",
   "zh": "AI 服务器 PCB / HDI 板龙头，英伟达 GPU 板卡重要供应商。市值约 1,830 亿元（按 9/30 收盘价估算）。本项目数据：股吧 9.6 万帖、公告 184 条、异动 6 次。A 股同行：寒武纪、工业富联、中际旭创、新易盛、海光信息、天孚通信、沪电股份；美股映射：NVDA、AMD、AVGO、LITE、COHR。",
-  "en_text": "Leading AI-server PCB / HDI board maker and an important Nvidia GPU-board supplier. Market cap ≈ CNY 183bn (est. at 30 Sep close). In this project: 96k forum posts, 184 filings, 6 spikes. A-share peers: Cambricon, Foxconn Industrial Internet (FII), Zhongji Innolight, Eoptolink, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR."
+  "en_text": "Leading AI-server PCB / HDI board maker and an important Nvidia GPU-board supplier. Market cap ≈ CNY 183bn (est. at 30 Sep close). In this project: 96k forum posts, 184 filings, 6 spikes. A-share peers: Cambricon, Foxconn Industrial Internet (FII), Zhongji Innolight, Eoptolink, Hygon, TFC Optical, WUS PCB. US read-through: NVDA, AMD, AVGO, LITE, COHR.",
+  "full_en": "Victory Giant Technology"
  },
  "601127": {
   "en": "Seres",
   "group_zh": "汽车",
   "group_en": "Autos / EV",
   "zh": "与华为合作的问界（AITO）品牌整车厂，2025 年 11 月港股上市，2026 年与华为合作模式调整。市值约 817 亿元（按 9/30 收盘价估算）。本项目数据：股吧 13.6 万帖、公告 220 条、异动 8 次。A 股同行：江淮汽车、广汽集团、比亚迪、长城汽车、长安汽车；美股映射：TSLA。",
-  "en_text": "Maker of AITO EVs co-developed with Huawei; listed in Hong Kong Nov 2025; partnership restructured in 2026. Market cap ≈ CNY 82bn (est. at 30 Sep close). In this project: 136k forum posts, 220 filings, 8 spikes. A-share peers: JAC Motors, GAC Group, BYD, Great Wall, Changan. US read-through: TSLA."
+  "en_text": "Maker of AITO EVs co-developed with Huawei; listed in Hong Kong Nov 2025; partnership restructured in 2026. Market cap ≈ CNY 82bn (est. at 30 Sep close). In this project: 136k forum posts, 220 filings, 8 spikes. A-share peers: JAC Motors, GAC Group, BYD, Great Wall, Changan. US read-through: TSLA.",
+  "full_en": "Seres"
  },
  "600418": {
   "en": "JAC Motors",
   "group_zh": "汽车",
   "group_en": "Autos / EV",
   "zh": "安徽国企整车厂，为华为鸿蒙智行代工超豪华品牌尊界（Maextro）。市值约 626 亿元（按 9/30 收盘价估算）。本项目数据：股吧 5.3 万帖、公告 134 条、异动 10 次。A 股同行：赛力斯、广汽集团、比亚迪、长城汽车、长安汽车；美股映射：TSLA。",
-  "en_text": "Anhui state-owned carmaker; builds Huawei HIMA's ultra-luxury Maextro brand. Market cap ≈ CNY 63bn (est. at 30 Sep close). In this project: 53k forum posts, 134 filings, 10 spikes. A-share peers: Seres, GAC Group, BYD, Great Wall, Changan. US read-through: TSLA."
+  "en_text": "Anhui state-owned carmaker; builds Huawei HIMA's ultra-luxury Maextro brand. Market cap ≈ CNY 63bn (est. at 30 Sep close). In this project: 53k forum posts, 134 filings, 10 spikes. A-share peers: Seres, GAC Group, BYD, Great Wall, Changan. US read-through: TSLA.",
+  "full_en": "JAC Motors"
  },
  "601238": {
   "en": "GAC Group",
   "group_zh": "汽车",
   "group_en": "Autos / EV",
   "zh": "广州国企汽车集团（埃安、广汽丰田/本田），2026 年 9 月拟收购一汽丰田 50% 股权。市值约 595 亿元（按 9/30 收盘价估算）。本项目数据：股吧 3.6 万帖、公告 166 条、异动 7 次。A 股同行：赛力斯、江淮汽车、比亚迪、长城汽车、长安汽车；美股映射：TSLA。",
-  "en_text": "Guangzhou state-owned car group (Aion, GAC Toyota/Honda); agreed in Sep 2026 to buy 50% of FAW Toyota. Market cap ≈ CNY 60bn (est. at 30 Sep close). In this project: 36k forum posts, 166 filings, 7 spikes. A-share peers: Seres, JAC Motors, BYD, Great Wall, Changan. US read-through: TSLA."
+  "en_text": "Guangzhou state-owned car group (Aion, GAC Toyota/Honda); agreed in Sep 2026 to buy 50% of FAW Toyota. Market cap ≈ CNY 60bn (est. at 30 Sep close). In this project: 36k forum posts, 166 filings, 7 spikes. A-share peers: Seres, JAC Motors, BYD, Great Wall, Changan. US read-through: TSLA.",
+  "full_en": "GAC Group"
  },
  "002074": {
-  "en": "Gotion High-Tech",
+  "en": "Gotion",
   "group_zh": "动力电池",
   "group_en": "EV batteries",
   "zh": "国内前五的动力电池企业，大众汽车为第一大股东，布局固态电池。市值约 535 亿元（按 9/30 收盘价估算）。本项目数据：股吧 3.8 万帖、公告 174 条、异动 5 次。A 股同行：宁德时代、亿纬锂能、恩捷股份；美股映射：TSLA。",
-  "en_text": "A top-5 Chinese EV-battery maker; Volkswagen is the largest shareholder; developing solid-state cells. Market cap ≈ CNY 54bn (est. at 30 Sep close). In this project: 38k forum posts, 174 filings, 5 spikes. A-share peers: CATL, EVE Energy, SEMCORP. US read-through: TSLA."
+  "en_text": "A top-5 Chinese EV-battery maker; Volkswagen is the largest shareholder; developing solid-state cells. Market cap ≈ CNY 54bn (est. at 30 Sep close). In this project: 38k forum posts, 174 filings, 5 spikes. A-share peers: CATL, EVE Energy, SEMCORP. US read-through: TSLA.",
+  "full_en": "Gotion High-Tech"
  },
  "600150": {
-  "en": "China CSSC Holdings",
+  "en": "China CSSC",
   "group_zh": "造船",
   "group_en": "Shipbuilding",
   "zh": "全球最大造船集团中国船舶集团的核心上市平台（吸收合并中国重工后），订单排至 2029 年。市值约 2,944 亿元（按 9/30 收盘价估算）。本项目数据：股吧 7.4 万帖、公告 117 条、异动 6 次。A 股同行：中船防务、中船科技、亚星锚链；美股映射：无。",
-  "en_text": "Listed flagship of CSSC, the world's largest shipbuilder (after absorbing CSIC); order book to 2029. Market cap ≈ CNY 294bn (est. at 30 Sep close). In this project: 74k forum posts, 117 filings, 6 spikes. A-share peers: CSSC Offshore, CSSC Sci-Tech, Asian Star. US read-through: none."
+  "en_text": "Listed flagship of CSSC, the world's largest shipbuilder (after absorbing CSIC); order book to 2029. Market cap ≈ CNY 294bn (est. at 30 Sep close). In this project: 74k forum posts, 117 filings, 6 spikes. A-share peers: CSSC Offshore, CSSC Sci-Tech, Asian Star. US read-through: none.",
+  "full_en": "China CSSC Holdings"
  }
 }
