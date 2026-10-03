@@ -42,6 +42,7 @@ GUBACHECK_BACKEND=live python3 run_eval.py --arm=agent   --workers=4
 GUBACHECK_BACKEND=live python3 run_eval.py --arm=routing --workers=4
 python3 -m pipeline.judge run rag           # filing judge with chunked RAG
 python3 -m pipeline.model_compare          # every live model x arm: accuracy, cost, paired test vs the reference
+python3 -m pipeline.model_compare SPK-300308-20260728 --models=deepseek/deepseek-v4.1-flash,anthropic/claude-haiku-4.5   # one spike, one run per model
 ```
 
 ## Rebuild from raw data
