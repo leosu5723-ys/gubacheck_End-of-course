@@ -184,6 +184,68 @@ with top[0]:
     st.markdown('<div class="gc-hero"><div><div class="gc-logo">Guba<span>Check</span></div>'
                 '<div class="gc-sub">%s</div></div></div>' % L["tagline"], unsafe_allow_html=True)
 
+@st.cache_data(show_spinner=False)
+def data_sources():
+    """Latest timestamp and size of every data source the tools read (frozen snapshot)."""
+    def newest(rows, key):
+        v = [str(r[key]) for r in rows if r.get(key)]
+        return max(v) if v else None
+    ds = store.load("daily_stats")
+    posts_days = [r["date"] for v in ds.values() for r in v]
+    n_posts = sum(r["posts"] for v in ds.values() for r in v)
+    arts = store.load("articles")
+    pr = store.load("prices")
+    us = store.load("us_prices")
+    ix = store.load("indices")
+    anns = store.load("announcements")
+    tl = store.load("toplist")
+    tl = tl.get("rows", []) if isinstance(tl, dict) else tl
+    irm = store.load("irm")
+    jud = store.load("judgements")
+    return [
+        ("💬", "股吧帖子（东方财富）", "Forum posts (Eastmoney Guba)",
+         "%s · %.1f 万帖" % (max(posts_days), n_posts / 1e4), "%s (%.2fM posts, 10 stocks)" % (max(posts_days), n_posts / 1e6)),
+        ("📰", "股吧资讯文章", "Forum news articles", "%s · %d 篇" % (newest(arts, "time")[:16], len(arts)),
+         "%s (%d)" % (newest(arts, "time")[:16], len(arts))),
+        ("📈", "A 股日线（AKShare）", "A-share daily bars (AKShare)",
+         "%s 收盘 · %d 只" % (max(b["date"] for v in pr.values() for b in v), len(pr)),
+         "%s close (%d stocks incl. peers)" % (max(b["date"] for v in pr.values() for b in v), len(pr))),
+        ("📊", "指数（沪深300 / 创业板指）", "Indices (CSI 300 / ChiNext)",
+         "%s 收盘" % max(v[-1]["date"] for v in ix.values()), "%s close" % max(v[-1]["date"] for v in ix.values())),
+        ("🌐", "美股同行（%s）" % "/".join(us), "US peers (%s)" % "/".join(us),
+         "%s 美东收盘" % max(b["date"] for v in us.values() for b in v), "%s US close" % max(b["date"] for v in us.values() for b in v)),
+        ("📄", "巨潮公告（CNINFO）", "Filings (CNINFO)", "%s · %d 条" % (newest(anns, "time")[:16], len(anns)),
+         "%s (%d)" % (newest(anns, "time")[:16], len(anns))),
+        ("🧾", "公告判断（LLM + RAG）", "Filing judgements (LLM + RAG)", "%d 条" % len(jud), "%d" % len(jud)),
+        ("💰", "龙虎榜", "Exchange top list", "%s · %d 条" % (newest(tl, "date"), len(tl)), "%s (%d)" % (newest(tl, "date"), len(tl))),
+        ("🎙️", "董秘问答", "Board-secretary Q&A",
+         ("%s · %d 条" % (newest(irm, "a_time")[:16], len(irm))) if irm else "⚠️ 未加载（0 条）",
+         ("%s (%d)" % (newest(irm, "a_time")[:16], len(irm))) if irm else "⚠️ not loaded (0)"),
+    ]
+
+
+def source_bar():
+    zh = ss.lang == "zh"
+    chips = "".join('<div class="gcs-c"><div class="gcs-n">%s %s</div><div class="gcs-v">%s</div></div>'
+                    % (ic, nz if zh else ne, vz if zh else ve) for ic, nz, ne, vz, ve in data_sources())
+    st.html("""
+<style>
+ .gcs{border:1px solid #e6e8eb;border-radius:12px;padding:8px 12px;background:#fbfcfd;margin-bottom:4px}
+ .gcs-t{font-size:13px;margin-bottom:6px;color:#11181c} .gcs-t b{font-variant-numeric:tabular-nums;font-size:14px}
+ .gcs-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:6px 12px}
+ .gcs-c{font-size:12px;line-height:1.35} .gcs-n{color:#687076} .gcs-v{font-weight:600;color:#11181c}
+</style>
+<div class="gcs"><div class="gcs-t">🕒 %s <b id="gcs-clk">—</b> &nbsp;·&nbsp; %s</div><div class="gcs-g">%s</div></div>
+<script>
+ (function(){function t(){var e=document.getElementById('gcs-clk'); if(!e) return;
+   e.textContent=new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false,year:'numeric',month:'2-digit',
+   day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+  t(); if(window.__gcsClock) clearInterval(window.__gcsClock); window.__gcsClock=setInterval(t,1000);})();
+</script>""" % ("北京时间" if zh else "Beijing time", "已加载的数据（冻结快照）：" if zh else "Loaded data (frozen snapshot):", chips),
+            unsafe_allow_javascript=True)
+
+
+source_bar()
 if "_goto" in ss:                       # navigation requested by a button on the previous run
     ss["nav"] = ss.pop("_goto")
 ss.setdefault("hist", [])               # where the user has been: (page, stock, spike)
@@ -216,7 +278,8 @@ with nav_back:
         st.rerun()
 
 stocks = store.load("stocks")
-spikes = [s for s in store.load("spikes") if not s.get("synthetic")]
+spikes = sorted((s for s in store.load("spikes") if not s.get("synthetic")),
+                key=lambda s: (s["date"], s["spike_id"]))      # by date: spikes[-1] is the latest
 daily = store.load("daily_stats")
 
 
@@ -261,8 +324,9 @@ def page_radar():
     last_day = max(s["date"] for s in spikes)
     recent = [s for s in spikes if s["date"] >= (pd.Timestamp(last_day) - pd.Timedelta(days=30)).strftime("%Y-%m-%d")]
     k = st.columns(3)
+    latest = [x for x in spikes if x["date"] == last_day]
     for col, (v, lab) in zip(k, ((len(stocks), L["watched"]), (len(recent), L["spikes_m"]),
-                                 ("%s %s" % (stocks[spikes[-1]["stock"]]["name"], spikes[-1]["date"][5:]), L["last"]))):
+                                 ("%s %s" % ("、".join(stocks[x["stock"]]["name"] for x in latest), last_day[5:]), L["last"]))):
         col.markdown('<div class="gc-card"><div class="gc-kpi">%s</div><div class="gc-kpil">%s</div></div>' % (v, lab),
                      unsafe_allow_html=True)
     codes = list(stocks)

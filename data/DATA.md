@@ -15,7 +15,7 @@ All sources are public and free. Collection code is in `collectors/`; the snapsh
 | US peers | AKShare `stock_us_daily` (NVDA, AMD, AVGO, LITE, COHR, TSLA) | Full | daily close, return | 6 tickers |
 | Indices | CSI 300, ChiNext (Sina) | Full | daily close | 2 |
 | Exchange top list (龙虎榜) | AKShare `stock_lhb_detail_em`, month by month | Sep 2025–Sep 2026 | stock, date, net buy, turnover, reason | ~16k rows (15 for watched stocks) |
-| Board-secretary Q&A | AKShare `stock_irm_cninfo` (SZ), `stock_sns_sseinfo` (SH) | **recent ~3 months only** | question, answer, times | [n] |
+| Board-secretary Q&A | AKShare `stock_irm_cninfo` (SZ), `stock_sns_sseinfo` (SH) | **recent ~3 months only** | question, answer, times | 344 collected (4 SZ stocks, 2026-07-05 … 09-29); **0 in the evaluated snapshot** (see limitations) |
 | Filing text | CNINFO PDFs, `collectors/announcements.py` | Full | text excerpt; exact publication time when the link carries one | 634 texts |
 
 **Watchlist:** `data/watchlist.json` — 10 stocks (AI hardware, EV/auto, battery, shipbuilding); forum window 2025-10-03 to 2026-10-02; announcements and prices from 2025-08/09 to 2026-09-30; news archive from 2026-08-06.
@@ -43,12 +43,13 @@ The repository runs end to end from `data/snapshot/` without the raw files.
 
 - **Media proxy for cause B and F.** Free news feeds keep no history, so "media" is the forum's own article-type posts (`post_type` 20: reposted news and long articles) in the stock's bar, excluding market wrap-ups. Company-specific articles are counted per day for the whole year so B can use a z-score.
 - **Spike onset** is the first hour whose post count is abnormal against the same clock hour on previous days; posts after 15:00 belong to the next trading day.
-- **Hand labels of causes** (`evals/cause_labels.csv`): [who, when, how many, from `evals/cause_review.md` without tool verdicts].
+- **Hand labels of causes** (`evals/cause_labels.csv`): all 68 spikes, labelled by me on 2026-10-03/04 from `evals/cause_review.md`, which shows raw evidence without tool verdicts.
 
 ## Known limitations
 
 - **CNINFO times are date-only.** All announcements are treated as published after the close; trading is the next day at the open.
-- **News feeds keep no history.** Media coverage can only be evaluated for dates after daily collection started ([date]). Cases before that date can never reach `await_confirmation` through media, which the answer key reflects.
+- **News feeds keep no history.** `news.json` (320 items, collected from 2026-10) is kept for the record but read by no tool; media cause B uses the forum's article posts instead.
+- **Board-secretary Q&A missed the snapshot.** The IRM collector finished (23:57, 2026-10-03) after the snapshot was built (22:51), so the evaluated `irm.json` is empty. Only 7 spikes have a reply in their window (300308 ×3, 300502 ×3, 002074 ×1); a reply can make check A at most PARTIAL, never PASS, so no primary cause or accuracy figure can change, though the posterior and the order of later tests in live runs could. I did not rebuild the snapshot after the evaluation; the app's data bar shows it as not loaded. 201 of 344 collected answers are empty (`nan`) because the API returned the question before the reply text.
 - **Forum list pages include a few pinned and hot posts from other bars.** Posts whose bar_code names a different stock are dropped.
 - **Titles only.** Post bodies are not collected; sentiment is judged from titles.
 - **Test labels cover 2025-10 to 2026-01 only,** while training labels and spikes span the whole year.
