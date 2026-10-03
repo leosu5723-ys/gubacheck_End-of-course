@@ -8,3 +8,4 @@ tests/fixture/
 data/labels/labelled_excel_export.csv
 data/labels/llm_done/llm_check_300_labeled.csv
 results/bert_model/
+results/checkpoint_*.jsonl

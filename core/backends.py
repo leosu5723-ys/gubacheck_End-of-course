@@ -91,32 +91,65 @@ class LiveBackend:
 
 
 def _parse(text):
-    """Models sometimes wrap JSON in a code fence; strip it, then insist on JSON."""
-    t = text.strip()
+    """Models sometimes wrap JSON in a code fence or add prose; take the outermost JSON object."""
+    t = (text or "").strip()
     if t.startswith("```"):
         t = t.strip("`")
         t = t[t.find("{"):]
     try:
         return json.loads(t)
     except json.JSONDecodeError:
-        return {"thought": "unparseable reply: %s" % text[:200],
-                "final": {"decision": "no_trade", "trigger": "data_missing",
-                          "reason": "model did not return parseable JSON"}}
+        i, j = t.find("{"), t.rfind("}")
+        if i >= 0 and j > i:
+            try:
+                return json.loads(t[i:j + 1])
+            except json.JSONDecodeError:
+                pass
+    return {"thought": "unparseable reply: %s" % (text or "")[:200],
+            "final": {"primary": "H", "decision": "no_trade", "trigger": "data_missing",
+                      "reason": "model did not return parseable JSON"}}
 
 
-def _live_call(messages):
-    """THE ONLY FUNCTION THAT KNOWS A VENDOR. Returns (text, usage)."""
+def _live_call(messages, retries=4):
+    """THE ONLY FUNCTION THAT KNOWS A VENDOR. Returns (text, usage).
+
+    Retries with back-off on network errors, HTTP 429/5xx and EMPTY replies
+    (some reasoning models occasionally return content=null). Usage is summed
+    over attempts, so retries are paid for in the cost figures.
+    """
+    import time
+    import urllib.error
     if not config.API_KEY:
         raise SystemExit("Live backend needs OPENROUTER_API_KEY in the environment.")
-    body = json.dumps({"model": config.MODEL, "messages": messages,
-                       "temperature": 0}).encode()
-    req = urllib.request.Request(
-        config.BASE_URL.rstrip("/") + "/chat/completions", data=body,
-        headers={"Authorization": "Bearer " + config.API_KEY,
-                 "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=90) as r:
-        payload = json.load(r)
-    return payload["choices"][0]["message"]["content"], payload.get("usage", {})
+    body = json.dumps({"model": config.MODEL, "messages": messages, "temperature": 0,
+                       "max_tokens": 2000}).encode()
+    used = {"prompt_tokens": 0, "completion_tokens": 0}
+    last_err = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(
+                config.BASE_URL.rstrip("/") + "/chat/completions", data=body,
+                headers={"Authorization": "Bearer " + config.API_KEY, "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                payload = json.load(r)
+            u = payload.get("usage") or {}
+            used["prompt_tokens"] += u.get("prompt_tokens", 0)
+            used["completion_tokens"] += u.get("completion_tokens", 0)
+            if payload.get("error"):
+                raise RuntimeError(str(payload["error"])[:200])
+            msg = (payload.get("choices") or [{}])[0].get("message") or {}
+            text = msg.get("content")
+            if text and text.strip():
+                return text, used
+            last_err = "empty reply"
+        except urllib.error.HTTPError as e:
+            last_err = "HTTP %s" % e.code
+            if e.code not in (408, 429, 500, 502, 503, 504):
+                raise
+        except Exception as e:                # timeouts, connection resets, provider errors
+            last_err = str(e)[:200]
+        time.sleep(3 * (attempt + 1))
+    raise RuntimeError("live call failed after %d attempts: %s" % (retries, last_err))
 
 
 def make_backend(case_id, system_prompt="", moves=None, arm="agent"):
