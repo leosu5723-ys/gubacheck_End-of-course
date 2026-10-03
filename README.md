@@ -13,7 +13,7 @@ A local Chinese RoBERTa reads ~1 million Eastmoney forum titles. A z-score engin
 
 ## Run it (no key, no network)
 
-Python 3.9+. The evaluation commands use the standard library only.
+Python 3.9+. These commands use the standard library only — no `pip install` needed.
 
 ```bash
 python3 run_eval.py --arm=keyword          # attribution, rule-based clue scorer (scripted)
@@ -24,9 +24,10 @@ python3 demo_failures.py                   # the two reproduced failures
 python3 -m unittest discover tests         # unit tests
 ```
 
-Front end (Chinese / English):
+Front end (Chinese / English) — **Python 3.11+** (tested on 3.13; `akshare` and current Streamlit need it):
 
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 ```

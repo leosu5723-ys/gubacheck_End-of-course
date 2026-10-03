@@ -10,3 +10,4 @@ data/labels/llm_done/llm_check_300_labeled.csv
 results/bert_model/
 results/checkpoint_*.jsonl
 results/failed_live_text_json/checkpoint_*
+.idea/
