@@ -6,7 +6,7 @@
 
 **Me: a retail investor with a full-time job** who follows ten A-share stocks (AI hardware, EVs, batteries, shipbuilding) on a phone, ten minutes after the close. When the Eastmoney forum (Guba) of one of my stocks suddenly fills with posts, I cannot tell in ten minutes whether it is company news, a rumour, the whole sector, last night's Nasdaq, the market, a policy headline or hot money. Chasing the crowd without knowing which is my most expensive habit.
 
-**What changes once GubaCheck works:** I open one page per spike. It tells me the most likely cause, the evidence and its timing, and what happened, on average, after earlier spikes with the same cause. Buying is not the product; a gated paper-order entry is kept for later.
+**What changes once GubaCheck works:** I open one page per spike. It tells me the most likely cause, the evidence and its timing, and what happened, on average, after earlier spikes with the same cause. Buying is not the product; the gated paper-order tool stays in the code (guardrail-tested) but is not in the app.
 
 **The pain in numbers:** ten stocks, ~1.02 million own-bar posts in a year (≈ 2,800 a day); 68 spikes in eleven months (≈ 6 a month); checking one by hand across filings, peers, US prices, indices and news took me [Z] minutes.
 
@@ -24,7 +24,7 @@
 
 **Input:** a spike = a trading day whose own-bar post count is abnormal for that stock (log-posts z ≥ 2 against its previous 120 trading days, first day of an episode). Example `SPK-688256-20260203`.
 
-**Output:** an attribution report (page 2 of the app)
+**Output:** an attribution report (the AI investigation page of the app), followed by this stock's earlier spikes with the same cause (D+1 … D+20 returns table) and a suggestion (rule-based, or written by the model with RAG over the company's filings)
 
 ```
 SPK-688256-20260203  寒武纪  posts 2,249 (z 5.0), bullish 21% (z −1.8), onset 2026-02-03 09:00
@@ -40,12 +40,12 @@ history of H        D+1 −0.7% · D+5 −1.6% · D+20 −2.0% excess vs CSI 300
  DATA (frozen snapshot)            MODELS (local + rented)              ATTRIBUTION AGENT                      OUTPUT
  ┌──────────────────────┐   ┌──────────────────────────────┐   ┌────────────────────────────────────┐   ┌───────────────────┐
  │ 1.02M forum titles   ├──►│ RoBERTa (fine-tuned, local)  │   │ get_spike                          │   │ Streamlit UI      │
- │ CNINFO filings (text)├──►│  bull/bear/neutral per post  ├──►│ score_causes  (LLM raw 0-10, A-G)  │   │  watchlist        │
- │ prices: 10 + 12 peers│   │ z-score engine (code)        │   │   → code: priors                   ├──►│  attribution      │
- │ US peers, indices    │   │  spikes, onset hour          │   │ loop: check_A … check_G            │   │  evaluation       │
- │ top list (龙虎榜)     │   │ filing judge: LLM + chunked  │   │   → code: verdict, posterior, STOP │   │  paper (reserved) │
- │ article posts        │   │  RAG over own filings        │   │ revise_scores (LLM, agent arm only)│   │ cause backtest    │
- └──────────────────────┘   └──────────────────────────────┘   │ GUARDS: step cap, budget, de-dup,  │   │  D+1 … D+20       │
+ │ CNINFO filings (text)├──►│  bull/bear/neutral per post  ├──►│ score_causes  (LLM raw 0-10, A-G)  │   │  radar, stock     │
+ │ prices: 10 + 12 peers│   │ z-score engine (code)        │   │   → code: priors                   ├──►│  investigation    │
+ │ US peers, indices    │   │  spikes, onset hour          │   │ loop: check_A … check_G            │   │  same-cause table │
+ │ top list (龙虎榜)     │   │ filing judge: LLM + chunked  │   │   → code: verdict, posterior, STOP │   │  suggestion (+RAG)│
+ │ article posts        │   │  RAG over own filings        │   │ revise_scores (LLM, agent arm only)│   │ results/ + EVALS  │
+ └──────────────────────┘   └──────────────────────────────┘   │ GUARDS: step cap, budget, de-dup,  │   │  (evaluation)     │
    AKShare + forum API         bge-small-zh embeddings          │ stop rule, hostile text, gate      │   └───────────────────┘
                                DeepSeek V4.1 Flash (OpenRouter) └────────────────────────────────────┘
 ```

@@ -12,17 +12,17 @@ A user-facing product, not a data viewer. The user's path:
   调查 Investigate  the agent works step by step on screen: reads the posts,
                     extracts clues, scores causes, tests them one by one,
                     watches the probabilities move, stops, concludes; then
-                    the timeline and how this kind of spike behaved
-                    afterwards. The user can (a) choose the mode, (b) run
-                    the tests themselves ("investigate it yourself"),
-                    (c) agree / disagree with the conclusion (saved), and
-                    (d) send a paper order through a confirmation dialog.
-  模拟 Paper        the paper positions confirmed at the gate
-  表现 Performance  how well the system does (for evaluators)
+                    the timeline, this stock's earlier spikes with the same
+                    cause (D+N returns table) and a suggestion (rule-based,
+                    or written by the model with RAG over the company's
+                    filings). The user can (a) choose the mode, (b) run the
+                    tests themselves ("investigate it yourself"), and
+                    (c) agree / disagree with the conclusion (saved).
 
-Everything reads the frozen snapshot and results/: no key needed. With
-OPENROUTER_API_KEY set, "live AI" runs the real agent; otherwise saved
-agent runs are replayed.
+Evaluation results live in results/ and evals/EVALS.md, not in the app.
+Everything reads the frozen snapshot and results/: no key needed. With an
+OpenRouter key (⚙️ API, or OPENROUTER_API_KEY) the agent runs live;
+otherwise saved agent runs are replayed.
 =========================================================================
 """
 import csv
@@ -42,7 +42,7 @@ from plotly.subplots import make_subplots
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from core import causes, config, investigation, paper_broker, store  # noqa: E402
+from core import causes, config, investigation, store  # noqa: E402
 
 st.set_page_config(page_title="GubaCheck", page_icon="🔎", layout="wide", initial_sidebar_state="collapsed")
 
@@ -50,6 +50,7 @@ st.set_page_config(page_title="GubaCheck", page_icon="🔎", layout="wide", init
 st.markdown("""
 <style>
 :root { --up:#e5484d; --down:#30a46c; --ink:#11181c; --muted:#687076; --card:#ffffff; --line:#e6e8eb; --brand:#3e63dd; }
+header[data-testid="stHeader"] { display:none; }   /* Streamlit's toolbar covered the logo */
 .block-container { padding-top: 1.2rem; max-width: 1280px; }
 .gc-hero { display:flex; justify-content:space-between; align-items:center; margin-bottom:.6rem; }
 .gc-logo { font-size:1.6rem; font-weight:800; letter-spacing:-.02em; }
@@ -78,7 +79,7 @@ st.markdown("""
 # ---------------------------------------------------------------- text
 TXT = {
     "zh": {"tagline": "股吧突然炸了？让 AI 查清原因，并告诉你历史上这类情况之后怎么走",
-           "nav": ["🛰️ 今日雷达", "📈 个股", "🔍 AI 调查", "💼 模拟交易", "📊 系统表现"],
+           "nav": ["🛰️ 今日雷达", "📈 个股", "🔍 AI 调查"],
            "watched": "关注股票", "spikes_m": "近 30 天异动", "last": "最近一次异动", "open": "查看",
            "heat": "股吧热度", "bulls": "看多", "bears": "看空", "spike": "🔥 异动", "calm": "平静",
            "pick_spike": "选择一次异动", "investigate": "🔍 让 AI 调查这次异动", "mode": "调查模式",
@@ -89,16 +90,13 @@ TXT = {
            "stop": "停止调查", "concl": "调查结论", "conf": "可信度", "timeline": "时间线",
            "history": "历史上同类异动之后（相对沪深300超额收益）", "agree": "你同意这个结论吗？",
            "yes": "👍 同意", "no": "👎 不同意", "your_cause": "你认为的原因", "thanks": "已记录你的反馈，谢谢！",
-           "buy": "💼 模拟买入", "confirm": "确认模拟下单", "cancel": "取消", "evidence": "需要一份官方公告作为依据",
-           "no_filing": "这次异动附近没有可作依据的官方公告，模拟下单不可用（这是有意的安全设计）。",
            "manual_hint": "点下面的按钮亲自检验一个原因。可能性会实时更新；满足停止条件时系统会提示你。",
            "stop_ok": "✅ 已满足停止条件：已有原因通过检验，且剩余未检验原因合计可能性 < 20%",
            "stop_cap": "⏹️ 已检验 5 项，达到上限", "reset": "重新开始", "n_small": "样本少于 5，仅供参考",
            "live": "实时 AI", "replay": "回放已保存的 AI 调查", "no_key": "未设置 API key：回放已保存的调查过程",
-           "positions": "模拟持仓", "empty": "还没有模拟持仓。在调查结论页可以模拟买入。",
-           "perf_note": "以下指标都来自 results/ 中的实测文件。", "back": "← 返回"},
+           "back": "← 返回"},
     "en": {"tagline": "Forum exploding? Let the AI find out why — and see what happened after similar spikes",
-           "nav": ["🛰️ Radar", "📈 Stock", "🔍 AI investigation", "💼 Paper trading", "📊 Performance"],
+           "nav": ["🛰️ Radar", "📈 Stock", "🔍 AI investigation"],
            "watched": "Watched stocks", "spikes_m": "Spikes, last 30 days", "last": "Latest spike", "open": "Open",
            "heat": "Forum heat", "bulls": "Bullish", "bears": "Bearish", "spike": "🔥 Spike", "calm": "Calm",
            "pick_spike": "Pick a spike", "investigate": "🔍 Let the AI investigate", "mode": "Mode",
@@ -109,14 +107,11 @@ TXT = {
            "stop": "Stop", "concl": "Conclusion", "conf": "Confidence", "timeline": "Timeline",
            "history": "After similar spikes (excess return vs CSI 300)", "agree": "Do you agree?",
            "yes": "👍 Agree", "no": "👎 Disagree", "your_cause": "Your cause", "thanks": "Feedback saved — thank you!",
-           "buy": "💼 Paper buy", "confirm": "Confirm paper order", "cancel": "Cancel", "evidence": "Needs an official filing as evidence",
-           "no_filing": "No official filing near this spike can back an order; paper buying is disabled (by design).",
            "manual_hint": "Click a cause to test it yourself. Likelihoods update live; you'll be told when the stop rule holds.",
            "stop_ok": "✅ Stop rule met: a cause passed and untested causes total < 20%",
            "stop_cap": "⏹️ 5 tests done: the cap", "reset": "Start over", "n_small": "fewer than 5 cases — indicative only",
            "live": "Live AI", "replay": "Replay a saved AI investigation", "no_key": "No API key: replaying a saved investigation",
-           "positions": "Paper positions", "empty": "No paper positions yet. You can paper-buy from a conclusion.",
-           "perf_note": "Every number below comes from a measured file in results/.", "back": "← Back"},
+           "back": "← Back"},
 }
 CAUSE = {"zh": {"A": ("公司官方", "📢"), "B": ("媒体/传闻", "📰"), "C": ("板块联动", "🧩"), "D": ("海外映射", "🌎"),
                 "E": ("大盘行情", "📉"), "F": ("政策/宏观", "🏛️"), "G": ("资金/交易结构", "💰"), "H": ("无法解释", "❓")},
@@ -191,7 +186,7 @@ with top[0]:
 
 if "_goto" in ss:                       # navigation requested by a button on the previous run
     ss["nav"] = ss.pop("_goto")
-page = st.radio(" ", range(5), horizontal=True, format_func=lambda i: L["nav"][i],
+page = st.radio(" ", range(3), horizontal=True, format_func=lambda i: L["nav"][i],
                 label_visibility="collapsed", key="nav")
 
 stocks = store.load("stocks")
@@ -540,23 +535,6 @@ def save_feedback(sid, agree, cause, concluded):
                              "time": datetime.now().isoformat(timespec="seconds")}, ensure_ascii=False) + "\n")
 
 
-@st.dialog("💼 模拟下单 / Paper order")
-def order_dialog(s, filing):
-    st.write("**%s %s**" % (stocks[s["stock"]]["name"], s["stock"]))
-    st.write("%s：%s（%s）" % (L["evidence"], filing["title"], filing["time"][:16]))
-    st.caption("人工确认 gate：只有你点确认才会下单。/ Human gate: nothing happens until you confirm.")
-    c1, c2 = st.columns(2)
-    if c1.button(L["confirm"], type="primary", width="stretch"):
-        fill = paper_broker.simulate_at(s["stock"], filing["time"])
-        fill.update(spike_id=s["spike_id"], evidence_id=filing["ann_id"], name=stocks[s["stock"]]["name"])
-        with open(os.path.join(ROOT, "results", "paper_ledger.jsonl"), "a", encoding="utf-8") as fh:
-            fh.write(json.dumps(fill, ensure_ascii=False) + "\n")
-        st.success("已提交 / submitted: %s" % fill.get("status"))
-        st.json(fill)
-    if c2.button(L["cancel"], width="stretch"):
-        st.rerun()
-
-
 def conclusion_block(s, primary, posterior, outs):
     conf = posterior.get(primary, 0) if primary != "H" else 1 - max(posterior.values() or [0])
     gold = gold_labels().get(s["spike_id"])
@@ -577,14 +555,6 @@ def conclusion_block(s, primary, posterior, outs):
             if st.button("OK", key="fb_ok"):
                 save_feedback(s["spike_id"], False, pick, primary)
                 st.toast(L["thanks"])
-        filings = [a for a in store.load("announcements") if a["stock"] == s["stock"] and not a["procedural"]
-                   and a["time"][:10] <= s["date"] and a["time"][:10] >= (pd.Timestamp(s["date"]) - pd.Timedelta(days=3)).strftime("%Y-%m-%d")
-                   and a["type"] not in config.NEVER_BULLISH_TYPES]
-        if filings:
-            if st.button(L["buy"], width="stretch"):
-                order_dialog(s, filings[-1])
-        else:
-            st.caption(L["no_filing"])
     with c2:
         same, allc = history_table(s, primary)
         if ss.api.get("key"):
@@ -805,90 +775,4 @@ def manual_mode(s, top):
         st.caption("未检验原因合计可能性 / untested mass: %.0f%%" % (100 * inv.untested_mass()))
 
 
-# ================================================================ PAPER
-def page_paper():
-    p = os.path.join(ROOT, "results", "paper_ledger.jsonl")
-    rows = [json.loads(l) for l in open(p, encoding="utf-8")] if os.path.exists(p) else []
-    st.markdown("#### " + L["positions"])
-    if not rows:
-        st.info(L["empty"])
-        return
-    for r in rows[::-1]:
-        st.markdown('<div class="gc-card"><b>%s %s</b> · %s<div class="gc-gauge">entry %s @ %s · %s shares · %s</div></div>'
-                    % (r.get("name", ""), r.get("code", ""), r.get("status"), r.get("entry_date"), r.get("entry_price"),
-                       r.get("shares"), ("return %s%%" % r.get("return_pct")) if r.get("return_pct") is not None else r.get("reason", "")),
-                    unsafe_allow_html=True)
-
-
-# ================================================================ PERFORMANCE
-def page_perf():
-    st.caption(L["perf_note"])
-    runs = []
-    for f in sorted(glob.glob(os.path.join(ROOT, "results", "results_*.json"))):
-        d = json.load(open(f, encoding="utf-8"))
-        if d.get("summary", {}).get("arm") and d["summary"].get("macro_f1") is not None:
-            runs.append(d["summary"])
-    if runs:
-        df = pd.DataFrame(runs)
-        c1, c2 = st.columns(2)
-        with c1:
-            fig = go.Figure(go.Bar(x=df["arm"], y=df["macro_f1"], marker_color="#3e63dd",
-                                   text=["%.2f" % v for v in df["macro_f1"]], textposition="outside"))
-            fig.add_hline(y=runs[0]["majority_baseline_macro_f1"], line_dash="dash",
-                          annotation_text="always-%s" % runs[0]["majority_class"])
-            fig.update_layout(title="Attribution macro-F1", height=320, plot_bgcolor="white", margin=dict(t=40))
-            st.plotly_chart(fig, width="stretch")
-        with c2:
-            fig = go.Figure(go.Bar(x=df["arm"], y=df["mean_cause_checks"], marker_color="#8e4ec6",
-                                   text=["%.1f" % v for v in df["mean_cause_checks"]], textposition="outside"))
-            fig.update_layout(title="Cause tests per spike", height=320, plot_bgcolor="white", margin=dict(t=40))
-            st.plotly_chart(fig, width="stretch")
-    j = os.path.join(ROOT, "results", "judge_eval.json")
-    s_ = os.path.join(ROOT, "results", "sentiment_eval.json")
-    c1, c2 = st.columns(2)
-    if os.path.exists(s_):
-        d = json.load(open(s_))["methods"]
-        fig = go.Figure(go.Bar(x=list(d), y=[v["macro_f1"] for v in d.values()], marker_color="#12a594",
-                               text=["%.2f" % v["macro_f1"] for v in d.values()], textposition="outside"))
-        fig.update_layout(title="Forum sentiment macro-F1", height=320, plot_bgcolor="white", margin=dict(t=40))
-        c1.plotly_chart(fig, width="stretch")
-    if os.path.exists(j):
-        d = json.load(open(j))["methods"]
-        fig = go.Figure(go.Bar(x=list(d), y=[v["batch2_macro_f1"] for v in d.values()], marker_color="#f76b15",
-                               text=["%.2f" % v["batch2_macro_f1"] for v in d.values()], textposition="outside"))
-        fig.update_layout(title="Filing judge macro-F1 (RAG ablation)", height=320, plot_bgcolor="white", margin=dict(t=40))
-        c2.plotly_chart(fig, width="stretch")
-    early_design_chart()
-    g = os.path.join(ROOT, "results", "guardrails.json")
-    if os.path.exists(g):
-        d = json.load(open(g))
-        st.markdown("**Guardrails %d / %d**" % (sum(r["passed"] for r in d), len(d)))
-        st.dataframe(pd.DataFrame([{"id": r["id"], "catches": r["catches"], "passed": "✅" if r["passed"] else "❌"} for r in d]),
-                     hide_index=True, width="stretch")
-
-
-def early_design_chart():
-    zh = ss.lang == "zh"
-    st.markdown("#### " + ("早期方案：出现官方利好公告就买入" if zh else "Earlier design: buy on the first bullish filing"))
-    b = os.path.join(ROOT, "results", "backtest_rag.json")
-    if os.path.exists(b):
-        d = json.load(open(b))["strategies"]
-        names = {"S0_naive_chase": "S0 异动后直接追" if zh else "S0 chase every spike",
-                 "S1_gubacheck": "S1 异动后等官方利好再买" if zh else "S1 spike, then first bullish filing",
-                 "S2_announcements_only": "S2 所有利好公告都买" if zh else "S2 every bullish filing"}
-        fig = go.Figure()
-        for k_, v in d.items():
-            hz = v["horizons"]
-            fig.add_trace(go.Bar(x=["D" + h for h in hz], y=[x["mean_excess_pct"] for x in hz.values()],
-                                 name="%s (n=%d)" % (names.get(k_, k_), v["filled"])))
-        fig.update_layout(barmode="group", height=320, plot_bgcolor="white", yaxis_title="%", xaxis_type="category",
-                          margin=dict(l=10, r=10, t=10, b=10), legend=dict(orientation="h", y=-0.25))
-        st.plotly_chart(fig, width="stretch")
-        st.caption("结论：在股吧狂热之后，等到官方利好再买入，平均反而跑输大盘（利好兑现）。这是产品从“买入信号”转向“异动归因”的原因。"
-                   if zh else "Finding: buying official good news after a forum frenzy underperformed on average — why the product "
-                   "moved from buy signals to attribution.")
-
-
-
-
-[page_radar, page_stock, page_investigate, page_paper, page_perf][page]()
+[page_radar, page_stock, page_investigate][page]()
