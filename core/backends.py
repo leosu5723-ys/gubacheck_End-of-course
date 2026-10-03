@@ -57,7 +57,7 @@ class ScriptedBackend:
         """`transcript` is ignored on purpose: a script does not react."""
         if self.i >= len(self.moves):
             return {"thought": "script exhausted",
-                    "final": {"decision": "flag_do_not_chase", "trigger": "data_missing",
+                    "final": {"decision": "no_trade", "trigger": "data_missing",
                               "reason": "scripted moves ended without a conclusion"}}
         move = self.moves[self.i]
         self.i += 1
@@ -95,7 +95,7 @@ def _parse(text):
         return json.loads(t)
     except json.JSONDecodeError:
         return {"thought": "unparseable reply: %s" % text[:200],
-                "final": {"decision": "flag_do_not_chase", "trigger": "data_missing",
+                "final": {"decision": "no_trade", "trigger": "data_missing",
                           "reason": "model did not return parseable JSON"}}
 
 

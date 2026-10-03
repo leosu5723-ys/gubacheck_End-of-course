@@ -1,0 +1,5196 @@
+{
+  "config": "backend=scripted (free, deterministic) | model=- | max_turns=10 | autonomy=confirm | data=/Users/yangsu/Desktop/6201 End-of-course/gubacheck/data/snapshot",
+  "prompt_version": "v2",
+  "summary": {
+    "trials": 104,
+    "passed": 104,
+    "pass_rate": 1.0,
+    "false_act_rate": 0.0,
+    "false_act_trials": "0 of 93",
+    "median_turns": 3.0,
+    "worst_turns": 8,
+    "hit_step_cap": 0,
+    "total_cost_usd": 0.262336,
+    "mean_cost_usd": 0.002522,
+    "confusion_expected_by_got": {
+      "paper_trade": {
+        "paper_trade": 11,
+        "no_trade": 0,
+        "other": 0
+      },
+      "no_trade": {
+        "paper_trade": 0,
+        "no_trade": 93,
+        "other": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "SPK-688256-20251022",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224781732": "neutral",
+          "1224781729": "neutral",
+          "1224781727": "neutral",
+          "1224781725": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
+        "case_id": "SPK-688256-20251022",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20251022"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2025-10-22",
+              "date_to": "2025-11-05"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781732"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781729"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781727"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781725"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 32610,
+        "tokens_out": 1050,
+        "cost_usd": 0.005522,
+        "seconds": 0.003,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20251022",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224781732": "neutral",
+          "1224781729": "neutral",
+          "1224781727": "neutral",
+          "1224781725": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
+        "case_id": "SPK-688256-20251022",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20251022"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2025-10-22",
+              "date_to": "2025-11-05"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781732"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781729"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781727"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781725"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 32610,
+        "tokens_out": 1050,
+        "cost_usd": 0.005522,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20251022",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224781732": "neutral",
+          "1224781729": "neutral",
+          "1224781727": "neutral",
+          "1224781725": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2025-10-22..2025-11-05",
+        "case_id": "SPK-688256-20251022",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20251022"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2025-10-22",
+              "date_to": "2025-11-05"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781732"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781729"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781727"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224781725"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 32610,
+        "tokens_out": 1050,
+        "cost_usd": 0.005522,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260108",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+        "case_id": "SPK-688256-20260108",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260108"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-01-08",
+              "date_to": "2026-01-22"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6968,
+        "tokens_out": 450,
+        "cost_usd": 0.001315,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260108",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+        "case_id": "SPK-688256-20260108",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260108"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-01-08",
+              "date_to": "2026-01-22"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6968,
+        "tokens_out": 450,
+        "cost_usd": 0.001315,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260108",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-01-08..2026-01-22",
+        "case_id": "SPK-688256-20260108",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260108"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-01-08",
+              "date_to": "2026-01-22"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6968,
+        "tokens_out": 450,
+        "cost_usd": 0.001315,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260226",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224988268": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12",
+        "case_id": "SPK-688256-20260226",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260226"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-02-26",
+              "date_to": "2026-03-12"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224988268"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10998,
+        "tokens_out": 600,
+        "cost_usd": 0.00201,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260226",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224988268": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12",
+        "case_id": "SPK-688256-20260226",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260226"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-02-26",
+              "date_to": "2026-03-12"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224988268"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10998,
+        "tokens_out": 600,
+        "cost_usd": 0.00201,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260226",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224988268": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-26..2026-03-12",
+        "case_id": "SPK-688256-20260226",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260226"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-02-26",
+              "date_to": "2026-03-12"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224988268"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10998,
+        "tokens_out": 600,
+        "cost_usd": 0.00201,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260407",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225085814": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-04-07..2026-04-21",
+        "case_id": "SPK-688256-20260407",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260407"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-04-07",
+              "date_to": "2026-04-21"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225085814"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12151,
+        "tokens_out": 600,
+        "cost_usd": 0.002183,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260407",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225085814": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-04-07..2026-04-21",
+        "case_id": "SPK-688256-20260407",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260407"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-04-07",
+              "date_to": "2026-04-21"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225085814"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12151,
+        "tokens_out": 600,
+        "cost_usd": 0.002183,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260407",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225085814": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-04-07..2026-04-21",
+        "case_id": "SPK-688256-20260407",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260407"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-04-07",
+              "date_to": "2026-04-21"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225085814"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12151,
+        "tokens_out": 600,
+        "cost_usd": 0.002183,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260415",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-15..2026-04-29",
+        "case_id": "SPK-688256-20260415",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260415"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-04-15",
+              "date_to": "2026-04-29"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7051,
+        "tokens_out": 450,
+        "cost_usd": 0.001328,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260415",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-15..2026-04-29",
+        "case_id": "SPK-688256-20260415",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260415"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-04-15",
+              "date_to": "2026-04-29"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7051,
+        "tokens_out": 450,
+        "cost_usd": 0.001328,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260415",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-15..2026-04-29",
+        "case_id": "SPK-688256-20260415",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260415"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-04-15",
+              "date_to": "2026-04-29"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7051,
+        "tokens_out": 450,
+        "cost_usd": 0.001328,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260618",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225401954": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-06-18..2026-07-03",
+        "case_id": "SPK-688256-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260618"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-06-18",
+              "date_to": "2026-07-03"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225401954"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11981,
+        "tokens_out": 600,
+        "cost_usd": 0.002157,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260618",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225401954": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-06-18..2026-07-03",
+        "case_id": "SPK-688256-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260618"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-06-18",
+              "date_to": "2026-07-03"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225401954"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11981,
+        "tokens_out": 600,
+        "cost_usd": 0.002157,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260618",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225401954": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-06-18..2026-07-03",
+        "case_id": "SPK-688256-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260618"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-06-18",
+              "date_to": "2026-07-03"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225401954"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11981,
+        "tokens_out": 600,
+        "cost_usd": 0.002157,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260915",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-09-15..2026-09-30",
+        "case_id": "SPK-688256-20260915",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260915"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-09-15",
+              "date_to": "2026-09-30"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6983,
+        "tokens_out": 450,
+        "cost_usd": 0.001317,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260915",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-09-15..2026-09-30",
+        "case_id": "SPK-688256-20260915",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260915"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-09-15",
+              "date_to": "2026-09-30"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6983,
+        "tokens_out": 450,
+        "cost_usd": 0.001317,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-688256-20260915",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-09-15..2026-09-30",
+        "case_id": "SPK-688256-20260915",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-688256-20260915"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "688256",
+              "date_from": "2026-09-15",
+              "date_to": "2026-09-30"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6983,
+        "tokens_out": 450,
+        "cost_usd": 0.001317,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20251021",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1224761584",
+        "judgements": {
+          "1224721003": "neutral",
+          "1224761584": "bullish"
+        },
+        "reason": "First bullish filing 1224761584: 富士康工业互联网股份有限公司2025年第三季度报告",
+        "case_id": "SPK-601138-20251021",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20251021"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2025-10-21",
+              "date_to": "2025-11-04"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224721003"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224761584"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "601138",
+              "trigger_time": "2025-10-30 23:59:59",
+              "evidence_id": "1224761584"
+            }
+          }
+        ],
+        "turns": 5,
+        "tokens_in": 22459,
+        "tokens_out": 900,
+        "cost_usd": 0.003909,
+        "seconds": 0.003,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20251027",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1224761584",
+        "judgements": {
+          "1224761584": "bullish"
+        },
+        "reason": "First bullish filing 1224761584: 富士康工业互联网股份有限公司2025年第三季度报告",
+        "case_id": "SPK-601138-20251027",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20251027"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2025-10-27",
+              "date_to": "2025-11-10"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224761584"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "601138",
+              "trigger_time": "2025-10-30 23:59:59",
+              "evidence_id": "1224761584"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 17151,
+        "tokens_out": 750,
+        "cost_usd": 0.003023,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260414",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-14..2026-04-28",
+        "case_id": "SPK-601138-20260414",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260414"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-04-14",
+              "date_to": "2026-04-28"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6946,
+        "tokens_out": 450,
+        "cost_usd": 0.001312,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260414",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-14..2026-04-28",
+        "case_id": "SPK-601138-20260414",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260414"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-04-14",
+              "date_to": "2026-04-28"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6946,
+        "tokens_out": 450,
+        "cost_usd": 0.001312,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260414",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-14..2026-04-28",
+        "case_id": "SPK-601138-20260414",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260414"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-04-14",
+              "date_to": "2026-04-28"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6946,
+        "tokens_out": 450,
+        "cost_usd": 0.001312,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260422",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1225231598",
+        "judgements": {
+          "1225231656": "neutral",
+          "1225231598": "bullish"
+        },
+        "reason": "First bullish filing 1225231598: 富士康工业互联网股份有限公司2026年第一季度报告",
+        "case_id": "SPK-601138-20260422",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260422"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-04-22",
+              "date_to": "2026-05-11"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225231656"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225231598"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "601138",
+              "trigger_time": "2026-04-29 23:59:59",
+              "evidence_id": "1225231598"
+            }
+          }
+        ],
+        "turns": 5,
+        "tokens_in": 23378,
+        "tokens_out": 900,
+        "cost_usd": 0.004047,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260513",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-05-13..2026-05-27",
+        "case_id": "SPK-601138-20260513",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260513"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-05-13",
+              "date_to": "2026-05-27"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7055,
+        "tokens_out": 450,
+        "cost_usd": 0.001328,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260513",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-05-13..2026-05-27",
+        "case_id": "SPK-601138-20260513",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260513"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-05-13",
+              "date_to": "2026-05-27"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7055,
+        "tokens_out": 450,
+        "cost_usd": 0.001328,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260513",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-05-13..2026-05-27",
+        "case_id": "SPK-601138-20260513",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260513"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-05-13",
+              "date_to": "2026-05-27"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7055,
+        "tokens_out": 450,
+        "cost_usd": 0.001328,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260602",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-06-02..2026-06-16",
+        "case_id": "SPK-601138-20260602",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260602"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-06-02",
+              "date_to": "2026-06-16"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7190,
+        "tokens_out": 450,
+        "cost_usd": 0.001349,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260602",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-06-02..2026-06-16",
+        "case_id": "SPK-601138-20260602",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260602"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-06-02",
+              "date_to": "2026-06-16"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7190,
+        "tokens_out": 450,
+        "cost_usd": 0.001349,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260602",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-06-02..2026-06-16",
+        "case_id": "SPK-601138-20260602",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260602"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-06-02",
+              "date_to": "2026-06-16"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7190,
+        "tokens_out": 450,
+        "cost_usd": 0.001349,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260618",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-06-18..2026-07-03",
+        "case_id": "SPK-601138-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260618"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-06-18",
+              "date_to": "2026-07-03"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7345,
+        "tokens_out": 450,
+        "cost_usd": 0.001372,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260618",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-06-18..2026-07-03",
+        "case_id": "SPK-601138-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260618"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-06-18",
+              "date_to": "2026-07-03"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7345,
+        "tokens_out": 450,
+        "cost_usd": 0.001372,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260618",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-06-18..2026-07-03",
+        "case_id": "SPK-601138-20260618",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260618"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-06-18",
+              "date_to": "2026-07-03"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7345,
+        "tokens_out": 450,
+        "cost_usd": 0.001372,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260805",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225457504": "neutral",
+          "1225468088": "neutral",
+          "1225468066": "neutral"
+        },
+        "reason": "No bullish filing among 3 read in 2026-08-05..2026-08-19",
+        "case_id": "SPK-601138-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260805"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-08-05",
+              "date_to": "2026-08-19"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225457504"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225468088"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225468066"
+            }
+          }
+        ],
+        "turns": 5,
+        "tokens_in": 30020,
+        "tokens_out": 900,
+        "cost_usd": 0.005043,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260805",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225457504": "neutral",
+          "1225468088": "neutral",
+          "1225468066": "neutral"
+        },
+        "reason": "No bullish filing among 3 read in 2026-08-05..2026-08-19",
+        "case_id": "SPK-601138-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260805"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-08-05",
+              "date_to": "2026-08-19"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225457504"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225468088"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225468066"
+            }
+          }
+        ],
+        "turns": 5,
+        "tokens_in": 30020,
+        "tokens_out": 900,
+        "cost_usd": 0.005043,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601138-20260805",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225457504": "neutral",
+          "1225468088": "neutral",
+          "1225468066": "neutral"
+        },
+        "reason": "No bullish filing among 3 read in 2026-08-05..2026-08-19",
+        "case_id": "SPK-601138-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601138-20260805"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601138",
+              "date_from": "2026-08-05",
+              "date_to": "2026-08-19"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225457504"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225468088"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225468066"
+            }
+          }
+        ],
+        "turns": 5,
+        "tokens_in": 30020,
+        "tokens_out": 900,
+        "cost_usd": 0.005043,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20251021",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1224773075",
+        "judgements": {
+          "1224773075": "bullish"
+        },
+        "reason": "First bullish filing 1224773075: 2025年三季度报告",
+        "case_id": "SPK-300308-20251021",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20251021"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300308",
+              "date_from": "2025-10-21",
+              "date_to": "2025-11-04"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224773075"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "300308",
+              "trigger_time": "2025-10-31 23:59:59",
+              "evidence_id": "1224773075"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 13743,
+        "tokens_out": 750,
+        "cost_usd": 0.002511,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260115",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224938645": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-01-15..2026-01-29",
+        "case_id": "SPK-300308-20260115",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260115"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300308",
+              "date_from": "2026-01-15",
+              "date_to": "2026-01-29"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224938645"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12290,
+        "tokens_out": 600,
+        "cost_usd": 0.002204,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260115",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224938645": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-01-15..2026-01-29",
+        "case_id": "SPK-300308-20260115",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260115"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300308",
+              "date_from": "2026-01-15",
+              "date_to": "2026-01-29"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224938645"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12290,
+        "tokens_out": 600,
+        "cost_usd": 0.002204,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260115",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224938645": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-01-15..2026-01-29",
+        "case_id": "SPK-300308-20260115",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260115"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300308",
+              "date_from": "2026-01-15",
+              "date_to": "2026-01-29"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224938645"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12290,
+        "tokens_out": 600,
+        "cost_usd": 0.002204,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300308-20260408",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1225111941",
+        "judgements": {
+          "1225100461": "neutral",
+          "1225111941": "bullish"
+        },
+        "reason": "First bullish filing 1225111941: 2026年一季度报告",
+        "case_id": "SPK-300308-20260408",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300308-20260408"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300308",
+              "date_from": "2026-04-08",
+              "date_to": "2026-04-22"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225100461"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225111941"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "300308",
+              "trigger_time": "2026-04-17 23:59:59",
+              "evidence_id": "1225111941"
+            }
+          }
+        ],
+        "turns": 5,
+        "tokens_in": 23704,
+        "tokens_out": 900,
+        "cost_usd": 0.004096,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260130",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1224960617",
+        "judgements": {
+          "1224960617": "bullish"
+        },
+        "reason": "First bullish filing 1224960617: 2025年度业绩预告",
+        "case_id": "SPK-300502-20260130",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260130"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-01-30",
+              "date_to": "2026-02-13"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224960617"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "300502",
+              "trigger_time": "2026-01-30 20:42:11",
+              "evidence_id": "1224960617"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 13918,
+        "tokens_out": 750,
+        "cost_usd": 0.002538,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260305",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-03-05..2026-03-19",
+        "case_id": "SPK-300502-20260305",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260305"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-03-05",
+              "date_to": "2026-03-19"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6974,
+        "tokens_out": 450,
+        "cost_usd": 0.001316,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260305",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-03-05..2026-03-19",
+        "case_id": "SPK-300502-20260305",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260305"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-03-05",
+              "date_to": "2026-03-19"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6974,
+        "tokens_out": 450,
+        "cost_usd": 0.001316,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260305",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-03-05..2026-03-19",
+        "case_id": "SPK-300502-20260305",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260305"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-03-05",
+              "date_to": "2026-03-19"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6974,
+        "tokens_out": 450,
+        "cost_usd": 0.001316,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260410",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+        "case_id": "SPK-300502-20260410",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260410"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-04-10",
+              "date_to": "2026-04-24"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 8521,
+        "tokens_out": 450,
+        "cost_usd": 0.001548,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260410",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+        "case_id": "SPK-300502-20260410",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260410"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-04-10",
+              "date_to": "2026-04-24"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 8521,
+        "tokens_out": 450,
+        "cost_usd": 0.001548,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260410",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+        "case_id": "SPK-300502-20260410",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260410"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-04-10",
+              "date_to": "2026-04-24"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 8521,
+        "tokens_out": 450,
+        "cost_usd": 0.001548,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300502-20260416",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1225172615",
+        "judgements": {
+          "1225172625": "neutral",
+          "1225172624": "neutral",
+          "1225172620": "neutral",
+          "1225172617": "neutral",
+          "1225172615": "bullish"
+        },
+        "reason": "First bullish filing 1225172615: 关于“质量回报双提升”行动方案的进展公告",
+        "case_id": "SPK-300502-20260416",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300502-20260416"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300502",
+              "date_from": "2026-04-16",
+              "date_to": "2026-04-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225172625"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225172624"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225172620"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225172617"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225172615"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "300502",
+              "trigger_time": "2026-04-24 23:59:59",
+              "evidence_id": "1225172615"
+            }
+          }
+        ],
+        "turns": 8,
+        "tokens_in": 53833,
+        "tokens_out": 1350,
+        "cost_usd": 0.008885,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20251209",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2025-12-09..2025-12-23",
+        "case_id": "SPK-300476-20251209",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20251209"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2025-12-09",
+              "date_to": "2025-12-23"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6952,
+        "tokens_out": 450,
+        "cost_usd": 0.001313,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20251209",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2025-12-09..2025-12-23",
+        "case_id": "SPK-300476-20251209",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20251209"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2025-12-09",
+              "date_to": "2025-12-23"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6952,
+        "tokens_out": 450,
+        "cost_usd": 0.001313,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20251209",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2025-12-09..2025-12-23",
+        "case_id": "SPK-300476-20251209",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20251209"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2025-12-09",
+              "date_to": "2025-12-23"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 6952,
+        "tokens_out": 450,
+        "cost_usd": 0.001313,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260225",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224984563": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-25..2026-03-11",
+        "case_id": "SPK-300476-20260225",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260225"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-02-25",
+              "date_to": "2026-03-11"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224984563"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11991,
+        "tokens_out": 600,
+        "cost_usd": 0.002159,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260225",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224984563": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-25..2026-03-11",
+        "case_id": "SPK-300476-20260225",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260225"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-02-25",
+              "date_to": "2026-03-11"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224984563"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11991,
+        "tokens_out": 600,
+        "cost_usd": 0.002159,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260225",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224984563": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-02-25..2026-03-11",
+        "case_id": "SPK-300476-20260225",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260225"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-02-25",
+              "date_to": "2026-03-11"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224984563"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11991,
+        "tokens_out": 600,
+        "cost_usd": 0.002159,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260417",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225114862": "neutral",
+          "1225142558": "neutral",
+          "1225155524": "neutral",
+          "1225238227": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2026-04-17..2026-05-06",
+        "case_id": "SPK-300476-20260417",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260417"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-04-17",
+              "date_to": "2026-05-06"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225114862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225142558"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225155524"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225238227"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 39369,
+        "tokens_out": 1050,
+        "cost_usd": 0.006535,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260417",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225114862": "neutral",
+          "1225142558": "neutral",
+          "1225155524": "neutral",
+          "1225238227": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2026-04-17..2026-05-06",
+        "case_id": "SPK-300476-20260417",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260417"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-04-17",
+              "date_to": "2026-05-06"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225114862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225142558"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225155524"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225238227"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 39369,
+        "tokens_out": 1050,
+        "cost_usd": 0.006535,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260417",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225114862": "neutral",
+          "1225142558": "neutral",
+          "1225155524": "neutral",
+          "1225238227": "neutral"
+        },
+        "reason": "No bullish filing among 4 read in 2026-04-17..2026-05-06",
+        "case_id": "SPK-300476-20260417",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260417"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-04-17",
+              "date_to": "2026-05-06"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225114862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225142558"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225155524"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225238227"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 39369,
+        "tokens_out": 1050,
+        "cost_usd": 0.006535,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260522",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-05-22..2026-06-05",
+        "case_id": "SPK-300476-20260522",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260522"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-05-22",
+              "date_to": "2026-06-05"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7004,
+        "tokens_out": 450,
+        "cost_usd": 0.001321,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260522",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-05-22..2026-06-05",
+        "case_id": "SPK-300476-20260522",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260522"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-05-22",
+              "date_to": "2026-06-05"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7004,
+        "tokens_out": 450,
+        "cost_usd": 0.001321,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260522",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-05-22..2026-06-05",
+        "case_id": "SPK-300476-20260522",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260522"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-05-22",
+              "date_to": "2026-06-05"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7004,
+        "tokens_out": 450,
+        "cost_usd": 0.001321,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260805",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225464760": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-08-05..2026-08-19",
+        "case_id": "SPK-300476-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260805"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-08-05",
+              "date_to": "2026-08-19"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225464760"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11803,
+        "tokens_out": 600,
+        "cost_usd": 0.00213,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260805",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225464760": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-08-05..2026-08-19",
+        "case_id": "SPK-300476-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260805"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-08-05",
+              "date_to": "2026-08-19"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225464760"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11803,
+        "tokens_out": 600,
+        "cost_usd": 0.00213,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260805",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225464760": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2026-08-05..2026-08-19",
+        "case_id": "SPK-300476-20260805",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260805"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-08-05",
+              "date_to": "2026-08-19"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225464760"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11803,
+        "tokens_out": 600,
+        "cost_usd": 0.00213,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260921",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-09-21..2026-09-30",
+        "case_id": "SPK-300476-20260921",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260921"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-09-21",
+              "date_to": "2026-09-30"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7049,
+        "tokens_out": 450,
+        "cost_usd": 0.001327,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260921",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-09-21..2026-09-30",
+        "case_id": "SPK-300476-20260921",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260921"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-09-21",
+              "date_to": "2026-09-30"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7049,
+        "tokens_out": 450,
+        "cost_usd": 0.001327,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-300476-20260921",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-09-21..2026-09-30",
+        "case_id": "SPK-300476-20260921",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-300476-20260921"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "300476",
+              "date_from": "2026-09-21",
+              "date_to": "2026-09-30"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7049,
+        "tokens_out": 450,
+        "cost_usd": 0.001327,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601127-20260521",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1225329485",
+        "judgements": {
+          "1225329485": "bullish"
+        },
+        "reason": "First bullish filing 1225329485: 关于子公司增资扩股的进展公告",
+        "case_id": "SPK-601127-20260521",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601127-20260521"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601127",
+              "date_from": "2026-05-21",
+              "date_to": "2026-06-04"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225329485"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "601127",
+              "trigger_time": "2026-05-26 23:59:59",
+              "evidence_id": "1225329485"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 18581,
+        "tokens_out": 750,
+        "cost_usd": 0.003237,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251112",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224814154": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2025-11-12..2025-11-26",
+        "case_id": "SPK-600418-20251112",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251112"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2025-11-12",
+              "date_to": "2025-11-26"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224814154"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10971,
+        "tokens_out": 600,
+        "cost_usd": 0.002006,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251112",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224814154": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2025-11-12..2025-11-26",
+        "case_id": "SPK-600418-20251112",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251112"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2025-11-12",
+              "date_to": "2025-11-26"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224814154"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10971,
+        "tokens_out": 600,
+        "cost_usd": 0.002006,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251112",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224814154": "neutral"
+        },
+        "reason": "No bullish filing among 1 read in 2025-11-12..2025-11-26",
+        "case_id": "SPK-600418-20251112",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251112"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2025-11-12",
+              "date_to": "2025-11-26"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224814154"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10971,
+        "tokens_out": 600,
+        "cost_usd": 0.002006,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20251209",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1224857664",
+        "judgements": {
+          "1224857664": "bullish"
+        },
+        "reason": "First bullish filing 1224857664: 江淮汽车2025年11月产、销快报",
+        "case_id": "SPK-600418-20251209",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20251209"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2025-12-09",
+              "date_to": "2025-12-23"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224857664"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "600418",
+              "trigger_time": "2025-12-09 23:59:59",
+              "evidence_id": "1224857664"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 18009,
+        "tokens_out": 750,
+        "cost_usd": 0.003151,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260427",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225247486": "neutral",
+          "1225247349": "neutral",
+          "1225247344": "bearish",
+          "1225286365": "bearish"
+        },
+        "reason": "No bullish filing among 4 read in 2026-04-27..2026-05-14",
+        "case_id": "SPK-600418-20260427",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260427"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2026-04-27",
+              "date_to": "2026-05-14"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247486"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247349"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247344"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225286365"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 39797,
+        "tokens_out": 1050,
+        "cost_usd": 0.0066,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260427",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225247486": "neutral",
+          "1225247349": "neutral",
+          "1225247344": "bearish",
+          "1225286365": "bearish"
+        },
+        "reason": "No bullish filing among 4 read in 2026-04-27..2026-05-14",
+        "case_id": "SPK-600418-20260427",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260427"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2026-04-27",
+              "date_to": "2026-05-14"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247486"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247349"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247344"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225286365"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 39797,
+        "tokens_out": 1050,
+        "cost_usd": 0.0066,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260427",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225247486": "neutral",
+          "1225247349": "neutral",
+          "1225247344": "bearish",
+          "1225286365": "bearish"
+        },
+        "reason": "No bullish filing among 4 read in 2026-04-27..2026-05-14",
+        "case_id": "SPK-600418-20260427",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260427"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2026-04-27",
+              "date_to": "2026-05-14"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247486"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247349"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225247344"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225286365"
+            }
+          }
+        ],
+        "turns": 6,
+        "tokens_in": 39797,
+        "tokens_out": 1050,
+        "cost_usd": 0.0066,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260922",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225580522": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-09-22..2026-09-30",
+        "case_id": "SPK-600418-20260922",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260922"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2026-09-22",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225580522"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11998,
+        "tokens_out": 600,
+        "cost_usd": 0.00216,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260922",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225580522": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-09-22..2026-09-30",
+        "case_id": "SPK-600418-20260922",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260922"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2026-09-22",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225580522"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11998,
+        "tokens_out": 600,
+        "cost_usd": 0.00216,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600418-20260922",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225580522": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-09-22..2026-09-30",
+        "case_id": "SPK-600418-20260922",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600418-20260922"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600418",
+              "date_from": "2026-09-22",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225580522"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 11998,
+        "tokens_out": 600,
+        "cost_usd": 0.00216,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251014",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224733017": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2025-10-14..2025-10-28",
+        "case_id": "SPK-601238-20251014",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251014"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2025-10-14",
+              "date_to": "2025-10-28"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224733017"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10439,
+        "tokens_out": 600,
+        "cost_usd": 0.001926,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251014",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224733017": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2025-10-14..2025-10-28",
+        "case_id": "SPK-601238-20251014",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251014"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2025-10-14",
+              "date_to": "2025-10-28"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224733017"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10439,
+        "tokens_out": 600,
+        "cost_usd": 0.001926,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251014",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224733017": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2025-10-14..2025-10-28",
+        "case_id": "SPK-601238-20251014",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251014"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2025-10-14",
+              "date_to": "2025-10-28"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224733017"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10439,
+        "tokens_out": 600,
+        "cost_usd": 0.001926,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251124",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224853795": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2025-11-24..2025-12-08",
+        "case_id": "SPK-601238-20251124",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251124"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2025-11-24",
+              "date_to": "2025-12-08"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224853795"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12296,
+        "tokens_out": 600,
+        "cost_usd": 0.002204,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251124",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224853795": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2025-11-24..2025-12-08",
+        "case_id": "SPK-601238-20251124",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251124"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2025-11-24",
+              "date_to": "2025-12-08"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224853795"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12296,
+        "tokens_out": 600,
+        "cost_usd": 0.002204,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20251124",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1224853795": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2025-11-24..2025-12-08",
+        "case_id": "SPK-601238-20251124",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20251124"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2025-11-24",
+              "date_to": "2025-12-08"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224853795"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 12296,
+        "tokens_out": 600,
+        "cost_usd": 0.002204,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260820",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225531350": "neutral",
+          "1225531315": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-08-20..2026-09-03",
+        "case_id": "SPK-601238-20260820",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260820"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2026-08-20",
+              "date_to": "2026-09-03"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225531350"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225531315"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 20395,
+        "tokens_out": 750,
+        "cost_usd": 0.003509,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260820",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225531350": "neutral",
+          "1225531315": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-08-20..2026-09-03",
+        "case_id": "SPK-601238-20260820",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260820"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2026-08-20",
+              "date_to": "2026-09-03"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225531350"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225531315"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 20395,
+        "tokens_out": 750,
+        "cost_usd": 0.003509,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-601238-20260820",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225531350": "neutral",
+          "1225531315": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-08-20..2026-09-03",
+        "case_id": "SPK-601238-20260820",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-601238-20260820"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "601238",
+              "date_from": "2026-08-20",
+              "date_to": "2026-09-03"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225531350"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225531315"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 20395,
+        "tokens_out": 750,
+        "cost_usd": 0.003509,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260410",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+        "case_id": "SPK-002074-20260410",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260410"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-04-10",
+              "date_to": "2026-04-24"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7096,
+        "tokens_out": 450,
+        "cost_usd": 0.001334,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260410",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+        "case_id": "SPK-002074-20260410",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260410"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-04-10",
+              "date_to": "2026-04-24"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7096,
+        "tokens_out": 450,
+        "cost_usd": 0.001334,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260410",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {},
+        "reason": "No bullish filing among 0 read in 2026-04-10..2026-04-24",
+        "case_id": "SPK-002074-20260410",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260410"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-04-10",
+              "date_to": "2026-04-24"
+            }
+          }
+        ],
+        "turns": 2,
+        "tokens_in": 7096,
+        "tokens_out": 450,
+        "cost_usd": 0.001334,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260922",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225585862": "neutral",
+          "1225585861": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-09-22..2026-09-30",
+        "case_id": "SPK-002074-20260922",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260922"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-09-22",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585861"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 16581,
+        "tokens_out": 750,
+        "cost_usd": 0.002937,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260922",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225585862": "neutral",
+          "1225585861": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-09-22..2026-09-30",
+        "case_id": "SPK-002074-20260922",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260922"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-09-22",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585861"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 16581,
+        "tokens_out": 750,
+        "cost_usd": 0.002937,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260922",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225585862": "neutral",
+          "1225585861": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-09-22..2026-09-30",
+        "case_id": "SPK-002074-20260922",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260922"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-09-22",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585861"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 16581,
+        "tokens_out": 750,
+        "cost_usd": 0.002937,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260928",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225585862": "neutral",
+          "1225585861": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-09-28..2026-09-30",
+        "case_id": "SPK-002074-20260928",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260928"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-09-28",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585861"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 16503,
+        "tokens_out": 750,
+        "cost_usd": 0.002925,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260928",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225585862": "neutral",
+          "1225585861": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-09-28..2026-09-30",
+        "case_id": "SPK-002074-20260928",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260928"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-09-28",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585861"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 16503,
+        "tokens_out": 750,
+        "cost_usd": 0.002925,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-002074-20260928",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225585862": "neutral",
+          "1225585861": "neutral"
+        },
+        "reason": "No bullish filing among 2 read in 2026-09-28..2026-09-30",
+        "case_id": "SPK-002074-20260928",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-002074-20260928"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "002074",
+              "date_from": "2026-09-28",
+              "date_to": "2026-09-30"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585862"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225585861"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 16503,
+        "tokens_out": 750,
+        "cost_usd": 0.002925,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20251014",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1224721680",
+        "judgements": {
+          "1224721680": "bullish"
+        },
+        "reason": "First bullish filing 1224721680: 中国船舶2025年前三季度主要财务数据自愿性披露公告",
+        "case_id": "SPK-600150-20251014",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20251014"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600150",
+              "date_from": "2025-10-14",
+              "date_to": "2025-10-28"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1224721680"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "600150",
+              "trigger_time": "2025-10-21 23:59:59",
+              "evidence_id": "1224721680"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 13611,
+        "tokens_out": 750,
+        "cost_usd": 0.002492,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260423",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "buy",
+      "expected": "paper_trade",
+      "record": {
+        "decision": "paper_trade",
+        "trigger": null,
+        "evidence_id": "1225150259",
+        "judgements": {
+          "1225150259": "bullish"
+        },
+        "reason": "First bullish filing 1225150259: 中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告",
+        "case_id": "SPK-600150-20260423",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260423"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600150",
+              "date_from": "2026-04-23",
+              "date_to": "2026-05-12"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225150259"
+            }
+          },
+          {
+            "tool": "place_paper_order",
+            "args": {
+              "stock": "600150",
+              "trigger_time": "2026-04-23 23:59:59",
+              "evidence_id": "1225150259"
+            }
+          }
+        ],
+        "turns": 4,
+        "tokens_in": 21992,
+        "tokens_out": 750,
+        "cost_usd": 0.003749,
+        "seconds": 0.0,
+        "guardrails_fired": [
+          {
+            "guardrail": "gate_passed",
+            "detail": "place_paper_order (autonomy=confirm)"
+          }
+        ],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260904",
+      "trial": 1,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225558999": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-09-04..2026-09-18",
+        "case_id": "SPK-600150-20260904",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260904"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600150",
+              "date_from": "2026-09-04",
+              "date_to": "2026-09-18"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225558999"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10105,
+        "tokens_out": 600,
+        "cost_usd": 0.001876,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260904",
+      "trial": 2,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225558999": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-09-04..2026-09-18",
+        "case_id": "SPK-600150-20260904",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260904"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600150",
+              "date_from": "2026-09-04",
+              "date_to": "2026-09-18"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225558999"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10105,
+        "tokens_out": 600,
+        "cost_usd": 0.001876,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    },
+    {
+      "case_id": "SPK-600150-20260904",
+      "trial": 3,
+      "passed": true,
+      "fails": [],
+      "family": "no_bullish_filing",
+      "expected": "no_trade",
+      "record": {
+        "decision": "no_trade",
+        "trigger": "no_bullish_filing",
+        "evidence_id": null,
+        "judgements": {
+          "1225558999": "bearish"
+        },
+        "reason": "No bullish filing among 1 read in 2026-09-04..2026-09-18",
+        "case_id": "SPK-600150-20260904",
+        "tool_calls": [
+          {
+            "tool": "get_spike",
+            "args": {
+              "spike_id": "SPK-600150-20260904"
+            }
+          },
+          {
+            "tool": "list_announcements",
+            "args": {
+              "stock": "600150",
+              "date_from": "2026-09-04",
+              "date_to": "2026-09-18"
+            }
+          },
+          {
+            "tool": "read_announcement",
+            "args": {
+              "ann_id": "1225558999"
+            }
+          }
+        ],
+        "turns": 3,
+        "tokens_in": 10105,
+        "tokens_out": 600,
+        "cost_usd": 0.001876,
+        "seconds": 0.0,
+        "guardrails_fired": [],
+        "stopped_by": null,
+        "backend": "scripted"
+      }
+    }
+  ]
+}

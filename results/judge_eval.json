@@ -105,11 +105,11 @@
       },
       "batch1_false_bullish": "0 of 38",
       "batch2_false_bullish": "0 of 14",
-      "calls": 465,
-      "tokens_in": 1110167,
-      "tokens_out": 508017,
+      "calls": 468,
+      "tokens_in": 1118002,
+      "tokens_out": 511722,
       "model": "deepseek/deepseek-v4.1-flash",
-      "usd_total": 0.4085,
+      "usd_total": 0.4114,
       "overrides": 1
     },
     "llm_rag_noforce": {

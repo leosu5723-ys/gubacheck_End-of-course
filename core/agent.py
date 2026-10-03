@@ -43,7 +43,7 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
     backend = make_backend(case_id, prompt.build_system_prompt(prompt_version), moves)
     approve = approve or (lambda action, payload: True)
 
-    transcript, calls_made = [], []
+    transcript, calls_made, observed = [], [], []
     turns = tokens_in = tokens_out = 0
     stopped_by = None
 
@@ -74,6 +74,7 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
                 result = tools.call(name, args)
                 guards.note_observation(result)
                 calls_made.append({"tool": name, "args": args})
+                observed.append({"tool": name, "result": result if name == tools.GATED_ACTION else None})
                 observations.append({"tool": name, "args": args, "result": result})
                 if verbose:
                     print("            %-20s -> %s" % (name, _short(result)))
@@ -85,12 +86,13 @@ def run_case(case_id, approve=None, moves=None, prompt_version="v2",
     except GuardrailStop as stop:
         stopped_by = stop.reason
         trigger = "hostile_text" if stop.reason == "hostile_text" else "halted_" + stop.reason
-        record = {"decision": "flag_do_not_chase", "trigger": trigger,
+        record = {"decision": "no_trade", "trigger": trigger,
                   "reason": "halted by the %s guardrail: %s" % (stop.reason, stop.detail)}
 
     record.update({
         "case_id": case_id,
         "tool_calls": calls_made,
+        "observations": [o for o in observed if o["result"] is not None],
         "turns": turns,
         "tokens_in": tokens_in,
         "tokens_out": tokens_out,

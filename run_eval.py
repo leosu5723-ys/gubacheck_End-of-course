@@ -7,6 +7,8 @@ GubaCheck - ENTRY POINT
     python3 run_eval.py --prompt        print what the model is told
     python3 run_eval.py --prompt-v1     the weak descriptor version
     python3 run_eval.py --v1            run the set with descriptor v1
+    --workers=4                         run cases in parallel (live backend)
+    --trials=1                          one trial per case (default: 3 for negatives)
 
 Default backend is "scripted": no key, no network, standard library only.
 Live runs:  GUBACHECK_BACKEND=live OPENROUTER_API_KEY=... python3 run_eval.py
@@ -53,7 +55,10 @@ def main(argv):
             print("  [ ]", item)
         return 0
 
-    results, queue = harness.run_set(key, prompt_version=version)
+    workers = int(next((a.split("=")[1] for a in argv if a.startswith("--workers=")), 1))
+    trials = next((int(a.split("=")[1]) for a in argv if a.startswith("--trials=")), None)
+    results, queue = harness.run_set(key, prompt_version=version, workers=workers,
+                                     trials_for=(lambda c: trials) if trials else None)
     summary = harness.summarise(results)
     harness.print_report(summary, results)
 
