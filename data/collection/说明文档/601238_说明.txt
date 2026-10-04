@@ -1,0 +1,28 @@
+文件位置：
+整理数据：../十个股票的股吧数据/601238_365days.jsonl
+原始分页：../原始数据与断点/601238_raw_pages.jsonl
+采集报告：../采集报告/601238_采集报告.json
+采集脚本：../采集脚本/crawl_guba_601238.py
+
+广汽集团（601238）东方财富股吧近365天帖子
+
+数据文件：601238_365days.jsonl（UTF-8，一行一个JSON对象）
+时间范围：2025-10-03 00:00:00 至 2026-10-02 17:35:28（北京时间）
+按发帖时间筛选，按post_id去重；按发布时间降序保存。
+字段：post_id, stock, time, title, reads, comments, post_type, bar_code。
+post_type保留网站原值，不统一设置为0；stock和bar_code均为采集目标字符串601238。
+包含广汽集团列表中的跨吧转载内容；原帖来源股吧代码保留于原始响应stockbar_code，不作为本文件的bar_code。
+reads、comments是抓取当时的计数，不是发帖时的历史计数。
+601238_采集报告.json包含记录数、实际日期边界、采集完成状态。
+601238_raw_pages.jsonl保留公开接口原始分页响应，可用于核验。
+
+GitHub参考项目：
+https://github.com/zcyeee/EastMoney_Crawler
+https://github.com/wonchermaine960/eastmoney-cli
+
+原项目的浏览器/MongoDB方案未直接运行；采用公开接口说明，修正已失效的分页参数后完成同字段采集。
+公开接口： https://gbapi.eastmoney.com/webarticlelist/api/Article/Articlelist
+有效参数：code=601238, type=0, p=页码, ps=100, sorttype=0（发帖时间降序）。
+
+此数据反映采集期间公开可见帖子；删除、隐藏或接口不提供的内容无法获得。
+采集期间帖子数可能变化，结果通过ID去重，但网站不提供固定历史快照，因此不能保证与过去任一时刻的全部帖子完全一致。

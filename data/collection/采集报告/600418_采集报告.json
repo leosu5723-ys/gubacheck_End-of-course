@@ -1,0 +1,36 @@
+{
+  "status": "完成",
+  "error": null,
+  "start": "2025-10-03 00:00:00",
+  "end": "2026-10-02 17:35:28",
+  "records": 56730,
+  "pages": 576,
+  "last_page": 568,
+  "min_time": "2025-10-03 12:28:26",
+  "max_time": "2026-10-02 17:29:23",
+  "reference_projects": [
+    "https://github.com/zcyeee/EastMoney_Crawler",
+    "https://github.com/wonchermaine960/eastmoney-cli"
+  ],
+  "method": "公开接口，p/ps分页，sorttype=0按发布时间降序；post_id去重；reads/comments为抓取时快照",
+  "stock": "600418",
+  "name": "江淮汽车",
+  "validation": {
+    "exact_schema": true,
+    "unique_post_ids": true,
+    "date_range_valid": true,
+    "continuous_pages": true,
+    "publish_time_order": true,
+    "post_types": {
+      "20": 2615,
+      "0": 52515,
+      "1": 1406,
+      "3": 133,
+      "11": 40,
+      "2": 7,
+      "54": 14
+    },
+    "sha256": "c413cdb3e2d8b90d2d6299038fa0178aafe535dc081360ffa3cec7297eb1a49e"
+  },
+  "bar_code_definition": "采集目标股吧600418；包含目标列表中的跨吧转载，原始来源代码在raw_pages的stockbar_code中保留"
+}

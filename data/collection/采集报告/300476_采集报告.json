@@ -1,0 +1,36 @@
+{
+  "status": "完成",
+  "error": null,
+  "start": "2025-10-03 00:00:00",
+  "end": "2026-10-02 17:35:28",
+  "records": 101030,
+  "pages": 1032,
+  "last_page": 1011,
+  "min_time": "2025-10-03 00:49:13",
+  "max_time": "2026-10-02 16:16:56",
+  "reference_projects": [
+    "https://github.com/zcyeee/EastMoney_Crawler",
+    "https://github.com/wonchermaine960/eastmoney-cli"
+  ],
+  "method": "公开接口，p/ps分页，sorttype=0按发布时间降序；post_id去重；reads/comments为抓取时快照",
+  "stock": "300476",
+  "name": "胜宏科技",
+  "validation": {
+    "exact_schema": true,
+    "unique_post_ids": true,
+    "date_range_valid": true,
+    "continuous_pages": true,
+    "publish_time_order": true,
+    "post_types": {
+      "20": 5292,
+      "0": 92873,
+      "1": 2246,
+      "3": 192,
+      "11": 404,
+      "2": 10,
+      "54": 13
+    },
+    "sha256": "41d831777ddd6c78d2d275b7af4f956837b1b069e4c6155ca9617133988f946e"
+  },
+  "bar_code_definition": "采集目标股吧300476；包含目标列表中的跨吧转载，原始来源代码在raw_pages的stockbar_code中保留"
+}

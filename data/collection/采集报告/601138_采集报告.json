@@ -1,0 +1,36 @@
+{
+  "status": "完成",
+  "error": null,
+  "start": "2025-10-03 00:00:00",
+  "end": "2026-10-02 17:35:28",
+  "records": 180795,
+  "pages": 1824,
+  "last_page": 1809,
+  "min_time": "2025-10-03 00:56:14",
+  "max_time": "2026-10-02 16:06:40",
+  "reference_projects": [
+    "https://github.com/zcyeee/EastMoney_Crawler",
+    "https://github.com/wonchermaine960/eastmoney-cli"
+  ],
+  "method": "公开接口，p/ps分页，sorttype=0按发布时间降序；post_id去重；reads/comments为抓取时快照",
+  "stock": "601138",
+  "name": "工业富联",
+  "validation": {
+    "exact_schema": true,
+    "unique_post_ids": true,
+    "date_range_valid": true,
+    "continuous_pages": true,
+    "publish_time_order": true,
+    "post_types": {
+      "20": 8367,
+      "0": 170174,
+      "1": 2094,
+      "2": 22,
+      "3": 114,
+      "11": 10,
+      "54": 14
+    },
+    "sha256": "4f13394be01d586b4597fe2c1e84a5925b5d371b7e2dde5a5923a0f05a9b2f7b"
+  },
+  "bar_code_definition": "采集目标股吧601138；包含目标列表中的跨吧转载，原始来源代码在raw_pages的stockbar_code中保留"
+}

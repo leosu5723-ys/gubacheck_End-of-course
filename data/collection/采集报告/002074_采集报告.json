@@ -1,0 +1,36 @@
+{
+  "status": "完成",
+  "error": null,
+  "start": "2025-10-03 00:00:00",
+  "end": "2026-10-02 17:35:28",
+  "records": 40160,
+  "pages": 408,
+  "last_page": 402,
+  "min_time": "2025-10-03 02:11:50",
+  "max_time": "2026-10-02 17:25:18",
+  "reference_projects": [
+    "https://github.com/zcyeee/EastMoney_Crawler",
+    "https://github.com/wonchermaine960/eastmoney-cli"
+  ],
+  "method": "公开接口，p/ps分页，sorttype=0按发布时间降序；post_id去重；reads/comments为抓取时快照",
+  "stock": "002074",
+  "name": "国轩高科",
+  "validation": {
+    "exact_schema": true,
+    "unique_post_ids": true,
+    "date_range_valid": true,
+    "continuous_pages": true,
+    "publish_time_order": true,
+    "post_types": {
+      "20": 2282,
+      "0": 36458,
+      "1": 952,
+      "3": 166,
+      "11": 282,
+      "2": 6,
+      "54": 14
+    },
+    "sha256": "9462739d8ec120bff6242f8ad871add20ac32d38050c38ea12910fbd640e57a8"
+  },
+  "bar_code_definition": "采集目标股吧002074；包含目标列表中的跨吧转载，原始来源代码在raw_pages的stockbar_code中保留"
+}

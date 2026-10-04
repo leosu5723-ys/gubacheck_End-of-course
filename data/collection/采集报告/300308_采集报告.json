@@ -1,0 +1,36 @@
+{
+  "status": "完成",
+  "error": null,
+  "start": "2025-10-03 00:00:00",
+  "end": "2026-10-02 17:35:28",
+  "records": 235545,
+  "pages": 2370,
+  "last_page": 2356,
+  "min_time": "2025-10-03 00:11:10",
+  "max_time": "2026-10-02 17:35:18",
+  "reference_projects": [
+    "https://github.com/zcyeee/EastMoney_Crawler",
+    "https://github.com/wonchermaine960/eastmoney-cli"
+  ],
+  "method": "公开接口，p/ps分页，sorttype=0按发布时间降序；post_id去重；reads/comments为抓取时快照",
+  "stock": "300308",
+  "name": "中际旭创",
+  "validation": {
+    "exact_schema": true,
+    "unique_post_ids": true,
+    "date_range_valid": true,
+    "continuous_pages": true,
+    "publish_time_order": true,
+    "post_types": {
+      "0": 206117,
+      "20": 22686,
+      "1": 6240,
+      "3": 223,
+      "2": 28,
+      "11": 237,
+      "54": 14
+    },
+    "sha256": "dbb1c1ec697da28d70335ac21a3c9cbcd2f910b2866f2acfb9af75a97c23b241"
+  },
+  "bar_code_definition": "采集目标股吧300308；包含目标列表中的跨吧转载，原始来源代码在raw_pages的stockbar_code中保留"
+}
