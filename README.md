@@ -8,6 +8,7 @@ A local Chinese RoBERTa reads ~1 million Eastmoney forum titles. A z-score engin
 
 | Document | What it covers |
 |---|---|
+| [video/AI Agent Cuts Stock Forum Spikes.mp4](video/AI%20Agent%20Cuts%20Stock%20Forum%20Spikes.mp4) | Demo video (7 min 41 s): the problem, a live investigation in the app, evaluation and limits |
 | [report/REPORT_V4.md](report/REPORT_V4.md) | The project report (≈1,200 words): problem, design changes, where AI is useful, build vs buy, evaluation critique, next steps |
 | [PRODUCT.md](PRODUCT.md) | Persona, input/output, architecture, own-vs-rent, metrics targeted vs reached, cost, responsible use |
 | [RULES.md](RULES.md) | Every rule and threshold, registered before results, with a change log |
