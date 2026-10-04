@@ -40,6 +40,10 @@ cost                live routing run, DeepSeek V4.1 Flash, about US$0.002 billed
 
 ## Architecture
 
+![GubaCheck architecture: data (grey), deterministic code (blue), LLM (purple; dashed = local model), human gate (orange)](report/architecture.png)
+
+Text version:
+
 ```
  DATA (frozen snapshot)            MODELS (local + rented)              ATTRIBUTION AGENT                      OUTPUT
  ┌──────────────────────┐   ┌──────────────────────────────┐   ┌────────────────────────────────────┐   ┌───────────────────┐
