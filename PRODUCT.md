@@ -1,5 +1,9 @@
 # GubaCheck — Product Documentation
 
+![GubaCheck product documentation at a glance: persona, input, output, architecture, metrics targeted vs reached](report/product_sheet.png)
+
+*One-page summary of the sections below (source: `report/product_sheet.svg`).*
+
 **When a stock's forum suddenly explodes, GubaCheck finds out why — and shows how spikes with that cause behaved afterwards.**
 
 ## Persona
@@ -40,7 +44,7 @@ cost                live routing run, DeepSeek V4.1 Flash, about US$0.002 billed
 
 ## Architecture
 
-![GubaCheck architecture: data (grey), deterministic code (blue), LLM (purple; dashed = local model), human gate (orange)](report/architecture.png)
+![GubaCheck product architecture: inputs, AI models, deterministic tools, user outputs and evaluation](report/architecture_en.png)
 
 Text version:
 

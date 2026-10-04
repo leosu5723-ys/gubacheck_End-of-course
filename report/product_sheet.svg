@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <style>
+      .t  { font-size: 18px; font-weight: 700; fill: #11181c; }
+      .s  { font-size: 14.5px; fill: #374151; }
+      .n  { font-size: 13px; fill: #687076; }
+      .h  { font-size: 15px; font-weight: 800; fill: #ffffff; letter-spacing: .08em; }
+      .card { fill: #ffffff; stroke: #D7DCE3; stroke-width: 1.4; }
+      .data  { fill: #EEF2F7; stroke: #64748B; stroke-width: 1.6; }
+      .code  { fill: #E6EDFF; stroke: #3E63DD; stroke-width: 1.8; }
+      .llm   { fill: #F3E8FF; stroke: #8E4EC6; stroke-width: 1.8; }
+      .local { fill: #F3E8FF; stroke: #8E4EC6; stroke-width: 1.8; stroke-dasharray: 7 4; }
+      .tool  { fill: #E9F7F1; stroke: #30A46C; stroke-width: 1.8; }
+      .human { fill: #FFF1E6; stroke: #F76B15; stroke-width: 2; }
+      .ln { stroke: #475569; stroke-width: 1.8; fill: none; marker-end: url(#a); }
+      .ok { fill: #1E8E5A; font-weight: 700; }
+      .no { fill: #D13438; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="1600" height="1240" fill="#F6F7F9"/>
+  <text x="40" y="50" font-size="30" font-weight="800" fill="#11181c">GubaCheck — product documentation at a glance</text>
+  <text x="40" y="78" class="s">An evidence-first explainer for A-share forum spikes · github.com/leosu5723-ys/gubacheck_End-of-course · details in PRODUCT.md</text>
+
+  <!-- ===== PERSONA ===== -->
+  <rect x="40" y="100" width="500" height="290" rx="14" class="card"/>
+  <rect x="40" y="100" width="500" height="38" rx="14" fill="#3E63DD"/><rect x="40" y="124" width="500" height="14" fill="#3E63DD"/>
+  <text x="60" y="125" class="h">PERSONA</text>
+  <text x="60" y="168" class="t">A retail investor (me) with a 10-stock A-share watchlist</text>
+  <text x="60" y="196" class="s">AI hardware · autos · batteries · shipbuilding; reviews after the close</text>
+  <text x="60" y="230" class="t" font-size="16">Pain</text>
+  <text x="60" y="254" class="s">A stock's forum suddenly explodes. Company news? Rumour?</text>
+  <text x="60" y="276" class="s">Sector? Nasdaq overnight? Hot money? ~10 min to check by hand.</text>
+  <text x="60" y="310" class="t" font-size="16">Needs</text>
+  <text x="60" y="334" class="s">Why it happened, with evidence I can check — and what</text>
+  <text x="60" y="356" class="s">happened after earlier spikes like it. Not: advice, auto-trading.</text>
+
+  <!-- ===== INPUT ===== -->
+  <rect x="560" y="100" width="500" height="290" rx="14" class="card"/>
+  <rect x="560" y="100" width="500" height="38" rx="14" fill="#64748B"/><rect x="560" y="124" width="500" height="14" fill="#64748B"/>
+  <text x="580" y="125" class="h">INPUT</text>
+  <text x="580" y="168" class="t">A forum spike, detected automatically</text>
+  <text x="580" y="196" class="s">day's posts vs the stock's own last 120 days, z ≥ 2</text>
+  <rect x="580" y="214" width="460" height="74" rx="8" fill="#F6F7F9" stroke="#D7DCE3"/>
+  <text x="594" y="238" class="n" font-family="Menlo, monospace">SPK-300308-20260728 中际旭创 (Innolight)</text>
+  <text x="594" y="258" class="n" font-family="Menlo, monospace">3,136 posts (z 2.3) · bullish 25% · onset 09:00</text>
+  <text x="594" y="278" class="n" font-family="Menlo, monospace">+ the 15 most-read post titles of the day</text>
+  <text x="580" y="318" class="t" font-size="16">Behind it (one year, frozen snapshot)</text>
+  <text x="580" y="342" class="s">1.02M forum posts · 1,604 filings · prices of 22 stocks ·</text>
+  <text x="580" y="364" class="s">US peers · CSI 300 / ChiNext · exchange top list</text>
+
+  <!-- ===== OUTPUT ===== -->
+  <rect x="1080" y="100" width="480" height="290" rx="14" class="card"/>
+  <rect x="1080" y="100" width="480" height="38" rx="14" fill="#F76B15"/><rect x="1080" y="124" width="480" height="14" fill="#F76B15"/>
+  <text x="1100" y="125" class="h">OUTPUT</text>
+  <text x="1100" y="168" class="t">One report page per spike (中文 / EN)</text>
+  <text x="1100" y="200" class="s">① main cause + supporting causes, with</text>
+  <text x="1100" y="222" class="s">   time-stamped evidence and probabilities</text>
+  <text x="1100" y="252" class="s">② same stock, same cause: returns after</text>
+  <text x="1100" y="274" class="s">   earlier spikes, D+1 … D+20, after fees</text>
+  <text x="1100" y="304" class="s">③ a suggestion (lean / wait / avoid) with</text>
+  <text x="1100" y="326" class="s">   sample size; optional LLM + RAG note</text>
+  <text x="1100" y="356" class="s">④ billed cost of the run · I make the call</text>
+
+  <!-- ===== ARCHITECTURE ===== -->
+  <rect x="40" y="410" width="1520" height="372" rx="14" class="card"/>
+  <rect x="40" y="410" width="1520" height="38" rx="14" fill="#11181c"/><rect x="40" y="434" width="1520" height="14" fill="#11181c"/>
+  <text x="60" y="435" class="h">HIGH-LEVEL ARCHITECTURE — how the input becomes the output</text>
+  <g transform="translate(1000,425)">
+    <rect width="16" height="12" rx="2" class="data"/><text x="22" y="11" font-size="12" fill="#e5e7eb">data</text>
+    <rect x="70" width="16" height="12" rx="2" class="code"/><text x="92" y="11" font-size="12" fill="#e5e7eb">my code</text>
+    <rect x="160" width="16" height="12" rx="2" class="llm"/><text x="182" y="11" font-size="12" fill="#e5e7eb">LLM</text>
+    <rect x="220" width="16" height="12" rx="2" class="local"/><text x="242" y="11" font-size="12" fill="#e5e7eb">local model</text>
+    <rect x="325" width="16" height="12" rx="2" class="tool"/><text x="347" y="11" font-size="12" fill="#e5e7eb">tools</text>
+    <rect x="395" width="16" height="12" rx="2" class="human"/><text x="417" y="11" font-size="12" fill="#e5e7eb">human</text>
+  </g>
+
+  <!-- tools row -->
+  <rect x="60" y="468" width="260" height="96" rx="10" class="tool"/>
+  <text x="76" y="496" class="t" font-size="16">External tools / data</text>
+  <text x="76" y="520" class="s">AKShare · CNINFO · Eastmoney</text>
+  <text x="76" y="542" class="s">forum API · OpenRouter</text>
+
+  <rect x="60" y="590" width="260" height="96" rx="10" class="data"/>
+  <text x="76" y="618" class="t" font-size="16">Snapshot</text>
+  <text x="76" y="642" class="s">posts, filings, prices, US,</text>
+  <text x="76" y="664" class="s">indices, top list</text>
+
+  <rect x="370" y="468" width="300" height="96" rx="10" class="local"/>
+  <text x="386" y="496" class="t" font-size="16">Read the forum</text>
+  <text x="386" y="520" class="s">local RoBERTa: bull / bear / neutral</text>
+  <text x="386" y="542" class="s">for every post, US$0</text>
+
+  <rect x="370" y="590" width="300" height="96" rx="10" class="code"/>
+  <text x="386" y="618" class="t" font-size="16">Detect the spike</text>
+  <text x="386" y="642" class="s">z-score vs own history,</text>
+  <text x="386" y="664" class="s">onset hour</text>
+
+  <rect x="720" y="468" width="360" height="96" rx="10" class="llm"/>
+  <text x="736" y="496" class="t" font-size="16">LLM: rank 7 causes, pick next test</text>
+  <text x="736" y="520" class="s">reads the top posts; also judges filings</text>
+  <text x="736" y="542" class="s">(good news vs already announced, + RAG)</text>
+
+  <rect x="720" y="590" width="360" height="96" rx="10" class="code"/>
+  <text x="736" y="618" class="t" font-size="16">Code: 7 fixed cause tests</text>
+  <text x="736" y="642" class="s">PASS / PARTIAL / FAIL from data + time;</text>
+  <text x="736" y="664" class="s">probabilities, STOP rule, guardrails</text>
+
+  <path d="M935,566 L935,588" class="ln"/>
+  <path d="M865,588 L865,566" class="ln"/>
+  <text x="945" y="582" class="n">loop until STOP</text>
+
+  <rect x="1130" y="468" width="200" height="96" rx="10" class="code"/>
+  <text x="1146" y="496" class="t" font-size="16">Conclusion</text>
+  <text x="1146" y="520" class="s">cause + evidence</text>
+  <text x="1146" y="542" class="s">+ backtest table</text>
+
+  <rect x="1130" y="590" width="200" height="96" rx="10" class="llm"/>
+  <text x="1146" y="618" class="t" font-size="16">LLM note</text>
+  <text x="1146" y="642" class="s">optional, RAG over</text>
+  <text x="1146" y="664" class="s">company filings</text>
+
+  <rect x="1380" y="468" width="160" height="218" rx="10" class="human"/>
+  <text x="1396" y="500" class="t" font-size="16">Report page</text>
+  <text x="1396" y="530" class="s">→ the investor</text>
+  <text x="1396" y="552" class="s">decides;</text>
+  <text x="1396" y="574" class="s">agree / disagree</text>
+  <text x="1396" y="596" class="s">saved; no</text>
+  <text x="1396" y="618" class="s">automatic</text>
+  <text x="1396" y="640" class="s">orders</text>
+
+  <line x1="190" y1="564" x2="190" y2="588" class="ln"/>
+  <line x1="320" y1="638" x2="368" y2="638" class="ln"/>
+  <line x1="320" y1="620" x2="368" y2="520" class="ln"/>
+  <line x1="520" y1="564" x2="520" y2="588" class="ln"/>
+  <line x1="670" y1="638" x2="718" y2="638" class="ln"/>
+  <line x1="670" y1="610" x2="718" y2="520" class="ln"/>
+  <line x1="1080" y1="638" x2="1128" y2="520" class="ln"/>
+  <line x1="1230" y1="564" x2="1230" y2="588" class="ln"/>
+  <line x1="1330" y1="516" x2="1378" y2="516" class="ln"/>
+  <line x1="1330" y1="638" x2="1378" y2="638" class="ln"/>
+
+  <text x="60" y="718" class="s"><tspan font-weight="700">Rule of the design:</tspan> every verdict, probability and stop decision is my code; the LLM only ranks, chooses the next test, judges filings and writes.</text>
+  <text x="60" y="742" class="s"><tspan font-weight="700">Autonomy chosen by measurement:</tspan> rank-once routing; an agent allowed to revise was no better (revised 1 of 68 runs).</text>
+  <text x="60" y="766" class="n">Own: data pipeline, tests, rules, evals, app, sentiment model · Rent: LLM via OpenRouter (DeepSeek V4.1 Flash) · Evaluate: 68 spikes I labelled by hand</text>
+
+  <!-- ===== METRICS ===== -->
+  <rect x="40" y="802" width="1520" height="410" rx="14" class="card"/>
+  <rect x="40" y="802" width="1520" height="38" rx="14" fill="#30A46C"/><rect x="40" y="826" width="1520" height="14" fill="#30A46C"/>
+  <text x="60" y="827" class="h">METRICS — TARGETED vs REACHED</text>
+
+  <g font-size="14.5" fill="#374151">
+    <text x="60" y="870" font-weight="700" fill="#11181c">Metric</text>
+    <text x="640" y="870" font-weight="700" fill="#11181c">Target</text>
+    <text x="1000" y="870" font-weight="700" fill="#11181c">Reached</text>
+    <line x1="60" y1="880" x2="1540" y2="880" stroke="#D7DCE3"/>
+
+    <text x="60" y="906">Post sentiment, macro-F1 (92 hand labels)</text>
+    <text x="640" y="906">≥ 0.65 and above the keyword lexicon</text>
+    <text x="1000" y="906"><tspan class="ok">✓ 0.73</tspan>  (lexicon 0.32, TF-IDF 0.60, LLM 0.79)</text>
+
+    <text x="60" y="934">Daily bullish-share bias</text>
+    <text x="640" y="934">within ± 3 points</text>
+    <text x="1000" y="934"><tspan class="ok">✓ +0.3 points</tspan>  (40.0% vs 39.7%)</text>
+
+    <text x="60" y="962">Filing judge, macro-F1 / false-bullish calls</text>
+    <text x="640" y="962">above the title rule (0.51); fewest false bullish</text>
+    <text x="1000" y="962"><tspan class="ok">✓ 0.82, 0 of 52</tspan>  (LLM + RAG; text-only 0.91 but 4 of 52)</text>
+
+    <text x="60" y="990">Attribution macro-F1 (68 spikes)</text>
+    <text x="640" y="990">above always-majority (0.12)</text>
+    <text x="1000" y="990"><tspan class="ok">✓ 0.37</tspan>  agent · 0.36 routing</text>
+
+    <text x="60" y="1018">Attribution accuracy</text>
+    <text x="640" y="1018">above keyword rules and always-"unexplained"</text>
+    <text x="1000" y="1018"><tspan class="ok">✓ 60%</tspan> routing (keyword 22%, always-H 7%) — <tspan class="no">but below always-B 69%</tspan></text>
+
+    <text x="60" y="1046">Tests per spike</text>
+    <text x="640" y="1046">fewer than testing all 7, at no loss of accuracy</text>
+    <text x="1000" y="1046"><tspan class="ok">✓ 4.3 vs 7</tspan>, and more accurate (60% vs 47%, p = 0.02)</text>
+
+    <text x="60" y="1074">Agent beats routing (revision adds value)</text>
+    <text x="640" y="1074">agent &gt; routing</text>
+    <text x="1000" y="1074"><tspan class="no">✗ not reached</tspan>  56% vs 60%, p = 0.51 → chose routing</text>
+
+    <text x="60" y="1102">Cost per spike (billed)</text>
+    <text x="640" y="1102">&lt; US$0.01</text>
+    <text x="1000" y="1102"><tspan class="ok">✓ ≤ US$0.009</tspan>  (OpenRouter bill)</text>
+
+    <text x="60" y="1130">Guardrail checklist (incl. 3 red-team posts)</text>
+    <text x="640" y="1130">10 / 10</text>
+    <text x="1000" y="1130"><tspan class="ok">✓ 10 / 10</tspan></text>
+
+    <text x="60" y="1158">Reproducibility</text>
+    <text x="640" y="1158">fresh clone runs without a key</text>
+    <text x="1000" y="1158"><tspan class="ok">✓ evals, guardrails, 13 / 13 unit tests, app</tspan></text>
+  </g>
+  <text x="60" y="1192" class="n">One labeller, one live run per spike, 68 spikes over 8 causes; the "media" cause relies on forum long posts. Sources: results/*.json, evals/EVALS.md.</text>
+</svg>
