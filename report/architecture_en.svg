@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1270" viewBox="0 0 1800 1270"><rect width="100%" height="100%" fill="#f5f7fb"/>
+<text x="55" y="69.96000000000001" font-family="Arial, sans-serif" font-size="38" fill="#0f172a" font-weight="700">GubaCheck | Product Architecture</text>
+<text x="55" y="108.24000000000001" font-family="Arial, sans-serif" font-size="22" fill="#334155" font-weight="400">From A-share forum activity to evidence-based attribution and historical context</text>
+<rect x="55" y="137" width="1690" height="63" rx="16" fill="#ffffff" stroke="#dce3ee"/>
+<text x="77" y="170.72" font-family="Arial, sans-serif" font-size="16" fill="#64748b" font-weight="700">PRIMARY USER</text>
+<text x="228" y="173.32" font-family="Arial, sans-serif" font-size="21" fill="#334155" font-weight="400">A retail investor following ten A-share stocks and reviewing unusual discussion activity</text>
+<text x="55" y="243.56" font-family="Arial, sans-serif" font-size="18" fill="#64748b" font-weight="700">01  DATA INPUTS</text>
+<text x="465" y="243.56" font-family="Arial, sans-serif" font-size="18" fill="#64748b" font-weight="700">02  PREPARATION</text>
+<text x="875" y="243.56" font-family="Arial, sans-serif" font-size="18" fill="#64748b" font-weight="700">03  INVESTIGATION</text>
+<text x="1375" y="243.56" font-family="Arial, sans-serif" font-size="18" fill="#64748b" font-weight="700">04  USER OUTPUT</text>
+<rect x="55" y="267" width="360" height="224" rx="16" fill="#ffffff" stroke="#dce3ee"/>
+<rect x="73" y="289" width="5" height="26" rx="2" fill="#64748b" stroke="#64748b"/>
+<text x="91" y="309.16" font-family="Arial, sans-serif" font-size="23" fill="#64748b" font-weight="700">Public source data</text>
+<text x="78" y="348.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Eastmoney forum titles and activity</text>
+<text x="78" y="378.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">CNINFO company filings / PDFs</text>
+<text x="78" y="408.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">A-share prices and sector peers</text>
+<text x="78" y="438.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">US peers, indices and trading flows</text>
+<rect x="55" y="527" width="360" height="194" rx="16" fill="#ffffff" stroke="#dce3ee"/>
+<rect x="73" y="549" width="5" height="26" rx="2" fill="#64748b" stroke="#64748b"/>
+<text x="91" y="569.16" font-family="Arial, sans-serif" font-size="23" fill="#64748b" font-weight="700">Frozen data snapshot</text>
+<text x="78" y="608.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Cleaned, time-stamped inputs</text>
+<text x="78" y="638.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Sample posts and daily statistics</text>
+<text x="78" y="668.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Filings, prices and context data</text>
+<text x="78" y="698.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Forum long posts: media proxy</text>
+<rect x="465" y="267" width="360" height="174" rx="16" fill="#f5f0ff" stroke="#dce3ee"/>
+<rect x="483" y="289" width="5" height="26" rx="2" fill="#7c3aed" stroke="#7c3aed"/>
+<text x="501" y="309.16" font-family="Arial, sans-serif" font-size="23" fill="#7c3aed" font-weight="700">Local sentiment model</text>
+<text x="488" y="348.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Fine-tuned Chinese RoBERTa</text>
+<text x="488" y="378.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Bullish / bearish / neutral labels</text>
+<text x="488" y="408.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Daily sentiment aggregates</text>
+<rect x="465" y="473" width="360" height="148" rx="16" fill="#eff6ff" stroke="#dce3ee"/>
+<rect x="483" y="495" width="5" height="26" rx="2" fill="#2563eb" stroke="#2563eb"/>
+<text x="501" y="515.16" font-family="Arial, sans-serif" font-size="23" fill="#2563eb" font-weight="700">Spike detection</text>
+<text x="488" y="554.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Code: rolling 120-day baseline</text>
+<text x="488" y="584.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Flag log-post-count z-score &gt;= 2</text>
+<rect x="465" y="653" width="360" height="194" rx="16" fill="#f5f0ff" stroke="#dce3ee"/>
+<rect x="483" y="675" width="5" height="26" rx="2" fill="#7c3aed" stroke="#7c3aed"/>
+<text x="501" y="695.16" font-family="Arial, sans-serif" font-size="23" fill="#7c3aed" font-weight="700">Filing judge + retrieval</text>
+<text x="488" y="734.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">LLM reads filing text with RAG</text>
+<text x="488" y="764.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Earlier company filings retrieved</text>
+<text x="488" y="794.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Local bge-small-zh embeddings</text>
+<text x="488" y="824.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Forecast retrieval + rule overrides</text>
+<rect x="875" y="267" width="445" height="174" rx="16" fill="#f5f0ff" stroke="#dce3ee"/>
+<rect x="893" y="289" width="5" height="26" rx="2" fill="#7c3aed" stroke="#7c3aed"/>
+<text x="911" y="309.16" font-family="Arial, sans-serif" font-size="23" fill="#7c3aed" font-weight="700">LLM cause ranking</text>
+<text x="898" y="348.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Read post clues; score causes A-G</text>
+<text x="898" y="378.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Routing: rank once, select tests</text>
+<text x="898" y="408.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Agent: may revise untested scores</text>
+<rect x="875" y="473" width="445" height="224" rx="16" fill="#eff6ff" stroke="#dce3ee"/>
+<rect x="893" y="495" width="5" height="26" rx="2" fill="#2563eb" stroke="#2563eb"/>
+<text x="911" y="515.16" font-family="Arial, sans-serif" font-size="23" fill="#2563eb" font-weight="700">Seven evidence tools</text>
+<text x="898" y="554.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">A: Company filings   B: Forum narrative</text>
+<text x="898" y="584.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">C: Sector   D: Overseas read-through</text>
+<text x="898" y="614.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">E: Market   F: Policy   G: Money flow</text>
+<text x="898" y="644.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Code returns PASS / PARTIAL / FAIL</text>
+<text x="898" y="674.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Evidence IDs, timestamps and metrics</text>
+<rect x="875" y="729" width="445" height="148" rx="16" fill="#eff6ff" stroke="#dce3ee"/>
+<rect x="893" y="751" width="5" height="26" rx="2" fill="#2563eb" stroke="#2563eb"/>
+<text x="911" y="771.16" font-family="Arial, sans-serif" font-size="23" fill="#2563eb" font-weight="700">Investigation controller</text>
+<text x="898" y="810.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Code updates weights and stopping</text>
+<text x="898" y="840.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">5-test cap, budget and deduplication</text>
+<rect x="1375" y="267" width="370" height="224" rx="16" fill="#ecfdf5" stroke="#dce3ee"/>
+<rect x="1393" y="289" width="5" height="26" rx="2" fill="#059669" stroke="#059669"/>
+<text x="1411" y="309.16" font-family="Arial, sans-serif" font-size="23" fill="#059669" font-weight="700">Streamlit application</text>
+<text x="1398" y="348.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Radar and stock overview</text>
+<text x="1398" y="378.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Primary / secondary explanations</text>
+<text x="1398" y="408.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Evidence and investigation trace</text>
+<text x="1398" y="438.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Saved replay or live API mode</text>
+<rect x="1375" y="527" width="370" height="194" rx="16" fill="#ecfdf5" stroke="#dce3ee"/>
+<rect x="1393" y="549" width="5" height="26" rx="2" fill="#059669" stroke="#059669"/>
+<text x="1411" y="569.16" font-family="Arial, sans-serif" font-size="23" fill="#059669" font-weight="700">Historical context</text>
+<text x="1398" y="608.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Earlier spikes with the same cause</text>
+<text x="1398" y="638.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">D+1 to D+20 net / excess returns</text>
+<text x="1398" y="668.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Sample sizes and win rates</text>
+<text x="1398" y="698.48" font-family="Arial, sans-serif" font-size="19" fill="#334155" font-weight="400">Rule-based or optional LLM note</text>
+<rect x="1375" y="753" width="370" height="124" rx="16" fill="#fff7ed" stroke="#fed7aa"/>
+<text x="1398" y="794.32" font-family="Arial, sans-serif" font-size="21" fill="#c2410c" font-weight="700">Investor reviews the evidence</text>
+<text x="1398" y="828.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Reserved paper-order tool requires</text>
+<text x="1398" y="855.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">approval; outside the current UI.</text>
+<polyline points="235,491 235,527" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="235,527 240.0,516.0 230.0,516.0" fill="#94a3b8"/>
+<polyline points="415,349 465,349" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="465,349 454.0,344.0 454.0,354.0" fill="#94a3b8"/>
+<polyline points="645,441 645,473" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="645,473 650.0,462.0 640.0,462.0" fill="#94a3b8"/>
+<polyline points="825,547 850,547 850,349 875,349" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="875,349 864.0,344.0 864.0,354.0" fill="#94a3b8"/>
+<polyline points="415,623 440,623 440,750 465,750" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="465,750 454.0,745.0 454.0,755.0" fill="#94a3b8"/>
+<polyline points="415,605 430,605 430,638 875,638" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="875,638 864.0,633.0 864.0,643.0" fill="#94a3b8"/>
+<polyline points="825,750 849,750 849,677 875,677" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="875,677 864.0,672.0 864.0,682.0" fill="#94a3b8"/>
+<polyline points="1097,441 1097,473" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="1097,473 1102.0,462.0 1092.0,462.0" fill="#94a3b8"/>
+<polyline points="1097,697 1097,729" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="1097,729 1102.0,718.0 1092.0,718.0" fill="#94a3b8"/>
+<polyline points="875,797 861,797 861,307 875,307" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 5"/>
+<polygon points="875,307 864.0,302.0 864.0,312.0" fill="#7c3aed"/>
+<polyline points="1320,797 1347,797 1347,350 1375,350" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="1375,350 1364.0,345.0 1364.0,355.0" fill="#94a3b8"/>
+<polyline points="1560,491 1560,527" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="1560,527 1565.0,516.0 1555.0,516.0" fill="#94a3b8"/>
+<polyline points="1560,721 1560,753" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="1560,753 1565.0,742.0 1555.0,742.0" fill="#94a3b8"/>
+<rect x="55" y="922" width="1690" height="255" rx="16" fill="#ffffff" stroke="#dce3ee"/>
+<text x="79" y="961.48" font-family="Arial, sans-serif" font-size="19" fill="#0f172a" font-weight="700">EVALUATION &amp; OBSERVABILITY</text>
+<text x="79" y="996.4" font-family="Arial, sans-serif" font-size="20" fill="#334155" font-weight="400">Hand-labelled cases | Four comparison arms | Guardrail checks | Tool traces, tokens and billed cost</text>
+<text x="79" y="1033.8" font-family="Arial, sans-serif" font-size="15" fill="#64748b" font-weight="700">METRIC</text>
+<text x="470" y="1033.8" font-family="Arial, sans-serif" font-size="15" fill="#64748b" font-weight="700">TARGET</text>
+<text x="970" y="1033.8" font-family="Arial, sans-serif" font-size="15" fill="#64748b" font-weight="700">REACHED</text>
+<text x="79" y="1068.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Sentiment macro-F1</text>
+<text x="470" y="1068.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">&gt;= 0.65 and above lexicon</text>
+<text x="970" y="1068.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">0.73; lexicon 0.32</text>
+<text x="79" y="1096.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Attribution macro-F1</text>
+<text x="470" y="1096.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Above majority baseline (0.12)</text>
+<text x="970" y="1096.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Routing 0.36 / agent 0.37; 68 cases</text>
+<text x="79" y="1124.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Value of agent revision</text>
+<text x="470" y="1124.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Agent outperforms routing</text>
+<text x="970" y="1124.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Not reached: accuracy 55.9% vs 60.3%</text>
+<text x="79" y="1152.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">Guardrail checklist</text>
+<text x="470" y="1152.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">10 / 10 pass</text>
+<text x="970" y="1152.56" font-family="Arial, sans-serif" font-size="18" fill="#334155" font-weight="400">10 / 10 pass</text>
+<text x="55" y="1222.8" font-family="Arial, sans-serif" font-size="15" fill="#64748b" font-weight="700">LEGEND</text>
+<rect x="155" y="1210" width="14" height="14" rx="3" fill="#64748b" stroke="#64748b"/>
+<text x="179" y="1221.64" font-family="Arial, sans-serif" font-size="17" fill="#334155" font-weight="400">Data</text>
+<rect x="280" y="1210" width="14" height="14" rx="3" fill="#2563eb" stroke="#2563eb"/>
+<text x="304" y="1221.64" font-family="Arial, sans-serif" font-size="17" fill="#334155" font-weight="400">Deterministic code</text>
+<rect x="570" y="1210" width="14" height="14" rx="3" fill="#7c3aed" stroke="#7c3aed"/>
+<text x="594" y="1221.64" font-family="Arial, sans-serif" font-size="17" fill="#334155" font-weight="400">AI models</text>
+<rect x="780" y="1210" width="14" height="14" rx="3" fill="#059669" stroke="#059669"/>
+<text x="804" y="1221.64" font-family="Arial, sans-serif" font-size="17" fill="#334155" font-weight="400">User output</text>
+<rect x="1010" y="1210" width="14" height="14" rx="3" fill="#c2410c" stroke="#c2410c"/>
+<text x="1034" y="1221.64" font-family="Arial, sans-serif" font-size="17" fill="#334155" font-weight="400">Human review</text>
+<text x="55" y="1256.72" font-family="Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">Dashed loop: optional agent revision. Historical cause groups use hand labels; live inference uses the selected model via OpenRouter.</text>
+</svg>

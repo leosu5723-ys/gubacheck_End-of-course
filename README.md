@@ -2,10 +2,13 @@
 
 **When a stock's forum suddenly explodes, GubaCheck finds out why — and shows how spikes with that cause behaved afterwards.**
 
+![GubaCheck — why did this stock's forum explode? From reading a million forum posts to detecting a spike, testing seven causes, backtesting and the investor's decision](report/architecture_v2.png)
+
 A local Chinese RoBERTa reads ~1 million Eastmoney forum titles. A z-score engine flags spikes. An attribution agent scores seven candidate causes from the posts' clues (company filing, media rumour, sector, US read-through, market, policy, money flow), tests them in order of probability with fixed, code-graded tools that respect time order, and stops when the remaining causes are unlikely. Each cause's history (D+1 … D+20 returns) is shown alongside.
 
 | Document | What it covers |
 |---|---|
+| [report/REPORT_V4.md](report/REPORT_V4.md) | The project report (≈1,200 words): problem, design changes, where AI is useful, build vs buy, evaluation critique, next steps |
 | [PRODUCT.md](PRODUCT.md) | Persona, input/output, architecture, own-vs-rent, metrics targeted vs reached, cost, responsible use |
 | [RULES.md](RULES.md) | Every rule and threshold, registered before results, with a change log |
 | [data/DATA.md](data/DATA.md) | Sources, provenance (incl. how the forum data was collected), labels, limitations |

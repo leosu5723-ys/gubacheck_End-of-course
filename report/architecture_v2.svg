@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1430" viewBox="0 0 1500 1430" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <style>
+      .t  { font-size: 19px; font-weight: 700; fill: #11181c; }
+      .s  { font-size: 15px; fill: #374151; }
+      .n  { font-size: 13px; fill: #687076; }
+      .h  { font-size: 16px; font-weight: 800; fill: #475569; letter-spacing: .08em; }
+      .data  { fill: #EEF2F7; stroke: #64748B; stroke-width: 1.6; }
+      .code  { fill: #E6EDFF; stroke: #3E63DD; stroke-width: 1.8; }
+      .llm   { fill: #F3E8FF; stroke: #8E4EC6; stroke-width: 1.8; }
+      .local { fill: #F3E8FF; stroke: #8E4EC6; stroke-width: 1.8; stroke-dasharray: 7 4; }
+      .human { fill: #FFF1E6; stroke: #F76B15; stroke-width: 2; }
+      .note  { fill: #FAFBFC; stroke: #CBD5E1; stroke-width: 1.4; }
+      .ln { stroke: #475569; stroke-width: 1.8; fill: none; marker-end: url(#a); }
+    </style>
+  </defs>
+  <rect width="1500" height="1430" fill="#fff"/>
+
+  <!-- title -->
+  <text x="40" y="50" font-size="30" font-weight="800" fill="#11181c">GubaCheck — why did this stock's forum explode?</text>
+  <text x="40" y="80" class="s">Watches 10 A-share forums, finds the cause of each spike with checkable evidence, and shows what happened after similar spikes.</text>
+  <g transform="translate(40,98)">
+    <rect width="20" height="14" rx="3" class="data"/><text x="27" y="12" class="n">Data</text>
+    <rect x="85" width="20" height="14" rx="3" class="code"/><text x="112" y="12" class="n">Deterministic code</text>
+    <rect x="245" width="20" height="14" rx="3" class="llm"/><text x="272" y="12" class="n">LLM (rented)</text>
+    <rect x="375" width="20" height="14" rx="3" class="local"/><text x="402" y="12" class="n">Local model (owned)</text>
+    <rect x="550" width="20" height="14" rx="3" class="human"/><text x="577" y="12" class="n">Human</text>
+  </g>
+
+  <!-- ===== 1 reading the forum ===== -->
+  <text x="40" y="160" class="h">1 · READING 1 MILLION FORUM POSTS (bullish / bearish / neutral)</text>
+  <rect x="40" y="174" width="300" height="96" rx="12" class="local"/>
+  <text x="58" y="204" class="t">① TF-IDF + logistic</text>
+  <text x="58" y="230" class="s">macro-F1 0.60</text>
+  <text x="58" y="254" class="n">misses slang and sarcasm</text>
+  <rect x="390" y="174" width="300" height="96" rx="12" class="llm"/>
+  <text x="408" y="204" class="t">② LLM labels each post</text>
+  <text x="408" y="230" class="s">macro-F1 0.79 — best</text>
+  <text x="408" y="254" class="n">paid per post: too costly for 1M</text>
+  <rect x="740" y="174" width="360" height="96" rx="12" class="local"/>
+  <text x="758" y="204" class="t">③ Local Chinese RoBERTa</text>
+  <text x="758" y="230" class="s">trained on 3,000 LLM labels · 0.73</text>
+  <text x="758" y="254" class="n">93% of the LLM, US$0, 414 posts / s</text>
+  <line x1="340" y1="222" x2="388" y2="222" class="ln"/>
+  <line x1="690" y1="222" x2="738" y2="222" class="ln"/>
+  <text x="1130" y="214" class="s" font-style="italic">"Rent the teacher once,</text>
+  <text x="1130" y="236" class="s" font-style="italic"> own the student."</text>
+  <text x="1130" y="258" class="n">tested on 92 posts I labelled</text>
+
+  <!-- ===== 2 data ===== -->
+  <text x="40" y="318" class="h">2 · DATA I COLLECTED (one year, frozen snapshot)</text>
+  <rect x="40"   y="332" width="215" height="70" rx="10" class="data"/><text x="54" y="360" class="t">Forum posts</text><text x="54" y="385" class="n">1.02M, 10 stocks</text>
+  <rect x="270"  y="332" width="215" height="70" rx="10" class="data"/><text x="284" y="360" class="t">Company filings</text><text x="284" y="385" class="n">1,604 + text (CNINFO)</text>
+  <rect x="500"  y="332" width="215" height="70" rx="10" class="data"/><text x="514" y="360" class="t">A-share prices</text><text x="514" y="385" class="n">10 stocks + 12 peers</text>
+  <rect x="730"  y="332" width="215" height="70" rx="10" class="data"/><text x="744" y="360" class="t">US peers · indices</text><text x="744" y="385" class="n">NVDA … TSLA · CSI 300</text>
+  <rect x="960"  y="332" width="215" height="70" rx="10" class="data"/><text x="974" y="360" class="t">Top list (龙虎榜)</text><text x="974" y="385" class="n">hot-money flows</text>
+  <rect x="1190" y="332" width="270" height="70" rx="10" class="human"/><text x="1204" y="360" class="t">My hand labels</text><text x="1204" y="385" class="n">68 spike causes = the answer key</text>
+
+  <!-- ===== 3 flow ===== -->
+  <text x="40" y="452" class="h">3 · WHAT HAPPENS WHEN A FORUM EXPLODES</text>
+
+  <rect x="40" y="468" width="640" height="76" rx="12" class="code"/>
+  <text x="58" y="498" class="t">1  Detect the spike</text>
+  <text x="58" y="524" class="s">daily posts vs the stock's own last 120 days, z ≥ 2 → 68 spikes</text>
+
+  <rect x="40" y="566" width="640" height="76" rx="12" class="code"/>
+  <text x="58" y="596" class="t">2  Show it to me</text>
+  <text x="58" y="622" class="s">radar of 10 stocks, alerts, price + forum-heat chart</text>
+
+  <rect x="40" y="664" width="640" height="76" rx="12" class="llm"/>
+  <text x="58" y="694" class="t">3  LLM reads the top posts and ranks 7 causes</text>
+  <text x="58" y="720" class="s">clues → a starting probability for each cause</text>
+
+  <rect x="40" y="762" width="640" height="200" rx="12" fill="#F8FAFF" stroke="#3E63DD" stroke-width="1.8"/>
+  <text x="58" y="792" class="t">4  Test causes one by one — the code decides</text>
+  <text x="58" y="820" class="s">• test the most likely untested cause with a fixed tool</text>
+  <text x="58" y="845" class="s">• verdict PASS / PARTIAL / FAIL from data and timestamps</text>
+  <text x="58" y="870" class="s">• update the probabilities</text>
+  <text x="58" y="895" class="s">• STOP when one cause passed and the rest are &lt; 20%</text>
+  <text x="58" y="920" class="s">   (or after 5 tests) — otherwise test the next one</text>
+  <text x="58" y="946" class="n">the LLM only chooses the order; it never decides a verdict</text>
+  <path d="M680,895 C716,895 716,820 682,820" class="ln"/>
+
+  <rect x="40" y="984" width="640" height="76" rx="12" class="code"/>
+  <text x="58" y="1014" class="t">5  Conclusion with evidence</text>
+  <text x="58" y="1040" class="s">main cause, supporting causes, time-stamped proof</text>
+
+  <rect x="40" y="1082" width="640" height="76" rx="12" class="code"/>
+  <text x="58" y="1112" class="t">6  Backtest: what happened after similar spikes?</text>
+  <text x="58" y="1138" class="s">same stock, same cause: returns D+1 … D+20, after fees</text>
+
+  <rect x="40" y="1180" width="640" height="76" rx="12" class="llm"/>
+  <text x="58" y="1210" class="t">7  LLM writes a short report</text>
+  <text x="58" y="1236" class="s">cause + history + company filings found by RAG (local search)</text>
+
+  <rect x="40" y="1278" width="640" height="76" rx="12" class="human"/>
+  <text x="58" y="1308" class="t">8  I decide</text>
+  <text x="58" y="1334" class="s">agree / disagree is saved; no automatic orders</text>
+
+  <line x1="360" y1="544" x2="360" y2="564" class="ln"/>
+  <line x1="360" y1="642" x2="360" y2="662" class="ln"/>
+  <line x1="360" y1="740" x2="360" y2="760" class="ln"/>
+  <line x1="360" y1="962" x2="360" y2="982" class="ln"/>
+  <line x1="360" y1="1060" x2="360" y2="1080" class="ln"/>
+  <line x1="360" y1="1158" x2="360" y2="1178" class="ln"/>
+  <line x1="360" y1="1256" x2="360" y2="1276" class="ln"/>
+
+  <!-- right column: what I did -->
+  <text x="760" y="460" class="h">WHAT I DID AND WHAT I FOUND</text>
+  <rect x="760" y="474" width="700" height="266" rx="12" class="note"/>
+  <text x="778" y="504" class="t">Changed direction twice, on evidence</text>
+  <text x="778" y="530" class="s">sentiment → next-day returns: too little data;</text>
+  <text x="778" y="552" class="s">"buy on good news" lost money after a forum frenzy</text>
+  <text x="778" y="574" class="s">(−1.4% to −2.6% excess vs CSI 300)</text>
+  <text x="778" y="610" class="t">Measured how much AI the job needs</text>
+  <text x="778" y="634" class="s">LLM routing 60% vs testing all 7 causes 47% (p = 0.02);</text>
+  <text x="778" y="656" class="s">an agent that may revise: no better (revised 1 of 68)</text>
+  <text x="778" y="692" class="t">Cost, safety, honest limits</text>
+  <text x="778" y="716" class="s">≤ US$0.009 per spike · guardrails 10 / 10 · always-"B" 69%</text>
+
+  <!-- right column: causes -->
+  <text x="760" y="790" class="h">7 CAUSES → DATA EACH TOOL CHECKS</text>
+  <rect x="760" y="804" width="700" height="158" rx="12" class="note"/>
+  <text x="778" y="832" class="s"><tspan font-weight="700">A</tspan> company filing → filings, judged by LLM + RAG</text>
+  <text x="778" y="856" class="s"><tspan font-weight="700">B</tspan> media / rumour → long forum posts (a weak proxy)</text>
+  <text x="778" y="880" class="s"><tspan font-weight="700">C</tspan> sector → peer prices   ·   <tspan font-weight="700">D</tspan> overseas → US peers + opening gap</text>
+  <text x="778" y="904" class="s"><tspan font-weight="700">E</tspan> market → indices   ·   <tspan font-weight="700">F</tspan> policy → policy posts + breadth</text>
+  <text x="778" y="928" class="s"><tspan font-weight="700">G</tspan> hot money → top list   ·   <tspan font-weight="700">H</tspan> unexplained (nothing passed)</text>
+  <text x="778" y="952" class="n">each test: z-score vs the series' own history + time-order rules</text>
+  <line x1="758" y1="862" x2="722" y2="862" class="ln"/>
+
+  <!-- right column: where AI is used -->
+  <text x="760" y="996" class="h">WHERE AI IS USED — AND WHERE IT IS NOT</text>
+  <rect x="760" y="1010" width="700" height="166" rx="12" class="note"/>
+  <text x="778" y="1040" class="s"><tspan font-weight="700" fill="#3E63DD">Code:</tspan> detection, every verdict, probabilities, stop rule, returns</text>
+  <text x="778" y="1068" class="s"><tspan font-weight="700" fill="#8E4EC6">LLM:</tspan> ranks causes, labels training posts, judges filings, writes</text>
+  <text x="778" y="1096" class="s"><tspan font-weight="700" fill="#8E4EC6">Local models:</tspan> sentiment (RoBERTa), filing search (bge-small-zh)</text>
+  <text x="778" y="1124" class="s"><tspan font-weight="700" fill="#D9620F">Human:</tspan> the answer key, and every decision</text>
+  <text x="778" y="1154" class="n">one run ≈ 30k tokens, ~20 s · Claude Haiku tried: ~30× the cost</text>
+
+  <text x="40" y="1400" class="n">github.com/leosu5723-ys/gubacheck_End-of-course · numbers from results/ (68 spikes, one live run each, my labels)</text>
+</svg>
