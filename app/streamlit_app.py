@@ -608,12 +608,28 @@ def step_card(c, out):
 HZ = ["1", "2", "3", "5", "10", "20"]
 
 
+def price_dir(code, day):
+    """+1 if the stock closed up on that day, -1 if down, None if unknown (the spike's trading direction)."""
+    _, v = causes._ret_z(code, day)
+    return None if v is None else (1 if v >= 0 else -1)
+
+
 def past_rows(s, cause):
-    """Earlier spikes (strictly before this one) with the same cause: same stock, and all stocks."""
+    """Earlier spikes (strictly before this one) with the same cause AND the same price direction
+    on the spike day (falls with falls, rises with rises): same stock, and all stocks.
+    Mixing directions made a rebound after rises look like a buy signal after a fall."""
     p = os.path.join(ROOT, "results", "cause_backtest_rows_gold.json")
     rows = json.load(open(p)) if os.path.exists(p) else []
-    earlier = [r for r in rows if r["spike_id"][-8:] < s["date"].replace("-", "") and r["cause"] == cause]
+    want = price_dir(s["stock"], s["date"])
+    day = lambda sid: "%s-%s-%s" % (sid[-8:-4], sid[-4:-2], sid[-2:])
+    earlier = [r for r in rows if r["spike_id"][-8:] < s["date"].replace("-", "") and r["cause"] == cause
+               and price_dir(r["spike_id"][4:10], day(r["spike_id"])) == want]
     return [r for r in earlier if r["spike_id"][4:10] == s["stock"]], earlier
+
+
+def dir_word(s, zh):
+    d = price_dir(s["stock"], s["date"])
+    return ("下跌" if d == -1 else "上涨") if zh else ("falling" if d == -1 else "rising")
 
 
 def suggestion(same, allc):
@@ -621,7 +637,8 @@ def suggestion(same, allc):
     zh = ss.lang == "zh"
     base, scope = (same, "本股" if zh else "this stock") if len(same) >= 3 else (allc, "全部股票" if zh else "all stocks")
     if len(base) < 3:
-        return "⚪", ("观望：同类历史异动不足 3 次，无法给出有依据的建议" if zh else "Wait: fewer than 3 similar past spikes"), base, scope
+        return "⚪", ("观望：同方向的同类历史异动不足 3 次（n=%d），无法给出有依据的建议" if zh else
+                     "Wait: fewer than 3 past spikes with the same cause and direction (n=%d)") % len(base), base, scope
     x = [r["excess"]["5"] for r in base if "5" in r["excess"]]
     m, w = sum(x) / len(x), sum(v > 0 for v in x) / len(x)
     if m > 1 and w >= 0.6:
@@ -637,8 +654,9 @@ def suggestion(same, allc):
 def history_table(s, cause):
     zh = ss.lang == "zh"
     same, allc = past_rows(s, cause)
-    st.markdown("**%s**" % ("📜 %s 过去的同类异动（原因：%s）——如果当时次日开盘买入" % (sname(s["stock"]), cname(cause)) if zh
-                            else "📜 Earlier spikes of %s with the same cause (%s) — bought at the next open" % (sname(s["stock"]), cname(cause))))
+    dw = dir_word(s, zh)
+    st.markdown("**%s**" % ("📜 %s 过去的同类%s异动（原因：%s，当天同样%s）——如果当时次日开盘买入" % (sname(s["stock"]), dw, cname(cause), dw) if zh
+                            else "📜 Earlier %s spikes of %s with the same cause (%s) — bought at the next open" % (dw, sname(s["stock"]), cname(cause))))
     def table(rows, with_stock):
         out = []
         for r in rows:
@@ -664,12 +682,12 @@ def history_table(s, cause):
     if same:
         st.dataframe(table(same, False), hide_index=True, width="stretch")
     else:
-        st.caption("本股在此之前没有同类异动" if zh else "No earlier spike of this stock with this cause")
-    with st.expander(("所有股票的同类异动（n=%d）" if zh else "Same cause, all stocks (n=%d)") % len(allc), expanded=not same):
+        st.caption("本股在此之前没有同类%s异动" % dw if zh else "No earlier %s spike of this stock with this cause" % dw)
+    with st.expander(("所有股票的同类%s异动（n=%d）" % (dw, len(allc)) if zh else "Same cause, %s, all stocks (n=%d)" % (dw, len(allc))), expanded=not same):
         if allc:
             st.dataframe(table(allc, True), hide_index=True, width="stretch")
-    st.caption("收益已扣除佣金、过户费和印花税；只使用本次异动之前的数据；历史异动的原因来自人工标注。" if zh else
-               "Net of fees; only spikes before this one; causes of earlier spikes are my hand labels.")
+    st.caption("只比较当天涨跌方向相同的异动；收益已扣除佣金、过户费和印花税；只使用本次异动之前的数据；历史异动的原因来自人工标注。" if zh else
+               "Only spikes that moved the same way on the day; net of fees; only spikes before this one; causes of earlier spikes are my hand labels.")
     icon, text, base, scope = suggestion(same, allc)
     st.markdown('<div class="gc-card"><div class="gc-kpil">%s</div><div class="gc-verdict" style="font-size:1.1rem">%s %s</div>'
                 '<div class="gc-gauge">%s</div></div>' % ("规则建议" if zh else "Rule-based suggestion", icon, text,
@@ -695,10 +713,10 @@ def llm_advice(s, primary, outs, same, allc):
     prompt = ("你是A股研究助手。根据下面的信息，为个人投资者写一段简短的研究参考（不超过200字）："
               "1) 这次股吧异动的主要原因；2) 历史上同类异动之后的走势说明了什么（注意样本量）；"
               "3) 偏多关注 / 观望 / 回避 三选一，并说明理由；4) 主要风险。只依据给出的信息，不要编造。最后注明“不构成投资建议”。\n\n"
-              "股票：%s %s，异动日 %s，帖子 %d（z=%.1f），看多比例 %.0f%%\n主要原因：%s\n检验结果：\n%s\n"
-              "本股同类历史异动：%s\n全部股票同类历史异动：%s\n公司历史资料（RAG，均早于本次异动）：\n%s"
-              % (stocks[s["stock"]]["name"], s["stock"], s["date"], s["posts"], s["z_posts"], 100 * s["bull_share"],
-                 cname(primary), ev, hist(same), hist(allc), rag_txt or "无"))
+              "股票：%s %s，异动日 %s，当天股价%s，帖子 %d（z=%.1f），看多比例 %.0f%%\n主要原因：%s\n检验结果：\n%s\n"
+              "本股同类且当天同样%s的历史异动：%s\n全部股票同类且同样%s的历史异动：%s\n公司历史资料（RAG，均早于本次异动）：\n%s"
+              % (stocks[s["stock"]]["name"], s["stock"], s["date"], dir_word(s, True), s["posts"], s["z_posts"], 100 * s["bull_share"],
+                 cname(primary), ev, dir_word(s, True), hist(same), dir_word(s, True), hist(allc), rag_txt or "无"))
     if not zh:
         prompt += "\n\nAnswer in English."
     api = ss.api

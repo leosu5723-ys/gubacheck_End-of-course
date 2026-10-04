@@ -36,9 +36,9 @@ clues → priors      A 24% · D 21% · C 15% · G 15% · B 12% · E 9% · F 6% 
 tested              A PARTIAL → D PASS (US peers −5…−7% overnight, gap z −3.3) → C PASS (4 of 7 peers) → G PARTIAL
 stopped             a cause passed and untested causes total 16% (< 20%), 4 tests
 conclusion          primary D overseas read-through (36%), secondary C sector          my label: C (a miss, see EVALS)
-same cause, this stock    2026-05-12: D+1 … D+20 net returns, one row per earlier spike
-same cause, all stocks    n = 3, D+5 mean excess +8.3%, 3 of 3 positive
-suggestion          rule: "lean positive" (all-stock history, n = 3 — small); optional LLM + RAG note
+same cause, same direction  earlier FALLING spikes with cause D: none for this stock; all stocks n = 2
+                    (Eoptolink 2026-02-27, Victory Giant 2026-06-05), D+1 … D+20 net and excess returns
+suggestion          rule: "wait — fewer than 3 same-cause, same-direction cases (n = 2)"; optional LLM + RAG note
 cost                live routing run, DeepSeek V4.1 Flash, about US$0.002 billed
 ```
 
